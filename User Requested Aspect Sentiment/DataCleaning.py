@@ -17,7 +17,7 @@ def data_clean(text):
     tokernized_words = nltk.word_tokenize(html_filtered)  # tokernized string input to single words
 
     filtered_text = []  # list for filtered text
-    for word in tokernized_words:  # loop for iterate tokernized list
+    for word in tokernized_words:  #loop for iterate tokernized list
         split_word = []
         split_word[:] = word  # splits the characters in word
 
