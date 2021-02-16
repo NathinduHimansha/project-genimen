@@ -14,8 +14,8 @@ from collections import defaultdict
 from sklearn.feature_extraction.text import CountVectorizer
 import itertools
 import collections
-
-
+from nltk.probability import FreqDist
+import matplotlib.pyplot as plt
 
 import matplotlib.pyplot as plt
 
@@ -164,12 +164,23 @@ with open('amazonJsonTOCSV.csv', 'r', encoding="utf-8") as csv_file:#open the .c
 
                     '''removing non-english words'''
                     text = " ".join(w for w in nltk.wordpunct_tokenize(text) if w.lower() in words or not w.isalpha())
-                    print(text)
+                    #print(text)
 
 
 
                     # print(pd.DataFrame.from_dict(word_freq, orient='index') \
                     #     .sort_values(0, ascending=False) \
                     #     .rename(columns={0: 'abs_freq'}))
+
+
+                    '''get the frequency of the words'''
+                    fdist = FreqDist(comments.noun_phrases)
+                    #print(fdist)
+
+                    fdist.most_common(2)
+                    fdist.plot(30, cumulative=False)
+                    plt.show()
+
+
 
 
