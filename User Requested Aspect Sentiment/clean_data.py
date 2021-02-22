@@ -50,5 +50,3 @@ def clean_text(text):
     non_ascii_filter = emoji_filter.encode("ascii", errors='ignore').decode()
     punctuation_filter = ' '.join(word.strip(string.punctuation) for word in non_ascii_filter.split())
     return punctuation_filter
-
-print(clean_text('<html> <span> Hello I am Nathindu (0_0) from Mass @456hs i am 21 years old I like super cool curved% phone its amazing.! 10FFFFF16 hindi 😛 Ståle?'))
