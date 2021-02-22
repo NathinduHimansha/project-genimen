@@ -36,22 +36,3 @@ def data_clean(text):
             optimized_text.append(word)
 
     return optimized_text
-
-
-data_file = pandas.read_csv('amazon_reviews.csv')  # reading the csv file to the data frame
-print(data_file.shape)  # number of rows print
-
-review_list = data_file['customer_review'].values.tolist()  # filtering the reviews column as a list
-
-review_text = ' '.join([str(elem) for elem in review_list])  # converts the list into single string
-
-cleaned_text = data_clean(review_text)  # pass the text into cleaning function
-
-# print("Original Text: ")
-# print(word_data) #original data print
-
-# print("Cleaned Text:")
-# print(cleaned_text) # cleaned data print
-
-cleaned_text = pandas.DataFrame(cleaned_text)  # converts cleaned list into data frame
-cleaned_text.to_csv("cleaned_reviews")  # writes to CSV
