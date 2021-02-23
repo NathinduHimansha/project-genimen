@@ -16,15 +16,7 @@ def get_polarity(text):
     if score > 0:
         return 1
     return score
-def sent_tokenize(text):
-    return re.split("\.+?\s|but", text)
 
-def split_sent(df, text_col, sent_colname="text_sent"):
-    df_mod = df.dropna()
-    text = '.'.join(list(df_mod[text_col]))
-    text_sentences = sent_tokenize(text)
-
-    return  pd.DataFrame({sent_colname: text_sentences})
 
 def add_sentiment_label(df, col):
     df_mod = df.dropna()
