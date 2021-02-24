@@ -3,14 +3,14 @@ import pandas as pd
 from textblob import TextBlob
 
 def get_subjectivity(text):
-    score = TextBlob(text).sentiment.subjectivity
+    score = TextBlob(text.lower()).sentiment.subjectivity
     if score < 0:
         return -1
     if score > 0:
         return 1
     return score
 def get_polarity(text):
-    score = TextBlob(text).sentiment.polarity
+    score = TextBlob(text.lower()).sentiment.polarity
     if score < 0:
         return -1
     if score > 0:
