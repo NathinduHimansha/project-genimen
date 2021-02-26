@@ -3,14 +3,13 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import ShuffleSplit
-from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix
 from sklearn.linear_model import LogisticRegression, SGDClassifier
 
 from imblearn.over_sampling import SMOTE
 
 
-def naive_bayes_prediction(review_text, polarity_score):
+def logistic_regression_prediction(review_text, polarity_score):
     accuracy_scores = []
     f1_scores = []
     conf_matrix = []
@@ -31,17 +30,14 @@ def naive_bayes_prediction(review_text, polarity_score):
         # data balancing
         reviews_train_balanced, polarity_train_balanced = SMOTE().fit_resample(reviews_train_vector, polarity_train)
 
-        unique, counts = np.unique(polarity_train_balanced, return_counts=True)
-        print(list(zip(unique, counts)))
-
         # model implementation
-        naive_bayes_model = MultinomialNB()
+        logistic_regression_model = LogisticRegression()
 
         # training - model fitting
-        naive_bayes_model.fit(reviews_train_balanced, polarity_train_balanced)
+        logistic_regression_model.fit(reviews_train_balanced, polarity_train_balanced)
 
         # testing
-        polarity_prediction = naive_bayes_model.predict(reviews_test_vector)
+        polarity_prediction = logistic_regression_model.predict(reviews_test_vector)
 
         accuracy_scores.append(accuracy_score(polarity_test, polarity_prediction))
         f1_scores.append(f1_score(polarity_test, polarity_prediction, average="micro"))
@@ -52,8 +48,7 @@ def naive_bayes_prediction(review_text, polarity_score):
     print("\nCONFUSION MATRIX: \n", format(sum(conf_matrix) / len(conf_matrix)))
 
 
-data_file = pd.read_csv('labeled_data_modd.csv', encoding='utf-8')
-print(data_file.sent_polarity.value_counts())
+data_file = pd.read_csv('labeled_data_mod.csv', encoding='utf-8')
 # data_file = data_file[data_file.sent_polarity != 0]
 
-naive_bayes_prediction(data_file.review_sent, data_file.sent_polarity)
+logistic_regression_prediction(data_file.review_sent, data_file.sent_polarity)
