@@ -28,12 +28,11 @@ def print_features_tfidfvectorizer(vc, X, top_n=15):
     top_n = feature_array[tfidf_sorting][:n]
     print(top_n)
 
-pos = pd.read_csv('data/splitted/pos.csv').dropna()[:10000]
-neg = pd.read_csv('data/splitted/neg.csv').dropna()[:10000]
-neu = pd.read_csv('data/splitted/neu.csv').dropna()[:10000]
+pos = pd.read_csv('/Users/nathinduhimansha/User-Data/IIT/2nd_Year/2nd_Semester/SDGP/project-genimen/User Requested Aspect Sentiment/uras/data/pos.csv').dropna()[:10000]
+neg = pd.read_csv('/Users/nathinduhimansha/User-Data/IIT/2nd_Year/2nd_Semester/SDGP/project-genimen/User Requested Aspect Sentiment/uras/data/neg.csv').dropna()[:10000]
+neu = pd.read_csv('/Users/nathinduhimansha/User-Data/IIT/2nd_Year/2nd_Semester/SDGP/project-genimen/User Requested Aspect Sentiment/uras/data/neu.csv').dropna()[:10000]
 
 df = pos.append(neg).append(neu)
-#  df = pos.append(neg)
 df = df.sample(frac=1)
 
 df['clean_review'] = df['review_sent'].apply(clean_data.clean_text)
