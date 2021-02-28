@@ -30,10 +30,10 @@ def print_features_tfidfvectorizer(vc, X, top_n=15):
 
 pos = pd.read_csv('data/splitted/pos.csv').dropna()[:10000]
 neg = pd.read_csv('data/splitted/neg.csv').dropna()[:10000]
-#  neu = pd.read_csv('data/splitted/neu.csv').dropna()[:10000]
+neu = pd.read_csv('data/splitted/neu.csv').dropna()[:10000]
 
-#  df = pos.append(neg).append(neu)
-df = pos.append(neg)
+df = pos.append(neg).append(neu)
+#  df = pos.append(neg)
 df = df.sample(frac=1)
 
 df['clean_review'] = df['review_sent'].apply(clean_data.clean_text)
@@ -43,16 +43,9 @@ reviews = df['clean_review'].values
 labels = df['sent_polarity'].values
 train, test, y_train, y_test = train_test_split(reviews, labels, test_size=0.2, random_state=42)
 
-#  split_index = int(len(df) * 0.7)
-#  X_train = X[:split_index]
-#  X_test = X[split_index:]
 
-#  y_train = df['sent_polarity'].values[:split_index]
-#  y_test = df['sent_polarity'].values[split_index:]
-
-
-#  vc = TfidfVectorizer(max_features=1000,min_df=0, max_df=0.5, ngram_range=(1,1))
-vc = TfidfVectorizer(min_df=0, max_df=0.5, ngram_range=(1,1))
+vc = TfidfVectorizer(max_features=1000,min_df=0, max_df=0.5, ngram_range=(1,1))
+#  vc = TfidfVectorizer(min_df=0, max_df=0.5, ngram_range=(1,1))
 #  vc = CountVectorizer(max_features=1000, min_df=2, max_df=0.9, ngram_range=(2,2))
 #  vc = CountVectorizer(max_features=5000, binary=True)
 
@@ -74,16 +67,8 @@ print('accuracy:\t' + str(accuracy))
 print('f1:\t' + str(f1))
 print('confusion matrix:\t' + "\n" + str(cmtx))
 
-
-#  MultinomialNB_classifier = MultinomialNB()
-#  MultinomialNB_classifier.fit(X_train, y_train)
-#  predicted = MultinomialNB_classifier.predict(X_test)
-#  accuracy = accuracy_score(predicted, y_test)
-#  print('accuracy ' + str(MultinomialNB_classifier.score(X_test, y_test)))
-
-
-#  LinearSVC_classifier.classfiy()
 new_data = ['I like the phone', 'I like the fingerprint', 'Its such an awesome phone and camera', 'good camera', 'wow its one of the best phones', 'prolly worst than expected, fingerprint is not good']
+#  label = [1.0, 1.0, 1.0, 1.0, 1.0, -1.0]
 X_new = vc.transform(new_data)
 prediction = LinearSVC_classifier.predict(X_new)
 print(str(prediction))
