@@ -1,48 +1,69 @@
-import pandas
+import spacy
 import string
 import nltk
+from nltk import word_tokenize
+from nltk.stem import SnowballStemmer
 import re
 
+def stem(text):
+    stemmer = SnowballStemmer('english')
+    stemmed = []
+    tokens = text.split()
+    for token in tokens:
+        word = stemmer.stem(token)
+        stemmed.append(word)
+    text = ' '.join(stemmed)
+    return text
 
-# function for data cleaning
+def lemmatize(text):
+    nlp = spacy.load("en_core_web_md")
+    doc = nlp(text)
+    lemma = []
+    for token in doc:
+            word = str(token.lemma_)
+            lemma.append(word)
+    text = ' '.join(lemma)
+    return text
 
-def data_clean(text):
-    list_punctuation = set(string.punctuation)  # list of punctuations
-    list_numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]  # list of numbers
-    words = set(nltk.corpus.words.words())  # list of english words(NLTK library)
+def exclude_pos(text, tag_list):
+    text = word_tokenize(text)
+    pos_tags = nltk.pos_tag(text)
+    filtered_words = []
+    for token in pos_tags:
+        if token[1] not in tag_list:
+            word = str(token[0])
+            filtered_words.append(word)
+    text = ' '.join(filtered_words)
+    return text
 
-    text = text.lower()  # input lowercase
-
-    html_filtered = re.compile(r'<[^>]+>').sub('', text)  # html tag filtering
-
-    tokernized_words = nltk.word_tokenize(html_filtered)  # tokernized string input to single words
-
-    filtered_text = []  # list for filtered text
-    for word in tokernized_words:  #loop for iterate tokernized list
-        split_word = []
-        split_word[:] = word  # splits the characters in word
-
-        reassembled_word = ""
-        for character in split_word:
-            if character not in list_punctuation:  # punctuation filter
-                if character not in list_numbers:  # integers filter
-                    text = character.encode("ascii", errors="ignore").decode()  # ascii filter
-                    reassembled_word = reassembled_word + text  # reassembling the characters as a word
-
-        filtered_text.append(reassembled_word)  # append the filtered reassembled word into list
-
-    optimized_text = []  # optimized text
-    for word in filtered_text:
-        if word in words and len(word) >= 3:  # english words filter and character size filter
-            optimized_text.append(word)
-
-    return optimized_text
+def include_pos(text, tag_list):
+    text = word_tokenize(text)
+    pos_tags = nltk.pos_tag(text)
+    filtered_words = []
+    for token in pos_tags:
+        if token[1] in tag_list:
+            word = str(token[0])
+            filtered_words.append(word)
+    text = ' '.join(filtered_words)
+    return text
 
 def de_emojify(text):
     return re.sub("(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])", "", text)
 
+def remove_stop_words(text):
+    text = text.lower()
+    stop_words = ['let', 'have', 'has', 'had','a', 'the', 'it', 'its', 'and', 'is', 'be']
+    tokens = text.split()
+    filtered_words = []
+    for token in tokens:
+        if token not in stop_words:
+            filtered_words.append(token)
+    text = ' '.join(filtered_words)
+    return text
+
 def clean_text(text):
     text = text.lower()
+    text = re.sub('\s\w{1,2}\s', ' ', text)
     html_filter = re.sub('<[^>]*>', ' ', text)
     reduntant_space_filter = re.sub('\s{2,}', ' ', html_filter)
     non_alphabet_filter = re.sub('(?!\s)[\W|\d]', '', html_filter)
