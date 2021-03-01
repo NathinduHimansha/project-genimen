@@ -1,3 +1,4 @@
+import spacy
 import numpy as np
 import pandas as pd
 import re
@@ -5,6 +6,7 @@ from uras.data_preprocessing import clean_data
 from nltk.classify.scikitlearn import SklearnClassifier
 from sklearn.naive_bayes import MultinomialNB, BernoulliNB
 from sklearn.linear_model import SGDClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC, LinearSVC, NuSVC
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
@@ -31,10 +33,10 @@ num_data = 100000
 #  num_data = 10000
 pos = pd.read_csv('data/splitted/pos.csv').dropna()[:num_data]
 neg = pd.read_csv('data/splitted/neg.csv').dropna()[:num_data]
-#  neu = pd.read_csv('data/splitted/neu.csv').dropna()[:num_data]
+neu = pd.read_csv('data/splitted/neu.csv').dropna()[:num_data]
 
-#  df = pos.append(neg).append(neu)
-df = pos.append(neg)
+df = pos.append(neg).append(neu)
+#  df = pos.append(neg)
 df = df.sample(frac=1)
 
 df['clean_review'] = df['review_sent'].apply(clean_data.clean_text)
@@ -50,17 +52,17 @@ train, test, y_train, y_test = train_test_split(reviews, labels, test_size=0.3, 
 #  print(np.unique(y_test, return_counts=True))
 
 
-#  vc = TfidfVectorizer(max_features=1000,min_df=0, max_df=0.5, ngram_range=(1,1))
-vc = TfidfVectorizer(min_df=1, max_df=0.9, ngram_range=(1,1))
-#  vc = CountVectorizer(max_df=0.9, ngram_range=(1,1), binary=True)
+vc = TfidfVectorizer(max_features=1000,min_df=0, max_df=0.5, ngram_range=(1,1))
+#  vc = TfidfVectorizer(min_df=1, max_df=0.9, ngram_range=(1,2))
+#  vc = CountVectorizer(max_df=0.9, ngram_range=(1,2), binary=True)
 #  vc = CountVectorizer(ngram_range=(1,1), binary=False)
 
 X_train = vc.fit_transform(train)
 X_test = vc.transform(test)
 
-LinearSVC_classifier = LinearSVC()
-LinearSVC_classifier.fit(X_train, y_train)
-predicted = LinearSVC_classifier.predict(X_test)
+RandomForest_classifier = RandomForestClassifier()
+RandomForest_classifier.fit(X_train, y_train)
+predicted = RandomForest_classifier.predict(X_test)
 accuracy = accuracy_score(y_test, predicted)
 f1= f1_score(y_test, predicted, average=None)
 #  precision_recall = precision_recall_fscore_support(y_test, predicted, average='macro')
@@ -84,5 +86,5 @@ print('confusion matrix:\t' + "\n" + str(cmtx))
 new_data = ['the fingerprint is good', 'I like the phone', 'I like the fingerprint', 'Its such an awesome phone and camera', 'good camera', 'wow its one of the best phones', 'prolly worst than expected, fingerprint is not good']
 #  label = [1.0, 1.0, 1.0, 1.0, 1.0, -1.0]
 X_new = vc.transform(new_data)
-prediction = LinearSVC_classifier.predict(X_new)
+prediction = RandomForest_classifier.predict(X_new)
 print(str(prediction))
