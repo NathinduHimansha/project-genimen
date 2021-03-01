@@ -29,13 +29,13 @@ def print_features_tfidfvectorizer(vc, X, top_n=15):
     print(top_n)
 
 num_data = 100000
-num_data = 10000
+#  num_data = 10000
 pos = pd.read_csv('data/splitted/pos.csv').dropna()[:num_data]
 neg = pd.read_csv('data/splitted/neg.csv').dropna()[:num_data]
-neu = pd.read_csv('data/splitted/neu.csv').dropna()[:num_data]
+#  neu = pd.read_csv('data/splitted/neu.csv').dropna()[:num_data]
 
-df = pos.append(neg).append(neu)
-#  df = pos.append(neg)
+#  df = pos.append(neg).append(neu)
+df = pos.append(neg)
 df = df.sample(frac=1)
 
 df['clean_review'] = df['review_sent'].apply(clean_data.clean_text)
