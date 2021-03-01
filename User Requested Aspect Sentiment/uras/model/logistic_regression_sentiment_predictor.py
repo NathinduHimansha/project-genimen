@@ -31,17 +31,17 @@ def logistic_regression_prediction(reviews_text, polarity_score):
     polarity_prediction = logistic_regression_model.predict(reviews_test_vector)
 
     # save the model to disk
-    filename = 'logistic_regression_model.sav'
+    filename = 'model/trained/logistic_regression_model.sav'
     pickle.dump(logistic_regression_model, open(filename, 'wb'))
 
     print("\nPREDICTED ACCURACY: {:.2f}%".format(accuracy_score(polarity_test, polarity_prediction) * 100))
     print("\nF1 SCORE: {:.2f}".format(f1_score(polarity_test, polarity_prediction, average="micro")))
+    print("\nF1 SCORE: " + str(f1_score(polarity_test, polarity_prediction, average=None)))
     print("\nCONFUSION MATRIX: \n", confusion_matrix(polarity_test, polarity_prediction))
 
-
-pos = pd.read_csv('/Users/nathinduhimansha/User-Data/IIT/2nd_Year/2nd_Semester/SDGP/project-genimen/User Requested Aspect Sentiment/uras/data/pos.csv').dropna()[:10000]
-neg = pd.read_csv('/Users/nathinduhimansha/User-Data/IIT/2nd_Year/2nd_Semester/SDGP/project-genimen/User Requested Aspect Sentiment/uras/data/neg.csv').dropna()[:10000]
-neu = pd.read_csv('/Users/nathinduhimansha/User-Data/IIT/2nd_Year/2nd_Semester/SDGP/project-genimen/User Requested Aspect Sentiment/uras/data/neu.csv').dropna()[:10000]
+pos = pd.read_csv('data/splitted/pos.csv').dropna()[:10000]
+neg = pd.read_csv('data/splitted/neg.csv').dropna()[:10000]
+neu = pd.read_csv('data/splitted/neu.csv').dropna()[:10000]
 
 df = pos.append(neg).append(neu)
 df = df.sample(frac=1)

@@ -39,6 +39,9 @@ df = pos.append(neg).append(neu)
 df = df.sample(frac=1)
 
 df['clean_review'] = df['review_sent'].apply(clean_data.clean_text)
+df['clean_review'] = df['clean_review'].apply(clean_data.remove_stop_words)
+#  df['clean_review'] = df['clean_review'].apply(lambda x: clean_data.exclude_pos(x, ["PRP", "IN"]))
+#  df['clean_review'] = df['clean_review'].apply(clean_data.lemmatize)
 
 # train, test split
 reviews = df['clean_review'].values
@@ -49,9 +52,9 @@ train, test, y_train, y_test = train_test_split(reviews, labels, test_size=0.3, 
 
 
 #  vc = TfidfVectorizer(max_features=1000,min_df=0, max_df=0.5, ngram_range=(1,1))
-vc = TfidfVectorizer(min_df=0, max_df=0.5, ngram_range=(1,1))
-#  vc = CountVectorizer(max_features=1000, min_df=2, max_df=0.9, ngram_range=(2,2))
-#  vc = CountVectorizer(max_features=5000, binary=True)
+vc = TfidfVectorizer(min_df=1, max_df=0.9, ngram_range=(1,1))
+#  vc = CountVectorizer(max_df=0.9, ngram_range=(1,1), binary=True)
+#  vc = CountVectorizer(ngram_range=(1,1), binary=False)
 
 X_train = vc.fit_transform(train)
 X_test = vc.transform(test)
