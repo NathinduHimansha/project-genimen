@@ -21,7 +21,7 @@ def logistic_regression_prediction(reviews_text, polarity_score):
     # reviews_train_balanced, polarity_train_balanced = SMOTE().fit_resample(reviews_train_vector, polarity_train)
 
     # model implementation
-    logistic_regression_model = LogisticRegression()
+    logistic_regression_model = LogisticRegression(max_iter=500)
 
     # training - model fitting
     logistic_regression_model.fit(reviews_train_vector, polarity_train)
