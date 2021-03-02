@@ -14,7 +14,8 @@ from imblearn.over_sampling import SMOTE
 def logistic_regression_prediction(reviews_text, polarity_score):
     reviews_train, reviews_test, polarity_train, polarity_test = train_test_split(reviews_text, polarity_score,
                                                                                   test_size=0.2)
-    vectorizer = CountVectorizer()
+    #  vectorizer = CountVectorizer()
+    vectorizer = CountVectorizer(max_df=0.9, ngram_range=(1,1), binary=True)
     reviews_train_vector = vectorizer.fit_transform(reviews_train)
 
     # data balancing
@@ -39,8 +40,8 @@ def logistic_regression_prediction(reviews_text, polarity_score):
     print("\nF1 SCORE: " + str(f1_score(polarity_test, polarity_prediction, average=None)))
     print("\nCONFUSION MATRIX: \n", confusion_matrix(polarity_test, polarity_prediction))
 
-num_data = 100000
-#  num_data = 10000
+#  num_data = 100000
+num_data = 10000
 pos = pd.read_csv('data/splitted/pos.csv').dropna()[:num_data]
 neg = pd.read_csv('data/splitted/neg.csv').dropna()[:num_data]
 #  neu = pd.read_csv('data/splitted/neu.csv').dropna()[:num_data]

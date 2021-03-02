@@ -27,14 +27,14 @@ def print_features_tfidfvectorizer(vc, X, top_n=15):
     top_n = feature_array[tfidf_sorting][:n]
     print(top_n)
 
-num_data = 100000
-#  num_data = 10000
-pos = pd.read_csv('data/splitted/pos.csv').dropna()[:num_data]
-neg = pd.read_csv('data/splitted/neg.csv').dropna()[:num_data]
-#  neu = pd.read_csv('data/splitted/neu.csv').dropna()[:num_data]
+num_rows = 100000
+#  num_rows = 10000
+pos = pd.read_csv('data/splitted/pos.csv').dropna()[:num_rows]
+neg = pd.read_csv('data/splitted/neg.csv').dropna()[:num_rows]
+neu = pd.read_csv('data/splitted/neu.csv').dropna()[:num_rows]
 
-#  df = pos.append(neg).append(neu)
-df = pos.append(neg)
+df = pos.append(neg).append(neu)
+#  df = pos.append(neg)
 df = df.sample(frac=1)
 
 df['clean_review'] = df['review_sent'].apply(clean_data.clean_text)
@@ -82,7 +82,36 @@ print('confusion matrix:\t' + "\n" + str(cmtx))
 #  print("Accuracy of Model with Cross Validation is:",accuracy.mean() * 100)
 
 new_data = ['the fingerprint is good', 'I like the phone', 'I like the fingerprint', 'Its such an awesome phone and camera', 'good camera', 'wow its one of the best phones', 'prolly worst than expected, fingerprint is not good']
-#  label = [1.0, 1.0, 1.0, 1.0, 1.0, -1.0]
+label = [1.0, 1.0, 1.0, 1.0, 1.0, -1.0]
 X_new = vc.transform(new_data)
 prediction = LinearSVC_classifier.predict(X_new)
 print(str(prediction))
+
+
+
+
+df = pd.read_csv("data/data_set3/labeled_data_mod.csv")
+df = df.sample(frac=1)
+X_test = vc.transform(list(df['review_sent']))
+y_test = list(df['sent_polarity'])
+prediction = LinearSVC_classifier.predict(X_test)
+#  print(len(df))
+#  print(len(prediction))
+
+accuracy = accuracy_score(prediction, y_test)
+f1= f1_score(y_test, prediction, average=None)
+#  precision_recall = precision_recall_fscore_support(y_test, predicted, average='macro')
+labels = [0.0, 1.0, -1.0]
+#  confusion_matrix = confusion_matrix(y_test, prediction, labels)
+#  cmtx = pd.DataFrame(confusion_matrix, index=['true:neu', 'true:pos', 'true:neg'],
+                    #  columns=['pred:neu', 'pred:pos', 'pred:neg'])
+
+#  print('accuracy:\t' + str(LinearSVC_classifier.score(X_test, y_test)))
+print('accuracy:\t' + str(accuracy))
+print('f1:\t' + str(f1))
+#  print('precision_recall:\t' + str(f1))
+#  print('confusion matrix:\t' + "\n" + str(cmtx))
+
+
+
+
