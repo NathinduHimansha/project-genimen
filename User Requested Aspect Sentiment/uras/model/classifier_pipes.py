@@ -35,6 +35,5 @@ sgdClassifier_pipe = make_pipeline(
 
 randomForestClassifier_pipe = make_pipeline(
     CountVectorizer(max_df=0.9, ngram_range=(1, 1), binary=True),
-    TfidfVectorizer(max_features=1000, min_df=0,
-                    max_df=0.5, ngram_range=(1, 1))
+    RandomForestClassifier()
 )
