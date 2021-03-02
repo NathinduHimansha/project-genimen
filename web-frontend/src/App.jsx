@@ -1,26 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import logo from './logo.svg';
 import './App.css';
+// import Nav from './component/Nav'
+// import Home from './page/Home'
+// import FeatureAnalyser from './page/FeautureAnalyser'
+// import ModelFeatureAnalyser from './page/ModelFeautureAnalyser'
+// import TopicExtractor from './page/TopicExtractor'
+// import ModelFeatureAnalyser from './page/Login'
+// import ModelFeatureAnalyser from './page/SignUp'
 
 function App() {
-	// Create the count state.
-	const [count, setCount] = useState(0);
-	// Update the count (+1 every second).
-	useEffect(() => {
-		const timer = setTimeout(() => setCount(count + 1), 1000);
-		return () => clearTimeout(timer);
-	}, [count, setCount]);
-	// Return the App component.
-	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Page has been open for <code>{count}</code> seconds.
-				</p>
-			</header>
-		</div>
-	);
+  return (
+    <Router>
+      <div className="App">
+        {/*<Nav/>*/}
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" exact component={Home} />
+          <Route path="/uras" exact component={Home} />
+          <Route path="/pssa" exact component={Home} />
+          <Route path="/fbfe" exact component={Home} />
+          <Route path="/login" exact component={Home} />
+          <Route path="/signup" exact component={Home} />
+        </Switch>
+      </div>
+    </Router>
+  );
 }
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Home</h1>
+    </div>
+  );
+};
 
 export default App;
