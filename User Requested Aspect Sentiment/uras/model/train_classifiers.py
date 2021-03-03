@@ -10,7 +10,7 @@ import pickle
 from pathlib import Path
 import time
 
-__pickle_path__ = "uras/model/trained_models"
+__pickle_path__ = "uras/model/_trained_models"
 
 
 def get_performance_report(performance_summary):
