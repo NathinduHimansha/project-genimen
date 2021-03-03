@@ -4,7 +4,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, precision_recall_fscore_support
 from sklearn.metrics import ConfusionMatrixDisplay
 from sklearn.metrics import plot_confusion_matrix
-from sklearn.pipeline import Pipeline
 import pandas as pd
 import pickle
 from pathlib import Path
