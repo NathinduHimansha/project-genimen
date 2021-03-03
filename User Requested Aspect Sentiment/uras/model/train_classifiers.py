@@ -10,7 +10,7 @@ from pathlib import Path
 import time
 
 
-def print_performance_summary(preformance_summary):
+def print_performance_summary(performance_summary):
     print('{0:20} {1}'.format("accuracy:", performance_summary['accuracy']))
     print('{0:20} {1}'.format("precision_recall:",
                               performance_summary['precision_recall']))
