@@ -45,8 +45,8 @@ def train(classifiers, reviews, labels, retrain_all=False, pikcle_path="uras/mod
         model_name = clf[0]
         model = clf[1]
 
-        print(f"training {clf_name}")
         print("")
+        print(f"training {clf_name}")
 
         model_path = Path(f"{pikcle_path}/{model_name}")
 
@@ -59,13 +59,13 @@ def train(classifiers, reviews, labels, retrain_all=False, pikcle_path="uras/mod
             training_time = round(time.time() - start_time, 2)
             print(f"training time: {training_time} seconds")
             print()
-            print("pickling model")
             pickle.dump(classifier, open(str(model_path)+".pickle", 'wb'))
+            print("model pickled successfully!")
 
         predicted = classifier.predict(review_test)
 
         confusion_matrix_score = confusion_matrix(
-            lbl_test, predicted, labels=classifier.classes_),
+            lbl_test, predicted, labels=classifier.classes_)
         performance_summary = dict(
             accuracy=accuracy_score(lbl_test, predicted),
             precision_recall=precision_recall_fscore_support(
