@@ -45,7 +45,7 @@ def train(classifiers, reviews, labels, retrain_all=False, pikcle_path="uras/mod
         model_name = clf[0]
         model = clf[1]
 
-        print(f"Training {clf_name}")
+        print(f"training {clf_name}")
         print("")
 
         model_path = Path(f"{pikcle_path}/{model_name}")
@@ -69,7 +69,7 @@ def train(classifiers, reviews, labels, retrain_all=False, pikcle_path="uras/mod
         performance_summary = dict(
             accuracy=accuracy_score(lbl_test, predicted),
             precision_recall=precision_recall_fscore_support(
-                lbl_test, predicted, average='binary'),
+                lbl_test, predicted, average=None),
             f1=f1_score(lbl_test, predicted, average=None),
             cmtx=pd.DataFrame(confusion_matrix_score, index=['true:neu', 'true:pos', 'true:neg'],
                               columns=['pred:neu', 'pred:pos', 'pred:neg']),
