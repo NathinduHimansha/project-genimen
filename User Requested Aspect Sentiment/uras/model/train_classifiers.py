@@ -10,32 +10,53 @@ import pickle
 from pathlib import Path
 import time
 
-
-def print_performance_summary(performance_summary):
-    print('{0:20} {1}'.format("accuracy:", performance_summary['accuracy']))
-    print('{0:20} {1}'.format("precision_recall:",
-                              performance_summary['precision_recall']))
-    print('{0:20} {1}'.format("f1:", performance_summary['f1']))
-    print("confusion_matrix:\n", performance_summary['cmtx'])
-    print()
-    print('{0:20} {1}'.format("training_time:",
-                              performance_summary['training_time'])+"s")
+__pickle_path__ = "uras/model/trained_models"
 
 
-def print_clf_summary(clf_summary):
+def get_performance_report(performance_summary):
+    accuracy = '{0:20} {1}'.format(
+        "accuracy:", performance_summary['accuracy'])
+    precision_recall = '{0:20} {1}'.format("precision_recall:",
+                                           performance_summary['precision_recall'])
+    f1_score = '{0:20} {1}'.format("f1:", performance_summary['f1'])
+    confusion_matrix = "confusion_matrix:\n" + str(performance_summary['cmtx'])
+    training_time = '{0:20} {1}'.format("training_time:",
+                                        performance_summary['training_time'])+"s"
+    summary = \
+        f"""
+{accuracy}
+{precision_recall}
+{f1_score}
+{confusion_matrix}
+
+{training_time}
+    """
+    return summary
+
+
+def print_clf_summary(clf_summary, file_path=__pickle_path__):
+    file_name = f'{__pickle_path__}/classifier_summary.txt'
+    final_output = ""
     for clf, summary in clf_summary.items():
-        print()
-        print("-----------------------------------------")
-        print(" " + clf)
-        print("-----------------------------------------")
-        print_performance_summary(summary)
+        #  print()
+        header = \
+            f"""
+-----------------------------------------
+ {clf}
+-----------------------------------------
+        """
+        report = get_performance_report(summary)
+        final_output += header + report
 
+    # save summary to txt file
+    with open(file_name, 'w') as f:
+        print(final_output, file_name, file=f)
 
-def save_clf_summary(clf_summary, file_name):
     pickle.dump(clf_summary, open(file_name, 'wb'))
+    print(final_output)
 
 
-def train(classifiers, reviews, labels, retrain_all=False, pickle_path="uras/model/trained_models"):
+def train(classifiers, reviews, labels, retrain_all=False, pickle_path=__pickle_path__):
     if(not Path(pickle_path).exists()):
         os.mkdir(pickle_path)
     review_train, review_test, lbl_train, lbl_test = train_test_split(
@@ -82,32 +103,3 @@ def train(classifiers, reviews, labels, retrain_all=False, pickle_path="uras/mod
         classifier_summary[clf_name] = (performance_summary)
 
     print_clf_summary(classifier_summary)
-    save_clf_summary(classifier_summary, classifier_summary_file_path)
-
-
-#  labeler = "textblob"
-labeler = "vader"
-data_path = f"data/splitted/{labeler}"
-num_rows = 40000
-
-
-pos = pd.read_csv(
-    f'{data_path}/pos.csv').dropna().drop_duplicates()[:num_rows]
-neg = pd.read_csv(
-    f'{data_path}/neg.csv').dropna().drop_duplicates()[:num_rows]
-neu = pd.read_csv(
-    f'{data_path}/neu.csv').dropna().drop_duplicates()[:num_rows]
-
-df = pos.append(neg).append(neu)
-#  df = pos.append(neg)
-df = df.sample(frac=1)
-df = df.drop_duplicates()
-
-df['clean_review'] = df['review_sent'].apply(clean_text)
-df['clean_review'] = df['clean_review'].apply(remove_stop_words)
-#  df['clean_review'] = df['clean_review'].apply(lambda x: clean_data.exclude_pos(x, ["PRP", "IN"]))
-#  df['clean_review'] = df['clean_review'].apply(clean_data.lemmatize)
-
-# train, test split
-reviews = df['clean_review'].values
-labels = df['sent_polarity'].values
