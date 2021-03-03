@@ -10,7 +10,7 @@ import pickle
 from pathlib import Path
 import time
 
-__pickle_path__ = "uras/model/trained_models"
+_pickle_path = "uras/model/trained_models"
 
 
 def get_performance_report(performance_summary):
@@ -34,8 +34,8 @@ def get_performance_report(performance_summary):
     return summary
 
 
-def print_clf_summary(clf_summary, file_path=__pickle_path__):
-    file_name = f'{__pickle_path__}/classifier_summary.txt'
+def print_clf_summary(clf_summary, file_path=_pickle_path):
+    file_name = f'{_pickle_path}/classifier_summary.txt'
     final_output = ""
     for clf, summary in clf_summary.items():
         #  print()
@@ -56,7 +56,7 @@ def print_clf_summary(clf_summary, file_path=__pickle_path__):
     print(final_output)
 
 
-def train(classifiers, reviews, labels, retrain_all=False, pickle_path=__pickle_path__):
+def train(classifiers, reviews, labels, retrain_all=False, pickle_path=_pickle_path):
     if(not Path(pickle_path).exists()):
         os.mkdir(pickle_path)
     review_train, review_test, lbl_train, lbl_test = train_test_split(
