@@ -1,4 +1,5 @@
 import numpy as np
+import os
 from uras.data_preprocessing.clean_data import clean_text, remove_stop_words, lemmatize, stem
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, precision_recall_fscore_support
@@ -34,11 +35,13 @@ def save_clf_summary(clf_summary, file_name):
     pickle.dump(clf_summary, open(file_name, 'wb'))
 
 
-def train(classifiers, reviews, labels, retrain_all=False, pikcle_path="uras/model/trained_models"):
+def train(classifiers, reviews, labels, retrain_all=False, pickle_path="uras/model/trained_models"):
+    if(not Path(pickle_path).exists()):
+        os.mkdir(pickle_path)
     review_train, review_test, lbl_train, lbl_test = train_test_split(
         reviews, labels, test_size=0.3, random_state=42)
 
-    classifier_summary_file_path = f"{pikcle_path}/classifier_summary.pickle"
+    classifier_summary_file_path = f"{pickle_path}/classifier_summary.pickle"
     classifier_summary = {}
 
     for clf_name, clf in classifiers.items():
@@ -48,7 +51,7 @@ def train(classifiers, reviews, labels, retrain_all=False, pikcle_path="uras/mod
         print("")
         print(f"training {clf_name}")
 
-        model_path = Path(f"{pikcle_path}/{model_name}")
+        model_path = Path(f"{pickle_path}/{model_name}")
 
         training_time = None
         if(model_path.is_file() and not retrain_all):
