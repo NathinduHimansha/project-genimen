@@ -72,7 +72,7 @@ def train(classifiers, reviews, labels, retrain_all=False, pickle_path=_pickle_p
         print("")
         print(f"training {clf_name}")
 
-        model_path = Path(f"{pickle_path}/{model_name}")
+        model_path = Path(f"{pickle_path}/{model_name}.pickle")
 
         training_time = None
         if(model_path.is_file() and not retrain_all):
