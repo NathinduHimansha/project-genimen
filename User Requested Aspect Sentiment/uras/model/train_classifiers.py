@@ -38,7 +38,7 @@ def get_performance_report(performance_summary):
 
 
 def print_clf_summary(clf_summary, file_path=_pickle_path, to_file=True):
-    file_name = f'{_pickle_path}/classifier_summary.txt'
+    file_name = f'{_pickle_path}/classifier_summary'
     final_output = ""
     for clf, summary in clf_summary.items():
         #  print()
@@ -53,10 +53,11 @@ def print_clf_summary(clf_summary, file_path=_pickle_path, to_file=True):
 
     # save summary to txt file
     if(to_file):
-        with open(file_name, 'w') as f:
-            print(final_output, file_name, file=f)
+        txt_file = f"{file_name}.txt"
+        with open(txt_file, 'w') as f:
+            print(final_output, txt_file, file=f)
 
-    pickle.dump(clf_summary, open(file_name, 'wb'))
+    pickle.dump(clf_summary, open(f"{file_name}.pickle", 'wb'))
     print(final_output)
 
 
