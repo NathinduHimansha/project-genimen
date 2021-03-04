@@ -2,7 +2,7 @@ import numpy as np
 import os
 from uras.data_preprocessing.clean_data import clean_text, remove_stop_words, lemmatize, stem
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, precision_recall_fscore_support
+from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, precision_score
 from sklearn.metrics import ConfusionMatrixDisplay
 from sklearn.metrics import plot_confusion_matrix
 import pandas as pd
@@ -16,8 +16,10 @@ _pickle_path = "uras/model/_trained_models"
 def get_performance_report(performance_summary):
     accuracy = '{0:20} {1}'.format(
         "accuracy:", performance_summary['accuracy'])
-    precision_recall = '{0:20} {1}'.format("precision_recall:",
-                                           performance_summary['precision_recall'])
+    precision_recall_macro = '{0:20} {1}'.format("precision_recall_macro:",
+                                                 performance_summary['precision_recall_macro'])
+    precision_recall_weighted = '{0:20} {1}'.format("precision_recall_weighted:",
+                                                    performance_summary['precision_recall_weighted'])
     f1_score = '{0:20} {1}'.format("f1:", performance_summary['f1'])
     confusion_matrix = "confusion_matrix:\n" + str(performance_summary['cmtx'])
     training_time = '{0:20} {1}'.format("training_time:",
@@ -25,7 +27,8 @@ def get_performance_report(performance_summary):
     summary = \
         f"""
 {accuracy}
-{precision_recall}
+{precision_recall_macro}
+{precision_recall_weighted}
 {f1_score}
 {confusion_matrix}
 
@@ -34,7 +37,7 @@ def get_performance_report(performance_summary):
     return summary
 
 
-def print_clf_summary(clf_summary, file_path=_pickle_path):
+def print_clf_summary(clf_summary, file_path=_pickle_path, to_file=True):
     file_name = f'{_pickle_path}/classifier_summary.txt'
     final_output = ""
     for clf, summary in clf_summary.items():
@@ -49,8 +52,9 @@ def print_clf_summary(clf_summary, file_path=_pickle_path):
         final_output += header + report
 
     # save summary to txt file
-    with open(file_name, 'w') as f:
-        print(final_output, file_name, file=f)
+    if(to_file):
+        with open(file_name, 'w') as f:
+            print(final_output, file_name, file=f)
 
     pickle.dump(clf_summary, open(file_name, 'wb'))
     print(final_output)
@@ -92,8 +96,10 @@ def train(classifiers, reviews, labels, retrain_all=False, pickle_path=_pickle_p
             lbl_test, predicted, labels=classifier.classes_)
         performance_summary = dict(
             accuracy=accuracy_score(lbl_test, predicted),
-            precision_recall=precision_recall_fscore_support(
-                lbl_test, predicted, average=None),
+            precision_recall_macro=precision_score(
+                lbl_test, predicted, average='macro'),
+            precision_recall_weighted=precision_score(
+                lbl_test, predicted, average='weighted'),
             f1=f1_score(lbl_test, predicted, average=None),
             cmtx=pd.DataFrame(confusion_matrix_score, index=['true:neu', 'true:pos', 'true:neg'],
                               columns=['pred:neu', 'pred:pos', 'pred:neg']),
