@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import re
-from data_preprocessing.clean_data import clean_text
+from sentiment_analysis.preprocessing.clean_data import clean_text
 from sklearn.naive_bayes import MultinomialNB, BernoulliNB
 from sklearn.linear_model import SGDClassifier, LogisticRegression
 from sklearn.ensemble import RandomForestClassifier, VotingClassifier
@@ -18,6 +18,31 @@ def pre_preprocess(text):
 
 stop_words = ['let', 'have', 'has', 'had', 'a', 'the', 'it', 'its', 'and', 'is',
               'be', 'she', 'i', 'he', 'him', 'his', 'my', 'mine']
+
+
+class LinearSVCModel:
+    def __init__(self):
+        self.vc = TfidfVectorizer(min_df=1, max_df=0.9, ngram_range=(
+            1, 1), stop_words=stop_words)
+        self.clf = LinearSVC()
+
+    def fit(self, reviews_train, labels_train):
+        X_train = self.vc.fit_transform(self.reviews_train)
+        self.model = self.clf.fit(X_train, labels_train)
+        return [self.model, self.vc]
+
+
+class SGDClassifierModel:
+    def __init__(self):
+        self.vc = CountVectorizer(max_df=0.9, ngram_range=(1, 2),
+                                  binary=True, stop_words=stop_words)
+        self.clf = SGDClassifier()
+
+    def fit(self, reviews_train, labels_train):
+        X_train = self.vc.fit_transform(reviews_train, labels_train)
+        self.model = self.clf.fit(X_train, labels_train)
+        return [self.model, self.vc]
+
 
 LinearSVC_pipe = make_pipeline(
     TfidfVectorizer(min_df=1, max_df=0.9, ngram_range=(
