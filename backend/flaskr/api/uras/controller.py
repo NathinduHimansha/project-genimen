@@ -1,11 +1,16 @@
 import pickle
+from analytics.test import hello
 
 
-def get_sentiment(sentence):
+def get_sentiment(sentence_list):
     model = pickle.load(
-        open("flaskr/data_analytics/sentiment_analysis/uras/model/_trained_models/sgd_model.pickle", 'rb'))
-    #  return pickle.predict(sentence)
-    return "h"
+        open("analytics/sentiment_analysis/uras/model/trained_model/sgd_model/sgd_model.pickle", 'rb'))
+    vc = pickle.load(
+        open("analytics/sentiment_analysis/uras/model/trained_model/sgd_model/vectorizer.pickle", 'rb'))
+    bow = vc.transform(sentence_list)
+    return model.predict(bow)
+    #  return "h"
 
 
-get_sentiment("gtdghghghgdhgd")
+print(get_sentiment(["such a good phone"]))
+print(hello())
