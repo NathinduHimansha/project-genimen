@@ -4,9 +4,6 @@ from itertools import chain
 import nltk
 from nltk import word_tokenize
 
-df = pd.read_json("amazon_mobile_user_reviews.jl", lines=True) # Main dataset
-file_path = "model-reviews/" # initial file path for saving csv files
-
 def pad_list(pad, arr, char=None):
     return (arr + [char] * pad)[:pad]
 
@@ -65,23 +62,14 @@ def remove_stopwords(text):
                          'themselves', 'what', 'which', 'who', 'whom', 'this', 'that',
                          "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were',
                          'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do',
-                         'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if',
-                         'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by',
-                         'for', 'with', 'about', 'against', 'between', 'into', 'through',
-                         'during', 'before', 'after', 'above', 'below', 'to', 'from',
-                         'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under',
+                         'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'if',
+                         'or', 'as', 'until', 'while', 'of', 'at', 'by', 'over', 'under',
                          'again', 'further', 'then', 'once', 'here', 'there', 'when',
                          'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few',
                          'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not',
-                         'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't',
-                         'can', 'will', 'just', 'don', "don't", 'should', "should've",
-                         'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren',
-                         "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn',
-                         "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven',
-                         "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't",
-                         'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't",
-                         'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't",
-                         'won', "won't", "div", 'wouldn', "T", "wouldn't", "%", "S", "span",
+                         'only', 'own', 'same', 'so', 'than', 's', 't',
+                         'can', 'will', 'just', 'should', "should've",
+                         'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "%", "S", "span",
                          "br", "class=cr", "en", "al", "un", "el", "usar", "malo", "lo"]
 
     stop_words = stopwordsVariable
@@ -98,7 +86,7 @@ def clean_text(review_array):
         review_array[review] = re.compile('<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});').sub(' ', str(review_array[review])) # removing the html tags
         #add further clean process here
         #remove punc
-        review_array[review]= re.sub(r"[=<>()''/,+.;@#?!&$:*_-]", " ", str(review_array[review]))  # remove the punctuation
+        review_array[review]= re.sub(r"[=<>()''/,+;@#?!&$:*_-]", " ", str(review_array[review]))  # remove the punctuation
         #remove non english words
         review_array[review] = " ".join(w for w in nltk.wordpunct_tokenize(review_array[review]) if w.lower() in words or not w.isalpha())
         #remove stop words
@@ -109,7 +97,7 @@ def clean_text(review_array):
 
 # initial smartphone model list
 def get_models_from_regex():
-    model_patterns = ['Samsung Galaxy S7']
+    model_patterns = ['Apple iPhone 7,? [^Plus]+']
 
     model_review = {} # dictionary to store the model
     for i in range(len(model_patterns)): # iterate through the model_patterns (Given model list)
@@ -117,30 +105,20 @@ def get_models_from_regex():
         model = model_patterns[i] # assigning model name to a string variable
         df[model] = df['product_name'].apply(lambda x: model_filter_regex(model, x)) # Finding matching model name from the product_name list in the jl data set
         review = list(chain.from_iterable(df[df[model]]['customer_review'])) # this will get the reviews from the dataset by the matching model name and add it to the review list
-        review_title = list(chain.from_iterable(df[df[model]]['customer_review_title'])) # this will get the review title from the dataset by the matching model name and add it to the review title list
-        review_star = list(chain.from_iterable(df[df[model]]['customer_review_star'])) # this will get the ratings from the dataset by the matching model name and add it to the rating list
         # Cleaning process
-        review_title = clean_text(review_title) # Cleaning review titles
         review = clean_text(review) # cleaning reviews
-        model_review[model_name] = [review, review_title, review_star] # format follows
-        # model_review = {"iphone7": [review,review_title,review_star]}
+        model_review[model_name] = [review] # format follows
 
     for key, value in model_review.items(): # iterate through the model_review dictionary to write to a csv file
         # Add text Cleaning here
         mrf = pd.DataFrame() # creating a new data frame
         mrf['review'] = value[0] # adding the review to a column
-        mrf['review_title'] = value[1] # adding the review title to a column
-        mrf['review_star'] = value[2] # adding the review star rating to a column
         file_name = re.sub(" ", "-", key) + ".csv" # creating a file name with replacing the spaces with '-'
         file_name = file_name.lower() # setting name to lower case
         mrf.to_csv(file_path+file_name, sep=",", index=False) # writing to the new model based csv file
-    # print("Total retrieved: ", len(model_review))
-    # print("Total Num Of Phones: ", len(model_patterns))
-
-df['customer_review_star'] = df.apply(lambda x: pad_remove_no_review_star(x['customer_review_star'], x['customer_review']), axis=1) # replacing empty star ratings in the dataset
-df['customer_review_star'] = df['customer_review_star'].apply(lambda x: get_star_rating(x)) # setting the star rating as a number to the dataset
-df['customer_review_title'] = df.apply(lambda x: pad_no_review_title(x['customer_review_title'], x['customer_review']), axis=1) # replacing empty customer review titles in the dataset
-df['product_name'] = df['product_name'].apply(lambda x: x[0]) # setting the product name by only model name (excluding specs)
 
 # Extract by models
+df = pd.read_json("../main-dataset/amazon_mobile_user_reviews.jl", lines=True) # Main dataset
+file_path = "../model-reviews/"  # initial file path for saving csv files
+df['product_name'] = df['product_name'].apply(lambda x: x[0])  # setting the product name by only model name (excluding specs)
 get_models_from_regex()
