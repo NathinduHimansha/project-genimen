@@ -1,5 +1,5 @@
 import os
-from api.uras.routes import uras
+from api.routes import initialize_routes
 from flask import Flask
 
 
@@ -23,7 +23,8 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-    app.register_blueprint(uras)
+
+    initialize_routes(app)
     # a simple page that says hello
 
     @app.route('/hello')

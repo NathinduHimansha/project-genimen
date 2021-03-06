@@ -10,3 +10,5 @@ def get_sentiment(sentence_list):
     cleaned_sentences = list(map(clean_text, sentence_list))
     bow = vc.transform(cleaned_sentences)
     return model.predict(bow).tolist()
+
+#  print(get_sentiment('int '))
