@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 def get_data_by_phone(phone_model):
-    #  return pd.read_csv(f'analytics/data/phone_model_reviews/model_reviews/{phone_model}.csv', error_bad_lines=False, nrows=1000)
+    #  return pd.read_csv(f'analytics/data/phone_model_reviews/model_reviews/{phone_model}.csv', error_bad_lines=False, nrows=10)
     return pd.read_csv(f'analytics/data/phone_model_reviews/model_reviews/{phone_model}.csv', error_bad_lines=False)
 
 
@@ -44,8 +44,8 @@ def df_remove_short_reviews(review_df, min_words=2, review_col="review"):
 
 
 def get_reviews_sentiment_summary(feature_type_dic):
-    feature_sentiment_polarity = {}
-    phone_feature_polarity = {}
+    feature_sentiment_polarity = []
+    phone_feature_polarity = []
     for feature, feature_type in feature_type_dic.items():
         feature, feature_type = feature.lower(), feature_type.lower()
         phone_list = phones[feature_type]
@@ -78,12 +78,9 @@ def get_reviews_sentiment_summary(feature_type_dic):
             phone_feature_sentiments['neg'] = neg
             phone_feature_sentiments['polarity'] = polarity
             phone_feature_sentiments['feature-type'] = feature_type
-            if (phone in phone_feature_polarity):
-                phone_feature_polarity[phone][feature] = phone_feature_sentiments
-            else:
-                phone_feature_polarity[phone] = {
-                    feature: phone_feature_sentiments
-                }
+            phone_feature_sentiments['feature'] = feature
+            phone_feature_sentiments['phone'] = phone
+            phone_feature_polarity.append(phone_feature_sentiments)
         total_pos_perc = None
         total_neg_perc = None
         total_polarity_perc = None
@@ -95,9 +92,10 @@ def get_reviews_sentiment_summary(feature_type_dic):
             'pos': total_pos_perc,
             'neg': total_neg_perc,
             'polarity': total_polarity_perc,
-            'type': feature_type
+            'feature-type': feature_type,
+            'feature': feature
         }
-        feature_sentiment_polarity[feature] = feature_type_summary
+        feature_sentiment_polarity.append(feature_type_summary)
     return {
         'feature-sentiment-polarity': feature_sentiment_polarity,
         'phone-feature-polarity': phone_feature_polarity,
