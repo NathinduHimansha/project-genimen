@@ -1,5 +1,35 @@
-from analytics.sentiment_analysis.model.review_analysis import get_sentiment
+from flask import Flask, Blueprint, request
+from flask.json import jsonify
+from api.common.utils import createSuccessResponse, createErrResponse
+from analytics.aspect_analysis.aspect_lexicons import FEATURE_TYPES
+#  from .service import get_reviews_sentiment_summary, mock
+from .service import get_reviews_sentiment_summary
+
+uras = Blueprint('uras', __name__, url_prefix="/api/uras")
 
 
-def predict_sentiment_score(sentence_list):
-    return get_sentiment(sentence_list)
+def is_features_valid(feature_type_dic):
+    feedback = {}
+    for feature, feature_type in feature_type_dic.items():
+        if not isinstance(feature_type, str) or not isinstance(feature, str):
+            return False
+        f = feature.lower()
+        if f not in FEATURE_TYPES:
+            return False
+        if feature_type not in FEATURE_TYPES[f]:
+            return False
+
+    return True
+
+
+@uras.route('/', methods=['GET'])
+def get_features_types():
+    return createSuccessResponse(FEATURE_TYPES)
+
+
+@uras.route('/', methods=['POST'])
+def get_feature_sentiment_analysis():
+    if (not is_features_valid(request.json)):
+        return createErrResponse("req contains invalid features")
+
+    return createSuccessResponse(get_reviews_sentiment_summary(request.json))
