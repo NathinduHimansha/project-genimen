@@ -8,6 +8,20 @@ from .service import get_reviews_sentiment_summary
 uras = Blueprint('uras', __name__, url_prefix="/api/uras")
 
 
+def is_features_valid(feature_type_dic):
+    feedback = {}
+    for feature, feature_type in feature_type_dic.items():
+        if not isinstance(feature_type, str) or not isinstance(feature, str):
+            return False
+        f = feature.lower()
+        if f not in FEATURE_TYPES:
+            return False
+        if feature_type not in FEATURE_TYPES[f]:
+            return False
+
+    return True
+
+
 @uras.route('/', methods=['GET'])
 def get_features_types():
     return createSuccessResponse(FEATURE_TYPES)
@@ -15,4 +29,7 @@ def get_features_types():
 
 @uras.route('/', methods=['POST'])
 def get_feature_sentiment_analysis():
-    return get_reviews_sentiment_summary(request.json)
+    if (not is_features_valid(request.json)):
+        return createErrResponse("req contains invalid features")
+
+    return createSuccessResponse(get_reviews_sentiment_summary(request.json))
