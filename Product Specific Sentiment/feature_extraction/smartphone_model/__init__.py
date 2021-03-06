@@ -1,0 +1,1 @@
+from .smartphone import Model
