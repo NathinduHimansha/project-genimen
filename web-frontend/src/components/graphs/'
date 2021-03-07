@@ -1,0 +1,26 @@
+import React from 'react';
+import {NavLink} from 'react-router-dom';
+import './graphs.css';
+
+const Pool = () => {
+	// const offset = circumference - (percent / 100) * circumference;
+	const offset = 89;
+	const circumference = 48 * 2 * Math.PI;
+	return (
+		<svg className="progress-ring" height="120" width="120">
+			<circle
+				className="progress-ring__circle"
+				stroke-width="6"
+				strokeDashoffset={circcircumference}
+				stroke-dashoffset={circumference}
+				stroke="grey"
+				fill="transparent"
+				r="48"
+				cx="60"
+				cy="60"
+			/>
+		</svg>
+	);
+};
+
+export default Pool;
