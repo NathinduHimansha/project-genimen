@@ -9,6 +9,7 @@ import './App.css';
 // import TopicExtractor from './page/TopicExtractor'
 // import ModelFeatureAnalyser from './page/Login'
 // import ModelFeatureAnalyser from './page/SignUp'
+import URAS from './pages/uras/URAS';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       <div className="App">
         {/*<Nav/>*/}
         <Switch>
-          <Route path="/" exact component={Home} />
+          {/*<Route path="/" exact component={Home} />*/}
+          <Route path="/" exact component={URAS} />
           <Route path="/about" exact component={Home} />
           <Route path="/uras" exact component={Home} />
           <Route path="/pssa" exact component={Home} />
