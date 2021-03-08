@@ -15,9 +15,9 @@ const CircularProgress = (props) => {
   return (
     <svg height={radius * 2} width={radius * 2}>
       <circle
-        className="progress_background"
-        stroke="#bababa"
-        fill="#eee"
+        className="progress-background"
+        stroke="var(--primary-border-grey)"
+        fill="var(--light-white)"
         strokeWidth={backgroundStroke}
         style={{ backgroundStrokeDashoffset }}
         r={backgroundRadius}
