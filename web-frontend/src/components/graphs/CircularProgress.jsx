@@ -44,12 +44,11 @@ const CircularProgress = (props) => {
         to={strokeDashoffset}
         // begin="click"
         fill="freeze"
-        dur="0.4s"
-        // keySplines="0.1 0.8 0.2 1;0.1 0.8 0.2 1"
-        // keyTimes="0;0.5;1"
-        // calcMode="spline"
-        // values="0;2.2;3.3;5.5;6.6;8.8;10"
-        // repeatCount="1"
+        dur="0.2s"
+        calcMode="spline"
+        keySplines=".42 0 1 1;.42 0 1 1;"
+        // keyTimes="0;1"
+        // values={'0; ' + strokeDashoffset}
       />
       <text
         x="50%"

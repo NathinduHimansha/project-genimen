@@ -15,13 +15,13 @@ const URAS = () => {
       <CircularProgress
         radius={100}
         stroke={14}
-        progress={40}
-        color="var(--pos-green)"
+        progress={39}
+        color="var(--neg-red)"
       ></CircularProgress>
 
       <ProgressBar
         stroke={14}
-        progress={-40}
+        progress={-39}
         colors={{ minus: 'var(--neg-red)', plus: 'var(--pos-green)' }}
       ></ProgressBar>
     </div>

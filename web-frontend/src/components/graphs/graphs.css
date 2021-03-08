@@ -49,6 +49,7 @@
   right: 0;
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
+  animation: load 0.5s ease;
 }
 .bar {
   position: relative;
@@ -68,4 +69,12 @@
   left: calc(50% - 0.5px);
   top: -10px;
   z-index: 1;
+}
+@keyframes load {
+  from {
+    width: 0;
+  }
+  to {
+    width: 1;
+  }
 }
