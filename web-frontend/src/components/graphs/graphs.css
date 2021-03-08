@@ -1,10 +1,22 @@
-.progress-ring__circle {
+.progress {
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
   transition: 0.35s stroke-dashoffset;
+  /* animation: dash 3s ease; */
+  /* animation-iteration-count: initial; */
+  /* animation-fill-mode: forwards; */
 }
-.progress-ring__circle_background {
+.progress_background {
   transform: rotate(102deg);
   transform-origin: 50% 50%;
   transition: 0.35s stroke-dashoffset;
+}
+.progress_perc {
+  font-size: 14px;
+  fill: red;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
