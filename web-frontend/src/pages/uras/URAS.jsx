@@ -11,7 +11,12 @@ const URAS = () => {
 
   return (
     <div>
-      <CircularProgress radius={142} stroke={8} progress={40} color="red"></CircularProgress>
+      <CircularProgress
+        radius={100}
+        stroke={9}
+        progress={40}
+        color="var(--primary-orange)"
+      ></CircularProgress>
     </div>
   );
 };
