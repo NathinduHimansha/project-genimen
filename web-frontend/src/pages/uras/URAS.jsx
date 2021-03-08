@@ -15,7 +15,7 @@ const URAS = () => {
         radius={100}
         stroke={9}
         progress={40}
-        color="var(--primary-orange)"
+        color="var(--pos-green)"
       ></CircularProgress>
     </div>
   );
