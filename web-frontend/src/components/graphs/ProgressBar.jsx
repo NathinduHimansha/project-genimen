@@ -8,36 +8,29 @@ const ProgressBar = (props) => {
   const dividerTop = -1 * stroke * 0.6;
   const dividerHeight = 2.25 * stroke;
   const borderRadius = 0.315 * stroke;
-  console.log(borderRadius);
+
+  const rightActiveClassNames = progress > 0 ? 'active right-active' : '-display-none';
+  const leftActiveClassNames = progress < 0 ? 'active left-active' : '-display-none';
 
   let bar;
-  if (progress < 0) {
-    bar = (
-      <div className="bar" style={{ height: stroke }}>
-        <div className="bar-divider" style={{ top: dividerTop, height: dividerHeight }}></div>
-        <div className="left">
-          <div
-            className="active left-active"
-            style={{ width: progressPerc, background: minus, borderRadius: borderRadius }}
-          ></div>
-        </div>
-        <div className="right"></div>
+
+  bar = (
+    <div className="bar" style={{ height: stroke }}>
+      <div className="bar-divider" style={{ top: dividerTop, height: dividerHeight }}></div>
+      <div className="left">
+        <div
+          className={leftActiveClassNames}
+          style={{ width: progressPerc, background: minus, borderRadius: borderRadius }}
+        ></div>
       </div>
-    );
-  } else {
-    bar = (
-      <div className="bar" style={{ height: stroke }}>
-        <div className="bar-divider" style={{ top: dividerTop, height: dividerHeight }}></div>
-        <div className="left"></div>
-        <div className="right">
-          <div
-            className="active right-active"
-            style={{ width: progressPerc, background: plus, borderRadius: borderRadius }}
-          ></div>
-        </div>
+      <div className="right">
+        <div
+          className={rightActiveClassNames}
+          style={{ width: progressPerc, background: plus, borderRadius: borderRadius }}
+        ></div>
       </div>
-    );
-  }
+    </div>
+  );
 
   return <div className="progress-bar-container">{bar}</div>;
 };

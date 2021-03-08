@@ -21,7 +21,7 @@ const URAS = () => {
 
       <ProgressBar
         stroke={14}
-        progress={40}
+        progress={-40}
         colors={{ minus: 'var(--neg-red)', plus: 'var(--pos-green)' }}
       ></ProgressBar>
     </div>
