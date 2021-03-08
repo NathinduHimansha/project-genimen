@@ -1,5 +1,6 @@
 import React from 'react';
 import CircularProgress from '../../components/graphs/CircularProgress';
+import ProgressBar from '../../components/graphs/ProgressBar';
 
 const URAS = () => {
   var radius = 48;
@@ -13,10 +14,16 @@ const URAS = () => {
     <div>
       <CircularProgress
         radius={100}
-        stroke={9}
+        stroke={14}
         progress={40}
-        color="var(--primary-orange)"
+        color="var(--pos-green)"
       ></CircularProgress>
+
+      <ProgressBar
+        stroke={14}
+        progress={-40}
+        colors={{ minus: 'var(--neg-red)', plus: 'var(--pos-green)' }}
+      ></ProgressBar>
     </div>
   );
 };
