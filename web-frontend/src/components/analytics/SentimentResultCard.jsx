@@ -2,6 +2,7 @@ import React from 'react';
 import NetPolarity from './NetPolarity';
 import CircularProgress from '../../components/graphs/CircularProgress';
 import ProgressBar from '../../components/graphs/ProgressBar';
+import './analytics.css';
 
 const SentimentResultCard = (props) => {
   let {
