@@ -10,7 +10,7 @@ import './App.css';
 // import ModelFeatureAnalyser from './page/Login'
 // import ModelFeatureAnalyser from './page/SignUp'
 import URAS from './pages/uras/URAS';
-import Card from './pages/testing/Card';
+import Card from './pages/experiment/Card';
 
 function App() {
   return (
