@@ -1,5 +1,7 @@
 .testing {
   width: 300px;
+  margin: auto;
+  margin-top: 10%;
 }
 .testing2 svg {
   width: 100%;

@@ -2,9 +2,8 @@ import React from 'react';
 import './graphs.css';
 
 const CircularProgress = (props) => {
-  const { id, progress, color } = props;
+  const { id, progress, color, stroke } = props;
   const radius = 100;
-  const stroke = 13;
 
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;

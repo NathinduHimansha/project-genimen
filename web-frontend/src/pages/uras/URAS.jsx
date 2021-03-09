@@ -13,16 +13,25 @@ const URAS = () => {
 
   return (
     <div class="testing">
-      <div class="testing2">
-        <CircularProgress id="progress1" progress={39} color="var(--neg-red)"></CircularProgress>
-        <CircularProgress id="progress2" progress={70} color="var(--pos-green)"></CircularProgress>
-      </div>
-
       <ProgressBar
         stroke={9}
         progress={31}
         colors={{ minus: 'var(--neg-red)', plus: 'var(--pos-green)' }}
       ></ProgressBar>
+      <div class="testing2">
+        <CircularProgress
+          id="progress1"
+          stroke={14}
+          progress={39}
+          color="var(--neg-red)"
+        ></CircularProgress>
+        <CircularProgress
+          id="progress2"
+          stroke={14}
+          progress={70}
+          color="var(--pos-green)"
+        ></CircularProgress>
+      </div>
     </div>
   );
 };
