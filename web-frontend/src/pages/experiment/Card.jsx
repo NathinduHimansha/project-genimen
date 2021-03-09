@@ -2,6 +2,7 @@ import React from 'react';
 import CircularProgress from '../../components/graphs/CircularProgress';
 import ProgressBar from '../../components/graphs/ProgressBar';
 import FancyHeading from '../../components/text/FancyHeading';
+import NetPolarity from '../../components/analytics/NetPolarity';
 import './card.css';
 import phoneIcon from '../../assests/PhoneIcon.png';
 
@@ -21,7 +22,7 @@ const Card = () => {
             <div className="analytics-wrapper">
               <div className="net-polarity">
                 <h5 className="heading5 -no-margin -medium">Net Polarity: </h5>
-                <h2 className="heading2  polarity-score -no-margin -bold">+54</h2>
+                <NetPolarity polarity={-54}></NetPolarity>
                 <ProgressBar
                   stroke={10}
                   progress={54}
