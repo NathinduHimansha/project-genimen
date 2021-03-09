@@ -1,6 +1,7 @@
 import React from 'react';
 import CircularProgress from '../../components/graphs/CircularProgress';
 import ProgressBar from '../../components/graphs/ProgressBar';
+import './uras.css';
 
 const URAS = () => {
   var radius = 48;
@@ -11,17 +12,15 @@ const URAS = () => {
   let strokeDasharray = `${offset}`;
 
   return (
-    <div>
-      <CircularProgress
-        radius={100}
-        stroke={14}
-        progress={39}
-        color="var(--neg-red)"
-      ></CircularProgress>
+    <div class="testing">
+      <div class="testing2">
+        <CircularProgress id="progress1" progress={39} color="var(--neg-red)"></CircularProgress>
+        <CircularProgress id="progress2" progress={70} color="var(--pos-green)"></CircularProgress>
+      </div>
 
       <ProgressBar
-        stroke={14}
-        progress={-39}
+        stroke={9}
+        progress={31}
         colors={{ minus: 'var(--neg-red)', plus: 'var(--pos-green)' }}
       ></ProgressBar>
     </div>

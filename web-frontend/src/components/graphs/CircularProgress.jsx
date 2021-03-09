@@ -2,7 +2,9 @@ import React from 'react';
 import './graphs.css';
 
 const CircularProgress = (props) => {
-  const { radius, stroke, progress, color } = props;
+  const { id, progress, color } = props;
+  const radius = 100;
+  const stroke = 13;
 
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
@@ -13,56 +15,74 @@ const CircularProgress = (props) => {
   const backgroundStrokeDashoffset = circumference - ((100 - progress) / 100) * circumference;
 
   return (
-    <svg height={radius * 2} width={radius * 2}>
-      <circle
-        className="progress-background"
-        stroke="var(--primary-border-grey)"
-        fill="var(--light-white)"
-        strokeWidth={backgroundStroke}
-        style={{ backgroundStrokeDashoffset }}
-        r={backgroundRadius}
-        cx={radius}
-        cy={radius}
-      />
-      <circle
-        className="progress"
-        id="progress"
-        stroke={color}
-        fill="transparent"
-        strokeWidth={stroke}
-        strokeLinecap="round"
-        strokeDasharray={circumference + ' ' + circumference}
-        strokeDashoffset={startingProgress}
-        r={normalizedRadius}
-        cx={radius}
-        cy={radius}
-      />
-
-      <animate
-        xlinkHref="#progress"
-        attributeName="stroke-dashoffset"
-        to={strokeDashoffset}
-        // begin="click"
-        fill="freeze"
-        dur="0.2s"
-        calcMode="spline"
-        keySplines=".42 0 1 1;.42 0 1 1;"
-        // keyTimes="0;1"
-        // values={'0; ' + strokeDashoffset}
-      />
-      <text
-        x="50%"
-        y="50%"
-        dominantBaseline="middle"
-        textAnchor="middle"
-        fontFamily="Rubik"
-        fontSize="34"
-        fill="#444"
+    <div>
+      {/* <svg height={radius * 2} width={radius * 2}> */}
+      <svg
+        // viewBox={'0 0 ' + radius * 2 + '' + radius * 2}
+        viewBox="0 0 200 200"
+        preserveAspectRatio="xMinYMin meet"
+        // height={radius * 2}
+        // width={radius * 2}
       >
-        {progress}
-        <tspan fontSize="18"> %</tspan>
-      </text>
-    </svg>
+        {/* <symbol id="circular-progress-bar"> */}
+        <g>
+          <circle
+            vectorEffect="non-scaling-stroke"
+            className="progress-background"
+            stroke="var(--primary-border-grey)"
+            fill="var(--light-white)"
+            strokeWidth={backgroundStroke}
+            style={{ backgroundStrokeDashoffset }}
+            r={backgroundRadius}
+            cx="50%"
+            cy="50%"
+          />
+          <circle
+            className="progress"
+            id={id}
+            stroke={color}
+            fill="transparent"
+            strokeWidth={stroke}
+            strokeLinecap="round"
+            strokeDasharray={circumference + ' ' + circumference}
+            strokeDashoffset={startingProgress}
+            r={normalizedRadius}
+            cx="50%"
+            cy="50%"
+          />
+
+          <animate
+            xlinkHref={'#' + id}
+            attributeName="stroke-dashoffset"
+            to={strokeDashoffset}
+            // begin="click"
+            fill="freeze"
+            dur="0.2s"
+            calcMode="spline"
+            keySplines=".42 0 1 1;.42 0 1 1;"
+            // keyTimes="0;1"
+            // values={'0; ' + strokeDashoffset}
+          />
+          <text
+            x="50%"
+            y="50%"
+            dominantBaseline="middle"
+            textAnchor="middle"
+            fontFamily="Rubik"
+            fontSize="34"
+            fill="#444"
+          >
+            {progress}
+            <tspan fontSize="18"> %</tspan>
+          </text>
+        </g>
+        {/* </symbol> */}
+      </svg>
+      {/* <svg width="50" height="50"> */}
+      {/* <use xlinkHref="#circular-progress-bar" /> */}
+      {/* <use xlink:href="#circular-progress-bar" /> */}
+      {/* </svg> */}
+    </div>
   );
 };
 
