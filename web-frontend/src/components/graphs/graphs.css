@@ -26,7 +26,7 @@
   position: relative;
   display: flex;
   width: calc(100% - 60px);
-  left: 25px;
+  /* left: 25px; */
   /* left: 30px; */
   /* height: 16px; */
   background: var(--light-white);
@@ -73,17 +73,16 @@
   z-index: 1;
 }
 .label {
+  position: relative;
   font-size: 1.6rem;
   font-weight: 900;
   top: -28px;
 }
 .minus-label {
-  position: absolute;
-  left: -30px;
+  /* left: -30px; */
 }
 .plus-label {
-  position: absolute;
-  right: -30px;
+  /* right: -30px; */
 }
 @keyframes load {
   from {

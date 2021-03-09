@@ -21,18 +21,12 @@ const ProgressBar = (props) => {
     <div className="bar" style={{ height: stroke / 10 + 'rem', borderRadius: borderRadius }}>
       <div className="bar-divider" style={{ top: dividerTop, height: dividerHeight }}></div>
       <div className="left">
-        <div className="label minus-label" style={{ color: 'var(--neg-red)' }}>
-          {minusLabel}
-        </div>
         <div
           className={leftActiveClassNames}
           style={{ width: progressPerc, background: minus, borderRadius: borderRadius }}
         ></div>
       </div>
       <div className="right">
-        <div className="label plus-label" style={{ color: 'var(--pos-green)' }}>
-          {plusLabel}
-        </div>
         <div
           className={rightActiveClassNames}
           style={{ width: progressPerc, background: plus, borderRadius: borderRadius }}
@@ -41,7 +35,17 @@ const ProgressBar = (props) => {
     </div>
   );
 
-  return <div className="progress-bar-container">{bar}</div>;
+  return (
+    <div className="progress-bar-container">
+      <div className="label minus-label" style={{ color: 'var(--neg-red)' }}>
+        {minusLabel}
+      </div>
+      {bar}
+      <div className="label plus-label" style={{ color: 'var(--pos-green)' }}>
+        {plusLabel}
+      </div>
+    </div>
+  );
 };
 
 export default ProgressBar;
