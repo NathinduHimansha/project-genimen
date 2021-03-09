@@ -132,4 +132,4 @@ classifiers = {
     "VotingClassifier": ('voting_model', VotingClassifierModel)
 }
 
-#  train(classifiers, reviews, labels)
+train(classifiers, reviews, labels)
