@@ -18,7 +18,7 @@ const CircularProgress = (props) => {
       {/* <svg height={radius * 2} width={radius * 2}> */}
       <svg
         // viewBox={'0 0 ' + radius * 2 + '' + radius * 2}
-        viewBox="0 0 200 200"
+        viewBox="0 0 178 178"
         preserveAspectRatio="xMinYMin meet"
         // height={radius * 2}
         // width={radius * 2}

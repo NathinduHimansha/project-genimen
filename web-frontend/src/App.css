@@ -1,12 +1,15 @@
+/* util classes */
 .-display-none {
   display: none;
 }
+/* styles */
+
+/* Defaults */
 .App {
-  text-align: center;
 }
 
 .App p {
-  margin: 0.4rem;
+  /* margin: 0.4rem; */
 }
 
 .App-logo {

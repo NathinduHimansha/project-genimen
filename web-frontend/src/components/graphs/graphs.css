@@ -20,7 +20,19 @@
 .progress-bar-container {
   width: 100%;
   display: flex;
-  justify-content: center;
+  height: calc(100% + 25px);
+}
+.bar {
+  position: relative;
+  display: flex;
+  width: calc(100% - 25px);
+  left: 25px;
+  /* left: 30px; */
+  /* height: 16px; */
+  background: var(--light-white);
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: var(--primary-border-grey);
 }
 .right {
   position: relative;
@@ -51,16 +63,6 @@
   border-bottom-right-radius: 0px !important;
   animation: load 0.5s ease;
 }
-.bar {
-  position: relative;
-  display: flex;
-  width: 95%;
-  /* height: 16px; */
-  background: var(--light-white);
-  border-width: 0.5px;
-  border-style: solid;
-  border-color: var(--primary-border-grey);
-}
 .bar-divider {
   position: absolute;
   /* height: 36px; */
@@ -77,11 +79,11 @@
 }
 .minus-label {
   position: absolute;
-  left: -35px;
+  left: -30px;
 }
 .plus-label {
   position: absolute;
-  right: -35px;
+  right: -30px;
 }
 @keyframes load {
   from {
