@@ -11,6 +11,7 @@ import './App.css';
 // import ModelFeatureAnalyser from './page/SignUp'
 import URAS from './pages/uras/URAS';
 import Card from './pages/experiment/Card';
+import Button from './pages/experiment/Button';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           {/*<Route path="/" exact component={Home} />*/}
           <Route exact path="/" component={Card} />
           <Route path="/card" component={Card} />
+          <Route path="/button" component={Button} />
           <Route path="/about" component={Home} />
           <Route path="/uras" component={Home} />
           <Route path="/pssa" component={Home} />
