@@ -25,4 +25,8 @@ body {
 
   /* Effect styles */
   --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12);
+  --primary-border: 1px solid var(--primary-border-grey);
+
+  /* gaps */
+  --gap-medium: 25px;
 }

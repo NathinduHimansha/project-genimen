@@ -1,0 +1,17 @@
+h1.fancy-heading {
+  font-size: 34px;
+  font-weight: 500;
+  color: var(--primary-black);
+}
+.fancy-heading-decorator {
+  position: relative;
+  margin-top: 8px;
+}
+.fancy-heading-decorator::before {
+  content: '';
+  left: 2px;
+  top: -20px;
+  position: absolute;
+  width: 70px;
+  border-top: 5px solid var(--primary-accent);
+}

@@ -2,9 +2,8 @@ import React from 'react';
 import './graphs.css';
 
 const CircularProgress = (props) => {
-  const { id, progress, color } = props;
-  const radius = 100;
-  const stroke = 13;
+  const { id, progress, color, stroke } = props;
+  const radius = 110;
 
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
@@ -19,10 +18,10 @@ const CircularProgress = (props) => {
       {/* <svg height={radius * 2} width={radius * 2}> */}
       <svg
         // viewBox={'0 0 ' + radius * 2 + '' + radius * 2}
-        viewBox="0 0 200 200"
+        viewBox="0 0 178 178"
         preserveAspectRatio="xMinYMin meet"
         // height={radius * 2}
-        // width={radius * 2}
+        width="100%"
       >
         {/* <symbol id="circular-progress-bar"> */}
         <g>
