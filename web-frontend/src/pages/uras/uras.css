@@ -1,0 +1,10 @@
+.testing {
+  width: 300px;
+}
+.testing2 svg {
+  width: 100%;
+}
+.testing2 {
+  display: flex;
+  width: 100%;
+}

@@ -4,7 +4,7 @@ import './graphs.css';
 const ProgressBar = (props) => {
   const { stroke, colors, progress } = props;
   const { minus, plus } = colors;
-  const progressPerc = progress + '%';
+  const progressPerc = Math.abs(progress) + '%';
   const dividerTop = -1 * stroke * 0.6;
   const dividerHeight = 2.25 * stroke;
   const borderRadius = 0.315 * stroke;
@@ -15,7 +15,7 @@ const ProgressBar = (props) => {
   let bar;
 
   bar = (
-    <div className="bar" style={{ height: stroke }}>
+    <div className="bar" style={{ height: stroke, borderRadius: borderRadius }}>
       <div className="bar-divider" style={{ top: dividerTop, height: dividerHeight }}></div>
       <div className="left">
         <div
