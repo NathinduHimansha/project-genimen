@@ -10,15 +10,15 @@ const URAS = () => {
       <div className="heading-testing">
         <FancyHeading heading="FEATURE SENTIMENTS"></FancyHeading>
       </div>
-      <div class="testing">
-        <div class="content">
+      <div className="testing">
+        <div className="content">
           <ProgressBar
             stroke={10}
             progress={31}
             colors={{ minus: 'var(--neg-red)', plus: 'var(--pos-green)' }}
-            labels={{ minusLabel: '---', plusLabel: '+++' }}
+            labels={{ minusLabel: '---', plusLabel: '+++', fontWeight: 800 }}
           ></ProgressBar>
-          <div class="testing2">
+          <div className="testing2">
             <CircularProgress
               id="progress1"
               stroke={14}

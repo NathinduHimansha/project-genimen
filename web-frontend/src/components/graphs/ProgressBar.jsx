@@ -3,14 +3,17 @@ import './graphs.css';
 
 const ProgressBar = (props) => {
   const { stroke, colors, progress, labels } = props;
-  let { minusLabel, plusLabel } = labels;
+  let { minusLabel, plusLabel, fontWeight } = labels;
+  console.log(fontWeight);
   minusLabel = minusLabel ? minusLabel : '---';
   plusLabel = plusLabel ? plusLabel : '+++';
+  fontWeight = fontWeight ? fontWeight : 900;
+  console.log(fontWeight);
   const { minus, plus } = colors;
   const progressPerc = Math.abs(progress) + '%';
   const dividerTop = -1 * stroke * 0.6;
   const dividerHeight = 2.25 * stroke;
-  const borderRadius = 0.315 * stroke;
+  const borderRadius = 0.4 * stroke;
 
   const rightActiveClassNames = progress > 0 ? 'active right-active' : '-display-none';
   const leftActiveClassNames = progress < 0 ? 'active left-active' : '-display-none';
@@ -36,13 +39,35 @@ const ProgressBar = (props) => {
   );
 
   return (
-    <div className="progress-bar-container">
-      <div className="label minus-label" style={{ color: 'var(--neg-red)' }}>
-        {minusLabel}
+    <div>
+      <div className="label-wrapper -flex">
+        <div
+          className="label minus-label"
+          style={{ color: 'var(--neg-red)', fontWeight: fontWeight }}
+        >
+          {minusLabel}
+        </div>
+        <div
+          className="label plus-label -flex-right"
+          style={{ color: 'var(--pos-green)', fontWeight: fontWeight }}
+        >
+          {plusLabel}
+        </div>
       </div>
-      {bar}
-      <div className="label plus-label" style={{ color: 'var(--pos-green)' }}>
-        {plusLabel}
+      <div className="progress-bar-container">
+        <div
+          className="label minus-label -hidden"
+          style={{ color: 'var(--neg-red)', fontWeight: fontWeight }}
+        >
+          {minusLabel}
+        </div>
+        {bar}
+        <div
+          className="label plus-label -hidden"
+          style={{ color: 'var(--pos-green)', fontWeight: fontWeight }}
+        >
+          {plusLabel}
+        </div>
       </div>
     </div>
   );
