@@ -20,6 +20,7 @@
 .progress-bar-container {
   width: 100%;
   display: flex;
+  justify-content: center;
 }
 .right {
   position: relative;
@@ -53,7 +54,7 @@
 .bar {
   position: relative;
   display: flex;
-  width: 100%;
+  width: 95%;
   /* height: 16px; */
   background: var(--light-white);
   border-width: 0.5px;
@@ -68,6 +69,19 @@
   left: calc(50% - 0.5px);
   top: -10px;
   z-index: 1;
+}
+.label {
+  font-size: 1.6rem;
+  font-weight: 900;
+  top: -28px;
+}
+.minus-label {
+  position: absolute;
+  left: -35px;
+}
+.plus-label {
+  position: absolute;
+  right: -35px;
 }
 @keyframes load {
   from {

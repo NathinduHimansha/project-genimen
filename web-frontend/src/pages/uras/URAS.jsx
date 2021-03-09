@@ -14,9 +14,10 @@ const URAS = () => {
   return (
     <div class="testing">
       <ProgressBar
-        stroke={9}
+        stroke={10}
         progress={31}
         colors={{ minus: 'var(--neg-red)', plus: 'var(--pos-green)' }}
+        labels={{ minusLabel: '---', plusLabel: '+++' }}
       ></ProgressBar>
       <div class="testing2">
         <CircularProgress
