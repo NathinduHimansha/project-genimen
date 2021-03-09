@@ -19,14 +19,14 @@ function App() {
         {/*<Nav/>*/}
         <Switch>
           {/*<Route path="/" exact component={Home} />*/}
-          <Route path="/" exact component={Card} />
+          <Route exact path="/" component={Card} />
           <Route path="/card" component={Card} />
-          <Route path="/about" exact component={Home} />
-          <Route path="/uras" exact component={Home} />
-          <Route path="/pssa" exact component={Home} />
-          <Route path="/fbfe" exact component={Home} />
-          <Route path="/login" exact component={Home} />
-          <Route path="/signup" exact component={Home} />
+          <Route path="/about" component={Home} />
+          <Route path="/uras" component={Home} />
+          <Route path="/pssa" component={Home} />
+          <Route path="/fbfe" component={Home} />
+          <Route path="/login" component={Home} />
+          <Route path="/signup" component={Home} />
         </Switch>
       </div>
     </Router>
