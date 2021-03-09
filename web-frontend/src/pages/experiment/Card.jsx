@@ -10,7 +10,17 @@ import phoneIcon from '../../assests/PhoneIcon.png';
 const Card = () => {
   return (
     <div style={{ margin: '4%' }}>
-      <div className="analytics-container cards-grid">
+      <div style={{ marginBottom: '40px' }}>
+        <FancyHeading heading="FEATURE SENTIMENTS"></FancyHeading>
+      </div>
+      <h2 className="heading2 -regular -no-margin">Display</h2>
+      <hr className="heading-sep" style={{ marginTop: '10px' }} />
+      <div style={{ marginTop: '20px' }}>
+        <h3 className="heading3 -regular -no-margin">
+          Type: <span className="-medium">Curved</span>
+        </h3>
+      </div>
+      <div className="analytics-container cards-grid" style={{ marginTop: '60px' }}>
         <SentimentResultCard
           id="sentiment1"
           heading="Total Results"
