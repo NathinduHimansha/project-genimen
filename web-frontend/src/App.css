@@ -65,6 +65,23 @@ h5.heading5 {
 .color-primary-black {
   color: var(--primary-black);
 }
+/* layouts */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-gap: 20px;
+}
+
+/* text */
+.pre-icon {
+  display: flex;
+  align-items: center;
+}
+.pre-icon > img {
+  width: 12.5px;
+  height: auto;
+  margin-right: 10px;
+}
 
 /* Defaults */
 .App {
