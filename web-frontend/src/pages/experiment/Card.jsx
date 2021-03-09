@@ -6,6 +6,7 @@ import NetPolarity from '../../components/analytics/NetPolarity';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import './card.css';
 import phoneIcon from '../../assests/PhoneIcon.png';
+import search from '../../assests/Search.png';
 
 const Card = () => {
   return (
@@ -41,6 +42,12 @@ const Card = () => {
           negPerc={44}
           posPerc={40}
         />
+      </div>
+      <div style={{ marginTop: '20px' }}>
+        <button className="btn primary-btn icon-btn">
+          <span className="-bold">Start Analysing</span>
+          <img className="left" src={search} style={{ width: '20px' }} />
+        </button>
       </div>
     </div>
   );
