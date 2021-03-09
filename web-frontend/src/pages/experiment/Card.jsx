@@ -22,7 +22,7 @@ const Card = () => {
             <div className="analytics-wrapper">
               <div className="net-polarity">
                 <h5 className="heading5 -no-margin -medium">Net Polarity: </h5>
-                <NetPolarity polarity={-54}></NetPolarity>
+                <NetPolarity polarity={54}></NetPolarity>
                 <ProgressBar
                   stroke={10}
                   progress={54}
