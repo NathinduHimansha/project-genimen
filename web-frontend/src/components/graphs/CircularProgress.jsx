@@ -21,7 +21,7 @@ const CircularProgress = (props) => {
         viewBox="0 0 178 178"
         preserveAspectRatio="xMinYMin meet"
         // height={radius * 2}
-        // width={radius * 2}
+        width="100%"
       >
         {/* <symbol id="circular-progress-bar"> */}
         <g>

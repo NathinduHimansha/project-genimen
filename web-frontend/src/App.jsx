@@ -10,6 +10,7 @@ import './App.css';
 // import ModelFeatureAnalyser from './page/Login'
 // import ModelFeatureAnalyser from './page/SignUp'
 import URAS from './pages/uras/URAS';
+import Card from './pages/testing/Card';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         {/*<Nav/>*/}
         <Switch>
           {/*<Route path="/" exact component={Home} />*/}
-          <Route path="/" exact component={URAS} />
+          <Route path="/" exact component={Card} />
+          <Route path="/card" component={Card} />
           <Route path="/about" exact component={Home} />
           <Route path="/uras" exact component={Home} />
           <Route path="/pssa" exact component={Home} />

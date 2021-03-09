@@ -2,6 +2,9 @@
 .-display-none {
   display: none;
 }
+.-no-margin {
+  margin: 0;
+}
 .-flex {
   display: flex;
 }
@@ -11,7 +14,57 @@
 .-hidden {
   visibility: hidden;
 }
+/* font-weights */
+.-light {
+  font-weight: 300 !important;
+}
+.-regular {
+  font-weight: 400 !important;
+}
+.-medium {
+  font-weight: 500 !important;
+}
+.-bold {
+  font-weight: 600 !important;
+}
+.-bolder {
+  font-weight: 700 !important;
+}
+.-black {
+  font-weight: 800 !important;
+}
 /* styles */
+div.card {
+  border: 1px solid var(--primary-border-grey);
+  border-radius: 6px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-black);
+}
+/* Texts */
+h2.heading2 {
+  font-weight: 400;
+  font-size: 2.4rem;
+}
+h4.heading4 {
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+h5.heading5 {
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+.color-grey {
+  color: var(--grey);
+}
+.color-primary-black {
+  color: var(--primary-black);
+}
 
 /* Defaults */
 .App {
