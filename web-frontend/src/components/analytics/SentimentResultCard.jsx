@@ -19,7 +19,9 @@ const SentimentResultCard = (props) => {
     if (headingIcon) {
       return (
         <div className="analytics-heading pre-icon">
-          <img src={headingIcon} />
+          <div className="pre-icon-wrapper">
+            <img src={headingIcon} />
+          </div>
           <h4 className="heading4 -no-margin">{heading}</h4>
         </div>
       );
