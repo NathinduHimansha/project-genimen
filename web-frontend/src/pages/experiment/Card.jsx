@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CircularProgress from '../../components/graphs/CircularProgress';
 import ProgressBar from '../../components/graphs/ProgressBar';
 import FancyHeading from '../../components/text/FancyHeading';
@@ -9,24 +9,33 @@ import './card.css';
 import phoneIcon from '../../assests/PhoneIcon.png';
 import search from '../../assests/Search.png';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
+import { getFeatures } from '../../services/uras-service';
 
 const Card = () => {
+  const test = getFeatures();
+  useEffect(() => {
+    test.then((res) => console.log(res));
+  }, []);
+
   return (
     <div style={{ margin: '4%' }}>
       <div style={{ marginBottom: '40px' }}>
         <FancyHeading heading="SELECT FEATURES TO ANALYSE"></FancyHeading>
       </div>
       <div className="-flex" style={{ marginBottom: '40px' }}>
-        <select className="phone-selector select heading4 -regular -full-width">
-          <option value="Select Feature" disabled selected>
+        <select
+          defaultValue="select-phone"
+          className="phone-selector select heading4 -regular -full-width"
+        >
+          <option value="select-phone" disabled>
             Select Phone
           </option>
           <option value="display">Normal</option>
         </select>
-        <button class="btn primary-btn" disabled>
+        <button className="btn primary-btn" disabled>
           <span className="-bold -hidden">Start Analysing</span>
           <img className="left -hidden" src={search} style={{ width: '20px' }} />
-          <div class="spinner spinner-small"></div>
+          <div className="spinner spinner-small"></div>
         </button>
       </div>
       <div style={{ marginTop: '40px', marginBottom: '80px' }}>
@@ -51,7 +60,7 @@ const Card = () => {
       </div>
 
       <div style={{ marginTop: '20px', marginBottom: '20px' }}>
-        <label for="select-feature" className="select-label">
+        <label htmlFor="select-feature" className="select-label">
           <span className="t1">Show: </span>
         </label>
         <select className="select" id="select-feautre">

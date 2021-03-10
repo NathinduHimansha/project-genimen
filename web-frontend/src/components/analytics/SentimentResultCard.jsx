@@ -58,7 +58,7 @@ const SentimentResultCard = (props) => {
               <div>
                 <h5 className="heading5 -no-margin -medium">Neg/Pos % </h5>
               </div>
-              <div class="neg-pos-graph -flex">
+              <div className="neg-pos-graph -flex">
                 <CircularProgress
                   id={id + 'pos'}
                   stroke={14}
