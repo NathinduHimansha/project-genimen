@@ -415,6 +415,38 @@ select.phone-selector {
   padding-bottom: 0px;
   border-radius: 4px;
 }
+/* feature type selection menu */
+.feature-types-selection-menu .feature-type-heading {
+  margin-right: 22rem;
+}
+@media only screen and (max-width: 750px) {
+  .feature-types-selection-menu .feature-type-heading {
+    margin-right: 4rem;
+  }
+  .feature-types-selection-menu .feature-type-heading {
+    font-size: 2rem;
+  }
+  .feature-types-selection-menu select.large {
+    font-size: 1.8rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-right: 20px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .feature-types-selection-menu .feature-type-heading {
+    margin-right: 1rem;
+  }
+  .feature-types-selection-menu .feature-type-heading {
+    font-size: 1.8rem;
+  }
+  .feature-types-selection-menu select.large {
+    font-size: 1.6rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-right: 10px;
+  }
+}
 /* Defaults */
 .App {
 }
