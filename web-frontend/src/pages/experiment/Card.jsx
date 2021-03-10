@@ -4,6 +4,7 @@ import ProgressBar from '../../components/graphs/ProgressBar';
 import FancyHeading from '../../components/text/FancyHeading';
 import NetPolarity from '../../components/analytics/NetPolarity';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
+import Select from './Select';
 import './card.css';
 import phoneIcon from '../../assests/PhoneIcon.png';
 import search from '../../assests/Search.png';
@@ -12,8 +13,27 @@ const Card = () => {
   return (
     <div style={{ margin: '4%' }}>
       <div style={{ marginBottom: '40px' }}>
-        <FancyHeading heading="FEATURE SENTIMENTS"></FancyHeading>
+        <FancyHeading heading="SELECT FEATURES TO ANALYSE"></FancyHeading>
       </div>
+      <div className="-flex -flex-col -fit-content" style={{ width: '' }}>
+        <Select></Select>
+        <div style={{ marginTop: '40px' }}>
+          <button className="btn primary-btn icon-btn -flex-right">
+            <span className="-bold">Start Analysing</span>
+            <img className="left" src={search} style={{ width: '20px' }} />
+          </button>
+        </div>
+      </div>
+
+      <div style={{ marginTop: '20px', marginBottom: '20px' }}>
+        <label for="select-feature" className="select-label">
+          <span className="t1">Show: </span>
+        </label>
+        <select className="select" id="select-feautre">
+          <option value="display">Display</option>
+        </select>
+      </div>
+
       <h2 className="heading2 -regular -no-margin">Display</h2>
       <hr className="heading-sep" style={{ marginTop: '10px' }} />
       <div style={{ marginTop: '20px' }}>
@@ -42,12 +62,6 @@ const Card = () => {
           negPerc={44}
           posPerc={40}
         />
-      </div>
-      <div style={{ marginTop: '20px' }}>
-        <button className="btn primary-btn icon-btn">
-          <span className="-bold">Start Analysing</span>
-          <img className="left" src={search} style={{ width: '20px' }} />
-        </button>
       </div>
     </div>
   );
