@@ -10,6 +10,7 @@
   }
   .feature-types-selection-menu select.large {
     font-size: 1.8rem;
+    width: -moz-fit-content;
     width: fit-content;
     padding-right: 20px;
   }
@@ -23,6 +24,7 @@
   }
   .feature-types-selection-menu select.large {
     font-size: 1.6rem;
+    width: -moz-fit-content;
     width: fit-content;
     padding-right: 10px;
   }

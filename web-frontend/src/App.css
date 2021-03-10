@@ -27,6 +27,7 @@
   margin-left: auto;
 }
 .-fit-content {
+  width: -moz-fit-content;
   width: fit-content;
 }
 .-hidden {
@@ -313,6 +314,7 @@ button.icon-button {
   background-color: var(--light-white);
   padding: 20px 10px;
   display: flex;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .keyword-tag {
