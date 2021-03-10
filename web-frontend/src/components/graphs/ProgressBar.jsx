@@ -4,11 +4,9 @@ import './graphs.css';
 const ProgressBar = (props) => {
   const { stroke, colors, progress, labels } = props;
   let { minusLabel, plusLabel, fontWeight } = labels;
-  console.log(fontWeight);
   minusLabel = minusLabel ? minusLabel : '---';
   plusLabel = plusLabel ? plusLabel : '+++';
   fontWeight = fontWeight ? fontWeight : 900;
-  console.log(fontWeight);
   const { minus, plus } = colors;
   const progressPerc = Math.abs(progress) + '%';
   const dividerTop = -1 * stroke * 0.6;
