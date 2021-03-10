@@ -1,9 +1,83 @@
 /* util classes */
+/* Margin Bottom */
+.-mr-5 {
+  margin-bottom: 5px;
+}
+.-mb-5 {
+  margin-bottom: 5px;
+}
+.-mb-10 {
+  margin-bottom: 10px;
+}
+.-mb-15 {
+  margin-bottom: 15px;
+}
+.-mb-20 {
+  margin-bottom: 20px;
+}
+.-mb-25 {
+  margin-bottom: 25px;
+}
+.-mb-30 {
+  margin-bottom: 30px;
+}
+.-mb-35 {
+  margin-bottom: 35px;
+}
+.-mb-40 {
+  margin-bottom: 40px;
+}
+.-mb-45 {
+  margin-bottom: 45px;
+}
+.-mb-50 {
+  margin-bottom: 50px;
+}
+.-mb-55 {
+  margin-bottom: 55px;
+}
+.-mb-60 {
+  margin-bottom: 60px;
+}
+/* Margin Top */
+.-mt-5 {
+  margin-top: 5px;
+}
+.-mt-10 {
+  margin-top: 10px;
+}
+.-mt-15 {
+  margin-top: 15px;
+}
+.-mt-20 {
+  margin-top: 20px;
+}
+.-mt-25 {
+  margin-top: 25px;
+}
+.-mt-30 {
+  margin-top: 30px;
+}
+.-mt-35 {
+  margin-top: 35px;
+}
+.-mt-40 {
+  margin-top: 40px;
+}
+.-mt-45 {
+  margin-top: 45px;
+}
+.-mt-50 {
+  margin-top: 50px;
+}
+.-mt-55 {
+  margin-top: 55px;
+}
+.-mt-60 {
+  margin-top: 60px;
+}
 .-full-width {
   width: 100%;
-}
-.-mr-es {
-  margin-right: 5px;
 }
 .-display-none {
   display: none;
@@ -147,6 +221,7 @@ hr.heading-sep {
   border: 0.5px solid var(--light-grey);
   border-bottom: 0px;
   opacity: 0.5;
+  margin-top: 10px;
 }
 /* drop-down */
 label.select-label {
