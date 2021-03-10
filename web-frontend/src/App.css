@@ -1,4 +1,10 @@
 /* util classes */
+.-full-width {
+  width: 100%;
+}
+.-mr-es {
+  margin-right: 5px;
+}
 .-display-none {
   display: none;
 }
@@ -227,7 +233,7 @@ button.primary-btn {
   border: 2px solid var(--primary-accent);
 }
 button.primary-btn:disabled {
-  opacity: 0.6;
+  opacity: 0.75;
 }
 button.primary-btn:hover:enabled {
   transform: translateY(1px);
@@ -299,6 +305,35 @@ button.icon-button {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+/* tags, keywords */
+.keyword-tag-container {
+  border: 1px solid var(--primary-border-grey);
+  border-radius: 10px;
+  background-color: var(--light-white);
+  padding: 20px 10px;
+  display: flex;
+  width: fit-content;
+}
+.keyword-tag {
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding: 8px 20px;
+  border: 1px solid var(--secondary-accent);
+  border-radius: 50px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: var(--white);
+}
+
+/* specifics */
+select.phone-selector {
+  background: var(--white);
+  width: 100%;
+  margin-right: 8px;
+  padding-left: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 /* Defaults */
 .App {

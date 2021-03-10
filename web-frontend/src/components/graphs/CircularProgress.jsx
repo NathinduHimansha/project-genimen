@@ -48,20 +48,20 @@ const CircularProgress = (props) => {
             r={normalizedRadius}
             cx="50%"
             cy="50%"
-          />
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              to={strokeDashoffset}
+              // begin="click"
+              fill="freeze"
+              dur="0.2s"
+              calcMode="spline"
+              keySplines=".42 0 1 1;.42 0 1 1;"
+              // keyTimes="0;1"
+              // values={'0; ' + strokeDashoffset}
+            />
+          </circle>
 
-          <animate
-            xlinkHref={'#' + id}
-            attributeName="stroke-dashoffset"
-            to={strokeDashoffset}
-            // begin="click"
-            fill="freeze"
-            dur="0.2s"
-            calcMode="spline"
-            keySplines=".42 0 1 1;.42 0 1 1;"
-            // keyTimes="0;1"
-            // values={'0; ' + strokeDashoffset}
-          />
           <text
             x="50%"
             y="50%"
