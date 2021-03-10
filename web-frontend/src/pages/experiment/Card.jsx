@@ -17,7 +17,12 @@ const Card = () => {
       </div>
       <div className="-flex -flex-col -fit-content" style={{ width: '' }}>
         <Select></Select>
-        <div style={{ marginTop: '40px' }}>
+        <div className="-flex" style={{ marginTop: '40px' }}>
+          <button class="btn primary-btn -flex-right" style={{ marginRight: '-300px' }}>
+            <span className="-bold -hidden">Start Analysing</span>
+            <img className="left -hidden" src={search} style={{ width: '20px' }} />
+            <div class="spinner spinner-small"></div>
+          </button>
           <button className="btn primary-btn icon-btn -flex-right">
             <span className="-bold">Start Analysing</span>
             <img className="left" src={search} style={{ width: '20px' }} />
