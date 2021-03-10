@@ -69,7 +69,7 @@ const CircularProgress = (props) => {
             textAnchor="middle"
             fontFamily="Rubik"
             fontSize="34"
-            fill="#444"
+            fill="var(--primary-black)"
           >
             {progress}
             <tspan fontSize="18"> %</tspan>
