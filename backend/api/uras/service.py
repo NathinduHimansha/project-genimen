@@ -49,7 +49,7 @@ def get_reviews_sentiment_summary(feature_type_dic):
     for feature, feature_type in feature_type_dic.items():
         feature, feature_type = feature.lower(), feature_type.lower()
         phone_list = phones[feature_type]
-        i, total_pos, total_neg, total_polarity = 0, 0, 0, 0
+        i, total_pos, total_neg, total_polarity, total_review_count = 0, 0, 0, 0, 0
         for phone in phone_list:
             reviews = get_data_by_phone(phone)
             review_sent_list = review_list_split_sent(list(reviews['review']))
@@ -66,12 +66,14 @@ def get_reviews_sentiment_summary(feature_type_dic):
             pos = get_col_val_perc(review_df, "sentiment", 1)
             neg = get_col_val_perc(review_df, "sentiment", -1)
             polarity = pos - neg
-            if(len(review_df) > 0):
+            review_count = len(review_df)
+            total_review_count += review_count
+            if(review_count > 0):
                 total_pos += pos
                 total_neg += neg
                 total_polarity += polarity
                 i += 1
-            if (len(review_df) < 5):
+            if (review_count < 5):
                 pos, neg, polarity = 'None', 'None', 'None'
 
             phone_feature_sentiments['pos'] = pos
@@ -80,6 +82,7 @@ def get_reviews_sentiment_summary(feature_type_dic):
             phone_feature_sentiments['feature-type'] = feature_type
             phone_feature_sentiments['feature'] = feature
             phone_feature_sentiments['phone'] = phone
+            phone_feature_sentiments['review-count'] = review_count
             phone_feature_polarity.append(phone_feature_sentiments)
         total_pos_perc = None
         total_neg_perc = None
@@ -93,7 +96,8 @@ def get_reviews_sentiment_summary(feature_type_dic):
             'neg': total_neg_perc,
             'polarity': total_polarity_perc,
             'feature-type': feature_type,
-            'feature': feature
+            'feature': feature,
+            'total-review-count': total_review_count
         }
         feature_sentiment_polarity.append(feature_type_summary)
     return {
