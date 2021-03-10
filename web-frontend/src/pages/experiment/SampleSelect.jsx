@@ -14,11 +14,11 @@ const SampleSelect = (props) => {
             <img src={display} className="" />
           </div>
           <label htmlFor="select-feature-type-display" className="select-label">
-            <h2 className="heading2 -regular feature-type-heading">Display</h2>
+            <h2 className="heading3 -medium feature-type-heading">Display</h2>
           </label>
           <select
             defaultValue="select-feature"
-            className="select large heading3 -regular -flex-right"
+            className="select large heading4 -regular -flex-right"
             id="select-feautre-type-display"
           >
             <option value="select-feature" disabled>
@@ -32,11 +32,11 @@ const SampleSelect = (props) => {
             <img src={size} className="" />
           </div>
           <label htmlFor="select-feature-type-size" className="select-label">
-            <h2 className="heading2 -regular feature-type-heading">Size</h2>
+            <h2 className="heading3 -medium feature-type-heading">Size</h2>
           </label>
           <select
             defaultValue="select-feature"
-            className="select large heading3 -regular -flex-right"
+            className="select large heading4 -regular -flex-right"
             id="select-feautre-type-size"
           >
             <option value="select-feature" disabled>
@@ -50,11 +50,11 @@ const SampleSelect = (props) => {
             <img src={fingerprint} className="icon-scale-fingerprint" />
           </div>
           <label htmlFor="select-feature-type-fingerprint" className="select-label">
-            <h2 className="heading2 -regular feature-type-heading">Fingerprint</h2>
+            <h2 className="heading3 -medium feature-type-heading">Fingerprint</h2>
           </label>
           <select
             defaultValue="select-feature"
-            className="select large heading3 -regular -flex-right"
+            className="select large heading4 -regular -flex-right"
             id="select-feautre-type-fingerprint"
           >
             <option value="select-feature" disabled>
@@ -68,11 +68,11 @@ const SampleSelect = (props) => {
             <img src={headphoneJack} className="icon-scale-headphone-jack" />
           </div>
           <label htmlFor="select-feature-type-headphone-jack" className="select-label">
-            <h2 className="heading2 -regular feature-type-heading">Headphone-Jack</h2>
+            <h2 className="heading3 -medium feature-type-heading">Headphone-Jack</h2>
           </label>
           <select
             defaultValue="select-feature"
-            className="select large heading3 -regular -flex-right"
+            className="select large heading4 -regular -flex-right"
             id="select-feautre-type-headphone-jack"
           >
             <option value="select-feature" disabled>

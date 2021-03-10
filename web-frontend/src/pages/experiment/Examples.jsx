@@ -25,7 +25,7 @@ const Examples = () => {
       <div className="-flex -mb-40">
         <select
           defaultValue="select-phone"
-          className="phone-selector select heading4 -regular -full-width"
+          className="dark phone-selector select heading4 -regular -full-width"
         >
           <option value="select-phone" disabled>
             Select Phone
@@ -61,7 +61,7 @@ const Examples = () => {
 
       <div className="-mb-20 -mt-20">
         <label htmlFor="select-feature" className="select-label">
-          <span className="t1">Show: </span>
+          <span className="t1 color-grey">Show: </span>
         </label>
         <select className="select" id="select-feautre">
           <option value="display">Display</option>
