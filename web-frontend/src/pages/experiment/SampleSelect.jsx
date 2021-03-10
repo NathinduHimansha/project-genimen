@@ -5,7 +5,7 @@ import fingerprint from '../../assests/FingerPrint.png';
 import headphoneJack from '../../assests/HeadphoneJack.png';
 import './card.css';
 
-const Select = (props) => {
+const SampleSelect = (props) => {
   return (
     <div style={{ marginTop: '20px', marginBottom: '20px' }}>
       <div className="feature-types feature-types-selection-menu -flex -flex-col -flex-center">
@@ -93,4 +93,4 @@ const Select = (props) => {
   );
 };
 
-export default Select;
+export default SampleSelect;

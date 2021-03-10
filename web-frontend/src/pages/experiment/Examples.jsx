@@ -4,14 +4,14 @@ import ProgressBar from '../../components/graphs/ProgressBar';
 import FancyHeading from '../../components/text/FancyHeading';
 import NetPolarity from '../../components/analytics/NetPolarity';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
-import Select from './Select';
+import SampleSelect from './SampleSelect';
 import './card.css';
 import phoneIcon from '../../assests/PhoneIcon.png';
 import search from '../../assests/Search.png';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
 import { getFeatures } from '../../services/uras-service';
 
-const Card = () => {
+const Examples = () => {
   const test = getFeatures();
   useEffect(() => {
     test.then((res) => console.log(res));
@@ -19,10 +19,10 @@ const Card = () => {
 
   return (
     <div style={{ margin: '4%' }}>
-      <div style={{ marginBottom: '40px' }}>
+      <div className="-mb-40">
         <FancyHeading heading="SELECT FEATURES TO ANALYSE"></FancyHeading>
       </div>
-      <div className="-flex" style={{ marginBottom: '40px' }}>
+      <div className="-flex -mb-40">
         <select
           defaultValue="select-phone"
           className="phone-selector select heading4 -regular -full-width"
@@ -38,7 +38,7 @@ const Card = () => {
           <div className="spinner spinner-small"></div>
         </button>
       </div>
-      <div style={{ marginTop: '40px', marginBottom: '80px' }}>
+      <div className="-mb-40 -mt-40">
         <div className="keyword-tag-container">
           <span className="keyword-tag">fingerprint</span>
           <span className="keyword-tag">screen</span>
@@ -50,8 +50,8 @@ const Card = () => {
         <img src={banner} style={{ width: '400px' }} />
       </div>
       <div className="-flex -flex-col -fit-content" style={{ width: '' }}>
-        <Select></Select>
-        <div className="-flex" style={{ marginTop: '40px' }}>
+        <SampleSelect></SampleSelect>
+        <div className="-flex -mt-40">
           <button className="btn primary-btn icon-btn -flex-right">
             <span className="-bold">Start Analysing</span>
             <img className="left" src={search} style={{ width: '20px' }} />
@@ -59,7 +59,7 @@ const Card = () => {
         </div>
       </div>
 
-      <div style={{ marginTop: '20px', marginBottom: '20px' }}>
+      <div className="-mb-20 -mt-20">
         <label htmlFor="select-feature" className="select-label">
           <span className="t1">Show: </span>
         </label>
@@ -69,32 +69,30 @@ const Card = () => {
       </div>
 
       <h2 className="heading2 -regular -no-margin">Display</h2>
-      <hr className="heading-sep" style={{ marginTop: '10px' }} />
-      <div style={{ marginTop: '20px' }}>
+      <hr className="heading-sep" />
+      <div className="-mt-20">
         <h3 className="heading3 -regular -no-margin">
           Type: <span className="-medium">Curved</span>
         </h3>
       </div>
-      <div style={{ marginTop: '60px' }}>
-        <div className="analytics-container cards-grid">
-          <SentimentResultCard
-            heading="Total Results"
-            // headingIcon={phoneIcon}
-            reviewCount={300}
-            reviewCountLable="Total Reviews Analysed"
-            polarity={84}
-            negPerc={44}
-            posPerc={40}
-          />
-        </div>
+      <div className="analytics-container cards-grid -mt-60">
+        <SentimentResultCard
+          heading="Total Results"
+          // headingIcon={phoneIcon}
+          reviewCount={300}
+          reviewCountLable="Total Reviews Analysed"
+          polarity={84}
+          negPerc={44}
+          posPerc={40}
+        />
       </div>
-      <div style={{ marginTop: '60px' }}>
+      <div className="-mt-60">
         <h3 className="heading3 -medium -no-margin" style={{ fontSize: '2.2rem' }}>
           Analysis per Phone
         </h3>
-        <hr className="heading-sep" style={{ marginBottom: '40px', marginTop: '10px' }} />
+        <hr className="heading-sep" />
 
-        <div className="analytics-container cards-grid">
+        <div className="analytics-container cards-grid -mt-40">
           <SentimentResultCard
             heading="Samsung Galaxy S10+"
             headingIcon={phoneIcon}
@@ -119,4 +117,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default Examples;
