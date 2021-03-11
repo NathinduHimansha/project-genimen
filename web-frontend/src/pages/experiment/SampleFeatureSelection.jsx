@@ -6,10 +6,25 @@ import headphoneJackIcon from '../../assests/HeadphoneJack.png';
 import './feature-selection.css';
 
 const SampleFeatureSelection = (props) => {
-  const display = `url(${displayIcon})`;
-  const size = `url(${sizeIcon})`;
-  const fingerprint = `url(${fingerprintIcon})`;
-  const headphoneJack = `url(${headphoneJackIcon})`;
+  const getIconUrl = (feature) => {
+    if (feature.toLowerCase() == 'display') {
+      return 'var(--display-icon)';
+    }
+    if (feature.toLowerCase() == 'size') {
+      return 'var(--size-icon)';
+    }
+    if (feature.toLowerCase() == 'fingerprint') {
+      return 'var(--fingerprint-icon)';
+    }
+    if (feature.toLowerCase() == 'headphone-jack') {
+      return 'var(--headphone-jack-icon)';
+    }
+  };
+
+  const display = getIconUrl('display');
+  const size = getIconUrl('size');
+  const fingerprint = getIconUrl('fingerprint');
+  const headphoneJack = getIconUrl('headphone-jack');
 
   const featureTypes = [
     {
@@ -41,20 +56,6 @@ const SampleFeatureSelection = (props) => {
         icon: getIconUrl(feature.feature),
       };
     });
-  };
-  const getIconUrl = (feature) => {
-    if (feature.toLowerCase() == 'display') {
-      return display;
-    }
-    if (feature.toLowerCase() == 'size') {
-      return size;
-    }
-    if (feature.toLowerCase() == 'fingerprint') {
-      return fingerprint;
-    }
-    if (feature.toLowerCase() == 'headphone-jack') {
-      return headphoneJack;
-    }
   };
 
   return (

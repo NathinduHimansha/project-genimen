@@ -96,7 +96,7 @@ const Examples = () => {
         <div className="analytics-container cards-grid -mt-40">
           <SentimentResultCard
             heading="Samsung Galaxy S10+"
-            headingIcon={phoneIcon}
+            headingIcon="var(--phone-icon)"
             reviewCount={300}
             reviewCountLable="Reviews Analysed"
             polarity={84}
@@ -105,7 +105,7 @@ const Examples = () => {
           />
           <SentimentResultCard
             heading="OnePlus 6T"
-            headingIcon={phoneIcon}
+            headingIcon="var(--phone-icon)"
             reviewCount={300}
             reviewCountLable="Reviews Analysed"
             polarity={84}

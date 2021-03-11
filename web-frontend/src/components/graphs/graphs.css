@@ -3,11 +3,14 @@
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
   transition: 0.35s stroke-dashoffset;
+  fill: transparent;
 }
 .progress-background {
   transform: rotate(102deg);
   transform-origin: 50% 50%;
   transition: 0.35s stroke-dashoffset;
+  fill: var(--light-white);
+  stroke: var(--primary-border-grey);
 }
 .progress-perc {
   font-size: 14px;

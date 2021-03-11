@@ -1,3 +1,17 @@
+:root {
+  --display-icon: url('/dist/assests/Display.png');
+  --phone-icon: url('/dist/assests/PhoneIcon.png');
+  --size-icon: url('/dist/assests/Size.png');
+  --headphone-jack-icon: url('/dist/assests/HeadphoneJack.png');
+  --fingerprint-icon: url('/dist/assests/FingerPrint.png');
+}
+:root[data-theme='dark'] {
+  --display-icon: url('/dist/assests/DisplayLight.png');
+  --phone-icon: url('/dist/assests/PhoneIconLight.png');
+  --size-icon: url('/dist/assests/SizeLight.png');
+  --headphone-jack-icon: url('/dist/assests/HeadphoneJackLight.png');
+  --fingerprint-icon: url('/dist/assests/FingerPrintLight.png');
+}
 /* util classes */
 /* Margin Bottom */
 .-mr-5 {
@@ -388,10 +402,11 @@ button.icon-button {
   border: 1px solid var(--primary-border-grey);
   border-radius: 10px;
   background-color: var(--light-white);
-  padding: 20px 10px;
+  padding: 10px 10px;
   display: flex;
   width: -moz-fit-content;
   width: fit-content;
+  flex-wrap: wrap;
 }
 .keyword-tag {
   font-size: 1.8rem;
@@ -402,6 +417,8 @@ button.icon-button {
   border-radius: 50px;
   margin-left: 4px;
   margin-right: 4px;
+  margin-bottom: 5.5px;
+  margin-top: 5.5px;
   background-color: var(--tag);
 }
 
@@ -443,6 +460,33 @@ select.phone-selector {
     padding-right: 10px;
   }
 }
+/* New icon headings */
+.icon-wrapper {
+  height: auto;
+  /* margin-right: 10px; */
+  display: flex;
+  align-items: center;
+}
+.icon-small {
+  width: 35px;
+  height: 35px;
+  margin-right: 18px;
+}
+.icon-extra-small {
+  width: 18px;
+  height: 20.5px;
+  margin-right: 5px;
+  padding-right: 4px;
+}
+.icon-background {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Defaults */
 .App {
 }
