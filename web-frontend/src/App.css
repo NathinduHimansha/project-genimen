@@ -406,13 +406,15 @@ button.icon-button {
   display: flex;
   width: -moz-fit-content;
   width: fit-content;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .keyword-tag {
   font-size: 1.8rem;
   font-weight: 400;
   color: var(--primary-black);
-  padding: 8px 20px;
+  padding: 6px 20px;
+  text-align: center;
   border: 1px solid var(--secondary-accent);
   border-radius: 50px;
   margin-left: 4px;
