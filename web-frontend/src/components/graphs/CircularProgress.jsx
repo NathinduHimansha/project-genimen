@@ -28,8 +28,6 @@ const CircularProgress = (props) => {
           <circle
             vectorEffect="non-scaling-stroke"
             className="progress-background"
-            stroke="var(--primary-border-grey)"
-            fill="var(--light-white)"
             strokeWidth={backgroundStroke}
             style={{ backgroundStrokeDashoffset }}
             r={backgroundRadius}
@@ -40,7 +38,6 @@ const CircularProgress = (props) => {
             className="progress"
             id={id}
             stroke={color}
-            fill="transparent"
             strokeWidth={stroke}
             strokeLinecap="round"
             strokeDasharray={circumference + ' ' + circumference}

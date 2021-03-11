@@ -18,11 +18,14 @@ const SentimentResultCard = (props) => {
   const getHeading = () => {
     if (headingIcon) {
       return (
-        <div className="analytics-heading pre-icon">
-          <div className="pre-icon-wrapper -mr-5">
-            <img src={headingIcon} />
+        <div className="analytics-heading">
+          <div className="icon-wrapper">
+            <div
+              style={{ backgroundImage: headingIcon }}
+              className="icon-background icon-extra-small"
+            />
+            <h4 className="heading4 -no-margin">{heading}</h4>
           </div>
-          <h4 className="heading4 -no-margin">{heading}</h4>
         </div>
       );
     }
