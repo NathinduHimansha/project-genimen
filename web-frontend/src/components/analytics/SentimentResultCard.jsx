@@ -2,6 +2,7 @@ import React from 'react';
 import NetPolarity from './NetPolarity';
 import CircularProgress from '../../components/graphs/CircularProgress';
 import ProgressBar from '../../components/graphs/ProgressBar';
+import IconHeading from '../../components/text/IconHeading';
 import './analytics.css';
 
 const SentimentResultCard = (props) => {
@@ -19,13 +20,9 @@ const SentimentResultCard = (props) => {
     if (headingIcon) {
       return (
         <div className="analytics-heading">
-          <div className="icon-wrapper">
-            <div
-              style={{ backgroundImage: headingIcon }}
-              className="icon-background icon-extra-small"
-            />
+          <IconHeading size="extra-small" iconUrl={headingIcon}>
             <h4 className="heading4 -no-margin">{heading}</h4>
-          </div>
+          </IconHeading>
         </div>
       );
     }

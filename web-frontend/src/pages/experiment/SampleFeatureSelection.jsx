@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import IconHeading from '../../components/text/IconHeading';
 import displayIcon from '../../assests/Display.png';
 import sizeIcon from '../../assests/Size.png';
 import fingerprintIcon from '../../assests/FingerPrint.png';
@@ -62,14 +63,13 @@ const SampleFeatureSelection = (props) => {
     <div className="feature-types feature-types-selection-menu -flex -flex-col -flex-center">
       {featureTypes.map((feature, i) => (
         <div key={i} className="-flex -mb-20">
-          <div className="icon-wrapper">
-            <div style={{ backgroundImage: feature.icon }} className="icon-small icon-background" />
+          <IconHeading size="small" iconUrl={feature.icon}>
             <label htmlFor="select-feature-type-display" className="select-label">
               <h2 className="heading3 -medium -no-margin feature-type-heading">
                 {feature.feature}
               </h2>
             </label>
-          </div>
+          </IconHeading>
           <select
             defaultValue="select-feature"
             className="select large heading4 -regular -flex-right"
