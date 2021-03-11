@@ -19,7 +19,7 @@ const Examples = () => {
   }, []);
 
   return (
-    <div style={{ margin: '4%' }}>
+    <div style={{ margin: '10% 10%' }}>
       <div className="-mb-40">
         <FancyHeading heading="SELECT FEATURES TO ANALYSE"></FancyHeading>
       </div>
@@ -47,7 +47,7 @@ const Examples = () => {
           <span className="keyword-tag">fingerprint</span>
         </div>
       </div>
-      <div style={{ position: 'absolute', left: '900px' }}>
+      <div style={{ position: 'absolute', left: '1000px', top: '380px', opacity: '0.8' }}>
         <img src={banner} style={{ width: '400px' }} />
       </div>
       <div style={{ marginTop: '20px', marginBottom: '20px', width: '80%', maxWidth: '700px' }}>
@@ -60,7 +60,11 @@ const Examples = () => {
         </div>
       </div>
 
-      <div className="-mb-20 -mt-20">
+      <div className="-mb-40 -mt-90">
+        <FancyHeading heading="FEATURES SENTIMENTS"></FancyHeading>
+      </div>
+
+      <div className="-mb-35 -mt-80">
         <label htmlFor="select-feature" className="select-label">
           <span className="t1 color-grey">Show: </span>
         </label>
