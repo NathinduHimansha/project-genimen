@@ -5,6 +5,7 @@ import FancyHeading from '../../components/text/FancyHeading';
 import NetPolarity from '../../components/analytics/NetPolarity';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import SampleSelect from './SampleSelect';
+import SampleFeatureSelection from './SampleFeatureSelection';
 import './card.css';
 import phoneIcon from '../../assests/PhoneIcon.png';
 import search from '../../assests/Search.png';
@@ -49,8 +50,8 @@ const Examples = () => {
       <div style={{ position: 'absolute', left: '900px' }}>
         <img src={banner} style={{ width: '400px' }} />
       </div>
-      <div className="-flex -flex-col -fit-content" style={{ width: '' }}>
-        <SampleSelect></SampleSelect>
+      <div style={{ marginTop: '20px', marginBottom: '20px', width: '80%', maxWidth: '700px' }}>
+        <SampleFeatureSelection></SampleFeatureSelection>
         <div className="-flex -mt-40">
           <button className="btn primary-btn icon-btn -flex-right">
             <span className="-bold">Start Analysing</span>
