@@ -12,6 +12,7 @@ import './App.css';
 import URAS from './pages/uras/URAS';
 import Examples from './pages/experiment/Examples';
 import Button from './pages/experiment/Button';
+import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         {/*<Nav/>*/}
         <Switch>
           {/*<Route path="/" exact component={Home} />*/}
-          <Route exact path="/" component={Examples} />
+          <Route exact path="/" component={SampleFeatureSelection} />
           <Route path="/examples" component={Examples} />
           <Route path="/button" component={Button} />
           <Route path="/about" component={Home} />
