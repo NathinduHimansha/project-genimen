@@ -10,6 +10,7 @@ import './App.css';
 // import ModelFeatureAnalyser from './page/Login'
 // import ModelFeatureAnalyser from './page/SignUp'
 import URAS from './pages/uras/URAS';
+import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 import Button from './pages/experiment/Button';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/examples" component={Examples} />
           <Route path="/button" component={Button} />
           <Route path="/about" component={Home} />
+          <Route path="/exkey" component={EXKEY} />
           <Route path="/uras" component={Home} />
           <Route path="/pssa" component={Home} />
           <Route path="/fbfe" component={Home} />
