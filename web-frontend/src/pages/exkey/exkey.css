@@ -335,13 +335,14 @@ table{
 
   /*BAR GRAPH*/
 
-  h6{
+  .frequency_percentage{
     float: left;
     animation: fadein 3s linear;
     bottom: -35px;
     position: absolute;
     font-size: 1.5rem;
-    left: -17px;
+    left: 1px;
+    font-weight: bold;
   }
 
   .bar {
@@ -545,7 +546,7 @@ table{
   transition: 0.5s; 
   font-family: Arial, Helvetica, sans-serif; 
   position: absolute;
-  left: -17px;
+  left: 2px;
   bottom: 20px;
   width: 100%;
   z-index: 1;

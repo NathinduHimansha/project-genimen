@@ -2,13 +2,15 @@ import React from 'react'
 import logo from '../../assests/geniman_logo_new.png'
 import search from '../../assests/Search.png'
 import './exkey.css'
+import Bargraph from '../../components/graphs/BarGraph'
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import WordCloud from '../../components/graphs/WordCloud'
 
 
 class Exkey extends React.Component {
     anaylyzeAgain(){
-        alert("You clicked me");
+        ('bar').toggleClass('start-load');
 
     }
       render() {
@@ -37,75 +39,76 @@ class Exkey extends React.Component {
 
                 <div className="body">
                 <p className="keyword_topic"><b>LOOK WHAT PEOPLE ARE TALKING OF PHONES...</b></p>
-
+                <Bargraph></Bargraph>
+{/* 
                     <div className="body-left-split">
                         <div className="card-left">
                             <p className="topic-frequency-distribution-bargraph">FREQUENCY OF KEYWORDS</p>
                             
-                            {/* <img src={iphone} className="iphone" alt="phone category" /> */}
                             <div className="bar">
                                 <div className="barHighlight_1">
-                                <h4 className="barchartKeyword">Gorilla Screen</h4>
+                                <span className="barchartKeyword">Gorilla Screen</span>
                                 <div className="progress-percentage_1" style={{ height: "55%", backgroundColor: "#96DDE7" }}>
-                                    <h6>55%</h6>
+                                    <span className="frequency_percentage">55%</span>
                                 </div>
                                 </div>
                                 <div className="barHighlight_2">
-                                <h4 className="barchartKeyword">108 Mp Camera</h4>
+                                <span className="barchartKeyword">108 Mp Camera</span>
                                 <div className="progress-percentage_2" style={{ height: "45%", backgroundColor: "#96DDE7" }}>
-                                     <h6>45%</h6>
+                                     <span className="frequency_percentage">45%</span>
                                     </div>
                                 </div>
                                 <div className="barHighlight_3">
-                                <h4 className="barchartKeyword">Snap Dragon Chip</h4>
+                                <span className="barchartKeyword">Snap Dragon Chip</span>
                                 <div className="progress-percentage_3" style={{ height: "25%", backgroundColor: "#96DDE7" }}>
-                                    <h6>25%</h6>
+                                    <span className="frequency_percentage">25%</span>
                                     </div>
                                 </div>
                                 <div className="barHighlight_4">
-                                <h4 className="barchartKeyword">Glastic Black</h4>         
+                                <span className="barchartKeyword">Glastic Black</span>         
                                 <div className="progress-percentage_4" style={{ height: "30%", backgroundColor: "#96DDE7" }}>
-                                    <h6>30%</h6>
+                                    <span className="frequency_percentage">30%</span>
                                     </div>
                                 </div>
                                 <div className="barHighlight_5">
-                                <h4 className="barchartKeyword">8GB Ram</h4>     
+                                <span className="barchartKeyword">8GB Ram</span>     
                                 <div className="progress-percentage_5" style={{ height: "90%", backgroundColor: "#96DDE7" }}>
-                                    <h6>90%</h6>
+                                    <span className="frequency_percentage">90%</span>
                                     </div>
                                 </div>
                                 <div className="barHighlight_6">
-                                <h4 className="barchartKeyword">Wonderful</h4>    
+                                <span className="barchartKeyword">Wonderful</span>    
                                 <div className="progress-percentage_6" style={{ height: "73%", backgroundColor: "#96DDE7" }}>
-                                    <h6>73%</h6>
+                                    <span className="frequency_percentage">73%</span>
                                     </div>
                                 </div>
                                 <div className="barHighlight_7">
-                                <h4 className="barchartKeyword">LCD Display</h4>       
+                                <span className="barchartKeyword">LCD Display</span>       
                                 <div className="progress-percentage_7" style={{ height: "100%", backgroundColor: "#96DDE7" }}>
-                                    <h6>100%</h6>
+                                    <span className="frequency_percentage">100%</span>
                                     </div>
                                 </div>
                                 <div className="barHighlight_8">
-                                <h4 className="barchartKeyword">Budget</h4>       
+                                <span className="barchartKeyword">Budget</span>       
                                 <div className="progress-percentage_8" style={{ height: "20%", backgroundColor: "#96DDE7" }}>
-                                    <h6>20%</h6>
+                                    <span className="frequency_percentage">20%</span>
                                     </div>
                                 </div>
                                 <div className="barHighlight_9">
-                                <h4 className="barchartKeyword">Facial Recognition</h4>        
+                                <span className="barchartKeyword">Facial Recognition</span>        
                                 <div className="progress-percentage_9" style={{ height: "19%", backgroundColor: "#96DDE7" }}>
-                                    <h6>19%</h6>
+                                    <span className="frequency_percentage">19%</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     
                     <div className="body-right-split">
 
                       <div className="card-right">
                           <p className="vectorizer-plot-topic">VECTORIZE PLOT</p>
+                          {/* <WordCloud></WordCloud> */}
                           {/* <div className="bubble-chart">
                             <Bubble_chart data={this.state.rawData} ></Bubble_chart>
                         </div> */}
