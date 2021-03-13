@@ -1,0 +1,29 @@
+.main-container {    
+    background-size: 100% 100%;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .header {    
+    top: 0%;
+    left: 1%;
+    display:block; 
+    width: 98%;
+    margin: 0%;  
+    height: 25%; 
+
+  }
+
+  .header-right-split{
+    float: right;
+
+  }
+
+  .navElements{
+    margin-right: 350px;
+    font-weight: bold;
+    font-family: Monospace ;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 1);
+
+  }
