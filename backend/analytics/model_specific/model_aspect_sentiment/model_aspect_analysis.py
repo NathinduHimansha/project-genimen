@@ -1,11 +1,26 @@
-import nltk
-import pandas as pd
-from backend.flaskr.api.uras.controller import get_sentiment
-from product_sentiment.feature_extraction.smartphone_model import Model
+from backend.analytics.model_specific.smartphone_model.phone_model import Model
+import pickle
+from backend.analytics.sentiment_analysis.preprocessing.clean_data import clean_text
+from json import JSONEncoder
+
+
+
+class MyEncoder(JSONEncoder):
+    def default(self, o):
+        return o.__dict__
+
+def get_sentiment(sentence_list):
+    model = pickle.load(
+        open("../../sentiment_analysis/model/trained_model/sgd_model/sgd_model.pickle", 'rb'))
+    vc = pickle.load(
+        open("../../sentiment_analysis/model/trained_model/sgd_model/vectorizer.pickle", 'rb'))
+    cleaned_sentences = list(map(clean_text, sentence_list))
+    bow = vc.transform(cleaned_sentences)
+    return model.predict(bow)
 
 
 # return smartphone object with sentiment score for identified features
-def get_features(review_arr):
+def get_features_with_sentiment(review_arr):
     phone_with_sentiment = Model()  # This object will store the all sentiment score for features
     for i in range(len(review_arr)):
         single_review_arr = review_arr[i].split()  # split sentence in to words by review
@@ -44,45 +59,34 @@ def save_sentiment(feature, sentiment_score, phone_obj):
 # Save the sentiment score by percentage
 def get_sentiment_percentage(phone_obj):
     if phone_obj.get_camera_count() != 0:
+        phone_obj.set_camera_pol("{:.2f}".format(((phone_obj.get_camera_pos() + phone_obj.get_camera_neg()) / phone_obj.get_camera_count()) * 100))
         phone_obj.set_camera_pos("{:.2f}".format((phone_obj.get_camera_pos() / phone_obj.get_camera_count()) * 100))
         phone_obj.set_camera_neg("{:.2f}".format((-(phone_obj.get_camera_neg()) / phone_obj.get_camera_count()) * 100))
     if phone_obj.get_display_count() != 0:
+        phone_obj.set_display_pol("{:.2f}".format(((phone_obj.get_display_pos() + phone_obj.get_display_neg()) / phone_obj.get_display_count()) * 100))
         phone_obj.set_display_pos("{:.2f}".format((phone_obj.get_display_pos() / phone_obj.get_display_count()) * 100))
         phone_obj.set_display_neg("{:.2f}".format((-(phone_obj.get_display_neg()) / phone_obj.get_display_count()) * 100))
     if phone_obj.get_battery_count() != 0:
+        phone_obj.set_battery_pol("{:.2f}".format(((phone_obj.get_battery_pos() + phone_obj.get_battery_neg()) / phone_obj.get_battery_count()) * 100))
         phone_obj.set_battery_pos("{:.2f}".format((phone_obj.get_battery_pos() / phone_obj.get_battery_count()) * 100))
         phone_obj.set_battery_neg("{:.2f}".format(-((phone_obj.get_battery_neg()) / phone_obj.get_battery_count()) * 100))
     if phone_obj.get_face_recognition_count() != 0:
+        phone_obj.set_face_recognition_pol(
+            "{:.2f}".format(((phone_obj.get_face_recognition_pos() + phone_obj.get_face_recognition_neg()) / phone_obj.get_face_recognition_count()) * 100))
         phone_obj.set_face_recognition_pos(
             "{:.2f}".format((phone_obj.get_face_recognition_pos() / phone_obj.get_face_recognition_count()) * 100))
         phone_obj.set_face_recognition_neg(
             "{:.2f}".format(-((phone_obj.get_face_recognition_neg()) / phone_obj.get_face_recognition_count()) * 100))
     if phone_obj.get_finger_print_count() != 0:
+        phone_obj.set_finger_print_pol(
+            "{:.2f}".format(((phone_obj.get_finger_print_pos() + phone_obj.get_finger_print_neg()) / phone_obj.get_finger_print_count()) * 100))
         phone_obj.set_finger_print_pos(
             "{:.2f}".format((phone_obj.get_finger_print_pos() / phone_obj.get_finger_print_count()) * 100))
         phone_obj.set_finger_print_neg(
             "{:.2f}".format(-((phone_obj.get_finger_print_neg()) / phone_obj.get_finger_print_count()) * 100))
     if phone_obj.get_speaker_count() != 0:
+        phone_obj.set_speakers_pol(
+            "{:.2f}".format(((phone_obj.get_speakers_pos() + phone_obj.get_speakers_neg()) / phone_obj.get_speaker_count()) * 100))
         phone_obj.set_speakers_pos("{:.2f}".format((phone_obj.get_speakers_pos() / phone_obj.get_speaker_count()) * 100))
         phone_obj.set_speakers_neg("{:.2f}".format(-((phone_obj.get_speakers_neg()) / phone_obj.get_speaker_count()) * 100))
     return phone_obj
-
-
-# Testing csv
-model_name = "apple-iphone-11"
-df = pd.read_csv('../model-reviews/' + model_name + '.csv')
-new = Model
-all_reviews_arr = []
-for row in df.review:
-    review_arr = nltk.tokenize.sent_tokenize(str(row))
-    for review in range(len(review_arr)):
-        all_reviews_arr.append(review_arr[review])
-
-new = get_features(all_reviews_arr)
-print("Model name ", model_name)
-print("Display sentiment pos : ", new.get_display_pos())
-print("Display sentiment neg : ", new.get_display_neg())
-print("================Percentage wise================================")
-new = get_sentiment_percentage(new)
-print("Display sentiment pos : ", new.get_display_pos())
-print("Display sentiment neg : ", new.get_display_neg())
