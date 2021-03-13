@@ -1,3 +1,4 @@
+/*Frequency based UI Header*/
 .main-container {    
     background-size: 100% 100%;
     margin: 0%;
@@ -16,7 +17,6 @@
 
   .header-right-split{
     float: right;
-
   }
 
   .navElements{
@@ -25,5 +25,4 @@
     font-family: Monospace ;
     font-size: 18px;
     color: rgba(0, 0, 0, 1);
-
   }

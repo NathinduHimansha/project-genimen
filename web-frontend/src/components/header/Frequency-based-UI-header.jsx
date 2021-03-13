@@ -14,6 +14,7 @@ class Frequency_Based_UI extends React.Component {
                     <div className="header-left-split">
                         <img src={logo} className="logo" alt="logo" />
                     </div>
+                    
                     <div className="header-right-split">
 
                         <Navbar variant="light">
