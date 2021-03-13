@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from 'web-frontend/src/assests/geniman_logo_new.png'
+import logo from '../../assests/geniman_logo_new.png'
 import './header.css'
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
