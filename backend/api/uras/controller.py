@@ -5,7 +5,7 @@ from analytics.aspect_analysis.aspect_lexicons import FEATURE_TYPES
 #  from .service import get_reviews_sentiment_summary, mock
 from .service import get_reviews_sentiment_summary
 
-uras = Blueprint('uras', __name__, url_prefix="/api/uras")
+uras = Blueprint('uras', __name__, url_prefix='/api')
 
 
 def is_features_valid(feature_type_dic):
@@ -22,14 +22,19 @@ def is_features_valid(feature_type_dic):
     return True
 
 
-@uras.route('/', methods=['GET'])
+@uras.route('/uras', methods=['GET', 'POST'])
+def handle_uras():
+    if (request.method == 'POST'):
+        if (not is_features_valid(request.json)):
+            return createErrResponse("req contains invalid features")
+        return createSuccessResponse(get_feature_sentiment_analysis())
+    else:
+        return createSuccessResponse(get_features_types())
+
+
 def get_features_types():
-    return createSuccessResponse(FEATURE_TYPES)
+    return FEATURE_TYPES
 
 
-@uras.route('/', methods=['POST'])
 def get_feature_sentiment_analysis():
-    if (not is_features_valid(request.json)):
-        return createErrResponse("req contains invalid features")
-
-    return createSuccessResponse(get_reviews_sentiment_summary(request.json))
+    return get_reviews_sentiment_summary(request.json)
