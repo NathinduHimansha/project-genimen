@@ -1,11 +1,11 @@
 import React from 'react'
-import logo from '../assets/geniman_logo_new.png'
-import './heading.css'
+import logo from 'web-frontend/src/assests/geniman_logo_new.png'
+import './header.css'
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-class Frequency_based_heading extends React.Component {
+class Frequency_Based_UI extends React.Component {
     render() {
         return (
             <div className="main-container">
@@ -34,4 +34,4 @@ class Frequency_based_heading extends React.Component {
     }
 }
 
-export default Frequency_based_heading;
+export default Frequency_Based_UI;
