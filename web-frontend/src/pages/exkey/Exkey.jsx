@@ -3,8 +3,8 @@ import logo from '../../assests/geniman_logo_new.png';
 import search from '../../assests/Search.png';
 import './exkey.css';
 import Bargraph from '../../components/graphs/BarGraph';
-import { Navbar, Nav } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import { Navbar, Nav } from 'react-bootstrap';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import WordCloud from '../../components/graphs/WordCloud';
 import { Chart, Transform, Cloud } from 'rumble-charts';
 
