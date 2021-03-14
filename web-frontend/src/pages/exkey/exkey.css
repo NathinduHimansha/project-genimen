@@ -1,11 +1,11 @@
-.logo{
-    float: left;
-    height: 150px;
-    width: 150px;
-    display: inline-block;
-    margin-left: 70px;
-    margin-top: 10px;
-    margin-right: 100px;
+.logo {
+  float: left;
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+  margin-left: 70px;
+  margin-top: 10px;
+  margin-right: 100px;
 }
 
 .card-left {
@@ -19,7 +19,6 @@
   cursor: pointer;
   padding-left: 150px;
   position: absolute;
-
 }
 
 .card-left:hover {
@@ -38,74 +37,68 @@
   display: inline-block;
   padding-left: 150px;
   position: absolute;
-
 }
 
 .card-right:hover {
   box-shadow: 0 8px 16px 0 var(--primary-black);
 }
 
-.bubble-chart{
+.bubble-chart {
   margin-left: -165px;
   bottom: -150px;
 }
 
-  .topic-frequency-distribution-bargraph{
-    text-align: center;
-    margin-left: 70px;
-    position: fixed;
-    font-size: 1.5rem;
+.topic-frequency-distribution-bargraph {
+  text-align: center;
+  margin-left: 70px;
+  position: fixed;
+  font-size: 1.5rem;
+}
 
-  }
+.vectorizer-plot-topic {
+  text-align: center;
+  margin-left: 130px;
+  position: fixed;
+  font-size: 1.5rem;
+}
 
-  .vectorizer-plot-topic{
-    text-align: center;
-    margin-left:130px;
-    position: fixed;
-    font-size: 1.5rem;
-  }
+.main-container {
+  background-size: 100% 100%;
+  margin: 0%;
+  padding: 0%;
+}
 
-  .main-container {    
-    background-size: 100% 100%;
-    margin: 0%;
-    padding: 0%;
-  }
-
-  .header {    
-    top: 0%;
-    left: 1%;
-    display:block; 
-    width: 98%;
-    margin: 0%;  
-    height: 25%; 
-
-  }
-
-  .header-right-split{
-    float: right;
-
-  }
-
-  .navElements{
-    margin-right: 350px;
-    font-weight: bold;
-    font-family: Monospace ;
-    font-size: 18px;
-    color: var(--primary-black);
-
-  }
-
-  .body{   
+.header {
   top: 0%;
   left: 1%;
-  display:block; 
+  display: block;
+  width: 98%;
+  margin: 0%;
+  height: 25%;
+}
+
+.header-right-split {
+  float: right;
+}
+
+.navElements {
+  margin-right: 350px;
+  font-weight: bold;
+  font-family: Monospace;
+  font-size: 18px;
+  color: var(--primary-black);
+}
+
+.body {
+  top: 0%;
+  left: 1%;
+  display: block;
   width: 98%;
   margin: 0%;
   height: 75%;
- 
 }
-.body-left-split{
-  display:inline-block;
+.body-left-split {
+  display: inline-block;
   top: 24%;
   left: 1%;
   float: left;
@@ -113,11 +106,10 @@
   width: 15%;
   margin-right: 1%;
   position: fixed;
-
 }
-.body-right-split{
+.body-right-split {
   top: 25%;
-  display:inline-block;
+  display: inline-block;
   left: 50%;
   float: right;
   height: 100%;
@@ -125,17 +117,17 @@
   width: 15%;
 }
 
-.keyword_topic{
+.keyword_topic {
   font-size: 2.25rem;
-  top: 150px ;
-  left:550px;
+  top: 150px;
+  left: 550px;
   font-family: Courier;
   border-right: 2px solid var(--primary-black);
   white-space: nowrap;
-  animation: typewriter 3s steps(40) 0s 1 normal both,  blinkTextCursor 750ms steps(40) infinite normal;
+  animation: typewriter 3s steps(40) 0s 1 normal both,
+    blinkTextCursor 750ms steps(40) infinite normal;
   overflow: hidden;
   position: absolute;
-
 }
 
 @keyframes typewriter {
@@ -149,7 +141,6 @@
 }
 
 @keyframes blinkTextCursor {
-
   from {
     border-right-color: var(--primary-black);
   }
@@ -157,22 +148,21 @@
   to {
     border-right-color: transparent;
   }
-
 }
 
-button{
-  width:200px;
-  height:100px;
-  text-align:center;
-  line-height:1.1em;
-  font-size:1.1em;
-}
+/* button{ */
+/* width:200px; */
+/* height:100px; */
+/* text-align:center; */
+/* line-height:1.1em; */
+/* font-size:1.1em; */
+/* } */
 
-table{
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-}
+/* table{ */
+/* width: 100%; */
+/* table-layout: fixed; */
+/* border-collapse: collapse; */
+/* } */
 
 .features {
   padding: 16px 32px;
@@ -180,185 +170,121 @@ table{
   text-decoration: none;
   display: inline-block;
   font-size: 1rem;
-  margin-top:10%;
-  margin-right:50px;
+  margin-top: 10%;
+  margin-right: 50px;
   transition-duration: 0.6s;
   cursor: pointer;
-  background-color: var(--primary-white); 
-  color: var(--primary-black); 
+  background-color: var(--primary-white);
+  color: var(--primary-black);
   border: 2px solid rgba(83, 206, 132, 1);
   border-radius: 12px;
-  
-  
 }
 
 .features_1:hover {
-    background-color: rgba(83, 206, 132, 1);
-    color: white;
-  }
-
-
-  .features_2:hover {
-    background-color:  rgba(83, 206, 132, 1);
-    color: white;
-  }
-
-
-  .features_3:hover {
-    background-color: rgba(83, 206, 132, 1);
-    color: white;
-  }
-
-
-  .features_4:hover {
-    background-color: rgba(83, 206, 132, 1);
-    color: white;
-  }
-
-  .features_5:hover {
-    background-color: rgba(83, 206, 132, 1);
-    color: white;
-  }
-
-  
-  .features_6:hover {
-    background-color: rgba(83, 206, 132, 1);
-    color: white;
-  }
-
-  .features_7:hover {
-    background-color: rgba(83, 206, 132, 1);
-    color: white;
-  }
-
-  
-  .features_8:hover {
-    background-color: rgba(83, 206, 132, 1);
-    color: white;
-  }
-
-  .features_9:hover {
-    background-color: rgba(83, 206, 132, 1);
-    color: white;
-  }
-
-  .analyze_again{
-    width:200px;
-    height:80px;
-    border-radius: 10px;
-    border: 2px solid var(--primary-accent);
-    background-color: var(--primary-accent);
-    float: right;
-    color:white;
-    font-weight: bold;
-    font-size: 1.5rem;
-    bottom: -100px;
-    right: 0px;
-    position: absolute;
-  }
-  
-  @keyframes blink {
-    /**
-     * At the start of the animation the dot
-     * has an opacity of .2
-     */
-    0% {
-      opacity: .2;
-    }
-    /**
-     * At 20% the dot is fully visible and
-     * then fades out slowly
-     */
-    20% {
-      opacity: 1;
-    }
-    /**
-     * Until it reaches an opacity of .2 and
-     * the animation can start again
-     */
-    100% {
-      opacity: .2;
-    }
+  background-color: rgba(83, 206, 132, 1);
+  color: white;
 }
 
-.analyze_again span {
-  font-size: 1.5625rem;
-    /**
-     * Use the blink animation, which is defined above
-     */
-    animation-name: blink;
-    /**
-     * The animation should take 1.4 seconds
-     */
-    animation-duration: 1.4s;
-    /**
-     * It will repeat itself forever
-     */
-    animation-iteration-count: infinite;
-    /**
-     * This makes sure that the starting style (opacity: .2)
-     * of the animation is applied before the animation starts.
-     * Otherwise we would see a short flash or would have
-     * to set the default styling of the dots to the same
-     * as the animation. Same applies for the ending styles.
-     */
-    animation-fill-mode: both;
+.features_2:hover {
+  background-color: rgba(83, 206, 132, 1);
+  color: white;
 }
 
-.analyze_again span:nth-child(2) {
-    /**
-     * Starts the animation of the third dot
-     * with a delay of .2s, otherwise all dots
-     * would animate at the same time
-     */
-    animation-delay: .2s;
+.features_3:hover {
+  background-color: rgba(83, 206, 132, 1);
+  color: white;
 }
 
-.analyze_again span:nth-child(3) {
-    /**
-     * Starts the animation of the third dot
-     * with a delay of .4s, otherwise all dots
-     * would animate at the same time
-     */
-    animation-delay: .4s;
+.features_4:hover {
+  background-color: rgba(83, 206, 132, 1);
+  color: white;
 }
 
-  .search_icon{
-    width:13%;
-    height: 30%;
-  }
-
-
-
-
-
-
-  /*BAR GRAPH*/
-
-  .frequency_percentage{
-    float: left;
-    animation: fadein 3s linear;
-    bottom: -35px;
-    position: absolute;
-    font-size: 1.5rem;
-    left: 1px;
-    font-weight: bold;
-  }
-
-  .bar {
-    height: 220px;
-    left: -550px;
-    top: 180px;
-    position: absolute;
-    background-color:var(--primary-white);
-    border-color: white;
-    z-index: -1;
+.features_5:hover {
+  background-color: rgba(83, 206, 132, 1);
+  color: white;
 }
 
-.barHighlight_1{
-  height: 100%;;
+.features_6:hover {
+  background-color: rgba(83, 206, 132, 1);
+  color: white;
+}
+
+.features_7:hover {
+  background-color: rgba(83, 206, 132, 1);
+  color: white;
+}
+
+.features_8:hover {
+  background-color: rgba(83, 206, 132, 1);
+  color: white;
+}
+
+.features_9:hover {
+  background-color: rgba(83, 206, 132, 1);
+  color: white;
+}
+
+.analyze_again {
+  bottom: -90px;
+  right: 0px;
+  position: absolute;
+}
+
+/* .container { */
+/* width: 100%; */
+/* position: relative; */
+/* display: flex; */
+/* justify-content: space-around; */
+/* top:100px */
+/* } */
+/* .container .spinner { */
+/* width: 180px; */
+/* height: 180px; */
+/* border-radius: 50%; */
+/* border: 8px solid rgba(152, 150, 150, 0.2); */
+/* border-left-color: #F00; */
+/* border-right-color: #F00; */
+/* animation: rotateSpinner 1.5s linear 54; */
+/* } */
+/* .counter { */
+/* position: absolute; */
+/* top: 170px; */
+/* left: 50%; */
+/* transform: translateX(-50%); */
+/* font-size: 26px; */
+/* } */
+/* @keyframes rotateSpinner { */
+/* 0% { transform: rotate(0deg); } */
+/* 100% { transform: rotate(360deg); } */
+/* } */
+
+/* [>BAR GRAPH<] */
+
+.frequency_percentage {
+  float: left;
+  animation: fadein 3s linear;
+  bottom: -35px;
+  position: absolute;
+  font-size: 1.5rem;
+  left: 1px;
+  font-weight: bold;
+}
+
+/* .bar { */
+/* height: 220px; */
+/* left: -550px; */
+/* top: 180px; */
+/* position: absolute; */
+/* background-color:var(--primary-white); */
+/* border-color: white; */
+/* z-index: -1; */
+/* } */
+
+.barHighlight_1 {
+  height: 100%;
   width: 30px;
-  background-color: #D9F0F3;
+  background-color: #d9f0f3;
   position: absolute;
   right: -10px;
   bottom: 20%;
@@ -366,17 +292,16 @@ table{
 
 .progress-percentage_1 {
   width: 30px;
-  animation:start-load 2s ease forwards;
+  animation: start-load 2s ease forwards;
   position: absolute;
   right: 0px;
   bottom: 0%;
 }
 
-
-.barHighlight_2{
-  height: 100%;;
+.barHighlight_2 {
+  height: 100%;
   width: 30px;
-  background-color: #D9F0F3;
+  background-color: #d9f0f3;
   position: absolute;
   right: -80px;
   bottom: 20%;
@@ -385,17 +310,16 @@ table{
 .progress-percentage_2 {
   width: 30px;
   position: absolute;
-  right:0px;
+  right: 0px;
   height: 100%;
-  animation:start-load 2s ease forwards;
+  animation: start-load 2s ease forwards;
   bottom: 0%;
 }
 
-
-.barHighlight_3{
-  height: 100%;;
+.barHighlight_3 {
+  height: 100%;
   width: 30px;
-  background-color: #D9F0F3;
+  background-color: #d9f0f3;
   position: absolute;
   right: -150px;
   bottom: 20%;
@@ -407,14 +331,14 @@ table{
   right: 0px;
   margin-top: -30px;
   height: 100%;
-  animation:start-load 2s ease forwards;
+  animation: start-load 2s ease forwards;
   bottom: 0%;
 }
 
-.barHighlight_4{
-  height: 100%;;
+.barHighlight_4 {
+  height: 100%;
   width: 30px;
-  background-color: #D9F0F3;
+  background-color: #d9f0f3;
   position: absolute;
   right: -220px;
   bottom: 20%;
@@ -426,14 +350,14 @@ table{
   right: -0px;
   margin-top: -30px;
   height: 100%;
-  animation:start-load 2s ease forwards;
+  animation: start-load 2s ease forwards;
   bottom: 0%;
 }
 
-.barHighlight_5{
-  height: 100%;;
+.barHighlight_5 {
+  height: 100%;
   width: 30px;
-  background-color: #D9F0F3;
+  background-color: #d9f0f3;
   position: absolute;
   right: -290px;
   bottom: 20%;
@@ -445,14 +369,14 @@ table{
   right: 0x;
   margin-top: -30px;
   height: 100%;
-  animation:start-load 2s ease forwards;
+  animation: start-load 2s ease forwards;
   bottom: 0%;
 }
 
-.barHighlight_6{
-  height: 100%;;
+.barHighlight_6 {
+  height: 100%;
   width: 30px;
-  background-color: #D9F0F3;
+  background-color: #d9f0f3;
   position: absolute;
   right: -360px;
   bottom: 20%;
@@ -463,14 +387,14 @@ table{
   position: absolute;
   right: 0px;
   height: 100%;
-  animation:start-load 2s ease forwards;
+  animation: start-load 2s ease forwards;
   bottom: 0%;
 }
 
-.barHighlight_7{
-  height: 100%;;
+.barHighlight_7 {
+  height: 100%;
   width: 30px;
-  background-color: #D9F0F3;
+  background-color: #d9f0f3;
   position: absolute;
   right: -430px;
   bottom: 20%;
@@ -481,14 +405,14 @@ table{
   position: absolute;
   right: 0px;
   height: 100%;
-  animation:start-load 2s ease forwards;
+  animation: start-load 2s ease forwards;
   bottom: 0%;
 }
 
-.barHighlight_8{
-  height: 100%;;
+.barHighlight_8 {
+  height: 100%;
   width: 30px;
-  background-color: #D9F0F3;
+  background-color: #d9f0f3;
   position: absolute;
   right: -500px;
   bottom: 20%;
@@ -499,14 +423,14 @@ table{
   position: absolute;
   right: 0px;
   height: 100%;
-  animation:start-load 2s ease forwards;
+  animation: start-load 2s ease forwards;
   bottom: 0%;
 }
 
-.barHighlight_9{
-  height: 100%;;
+.barHighlight_9 {
+  height: 100%;
   width: 30px;
-  background-color: #D9F0F3;
+  background-color: #d9f0f3;
   position: absolute;
   right: -570px;
   bottom: 20%;
@@ -517,17 +441,17 @@ table{
   position: absolute;
   right: 0px;
   height: 100%;
-  animation:start-load 2s ease forwards;
+  animation: start-load 2s ease forwards;
   bottom: 0%;
 }
 
 @keyframes start-load {
-    from {
-        height: 0;
-    }
-    to {
-        height: 1;
-    }
+  from {
+    height: 0;
+  }
+  to {
+    height: 1;
+  }
 }
 
 @keyframes fadein {
@@ -536,21 +460,20 @@ table{
   }
   100% {
     opacity: 100;
-  } 
-} 
+  }
+}
 
-.barchartKeyword{
+.barchartKeyword {
   writing-mode: tb-rl;
   transform: rotate(-180deg);
   float: left;
-  transition: 0.5s; 
-  font-family: Arial, Helvetica, sans-serif; 
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
   position: absolute;
   left: 2px;
   bottom: 20px;
   width: 100%;
   z-index: 1;
-  color: #37474F;
- font-size: 17px;
+  color: #37474f;
+  font-size: 17px;
 }
-
