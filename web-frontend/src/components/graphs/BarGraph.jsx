@@ -6,7 +6,7 @@ class Exkey extends React.Component {
     render() {
         return (
            
-                            <div className="bar">
+                            <div className="frequency-bars">
                                 <div className="barHighlight_1">
                                     <span className="barchartKeyword">Gorilla Screen</span>
                                     <div className="progress-percentage_1" style={{ height: "55%", backgroundColor: "#96DDE7" }}>
