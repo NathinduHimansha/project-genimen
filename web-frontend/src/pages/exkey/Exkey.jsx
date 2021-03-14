@@ -56,20 +56,20 @@ class Exkey extends React.Component {
             <img src={logo} className="logo" alt="logo" />
           </div>
           <div className="header-right-split">
-            <Navbar variant="light">
-              <Nav className="navElements">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#about" style={{ marginLeft: '170px' }}>
-                  About
-                </Nav.Link>
-                <Nav.Link href="#developers" style={{ marginLeft: '40%' }}>
-                  Developers
-                </Nav.Link>
-                <Nav.Link href="#help" style={{ marginLeft: '38%' }}>
-                  Help
-                </Nav.Link>
-              </Nav>
-            </Navbar>
+            {/* <Navbar variant="light"> */}
+            {/* <Nav className="navElements"> */}
+            {/* <Nav.Link href="#home">Home</Nav.Link> */}
+            {/* <Nav.Link href="#about" style={{ marginLeft: '170px' }}> */}
+            {/* About */}
+            {/* </Nav.Link> */}
+            {/* <Nav.Link href="#developers" style={{ marginLeft: '40%' }}> */}
+            {/* Developers */}
+            {/* </Nav.Link> */}
+            {/* <Nav.Link href="#help" style={{ marginLeft: '38%' }}> */}
+            {/* Help */}
+            {/* </Nav.Link> */}
+            {/* </Nav> */}
+            {/* </Navbar> */}
           </div>
         </div>
 
