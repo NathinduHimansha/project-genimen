@@ -21,22 +21,23 @@ const series = [{
         { label: 'Chartist.js', y: 3 },
         { label: 'C3.js', y: 14 },
         { label: 'Cubism.js', y: 1 },
-        { label: 'Rickshaw', y: 90 }
+        { label: 'Rickshaw', y: 2 }
     ]
 }];
 
 class WordCloud extends React.Component {
     render() {
+        console.log(series)
         return (
 
-            <Chart width={600} height={600} series={series} minY={0}>
+            <Chart width={600} height={500} series={series} minY={0}>
                 <Transform method='transpose'>
                     <Cloud
                         font='sans-serif'
-                        minFontSize={24}
-                        maxFontSize={72}
-                        padding={2}
-                        rotate={() => (~~(Math.random() * 12) - 6) * 15}
+                        minFontSize={10}
+                        maxFontSize={50}
+                        padding={-15}
+                        layerWidth={500}
                     />
                 </Transform>
             </Chart>

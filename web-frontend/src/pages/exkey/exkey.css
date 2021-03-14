@@ -243,95 +243,41 @@ table{
   }
 
   .analyze_again{
-    width:200px;
-    height:80px;
-    border-radius: 10px;
-    border: 2px solid var(--primary-accent);
-    background-color: var(--primary-accent);
-    float: right;
-    color:white;
-    font-weight: bold;
-    font-size: 1.5rem;
-    bottom: -100px;
+    bottom: -90px;
     right: 0px;
     position: absolute;
   }
-  
-  @keyframes blink {
-    /**
-     * At the start of the animation the dot
-     * has an opacity of .2
-     */
-    0% {
-      opacity: .2;
-    }
-    /**
-     * At 20% the dot is fully visible and
-     * then fades out slowly
-     */
-    20% {
-      opacity: 1;
-    }
-    /**
-     * Until it reaches an opacity of .2 and
-     * the animation can start again
-     */
-    100% {
-      opacity: .2;
-    }
-}
 
-.analyze_again span {
-  font-size: 1.5625rem;
-    /**
-     * Use the blink animation, which is defined above
-     */
-    animation-name: blink;
-    /**
-     * The animation should take 1.4 seconds
-     */
-    animation-duration: 1.4s;
-    /**
-     * It will repeat itself forever
-     */
-    animation-iteration-count: infinite;
-    /**
-     * This makes sure that the starting style (opacity: .2)
-     * of the animation is applied before the animation starts.
-     * Otherwise we would see a short flash or would have
-     * to set the default styling of the dots to the same
-     * as the animation. Same applies for the ending styles.
-     */
-    animation-fill-mode: both;
-}
-
-.analyze_again span:nth-child(2) {
-    /**
-     * Starts the animation of the third dot
-     * with a delay of .2s, otherwise all dots
-     * would animate at the same time
-     */
-    animation-delay: .2s;
-}
-
-.analyze_again span:nth-child(3) {
-    /**
-     * Starts the animation of the third dot
-     * with a delay of .4s, otherwise all dots
-     * would animate at the same time
-     */
-    animation-delay: .4s;
-}
-
-  .search_icon{
-    width:13%;
-    height: 30%;
+  /*nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn*/
+  .container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    top:100px
   }
-
-
-
-
-
+  .container .spinner {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 8px solid rgba(152, 150, 150, 0.2);
+      border-left-color: #F00;
+      border-right-color: #F00;
+      animation: rotateSpinner 1.5s linear 54;
+  }
+  .counter {
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 26px;
+  }
+  @keyframes rotateSpinner {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+  }
+  
+  
 
   /*BAR GRAPH*/
 
