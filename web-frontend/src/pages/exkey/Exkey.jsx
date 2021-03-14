@@ -3,8 +3,6 @@ import logo from '../../assests/geniman_logo_new.png';
 import search from '../../assests/Search.png';
 import './exkey.css';
 import Bargraph from '../../components/graphs/BarGraph';
-// import { Navbar, Nav } from 'react-bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import WordCloud from '../../components/graphs/WordCloud';
 
 class Exkey extends React.Component {
@@ -17,15 +15,26 @@ class Exkey extends React.Component {
 
       if (i === 100) {
         clearInterval(counter);
+
         document.querySelector('.counter_right').style.border = 'unset';
-        document.querySelector('.counter_right').style.visibility = 'hidden';
-        document.querySelector('.spinner_right').style.visibility = 'hidden';
+        document.querySelector('.counter_right').style.display = 'none';
+        document.querySelector('.spinner_right').style.display = 'none';
 
         document.querySelector('.counter_left').style.border = 'unset';
-        document.querySelector('.counter_left').style.visibility = 'hidden';
-        document.querySelector('.spinner_left').style.visibility = 'hidden';
+        document.querySelector('.counter_left').style.display = 'none';
+        document.querySelector('.spinner_left').style.display = 'none';
 
-        document.querySelector('.bar').style.visibility = 'visible';
+        document.querySelector('.frequency-bars ').style.visibility = 'visible';
+
+        document.getElementsByClassName('progress-percentage')[0].classList.add('animation');
+        document.getElementsByClassName('progress-percentage')[1].classList.add('animation');
+        document.getElementsByClassName('progress-percentage')[2].classList.add('animation');
+        document.getElementsByClassName('progress-percentage')[3].classList.add('animation');
+        document.getElementsByClassName('progress-percentage')[4].classList.add('animation');
+        document.getElementsByClassName('progress-percentage')[5].classList.add('animation');
+        document.getElementsByClassName('progress-percentage')[6].classList.add('animation');
+        document.getElementsByClassName('progress-percentage')[7].classList.add('animation');
+        document.getElementsByClassName('progress-percentage')[8].classList.add('animation');
       }
     }, 30);
   }
@@ -33,28 +42,6 @@ class Exkey extends React.Component {
   render() {
     return (
       <div className="main-container">
-        <div className="header">
-          <div className="header-left-split">
-            <img src={logo} className="logo" alt="logo" />
-          </div>
-          <div className="header-right-split">
-            {/* <Navbar variant="light"> */}
-            {/* <Nav className="navElements"> */}
-            {/* <Nav.Link href="#home">Home</Nav.Link> */}
-            {/* <Nav.Link href="#about" style={{ marginLeft: '170px' }}> */}
-            {/* About */}
-            {/* </Nav.Link> */}
-            {/* <Nav.Link href="#developers" style={{ marginLeft: '40%' }}> */}
-            {/* Developers */}
-            {/* </Nav.Link> */}
-            {/* <Nav.Link href="#help" style={{ marginLeft: '38%' }}> */}
-            {/* Help */}
-            {/* </Nav.Link> */}
-            {/* </Nav> */}
-            {/* </Navbar> */}
-          </div>
-        </div>
-
         <div className="body">
           <p className="keyword_topic">
             <b>LOOK WHAT PEOPLE ARE TALKING OF PHONES...</b>
@@ -66,14 +53,28 @@ class Exkey extends React.Component {
                 <div className="spinner_left"></div>
               </div>
               <div className="counter_left">0%</div>
-              <Bargraph></Bargraph>
             </div>
           </div>
-
+          <div className="frequency-bars" style={{ visibility: 'hidden' }} id="bars">
+            {[
+              { percentage: 32, label: 'gorilla glass' },
+              { percentage: 20, label: '108Mp camera' },
+              { percentage: 100, label: 'facial recognition' },
+              { percentage: 17, label: 'woderful' },
+              { percentage: 50, label: '8GB Ram' },
+              { percentage: 67, label: 'onscreen fingerprint' },
+              { percentage: 98, label: 'LCD Display' },
+              { percentage: 14, label: 'Budget' },
+              { percentage: 62, label: 'Snap Dragon' },
+            ].map((item, i) => (
+              <Bargraph key={i} percentage={item.percentage} label={item.label}></Bargraph>
+            ))}
+          </div>
           <div className="body-right-split">
             <div className="card-right">
-              <p className="vectorizer-plot-topic">VECTORIZE PLOT</p>
+              <p className="vectorizer-plot-topic">TREND</p>
               <div className="bubble-chart">
+                {/* <WordCloud></WordCloud> */}
                 <div className="container_right">
                   <div className="spinner_right"></div>
                 </div>

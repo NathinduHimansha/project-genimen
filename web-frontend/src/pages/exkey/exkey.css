@@ -11,7 +11,7 @@
 .card-left {
   box-shadow: 0 4px 8px 0 var(--primary-black);
   transition: 0.3s;
-  width: 290%;
+  width: 220%;
   height: 410px;
   border-radius: 5px;
   top: 50px;
@@ -28,7 +28,7 @@
 .card-right {
   box-shadow: 0 4px 8px 0 var(--primary-black);
   transition: 0.3s;
-  width: 290%;
+  width: 220%;
   height: 410px;
   border-radius: 5px;
   top: 40px;
@@ -119,7 +119,7 @@
 
 .keyword_topic {
   font-size: 2.25rem;
-  top: 150px;
+  top: 115px;
   left: 550px;
   font-family: Courier;
   border-right: 2px solid var(--primary-black);
@@ -231,221 +231,112 @@
   position: absolute;
 }
 
-/* .container { */
-/* width: 100%; */
-/* position: relative; */
-/* display: flex; */
-/* justify-content: space-around; */
-/* top:100px */
-/* } */
-/* .container .spinner { */
-/* width: 180px; */
-/* height: 180px; */
-/* border-radius: 50%; */
-/* border: 8px solid rgba(152, 150, 150, 0.2); */
-/* border-left-color: #F00; */
-/* border-right-color: #F00; */
-/* animation: rotateSpinner 1.5s linear 54; */
-/* } */
-/* .counter { */
-/* position: absolute; */
-/* top: 170px; */
-/* left: 50%; */
-/* transform: translateX(-50%); */
-/* font-size: 26px; */
-/* } */
-/* @keyframes rotateSpinner { */
-/* 0% { transform: rotate(0deg); } */
-/* 100% { transform: rotate(360deg); } */
-/* } */
+/*right spinner*/
+
+.container_right {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  top: 100px;
+}
+.container_right .spinner_right {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 8px solid rgba(152, 150, 150, 0.2);
+  border-left-color: #f00;
+  border-right-color: #f00;
+  animation: rotateSpinner 1.5s linear 54;
+}
+.counter_right {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
+}
+
+/*left spinner*/
+
+.container_left {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  top: 100px;
+  left: -15%;
+}
+.container_left .spinner_left {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 8px solid rgba(152, 150, 150, 0.2);
+  border-left-color: #f00;
+  border-right-color: #f00;
+  animation: rotateSpinner 1.5s linear 54;
+}
+.counter_left {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
+}
+
+@keyframes rotateSpinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /* [>BAR GRAPH<] */
 
 .frequency_percentage {
   float: left;
   animation: fadein 3s linear;
-  bottom: -35px;
+  bottom: -80px;
   position: absolute;
   font-size: 1.5rem;
   left: 1px;
   font-weight: bold;
+  margin-bottom: 40px;
 }
 
-/* .bar { */
-/* height: 220px; */
-/* left: -550px; */
-/* top: 180px; */
-/* position: absolute; */
-/* background-color:var(--primary-white); */
-/* border-color: white; */
-/* z-index: -1; */
-/* } */
+.frequency-bars {
+  height: 220px;
+  right: -60px;
+  top: 110px;
+  position: relative;
+  background-color: var(--primary-white);
+  border-color: white;
+  display: flex;
+  margin-right: 70px;
+}
 
-.barHighlight_1 {
+.barHighlight {
   height: 100%;
   width: 30px;
   background-color: #d9f0f3;
   position: absolute;
-  right: -10px;
-  bottom: 20%;
+  bottom: -150px;
 }
 
-.progress-percentage_1 {
-  width: 30px;
-  animation: start-load 2s ease forwards;
-  position: absolute;
-  right: 0px;
-  bottom: 0%;
-}
-
-.barHighlight_2 {
-  height: 100%;
-  width: 30px;
-  background-color: #d9f0f3;
-  position: absolute;
-  right: -80px;
-  bottom: 20%;
-}
-
-.progress-percentage_2 {
+.progress-percentage {
   width: 30px;
   position: absolute;
   right: 0px;
-  height: 100%;
-  animation: start-load 2s ease forwards;
-  bottom: 0%;
+  bottom: 0px;
 }
 
-.barHighlight_3 {
-  height: 100%;
-  width: 30px;
-  background-color: #d9f0f3;
-  position: absolute;
-  right: -150px;
-  bottom: 20%;
+.animation {
+  animation: start_load 2s ease forwards;
 }
 
-.progress-percentage_3 {
-  width: 30px;
-  position: absolute;
-  right: 0px;
-  margin-top: -30px;
-  height: 100%;
-  animation: start-load 2s ease forwards;
-  bottom: 0%;
-}
-
-.barHighlight_4 {
-  height: 100%;
-  width: 30px;
-  background-color: #d9f0f3;
-  position: absolute;
-  right: -220px;
-  bottom: 20%;
-}
-
-.progress-percentage_4 {
-  width: 30px;
-  position: absolute;
-  right: -0px;
-  margin-top: -30px;
-  height: 100%;
-  animation: start-load 2s ease forwards;
-  bottom: 0%;
-}
-
-.barHighlight_5 {
-  height: 100%;
-  width: 30px;
-  background-color: #d9f0f3;
-  position: absolute;
-  right: -290px;
-  bottom: 20%;
-}
-
-.progress-percentage_5 {
-  width: 30px;
-  position: absolute;
-  right: 0x;
-  margin-top: -30px;
-  height: 100%;
-  animation: start-load 2s ease forwards;
-  bottom: 0%;
-}
-
-.barHighlight_6 {
-  height: 100%;
-  width: 30px;
-  background-color: #d9f0f3;
-  position: absolute;
-  right: -360px;
-  bottom: 20%;
-}
-
-.progress-percentage_6 {
-  width: 30px;
-  position: absolute;
-  right: 0px;
-  height: 100%;
-  animation: start-load 2s ease forwards;
-  bottom: 0%;
-}
-
-.barHighlight_7 {
-  height: 100%;
-  width: 30px;
-  background-color: #d9f0f3;
-  position: absolute;
-  right: -430px;
-  bottom: 20%;
-}
-
-.progress-percentage_7 {
-  width: 30px;
-  position: absolute;
-  right: 0px;
-  height: 100%;
-  animation: start-load 2s ease forwards;
-  bottom: 0%;
-}
-
-.barHighlight_8 {
-  height: 100%;
-  width: 30px;
-  background-color: #d9f0f3;
-  position: absolute;
-  right: -500px;
-  bottom: 20%;
-}
-
-.progress-percentage_8 {
-  width: 30px;
-  position: absolute;
-  right: 0px;
-  height: 100%;
-  animation: start-load 2s ease forwards;
-  bottom: 0%;
-}
-
-.barHighlight_9 {
-  height: 100%;
-  width: 30px;
-  background-color: #d9f0f3;
-  position: absolute;
-  right: -570px;
-  bottom: 20%;
-}
-
-.progress-percentage_9 {
-  width: 30px;
-  position: absolute;
-  right: 0px;
-  height: 100%;
-  animation: start-load 2s ease forwards;
-  bottom: 0%;
-}
-
-@keyframes start-load {
+@keyframes start_load {
   from {
     height: 0;
   }
@@ -454,8 +345,26 @@
   }
 }
 
-  @keyframes rotateSpinner {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+@keyframes rotateSpinner {
+  0% {
+    transform: rotate(0deg);
   }
-  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.barchartKeyword {
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
+  float: left;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  left: 4px;
+  bottom: 20px;
+  width: 100%;
+  z-index: 1;
+  color: #37474f;
+  font-size: 17px;
+}
