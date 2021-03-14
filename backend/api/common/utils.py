@@ -1,7 +1,7 @@
 def createSuccessResponse(data):
     return {
         'data': data,
-        'status': 1
+        'status': 1,
     }
 
 

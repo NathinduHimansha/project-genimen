@@ -1,11 +1,15 @@
 import os
 from api.routes import initialize_routes
 from flask import Flask
+from flask_cors import CORS
 
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
+
+    #  app.config['CORS_HEADERS'] = 'Content-Type'
+    #  cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
     app.config.from_mapping(
         SECRET_KEY='dev',
         #  DATABASE=os.path.join(app.instance_path, 'sqlite'),
@@ -27,7 +31,10 @@ def create_app(test_config=None):
     initialize_routes(app)
     # a simple page that says hello
 
-    @app.route('/hello')
+    #  CORS(app)
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+    @app.route('/api/hello', methods=["POST"])
     def hello():
         return 'Hello, World!'
 

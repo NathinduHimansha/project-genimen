@@ -1,8 +1,9 @@
 import { BASE_URL } from './env';
 import { Http } from '../common/utils';
+import axios from 'axios';
 
-// const base = `${BASE_URL}/uras`;
-const base = `https://dog.ceo/api/breeds/image/random`;
+const base = `${BASE_URL}/uras`;
+// const base = `${BASE_URL}/hello`;
 const http = Http(base);
 
 const mock = {
@@ -52,6 +53,9 @@ const mock = {
   },
   status: 1,
 };
+
 export const getFeatures = async () => http.get();
+// export const getFeatures = async () => http.post({ display: 'curved', fingerprint: 'onscreen' });
+
 // export const analyseFeatures = async (data) => http.post(data);
 export const analyseFeatures = async () => mock;
