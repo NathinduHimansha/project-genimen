@@ -100,9 +100,9 @@
   }
 }
 
+
+
 /*Bargraph - frequency districution*/
-
-
 .card-left {
   box-shadow: 0 4px 8px 0 var(--primary-black);
   transition: 0.3s;
@@ -178,6 +178,7 @@
     background-color:var(--primary-white);
     border-color: white;
     z-index: -1;
+    visibility: hidden;
 }
 
 .barHighlight_1{

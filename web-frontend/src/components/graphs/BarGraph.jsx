@@ -5,15 +5,7 @@ class Exkey extends React.Component {
     
     render() {
         return (
-            <div className="main-container">
-                <div className="body">
-                    <p className="keyword_topic"><b>LOOK WHAT PEOPLE ARE TALKING OF PHONES...</b></p>
-
-                    <div className="body-left-split">
-                        <div className="card-left">
-                            <p className="topic-frequency-distribution-bargraph">FREQUENCY OF KEYWORDS</p>
-
-                            {/* <img src={iphone} className="iphone" alt="phone category" /> */}
+           
                             <div className="bar">
                                 <div className="barHighlight_1">
                                     <span className="barchartKeyword">Gorilla Screen</span>
@@ -70,11 +62,7 @@ class Exkey extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+                   
         );
     }
 }
