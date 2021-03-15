@@ -15,6 +15,7 @@ import Examples from './pages/experiment/Examples';
 import Button from './pages/experiment/Button';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
 import WordCloud from './components/graphs/WordCloud';
+import URASView from './pages/uras/URASView';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
           <Route path="/button" component={Button} />
           <Route path="/about" component={Home} />
           <Route path="/exkey" component={EXKEY} />
-          <Route path="/uras" component={Home} />
+          <Route path="/uras" component={URASView} />
           <Route path="/pssa" component={Home} />
           <Route path="/fbfe" component={Home} />
           <Route path="/login" component={Home} />
