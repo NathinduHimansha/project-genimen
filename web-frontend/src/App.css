@@ -525,13 +525,13 @@ select.phone-selector {
   align-items: center;
 }
 
-/* Defaults */
+/* Defaults
 .App {
 }
 
 .App p {
   /* margin: 0.4rem; */
-}
+/* } */ 
 
 .App-logo {
   height: 40vmin;
