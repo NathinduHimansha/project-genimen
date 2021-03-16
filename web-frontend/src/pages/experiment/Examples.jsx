@@ -33,7 +33,7 @@ const Examples = () => {
           </option>
           <option value="display">Normal</option>
         </select>
-        <button className="btn primary-btn">
+        <button className="btn primary-btn" disabled>
           <span className="-bold -hidden">Start Analysing</span>
           <img className="left -hidden" src={search} style={{ width: '20px' }} />
           <div className="spinner spinner-small"></div>
