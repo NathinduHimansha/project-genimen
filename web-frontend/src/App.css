@@ -138,6 +138,9 @@
 .-flex {
   display: flex;
 }
+.-flex-reverse {
+  flex-direction: row-reverse;
+}
 .-flex-middle {
   align-items: center;
 }
@@ -175,6 +178,9 @@
 }
 .-black {
   font-weight: 800 !important;
+}
+.-no-wrap {
+  white-space: nowrap;
 }
 /* styles */
 div.card {
@@ -342,12 +348,18 @@ button.btn {
   transition: 0.15s ease-in-out;
   cursor: pointer;
 }
-.icon-btn {
+button.icon-btn {
   display: flex;
   align-items: center;
 }
-.icon-btn > img.left {
-  width: 12.5px;
+button.icon-btn > img {
+  width: 20px;
+}
+img.icon-btn-left {
+  height: auto;
+  margin-right: 12px;
+}
+img.icon-btn-right {
   height: auto;
   margin-left: 12px;
 }
@@ -531,7 +543,7 @@ select.phone-selector {
 
 .App p {
   /* margin: 0.4rem; */
-/* } */ 
+/* } */
 
 .App-logo {
   height: 40vmin;
