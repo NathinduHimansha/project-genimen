@@ -16,7 +16,7 @@ import Button from './pages/experiment/Button';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
 import WordCloud from './components/graphs/WordCloud';
 import URASView from './pages/uras/URASView';
-import UrasResults from "./pages/uras/UrasResults";
+import UrasResults from './pages/uras/UrasResults';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         {/*<Nav/>*/}
         <Switch>
           {/*<Route path="/" exact component={Home} />*/}
-          <Route exact path="/" exact  component={Examples} />
+          <Route exact path="/" exact component={Examples} />
           <Route path="/examples" component={Examples} />
           <Route path="/button" component={Button} />
           <Route path="/about" component={Home} />
