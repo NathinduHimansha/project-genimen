@@ -25,17 +25,35 @@ class Exkey extends React.Component {
         document.querySelector('.spinner_left').style.display = 'none';
 
         document.querySelector('.frequency-bars ').style.visibility = 'visible';
-        document.querySelector('.bubble-chart ').style.visibility = 'visible';
+        document.querySelector('.word-cloud ').style.display = 'block';
 
-        document.getElementsByClassName('progress-percentage')[0].classList.add('animation');
-        document.getElementsByClassName('progress-percentage')[1].classList.add('animation');
-        document.getElementsByClassName('progress-percentage')[2].classList.add('animation');
-        document.getElementsByClassName('progress-percentage')[3].classList.add('animation');
-        document.getElementsByClassName('progress-percentage')[4].classList.add('animation');
-        document.getElementsByClassName('progress-percentage')[5].classList.add('animation');
-        document.getElementsByClassName('progress-percentage')[6].classList.add('animation');
-        document.getElementsByClassName('progress-percentage')[7].classList.add('animation');
-        document.getElementsByClassName('progress-percentage')[8].classList.add('animation');
+        document
+          .getElementsByClassName('progress-percentage')[0]
+          .classList.add('barchart_animation');
+        document
+          .getElementsByClassName('progress-percentage')[1]
+          .classList.add('barchart_animation');
+        document
+          .getElementsByClassName('progress-percentage')[2]
+          .classList.add('barchart_animation');
+        document
+          .getElementsByClassName('progress-percentage')[3]
+          .classList.add('barchart_animation');
+        document
+          .getElementsByClassName('progress-percentage')[4]
+          .classList.add('barchart_animation');
+        document
+          .getElementsByClassName('progress-percentage')[5]
+          .classList.add('barchart_animation');
+        document
+          .getElementsByClassName('progress-percentage')[6]
+          .classList.add('barchart_animation');
+        document
+          .getElementsByClassName('progress-percentage')[7]
+          .classList.add('barchart_animation');
+        document
+          .getElementsByClassName('progress-percentage')[8]
+          .classList.add('barchart_animation');
       }
     }, 30);
   }
@@ -62,7 +80,7 @@ class Exkey extends React.Component {
               { percentage: 20, label: '108Mp camera' },
               { percentage: 100, label: 'facial recognition' },
               { percentage: 17, label: 'wonderful' },
-              { percentage: 50, label: '8GB Ram' },
+              { percentage: 50, label: 'Good Storage' },
               { percentage: 67, label: 'onscreen fingerprint' },
               { percentage: 98, label: 'LCD Display' },
               { percentage: 14, label: 'Budget' },
@@ -74,7 +92,7 @@ class Exkey extends React.Component {
           <div className="body-right-split">
             <div className="card-right">
               <p className="keywords-topic">OTHER KEYWORDS</p>
-              <div id="word_cloud" className="bubble-chart" style={{ visibility: 'hidden' }}>
+              <div id="word_cloud" className="word-cloud" style={{ display: 'none' }}>
                 <WordCloud></WordCloud>
               </div>
               <div className="container_right">

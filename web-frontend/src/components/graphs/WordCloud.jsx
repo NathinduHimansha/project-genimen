@@ -2,39 +2,39 @@ import React from 'react';
 import ReactWordcloud from 'react-wordcloud';
 
 const callbacks = {
-  getWordColor: (word) => (word.value > 50 ? 'Pastel Gray' : 'Dark Silver'),
+  getWordColor: (word) => (word.value > 50 ? ' DarkSlateGray' : 'Black'),
   onWordClick: console.log,
   onWordMouseOver: console.log,
 };
 const options = {
   rotations: 2,
-  rotationAngles: [360, 0, 360],
+  rotationAngles: [360, 360, 360],
 };
-const size = [700, 400];
+const size = [650, 500];
 
 const words = [
   {
-    text: 'told',
+    text: '108mp camera',
     value: 64,
   },
   {
-    text: 'mistake',
+    text: 'Storage',
     value: 150,
   },
   {
-    text: 'thought',
+    text: 'fingerprint',
     value: 450,
   },
   {
-    text: 'bad',
+    text: 'good',
     value: 20,
   },
   {
-    text: 'told',
+    text: 'bad',
     value: 64,
   },
   {
-    text: 'mistake',
+    text: 'wonderful',
     value: 5,
   },
   {
@@ -42,11 +42,11 @@ const words = [
     value: 100,
   },
   {
-    text: 'bad',
+    text: 'face recognition',
     value: 365,
   },
   {
-    text: 'told',
+    text: 'fine',
     value: 90,
   },
   {
@@ -54,7 +54,7 @@ const words = [
     value: 23,
   },
   {
-    text: 'thought',
+    text: 'snap dragon chip',
     value: 1026,
   },
   {
@@ -218,7 +218,7 @@ const words = [
     value: 112,
   },
   {
-    text: 'bad',
+    text: 'Wonderful',
     value: 890,
   },
 ];
