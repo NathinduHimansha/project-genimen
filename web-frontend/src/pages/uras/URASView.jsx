@@ -4,10 +4,27 @@ import SampleFeatureSelection from '../experiment/SampleFeatureSelection';
 import search from '../../assests/Search.png';
 import './uras.css';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
+import {Link} from 'react-router-dom';
 
 class URASView extends Component {
+
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             loading:false
+        }
+    }
+
+    loadResuluts(){
+        this.setState({
+            loading:true
+        })
+    }
+
     render() {
         return (
+            
             <div style={{ margin: '10% 10%' }}>
                 <div className="-mb-40">
                     <FancyHeading heading="SELECT FEATURES TO ANALYSE" />
@@ -15,12 +32,26 @@ class URASView extends Component {
                 <div>
                     <SampleFeatureSelection />
                 </div>
+
                 <div className="-flex -flex-center -flex-middle -mt-40">
-                    <button className="btn primary-btn icon-btn ">
-                        <span className="-bold">Start Analysing</span>
-                        <img className="left" src={search} style={{ width: '20px' }} />
-                    </button>
-                 </div>
+                
+                    <Link to={"urasresult/"}>
+                        <button onAction={()=>this.loadResuluts()} className="btn primary-btn icon-btn ">
+                            {this.state.loading==true ?
+                                <React.Fragment>
+                                    <img className="left -hidden" src={search} style={{ width: '20px' }} />
+                                    <div className="spinner spinner-small"></div>
+                                </React.Fragment>:
+                                <span className="-bold ">Start Analysing</span> }
+                        </button>
+                    </Link>
+                </div>   
+
+         
+
+
+                    
+                
                  <div className="analytics-container -mt-60 -flex -flex-center -flex-middle  ">
                      
                      <SentimentResultCard
