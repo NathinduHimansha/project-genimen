@@ -14,7 +14,6 @@ import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 import Button from './pages/experiment/Button';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
-import WordCloud from './components/graphs/WordCloud';
 import URASView from './pages/uras/URASView';
 import UrasResults from './pages/uras/UrasResults';
 
