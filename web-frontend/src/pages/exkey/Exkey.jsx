@@ -3,7 +3,7 @@ import logo from '../../assests/geniman_logo_new.png';
 import search from '../../assests/Search.png';
 import './exkey.css';
 import Bargraph from '../../components/graphs/BarGraph';
-import WordCloud from '../../components/graphs/WordCloud';
+// import WordCloud from '../../components/graphs/WordCloud';
 
 class Exkey extends React.Component {
   analyzeAgain() {
@@ -75,7 +75,7 @@ class Exkey extends React.Component {
             <div className="card-right">
               <p className="keywords-topic">OTHER KEYWORDS</p>
               <div id="word_cloud" className="bubble-chart" style={{ visibility: 'hidden' }}>
-                <WordCloud></WordCloud>
+                {/* <WordCloud></WordCloud> */}
               </div>
               <div className="container_right">
                 <div className="spinner_right"></div>
