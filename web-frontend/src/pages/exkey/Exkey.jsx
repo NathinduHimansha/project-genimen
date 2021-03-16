@@ -25,6 +25,7 @@ class Exkey extends React.Component {
         document.querySelector('.spinner_left').style.display = 'none';
 
         document.querySelector('.frequency-bars ').style.visibility = 'visible';
+        document.querySelector('.bubble-chart ').style.visibility = 'visible';
 
         document.getElementsByClassName('progress-percentage')[0].classList.add('animation');
         document.getElementsByClassName('progress-percentage')[1].classList.add('animation');
@@ -48,7 +49,7 @@ class Exkey extends React.Component {
           </p>
           <div className="body-left-split">
             <div className="card-left">
-              <p className="topic-frequency-distribution-bargraph">FREQUENCY OF KEYWORDS</p>
+              <p className="topic-frequency-distribution-bargraph">Trend</p>
               <div className="container_left">
                 <div className="spinner_left"></div>
               </div>
@@ -60,27 +61,26 @@ class Exkey extends React.Component {
               { percentage: 32, label: 'gorilla glass' },
               { percentage: 20, label: '108Mp camera' },
               { percentage: 100, label: 'facial recognition' },
-              { percentage: 17, label: 'woderful' },
+              { percentage: 17, label: 'wonderful' },
               { percentage: 50, label: '8GB Ram' },
               { percentage: 67, label: 'onscreen fingerprint' },
               { percentage: 98, label: 'LCD Display' },
               { percentage: 14, label: 'Budget' },
-              { percentage: 62, label: 'Snap Dragon' },
+              { percentage: 62, label: 'Snap Dragon chip' },
             ].map((item, i) => (
               <Bargraph key={i} percentage={item.percentage} label={item.label}></Bargraph>
             ))}
           </div>
           <div className="body-right-split">
             <div className="card-right">
-              <p className="vectorizer-plot-topic">TREND</p>
-              <div className="bubble-chart">
-                {/* <WordCloud></WordCloud> */}
-                <div className="container_right">
-                  <div className="spinner_right"></div>
-                </div>
-                <div className="counter_right">0%</div>{' '}
+              <p className="keywords-topic">OTHER KEYWORDS</p>
+              <div id="word_cloud" className="bubble-chart" style={{ visibility: 'hidden' }}>
+                <WordCloud></WordCloud>
               </div>
-
+              <div className="container_right">
+                <div className="spinner_right"></div>
+              </div>
+              <div className="counter_right">0%</div>{' '}
               <div className="-flex -mt-40">
                 <div className="analyze_again">
                   <button

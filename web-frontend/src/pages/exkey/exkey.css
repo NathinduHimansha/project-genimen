@@ -44,20 +44,37 @@
 }
 
 .bubble-chart {
-  margin-left: -165px;
-  bottom: -150px;
+  margin-left: -170px;
+  bottom: -170px;
+  animation-duration: 2s;
+  animation-name: trend_animation;
+  width: 1100px;
+}
+
+@keyframes trend_animation {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .topic-frequency-distribution-bargraph {
   text-align: center;
-  margin-left: 70px;
+  margin-left: 150px;
   position: fixed;
   font-size: 1.5rem;
 }
 
-.vectorizer-plot-topic {
+.keywords-topic {
   text-align: center;
-  margin-left: 130px;
+  margin-left: 120px;
   position: fixed;
   font-size: 1.5rem;
 }
@@ -150,81 +167,6 @@
   }
 }
 
-/* button{ */
-/* width:200px; */
-/* height:100px; */
-/* text-align:center; */
-/* line-height:1.1em; */
-/* font-size:1.1em; */
-/* } */
-
-/* table{ */
-/* width: 100%; */
-/* table-layout: fixed; */
-/* border-collapse: collapse; */
-/* } */
-
-.features {
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
-  margin-top: 10%;
-  margin-right: 50px;
-  transition-duration: 0.6s;
-  cursor: pointer;
-  background-color: var(--primary-white);
-  color: var(--primary-black);
-  border: 2px solid rgba(83, 206, 132, 1);
-  border-radius: 12px;
-}
-
-.features_1:hover {
-  background-color: rgba(83, 206, 132, 1);
-  color: white;
-}
-
-.features_2:hover {
-  background-color: rgba(83, 206, 132, 1);
-  color: white;
-}
-
-.features_3:hover {
-  background-color: rgba(83, 206, 132, 1);
-  color: white;
-}
-
-.features_4:hover {
-  background-color: rgba(83, 206, 132, 1);
-  color: white;
-}
-
-.features_5:hover {
-  background-color: rgba(83, 206, 132, 1);
-  color: white;
-}
-
-.features_6:hover {
-  background-color: rgba(83, 206, 132, 1);
-  color: white;
-}
-
-.features_7:hover {
-  background-color: rgba(83, 206, 132, 1);
-  color: white;
-}
-
-.features_8:hover {
-  background-color: rgba(83, 206, 132, 1);
-  color: white;
-}
-
-.features_9:hover {
-  background-color: rgba(83, 206, 132, 1);
-  color: white;
-}
-
 .analyze_again {
   bottom: -90px;
   right: 0px;
@@ -238,7 +180,8 @@
   position: relative;
   display: flex;
   justify-content: space-around;
-  top: 100px;
+  top: -290px;
+  left: -80px;
 }
 .container_right .spinner_right {
   width: 180px;
@@ -251,7 +194,7 @@
 }
 .counter_right {
   position: absolute;
-  top: 180px;
+  top: 190px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 26px;
@@ -342,15 +285,6 @@
   }
   to {
     height: 1;
-  }
-}
-
-@keyframes rotateSpinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 
