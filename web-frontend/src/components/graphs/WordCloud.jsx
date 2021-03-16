@@ -1,48 +1,232 @@
-import React from 'react'
-import { Chart, Transform, Cloud } from 'rumble-charts';
+import React from 'react';
+import ReactWordcloud from 'react-wordcloud';
 
-const series = [{
-    data: [
-        { label: 'Highcharts', y: 30 },
-        { label: 'amCharts', y: 13 },
-        { label: 'Google Charts', y: 31 },
-        { label: 'ChartJS', y: 15 },
-        { label: 'TauCharts', y: 8 },
-        { label: 'FusionCharts', y: 2 },
-        { label: 'ZingChart', y: 2 },
-        { label: 'uvCharts', y: 1 },
-        { label: 'jQuery Sparklines', y: 1 },
-        { label: 'Ember Charts', y: 2 },
-        { label: 'Canvas.js', y: 16 },
-        { label: 'Flot', y: 1 },
-        { label: 'D3.js', y: 27 },
-        { label: 'n3-charts', y: 3 },
-        { label: 'NVD3', y: 3 },
-        { label: 'Chartist.js', y: 3 },
-        { label: 'C3.js', y: 14 },
-        { label: 'Cubism.js', y: 1 },
-        { label: 'Rickshaw', y: 2 }
-    ]
-}];
+const callbacks = {
+  getWordColor: (word) => (word.value > 50 ? 'Pastel Gray' : 'Dark Silver'),
+  onWordClick: console.log,
+  onWordMouseOver: console.log,
+};
+const options = {
+  rotations: 2,
+  rotationAngles: [360, 0, 360],
+};
+const size = [700, 400];
+
+const words = [
+  {
+    text: 'told',
+    value: 64,
+  },
+  {
+    text: 'mistake',
+    value: 150,
+  },
+  {
+    text: 'thought',
+    value: 450,
+  },
+  {
+    text: 'bad',
+    value: 20,
+  },
+  {
+    text: 'told',
+    value: 64,
+  },
+  {
+    text: 'mistake',
+    value: 5,
+  },
+  {
+    text: 'thought',
+    value: 100,
+  },
+  {
+    text: 'bad',
+    value: 365,
+  },
+  {
+    text: 'told',
+    value: 90,
+  },
+  {
+    text: 'mistake',
+    value: 23,
+  },
+  {
+    text: 'thought',
+    value: 1026,
+  },
+  {
+    text: 'bad',
+    value: 80,
+  },
+  {
+    text: 'told',
+    value: 164,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 56,
+  },
+  {
+    text: 'bad',
+    value: 22,
+  },
+  {
+    text: 'told',
+    value: 64,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 206,
+  },
+  {
+    text: 'bad',
+    value: 8,
+  },
+  {
+    text: 'told',
+    value: 64,
+  },
+  {
+    text: 'mistake',
+    value: 451,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 6,
+  },
+  {
+    text: 'told',
+    value: 64,
+  },
+  {
+    text: 'mistake',
+    value: 76,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 64,
+  },
+  {
+    text: 'mistake',
+    value: 9,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 17,
+  },
+  {
+    text: 'told',
+    value: 64,
+  },
+  {
+    text: 'mistake',
+    value: 11,
+  },
+  {
+    text: 'thought',
+    value: 16,
+  },
+  {
+    text: 'bad',
+    value: 98,
+  },
+  {
+    text: 'told',
+    value: 10,
+  },
+  {
+    text: 'mistake',
+    value: 5,
+  },
+  {
+    text: 'thought',
+    value: 23,
+  },
+  {
+    text: 'bad',
+    value: 14,
+  },
+  {
+    text: 'told',
+    value: 16,
+  },
+  {
+    text: 'mistake',
+    value: 14,
+  },
+  {
+    text: 'thought',
+    value: 78,
+  },
+  {
+    text: 'bad',
+    value: 14,
+  },
+  {
+    text: 'told',
+    value: 17,
+  },
+  {
+    text: 'mistake',
+    value: 19,
+  },
+  {
+    text: 'thought',
+    value: 23,
+  },
+  {
+    text: 'bad',
+    value: 25,
+  },
+  {
+    text: 'told',
+    value: 34,
+  },
+  {
+    text: 'mistake',
+    value: 67,
+  },
+  {
+    text: 'thought',
+    value: 112,
+  },
+  {
+    text: 'bad',
+    value: 890,
+  },
+];
 
 class WordCloud extends React.Component {
-    render() {
-        console.log(series)
-        return (
-
-            <Chart width={600} height={500} series={series} minY={0}>
-                <Transform method='transpose'>
-                    <Cloud
-                        font='sans-serif'
-                        minFontSize={10}
-                        maxFontSize={50}
-                        padding={-15}
-                        layerWidth={500}
-                    />
-                </Transform>
-            </Chart>
-        );
-    }
+  render() {
+    return <ReactWordcloud callbacks={callbacks} options={options} size={size} words={words} />;
+  }
 }
 
 export default WordCloud;
