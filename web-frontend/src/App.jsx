@@ -14,6 +14,9 @@ import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 import Button from './pages/experiment/Button';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
+import WordCloud from './components/graphs/WordCloud';
+import URASView from './pages/uras/URASView';
+import UrasResults from './pages/uras/UrasResults';
 
 function App() {
   return (
@@ -22,12 +25,13 @@ function App() {
         {/*<Nav/>*/}
         <Switch>
           {/*<Route path="/" exact component={Home} />*/}
-          <Route exact path="/" component={Examples} />
+          <Route exact path="/" exact component={Examples} />
           <Route path="/examples" component={Examples} />
           <Route path="/button" component={Button} />
           <Route path="/about" component={Home} />
           <Route path="/exkey" component={EXKEY} />
-          <Route path="/uras" component={Home} />
+          <Route path="/uras" component={URASView} />
+          <Route path="/urasresult" exact component={UrasResults} />
           <Route path="/pssa" component={Home} />
           <Route path="/fbfe" component={Home} />
           <Route path="/login" component={Home} />
