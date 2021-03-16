@@ -4,7 +4,6 @@ import ProgressBar from '../../components/graphs/ProgressBar';
 import FancyHeading from '../../components/text/FancyHeading';
 import NetPolarity from '../../components/analytics/NetPolarity';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
-import SampleSelect from './SampleSelect';
 import SampleFeatureSelection from './SampleFeatureSelection';
 import './card.css';
 import phoneIcon from '../../assests/PhoneIcon.png';
@@ -12,6 +11,7 @@ import search from '../../assests/Search.png';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
 import { getFeatures } from '../../services/uras-service';
 import Button from '../../components/buttons/Button';
+import IconHeading from '../../components/text/IconHeading';
 
 const Examples = () => {
   const test = getFeatures();

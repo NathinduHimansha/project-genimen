@@ -234,45 +234,6 @@ span.t1 {
 }
 
 /* text */
-.pre-icon {
-  display: flex;
-  align-items: center;
-}
-.pre-icon > h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-left: 20px;
-}
-.pre-icon > .pre-icon-wrapper > img {
-  width: 56% !important;
-  /* margin-right: 10px; */
-}
-.pre-icon > .pre-icon-wrapper > img.icon-scale-fingerprint {
-  width: 74% !important;
-}
-.pre-icon > .pre-icon-wrapper > img.icon-scale-headphone-jack {
-  width: 31% !important;
-}
-.pre-icon-wrapper {
-  width: 22.5px;
-  height: auto;
-  /* margin-right: 10px; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.icon-medium {
-  width: 38px !important;
-  top: -1px;
-}
-/* .icon-scale-fingerprint { */
-/* width: 25px !important; */
-/* margin-right: 5px; */
-/* } */
 
 hr.heading-sep {
   border: 0.5px solid var(--light-grey);
@@ -516,6 +477,11 @@ select.phone-selector {
   /* margin-right: 10px; */
   display: flex;
   align-items: center;
+}
+.icon-medium {
+  width: 80px;
+  height: 80px;
+  margin-right: 25px;
 }
 .icon-small {
   width: 35px;
