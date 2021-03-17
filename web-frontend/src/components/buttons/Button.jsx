@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Button = (props) => {
-  let { iconSrc, utilClasses, iconSide, loading } = props;
+  let { iconSrc, utilClasses, iconSide, loading, onClick } = props;
   loading = loading || false;
   iconSrc = iconSrc ? iconSrc : '';
   iconSide = iconSide ? iconSide : 'right';
@@ -21,6 +21,7 @@ const Button = (props) => {
 
   return (
     <button
+      onClick={onClick}
       className={'btn primary-btn icon-btn ' + iconBtnSideClass() + ' ' + utilClasses.join(' ')}
       disabled={loading}
     >
