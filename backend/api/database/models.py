@@ -8,6 +8,8 @@ class User(db.Document):
     password = db.StringField(required=True, min_length=6)
 
     def hash_password(self):
+        if len(self.password) < 6:
+            raise Exception("password too short")
         self.password = generate_password_hash(self.password).decode('utf8')
 
     def check_password(self, password):
