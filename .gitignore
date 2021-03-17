@@ -1,3 +1,4 @@
+.serverless
 .snowpack
 build
 node_modules
