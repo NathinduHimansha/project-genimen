@@ -4,7 +4,7 @@
 }
 
 .card-heading-name-left {
-  margin-left: 40%;
+  margin-left: 45%;
 }
 
 .card-heading-name-right {
@@ -13,7 +13,7 @@
 
 .cards-split {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
   grid-gap: 20px;
 }
 
@@ -136,7 +136,7 @@
 
 .animated_heading {
   position: relative;
-  font-size: 3.4rem;
+  font-size: 1rem;
   bottom: -150px;
   left: 500px;
   font-family: Courier;
@@ -144,7 +144,6 @@
   animation: typewriter 3s steps(40) 0s 1 normal both,
     blinkTextCursor 750ms steps(40) infinite normal;
   overflow: hidden;
-  width: 26em;
   display: flex;
 }
 

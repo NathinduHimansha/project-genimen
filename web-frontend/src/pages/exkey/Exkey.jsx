@@ -5,6 +5,7 @@ import './exkey.css';
 import Bargraph from '../../components/graphs/BarGraph';
 // import WordCloud from '../../components/graphs/WordCloud';
 import FancyHeading from '../../components/text/FancyHeading';
+import Button from '../../components/buttons/Button';
 
 class Exkey extends React.Component {
   analyzeAgain() {
@@ -62,11 +63,12 @@ class Exkey extends React.Component {
   render() {
     return (
       <div className="main-body">
-        {/* <div className="animated_heading">
-          <h3 className="heading3 -medium -no-margin" style={{ fontSize: '2.2rem' }}>
-            Analysis per Phone
-          </h3>
-        </div> */}
+        <div className="animated_heading">
+          {/* <FancyHeading
+            className="keywordTopic"
+            heading="LOOK WHAT PEOPLE ARE TALKING OF PHONES..."
+          ></FancyHeading> */}
+        </div>
         <div className="body-split">
           <div className="-mt-60">
             <div className="analytics-container cards-split -mt-40">
@@ -111,14 +113,11 @@ class Exkey extends React.Component {
               <div className="counter_right">0%</div>{' '} */}
                 <div className="analyze_again">
                   <div className="-flex -mt-40">
-                    <button
-                      className="btn primary-btn icon-btn -flex-right"
-                      onClick={this.analyzeAgain}
-                      id="analyze_button"
-                    >
-                      <span className="-bold">Start Analysing</span>
-                      <img className="left" src={search} style={{ width: '20px' }} />
-                    </button>
+                    <div className="-flex-right">
+                      <Button onClick={this.analyzeAgain} iconSrc={search} loading={false}>
+                        Start Analysing
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
