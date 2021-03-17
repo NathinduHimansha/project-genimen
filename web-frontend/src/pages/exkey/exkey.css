@@ -1,0 +1,278 @@
+.body-split {
+  margin-top: 220px;
+  margin-left: 40px;
+}
+
+.card-heading-name-left {
+  margin-left: 40%;
+}
+
+.card-heading-name-right {
+  align-self: center;
+}
+
+.cards-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-gap: 20px;
+}
+
+.card-left {
+  display: block;
+  border: 1px solid var(--primary-border-grey);
+  border-radius: 6px;
+  background-color: var(--analytics-card);
+  /* width: 700px; */
+  /* height: 450px; */
+}
+
+.card-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid var(--primary-border-grey);
+  border-radius: 6px;
+  background-color: var(--analytics-card);
+  /* width: 700px; */
+  /* height: 450px; */
+}
+
+.word-cloud {
+  margin-left: -180px;
+  animation-duration: 2s;
+  animation-name: trend_animation;
+  width: 1100px;
+  margin-top: -20px;
+}
+
+@keyframes trend_animation {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.topic-frequency-distribution-bargraph {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--black);
+  font-weight: bold;
+  left: 370px;
+}
+
+.keywords-topic {
+  text-align: center;
+  left: -120px;
+  font-size: 2rem;
+  color: var(--black);
+  font-weight: bold;
+}
+
+.header {
+  top: 0%;
+  left: 1%;
+  display: block;
+  width: 98%;
+  margin: 0%;
+  height: 25%;
+}
+
+.header-right-split {
+  float: right;
+}
+
+.navElements {
+  margin-right: 350px;
+  font-weight: bold;
+  font-family: Monospace;
+  font-size: 18px;
+  color: var(--primary-black);
+}
+
+.main-body {
+  top: 0%;
+  left: 0%;
+  margin: 0%;
+  background-size: 100% 100%;
+}
+
+.animated_heading {
+  position: relative;
+  font-size: 3.4rem;
+  bottom: -150px;
+  left: 500px;
+  font-family: Courier;
+  border-right: 2px solid var(--primary-black);
+  animation: typewriter 3s steps(40) 0s 1 normal both,
+    blinkTextCursor 750ms steps(40) infinite normal;
+  overflow: hidden;
+  width: 26em;
+  display: flex;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 25em;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: var(--primary-black);
+  }
+
+  to {
+    border-right-color: transparent;
+  }
+}
+
+/*right spinner*/
+
+.container_right {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  top: 110px;
+  left: -80px;
+}
+.container_right .spinner_right {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 8px solid rgba(152, 150, 150, 0.2);
+  border-left-color: #f00;
+  border-right-color: #f00;
+  animation: rotateSpinner 1.5s linear 54;
+}
+.counter_right {
+  position: absolute;
+  top: 190px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 26px;
+}
+
+/*left spinner*/
+
+.container_left {
+  width: 100%;
+  justify-content: space-around;
+  top: 80px;
+  position: relative;
+  right: 10px;
+}
+.container_left .spinner_left {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 8px solid rgba(152, 150, 150, 0.2);
+  border-left-color: #f00;
+  border-right-color: #f00;
+  /* animation: rotateSpinner 1.5s linear 54; */
+}
+.counter_left {
+  position: absolute;
+  top: 450px;
+  left: 25%;
+  transform: translateX(-50%);
+  font-size: 26px;
+}
+
+@keyframes rotateSpinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* [>BAR GRAPH<] */
+
+.frequency_percentage {
+  float: left;
+  animation: fadein 3s linear;
+  font-size: 1.5rem;
+  left: 1px;
+  font-weight: bold;
+  top: 230px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+.frequency-bars {
+  height: 220px;
+  background-color: var(--primary-white);
+  border-color: white;
+  display: flex;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  /* margin-left: 50px; */
+  /* margin-top: 150px; */
+  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+.barHighlight:nth-last-child(1) {
+  margin-right: 0px;
+}
+
+.barHighlight {
+  height: 100%;
+  width: 30%;
+  max-width: 30px;
+  background-color: #d9f0f3;
+  margin-right: 4.5%;
+  position: relative;
+}
+
+.barchart_animation {
+  animation: start_load 2s ease forwards;
+}
+
+@keyframes start_load {
+  from {
+    height: 0;
+  }
+  to {
+    height: 1;
+  }
+}
+
+.progress-percentage {
+  width: 30px;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+}
+
+.barchartKeyword {
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
+  float: left;
+  transition: 0.5s;
+  font-family: rubik;
+  width: 100%;
+  z-index: 1;
+  color: #37474f;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 20px;
+  right: -5px;
+}
+
+.analyze_again {
+  /* margin-top: 400px; */
+  display: grid;
+  left: 40px;
+  right: 10px;
+}

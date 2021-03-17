@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NetPolarity = (props) => {
+const IconHeading = (props) => {
   let { size, iconUrl, utilClasses } = props;
   const getIconSizeClass = (size) => {
     const pref = 'icon-';
@@ -20,4 +20,4 @@ const NetPolarity = (props) => {
   );
 };
 
-export default NetPolarity;
+export default IconHeading;

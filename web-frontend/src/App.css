@@ -17,6 +17,9 @@
 .-mr-5 {
   margin-right: 5px;
 }
+.-mb-auto {
+  margin-bottom: auto;
+}
 .-mb-5 {
   margin-bottom: 5px;
 }
@@ -126,6 +129,9 @@
 .-mt-90 {
   margin-top: 90px;
 }
+.-mt-full {
+  margin-top: 100%;
+}
 .-full-width {
   width: 100%;
 }
@@ -138,8 +144,14 @@
 .-flex {
   display: flex;
 }
+.-flex-reverse {
+  flex-direction: row-reverse;
+}
 .-flex-middle {
   align-items: center;
+}
+.-flex-align-end {
+  align-items: flex-end;
 }
 .-flex-center {
   justify-content: center;
@@ -175,6 +187,9 @@
 }
 .-black {
   font-weight: 800 !important;
+}
+.-no-wrap {
+  white-space: nowrap;
 }
 /* styles */
 div.card {
@@ -228,45 +243,6 @@ span.t1 {
 }
 
 /* text */
-.pre-icon {
-  display: flex;
-  align-items: center;
-}
-.pre-icon > h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-left: 20px;
-}
-.pre-icon > .pre-icon-wrapper > img {
-  width: 56% !important;
-  /* margin-right: 10px; */
-}
-.pre-icon > .pre-icon-wrapper > img.icon-scale-fingerprint {
-  width: 74% !important;
-}
-.pre-icon > .pre-icon-wrapper > img.icon-scale-headphone-jack {
-  width: 31% !important;
-}
-.pre-icon-wrapper {
-  width: 22.5px;
-  height: auto;
-  /* margin-right: 10px; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.icon-medium {
-  width: 38px !important;
-  top: -1px;
-}
-/* .icon-scale-fingerprint { */
-/* width: 25px !important; */
-/* margin-right: 5px; */
-/* } */
 
 hr.heading-sep {
   border: 0.5px solid var(--light-grey);
@@ -323,6 +299,7 @@ select.large {
 }
 /* button */
 button.btn {
+  width: fit-content;
   position: relative;
   overflow: hidden;
   transition: background 400ms;
@@ -342,12 +319,18 @@ button.btn {
   transition: 0.15s ease-in-out;
   cursor: pointer;
 }
-.icon-btn {
+button.icon-btn {
   display: flex;
   align-items: center;
 }
-.icon-btn > img.left {
-  width: 12.5px;
+button.icon-btn > img {
+  width: 20px;
+}
+img.icon-btn-left {
+  height: auto;
+  margin-right: 12px;
+}
+img.icon-btn-right {
   height: auto;
   margin-left: 12px;
 }
@@ -505,6 +488,11 @@ select.phone-selector {
   display: flex;
   align-items: center;
 }
+.icon-medium {
+  width: 80px;
+  height: 80px;
+  margin-right: 25px;
+}
 .icon-small {
   width: 35px;
   height: 35px;
@@ -525,13 +513,13 @@ select.phone-selector {
   align-items: center;
 }
 
-/* Defaults */
+/* Defaults
 .App {
 }
 
 .App p {
   /* margin: 0.4rem; */
-}
+/* } */
 
 .App-logo {
   height: 40vmin;

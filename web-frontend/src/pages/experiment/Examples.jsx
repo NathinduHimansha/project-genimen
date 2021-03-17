@@ -4,13 +4,14 @@ import ProgressBar from '../../components/graphs/ProgressBar';
 import FancyHeading from '../../components/text/FancyHeading';
 import NetPolarity from '../../components/analytics/NetPolarity';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
-import SampleSelect from './SampleSelect';
 import SampleFeatureSelection from './SampleFeatureSelection';
 import './card.css';
 import phoneIcon from '../../assests/PhoneIcon.png';
 import search from '../../assests/Search.png';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
 import { getFeatures } from '../../services/uras-service';
+import Button from '../../components/buttons/Button';
+import IconHeading from '../../components/text/IconHeading';
 
 const Examples = () => {
   const test = getFeatures();
@@ -33,11 +34,9 @@ const Examples = () => {
           </option>
           <option value="display">Normal</option>
         </select>
-        <button className="btn primary-btn" disabled>
-          <span className="-bold -hidden">Start Analysing</span>
-          <img className="left -hidden" src={search} style={{ width: '20px' }} />
-          <div className="spinner spinner-small"></div>
-        </button>
+        <Button iconSrc={search} loading={true}>
+          Start Analysing
+        </Button>
       </div>
       <div className="-mb-40 -mt-40">
         <div className="keyword-tag-container">
@@ -53,10 +52,11 @@ const Examples = () => {
       <div style={{ marginTop: '20px', marginBottom: '20px', width: '80%', maxWidth: '700px' }}>
         <SampleFeatureSelection></SampleFeatureSelection>
         <div className="-flex -mt-40">
-          <button className="btn primary-btn icon-btn -flex-right">
-            <span className="-bold">Start Analysing</span>
-            <img className="left" src={search} style={{ width: '20px' }} />
-          </button>
+          <div className="-flex-right">
+            <Button iconSrc={search} loading={false}>
+              Start Analysing
+            </Button>
+          </div>
         </div>
       </div>
 
