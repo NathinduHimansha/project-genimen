@@ -17,6 +17,9 @@
 .-mr-5 {
   margin-right: 5px;
 }
+.-mb-auto {
+  margin-bottom: auto;
+}
 .-mb-5 {
   margin-bottom: 5px;
 }
@@ -126,6 +129,9 @@
 .-mt-90 {
   margin-top: 90px;
 }
+.-mt-full {
+  margin-top: 100%;
+}
 .-full-width {
   width: 100%;
 }
@@ -143,6 +149,9 @@
 }
 .-flex-middle {
   align-items: center;
+}
+.-flex-align-end {
+  align-items: flex-end;
 }
 .-flex-center {
   justify-content: center;
@@ -290,6 +299,7 @@ select.large {
 }
 /* button */
 button.btn {
+  width: fit-content;
   position: relative;
   overflow: hidden;
   transition: background 400ms;

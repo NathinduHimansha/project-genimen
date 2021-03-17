@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../assests/geniman_logo_new.png';
 import search from '../../assests/Search.png';
 import './exkey.css';
+import Button from '../../components/buttons/Button';
 import Bargraph from '../../components/graphs/BarGraph';
 // import WordCloud from '../../components/graphs/WordCloud';
 import FancyHeading from '../../components/text/FancyHeading';
@@ -96,7 +97,7 @@ class Exkey extends React.Component {
                 </div>
               </div>
               <div className="card-right">
-                <div className="card-heading-name-right">
+                <div className="card-heading-name-right -mb-auto -flex-middle">
                   <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
                 </div>
                 <div
@@ -110,15 +111,13 @@ class Exkey extends React.Component {
               </div>
               <div className="counter_right">0%</div>{' '} */}
                 <div className="analyze_again">
-                  <div className="-flex -mt-40">
-                    <button
-                      className="btn primary-btn icon-btn -flex-right"
-                      onClick={this.analyzeAgain}
-                      id="analyze_button"
-                    >
-                      <span className="-bold">Start Analysing</span>
-                      <img className="left" src={search} style={{ width: '20px' }} />
-                    </button>
+                  <div
+                    className="-flex -flex-col -flex-align-end"
+                    style={{ paddingBottom: '20px', paddingRight: '20px' }}
+                  >
+                    <Button iconSrc={search} loading={false}>
+                      Start Analysing
+                    </Button>
                   </div>
                 </div>
               </div>
