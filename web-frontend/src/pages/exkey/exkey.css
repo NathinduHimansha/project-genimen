@@ -8,12 +8,12 @@
 }
 
 .card-heading-name-right {
-  margin-left: 40%;
+  align-self: center;
 }
 
 .cards-split {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   grid-gap: 20px;
 }
 
@@ -22,56 +22,20 @@
   border: 1px solid var(--primary-border-grey);
   border-radius: 6px;
   background-color: var(--analytics-card);
-  width: 700px;
-  height: 450px;
+  /* width: 700px; */
+  /* height: 450px; */
 }
 
 .card-right {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   border: 1px solid var(--primary-border-grey);
   border-radius: 6px;
   background-color: var(--analytics-card);
-  width: 700px;
-  height: 450px;
+  /* width: 700px; */
+  /* height: 450px; */
 }
-
-/* .card-right {
-  display: grid;
-  grid-gap: 10px;
-  border: 1px solid var(--primary-black);
-  width: 800px;
-  height: 500px;
-  top: 35px;
-  right: -50px;
-  display: flex;
-  position: relative;
-} */
-
-/* .card-left {
-  display: inline-block;
-  box-shadow: 0 4px 8px 0 var(--primary-black);
-  transition: 0.3s;
-  width: 580%;
-  height: 410px;
-  border-radius: 5px;
-  top: 220px;
-  left: 120px;
-  cursor: pointer;
-  padding-left: 150px;
-} */
-
-/* .card-right {
-  display: inline-block;
-  box-shadow: 0 4px 8px 0 var(--primary-black);
-  transition: 0.3s;
-  width: 220%;
-  height: 410px;
-  border-radius: 5px;
-  top: 40px;
-  right: -460px;
-  cursor: pointer;
-  padding-left: 150px;
-} */
 
 .word-cloud {
   margin-left: -180px;
@@ -240,6 +204,7 @@
   font-weight: bold;
   top: 230px;
   display: flex;
+  justify-content: center;
   position: absolute;
 }
 
@@ -248,16 +213,25 @@
   background-color: var(--primary-white);
   border-color: white;
   display: flex;
-  flex-wrap: wrap;
-  margin-left: 50px;
-  margin-top: 150px;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  /* margin-left: 50px; */
+  /* margin-top: 150px; */
+  padding-bottom: 80px;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+.barHighlight:nth-last-child(1) {
+  margin-right: 0px;
 }
 
 .barHighlight {
   height: 100%;
-  width: 30px;
+  width: 30%;
+  max-width: 30px;
   background-color: #d9f0f3;
-  margin-right: 40px;
+  margin-right: 4.5%;
   position: relative;
 }
 
@@ -297,7 +271,7 @@
 }
 
 .analyze_again {
-  margin-top: 400px;
+  /* margin-top: 400px; */
   display: grid;
   left: 40px;
   right: 10px;
