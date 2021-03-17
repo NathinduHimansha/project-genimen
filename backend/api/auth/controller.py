@@ -13,7 +13,7 @@ auth = Blueprint('auth', __name__, url_prefix="/api/auth")
 def create_token(user):
     EXPIRES = datetime.timedelta(days=7)
     access_token = create_access_token(
-        identity=str(user.id), expires_delta=EXPIRES)
+        identity={'id': str(user.id), 'username': str(user.username)}, expires_delta=EXPIRES)
     return access_token
 
 
@@ -21,8 +21,15 @@ def create_token(user):
 def signup():
     body = request.get_json()
     user = User(**body)
-    user.hash_password()
-    user.save()
+    try:
+        user.hash_password()
+    except:
+        return {'message': 'invalid password'}
+    try:
+        user.save()
+    except:
+        return {'message': 'user already exist'}
+
     id = user.id
     access_token = create_token(user)
     return {'id': str(id), 'token': access_token}, 200
@@ -31,10 +38,13 @@ def signup():
 @auth.route('/login', methods=['POST'])
 def login():
     body = request.get_json()
-    user = User.objects.get(email=body.get('email'))
+    try:
+        user = User.objects.get(email=body.get('email'))
+    except:
+        return {'message': 'user does not exist'}
     authorized = user.check_password(body.get('password'))
     if not authorized:
-        return createErrResponse({'error': 'Email or password invalid'})
+        return createErrResponse({'message': 'email or password invalid'})
 
     access_token = create_token(user)
     return {'token': access_token}, 200

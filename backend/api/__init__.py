@@ -26,9 +26,10 @@ def create_app(config=None):
     elif (config == 'prod'):
         #  app.config.from_envvar('ENV_FILE')
         SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
+        MONGO_URI = os.environ.get('MONGO_URI')
         app.config['JWT_SECRET_KEY'] = SECRET_KEY
         app.config['MONGODB_SETTINGS'] = {
-            'host': 'mongodb://127.0.0.1:27017'
+            'host': MONGO_URI
         }
 
     initialize_db(app)
