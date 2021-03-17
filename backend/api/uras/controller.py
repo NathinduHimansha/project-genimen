@@ -4,6 +4,8 @@ from api.common.utils import createSuccessResponse, createErrResponse
 from analytics.aspect_analysis.aspect_lexicons import FEATURE_TYPES
 #  from .service import get_reviews_sentiment_summary, mock
 from .service import get_reviews_sentiment_summary
+from flask_jwt_extended import jwt_required
+
 
 uras = Blueprint('uras', __name__, url_prefix='/api')
 
@@ -23,6 +25,7 @@ def is_features_valid(feature_type_dic):
 
 
 @uras.route('/uras', methods=['GET', 'POST'])
+@jwt_required()
 def handle_uras():
     if (request.method == 'POST'):
         if (not is_features_valid(request.json)):
@@ -34,7 +37,3 @@ def handle_uras():
 
 def get_features_types():
     return FEATURE_TYPES
-
-
-def get_feature_sentiment_analysis():
-    return get_reviews_sentiment_summary(request.json)
