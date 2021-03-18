@@ -9,6 +9,7 @@ import cross from '../../assests/CroseLight.png';
 import logo from '../../assests/Geniman.png';
 import downArrow from '../../assests/DropDownArrow.png';
 import rightArraw from '../../assests/DropDownRightArrow.png';
+import Button from '../buttons/Button';
 
 const NavBar = (props) => {
   const { routes } = props;

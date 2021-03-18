@@ -87,6 +87,8 @@ img.dropdown-arrow {
   transform: rotate(-180);
 }
 .navbar {
+  display: flex;
+  flex-direction: column;
   color: #fff;
   width: 6rem;
   height: 100vh;

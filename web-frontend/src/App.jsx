@@ -14,6 +14,7 @@ import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
 import URASView from './pages/uras/URASView';
 import UrasResults from './pages/uras/UrasResults';
 import { toggleMode } from './common/style.js';
+import Button from './components/buttons/Button';
 
 const routes = [
   {
@@ -71,6 +72,12 @@ function App() {
                 }
               }}
             />
+          </div>
+          <div className="auth-btn-wrapper -flex -flex-center -mt-auto">
+            <Button outline={true} utilClasses="signup-btn">
+              Sign Up
+            </Button>
+            <Button utilClasses="-mr-5 login-btn">Login</Button>
           </div>
         </NavBar>
         <Switch>
