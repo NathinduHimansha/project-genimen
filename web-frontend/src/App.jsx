@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
-// import Nav from './component/Nav'
+import NavBar from './components/nav/NavBar';
 // import Home from './page/Home'
 // import FeatureAnalyser from './page/FeautureAnalyser'
 // import ModelFeatureAnalyser from './page/ModelFeautureAnalyser'
@@ -22,8 +22,8 @@ function App() {
       <div className="App">
         {/*<Nav/>*/}
         <Switch>
-          {/*<Route path="/" exact component={Home} />*/}
-          <Route exact path="/" exact component={Examples} />
+          {/* <Route path="/" exact component={Examples} /> */}
+          <Route exact path="/" exact component={NavBar} />
           <Route path="/examples" component={Examples} />
           <Route path="/about" component={Home} />
           <Route path="/exkey" component={EXKEY} />
