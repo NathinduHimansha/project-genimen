@@ -1,26 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-// import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/nav/NavBar';
-// import Home from './page/Home'
-// import FeatureAnalyser from './page/FeautureAnalyser'
-// import ModelFeatureAnalyser from './page/ModelFeautureAnalyser'
-// import TopicExtractor from './page/TopicExtractor'
-// import ModelFeatureAnalyser from './page/Login'
-// import ModelFeatureAnalyser from './page/SignUp'
+import about from './assests/AboutLight.png';
+import search from './assests/Search.png';
+import dark from './assests/NightMode.png';
+import light from './assests/LightMode.png';
+import home from './assests/HomeWhite.png';
 import URAS from './pages/uras/URAS';
 import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
 import URASView from './pages/uras/URASView';
 import UrasResults from './pages/uras/UrasResults';
+import { toggleMode } from './common/style.js';
+
+const routes = [
+  {
+    title: 'Home',
+    icon: home,
+    subMenu: [],
+    path: '/examples',
+  },
+  {
+    title: 'Analytics',
+    icon: search,
+    subMenu: [
+      { title: 'Feature Sentiments', path: '/analytics/uras' },
+      { title: 'Product Feature Sentiments', path: '/analytics/pssa' },
+      { title: 'TRENDZ', path: '/analytics/pfs' },
+    ],
+    path: '/analytics',
+  },
+  {
+    title: 'About',
+    icon: about,
+    subMenu: [],
+    path: '/about',
+  },
+];
 
 function App() {
+  const [themeMode, setTheme] = useState('dark');
   return (
     <Router>
       <div className="App">
-        <NavBar />
+        <NavBar routes={routes}>
+          <div className="theme-switch -flex -flex-center -mt-50">
+            <img
+              className={themeMode == 'light' ? 'light-mode-icon' : 'dark-mode-icon'}
+              src={themeMode == 'light' ? light : dark}
+              onClick={() => {
+                toggleMode();
+                if (themeMode == 'dark') {
+                  setTheme('light');
+                } else {
+                  setTheme('dark');
+                }
+              }}
+            />
+          </div>
+        </NavBar>
         <Switch>
           <Route exact path="/" component={Examples}>
             <Redirect to="/home" />

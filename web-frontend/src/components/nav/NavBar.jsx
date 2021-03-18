@@ -11,31 +11,8 @@ import downArrow from '../../assests/DropDownArrow.png';
 import rightArraw from '../../assests/DropDownRightArrow.png';
 
 const NavBar = (props) => {
+  const { routes } = props;
   let path = useLocation().pathname;
-  const routes = [
-    {
-      title: 'Home',
-      icon: home,
-      subMenu: [],
-      path: '/examples',
-    },
-    {
-      title: 'Analytics',
-      icon: search,
-      subMenu: [
-        { title: 'Feature Sentiments', path: '/analytics/uras' },
-        { title: 'Product Feature Sentiments', path: '/analytics/pssa' },
-        { title: 'TRENDZ', path: '/analytics/pfs' },
-      ],
-      path: '/analytics',
-    },
-    {
-      title: 'About',
-      icon: about,
-      subMenu: [],
-      path: '/about',
-    },
-  ];
   return (
     <nav className="navbar">
       <div className="nav-logo">
@@ -54,7 +31,6 @@ const NavBar = (props) => {
           <li key={'route' + i} className="nav-item parent-link">
             {/* <a href="#" className={`nav-link ${route.active ? 'nav-link-active' : ''}`}> */}
             {/* <NavLink to = '/' activeClassName="active-link"> */}
-            {console.log(route.subMenu.length)}
             <NavLink
               exact
               // to={route.subMenu.length ? route.path : '#'}
@@ -62,7 +38,6 @@ const NavBar = (props) => {
               activeClassName="nav-link-active"
               className="nav-link"
               isActive={(match, location) => {
-                console.log(route.path);
                 if (location.pathname.includes(route.path)) {
                   return true;
                 }
@@ -103,6 +78,7 @@ const NavBar = (props) => {
           </li>
         ))}
       </ul>
+      {props.children}
     </nav>
   );
 };
