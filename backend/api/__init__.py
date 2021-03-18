@@ -16,20 +16,16 @@ def create_app(config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
 
-    #  app.config['CORS_HEADERS'] = 'Content-Type'
-    #  cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+    SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
+    MONGO_URI = os.environ.get('MONGO_URI')
+    app.config['JWT_SECRET_KEY'] = SECRET_KEY
+    app.config['MONGODB_SETTINGS'] = {
+        'host': MONGO_URI
+    }
+
     if (config == 'dev'):
         app.config['MONGODB_SETTINGS'] = {
             'host': 'mongodb://127.0.0.1:27017'
-        }
-        app.config['JWT_SECRET_KEY'] = 't1NP63m4wnBg6nyHYKfmc2TpCOGI4nss'
-    elif (config == 'prod'):
-        #  app.config.from_envvar('ENV_FILE')
-        SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
-        MONGO_URI = os.environ.get('MONGO_URI')
-        app.config['JWT_SECRET_KEY'] = SECRET_KEY
-        app.config['MONGODB_SETTINGS'] = {
-            'host': MONGO_URI
         }
 
     initialize_db(app)
@@ -57,10 +53,11 @@ def create_app(config=None):
     initialize_routes(app)
     # a simple page that says hello
 
-    #  CORS(app)
+    #  app.config['CORS_HEADERS'] = 'Content-Type'
+    #  cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-    @app.route('/api/hello', methods=["POST"])
+    @app.route('/api/hello', methods=["GET"])
     def hello():
         return 'Hello, World!'
 
