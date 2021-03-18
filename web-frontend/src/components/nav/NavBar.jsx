@@ -4,6 +4,7 @@ import about from '../../assests/AboutLight.png';
 import search from '../../assests/Search.png';
 import home from '../../assests/HomeWhite.png';
 import hamIcon from '../../assests/HamburgerLight.png';
+import cross from '../../assests/CroseLight.png';
 import logo from '../../assests/Geniman.png';
 import downArrow from '../../assests/DropDownArrow.png';
 import rightArraw from '../../assests/DropDownRightArrow.png';
@@ -42,7 +43,8 @@ const NavBar = (props) => {
         </div>
         <div className="hamburger">
           <div className="hamburger-icon">
-            <img src={hamIcon} />
+            <img src={hamIcon} className="menu-icon" />
+            <img src={cross} className="close-icon" />
           </div>
           <span className="link-text hamburger-lbl">Menu</span>
         </div>
