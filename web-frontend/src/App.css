@@ -172,6 +172,12 @@
 .-hidden {
   visibility: hidden;
 }
+.-opacity-0 {
+  opacity: 0;
+}
+.-opacity-1 {
+  opacity: 1;
+}
 /* font-weights */
 .-light {
   font-weight: 300 !important;
@@ -527,8 +533,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* theme switch (night mode) */
+.theme-switch {
+  position: relative;
+}
 .theme-switch > img {
   cursor: pointer;
+  position: absolute;
+  transition: 300ms ease;
 }
 .dark-mode-icon {
   width: 2.6rem;

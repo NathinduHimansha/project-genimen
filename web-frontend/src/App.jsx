@@ -48,8 +48,20 @@ function App() {
         <NavBar routes={routes}>
           <div className="theme-switch -flex -flex-center -mt-50">
             <img
-              className={themeMode == 'light' ? 'light-mode-icon' : 'dark-mode-icon'}
-              src={themeMode == 'light' ? light : dark}
+              className={themeMode == 'light' ? 'dark-mode-icon -opacity-0' : 'dark-mode-icon'}
+              src={dark}
+              onClick={() => {
+                toggleMode();
+                if (themeMode == 'dark') {
+                  setTheme('light');
+                } else {
+                  setTheme('dark');
+                }
+              }}
+            />
+            <img
+              className={themeMode == 'dark' ? 'light-mode-icon -opacity-0' : 'light-mode-icon'}
+              src={light}
               onClick={() => {
                 toggleMode();
                 if (themeMode == 'dark') {
