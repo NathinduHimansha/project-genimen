@@ -135,6 +135,9 @@
 .-full-width {
   width: 100%;
 }
+.-full-height {
+  height: 100%;
+}
 .-display-none {
   display: none;
 }
@@ -511,6 +514,27 @@ select.phone-selector {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+/* scrollbar */
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+/* theme switch (night mode) */
+.theme-switch > img {
+  cursor: pointer;
+}
+.dark-mode-icon {
+  width: 2.6rem;
+}
+.light-mode-icon {
+  width: 3.1rem;
 }
 
 /* Defaults
