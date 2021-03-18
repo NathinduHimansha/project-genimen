@@ -50,6 +50,7 @@ img.dropdown-arrow {
   justify-content: center;
   width: 6rem;
   display: none;
+  transition: 200ms ease;
   /* margin-left: 1rem; */
 }
 .sub-nav-link-icon {
@@ -151,9 +152,20 @@ img.dropdown-arrow {
   font-size: 1.8rem;
   text-decoration: none;
   margin-bottom: 2px;
+  transition: 200ms ease;
 }
+
 .nav-link:last-child {
   margin-bottom: 0px;
+}
+.nav-link:hover .nav-link-icon {
+  transform: rotate(180deg);
+}
+.navbar-sub-nav:hover .nav-link-icon {
+  transform: rotate(180deg);
+}
+.nav-link:hover .nav-link-icon {
+  transform: rotate(180deg);
 }
 .nav-link:hover {
   /* background-color: #0f2e5d; */
