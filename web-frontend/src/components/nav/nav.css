@@ -20,7 +20,6 @@
 .hamburger-icon > img {
   width: 20px;
   height: 20px;
-  transition: 200ms ease;
   position: absolute;
   transition: 300ms ease;
   /* margin-right: 3rem; */
@@ -91,6 +90,8 @@ img.dropdown-arrow {
   position: fixed;
   background-color: #1f447c;
   transition: width 200ms ease;
+  top: 0;
+  z-index: 999;
   /* cursor: pointer; */
 }
 .navbar-nav {
@@ -102,24 +103,27 @@ img.dropdown-arrow {
   align-items: center;
 }
 
+.parent-link {
+  position: relative;
+}
 .navbar-sub-nav {
   /* display: none; */
   /* position: relative; */
   opacity: 0;
   visibility: hidden;
+  /* white-space: nowrap; */
   height: 0px;
   list-style: none;
   font-size: 1.5rem;
   padding-left: 0px;
   transition: 200ms ease;
+  /* transition-delay: 50ms; */
   border-top: 1px solid #21376c;
   border-bottom: 1px solid #21376c;
 }
-.parent-link {
-  position: relative;
-}
 .parent-link:hover .navbar-sub-nav {
   /* display: block; */
+  white-space: normal;
   padding: 5px 0 5px 0px;
   visibility: visible;
   opacity: 1;
@@ -127,11 +131,18 @@ img.dropdown-arrow {
   border-top: 1px solid #21376c;
   border-bottom: 1px solid #21376c;
 }
+@keyframes slideIn {
+  from {
+  }
+  to {
+  }
+}
 .nav-link-active {
   background-color: #a2c6fc30;
 }
-.sub-nav-link-active {
+.sub-nav-link-active > li.nav-sub-item {
   background-color: #a2c6fc30;
+  color: #ffe08c;
 }
 .sub-nav-link-active a {
   color: #ffe08c;
@@ -207,7 +218,7 @@ img.dropdown-arrow {
   color: #ffe08c;
   /* text-decoration: underline; */
   /* font-weight: 600; */
-  transition: background-color 500ms ease;
+  transition: background-color 200ms ease;
   background-color: #a2c6fc30;
 }
 .sub-nav-link-icon {

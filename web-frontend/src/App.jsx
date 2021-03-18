@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/nav/NavBar';
@@ -20,14 +20,15 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/*<Nav/>*/}
+        <NavBar />
         <Switch>
-          {/* <Route path="/" exact component={Examples} /> */}
-          <Route exact path="/" exact component={NavBar} />
+          <Route exact path="/" component={Examples}>
+            <Redirect to="/home" />
+          </Route>
           <Route path="/examples" component={Examples} />
           <Route path="/about" component={Home} />
           <Route path="/exkey" component={EXKEY} />
-          <Route path="/uras" component={URASView} />
+          <Route path="/analytics/uras" component={URASView} />
           <Route path="/urasresult" exact component={UrasResults} />
           <Route path="/pssa" component={Home} />
           <Route path="/fbfe" component={Home} />
