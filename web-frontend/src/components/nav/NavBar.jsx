@@ -54,14 +54,14 @@ const NavBar = (props) => {
                   <img src={route.icon} />
                 </div>
                 <span className="link-text">{route.title}</span>
-                {route.subMenu.length ? (
-                  <div className="nav-link-icon">
-                    <img src={downArrow} className="dropdown-arrow" />
-                  </div>
-                ) : (
-                  ''
-                )}
               </a>
+              {route.subMenu.length ? (
+                <div className="nav-link-icon">
+                  <img src={downArrow} className="dropdown-arrow" />
+                </div>
+              ) : (
+                ''
+              )}
               <ul className={route.subMenu.length ? 'navbar-sub-nav' : '-display-none'}>
                 {route.subMenu.map((menu, i) => (
                   <a key={'submenu' + i} href="#" className="sub-nav-link">
