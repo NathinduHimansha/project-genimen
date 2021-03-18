@@ -20,11 +20,11 @@ const NavBar = (props) => {
       title: 'Analytics',
       icon: search,
       subMenu: [
-        { title: 'Feature Sentiments', active: true },
+        { title: 'Feature Sentiments', active: false },
         { title: 'Product Feature Sentiments', active: false },
         { title: 'TRENDZ', active: false },
       ],
-      active: true,
+      active: false,
     },
     {
       title: 'About',
@@ -64,17 +64,17 @@ const NavBar = (props) => {
               </a>
               <ul className={route.subMenu.length ? 'navbar-sub-nav' : '-display-none'}>
                 {route.subMenu.map((menu, i) => (
-                  <li
-                    key={'submenu' + i}
-                    className={`nav-sub-item ${menu.active ? 'sub-nav-link-active' : ''}`}
-                  >
-                    <a href="#" className="sub-nav-link">
-                      {menu.title}
-                    </a>
-                    <div className="sub-nav-link-icon">
-                      <img src={rightArraw} className="dropright-arrow" />
-                    </div>
-                  </li>
+                  <a key={'submenu' + i} href="#" className="sub-nav-link">
+                    <li
+                      key={'submenu' + i}
+                      className={`nav-sub-item ${menu.active ? 'sub-nav-link-active' : ''}`}
+                    >
+                      <span className="sub-link-text">{menu.title}</span>
+                      <div className="sub-nav-link-icon">
+                        <img src={rightArraw} className="dropright-arrow" />
+                      </div>
+                    </li>
+                  </a>
                 ))}
               </ul>
             </li>
