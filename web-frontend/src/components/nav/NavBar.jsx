@@ -9,21 +9,28 @@ import downArrow from '../../assests/DropDownArrow.png';
 import rightArraw from '../../assests/DropDownRightArrow.png';
 
 const NavBar = (props) => {
-  const menu = [
+  const routes = [
     {
       title: 'Home',
       icon: home,
       subMenu: [],
+      active: false,
     },
     {
       title: 'Analytics',
       icon: search,
-      subMenu: ['Feature Sentiments', 'Product Feature Sentiments', 'TRENDZ'],
+      subMenu: [
+        { title: 'Feature Sentiments', active: true },
+        { title: 'Product Feature Sentiments', active: false },
+        { title: 'TRENDZ', active: false },
+      ],
+      active: true,
     },
     {
       title: 'About',
       icon: about,
       subMenu: [],
+      active: false,
     },
   ];
   return (
@@ -40,59 +47,38 @@ const NavBar = (props) => {
           <span className="link-text hamburger-lbl">Menu</span>
         </div>
         <ul className="navbar-nav">
-          <li className="nav-item">
-            <a href="#" className="nav-link ">
-              <div className="nav-icon">
-                <img src={home} />
-              </div>
-              <span className="link-text">Home</span>
-            </a>
-          </li>
-          <li className="nav-item parent-link">
-            <a href="#" className="nav-link nav-link-active">
-              <div className="nav-icon">
-                <img src={search} />
-              </div>
-              <span className="link-text">Analytics</span>
-              <div className="nav-link-icon">
-                <img src={downArrow} className="dropdown-arrow" />
-              </div>
-            </a>
-            <ul className="navbar-sub-nav">
-              <li className="nav-sub-item sub-nav-link-active">
-                <a href="#" className="sub-nav-link">
-                  Feature Sentiments
-                </a>
-                <div className="sub-nav-link-icon">
-                  <img src={rightArraw} className="dropright-arrow" />
+          {routes.map((route, i) => (
+            <li key={'route' + i} className="nav-item parent-link">
+              <a href="#" className={`nav-link ${route.active ? 'nav-link-active' : ''}`}>
+                <div className="nav-icon">
+                  <img src={route.icon} />
                 </div>
-              </li>
-              <li className="nav-sub-item">
-                <a href="#" className="sub-nav-link">
-                  Product Feature Sentiments
-                </a>
-                <div className="sub-nav-link-icon">
-                  <img src={rightArraw} className="dropright-arrow" />
-                </div>
-              </li>
-              <li className="nav-sub-item">
-                <a href="#" className="sub-nav-link">
-                  TRENDZ
-                </a>
-                <div className="sub-nav-link-icon">
-                  <img src={rightArraw} className="dropright-arrow" />
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link">
-              <div className="nav-icon">
-                <img src={about} />
-              </div>
-              <span className="link-text">About</span>
-            </a>
-          </li>
+                <span className="link-text">{route.title}</span>
+                {route.subMenu.length ? (
+                  <div className="nav-link-icon">
+                    <img src={downArrow} className="dropdown-arrow" />
+                  </div>
+                ) : (
+                  ''
+                )}
+              </a>
+              <ul className={route.subMenu.length ? 'navbar-sub-nav' : '-display-none'}>
+                {route.subMenu.map((menu, i) => (
+                  <li
+                    key={'submenu' + i}
+                    className={`nav-sub-item ${menu.active ? 'sub-nav-link-active' : ''}`}
+                  >
+                    <a href="#" className="sub-nav-link">
+                      {menu.title}
+                    </a>
+                    <div className="sub-nav-link-icon">
+                      <img src={rightArraw} className="dropright-arrow" />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>
