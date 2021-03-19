@@ -70,9 +70,11 @@ body {
   --nav-hover-link-color: #ffe08c;
   --nav-link-hover-background: #95bcf721;
   --nav-highlight: #0f2e5d;
-  --fancy-heading-color: rgb(157 171 193);
+  --auth-background: #173f7b;
+  --auth-border-color: #183769;
   --tag: rgb(25 52 87);
   --analytics-card: rgb(34 36 40);
+  --fancy-heading-color: rgb(157 171 193);
 
   --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12);
   --primary-border: 1px solid var(--primary-border-grey);
