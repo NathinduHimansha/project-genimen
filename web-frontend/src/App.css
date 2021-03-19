@@ -466,30 +466,6 @@ select.phone-selector {
 /* .feature-types-selection-menu .feature-type-heading { */
 /* margin-right: 22rem; */
 /* } */
-@media only screen and (max-width: 750px) {
-  .feature-types-selection-menu .feature-type-heading {
-    /* margin-right: 4rem; */
-    font-size: 2rem;
-  }
-  .feature-types-selection-menu select.large {
-    font-size: 1.8rem;
-    width: -moz-fit-content;
-    width: fit-content;
-    padding-right: 20px;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .feature-types-selection-menu .feature-type-heading {
-    /* margin-right: 1rem; */
-    font-size: 1.8rem;
-  }
-  .feature-types-selection-menu select.large {
-    font-size: 1.6rem;
-    width: -moz-fit-content;
-    width: fit-content;
-    padding-right: 10px;
-  }
-}
 /* New icon headings */
 .icon-wrapper {
   height: auto;
@@ -579,40 +555,46 @@ button.login-btn {
 button.signup-btn {
   margin-right: 10px;
 }
-/* Defaults
-.App {
+/* layouts */
+.page {
+  margin: 10rem 25% 10rem 8rem;
 }
-
-.App p {
-  /* margin: 0.4rem; */
-/* } */
-
-.App-logo {
-  height: 40vmin;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 1200px) {
+  .page {
+    margin: 10rem 10% 0 8rem;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 1200px) {
+  .page {
+    margin: 10rem 10% 0 8rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media only screen and (max-width: 850px) {
+  .page {
+    margin: 10rem 6% 0 6%;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .feature-types-selection-menu .feature-type-heading {
+    /* margin-right: 4rem; */
+    font-size: 2rem;
+  }
+  .feature-types-selection-menu select.large {
+    font-size: 1.8rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-right: 20px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .feature-types-selection-menu .feature-type-heading {
+    /* margin-right: 1rem; */
+    font-size: 1.8rem;
+  }
+  .feature-types-selection-menu select.large {
+    font-size: 1.6rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-right: 10px;
   }
 }

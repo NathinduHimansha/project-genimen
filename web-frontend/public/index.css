@@ -38,10 +38,11 @@ body {
   /* dark-mode exceptions */
   --tag: rgba(255, 255, 255, 1);
   --analytics-card: rgba(255, 255, 255, 1);
+  --fancy-heading-color: rgba(68, 68, 68, 1);
 }
 :root[data-theme='dark'] {
   /*tested*/
-  --background: #141516;
+  --background: #1a1b1c;
   --pos-green: rgba(83, 206, 132, 1);
   --neg-red: rgba(255, 95, 95, 1);
   --white: rgba(25, 25, 25, 1);
@@ -55,8 +56,9 @@ body {
   --secondary-accent: rgba(38, 132, 255, 1);
   --light-grey: rgba(69, 69, 69, 1);
   --grey: rgb(198 198 198);
-  --primary-border-grey: rgba(89, 89, 89, 1);
+  --primary-border-grey: rgba(69, 69, 69, 1);
   /* dark-mode exceptions */
+  --fancy-heading-color: rgb(157 171 193);
   --tag: rgb(25 52 87);
   --analytics-card: rgb(34 36 40);
 

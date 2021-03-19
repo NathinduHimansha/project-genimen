@@ -21,32 +21,32 @@ const Examples = () => {
 
   return (
     <div className="navbar-page-container">
-      <div style={{ margin: '10% 10%' }}>
+      <div className="page">
         <div className="-mb-40">
           <FancyHeading heading="SELECT FEATURES TO ANALYSE"></FancyHeading>
         </div>
-        <div className="-flex -mb-40">
-          <select
-            defaultValue="select-phone"
-            className="dark phone-selector select heading4 -regular -full-width"
-          >
-            <option value="select-phone" disabled>
-              Select Phone
-            </option>
-            <option value="display">Normal</option>
-          </select>
-          <Button iconSrc={search} loading={true}>
-            Start Analysing
-          </Button>
-        </div>
-        <div className="-mb-40 -mt-40">
-          <div className="keyword-tag-container">
-            <span className="keyword-tag">fingerprint</span>
-            <span className="keyword-tag">screen</span>
-            <span className="keyword-tag">ease of use</span>
-            <span className="keyword-tag">fingerprint</span>
-          </div>
-        </div>
+        {/* <div className="-flex -mb-40"> */}
+        {/* <select */}
+        {/* defaultValue="select-phone" */}
+        {/* className="dark phone-selector select heading4 -regular -full-width" */}
+        {/* > */}
+        {/* <option value="select-phone" disabled> */}
+        {/* Select Phone */}
+        {/* </option> */}
+        {/* <option value="display">Normal</option> */}
+        {/* </select> */}
+        {/* <Button iconSrc={search} loading={true}> */}
+        {/* Start Analysing */}
+        {/* </Button> */}
+        {/* </div> */}
+        {/* <div className="-mb-40 -mt-40"> */}
+        {/* <div className="keyword-tag-container"> */}
+        {/* <span className="keyword-tag">fingerprint</span> */}
+        {/* <span className="keyword-tag">screen</span> */}
+        {/* <span className="keyword-tag">ease of use</span> */}
+        {/* <span className="keyword-tag">fingerprint</span> */}
+        {/* </div> */}
+        {/* </div> */}
         <div style={{ position: 'absolute', left: '1000px', top: '380px', opacity: '0.8' }}>
           <img src={banner} style={{ width: '400px' }} />
         </div>
