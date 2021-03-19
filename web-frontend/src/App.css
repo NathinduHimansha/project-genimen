@@ -531,10 +531,18 @@ body::-webkit-scrollbar-thumb {
 }
 /* Login Button */
 .auth-btn-wrapper {
-  opacity: 0;
-  padding: 20px 10px 20px 10px;
+  /* opacity: 0; */
+  /* padding: 20px 10px 20px 10px; */
+  padding: 0;
+  height: 0;
   background-color: var(--auth-background);
   border-top: 1px solid var(--auth-border-color);
+  transition: 250ms ease;
+}
+.navbar:hover .auth-btn-wrapper {
+  /* opacity: 1; */
+  padding: 20px 10px 20px 10px;
+  height: auto;
 }
 .navbar:hover button.login-btn,
 .navbar:hover button.signup-btn {
@@ -542,13 +550,11 @@ body::-webkit-scrollbar-thumb {
   width: 50%;
   opacity: 1;
 }
-.navbar:hover .auth-btn-wrapper {
-  opacity: 1;
-}
 .auth-btn-wrapper > button {
   visibility: hidden;
   opacity: 0;
   width: 0;
+  width: 50%;
   transition: opacity 400ms ease;
 }
 button.login-btn {
