@@ -469,10 +469,17 @@ select.phone-selector {
 
 .feature-types {
   max-width: 700px;
+  transition: 200ms ease;
   /* width: 80%; */
 }
 .feature-selection-banner {
-  margin-left: 10rem;
+  margin-left: 15rem;
+  transition: 200ms ease;
+}
+@media only screen and (max-width: 1400px) {
+  .feature-selection-banner {
+    margin-left: 10rem;
+  }
 }
 @media only screen and (max-width: 1300px) {
   .feature-selection-box {
