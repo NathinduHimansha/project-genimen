@@ -23,8 +23,8 @@ const Examples = () => {
     <div className="navbar-page-container">
       {/* <div className="page"> */}
       <div className="feature-selection-block -flex -flex-col -flex-center -flex-middle -full-vheight">
-        <div style={{ width: '80%', maxWidth: '700px' }}>
-          <div>
+        <div style={{ width: '80%' }} className="-flex -flex-center">
+          <div style={{ width: '50%' }} className="feature-selection-box">
             <div className="-mb-80">
               <FancyHeading heading="SELECT FEATURES TO ANALYSE"></FancyHeading>
             </div>
@@ -64,10 +64,10 @@ const Examples = () => {
               </div>
             </div>
           </div>
+          <div style={{ opacity: '0.6' }} className="feature-selection-banner -flex -flex-middle">
+            <img src={banner} style={{ width: '400px' }} />
+          </div>
         </div>
-        {/* <div style={{ position: 'absolute', left: '1000px', top: '380px', opacity: '0.8' }}> */}
-        <img src={banner} style={{ width: '400px' }} />
-        {/* </div> */}
       </div>
       <div className="-display-none">
         <div className="-mb-40 -mt-90">

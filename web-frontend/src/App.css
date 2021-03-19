@@ -466,6 +466,23 @@ select.phone-selector {
   border-radius: 4px;
 }
 /* feature type selection menu */
+
+.feature-types {
+  max-width: 700px;
+  /* width: 80%; */
+}
+.feature-selection-banner {
+  margin-left: 10rem;
+}
+@media only screen and (max-width: 1300px) {
+  .feature-selection-box {
+    width: 100% !important;
+  }
+  .feature-selection-banner {
+    display: none;
+  }
+}
+
 /* .feature-types-selection-menu .feature-type-heading { */
 /* margin-right: 22rem; */
 /* } */
