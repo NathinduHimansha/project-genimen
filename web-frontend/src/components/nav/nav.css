@@ -262,7 +262,9 @@ img.dropdown-arrow {
 .navbar:hover .nav-link-icon {
   visibility: visible;
 }
-.navbar:hover .link-text,
+.navbar:hover .link-text {
+  display: block;
+}
 .navbar:hover .hamburger-lbl {
   display: block;
 }
@@ -287,6 +289,18 @@ img.dropdown-arrow {
 }
 .nav-icon > img {
   width: 20px;
+}
+.menu-title {
+  color: rgb(245, 245, 245);
+}
+.nav-link:hover .nav-icon {
+  opacity: 1;
+}
+.nav-link .nav-icon {
+  opacity: 0.88;
+}
+.nav-link-active .nav-icon {
+  opacity: 1;
 }
 @media only screen and (min-width: 600px) {
 }

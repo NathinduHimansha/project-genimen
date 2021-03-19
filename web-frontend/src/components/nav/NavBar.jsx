@@ -25,7 +25,7 @@ const NavBar = (props) => {
           <img src={hamIcon} className="menu-icon" />
           <img src={cross} className="close-icon" />
         </div>
-        <span className="hamburger-lbl">Menu</span>
+        <span className="hamburger-lbl">MENU</span>
       </div>
       <ul className="navbar-nav">
         {routes.map((route, i) => (
@@ -48,7 +48,7 @@ const NavBar = (props) => {
               <div className="nav-icon">
                 <img src={route.icon} />
               </div>
-              <span className="link-text">{route.title}</span>
+              <span className="link-text menu-title">{route.title}</span>
             </NavLink>
             {/* </a> */}
             {route.subMenu.length ? (
@@ -68,7 +68,7 @@ const NavBar = (props) => {
                   activeClassName="sub-nav-link-active"
                 >
                   <li key={'submenu' + i} className="nav-sub-item">
-                    <span className="sub-link-text">{menu.title}</span>
+                    <span className="sub-link-text menu-title">{menu.title}</span>
                     <div className="sub-nav-link-icon">
                       <img src={rightArraw} className="dropright-arrow" />
                     </div>
