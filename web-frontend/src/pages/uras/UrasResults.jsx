@@ -70,13 +70,11 @@ export class UrasResults extends Component {
 
 
                 {/* results per phone */}
-                <div className="analytics-container cards-grid -mt-40   ">
-                    <h3 className= {`${this.state.headingState} heading3 -medium -no-margin `} style={{ fontSize: '2.2rem' }}>
+                <h3 className= {`${this.state.headingState} heading3 -medium -mt-70 `} style={{ fontSize: '2.2rem' }}>
                         Analysis per Phone
-                    </h3>
+                </h3>
 
-                    <hr className="heading-sep" />
-
+                <div className="analytics-container cards-grid -mt-10   ">
                     {data['phone-feature-polarity'].map((response, index) => 
                         (response.feature===this.state.selectedFeature ?
                             (<div className="analytics-container cards-grid -mt-60">
