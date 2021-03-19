@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import './nav.css';
 import about from '../../assests/AboutLight.png';
 import search from '../../assests/Search.png';
@@ -12,12 +12,19 @@ import rightArraw from '../../assests/DropDownRightArrow.png';
 import Button from '../buttons/Button';
 
 const NavBar = (props) => {
+  const history = useHistory();
+  console.log(history);
   const { routes } = props;
   let path = useLocation().pathname;
+  const imageClick = () => {
+    history.push({ path: '/home' });
+  };
   return (
     <nav className="navbar">
       <div className="nav-logo">
-        <img src={logo} />
+        <div className="nav-logo-wrapper" onClick={() => imageClick()}>
+          <img src={logo} />
+        </div>
         <span className="logo-name">genimen</span>
       </div>
       <div className="hamburger">

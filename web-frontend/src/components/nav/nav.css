@@ -58,9 +58,26 @@
   align-items: center;
   margin-top: 35px;
 }
-.nav-logo > img {
-  width: 80px;
+.nav-logo-wrapper {
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  /* transition: 300ms ease; */
+  align-items: center;
+  border-radius: 50%;
+  /* background: var(--auth-background); */
+  border: 1px solid var(--auth-border-color);
+  cursor: pointer;
+}
+.nav-logo-wrapper > img {
+  width: 50%;
+  transition: transform 200ms ease;
   object-fit: contain;
+  cursor: pointer;
+}
+.nav-logo-wrapper:hover > img {
+  transform: rotate(15deg);
 }
 .nav-logo > .logo-name {
   color: #fff;
@@ -68,6 +85,7 @@
   margin-top: 2rem;
   font-family: Poppins;
   font-weight: 300;
+  display: none;
 }
 img.dropdown-arrow {
   width: 12px;
