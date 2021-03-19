@@ -25,7 +25,7 @@ const NavBar = (props) => {
           <img src={hamIcon} className="menu-icon" />
           <img src={cross} className="close-icon" />
         </div>
-        <span className="link-text hamburger-lbl">Menu</span>
+        <span className="hamburger-lbl">Menu</span>
       </div>
       <ul className="navbar-nav">
         {routes.map((route, i) => (

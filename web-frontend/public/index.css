@@ -36,6 +36,13 @@ body {
   --gap-medium: 25px;
 
   /* dark-mode exceptions */
+  --nav-background: #1f447c;
+  --nav-border-sep: #21376c;
+  --nav-hover-link-color: #ffe08c;
+  --nav-link-hover-background: #95bcf721;
+  --nav-highlight: #0f2e5d;
+  --auth-background: #173f7b;
+  --auth-border-color: #193d73;
   --tag: rgba(255, 255, 255, 1);
   --analytics-card: rgba(255, 255, 255, 1);
   --fancy-heading-color: rgba(68, 68, 68, 1);
@@ -58,6 +65,11 @@ body {
   --grey: rgb(198 198 198);
   --primary-border-grey: rgba(69, 69, 69, 1);
   /* dark-mode exceptions */
+  --nav-background: #1c3c6d;
+  --nav-border-sep: #21376c;
+  --nav-hover-link-color: #ffe08c;
+  --nav-link-hover-background: #95bcf721;
+  --nav-highlight: #0f2e5d;
   --fancy-heading-color: rgb(157 171 193);
   --tag: rgb(25 52 87);
   --analytics-card: rgb(34 36 40);

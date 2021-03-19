@@ -532,8 +532,9 @@ body::-webkit-scrollbar-thumb {
 /* Login Button */
 .auth-btn-wrapper {
   opacity: 0;
-  padding: 22px 10px 10px 10px;
-  background-color: #0f2e5d;
+  padding: 20px 10px 20px 10px;
+  background-color: var(--auth-background);
+  border-top: 1px solid var(--auth-border-color);
 }
 .navbar:hover button.login-btn,
 .navbar:hover button.signup-btn {
