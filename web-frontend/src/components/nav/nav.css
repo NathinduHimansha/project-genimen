@@ -58,8 +58,26 @@
   align-items: center;
   margin-top: 35px;
 }
-.nav-logo-wrapper {
+@keyframes logoPop {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    /* opacity: 0.5; */
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.navbar:hover .nav-logo-wrapper {
   width: 15rem;
+  opacity: 1;
+  animation: logoPop 0.25s ease forwards;
+}
+.nav-logo-wrapper {
+  opacity: 0;
+  transition: 200ms ease;
+  width: 0;
   height: 15rem;
   display: flex;
   justify-content: center;
@@ -69,6 +87,7 @@
   /* background: var(--auth-background); */
   border: 1px solid var(--auth-border-color);
   cursor: pointer;
+  /* animation: spinner-border 0.75s linear infinite; */
 }
 .nav-logo-wrapper > img {
   width: 50%;

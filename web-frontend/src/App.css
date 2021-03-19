@@ -549,7 +549,7 @@ body::-webkit-scrollbar-thumb {
   visibility: hidden;
   opacity: 0;
   width: 0;
-  transition: 200ms ease;
+  transition: opacity 400ms ease;
 }
 button.login-btn {
 }
