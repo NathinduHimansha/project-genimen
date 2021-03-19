@@ -186,7 +186,7 @@ img.dropdown-arrow {
   display: flex;
   align-items: center;
   height: 4.7rem;
-  color: #fff;
+  color: rgb(245, 245, 245);
   font-size: 1.8rem;
   text-decoration: none;
   margin-bottom: 2px;
@@ -238,7 +238,8 @@ img.dropdown-arrow {
   /* background-color: #a2c6fc30; */
 }
 .sub-nav-link {
-  color: #fff;
+  /* color: #fff; */
+  color: rgb(245, 245, 245);
   text-decoration: none;
   /* width: 150px; */
   width: 100%;
@@ -289,9 +290,6 @@ img.dropdown-arrow {
 }
 .nav-icon > img {
   width: 20px;
-}
-.menu-title {
-  color: rgb(245, 245, 245);
 }
 .nav-link:hover .nav-icon {
   opacity: 1;
