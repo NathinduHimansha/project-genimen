@@ -6,27 +6,26 @@ import Bargraph from '../../components/graphs/BarGraph';
 // import WordCloud from '../../components/graphs/WordCloud';
 import FancyHeading from '../../components/text/FancyHeading';
 import Button from '../../components/buttons/Button';
+import banner from '../../assests/MagnifierAnalysingBanner.png';
 
 class Exkey extends React.Component {
   analyzeAgain() {
     var i = 0;
     var counter = setInterval(function () {
       i++;
-      // document.querySelector('.counter_right').textContent = i + '%';
-      // document.querySelector('.counter_left').textContent = i + '%';
+
+      document.querySelector('.analyze_again ').style.visibility = 'hidden';
+      document.querySelector('.analysing_banner ').style.visibility = 'hidden';
+      document.querySelector('.loader_progress ').style.visibility = 'visible';
 
       if (i === 100) {
         clearInterval(counter);
 
-        // document.querySelector('.counter_right').style.border = 'unset';
-        // document.querySelector('.counter_right').style.display = 'none';
-        // document.querySelector('.spinner_right').style.display = 'none';
+        document.querySelector('.frequency-bars ').style.visibility = 'visible';
+        document.querySelector('.card-left ').style.visibility = 'visible';
+        document.querySelector('.card-right ').style.visibility = 'visible';
+        document.querySelector('.loader_progress ').style.visibility = 'hidden';
 
-        // document.querySelector('.counter_left').style.border = 'unset';
-        // document.querySelector('.counter_left').style.display = 'none';
-        // document.querySelector('.spinner_left').style.display = 'none';
-
-        // document.querySelector('.frequency-bars ').style.visibility = 'visible';
         // document.querySelector('.word-cloud ').style.display = 'block';
 
         document
@@ -64,24 +63,27 @@ class Exkey extends React.Component {
     return (
       <div className="main-body">
         <div className="animated_heading">
-          {/* <FancyHeading
-            className="keywordTopic"
-            heading="LOOK WHAT PEOPLE ARE TALKING OF PHONES..."
-          ></FancyHeading> */}
+          <div className="-mb-40">
+            <FancyHeading
+              heading="LOOK WHAT PEOPLE ARE TALKING OF PHONES..."
+              style={{ visibility: 'hidden' }}
+            ></FancyHeading>
+            <hr className="heading-sep" />
+          </div>
         </div>
+
         <div className="body-split">
           <div className="-mt-60">
             <div className="analytics-container cards-split -mt-40">
-              <div className="card-left">
+              <div className="card-left" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-left">
                   <h3 className="heading3 -medium">TREND</h3>
+                  <div className="analysing_banner" style={{ visibility: 'visible' }}>
+                    <img src={banner} style={{ width: '400px' }} />
+                  </div>
                 </div>
-                {/* <div className="container_left">
-                  <div className="spinner_left"></div>
-                </div>
-                <div className="counter_left">0%</div> */}
 
-                <div className="frequency-bars" style={{ visibility: 'visible' }}>
+                <div className="frequency-bars" style={{ visibility: 'hidden' }}>
                   {[
                     { percentage: 32, label: 'gorilla glass' },
                     { percentage: 20, label: '108Mp camera' },
@@ -97,8 +99,9 @@ class Exkey extends React.Component {
                   ))}
                 </div>
               </div>
-              <div className="card-right">
-                <div className="card-heading-name-right">
+
+              <div className="card-right" style={{ visibility: 'hidden' }}>
+                <div className="card-heading-name-right -mb-auto -flex-middle">
                   <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
                 </div>
                 <div
@@ -106,12 +109,20 @@ class Exkey extends React.Component {
                   className="bubble-chart"
                   style={{ visibility: 'hidden' }}
                 ></div>
-                {/* <WordCloud></WordCloud> */}
-                {/* <div className="container_right">
-                <div className="spinner_right"></div>
-              </div>
-              <div className="counter_right">0%</div>{' '} */}
-                <div className="analyze_again">
+
+                <div className="loader_progress" style={{ visibility: 'hidden' }}>
+                  <div className="line_progress"></div>
+                  <div className="line_progress"></div>
+                  <div className="line_progress"></div>
+                  <div className="line_progress"></div>
+                  <div className="loading-wrap">
+                    <div className="loading-hole">&nbsp;</div>
+                  </div>
+
+                  <span className="loader_description">ANALYSING IN PROGRESS...</span>
+                </div>
+
+                <div className="analyze_again" style={{ visibility: 'visible' }}>
                   <div className="-flex -mt-40">
                     <div className="-flex-right">
                       <Button onClick={this.analyzeAgain} iconSrc={search} loading={false}>
