@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import './nav.css';
 import about from '../../assests/AboutLight.png';
 import search from '../../assests/Search.png';
@@ -12,12 +12,19 @@ import rightArraw from '../../assests/DropDownRightArrow.png';
 import Button from '../buttons/Button';
 
 const NavBar = (props) => {
+  const history = useHistory();
+  console.log(history);
   const { routes } = props;
   let path = useLocation().pathname;
+  const imageClick = () => {
+    history.push({ path: '/home' });
+  };
   return (
     <nav className="navbar">
       <div className="nav-logo">
-        <img src={logo} />
+        <div className="nav-logo-wrapper" onClick={() => imageClick()}>
+          <img src={logo} />
+        </div>
         <span className="logo-name">genimen</span>
       </div>
       <div className="hamburger">
@@ -25,7 +32,7 @@ const NavBar = (props) => {
           <img src={hamIcon} className="menu-icon" />
           <img src={cross} className="close-icon" />
         </div>
-        <span className="link-text hamburger-lbl">Menu</span>
+        <span className="hamburger-lbl">MENU</span>
       </div>
       <ul className="navbar-nav">
         {routes.map((route, i) => (
@@ -48,7 +55,7 @@ const NavBar = (props) => {
               <div className="nav-icon">
                 <img src={route.icon} />
               </div>
-              <span className="link-text">{route.title}</span>
+              <span className="link-text menu-title">{route.title}</span>
             </NavLink>
             {/* </a> */}
             {route.subMenu.length ? (
@@ -68,7 +75,7 @@ const NavBar = (props) => {
                   activeClassName="sub-nav-link-active"
                 >
                   <li key={'submenu' + i} className="nav-sub-item">
-                    <span className="sub-link-text">{menu.title}</span>
+                    <span className="sub-link-text menu-title">{menu.title}</span>
                     <div className="sub-nav-link-icon">
                       <img src={rightArraw} className="dropright-arrow" />
                     </div>

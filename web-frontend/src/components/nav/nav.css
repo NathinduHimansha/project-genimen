@@ -1,27 +1,35 @@
 .navbar + .navbar-page-container {
-  margin-left: 6rem;
+  margin-left: 4.7rem;
 }
 .hamburger {
   transform: rotate(0deg);
   transition: transform 200ms;
   font-size: 2rem;
-  padding: 15px 0px;
+  padding: 10px 0px;
   height: 28px;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   margin-top: 30px;
-  background-color: #0f2e5d;
+  /* background-color: var(--nav-highlight); */
+  background-color: var(--auth-background);
+  border-top: 1px solid var(--auth-border-color);
+  border-bottom: 1px solid var(--auth-border-color);
+}
+.hamburger-lbl {
+  margin-left: 0.5rem;
+  font-weight: 400;
+  display: none;
 }
 .hamburger-icon {
   display: flex;
   justify-content: center;
-  width: 6rem;
+  width: 4.7rem;
   cursor: pointer;
   position: relative;
 }
 .hamburger-icon > img {
-  width: 20px;
+  width: 16px;
   height: 20px;
   position: absolute;
   transition: 300ms ease;
@@ -50,9 +58,45 @@
   align-items: center;
   margin-top: 35px;
 }
-.nav-logo > img {
-  width: 80px;
+@keyframes logoPop {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    /* opacity: 0.5; */
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.navbar:hover .nav-logo-wrapper {
+  width: 15rem;
+  opacity: 1;
+  animation: logoPop 0.25s ease forwards;
+}
+.nav-logo-wrapper {
+  opacity: 0;
+  transition: 200ms ease;
+  width: 0;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  /* transition: 300ms ease; */
+  align-items: center;
+  border-radius: 50%;
+  /* background: var(--auth-background); */
+  border: 1px solid var(--auth-border-color);
+  cursor: pointer;
+  /* animation: spinner-border 0.75s linear infinite; */
+}
+.nav-logo-wrapper > img {
+  width: 50%;
+  transition: transform 200ms ease;
   object-fit: contain;
+  cursor: pointer;
+}
+.nav-logo-wrapper:hover > img {
+  transform: rotate(15deg);
 }
 .nav-logo > .logo-name {
   color: #fff;
@@ -60,17 +104,7 @@
   margin-top: 2rem;
   font-family: Poppins;
   font-weight: 300;
-}
-.hamburger {
-  transform: rotate(0deg);
-  transition: transform 200ms;
-  font-size: 2rem;
-  padding: 15px 0px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  margin-top: 30px;
-  background-color: #0f2e5d;
+  display: none;
 }
 img.dropdown-arrow {
   width: 12px;
@@ -84,16 +118,16 @@ img.dropdown-arrow {
   /* margin-left: 1rem; */
 }
 .navbar:hover .hamburger {
-  transform: rotate(-180);
+  /* transform: rotate(-180deg); */
 }
 .navbar {
   display: flex;
   flex-direction: column;
   color: #fff;
-  width: 6rem;
+  width: 4.7rem;
   height: 100vh;
   position: fixed;
-  background-color: #1f447c;
+  background-color: var(--nav-background);
   transition: width 200ms ease;
   top: 0;
   z-index: 999;
@@ -101,11 +135,12 @@ img.dropdown-arrow {
 }
 .navbar-nav {
   list-style: none;
-  padding: 0;
+  padding: 1px 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* background-color: blue; */
 }
 
 .parent-link {
@@ -123,8 +158,8 @@ img.dropdown-arrow {
   padding-left: 0px;
   transition: 200ms ease;
   /* transition-delay: 50ms; */
-  border-top: 1px solid #21376c;
-  border-bottom: 1px solid #21376c;
+  border-top: 1px solid var(--nav-border-sep);
+  border-bottom: 1px solid var(--nav-border-sep);
 }
 .parent-link:hover .navbar-sub-nav {
   /* display: block; */
@@ -133,8 +168,8 @@ img.dropdown-arrow {
   visibility: visible;
   opacity: 1;
   height: auto;
-  border-top: 1px solid #21376c;
-  border-bottom: 1px solid #21376c;
+  border-top: 1px solid var(--nav-border-sep);
+  border-bottom: 1px solid var(--nav-border-sep);
 }
 @keyframes slideIn {
   from {
@@ -143,19 +178,20 @@ img.dropdown-arrow {
   }
 }
 .nav-link-active {
-  background-color: #a2c6fc30;
+  color: var(--nav-hover-link-color) !important;
+  background-color: var(--nav-link-hover-background);
 }
 .sub-nav-link-active > li.nav-sub-item {
-  background-color: #a2c6fc30;
-  color: #ffe08c;
+  /* background-color: #a2c6fc30; */
+  color: var(--nav-hover-link-color);
 }
 .sub-nav-link-active a {
-  color: #ffe08c;
+  color: var(--nav-hover-link-color);
 }
 .nav-sub-item:hover {
   /* background-color: #000; */
   /* background-color: #0f2e5d; */
-  background-color: #a2c6fc30;
+  /* background-color: #a2c6fc30; */
 }
 .nav-sub-item {
   /* width: 100%; */
@@ -186,8 +222,8 @@ img.dropdown-arrow {
 .nav-link {
   display: flex;
   align-items: center;
-  height: 5.3rem;
-  color: #fff;
+  height: 4.7rem;
+  color: rgb(245, 245, 245);
   font-size: 1.8rem;
   text-decoration: none;
   margin-bottom: 2px;
@@ -205,7 +241,7 @@ img.dropdown-arrow {
   width: 6rem;
   transition: transform 200ms ease;
   /* margin-left: 1rem; */
-  top: 2.4rem;
+  top: 2rem;
   right: 51px;
   position: absolute;
 }
@@ -220,17 +256,17 @@ img.dropdown-arrow {
 }
 .nav-link:hover {
   /* background-color: #0f2e5d; */
-  color: #ffe08c;
+  color: var(--nav-hover-link-color);
   /* text-decoration: underline; */
   /* font-weight: 600; */
   transition: background-color 200ms ease;
-  background-color: #a2c6fc30;
+  background-color: var(--nav-link-hover-background);
 }
 .sub-nav-link-icon {
   transition: 200ms ease;
 }
 .sub-nav-link:hover {
-  color: #ffe08c;
+  color: var(--nav-hover-link-color);
   /* background-color: #a2c6fc30; */
 }
 .sub-nav-link:hover .sub-nav-link-icon {
@@ -239,7 +275,8 @@ img.dropdown-arrow {
   /* background-color: #a2c6fc30; */
 }
 .sub-nav-link {
-  color: #fff;
+  /* color: #fff; */
+  color: rgb(245, 245, 245);
   text-decoration: none;
   /* width: 150px; */
   width: 100%;
@@ -266,6 +303,9 @@ img.dropdown-arrow {
 .navbar:hover .link-text {
   display: block;
 }
+.navbar:hover .hamburger-lbl {
+  display: block;
+}
 .navbar:hover .nav-link-icon {
   display: flex;
 }
@@ -282,11 +322,20 @@ img.dropdown-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 6rem;
+  width: 4.7rem;
   /* margin-left: 1rem; */
 }
 .nav-icon > img {
-  width: 25px;
+  width: 20px;
+}
+.nav-link:hover .nav-icon {
+  opacity: 1;
+}
+.nav-link .nav-icon {
+  opacity: 0.88;
+}
+.nav-link-active .nav-icon {
+  opacity: 1;
 }
 @media only screen and (min-width: 600px) {
 }

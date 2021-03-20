@@ -146,6 +146,9 @@
 .-full-height {
   height: 100%;
 }
+.-full-vheight {
+  height: 100vh;
+}
 .-display-none {
   display: none;
 }
@@ -474,33 +477,33 @@ select.phone-selector {
   border-radius: 4px;
 }
 /* feature type selection menu */
+
+.feature-types {
+  max-width: 700px;
+  transition: 200ms ease;
+  /* width: 80%; */
+}
+.feature-selection-banner {
+  margin-left: 15rem;
+  transition: 200ms ease;
+}
+@media only screen and (max-width: 1400px) {
+  .feature-selection-banner {
+    margin-left: 10rem;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .feature-selection-box {
+    width: 100% !important;
+  }
+  .feature-selection-banner {
+    display: none;
+  }
+}
+
 /* .feature-types-selection-menu .feature-type-heading { */
 /* margin-right: 22rem; */
 /* } */
-@media only screen and (max-width: 750px) {
-  .feature-types-selection-menu .feature-type-heading {
-    /* margin-right: 4rem; */
-    font-size: 2rem;
-  }
-  .feature-types-selection-menu select.large {
-    font-size: 1.8rem;
-    width: -moz-fit-content;
-    width: fit-content;
-    padding-right: 20px;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .feature-types-selection-menu .feature-type-heading {
-    /* margin-right: 1rem; */
-    font-size: 1.8rem;
-  }
-  .feature-types-selection-menu select.large {
-    font-size: 1.6rem;
-    width: -moz-fit-content;
-    width: fit-content;
-    padding-right: 10px;
-  }
-}
 /* New icon headings */
 .icon-wrapper {
   height: auto;
@@ -552,16 +555,32 @@ body::-webkit-scrollbar-thumb {
   position: absolute;
   transition: 300ms ease;
 }
+.navbar:hover .dark-mode-icon {
+  width: 3.3rem;
+}
+.navbar:hover .light-mode-icon {
+  width: 3.8rem;
+}
 .dark-mode-icon {
-  width: 2.6rem;
+  width: 2.2rem;
 }
 .light-mode-icon {
-  width: 3.1rem;
+  width: 2.6rem;
 }
 /* Login Button */
 .auth-btn-wrapper {
-  padding: 10px 10px 10px 10px;
-  background-color: #0f2e5d;
+  /* opacity: 0; */
+  /* padding: 20px 10px 20px 10px; */
+  padding: 0;
+  height: 0;
+  background-color: var(--auth-background);
+  border-top: 1px solid var(--auth-border-color);
+  transition: 250ms ease;
+}
+.navbar:hover .auth-btn-wrapper {
+  /* opacity: 1; */
+  padding: 20px 10px 20px 10px;
+  height: auto;
 }
 .navbar:hover button.login-btn,
 .navbar:hover button.signup-btn {
@@ -573,47 +592,54 @@ body::-webkit-scrollbar-thumb {
   visibility: hidden;
   opacity: 0;
   width: 0;
-  transition: 200ms ease;
+  width: 50%;
+  transition: opacity 400ms ease;
 }
 button.login-btn {
 }
 button.signup-btn {
   margin-right: 10px;
 }
-/* Defaults
-.App {
+/* layouts */
+.page {
+  margin: 10rem 25% 10rem 8rem;
 }
-
-.App p {
-  /* margin: 0.4rem; */
-/* } */
-
-.App-logo {
-  height: 40vmin;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 1200px) {
+  .page {
+    margin: 10rem 10% 0 8rem;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 1200px) {
+  .page {
+    margin: 10rem 10% 0 8rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media only screen and (max-width: 850px) {
+  .page {
+    margin: 10rem 6% 0 6%;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .feature-types-selection-menu .feature-type-heading {
+    /* margin-right: 4rem; */
+    font-size: 2rem;
+  }
+  .feature-types-selection-menu select.large {
+    font-size: 1.8rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-right: 20px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .feature-types-selection-menu .feature-type-heading {
+    /* margin-right: 1rem; */
+    font-size: 1.8rem;
+  }
+  .feature-types-selection-menu select.large {
+    font-size: 1.6rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding-right: 10px;
   }
 }
