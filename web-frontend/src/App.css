@@ -14,6 +14,11 @@
 }
 /* util classes */
 /* Margin Bottom */
+
+.-ml-70{
+  margin-left: 70px;
+}
+
 .-mr-5 {
   margin-right: 5px;
 }
@@ -168,6 +173,12 @@
 .-flex-right {
   margin-left: auto;
 }
+
+.-flex-left{
+  margin-left: auto;
+  left: 5%;
+}
+
 .-fit-content {
   width: -moz-fit-content;
   width: fit-content;
