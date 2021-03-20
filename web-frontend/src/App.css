@@ -484,6 +484,7 @@ select.phone-selector {
 @media only screen and (max-width: 1300px) {
   .feature-selection-box {
     width: 100% !important;
+    max-width: 700px;
   }
   .feature-selection-banner {
     display: none;
