@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../../assests/geniman_logo_new.png';
 import search from '../../assests/Search.png';
 import './exkey.css';
 import Bargraph from '../../components/graphs/BarGraph';
@@ -7,9 +6,34 @@ import Bargraph from '../../components/graphs/BarGraph';
 import FancyHeading from '../../components/text/FancyHeading';
 import Button from '../../components/buttons/Button';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
+import magnify_barChart from '../../assests/bar_chart.png';
 
 class Exkey extends React.Component {
   analyzeAgain() {
+    document.querySelector('.loader_description').style.animation =
+      'typewriter_loadingDescription 2s steps(10) 10ms normal both';
+
+    document.querySelectorAll('.bar_loading').forEach(function (current) {
+      let startWidth = 0;
+      const endWidth = current.dataset.size;
+
+      /* 
+      setInterval() time sholud be set as trasition time / 100. 
+      In our case, 2 seconds / 100 = 20 milliseconds. 
+      */
+      const interval = setInterval(frame, 30);
+
+      function frame() {
+        if (startWidth >= endWidth) {
+          clearInterval(interval);
+        } else {
+          startWidth++;
+          current.style.width = `${endWidth}%`;
+          current.firstElementChild.innerText = `${startWidth}%`;
+        }
+      }
+    });
+
     var i = 0;
     var counter = setInterval(function () {
       i++;
@@ -27,6 +51,10 @@ class Exkey extends React.Component {
         document.querySelector('.loader_progress ').style.visibility = 'hidden';
 
         // document.querySelector('.word-cloud ').style.display = 'block';
+
+        document
+          .getElementsByClassName('progress-percentage')[0]
+          .classList.add('barchart_animation');
 
         document
           .getElementsByClassName('progress-percentage')[0]
@@ -79,7 +107,12 @@ class Exkey extends React.Component {
                 <div className="card-heading-name-left">
                   <h3 className="heading3 -medium">TREND</h3>
                   <div className="analysing_banner" style={{ visibility: 'visible' }}>
-                    <img src={banner} style={{ width: '400px' }} />
+                    <img className="magnify_banner" src={banner} style={{ width: '400px' }} />
+                    <img
+                      className="magnify_barChart"
+                      src={magnify_barChart}
+                      style={{ width: '400px', height: '300px' }}
+                    />
                   </div>
                 </div>
 
@@ -115,11 +148,18 @@ class Exkey extends React.Component {
                   <div className="line_progress"></div>
                   <div className="line_progress"></div>
                   <div className="line_progress"></div>
-                  <div className="loading-wrap">
-                    <div className="loading-hole">&nbsp;</div>
+                  <div className="wrapper_progressBar">
+                    <div className="progress-bar">
+                      <div className="bar_loading" data-size="100">
+                        <span className="perc"></span>
+                      </div>
+                    </div>
                   </div>
-
-                  <span className="loader_description">ANALYSING IN PROGRESS...</span>
+                  <div className="loader_description" id="loader_descriptionID">
+                    <h2 className="heading3 -medium -no-margin feature-type-heading">
+                      ANALYSING IN PROGRESS...
+                    </h2>
+                  </div>
                 </div>
 
                 <div className="analyze_again" style={{ visibility: 'visible' }}>

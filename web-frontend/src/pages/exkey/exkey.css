@@ -7,7 +7,7 @@
 
 .body-split {
   margin-top: 140px;
-  margin-left: 40px;
+  margin-left: 70px;
 }
 
 .card-heading-name-left {
@@ -195,19 +195,28 @@
   display: grid;
 }
 
+.magnify_banner {
+  margin-top: -20px;
+}
+
+.magnify_barChart {
+  margin-top: 40px;
+}
+
 .analysing_banner {
   display: flex;
   flex-wrap: wrap;
   opacity: 0.8;
   position: absolute;
-  left: 50px;
+  left: 300px;
+  grid-gap: 100px;
 }
 
 .user-description {
   overflow: hidden;
   font-size: 2rem;
   white-space: nowrap;
-  animation: typewriter 4s steps(20) 500ms normal both,
+  animation: typewriter_userDescription 4s steps(20) 500ms normal both,
     blinkTextCursor 500ms steps(20) infinite normal;
   border-right: 2px solid rgba(255, 255, 255, 0.75);
   height: 20px;
@@ -215,7 +224,7 @@
   flex-wrap: wrap;
 }
 
-@keyframes typewriter {
+@keyframes typewriter_userDescription {
   from {
     width: 0;
   }
@@ -243,9 +252,9 @@
   border-radius: 10px;
   display: inline-block;
   transform-origin: center center;
-  margin: 0 20px;
+  margin: 0 10px;
   width: 3px;
-  height: 100px;
+  height: 50px;
 }
 
 .line_progress:nth-child(1) {
@@ -278,34 +287,85 @@
 
 .loader_description {
   display: grid;
-  margin-top: -20px;
-  margin-left: -90px;
+  margin-top: 20px;
+  margin-left: -80px;
   font-size: 1.8rem;
   font-weight: bold;
-  font-family: Copperplate, Papyrus, fantasy;
+  font-family: Bradley Hand, cursive;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.loading-wrap {
-  display: grid;
-  margin-top: 100px;
-  margin-left: 230px;
-  width: 10px;
-  height: 10px;
-  padding: 5px;
-  border-radius: 50%;
-  background: linear-gradient(to right, #f90, #c03);
-  animation: spin 1s linear infinite;
-}
-
-.loading-hole {
-  width: 100%;
-  height: 100%;
-  padding: 5px;
-  border-radius: 50%;
-  background-color: white;
-}
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+@keyframes typewriter_loadingDescription {
+  from {
+    width: 0;
   }
+  to {
+    width: 60%;
+  }
+}
+
+.wrapper_progressBar {
+  width: 520px;
+  max-width: 50%;
+  display: grid;
+  margin-top: 10%;
+  margin-left: -15%;
+}
+
+.progress-bar {
+  height: 30px;
+  width: 100%;
+  background-color: #bfada3;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 2px 0 10px inset rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+* + .progress-bar {
+  margin-top: 2rem;
+}
+
+.bar_loading {
+  width: 0;
+  height: 100%;
+  background-color: var(--pos-green);
+
+  /*Lollipop background gradient*/
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+
+  background-size: 30px 30px;
+  animation: move 2s linear infinite;
+  box-shadow: 2px 0 10px inset rgba(0, 0, 0, 0.2);
+  transition: width 2s ease-out;
+}
+
+/*Lollipop background gradient animation*/
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 30px;
+  }
+}
+
+.perc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: bold;
 }
