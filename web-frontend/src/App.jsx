@@ -1,33 +1,93 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
-// import Nav from './component/Nav'
-// import Home from './page/Home'
-// import FeatureAnalyser from './page/FeautureAnalyser'
-// import ModelFeatureAnalyser from './page/ModelFeautureAnalyser'
-// import TopicExtractor from './page/TopicExtractor'
-// import ModelFeatureAnalyser from './page/Login'
-// import ModelFeatureAnalyser from './page/SignUp'
+import NavBar from './components/nav/NavBar';
+import about from './assests/AboutLight.png';
+import search from './assests/Search.png';
+import dark from './assests/NightMode.png';
+import light from './assests/LightMode.png';
+import home from './assests/HomeWhite.png';
 import URAS from './pages/uras/URAS';
 import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
 import URASView from './pages/uras/URASView';
 import UrasResults from './pages/uras/UrasResults';
+import { toggleMode } from './common/style.js';
+import Button from './components/buttons/Button';
+
+const routes = [
+  {
+    title: 'Home',
+    icon: home,
+    subMenu: [],
+    path: '/examples',
+  },
+  {
+    title: 'Analytics',
+    icon: search,
+    subMenu: [
+      { title: 'Feature Sentiments', path: '/analytics/uras' },
+      { title: 'Product Feature Sentiments', path: '/analytics/pssa' },
+      { title: 'TRENDZ', path: '/analytics/pfs' },
+    ],
+    path: '/analytics',
+  },
+  {
+    title: 'About',
+    icon: about,
+    subMenu: [],
+    path: '/about',
+  },
+];
 
 function App() {
+  const [themeMode, setTheme] = useState('dark');
   return (
     <Router>
       <div className="App">
-        {/*<Nav/>*/}
+        <NavBar routes={routes}>
+          <div className="theme-switch -flex -flex-center -mt-50">
+            <img
+              className={themeMode == 'light' ? 'dark-mode-icon -opacity-0' : 'dark-mode-icon'}
+              src={dark}
+              onClick={() => {
+                toggleMode();
+                if (themeMode == 'dark') {
+                  setTheme('light');
+                } else {
+                  setTheme('dark');
+                }
+              }}
+            />
+            <img
+              className={themeMode == 'dark' ? 'light-mode-icon -opacity-0' : 'light-mode-icon'}
+              src={light}
+              onClick={() => {
+                toggleMode();
+                if (themeMode == 'dark') {
+                  setTheme('light');
+                } else {
+                  setTheme('dark');
+                }
+              }}
+            />
+          </div>
+          <div className="auth-btn-wrapper -flex -flex-center -mt-auto">
+            <Button outline={true} utilClasses="signup-btn">
+              Sign Up
+            </Button>
+            <Button utilClasses="-mr-5 login-btn">Login</Button>
+          </div>
+        </NavBar>
         <Switch>
-          {/*<Route path="/" exact component={Home} />*/}
-          <Route exact path="/" exact component={Examples} />
+          <Route exact path="/" component={Examples}>
+            <Redirect to="/home" />
+          </Route>
           <Route path="/examples" component={Examples} />
           <Route path="/about" component={Home} />
           <Route path="/exkey" component={EXKEY} />
-          <Route path="/uras" component={URASView} />
+          <Route path="/analytics/uras" component={URASView} />
           <Route path="/urasresult" exact component={UrasResults} />
           <Route path="/pssa" component={Home} />
           <Route path="/fbfe" component={Home} />

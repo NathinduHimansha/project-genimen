@@ -36,18 +36,26 @@ body {
   --gap-medium: 25px;
 
   /* dark-mode exceptions */
+  --nav-background: #1f447c;
+  --nav-border-sep: #21376c;
+  --nav-hover-link-color: #ffe08c;
+  --nav-link-hover-background: #95bcf721;
+  --nav-highlight: #0f2e5d;
+  --auth-background: #173f7b;
+  --auth-border-color: #193d73;
   --tag: rgba(255, 255, 255, 1);
   --analytics-card: rgba(255, 255, 255, 1);
+  --fancy-heading-color: rgba(68, 68, 68, 1);
 }
 :root[data-theme='dark'] {
   /*tested*/
-  --background: #141516;
+  --background: #1a1b1c;
   --pos-green: rgba(83, 206, 132, 1);
   --neg-red: rgba(255, 95, 95, 1);
   --white: rgba(25, 25, 25, 1);
   --light-white: rgb(34 36 40);
   --black: rgba(250, 250, 250, 1);
-  --primary-black: rgb(236 236 236);
+  --primary-black: rgb(205 205 205);
   --secondary-black: rgba(190, 190, 190, 1);
   --primary-accent: rgb(206 129 15);
   --primary-accent-light: rgb(159 96 2);
@@ -55,10 +63,18 @@ body {
   --secondary-accent: rgba(38, 132, 255, 1);
   --light-grey: rgba(69, 69, 69, 1);
   --grey: rgb(198 198 198);
-  --primary-border-grey: rgba(89, 89, 89, 1);
+  --primary-border-grey: rgba(69, 69, 69, 1);
   /* dark-mode exceptions */
+  --nav-background: #1c3c6d;
+  --nav-border-sep: #21376c;
+  --nav-hover-link-color: #ffe08c;
+  --nav-link-hover-background: #95bcf721;
+  --nav-highlight: #0f2e5d;
+  --auth-background: #173f7b;
+  --auth-border-color: #183769;
   --tag: rgb(25 52 87);
   --analytics-card: rgb(34 36 40);
+  --fancy-heading-color: rgb(157 171 193);
 
   --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12);
   --primary-border: 1px solid var(--primary-border-grey);
