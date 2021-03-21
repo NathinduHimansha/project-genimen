@@ -48,7 +48,7 @@ jobs:
       # Create deployment to CodeDeploy
       - name: AWS Create Deployment
         run: |
-          aws deploy create-deployment \
+          aws deploy-config create-deployment \
            --application-name ${{ matrix.appname }} \
            --deployment-config-name CodeDeployDefault.OneAtATime \
            --deployment-group-name ${{ matrix.deploy-group }} \
