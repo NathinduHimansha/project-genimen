@@ -15,11 +15,11 @@ permissions:
       - file
       - directory
 hooks:
-  BeforeInstall:
-    - location: deploy/scripts/install_dep.sh
-      timeout: 300
-      runas: root
+  # BeforeInstall:
+      # timeout: 300
+      # runas: root
   AfterInstall:
+    - location: deploy/scripts/install_dep.sh
    - location: deploy/scripts/init.sh
      timeout: 800
      runas: root
