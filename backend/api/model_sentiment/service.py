@@ -2,13 +2,13 @@ import nltk
 import pandas as pd
 
 
-from backend.analytics.model_specific.data_processing.model_clean_reviews import get_models_from_regex
-from backend.analytics.model_specific.smartphone_model.phone_model import Model
-from backend.api.modle_sentiment.aspect_analysis import get_features_with_sentiment, get_sentiment_percentage
+from analytics.model_specific.data_processing.model_clean_reviews import get_models_from_regex
+from analytics.model_specific.smartphone_model.phone_model import Model
+from api.model_sentiment.aspect_analysis import get_features_with_sentiment, get_sentiment_percentage
 
 
 def get_model_sentiment(model_name):
-    df = pd.read_json("../../../main-dataset/amazon_mobile_user_reviews.jl", lines=True)  # Main dataset
+    df = pd.read_json("analytics/main-dataset/amazon_mobile_user_reviews.jl", lines=True)  # Main dataset
     df['product_name'] = df['product_name'].apply(
         lambda x: x[0])  # setting the product name by only model name (excluding specs)
 
