@@ -22,12 +22,12 @@ hooks:
     - location: deploy/scripts/install_dep.sh
     - location: deploy/scripts/init.sh
       timeout: 800
-      runas: root
+      runas: ubuntu
   ApplicationStart:
     - location: deploy/scripts/start.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
   ApplicationStop:
     - location: deploy/scripts/stop.sh
       timeout: 300
-      runas: root
+      runas: ubuntu
