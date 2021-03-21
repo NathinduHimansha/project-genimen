@@ -1,0 +1,13 @@
+server {
+    listen 80;
+    server_name 3.142.192.135;
+
+    location / {
+        /* include proxy_params; */
+        proxy_pass http://unix:/home/ubuntu/sdgp-backend/webapp.sock;
+    }
+    location /dev {
+        /* include proxy_params; */
+        proxy_pass http://unix:/home/ubuntu/sdgp-backend/webapp.sock;
+    }
+}
