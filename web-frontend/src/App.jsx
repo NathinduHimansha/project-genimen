@@ -15,9 +15,9 @@ import URASView from './pages/uras/URASView';
 import UrasResults from './pages/uras/UrasResults';
 import { toggleMode } from './common/style.js';
 import Button from './components/buttons/Button';
-import Logo from './components/logo/LogoView';
+
 import LogoBanner from './pages/index/Logobanner';
-import HomePage from './pages/index/HomePage';
+import HomePage from './pages/index/HomePage'
 
 const routes = [
   {
@@ -97,7 +97,7 @@ function App() {
           <Route path="/login" component={Home} />
           <Route path="/signup" component={Home} />
           <Route path="/logo" component={LogoBanner} />
-          <Route path="/indextest" component={HomePage} />
+          <Route path="/index" component={HomePage} />
         </Switch>
       </div>
     </Router>
