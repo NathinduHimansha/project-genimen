@@ -27,7 +27,7 @@ hooks:
     - location: deploy/scripts/start.sh
       timeout: 300
       runas: ubuntu
-  ApplicationStop:
-    - location: deploy/scripts/stop.sh
-      timeout: 300
-      runas: ubuntu
+  # ApplicationStop:
+    # - location: deploy/scripts/stop.sh
+      # timeout: 300
+      # runas: ubuntu
