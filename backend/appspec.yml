@@ -10,9 +10,8 @@ permissions:
   - object: /home/ubuntu/sdgpbackend
     owner: ubuntu
     group: ubuntu
-    mode: 644
+    mode: 775
     type:
-      - file
       - directory
 hooks:
   # ApplicationStop:
