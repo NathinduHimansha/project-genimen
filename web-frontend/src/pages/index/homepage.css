@@ -1,0 +1,188 @@
+body{
+    background: white; 
+
+}
+
+.body{
+    position: static;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+
+.ripple-background{
+    position: absolute;
+    width: 100%;
+    height: 180%;
+    overflow: hidden;
+    bottom:0;
+    right:0;
+  }
+  
+
+
+.circle {
+  position: absolute;
+  border-radius: 100%;
+  background: rgb(7, 2, 60);
+  animation: ripple 15s infinite;
+  box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small {
+  width: 70;
+  height: 70;
+  right: -100px;
+  bottom: -100px;
+}
+
+.medium {
+  width: 100;
+  height: 100;
+  right: -200px;
+  bottom: -200px;
+}
+
+.large {
+  width: 300;
+  height: 300;
+  right: -300px;
+  bottom: -300px;
+}
+
+.xlarge {
+  width: 500;
+  height: 500;
+  right: -400px;
+  bottom: -400px;
+}
+
+.xxlarge {
+    width: 600;
+    height: 600;
+    right: -500px;
+    bottom: -500px;
+  }
+
+
+
+.shade1 {
+  opacity: 0.2;
+}
+.shade2 {
+  opacity: 0.5;
+}
+
+.shade3 {
+  opacity: 0.7;
+}
+
+.shade4 {
+  opacity: 0.8;
+}
+
+.shade5 {
+  opacity: 0.9;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.homepage-loginbtn{
+    position: absolute;
+    top:5%;
+    right: 3%;
+}
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0); }
+  40%, 60% { transform: translate3d(0, 50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); }
+  40%, 60% { transform: translate3d(0, 30%, 0); }
+  100% { transform: translate3d(0,0%, 0); }
+}
+.animated-title {
+  color: #222;
+  font-family: Roboto, Arial, sans-serif;
+  height: 80vmin;
+  left: 30%;
+  transform: translate(10%,10%);
+  width: 50vmin;
+}
+.animated-title > div {
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  
+}
+.animated-title > div div {
+  font-size: 10vmin;
+  padding: 2vmin 0;
+  position: absolute;
+}
+.animated-title > div div span {
+  display: block;
+}
+.animated-title > div.text-top {
+  border-bottom: 1vmin solid #000;
+  top: 0;
+}
+.animated-title > div.text-top div {
+  animation: showTopText 1s;
+  animation-fill-mode: forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+.animated-title > div.text-top div span {
+  color: #767676;
+}
+.animated-title > div.text-bottom {
+  bottom: 0;
+}
+.animated-title > div.text-bottom div {
+  animation: showBottomText 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
+}
+
+
+@keyframes example {
+    0%   {left:15%;}
+    50%   {left:8%;}
+    
+    100% {left:15%;}
+  }
+
+.start-button{
+    position: absolute;
+    left:10%;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+}

@@ -12,10 +12,6 @@ class LogoView extends Component {
                     <Button>Login</Button>
                 </div>
 
-                
-
-
-
             <div class='ripple-background'>
             <div class='circle xxlarge shade1'></div>
             <div class='circle xlarge shade2'></div>
