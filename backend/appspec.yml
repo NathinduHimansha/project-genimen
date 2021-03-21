@@ -20,7 +20,7 @@ hooks:
       # timeout: 300
       # runas: ubuntu
   # BeforeInstall:
-      # timeout: 300
+      # timeout: 400
       # runas: root
   AfterInstall:
     - location: deploy/scripts/install_dep.sh
