@@ -1,0 +1,33 @@
+version: 0.0
+os: linux
+files:
+ - source: /
+   destination: /home/ubuntu/sdgpbackend
+   runas: ubuntu
+ # - source: requirements.txt
+   # destination: /home/ubuntu/python-flask-service
+permissions:
+  - object: /home/ubuntu/sdgpbackend
+    owner: ubuntu
+    group: ubuntu
+    mode: 644
+    type:
+      - file
+      - directory
+hooks:
+  # ApplicationStop:
+    # - location: deploy/scripts/stop.sh
+      # timeout: 300
+      # runas: ubuntu
+  # BeforeInstall:
+      # timeout: 300
+      # runas: root
+  AfterInstall:
+    - location: deploy/scripts/install_dep.sh
+    - location: deploy/scripts/init.sh
+      timeout: 800
+      runas: ubuntu
+  ApplicationStart:
+    - location: deploy/scripts/start.sh
+      timeout: 300
+      runas: ubuntu
