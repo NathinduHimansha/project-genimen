@@ -1,4 +1,4 @@
-cd /home/ubuntu/sdgpbackend
+cd /home/ubuntu/sdgpbapi
 aws s3 cp s3://sdgp-bucket/backend-api/dev/env/.env ./api
 mkdir -p ./analytics/
 aws s3 sync s3://sdgp-bucket/phone_reviews data/phone_reviews

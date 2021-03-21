@@ -2,12 +2,12 @@ version: 0.0
 os: linux
 files:
  - source: /
-   destination: /home/ubuntu/sdgpbackend
+   destination: /home/ubuntu/sdgpbapi
    runas: ubuntu
  # - source: requirements.txt
    # destination: /home/ubuntu/python-flask-service
 permissions:
-  - object: /home/ubuntu/sdgpbackend
+  - object: /home/ubuntu/sdgpbapi
     owner: ubuntu
     group: ubuntu
     mode: 775
