@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
  - source: /
-   destination: /home/ubuntu/myapp
+   destination: /home/ubuntu/sdgpapi
    runas: ubuntu
  # - source: requirements.txt
    # destination: /home/ubuntu/python-flask-service
