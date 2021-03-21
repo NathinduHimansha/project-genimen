@@ -7,7 +7,7 @@ files:
  # - source: requirements.txt
    # destination: /home/ubuntu/python-flask-service
 permissions:
-  - object: /home/ubuntu/
+  - object: /home/ubuntu/sdgpapi
     owner: ubuntu
     group: ubuntu
     mode: 644
@@ -15,6 +15,10 @@ permissions:
       - file
       - directory
 hooks:
+  # ApplicationStop:
+    # - location: deploy/scripts/stop.sh
+      # timeout: 300
+      # runas: ubuntu
   # BeforeInstall:
       # timeout: 300
       # runas: root
@@ -27,7 +31,3 @@ hooks:
     - location: deploy/scripts/start.sh
       timeout: 300
       runas: ubuntu
-  # ApplicationStop:
-    # - location: deploy/scripts/stop.sh
-      # timeout: 300
-      # runas: ubuntu
