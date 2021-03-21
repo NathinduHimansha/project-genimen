@@ -20,9 +20,9 @@ hooks:
       # runas: root
   AfterInstall:
     - location: deploy/scripts/install_dep.sh
-   - location: deploy/scripts/init.sh
-     timeout: 800
-     runas: root
+    - location: deploy/scripts/init.sh
+      timeout: 800
+      runas: root
   ApplicationStart:
     - location: deploy/scripts/start.sh
       timeout: 300
