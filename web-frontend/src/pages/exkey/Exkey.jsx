@@ -107,7 +107,11 @@ class Exkey extends React.Component {
                 <div className="card-heading-name-left">
                   <h3 className="heading3 -medium">TREND</h3>
                   <div className="analysing_banner" style={{ visibility: 'visible' }}>
-                    <img className="magnify_banner" src={banner} style={{ width: '400px' }} />
+                    <img
+                      className="magnify_banner"
+                      src={banner}
+                      style={{ width: '400px', height: '350px' }}
+                    />
                     <img
                       className="magnify_barChart"
                       src={magnify_barChart}

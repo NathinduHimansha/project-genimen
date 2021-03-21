@@ -191,16 +191,24 @@
 .analyze_again {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 350px;
+  margin-top: 365px;
   display: grid;
 }
 
 .magnify_banner {
   margin-top: -20px;
+  animation: swing ease-in-out 1s infinite alternate;
+  transform-origin: center -20px;
+  float: left;
+  box-shadow: 5px 5px 10px #a0793d;
 }
 
 .magnify_barChart {
   margin-top: 40px;
+  animation: swing ease-in-out 1s infinite alternate;
+  transform-origin: center -20px;
+  float: left;
+  box-shadow: 5px 5px 10px #a0793d;
 }
 
 .analysing_banner {
@@ -209,9 +217,17 @@
   opacity: 0.8;
   position: absolute;
   left: 300px;
-  grid-gap: 100px;
+  grid-gap: 130px;
 }
 
+@keyframes swing {
+  0% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
 .user-description {
   overflow: hidden;
   font-size: 2rem;
