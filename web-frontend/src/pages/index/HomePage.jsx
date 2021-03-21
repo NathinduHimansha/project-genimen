@@ -8,7 +8,7 @@ class HomePage extends Component {
     render() {
         return (
             <div class="-mr-50">
-                <div class="body">
+                <div class="homepage-body">
 
                     <div class="homepage-loginbtn">
                         <Button>Login</Button>
@@ -18,14 +18,14 @@ class HomePage extends Component {
                         <Logobanner />
                     </div>
 
-                    <div class="animated-title">
-                        <div class="text-top">
+                    <div class="homepage-welcometxt">
+                        <div class="welcometxt-top">
                             <div>
                                 <span>Predict</span>
                                 <span>Annalyse</span>
                             </div>
                         </div>
-                        <div class="text-bottom">
+                        <div class="welcometxt-bottom">
                             <div>
                                 <span>Design</span>
                             </div>
@@ -33,20 +33,19 @@ class HomePage extends Component {
                     </div>
 
 
-                        <div class="start-button">
-                        <Button> <img src={LeftArrow} className="dropright-arrow" /> Start </Button>
+                        <div class="homepage-start-button">
+                        <Button> <img src={LeftArrow} className="homepage-startbtnrow" /> Start </Button>
                 </div>
 
 
                         
-                <div class='ripple-background'>
-                        <div class='circle xxlarge shade1'></div>
-                        <div class='circle xlarge shade2'></div>
-                        <div class='circle large shade3'></div>
-                        <div class='circle mediun shade4'></div>
-                        <div class='circle small shade5'></div>
-                    </div>
-
+                <div class='homepage-bg-annimation'>
+  <div class='hbga-circle circle-xxlargee circle-shade1'></div>
+  <div class='hbga-circle circle-xlarge circle-shade2'></div>
+  <div class='hbga-circle circle-large circle-shade3'></div>
+  <div class='hbga-circle circle-mediun circle-shade4'></div>
+  <div class='hbga-circle circle-small circle-shade5'></div>
+</div>
                 
                     
 
