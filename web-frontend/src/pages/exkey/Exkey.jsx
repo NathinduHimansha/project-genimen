@@ -110,8 +110,9 @@ class Exkey extends React.Component {
                     <img
                       className="magnify_banner"
                       src={banner}
-                      style={{ width: '400px', height: '350px' }}
+                      style={{ width: '350px', height: '300px' }}
                     />
+
                     <img
                       className="magnify_barChart"
                       src={magnify_barChart}
@@ -161,7 +162,7 @@ class Exkey extends React.Component {
                   </div>
                   <div className="loader_description" id="loader_descriptionID">
                     <h2 className="heading3 -medium -no-margin feature-type-heading">
-                      ANALYSING IN PROGRESS...
+                      <b>ANALYSING IN PROGRESS...</b>
                     </h2>
                   </div>
                 </div>
