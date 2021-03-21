@@ -1,4 +1,4 @@
 ls -l
-cd /home/ubuntu/sdgp-backend
+cd /home/ubuntu/myapp
 
 pip3 install -r requirements.txt
