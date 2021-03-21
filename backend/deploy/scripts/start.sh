@@ -1,2 +1,2 @@
 sudo service nginx start
-sudo service sdgpapi start
+sudo service sdgpapp start

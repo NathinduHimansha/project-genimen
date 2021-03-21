@@ -4,10 +4,10 @@ server {
 
     location / {
         /* include proxy_params; */
-        proxy_pass http://unix:/home/ubuntu/sdgp-backend/webapp.sock;
+        proxy_pass http://unix:/home/ubuntu/sdgpapi/webapp.sock;
     }
     location /dev {
         /* include proxy_params; */
-        proxy_pass http://unix:/home/ubuntu/sdgp-backend/webapp.sock;
+        proxy_pass http://unix:/home/ubuntu/sdgpapi/webapp.sock;
     }
 }
