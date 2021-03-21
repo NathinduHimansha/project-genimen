@@ -10,8 +10,6 @@ body{
     
 }
 
-
-
 .ripple-background{
     position: absolute;
     width: 100%;
@@ -21,7 +19,6 @@ body{
     right:0;
   }
   
-
 
 .circle {
   position: absolute;
