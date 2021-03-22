@@ -7,7 +7,7 @@
 
 .body-split {
   margin-top: 140px;
-  margin-left: 70px;
+  margin-left: 80px;
 }
 
 .card-heading-name-left {
@@ -191,7 +191,7 @@
 .analyze_again {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 365px;
+  margin-top: 10px;
   margin-right: 110px;
   display: grid;
 }
@@ -386,4 +386,10 @@
   51% {
     background: white;
   }
+}
+
+.treeMap_align {
+  margin-left: -180px;
+  margin-top: 100px;
+  color: white;
 }

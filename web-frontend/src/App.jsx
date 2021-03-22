@@ -33,7 +33,7 @@ const routes = [
     subMenu: [
       { title: 'Feature Sentiments', path: '/analytics/uras' },
       { title: 'Product Feature Sentiments', path: '/analytics/pssa' },
-      { title: 'TRENDZ', path: '/analytics/pfs' },
+      { title: 'TRENDZ', path: '/exkey' },
     ],
     path: '/analytics',
   },
