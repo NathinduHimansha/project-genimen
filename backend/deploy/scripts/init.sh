@@ -6,5 +6,6 @@ sudo cp -r /home/ubuntu/data ./analytics
 
 sudo cp ./deploy/systemd/sdgpapp.service /etc/systemd/system/ 
 sudo service systemctl daemon-reload
-sudo cp ./deploy/nginx/sdgpapp /etc/nginx/sites-enabled
+sudo cp ./deploy/nginx/sdgpapp /etc/nginx/sites-available
+sudo ln -s /etc/nginx/sites-available/sdgpapp /etc/nginx/sites-enabled/
 sudo chown ubuntu:ubuntu /home/ubuntu/sdgpapi
