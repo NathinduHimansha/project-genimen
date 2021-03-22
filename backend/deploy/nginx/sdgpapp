@@ -10,7 +10,7 @@ server {
 
         location / {
                 proxy_set_header Host $host;
-                proxy_pass http://unix:/home/ubuntu/sdgpapi/backend.sock;
+                proxy_pass http://unix:/home/ubuntu/sdgpapi/sdgpapp.sock;
                 # proxy_pass http://127.0.0.1:8000;
         }
 }
