@@ -99,3 +99,9 @@
     width: 1;
   }
 }
+
+#chart {
+  background-color: white;
+  width: 500px;
+  height: 250px;
+}

@@ -17,7 +17,7 @@ import { toggleMode } from './common/style.js';
 import Button from './components/buttons/Button';
 
 import LogoBanner from './pages/index/Logobanner';
-import HomePage from './pages/index/HomePage'
+import HomePage from './pages/index/HomePage';
 
 const routes = [
   {
@@ -32,7 +32,7 @@ const routes = [
     subMenu: [
       { title: 'Feature Sentiments', path: '/analytics/uras' },
       { title: 'Product Feature Sentiments', path: '/analytics/pssa' },
-      { title: 'TRENDZ', path: '/analytics/pfs' },
+      { title: 'TRENDZ', path: '/exkey' },
     ],
     path: '/analytics',
   },

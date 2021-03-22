@@ -2,7 +2,7 @@ import React from 'react';
 import search from '../../assests/Search.png';
 import './exkey.css';
 import Bargraph from '../../components/graphs/BarGraph';
-// import WordCloud from '../../components/graphs/WordCloud';
+import LineGraph from '../../components/graphs/LineGraph';
 import FancyHeading from '../../components/text/FancyHeading';
 import Button from '../../components/buttons/Button';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
@@ -144,12 +144,10 @@ class Exkey extends React.Component {
                       style={{ width: '400px', height: '300px' }}
                     />
                   </div>
+                  <div className="treeMap_align">
+                    <LineGraph></LineGraph>
+                  </div>
                 </div>
-                <div
-                  id="word_cloud"
-                  className="bubble-chart"
-                  style={{ visibility: 'hidden' }}
-                ></div>
 
                 <div className="loader_progress" style={{ visibility: 'hidden' }}>
                   <div className="line_loader">
@@ -159,11 +157,6 @@ class Exkey extends React.Component {
                     <div className="line_progress"></div>
                   </div>
                   <div className="wrapper_progressBar">
-                    {/* <div className="progress-bar">
-                      <div className="bar_loading" data-size="100">
-                        <span className="perc"></span>
-                      </div>
-                    </div> */}
                     <div class="loader-5">
                       <div class="loader-5-rect loader-5-rect-1"></div>
                       <div class="loader-5-rect loader-5-rect-2"></div>
