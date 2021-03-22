@@ -52,7 +52,7 @@ jobs:
       - name: AWS Create Deployment
         run: |
           aws deploy create-deployment \
-           --ignore-application-stop-failures
+           --ignore-application-stop-failures \
            --application-name ${{ matrix.appname }} \
            --deployment-config-name CodeDeployDefault.OneAtATime \
            --deployment-group-name ${{ matrix.deploy-group }} \
