@@ -23,10 +23,10 @@ def create_app(config=None):
         'host': MONGO_URI
     }
 
-    if (config == 'dev'):
-        app.config['MONGODB_SETTINGS'] = {
-            'host': 'mongodb://127.0.0.1:27017'
-        }
+    #  if (config == 'dev'):
+    #  app.config['MONGODB_SETTINGS'] = {
+    #  'host': 'mongodb://127.0.0.1:27017'
+    #  }
 
     initialize_db(app)
     app.config.from_mapping(
