@@ -7,7 +7,7 @@ aws s3 cp s3://sdgp-bucket/data ./analytics/data --recursive
 
 sudo cp ./deploy/systemd/sdgpapp.service /etc/systemd/system/ 
 sudo cp ./deploy/nginx/sdgpapp /etc/nginx/sites-available
-sudo ln -s /etc/nginx/sites-available/sdgpapp /etc/nginx/sites-enabled/
-sudo service systemctl daemon-reload
+sudo ln -sfn /etc/nginx/sites-available/sdgpapp /etc/nginx/sites-enabled/
+sudo systemctl daemon-reload
 sudo chown ubuntu:ubuntu /home/ubuntu/sdgpapi
 sudo chown ubuntu:ubuntu /home/ubuntu/sdgpapi/analytics/data
