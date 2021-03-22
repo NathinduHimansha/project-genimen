@@ -1,2 +1,2 @@
 sudo apt update
-sudo apt install python3-pip flask nginx gunicorn3 awscli -y
+sudo apt install python3-pip flask nginx gunicorn awscli -y
