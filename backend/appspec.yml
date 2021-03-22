@@ -14,6 +14,7 @@ permissions:
     type:
       - directory
 hooks:
+  #
   ApplicationStop:
     - location: deploy/scripts/stop.sh
       timeout: 300
