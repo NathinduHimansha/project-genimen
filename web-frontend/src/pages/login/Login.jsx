@@ -53,14 +53,16 @@ const Login = (props) => {
             </NavLink>
           </div>
         </div>
-        <div>
-          <div className="fancy-heading-decorator">
-            <h1 className="heading1 login-moto -light -no-margin">
-              Genimen Providing Better Insights <br /> On Product Reviews
-            </h1>
-          </div>
-          <div className="login-banner">
-            <img src={banner} />
+        <div style={{ width: '50%' }} className="-flex -flex-center">
+          <div className="login-banner-wrapper" style={{ width: '100%' }}>
+            <div className="fancy-heading-decorator">
+              <h1 className="heading1 login-moto -light -no-margin" style={{ maxWidth: '700px' }}>
+                Genimen Providing Better Insights On Product Reviews
+              </h1>
+            </div>
+            <div className="login-banner">
+              <img src={banner} />
+            </div>
           </div>
         </div>
       </div>

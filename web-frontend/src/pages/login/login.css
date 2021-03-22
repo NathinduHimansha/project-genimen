@@ -11,7 +11,7 @@
 }
 .login-card {
   padding: 40px 50px;
-  width: 40%;
+  width: 50%;
   max-width: 400px;
 }
 .login-header {
@@ -65,9 +65,9 @@
 }
 .login-banner {
   margin-top: 50px;
-  margin-left: 70px;
-  width: 55rem;
+  /* margin-left: 70px; */
+  width: 80%;
 }
 .login-banner > img {
-  width: 100%;
+  width: 90%;
 }
