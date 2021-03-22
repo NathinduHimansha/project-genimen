@@ -8,6 +8,7 @@ import dark from './assests/NightMode.png';
 import light from './assests/LightMode.png';
 import home from './assests/HomeWhite.png';
 import URAS from './pages/uras/URAS';
+import Login from './pages/login/Login';
 import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
@@ -17,7 +18,7 @@ import { toggleMode } from './common/style.js';
 import Button from './components/buttons/Button';
 
 import LogoBanner from './pages/index/Logobanner';
-import HomePage from './pages/index/HomePage'
+import HomePage from './pages/index/HomePage';
 
 const routes = [
   {
@@ -88,7 +89,7 @@ function App() {
             <Redirect to="/home" />
           </Route>
           <Route path="/examples" component={Examples} />
-          <Route path="/about" component={Home} />
+          <Route path="/about" component={Login} />
           <Route path="/exkey" component={EXKEY} />
           <Route path="/analytics/uras" component={URASView} />
           <Route path="/urasresult" exact component={UrasResults} />

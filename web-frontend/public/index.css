@@ -46,6 +46,7 @@ body {
   --tag: rgba(255, 255, 255, 1);
   --analytics-card: rgba(255, 255, 255, 1);
   --fancy-heading-color: rgba(68, 68, 68, 1);
+  --input-box-background: rgba(248, 248, 248, 1);
 }
 :root[data-theme='dark'] {
   /*tested*/
@@ -75,7 +76,7 @@ body {
   --tag: rgb(25 52 87);
   --analytics-card: rgb(34 36 40);
   --fancy-heading-color: rgb(193 208 230);
-
+  --input-box-background: rgba(69, 69, 69, 1);
   --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12);
   --primary-border: 1px solid var(--primary-border-grey);
   @media only screen and (max-width: 720px) {

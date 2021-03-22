@@ -1,0 +1,73 @@
+.login-page-container > div:first-child {
+  margin-right: 80px;
+}
+.login-title,
+.login-moto {
+  font-size: 3.6rem;
+}
+.login-moto {
+  line-height: 135%;
+  letter-spacing: 0.04em;
+}
+.login-card {
+  padding: 40px 50px;
+  width: 40%;
+  max-width: 400px;
+}
+.login-header {
+}
+.login-logo {
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--primary-border-grey);
+}
+.login-logo > img {
+  width: 50%;
+  object-fit: contain;
+}
+.credentials-section label {
+  font-size: 1.8rem;
+  color: var(--primary-black);
+}
+.login-input-wrapper {
+  margin-top: 15px;
+}
+.login-username-input {
+  margin-top: 12px;
+}
+.login-username-input > input {
+  display: block;
+  padding: 0 15px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-border-grey);
+  background-color: var(--input-box-background);
+  color: var(--primary-black);
+}
+.login-signup-wrapper {
+  margin-top: 30px;
+}
+.login-signup-message {
+  font-size: 1.5rem;
+  color: #0089d7;
+  font-weight: 500;
+}
+.login-signup-btn {
+  color: var(--primary-accent);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 8px;
+  text-decoration: none;
+}
+.login-banner {
+  margin-top: 50px;
+  margin-left: 70px;
+  width: 55rem;
+}
+.login-banner > img {
+  width: 100%;
+}
