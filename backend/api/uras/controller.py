@@ -30,9 +30,10 @@ def is_features_valid(feature_type_dic):
 #  @jwt_required()
 def handle_uras():
     if (request.method == 'POST'):
-        if (not is_features_valid(request.json)):
+        feature_dict = request.json
+        if (not is_features_valid(feature_dict)):
             return createErrResponse("req contains invalid features")
-        return createSuccessResponse(get_feature_sentiment_analysis())
+        return createSuccessResponse(get_reviews_sentiment_summary(feature_dict))
     else:
         return createSuccessResponse(get_features_types())
 
