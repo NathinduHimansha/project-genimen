@@ -14,19 +14,19 @@
 }
 /* util classes */
 /* Margin Bottom */
-.-mr-50{
+.-mr-50 {
   margin-left: 50px;
 }
 
-.-mr-60{
+.-mr-60 {
   margin-left: 60px;
 }
 
-.-mr-70{
+.-mr-70 {
   margin-left: 70px;
 }
 
-.-ml-70{
+.-ml-70 {
   margin-left: 70px;
 }
 
@@ -152,7 +152,7 @@
   margin-top: 100%;
 }
 .-full-width {
-  width: 100%;
+  width: 100% !important;
 }
 .-full-height {
   height: 100%;
@@ -188,7 +188,7 @@
   margin-left: auto;
 }
 
-.-flex-left{
+.-flex-left {
   margin-left: auto;
   left: 5%;
 }
@@ -227,6 +227,9 @@
 }
 .-no-wrap {
   white-space: nowrap;
+}
+input {
+  box-sizing: border-box;
 }
 /* styles */
 div.card {
