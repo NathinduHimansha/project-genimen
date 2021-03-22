@@ -39,7 +39,9 @@ class Exkey extends React.Component {
       i++;
 
       document.querySelector('.analyze_again ').style.visibility = 'hidden';
-      document.querySelector('.analysing_banner ').style.visibility = 'hidden';
+      document.querySelector('.analysing_banner_left ').style.visibility = 'hidden';
+      document.querySelector('.analysing_banner_right ').style.visibility = 'hidden';
+
       document.querySelector('.loader_progress ').style.visibility = 'visible';
 
       if (i === 100) {
@@ -106,17 +108,11 @@ class Exkey extends React.Component {
               <div className="card-left" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-left">
                   <h3 className="heading3 -medium">TREND</h3>
-                  <div className="analysing_banner" style={{ visibility: 'visible' }}>
+                  <div className="analysing_banner_left" style={{ visibility: 'visible' }}>
                     <img
                       className="magnify_banner"
                       src={banner}
                       style={{ width: '350px', height: '300px' }}
-                    />
-
-                    <img
-                      className="magnify_barChart"
-                      src={magnify_barChart}
-                      style={{ width: '400px', height: '300px' }}
                     />
                   </div>
                 </div>
@@ -141,6 +137,13 @@ class Exkey extends React.Component {
               <div className="card-right" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-right -mb-auto -flex-middle">
                   <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
+                  <div className="analysing_banner_right" style={{ visibility: 'visible' }}>
+                    <img
+                      className="magnify_barChart"
+                      src={magnify_barChart}
+                      style={{ width: '400px', height: '300px' }}
+                    />
+                  </div>
                 </div>
                 <div
                   id="word_cloud"
@@ -149,18 +152,26 @@ class Exkey extends React.Component {
                 ></div>
 
                 <div className="loader_progress" style={{ visibility: 'hidden' }}>
-                  <div className="line_progress"></div>
-                  <div className="line_progress"></div>
-                  <div className="line_progress"></div>
-                  <div className="line_progress"></div>
+                  <div className="line_loader">
+                    <div className="line_progress"></div>
+                    <div className="line_progress"></div>
+                    <div className="line_progress"></div>
+                    <div className="line_progress"></div>
+                  </div>
                   <div className="wrapper_progressBar">
-                    <div className="progress-bar">
+                    {/* <div className="progress-bar">
                       <div className="bar_loading" data-size="100">
                         <span className="perc"></span>
                       </div>
+                    </div> */}
+                    <div class="loader-5">
+                      <div class="loader-5-rect loader-5-rect-1"></div>
+                      <div class="loader-5-rect loader-5-rect-2"></div>
+                      <div class="loader-5-rect loader-5-rect-3"></div>
+                      <div class="loader-5-rect loader-5-rect-4"></div>
                     </div>
                   </div>
-                  <div className="loader_description" id="loader_descriptionID">
+                  <div className="loader_description">
                     <h2 className="heading3 -medium -no-margin feature-type-heading">
                       <b>ANALYSING IN PROGRESS...</b>
                     </h2>
