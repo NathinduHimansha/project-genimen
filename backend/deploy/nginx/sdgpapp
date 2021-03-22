@@ -6,7 +6,7 @@ server {
         ssl_certificate_key /etc/ssl/private/nginx-self-signed.key;
 
 
-        server_name 3.142.192.135;
+        server_name 18.188.81.157;
 
         location /dev {
 				include proxy_params;
