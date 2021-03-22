@@ -8,7 +8,9 @@ server {
 
         server_name 3.142.192.135;
 
-        location = /dev/ {
+        location = /dev {
+				include proxy_params;
+				rewrite ^/dev/(.*) /$1  break;
                 proxy_set_header Host $host;
                 proxy_pass http://unix:/home/ubuntu/sdgpapi/sdgpapp.sock;
                 # proxy_pass http://127.0.0.1:8000;
