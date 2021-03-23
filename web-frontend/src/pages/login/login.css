@@ -1,0 +1,114 @@
+.login-btn-link {
+  text-decoration: none;
+  color: var(--primary-white) !important;
+  width: 100%;
+}
+.login-btn-link.active {
+  text-decoration: none;
+  position: relative;
+  color: var(--primary-white) !important;
+  /* right: 0; */
+  /* top: -0.5px; */
+  /* height: calc(100% + 1px); */
+  /* width: 30%; */
+  /* border-radius: 5px; */
+}
+.login-page-container {
+  margin-left: 6%;
+}
+.login-page-container > div:first-child {
+  /* margin-right: 80px; */
+}
+.login-title,
+.login-moto {
+  font-size: 3.6rem;
+}
+.login-moto {
+  line-height: 135%;
+  letter-spacing: 0.04em;
+}
+.login-card {
+  padding: 40px 50px;
+  width: 30%;
+  max-width: 400px;
+}
+.login-header {
+}
+.login-logo {
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--primary-border-grey);
+}
+.login-logo > img {
+  width: 50%;
+  object-fit: contain;
+}
+.credentials-section label {
+  font-size: 1.8rem;
+  color: var(--primary-black);
+}
+.login-input-wrapper {
+  margin-top: 15px;
+}
+.login-username-input {
+  margin-top: 12px;
+}
+.login-username-input > input {
+  display: block;
+  padding: 0 15px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-border-grey);
+  background-color: var(--input-box-background);
+  color: var(--primary-black);
+}
+.login-signup-wrapper {
+  margin-top: 30px;
+}
+.login-signup-message {
+  font-size: 1.5rem;
+  color: #0089d7;
+  font-weight: 500;
+}
+.login-signup-btn {
+  color: var(--primary-accent);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 8px;
+  text-decoration: none;
+}
+.login-banner-wrapper {
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-left: 20%; */
+}
+.login-banner {
+  margin-top: 50px;
+  /* margin-left: 70px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+.login-banner > img {
+  width: 80%;
+  min-width: 300px;
+}
+@media only screen and (max-width: 1000px) {
+  .login-banner-wrapper-container {
+    display: none;
+  }
+  .login-card {
+    width: 70%;
+  }
+  .login-page-container {
+    padding: 0px 40px;
+    margin-left: 0;
+  }
+}

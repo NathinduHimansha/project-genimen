@@ -13,8 +13,8 @@ const ProgressBar = (props) => {
   const dividerHeight = 2.25 * stroke;
   const borderRadius = 0.4 * stroke;
 
-  const rightActiveClassNames = progress > 0 ? 'active right-active' : '-display-none';
-  const leftActiveClassNames = progress < 0 ? 'active left-active' : '-display-none';
+  const rightActiveClassNames = progress > 0 ? 'progressbar-active right-active' : '-display-none';
+  const leftActiveClassNames = progress < 0 ? 'progressbar-active left-active' : '-display-none';
 
   let bar;
 
