@@ -1,6 +1,7 @@
 .login-btn-link {
   text-decoration: none;
   color: var(--primary-white) !important;
+  width: 100%;
 }
 .login-btn-link.active {
   text-decoration: none;

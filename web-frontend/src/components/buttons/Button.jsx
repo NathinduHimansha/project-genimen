@@ -40,7 +40,7 @@ const Button = (props) => {
       disabled={loading}
     >
       <span className={'-bold -no-wrap ' + hideOnLoad()}>{props.children}</span>
-      <img className={iconImgSideClass() + ' ' + hideOnLoad()} src={iconSrc} />
+      {iconSrc ? <img className={iconImgSideClass() + ' ' + hideOnLoad()} src={iconSrc} /> : ''}
       {showSpinnerOnLoad()}
     </button>
   );

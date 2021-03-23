@@ -78,14 +78,14 @@ function App() {
             />
           </div>
           <div className="auth-btn-wrapper -flex -flex-center -mt-auto">
-            <Button outline={true} utilClasses="signup-btn">
-              Sign Up
-            </Button>
-            <Button utilClasses="-mr-5 login-btn">
-              <NavLink className="login-btn-link" exact to="/login">
-                Login
-              </NavLink>
-            </Button>
+            <NavLink className="login-btn-link" exact to="/signup">
+              <Button outline={true} utilClasses="signup-btn">
+                Sign Up
+              </Button>
+            </NavLink>
+            <NavLink className="login-btn-link" exact to="/login">
+              <Button utilClasses=" login-btn">Login</Button>
+            </NavLink>
           </div>
         </NavBar>
         <Switch>

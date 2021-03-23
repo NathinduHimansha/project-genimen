@@ -47,7 +47,7 @@
   width: 50%;
   height: 100%;
 }
-.active {
+.progressbar-active {
   position: absolute;
   right: 0;
   top: -0.5px;
