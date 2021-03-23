@@ -5,6 +5,8 @@
   width: auto;
   height: auto;
   margin: 2vw 0vw 0vw 20px;
+  display: flex;
+  align-items: center;
 }
 
 .logobanner-logoimg {
@@ -14,7 +16,7 @@
 }
 
 .logobanner-textbox {
-  position: absolute;
+  /* position: absolute; */
   border-left: 2px solid #043a8c; /* vertical line */
   height: auto;
   width: auto;
@@ -32,4 +34,6 @@
 .logobanner-subtext {
   color: #6557fc;
   font-size: calc(3px + 1vw);
+  margin-left: 3px;
+  padding-bottom: 10px;
 }
