@@ -63,8 +63,8 @@ body * {
 :root[data-theme='dark'] {
   /*tested*/
   --background: #1a1b1c;
-  --pos-green: rgba(83, 206, 132, 1);
-  --neg-red: rgba(255, 95, 95, 1);
+  --pos-green: rgb(1 125 79);
+  --neg-red: rgb(195 67 67);
   --error-light-red: #bf2600;
   --success-light-green: #006430;
   --white: rgba(25, 25, 25, 1);

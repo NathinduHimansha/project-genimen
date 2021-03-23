@@ -22,7 +22,9 @@ const SentimentRankCard = (props) => {
           </h1>
         </div>
         <div className="sentiment-emoji">
-          {polarity == 'pos' ? <img src={smily} /> : <img src={angry} />}
+          <div className="sentiment-emoji-wrapper">
+            {polarity == 'pos' ? <img src={smily} /> : <img src={angry} />}
+          </div>
         </div>
       </div>
     </div>
