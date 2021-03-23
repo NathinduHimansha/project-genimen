@@ -50,7 +50,7 @@ const routes = [
 function App() {
   const [themeMode, setTheme] = useState('dark');
   return (
-    <ToastProvider autoDismissTimeout={1000000} autoDismiss={false} placement={'top-center'}>
+    <ToastProvider autoDismissTimeout={3000} autoDismiss={true} placement={'top-center'}>
       <Router>
         <div className="App">
           <NavBar routes={routes}>

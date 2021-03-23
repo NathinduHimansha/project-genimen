@@ -3,7 +3,7 @@ import Button from '../../components/buttons/Button';
 import logo from '../../assests/Geniman.png';
 import banner from '../../assests/LineChartBanner.png';
 import './login.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { isPasswordValid } from '../../common/utils';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 
@@ -14,7 +14,9 @@ const Login = (props) => {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
   const [isShake, setShake] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { addToast } = useToasts();
+  const history = useHistory();
 
   const onPasswordFocus = () => {
     setPasswordError(false);
@@ -46,12 +48,18 @@ const Login = (props) => {
     onPasswordBlur(password);
     const isFormValid = isInputsValid(password, username);
     if (isFormValid) {
-      addToast('Successfully Logged in', { appearance: 'success', id: 'login-success' });
+      setLoading(true);
+      setTimeout(() => {
+        addToast('Successfully Logged in', { appearance: 'success', id: 'login-success' });
+        history.push({ pathname: '/signup' });
+        setLoading(false);
+      }, 3000);
     } else {
       addToast('Invalid username/password, please try again ', {
         appearance: 'error',
         id: 'login-error',
       });
+      setLoading(false);
     }
   };
   return (
@@ -128,7 +136,7 @@ const Login = (props) => {
             </div>
           </div>
           <div className="login-btn-wrapper -mt-25">
-            <Button utilClasses="-full-width" onClick={() => onLogin()}>
+            <Button utilClasses="-full-width" onClick={() => onLogin()} loading={loading}>
               Login
             </Button>
           </div>
