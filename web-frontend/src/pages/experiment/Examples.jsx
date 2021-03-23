@@ -12,6 +12,7 @@ import banner from '../../assests/MagnifierAnalysingBanner.png';
 import { getFeatures } from '../../services/uras-service';
 import Button from '../../components/buttons/Button';
 import IconHeading from '../../components/text/IconHeading';
+import SentimentRankCard from '../../components/analytics/SentimentRankCard';
 
 const Examples = () => {
   const test = getFeatures();
@@ -69,7 +70,7 @@ const Examples = () => {
           </div>
         </div>
       </div>
-      <div className="-display-none">
+      <div className="" style={{ marginLeft: '10%', marginBottom: '10%' }}>
         <div className="-mb-40 -mt-90">
           <FancyHeading heading="FEATURES SENTIMENTS"></FancyHeading>
         </div>
@@ -90,16 +91,32 @@ const Examples = () => {
             Type: <span className="-medium">Curved</span>
           </h3>
         </div>
-        <div className="analytics-container cards-grid -mt-60">
-          <SentimentResultCard
-            heading="Total Results"
-            // headingIcon={phoneIcon}
-            reviewCount={300}
-            reviewCountLable="Total Reviews Analysed"
-            polarity={84}
-            negPerc={44}
-            posPerc={40}
-          />
+        <div className="-flex -mt-60">
+          <div>
+            <SentimentResultCard
+              heading="Total Results"
+              // headingIcon={phoneIcon}
+              reviewCount={300}
+              reviewCountLable="Total Reviews Analysed"
+              polarity={84}
+              negPerc={44}
+              posPerc={40}
+            />
+          </div>
+          <div>
+            <SentimentRankCard
+              polarity="pos"
+              polarityPerc={84}
+              label="OnePlus 6T"
+              description="Best phone for the feature"
+            ></SentimentRankCard>
+            <SentimentRankCard
+              polarity="neg"
+              polarityPerc={44}
+              label="Samsung S10+"
+              description="Worst phone for the feature"
+            ></SentimentRankCard>
+          </div>
         </div>
         <div className="-mt-60">
           <h3 className="heading3 -medium -no-margin" style={{ fontSize: '2.2rem' }}>
