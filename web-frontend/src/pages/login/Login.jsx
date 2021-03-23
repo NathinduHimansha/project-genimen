@@ -25,13 +25,11 @@ const Login = (props) => {
     setUsernameError(false);
   };
   const onPasswordBlur = (password) => {
-    setPassword(password);
     if (!isPasswordValid(password)) {
       setPasswordError(true);
     }
   };
   const onUsernameBlur = (username) => {
-    setUsername(username);
     if (username.trim().length < 3) {
       setUsernameError(true);
     }
@@ -93,6 +91,9 @@ const Login = (props) => {
                   onBlur={(event) => {
                     onUsernameBlur(event.target.value);
                   }}
+                  onChange={(event) => {
+                    setUsername(event.target.value);
+                  }}
                   onFocus={onUsernameFocus}
                 />
               </div>
@@ -121,6 +122,9 @@ const Login = (props) => {
                   className={`${passwordError ? 'error-input' : ''} -full-width`}
                   onBlur={(event) => {
                     onPasswordBlur(event.target.value);
+                  }}
+                  onChange={(event) => {
+                    setPassword(event.target.value);
                   }}
                   onFocus={onPasswordFocus}
                 />
