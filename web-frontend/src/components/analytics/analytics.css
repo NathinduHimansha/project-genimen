@@ -38,3 +38,51 @@ div.neg-pos-graph > * {
 div.neg-pos-graph > *:nth-last-child(1) {
   margin-right: 0;
 }
+div.sentiment-rank-card {
+  padding: 30px 50px;
+  display: flex;
+  border-radius: 8px;
+  max-width: 500px;
+  min-width: 350px;
+  /* width: 100%; */
+}
+div.sentiment-rank-card--pos {
+  background: var(--pos-green);
+}
+div.sentiment-rank-card--neg {
+  background: var(--neg-red);
+}
+div.sentiment-det {
+  flex-grow: 1;
+}
+div.sentiment-det h1,
+div.sentiment-det span {
+  color: #fff;
+}
+span.sentiment-det-description {
+  font-size: 1.6rem;
+  /* white-space: nowrap; */
+}
+h1.sentiment-det-label {
+  margin-bottom: 5px;
+  font-size: 2.6rem;
+}
+h1.sentiment-det-polarity-perc {
+  margin-top: 30px;
+  font-size: 3.6rem;
+}
+div.sentiment-emoji {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  align-items: center;
+  width: 40%;
+  margin-left: 20px;
+}
+div.sentiment-emoji img {
+  width: 50%;
+  max-width: 120px;
+  min-width: 100px;
+  opacity: 0.8;
+  object-fit: contain;
+}

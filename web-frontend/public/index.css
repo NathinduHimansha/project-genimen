@@ -7,8 +7,11 @@ body {
   font-family: Rubik;
   font-weight: 400;
   margin: 0;
-  box-sizing: border-box;
   background-color: var(--background);
+  box-sizing: border-box;
+}
+body * {
+  /* box-sizing: border-box; */
 }
 :root {
   /* Color styles */
