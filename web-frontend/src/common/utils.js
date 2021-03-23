@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+export const isPasswordValid = (password) => {
+  return password.length >= 6;
+};
 export const Http = (url) => {
   const get = async (data = null) => {
     const request = await axios({

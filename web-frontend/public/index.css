@@ -15,6 +15,7 @@ body {
   --background: rgba(255, 255, 255);
   --pos-green: rgba(83, 206, 132, 1);
   --neg-red: rgba(255, 95, 95, 1);
+  --error-red: #ff1f1f;
   --white: rgba(255, 255, 255, 1);
   --light-white: rgba(248, 248, 248, 1);
   --black: rgba(0, 0, 0, 1);
@@ -47,6 +48,7 @@ body {
   --analytics-card: rgba(255, 255, 255, 1);
   --fancy-heading-color: rgba(68, 68, 68, 1);
   --input-box-background: rgba(248, 248, 248, 1);
+  --select-box-alt-color: transparent;
 }
 :root[data-theme='dark'] {
   /*tested*/
@@ -79,9 +81,5 @@ body {
   --input-box-background: rgba(69, 69, 69, 1);
   --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12);
   --primary-border: 1px solid var(--primary-border-grey);
-  @media only screen and (max-width: 720px) {
-    html {
-      font-size: 2px;
-    }
-  }
+  --select-box-alt-color: rgba(39, 39, 39, 1);
 }

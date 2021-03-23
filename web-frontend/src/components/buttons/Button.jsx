@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Button = (props) => {
-  let { iconSrc, utilClasses, iconSide, loading, onClick, outline } = props;
+  let { iconSrc, utilClasses, iconSide, loading, onClick, outline, disabled } = props;
   outline = outline || false;
   loading = loading || false;
   iconSrc = iconSrc ? iconSrc : '';
@@ -25,6 +25,9 @@ const Button = (props) => {
   const getOutlineClass = () => {
     return outline ? 'primary-btn-outline' : '';
   };
+  const isDisabled = () => {
+    return disabled || loading;
+  };
 
   return (
     <button
@@ -37,10 +40,10 @@ const Button = (props) => {
         ' ' +
         utilClasses.join(' ')
       }
-      disabled={loading}
+      disabled={isDisabled()}
     >
       <span className={'-bold -no-wrap ' + hideOnLoad()}>{props.children}</span>
-      <img className={iconImgSideClass() + ' ' + hideOnLoad()} src={iconSrc} />
+      {iconSrc ? <img className={iconImgSideClass() + ' ' + hideOnLoad()} src={iconSrc} /> : ''}
       {showSpinnerOnLoad()}
     </button>
   );

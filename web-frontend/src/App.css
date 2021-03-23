@@ -497,6 +497,9 @@ select.phone-selector {
   transition: 200ms ease;
   /* width: 80%; */
 }
+select.select-feature {
+  background-color: var(--select-box-alt-color);
+}
 .feature-selection-banner {
   margin-left: 15rem;
   transition: 200ms ease;
@@ -592,18 +595,23 @@ body::-webkit-scrollbar-thumb {
   border-top: 1px solid var(--auth-border-color);
   transition: 250ms ease;
 }
+.auth-btn-wrapper > a:nth-child(1) {
+  margin-right: 10px;
+}
 .navbar:hover .auth-btn-wrapper {
   /* opacity: 1; */
-  padding: 20px 10px 20px 10px;
+  padding: 20px 12px 15px 12px;
   height: auto;
 }
 .navbar:hover button.login-btn,
-.navbar:hover button.signup-btn {
+.navbar:hover button.signup-btn,
+.auth-btn-wrappre > a {
   visibility: visible;
-  width: 50%;
+  width: 100%;
   opacity: 1;
 }
-.auth-btn-wrapper > button {
+.auth-btn-wrapper button,
+.auth-btn-wrappre > a {
   visibility: hidden;
   opacity: 0;
   width: 0;
@@ -656,5 +664,30 @@ button.signup-btn {
     width: -moz-fit-content;
     width: fit-content;
     padding-right: 10px;
+  }
+}
+/* animations */
+/* shake */
+.shake {
+  animation: shake 0.4s 1 linear;
+}
+@keyframes shake {
+  0% {
+    transform: translate(10px);
+  }
+  20% {
+    transform: translate(-10px);
+  }
+  40% {
+    transform: translate(5px);
+  }
+  60% {
+    transform: translate(-5px);
+  }
+  80% {
+    transform: translate(2px);
+  }
+  100% {
+    origin-transform: translate(0px);
   }
 }

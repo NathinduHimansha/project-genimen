@@ -65,14 +65,14 @@ const SampleFeatureSelection = (props) => {
         <div key={i} className="-flex -mb-20">
           <IconHeading size="small" iconUrl={feature.icon}>
             <label htmlFor="select-feature-type-display" className="select-label">
-              <h2 className="heading3 -medium -no-margin feature-type-heading">
+              <h2 className="heading3 -regular -no-margin feature-type-heading">
                 {feature.feature}
               </h2>
             </label>
           </IconHeading>
           <select
             defaultValue="select-feature"
-            className="select large heading4 -regular -flex-right"
+            className="select-feature select large heading4 -regular -flex-right"
             id="select-feautre-type-display"
           >
             <option value="select-feature" disabled>
