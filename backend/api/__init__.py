@@ -59,6 +59,6 @@ def create_app(config=None):
 
     @app.route('/api/hello', methods=["GET"])
     def hello():
-        return 'Hello, World Changed to this!'
+        return 'Hello!'
 
     return app
