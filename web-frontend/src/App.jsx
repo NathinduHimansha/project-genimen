@@ -17,7 +17,7 @@ import UrasResults from './pages/uras/UrasResults';
 import { toggleMode } from './common/style.js';
 import Button from './components/buttons/Button';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
-import Notify from './components/notification/Notify';
+// import Notify from './components/notification/Notify';
 
 import LogoBanner from './pages/index/Logobanner';
 import HomePage from './pages/index/HomePage';
