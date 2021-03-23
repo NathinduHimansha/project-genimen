@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/nav/NavBar';
 import about from './assests/AboutLight.png';
@@ -81,13 +81,18 @@ function App() {
             <Button outline={true} utilClasses="signup-btn">
               Sign Up
             </Button>
-            <Button utilClasses="-mr-5 login-btn">Login</Button>
+            <Button utilClasses="-mr-5 login-btn">
+              <NavLink className="login-btn-link" exact to="/login">
+                Login
+              </NavLink>
+            </Button>
           </div>
         </NavBar>
         <Switch>
           <Route exact path="/" component={Examples}>
             <Redirect to="/home" />
           </Route>
+          <Route path="/home" component={HomePage} />
           <Route path="/examples" component={Examples} />
           <Route path="/about" component={Login} />
           <Route path="/exkey" component={EXKEY} />
@@ -95,7 +100,7 @@ function App() {
           <Route path="/urasresult" exact component={UrasResults} />
           <Route path="/pssa" component={Home} />
           <Route path="/fbfe" component={Home} />
-          <Route path="/login" component={Home} />
+          <Route path="/login" component={Login} />
           <Route path="/signup" component={Home} />
           <Route path="/logo" component={LogoBanner} />
           <Route path="/index" component={HomePage} />
