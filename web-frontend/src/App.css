@@ -691,3 +691,64 @@ button.signup-btn {
     origin-transform: translate(0px);
   }
 }
+/* toast */
+.react-toast-notifications__toast--success {
+  background-color: var(--success-light-green) !important;
+  box-shadow: 0px 0px 0px black !important;
+  border: 1px solid var(--success-green);
+}
+.react-toast-notifications__toast--success .react-toast-notifications__toast__content {
+  color: var(--success-light-text);
+}
+.react-toast-notifications__toast--success .react-toast-notifications__toast__icon-wrapper {
+  background-color: var(--success-icon-background) !important;
+}
+
+.react-toast-notifications__toast--success .react-toast-notifications__toast__dismiss-icon {
+  color: var(--success-light-text) !important;
+}
+/* error toast */
+.react-toast-notifications__toast--error {
+  background-color: var(--error-light-red) !important;
+  box-shadow: 0px 0px 0px black !important;
+  border: 1px solid var(--error-red);
+}
+.react-toast-notifications__toast--error .react-toast-notifications__toast__content {
+  color: var(--error-light-text);
+}
+.react-toast-notifications__toast--error .react-toast-notifications__toast__icon-wrapper {
+  background-color: var(--error-icon-background) !important;
+}
+
+.react-toast-notifications__toast--error .react-toast-notifications__toast__dismiss-icon {
+  color: var(--error-light-text) !important;
+}
+.react-toast-notifications__container {
+  /* margin-top: 5px !important; */
+  width: 100% !important;
+  padding-left: 4.7rem !important;
+  padding-right: 2px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  border-radius: 0px;
+}
+.css-h0gpo1-ToastElement {
+  height: auto !important;
+}
+.react-toast-notifications__toast {
+  width: 100% !important;
+  border-radius: 0px !important;
+  margin-bottom: 1px !important;
+}
+.react-toast-notifications__toast__content {
+  min-height: 20px !important;
+  padding: 5px 12px !important;
+}
+.react-toast-notifications__toast__icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+  border-radius: 0px !important;
+}

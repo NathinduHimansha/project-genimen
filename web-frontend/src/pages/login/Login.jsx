@@ -5,6 +5,7 @@ import banner from '../../assests/LineChartBanner.png';
 import './login.css';
 import { NavLink } from 'react-router-dom';
 import { isPasswordValid } from '../../common/utils';
+import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 const Login = (props) => {
   const [passwordError, setPasswordError] = useState(false);
@@ -13,6 +14,8 @@ const Login = (props) => {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
   const [isShake, setShake] = useState(false);
+  const { addToast } = useToasts();
+
   const onPasswordFocus = () => {
     setPasswordError(false);
   };
@@ -43,9 +46,12 @@ const Login = (props) => {
     onPasswordBlur(password);
     const isFormValid = isInputsValid(password, username);
     if (isFormValid) {
-      console.log('logged in');
+      addToast('Successfully Logged in', { appearance: 'success', id: 'login-success' });
     } else {
-      console.log('invalid');
+      addToast('Invalid username/password, please try again ', {
+        appearance: 'error',
+        id: 'login-error',
+      });
     }
   };
   return (
