@@ -25,7 +25,7 @@ const routes = [
     title: 'Home',
     icon: home,
     subMenu: [],
-    path: '/examples',
+    path: '/home',
   },
   {
     title: 'Analytics',

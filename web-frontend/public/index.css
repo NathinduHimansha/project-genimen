@@ -15,6 +15,7 @@ body {
   --background: rgba(255, 255, 255);
   --pos-green: rgba(83, 206, 132, 1);
   --neg-red: rgba(255, 95, 95, 1);
+  --error-red: #ff1f1f;
   --white: rgba(255, 255, 255, 1);
   --light-white: rgba(248, 248, 248, 1);
   --black: rgba(0, 0, 0, 1);
