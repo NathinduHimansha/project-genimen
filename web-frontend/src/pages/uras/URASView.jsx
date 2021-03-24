@@ -1,44 +1,62 @@
 import React, { Component } from 'react';
 import FancyHeading from '../../components/text/FancyHeading';
-import SampleFeatureSelection from '../experiment/SampleFeatureSelection';
 import search from '../../assests/Search.png';
 import Button from '../../components/buttons/Button';
+import UrasFeaturesInput from './UrasFeaturesInput';
+
 import {analyseFeatures} from '../../services/uras-service';
 
 import './uras.css';
 
-
-class URASView extends Component {
+class UrasView extends Component {
 
     constructor(props) {
         super(props)
-    
         this.state = {
-             loading:false,
-             data :[]
+             loading:false,//button loading state
+             data :[], //stores received data from backend
+             selectedFeatures:{} //stores selected features
         }
     }
 
-    loadResults = ()=>{
-        this.setState({
-            loading:true 
-        }),
-
+    //handles the http request and routes the user
+    getRequestedData = ()=>{
+        this.setButtonState(true),
+       
         //http request handling
-        analyseFeatures().then((response) => 
-            {this.setState({data:response.data}),
-                this.setState({loading:false }),
-                this.routePage()})
-            .catch()
+        // analyseFeatures(this.state.selectedFeatures).then((response) => {
+        analyseFeatures().then((response) => {
+            this.setState({data:response.data}),
+            this.setButtonState(false),
+            this.routePage()
+        })
+        .catch(error =>{
+            console.log("ERROR LOGGED IN UrasView getRequstedData: ", error)
+        })
     }
 
+    //change the loading button state
+    setButtonState = (state)=>{
+        this.setState({
+            loading:state 
+        })
+    }
 
+    //route to results page
     routePage =()=>{
         this.props.history.push({
             pathname:"/urasresult",
             state:this.state.data 
         })
     }
+
+    //set the selected values from <select>
+    setSelectedFeatures = (feature,type)=>{
+        this.setState((prev) => ({
+            selectedFeatures: {...prev.selectedFeatures,[feature]: type}
+        }))
+    }
+
 
     render() {
         return (
@@ -48,13 +66,11 @@ class URASView extends Component {
                 </div>
 
                 <div>
-                    <SampleFeatureSelection />
+                    <UrasFeaturesInput  parentCallback={this.setSelectedFeatures}/>
                 </div>
              
-
                 <div className="-flex -flex-center -flex-middle -mt-40">
-                
-                    <Button onClick={()=>this.loadResults()} iconSrc={search} loading={this.state.loading}>
+                    <Button onClick={()=>this.getRequestedData()} iconSrc={search} loading={this.state.loading}>
                         Start Analysing
                     </Button>    
                 </div>   
@@ -63,4 +79,4 @@ class URASView extends Component {
     }              
 }
 
-export default URASView
+export default UrasView
