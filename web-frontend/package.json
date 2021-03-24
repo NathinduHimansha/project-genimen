@@ -6,6 +6,7 @@
   },
   "devDependencies": {
     "prettier": "^2.2.1",
+    "react-toast-notifications": "^2.4.3",
     "snowpack": "^3.0.13"
   },
   "dependencies": {
