@@ -5,58 +5,29 @@ import Bargraph from '../../components/graphs/BarGraph';
 import LineGraph from '../../components/graphs/LineGraph';
 import FancyHeading from '../../components/text/FancyHeading';
 import Button from '../../components/buttons/Button';
-import banner from '../../assests/MagnifierAnalysingBanner.png';
-import magnify_barChart from '../../assests/bar_chart.png';
+import colourful_mobilePhone from '../../assests/colourful.png';
 
 class Exkey extends React.Component {
   analyzeAgain() {
     document.querySelector('.loader_description').style.animation =
       'typewriter_loadingDescription 2s steps(10) 10ms normal both';
 
-    document.querySelectorAll('.bar_loading').forEach(function (current) {
-      let startWidth = 0;
-      const endWidth = current.dataset.size;
+    document.querySelector('.analyze_again ').style.visibility = 'hidden';
+    document.querySelector('.analysing_banner').style.visibility = 'hidden';
 
-      /* 
-      setInterval() time sholud be set as trasition time / 100. 
-      In our case, 2 seconds / 100 = 20 milliseconds. 
-      */
-      const interval = setInterval(frame, 30);
+    document.querySelector('.loader_progress ').style.visibility = 'visible';
 
-      function frame() {
-        if (startWidth >= endWidth) {
-          clearInterval(interval);
-        } else {
-          startWidth++;
-          current.style.width = `${endWidth}%`;
-          current.firstElementChild.innerText = `${startWidth}%`;
-        }
-      }
-    });
-
-    var i = 0;
-    var counter = setInterval(function () {
-      i++;
-
-      document.querySelector('.analyze_again ').style.visibility = 'hidden';
-      document.querySelector('.analysing_banner_left ').style.visibility = 'hidden';
-      document.querySelector('.analysing_banner_right ').style.visibility = 'hidden';
-
-      document.querySelector('.loader_progress ').style.visibility = 'visible';
-
-      if (i === 100) {
-        clearInterval(counter);
-
+    setTimeout(function () {
+      if (
+        document.querySelector('.frequency-bars ') &&
+        document.querySelector('.card-left ') &&
+        document.querySelector('.card-right ') &&
+        document.querySelector('.loader_progress ')
+      ) {
         document.querySelector('.frequency-bars ').style.visibility = 'visible';
         document.querySelector('.card-left ').style.visibility = 'visible';
         document.querySelector('.card-right ').style.visibility = 'visible';
         document.querySelector('.loader_progress ').style.visibility = 'hidden';
-
-        // document.querySelector('.word-cloud ').style.display = 'block';
-
-        document
-          .getElementsByClassName('progress-percentage')[0]
-          .classList.add('barchart_animation');
 
         document
           .getElementsByClassName('progress-percentage')[0]
@@ -86,7 +57,7 @@ class Exkey extends React.Component {
           .getElementsByClassName('progress-percentage')[8]
           .classList.add('barchart_animation');
       }
-    }, 30);
+    }, 3500);
   }
 
   render() {
@@ -108,13 +79,6 @@ class Exkey extends React.Component {
               <div className="card-left" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-left">
                   <h3 className="heading3 -medium">TREND</h3>
-                  <div className="analysing_banner_left" style={{ visibility: 'visible' }}>
-                    <img
-                      className="magnify_banner"
-                      src={banner}
-                      style={{ width: '350px', height: '300px' }}
-                    />
-                  </div>
                 </div>
 
                 <div className="frequency-bars" style={{ visibility: 'hidden' }}>
@@ -133,17 +97,16 @@ class Exkey extends React.Component {
                   ))}
                 </div>
               </div>
-
+              <div className="analysing_banner" style={{ visibility: 'visible' }}>
+                <img
+                  className="colourful_mobilePhone banner_allignment"
+                  src={colourful_mobilePhone}
+                />
+              </div>
               <div className="card-right" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-right -mb-auto -flex-middle">
                   <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
-                  <div className="analysing_banner_right" style={{ visibility: 'visible' }}>
-                    <img
-                      className="magnify_barChart"
-                      src={magnify_barChart}
-                      style={{ width: '400px', height: '300px' }}
-                    />
-                  </div>
+
                   <div className="treeMap_align">
                     <LineGraph></LineGraph>
                   </div>
