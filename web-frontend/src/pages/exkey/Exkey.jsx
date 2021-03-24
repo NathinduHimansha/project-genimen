@@ -12,49 +12,22 @@ class Exkey extends React.Component {
     document.querySelector('.loader_description').style.animation =
       'typewriter_loadingDescription 2s steps(10) 10ms normal both';
 
-    document.querySelectorAll('.bar_loading').forEach(function (current) {
-      let startWidth = 0;
-      const endWidth = current.dataset.size;
+    document.querySelector('.analyze_again ').style.visibility = 'hidden';
+    document.querySelector('.analysing_banner').style.visibility = 'hidden';
 
-      /* 
-      setInterval() time sholud be set as trasition time / 100. 
-      In our case, 2 seconds / 100 = 20 milliseconds. 
-      */
-      const interval = setInterval(frame, 30);
+    document.querySelector('.loader_progress ').style.visibility = 'visible';
 
-      function frame() {
-        if (startWidth >= endWidth) {
-          clearInterval(interval);
-        } else {
-          startWidth++;
-          current.style.width = `${endWidth}%`;
-          current.firstElementChild.innerText = `${startWidth}%`;
-        }
-      }
-    });
-
-    var i = 0;
-    var counter = setInterval(function () {
-      i++;
-
-      document.querySelector('.analyze_again ').style.visibility = 'hidden';
-      document.querySelector('.analysing_banner').style.visibility = 'hidden';
-
-      document.querySelector('.loader_progress ').style.visibility = 'visible';
-
-      if (i === 100) {
-        clearInterval(counter);
-
+    setTimeout(function () {
+      if (
+        document.querySelector('.frequency-bars ') &&
+        document.querySelector('.card-left ') &&
+        document.querySelector('.card-right ') &&
+        document.querySelector('.loader_progress ')
+      ) {
         document.querySelector('.frequency-bars ').style.visibility = 'visible';
         document.querySelector('.card-left ').style.visibility = 'visible';
         document.querySelector('.card-right ').style.visibility = 'visible';
         document.querySelector('.loader_progress ').style.visibility = 'hidden';
-
-        // document.querySelector('.word-cloud ').style.display = 'block';
-
-        document
-          .getElementsByClassName('progress-percentage')[0]
-          .classList.add('barchart_animation');
 
         document
           .getElementsByClassName('progress-percentage')[0]
@@ -84,7 +57,7 @@ class Exkey extends React.Component {
           .getElementsByClassName('progress-percentage')[8]
           .classList.add('barchart_animation');
       }
-    }, 30);
+    }, 3500);
   }
 
   render() {

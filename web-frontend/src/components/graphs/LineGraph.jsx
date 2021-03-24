@@ -64,6 +64,7 @@ class LineGraph extends React.Component {
           ],
         },
       ],
+
       options: {},
     };
   }
