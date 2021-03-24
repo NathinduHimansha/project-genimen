@@ -14,19 +14,19 @@
 }
 /* util classes */
 /* Margin Bottom */
-.-mr-50{
+.-mr-50 {
   margin-left: 50px;
 }
 
-.-mr-60{
+.-mr-60 {
   margin-left: 60px;
 }
 
-.-mr-70{
+.-mr-70 {
   margin-left: 70px;
 }
 
-.-ml-70{
+.-ml-70 {
   margin-left: 70px;
 }
 
@@ -152,7 +152,7 @@
   margin-top: 100%;
 }
 .-full-width {
-  width: 100%;
+  width: 100% !important;
 }
 .-full-height {
   height: 100%;
@@ -188,7 +188,7 @@
   margin-left: auto;
 }
 
-.-flex-left{
+.-flex-left {
   margin-left: auto;
   left: 5%;
 }
@@ -227,6 +227,9 @@
 }
 .-no-wrap {
   white-space: nowrap;
+}
+input {
+  box-sizing: border-box;
 }
 /* styles */
 div.card {
@@ -494,6 +497,9 @@ select.phone-selector {
   transition: 200ms ease;
   /* width: 80%; */
 }
+select.select-feature {
+  background-color: var(--select-box-alt-color);
+}
 .feature-selection-banner {
   margin-left: 15rem;
   transition: 200ms ease;
@@ -589,18 +595,23 @@ body::-webkit-scrollbar-thumb {
   border-top: 1px solid var(--auth-border-color);
   transition: 250ms ease;
 }
+.auth-btn-wrapper > a:nth-child(1) {
+  margin-right: 10px;
+}
 .navbar:hover .auth-btn-wrapper {
   /* opacity: 1; */
-  padding: 20px 10px 20px 10px;
+  padding: 20px 12px 15px 12px;
   height: auto;
 }
 .navbar:hover button.login-btn,
-.navbar:hover button.signup-btn {
+.navbar:hover button.signup-btn,
+.auth-btn-wrappre > a {
   visibility: visible;
-  width: 50%;
+  width: 100%;
   opacity: 1;
 }
-.auth-btn-wrapper > button {
+.auth-btn-wrapper button,
+.auth-btn-wrappre > a {
   visibility: hidden;
   opacity: 0;
   width: 0;
@@ -654,4 +665,90 @@ button.signup-btn {
     width: fit-content;
     padding-right: 10px;
   }
+}
+/* animations */
+/* shake */
+.shake {
+  animation: shake 0.4s 1 linear;
+}
+@keyframes shake {
+  0% {
+    transform: translate(10px);
+  }
+  20% {
+    transform: translate(-10px);
+  }
+  40% {
+    transform: translate(5px);
+  }
+  60% {
+    transform: translate(-5px);
+  }
+  80% {
+    transform: translate(2px);
+  }
+  100% {
+    origin-transform: translate(0px);
+  }
+}
+/* toast */
+.react-toast-notifications__toast--success {
+  background-color: var(--success-light-green) !important;
+  box-shadow: 0px 0px 0px black !important;
+  border: 1px solid var(--success-green);
+}
+.react-toast-notifications__toast--success .react-toast-notifications__toast__content {
+  color: var(--success-light-text);
+}
+.react-toast-notifications__toast--success .react-toast-notifications__toast__icon-wrapper {
+  background-color: var(--success-icon-background) !important;
+}
+
+.react-toast-notifications__toast--success .react-toast-notifications__toast__dismiss-icon {
+  color: var(--success-light-text) !important;
+}
+/* error toast */
+.react-toast-notifications__toast--error {
+  background-color: var(--error-light-red) !important;
+  box-shadow: 0px 0px 0px black !important;
+  border: 1px solid var(--error-red);
+}
+.react-toast-notifications__toast--error .react-toast-notifications__toast__content {
+  color: var(--error-light-text);
+}
+.react-toast-notifications__toast--error .react-toast-notifications__toast__icon-wrapper {
+  background-color: var(--error-icon-background) !important;
+}
+
+.react-toast-notifications__toast--error .react-toast-notifications__toast__dismiss-icon {
+  color: var(--error-light-text) !important;
+}
+.react-toast-notifications__container {
+  /* margin-top: 5px !important; */
+  width: 100% !important;
+  padding-left: 4.7rem !important;
+  padding-right: 2px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  border-radius: 0px;
+}
+.css-h0gpo1-ToastElement {
+  height: auto !important;
+}
+.react-toast-notifications__toast {
+  width: 100% !important;
+  border-radius: 0px !important;
+  margin-bottom: 1px !important;
+}
+.react-toast-notifications__toast__content {
+  min-height: 20px !important;
+  padding: 5px 12px !important;
+}
+.react-toast-notifications__toast__icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+  border-radius: 0px !important;
 }

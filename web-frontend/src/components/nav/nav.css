@@ -1,5 +1,14 @@
 .navbar + .navbar-page-container {
   margin-left: 4.7rem;
+  animation: slideInIn 400ms ease forwards;
+}
+@keyframes slideInIn {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 .hamburger {
   transform: rotate(0deg);
