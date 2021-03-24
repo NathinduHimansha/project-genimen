@@ -74,7 +74,7 @@ class LineGraph extends React.Component {
         <ReactApexChart
           options={this.state.options}
           series={this.state.series}
-          type="line"
+          type="treemap"
           height={260}
           width={500}
         />

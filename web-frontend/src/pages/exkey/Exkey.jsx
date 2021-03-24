@@ -5,8 +5,7 @@ import Bargraph from '../../components/graphs/BarGraph';
 import LineGraph from '../../components/graphs/LineGraph';
 import FancyHeading from '../../components/text/FancyHeading';
 import Button from '../../components/buttons/Button';
-import banner from '../../assests/MagnifierAnalysingBanner.png';
-import magnify_barChart from '../../assests/bar_chart.png';
+import colourful_mobilePhone from '../../assests/colourful.png';
 
 class Exkey extends React.Component {
   analyzeAgain() {
@@ -39,8 +38,7 @@ class Exkey extends React.Component {
       i++;
 
       document.querySelector('.analyze_again ').style.visibility = 'hidden';
-      document.querySelector('.analysing_banner_left ').style.visibility = 'hidden';
-      document.querySelector('.analysing_banner_right ').style.visibility = 'hidden';
+      document.querySelector('.analysing_banner').style.visibility = 'hidden';
 
       document.querySelector('.loader_progress ').style.visibility = 'visible';
 
@@ -108,13 +106,6 @@ class Exkey extends React.Component {
               <div className="card-left" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-left">
                   <h3 className="heading3 -medium">TREND</h3>
-                  <div className="analysing_banner_left" style={{ visibility: 'visible' }}>
-                    <img
-                      className="magnify_banner"
-                      src={banner}
-                      style={{ width: '350px', height: '300px' }}
-                    />
-                  </div>
                 </div>
 
                 <div className="frequency-bars" style={{ visibility: 'hidden' }}>
@@ -133,17 +124,16 @@ class Exkey extends React.Component {
                   ))}
                 </div>
               </div>
-
+              <div className="analysing_banner" style={{ visibility: 'visible' }}>
+                <img
+                  className="colourful_mobilePhone banner_allignment"
+                  src={colourful_mobilePhone}
+                />
+              </div>
               <div className="card-right" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-right -mb-auto -flex-middle">
                   <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
-                  <div className="analysing_banner_right" style={{ visibility: 'visible' }}>
-                    <img
-                      className="magnify_barChart"
-                      src={magnify_barChart}
-                      style={{ width: '400px', height: '300px' }}
-                    />
-                  </div>
+
                   <div className="treeMap_align">
                     <LineGraph></LineGraph>
                   </div>
