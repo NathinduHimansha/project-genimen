@@ -1,32 +1,40 @@
 import React, { Component } from 'react'
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import FancyHeading from '../../components/text/FancyHeading';
+
 import './uras.css';
 
 
-export class UrasResults extends Component {
+class UrasResults extends Component {
 
     constructor(props) {
         super(props)
-
         this.state = {
-            selectedFeature:null,
-            headingState:"-hidden",
+            selectedFeature:null, //selected feature to display
         }
     }
 
     //set the user selected feature and heading state
-    setSelectedFeature =event =>{
+    getSelectedFeature =event =>{
         this.setState({
             selectedFeature:event.target.value,
-            headingState:""
         })
     }
 
-    
+    //sets the first view
+    componentDidMount(){
+        const data = this.props.location.state;
 
+        {data['feature-sentiment-polarity'].length?
+            this.setState({
+                selectedFeature:data['feature-sentiment-polarity'][0].feature
+            })
+        :null} 
+    }
+
+    
     render() {
-        //catches the data received from uras comp
+        //catches the data received from UrasView comp
         const data = this.props.location.state
     
         return (
@@ -39,14 +47,15 @@ export class UrasResults extends Component {
                 {/* feature select view */}
                 <div className="-mb-35 -mt-80">
                     <label htmlFor="select-feature" className="select-label">
-                        <span className="t1 color-grey">Show: </span>
+                        <span className="t1 color-grey">Currently Showing: </span>
                     </label>
 
-                    <select defaultValue="select-feature"value={this.state.value} onChange={this.setSelectedFeature}  
-                    className="dark phone-selector select heading4 -regular -full-width  select" id="select-feautre">
-                        <option>Select-Feature</option> 
+
+                    <select defaultValue="select-feature" value={this.state.value} onChange={this.getSelectedFeature}  
+                        className="select large heading4 -regular -flex-right" id="select-feautre">
+                    
                         {data['feature-sentiment-polarity'].map((response, index) => 
-                        (<option value={response.feature}>{response.feature}</option> ))} 
+                            (<option key={index} value={response.feature}>{response.feature}</option> ))} 
                     </select>  
                 </div>
 
@@ -55,7 +64,7 @@ export class UrasResults extends Component {
                 <div className="analytics-container -mt-60 -flex -flex-center -flex-middle  ">
                     {data['feature-sentiment-polarity'].map((response, index) => 
                         (response.feature==this.state.selectedFeature ?
-                            (<div className="analytics-container cards-grid -mt-60">
+                            (<div key={index} className="analytics-container cards-grid -mt-60">
                                 <SentimentResultCard
                                     heading="Total Results"
                                     reviewCount={100}
@@ -70,14 +79,14 @@ export class UrasResults extends Component {
 
 
                 {/* results per phone */}
-                <h3 className= {`${this.state.headingState} heading3 -medium -mt-70 `} style={{ fontSize: '2.2rem' }}>
+                <h3 className= {'heading3 -medium -mt-70'}>
                         Analysis per Phone
                 </h3>
 
                 <div className="analytics-container cards-grid -mt-10   ">
                     {data['phone-feature-polarity'].map((response, index) => 
                         (response.feature===this.state.selectedFeature ?
-                            (<div className="analytics-container cards-grid -mt-60">
+                            (<div key={index} className="analytics-container cards-grid -mt-60">
                                 <SentimentResultCard
                                     heading={response.phone}
                                     headingIcon="var(--phone-icon)"
@@ -86,7 +95,8 @@ export class UrasResults extends Component {
                                     posPerc={Math.round(response.pos)}
                                  />
                             </div>)
-                        :null))}
+                        :null)
+                    )}
                 </div>
             </div>
         )
