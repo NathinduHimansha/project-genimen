@@ -12,13 +12,14 @@ import Login from './pages/login/Login';
 import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
-import URASView from './pages/uras/URASView';
+import URASView from './pages/uras/UrasView';
 import UrasResults from './pages/uras/UrasResults';
 import { toggleMode } from './common/style.js';
 import Button from './components/buttons/Button';
 
 import LogoBanner from './pages/index/Logobanner';
 import HomePage from './pages/index/HomePage';
+import UrasFeaturesInput from './pages/uras/UrasFeaturesInput';
 
 const routes = [
   {
@@ -99,6 +100,7 @@ function App() {
           <Route path="/signup" component={Home} />
           <Route path="/logo" component={LogoBanner} />
           <Route path="/index" component={HomePage} />
+          <Route path="/test" component={UrasFeaturesInput} />
         </Switch>
       </div>
     </Router>
