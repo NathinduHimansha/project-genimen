@@ -9,6 +9,7 @@ import light from './assests/LightMode.png';
 import home from './assests/HomeWhite.png';
 import URAS from './pages/uras/URAS';
 import Login from './pages/login/Login';
+import Signup from "./pages/signup/signup";
 import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
@@ -104,7 +105,7 @@ function App() {
             <Route path="/pssa" component={Home} />
             <Route path="/fbfe" component={Home} />
             <Route path="/login" component={Login} />
-            <Route path="/signup" component={Home} />
+            <Route path="/signup" component={Signup} />
             <Route path="/logo" component={LogoBanner} />
             <Route path="/index" component={HomePage} />
           </Switch>
