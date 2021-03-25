@@ -95,7 +95,7 @@ function App() {
           </NavBar>
           <Switch>
             <Route exact path="/" component={Examples}>
-              <Redirect to="/home" />
+              <Redirect to="/index" />
             </Route>
             <Route path="/home" component={HomePage} />
             <Route path="/examples" component={Examples} />
