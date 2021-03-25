@@ -24,7 +24,7 @@ import Button from './components/buttons/Button';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 // import Notify from './components/notification/Notify';
 
-import LogoBanner from './pages/index/Logobanner';
+
 import HomePage from './pages/index/HomePage';
 import UrasFeaturesInput from './pages/uras/UrasFeaturesInput';
 
@@ -112,7 +112,6 @@ function App() {
             <Route path="/fbfe" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/logo" component={LogoBanner} />
             <Route path="/index" component={HomePage} />
             <Route path="/test" component={ReactToast} />
             <Route path="/test2" component={ReactToast2} />
