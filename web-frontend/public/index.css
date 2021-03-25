@@ -47,7 +47,7 @@ body * {
   --error-light-text: #bf2600;
   --success-icon-background: #36b37e;
   --success-light-text: #006644;
-  --nav-background: #1f447c;
+  --nav-background: #092e67;
   --nav-border-sep: #21376c;
   --nav-hover-link-color: #ffe08c;
   --nav-link-hover-background: #95bcf721;
@@ -59,6 +59,17 @@ body * {
   --fancy-heading-color: rgba(68, 68, 68, 1);
   --input-box-background: rgba(248, 248, 248, 1);
   --select-box-alt-color: transparent;
+
+  /*logo banner */
+  --logo-banner-maintext: #092e67;
+  --logo-banner-subtext: #8479ff;
+
+  /*welcome text */
+  --welcome-text-top: #555555;
+  --welcome-text-bottom: #000000;
+
+  /*index bg annimation */
+  --bg-annimation: #092e67;
 }
 :root[data-theme='dark'] {
   /*tested*/
@@ -84,7 +95,7 @@ body * {
   --error-light-text: #fff;
   --success-icon-background: #004b2b;
   --success-light-text: #fff;
-  --nav-background: #1c3c6d;
+  --nav-background: #05224d;
   --nav-border-sep: #21376c;
   --nav-hover-link-color: #ffe08c;
   --nav-link-hover-background: #95bcf721;
@@ -98,4 +109,15 @@ body * {
   --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12);
   --primary-border: 1px solid var(--primary-border-grey);
   --select-box-alt-color: rgba(39, 39, 39, 1);
+
+  /*logo banner */
+  --logo-banner-maintext: #ffffff;
+  --logo-banner-subtext: #a097fa;
+
+  /*welcome text */
+  --welcome-text-top: #a5a5a5;
+  --welcome-text-bottom: #ffffff;
+
+  /*index bg annimation */
+  --bg-annimation: #3b89fe;
 }
