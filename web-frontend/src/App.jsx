@@ -13,8 +13,10 @@ import Signup from "./pages/signup/signup";
 import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
-import URASView from './pages/uras/UrasView';
-import UrasResults from './pages/uras/UrasResults';
+import UrasView from "./pages/uras/URASView";
+import UrasResults from "./pages/uras/UrasResults";
+
+
 import { toggleMode } from './common/style.js';
 import Button from './components/buttons/Button';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
@@ -101,8 +103,8 @@ function App() {
             <Route path="/examples" component={Examples} />
             <Route path="/about" component={Login} />
             <Route path="/exkey" component={EXKEY} />
-            <Route path="/analytics/uras" component={URASView} />
-            <Route path="/urasresult" exact component={UrasResults} />
+            <Route path="/analytics/uras" component={UrasView} />
+             <Route path="/urasresult" exact component={UrasResults} /> 
             <Route path="/pssa" component={Home} />
             <Route path="/fbfe" component={Home} />
             <Route path="/login" component={Login} />
