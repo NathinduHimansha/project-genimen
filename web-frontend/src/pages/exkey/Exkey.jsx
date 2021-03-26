@@ -2,7 +2,7 @@ import React from 'react';
 import search from '../../assests/Search.png';
 import './exkey.css';
 import Bargraph from '../../components/graphs/BarGraph';
-import LineGraph from '../../components/graphs/LineGraph';
+import TreeMap from '../../components/graphs/TreeMap';
 import FancyHeading from '../../components/text/FancyHeading';
 import Button from '../../components/buttons/Button';
 import colourful_mobilePhone from '../../assests/colourful.png';
@@ -15,6 +15,7 @@ class Exkey extends React.Component {
 
     this.state = {
       trendingFeatures: [],
+      otherKeywordsList: [],
     };
   }
 
@@ -82,6 +83,14 @@ class Exkey extends React.Component {
         this.setState({ trendingFeatures });
         console.log(trendingFeatures);
       })
+      // otherKeywords()
+      //   .then((response) => {
+      //     this.setState({ data: response.data }), event.preventDefault();
+      //     const otherKeywordsList = response.data.otherKeywords;
+      //     this.setState({ otherKeywordsList });
+      //     console.log(otherKeywordsList);
+      //   })
+
       .catch((error) => {
         if (error) {
         }
@@ -139,7 +148,7 @@ class Exkey extends React.Component {
                   <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
 
                   <div className="treeMap_align">
-                    <LineGraph></LineGraph>
+                    <TreeMap></TreeMap>
                   </div>
                 </div>
 

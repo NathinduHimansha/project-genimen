@@ -4,88 +4,72 @@ import axios from 'axios';
 
 
 const base = `${BASE_URL}/exkey`;
-// const base = `${BASE_URL}/hello`;
 const http = Http(base);
 
 const exkey_mock_otherKeywords = {
-  data: {
-    'otherKeywords': [
-      {
-        keyword:"gorilla screen",
-        value:10,
-      },
-      {
-        keyword:"onscreen fingerprint",
-        value:5,
-      },    
-      {
-        keyword:"108Mp camera",
-        value:15,
-      },
-      {
-        keyword:"facial recognition",
-        value:50,
-      },
-      {
-        keyword:"Good Storage",
-        value:41,
-      },
-      {
-        keyword:"LCD Display",
-        value:100,
-      }, 
-      {
-        keyword:"Budget",
-        value:98,
-      },
-      {
-        keyword:"Snap Dragon chip",
-        value:85,
-      },  {
-        keyword:"wonderful",
-        value:10,
-      },
-      {
-        keyword:"gorilla screen2",
-        value:10,
-      },
-      {
-        keyword:"onscreen fingerprint2",
-        value:5,
-      },    
-      {
-        keyword:"108Mp camera2",
-        value:15,
-      },
-      {
-        keyword:"facial recognition2",
-        value:50,
-      },
-      {
-        keyword:"Good Storage2",
-        value:41,
-      },
-      {
-        keyword:"LCD Display2",
-        value:100,
-      }, 
-      {
-        keyword:"Budget2",
-        value:98,
-      },
-      {
-        keyword:"Snap Dragon chip2",
-        value:85,
-      },  {
-        keyword:"wonderful2",
-        value:10,
-      },
-    ],
+  series: [
+    {
+      'data': [
+        {
+          x: 'Screen',
+          y: 218,
+        },
+        {
+          x: 'great camera',
+          y: 149,
+        },
+        {
+          x: 'good storage',
+          y: 184,
+        },
+        {
+          x: 'front camera',
+          y: 55,
+        },
+        {
+          x: 'long lasting battery',
+          y: 84,
+        },
+        {
+          x: 'Multiple windows',
+          y: 31,
+        },
+        {
+          x: 'Infrared remote control',
+          y: 70,
+        },
+        {
+          x: 'Wireless charging',
+          y: 30,
+        },
+        {
+          x: 'NFC',
+          y: 44,
+        },
+        {
+          x: 'Notch',
+          y: 68,
+        },
+        {
+          x: 'Memory Card Supported',
+          y: 28,
+        },
+        {
+          x: 'Dual Sim port',
+          y: 19,
+        },
+        {
+          x: 'MP Triple Rear camera',
+          y: 29,
+        },
+      ],
+    },
+  ],
 
   status: 1,
-    },
+    
 }
 
 // export const getTrendingFeatures = async () => http.get();
 
-export const trendz = async () => exkey_mock_otherKeywords;
+export const otherKeywordsTrend = async () => exkey_mock_otherKeywords;

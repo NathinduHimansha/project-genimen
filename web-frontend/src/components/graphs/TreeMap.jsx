@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
+import { otherKeywordsTrend } from '../../services/exkey-treemap-service';
 
-class LineGraph extends React.Component {
+class TreeMap extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      test: [],
       series: [
         {
           data: [
@@ -69,12 +71,30 @@ class LineGraph extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.getTreeMapData();
+  }
+
+  getTreeMapData = () => {
+    otherKeywordsTrend()
+      .then((response) => {
+        this.setState({ test: response.series });
+
+        console.log(this.state.test);
+      })
+      .catch((error) => {
+        if (error) {
+        }
+      });
+  };
+
   render() {
+    const test = this.state;
     return (
       <div id="chart">
         <ReactApexChart
           options={this.state.options}
-          series={this.state.series}
+          series={test['data']}
           type="treemap"
           height={260}
           width={500}
@@ -83,4 +103,4 @@ class LineGraph extends React.Component {
     );
   }
 }
-export default LineGraph;
+export default TreeMap;

@@ -9,25 +9,23 @@ import light from './assests/LightMode.png';
 import home from './assests/HomeWhite.png';
 import URAS from './pages/uras/URAS';
 import Login from './pages/login/Login';
-import Signup from "./pages/signup/signup";
+import Signup from './pages/signup/signup';
 import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
-import UrasView from "./pages/uras/URASView";
-import UrasResults from "./pages/uras/UrasResults";
-import ReactToast from "./pages/uras/ReactToast"
-import ReactToast2 from "./pages/uras/ReactToast2"
-
+import UrasView from './pages/uras/URASView';
+import UrasResults from './pages/uras/UrasResults';
+import ReactToast from './pages/uras/ReactToast';
+import ReactToast2 from './pages/uras/ReactToast2';
+import TreeMap from './components/graphs/TreeMap';
 
 import { toggleMode } from './common/style.js';
 import Button from './components/buttons/Button';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 // import Notify from './components/notification/Notify';
 
-
 import HomePage from './pages/index/HomePage';
 import UrasFeaturesInput from './pages/uras/UrasFeaturesInput';
-
 
 const routes = [
   {
@@ -107,7 +105,7 @@ function App() {
             <Route path="/about" component={Login} />
             <Route path="/exkey" component={EXKEY} />
             <Route path="/analytics/uras" component={UrasView} />
-             <Route path="/urasresult" exact component={UrasResults} /> 
+            <Route path="/urasresult" exact component={UrasResults} />
             <Route path="/pssa" component={Home} />
             <Route path="/fbfe" component={Home} />
             <Route path="/login" component={Login} />
@@ -115,6 +113,7 @@ function App() {
             <Route path="/index" component={HomePage} />
             <Route path="/test" component={ReactToast} />
             <Route path="/test2" component={ReactToast2} />
+            <Route path="/test3" component={TreeMap} />
           </Switch>
         </div>
       </Router>
