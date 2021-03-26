@@ -7,7 +7,7 @@ class TreeMap extends React.Component {
     super(props);
 
     this.state = {
-      treeVisibility:false,
+      treeVisibility: false,
       data: [],
       options: {},
     };
@@ -16,30 +16,26 @@ class TreeMap extends React.Component {
   componentDidMount() {
     otherKeywordsTrend()
       .then((response) => {
-        this.setState({ data: response.series,treeVisibility:true });
+        this.setState({ data: response.series, treeVisibility: true });
       })
       .catch((error) => {
         if (error) {
         }
-      }
-    );
+      });
   }
 
   render() {
-    const test = this.state;
     return (
-      <div className="-ml-70" >
-
-        {this.state.treeVisibility==true?
+      <div>
+        {this.state.treeVisibility == true ? (
           <ReactApexChart
             options={this.state.options}
             series={this.state.data}
             type="treemap"
-            height={200}
-            width={450}
+            height={260}
+            width={520}
           />
-        :null}
-
+        ) : null}
       </div>
     );
   }

@@ -20,7 +20,6 @@ class Exkey extends React.Component {
   }
 
   analyzeAgain = (event) => {
-
     document.querySelector('.loader_description').style.animation =
       'typewriter_loadingDescription 2s steps(10) 10ms normal both';
 
@@ -34,8 +33,10 @@ class Exkey extends React.Component {
         document.querySelector('.frequency-bars ') &&
         document.querySelector('.card-left ') &&
         document.querySelector('.card-right ') &&
-        document.querySelector('.loader_progress ')
+        document.querySelector('.loader_progress ') &&
+        document.querySelector('.treeMap_align ')
       ) {
+        document.querySelector('.treeMap_align').style.animation = 'zoomin 2s ease-out forwards';
         document.querySelector('.frequency-bars ').style.visibility = 'visible';
         document.querySelector('.card-left ').style.visibility = 'visible';
         document.querySelector('.card-right ').style.visibility = 'visible';
@@ -84,13 +85,6 @@ class Exkey extends React.Component {
         this.setState({ trendingFeatures });
         console.log(trendingFeatures);
       })
-      // otherKeywords()
-      //   .then((response) => {
-      //     this.setState({ data: response.data }), event.preventDefault();
-      //     const otherKeywordsList = response.data.otherKeywords;
-      //     this.setState({ otherKeywordsList });
-      //     console.log(otherKeywordsList);
-      //   })
 
       .catch((error) => {
         if (error) {
