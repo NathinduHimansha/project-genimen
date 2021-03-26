@@ -5,9 +5,7 @@ import Button from '../../components/buttons/Button';
 import UrasFeaturesInput from './UrasFeaturesInput';
 
 import {analyseFeatures} from '../../services/uras-service';
-import { ToastContainer, toast,Zoom,Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 
 import './uras.css';
 import ReactToast from './ReactToast';
@@ -28,14 +26,11 @@ class UrasView extends Component {
     getRequestedData = (event)=>{
         this.setButtonState(true),
         
-       
         //http request handling
         // analyseFeatures(this.state.selectedFeatures).then((response) => {
         analyseFeatures().then((response) => {
             this.setState({data:response.data,toastVisibility:true}),
             this.setButtonState(true)
-            event.preventDefault();
-            
             // this.routePage()
         })
         .catch(error =>{
@@ -45,7 +40,6 @@ class UrasView extends Component {
         })
     }
   
-
     //change the loading button state
     setButtonState = (state)=>{
         this.setState({
@@ -69,14 +63,12 @@ class UrasView extends Component {
     }
     
     
-
-
     render() {
         return (
             <div style={{ margin: '10% 10%' }}>
 
-{this.state.toastVisibility==true?
-               <ReactToast dataFromParent="a" type="error" message="YAAAAAAAAAAY wadaaaaaaa" close={true} timeout={5000}/> : null}
+                {this.state.toastVisibility==true?
+                    <ReactToast dataFromParent="a" type="error" message="YAAAAAAAAAAY wadaaaaaaa" close={true} timeout={5000}/> : null}
 
                 <div className="-mb-40">
                     <FancyHeading heading="SELECT FEATURES TO ANALYSE" />
