@@ -148,7 +148,7 @@ class Exkey extends React.Component {
                   <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
 
                   <div className="treeMap_align">
-                    <TreeMap></TreeMap>
+                    <TreeMap />
                   </div>
                 </div>
 
