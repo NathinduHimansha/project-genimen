@@ -17,7 +17,7 @@
 
 .logobanner-textbox {
   /* position: absolute; */
-  border-left: 2px solid #043a8c; /* vertical line */
+  border-left: 2px solid var(--welcome-text-top); /* vertical line */
   height: auto;
   width: auto;
   padding-left: 1%;
@@ -27,12 +27,12 @@
 }
 
 .logobanner-maintext {
-  color: #2f4d7d;
+  color: var(--logo-banner-maintext);
   font-size: calc(5px + 3.5vw);
 }
 
 .logobanner-subtext {
-  color: #6557fc;
+  color: var(--logo-banner-subtext);
   font-size: calc(3px + 1vw);
   margin-left: 3px;
   padding-bottom: 10px;

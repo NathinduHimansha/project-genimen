@@ -1,24 +1,53 @@
 import { BASE_URL } from './env';
 import { Http } from '../common/utils';
-import axios from 'axios';
 
 const base = `${BASE_URL}/uras`;
 // const base = `${BASE_URL}/hello`;
 const http = Http(base);
+
+
+const mock1 = [
+    {
+      feature: 'Display',
+      types: ['Normal', 'Curved'],
+      
+    },
+    {
+      feature: 'Size',
+      types: ['Normal', 'Large'],
+      
+    },
+    {
+      feature: 'Fingerprint',
+      types: ['Onscreen', 'Rear'],
+    
+    },
+    {
+      feature: 'Headphone-Jack',
+      types: ['Available', 'None'],
+      
+    },
+    {
+      feature: 'test',
+      types: ['test1', 'test2'],
+      
+    }
+  ];
+  
 
 const mock = {
   data: {
     'feature-sentiment-polarity': [
       {
         feature: 'display',
-        'feature-type': 'curved',
+        type: 'curved',
         neg: 27.616515283397895,
         polarity: 16.698307763182083,
         pos: 44.314823046579974,
       },
       {
         feature: 'size',
-        'feature-type': 'large',
+        type: 'large',
         neg: 11.76470588235294,
         polarity: 52.94117647058823,
         pos: 64.70588235294117,
@@ -27,7 +56,7 @@ const mock = {
     'phone-feature-polarity': [
       {
         feature: 'display',
-        'feature-type': 'curved',
+        type: 'curved',
         neg: 28.634361233480178,
         phone: 'samsung-galaxy-s10+',
         polarity: 12.334801762114537,
@@ -35,7 +64,7 @@ const mock = {
       },
       {
         feature: 'display',
-        'feature-type': 'curved',
+        featuretype: 'curved',
         neg: 24.166666666666668,
         phone: 'samsung-galaxy-s9+',
         polarity: 16.333333333333332,
@@ -43,7 +72,7 @@ const mock = {
       },
       {
         feature: 'display',
-        'feature-type': 'curved',
+        featuretype: 'curved',
         neg: 44.44444444444444,
         phone: 'oneplus-7-pro',
         polarity: -5.55555555555555,
@@ -54,8 +83,9 @@ const mock = {
   status: 1,
 };
 
-export const getFeatures = async () => http.get();
-// export const getFeatures = async () => http.post({ display: 'curved', fingerprint: 'onscreen' });
+// export const getFeatures = async () => http.get();
+export const getFeatures = async () => mock1;
 
 // export const analyseFeatures = async (data) => http.post(data);
 export const analyseFeatures = async () => mock;
+

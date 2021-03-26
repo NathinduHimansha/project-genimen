@@ -13,15 +13,21 @@ import Signup from "./pages/signup/signup";
 import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
-import URASView from './pages/uras/URASView';
-import UrasResults from './pages/uras/UrasResults';
+import UrasView from "./pages/uras/URASView";
+import UrasResults from "./pages/uras/UrasResults";
+import ReactToast from "./pages/uras/ReactToast"
+import ReactToast2 from "./pages/uras/ReactToast2"
+
+
 import { toggleMode } from './common/style.js';
 import Button from './components/buttons/Button';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 // import Notify from './components/notification/Notify';
 
-import LogoBanner from './pages/index/Logobanner';
+
 import HomePage from './pages/index/HomePage';
+import UrasFeaturesInput from './pages/uras/UrasFeaturesInput';
+
 
 const routes = [
   {
@@ -94,20 +100,21 @@ function App() {
           </NavBar>
           <Switch>
             <Route exact path="/" component={Examples}>
-              <Redirect to="/home" />
+              <Redirect to="/index" />
             </Route>
             <Route path="/home" component={HomePage} />
             <Route path="/examples" component={Examples} />
             <Route path="/about" component={Login} />
             <Route path="/exkey" component={EXKEY} />
-            <Route path="/analytics/uras" component={URASView} />
-            <Route path="/urasresult" exact component={UrasResults} />
+            <Route path="/analytics/uras" component={UrasView} />
+             <Route path="/urasresult" exact component={UrasResults} /> 
             <Route path="/pssa" component={Home} />
             <Route path="/fbfe" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/logo" component={LogoBanner} />
             <Route path="/index" component={HomePage} />
+            <Route path="/test" component={ReactToast} />
+            <Route path="/test2" component={ReactToast2} />
           </Switch>
         </div>
       </Router>
