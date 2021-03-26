@@ -42,14 +42,6 @@
   height: 420px;
 }
 
-.word-cloud {
-  margin-left: -180px;
-  animation-duration: 2s;
-  animation-name: trend_animation;
-  width: 1100px;
-  margin-top: -20px;
-}
-
 @keyframes trend_animation {
   from {
     transform: scale(0);
@@ -196,13 +188,13 @@
 }
 
 .colourful_mobilePhone {
-  margin-left: 140px;
+  margin-left: 15%;
   opacity: 0.8;
-  height: 480px;
-  width: 550px;
+  height: 31.25vw;
+  width: 45vw;
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 100px) {
   .analysing_banner {
     opacity: 0.8;
     display: flex;

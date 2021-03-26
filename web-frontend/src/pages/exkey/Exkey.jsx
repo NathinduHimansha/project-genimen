@@ -6,8 +6,17 @@ import LineGraph from '../../components/graphs/LineGraph';
 import FancyHeading from '../../components/text/FancyHeading';
 import Button from '../../components/buttons/Button';
 import colourful_mobilePhone from '../../assests/colourful.png';
+import axios from 'axios';
 
 class Exkey extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      keyword: '',
+      value: '',
+    };
+  }
   analyzeAgain() {
     document.querySelector('.loader_description').style.animation =
       'typewriter_loadingDescription 2s steps(10) 10ms normal both';
@@ -60,7 +69,20 @@ class Exkey extends React.Component {
     }, 3500);
   }
 
+  // componentDidMount() {
+  //   axios
+  //     .get('https://jsonplaceholder.typicode.com/posts')
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }
+
   render() {
+    const { keyword, value } = this.state;
+
     return (
       <div className="main-body">
         <div className="animated_heading">
