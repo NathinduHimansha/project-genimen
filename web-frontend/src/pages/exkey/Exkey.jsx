@@ -83,13 +83,6 @@ class Exkey extends React.Component {
         this.setState({ trendingFeatures });
         console.log(trendingFeatures);
       })
-      // otherKeywords()
-      //   .then((response) => {
-      //     this.setState({ data: response.data }), event.preventDefault();
-      //     const otherKeywordsList = response.data.otherKeywords;
-      //     this.setState({ otherKeywordsList });
-      //     console.log(otherKeywordsList);
-      //   })
 
       .catch((error) => {
         if (error) {

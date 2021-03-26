@@ -9,7 +9,7 @@ const http = Http(base);
 const exkey_mock_otherKeywords = {
   series: [
     {
-      'data': [
+      data: [
         {
           x: 'Screen',
           y: 218,
