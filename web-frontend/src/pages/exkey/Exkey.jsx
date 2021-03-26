@@ -20,6 +20,7 @@ class Exkey extends React.Component {
   }
 
   analyzeAgain = (event) => {
+
     document.querySelector('.loader_description').style.animation =
       'typewriter_loadingDescription 2s steps(10) 10ms normal both';
 
@@ -148,7 +149,7 @@ class Exkey extends React.Component {
                   <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
 
                   <div className="treeMap_align">
-                    <TreeMap></TreeMap>
+                    <TreeMap />
                   </div>
                 </div>
 

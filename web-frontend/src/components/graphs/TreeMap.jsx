@@ -7,98 +7,39 @@ class TreeMap extends React.Component {
     super(props);
 
     this.state = {
-      test: [],
-      series: [
-        {
-          data: [
-            {
-              x: 'Screen',
-              y: 218,
-            },
-            {
-              x: 'great camera',
-              y: 149,
-            },
-            {
-              x: 'good storage',
-              y: 184,
-            },
-            {
-              x: 'front camera',
-              y: 55,
-            },
-            {
-              x: 'long lasting battery',
-              y: 84,
-            },
-            {
-              x: 'Multiple windows',
-              y: 31,
-            },
-            {
-              x: 'Infrared remote control',
-              y: 70,
-            },
-            {
-              x: 'Wireless charging',
-              y: 30,
-            },
-            {
-              x: 'NFC',
-              y: 44,
-            },
-            {
-              x: 'Notch',
-              y: 68,
-            },
-            {
-              x: 'Memory Card Supported',
-              y: 28,
-            },
-            {
-              x: 'Dual Sim port',
-              y: 19,
-            },
-            {
-              x: 'MP Triple Rear camera',
-              y: 29,
-            },
-          ],
-        },
-      ],
-
+      treeVisibility:false,
+      data: [],
       options: {},
     };
   }
 
   componentDidMount() {
-    this.getTreeMapData();
-  }
-
-  getTreeMapData = () => {
     otherKeywordsTrend()
       .then((response) => {
-        this.setState({ test: response.series });
-
-        console.log(this.state.test);
+        this.setState({ data: response.series,treeVisibility:true });
       })
       .catch((error) => {
         if (error) {
         }
-      });
-  };
+      }
+    );
+  }
 
   render() {
     const test = this.state;
     return (
-      <div id="chart">
-        <ReactApexChart
-          options={this.state.options}
-          series={test['data']}
-          type="treemap"
-          height={260}
-          width={500}
-        />
+      <div className="-ml-70" >
+
+        {this.state.treeVisibility==true?
+          <ReactApexChart
+            options={this.state.options}
+            series={this.state.data}
+            type="treemap"
+            height={200}
+            width={450}
+          />
+        :null}
+
       </div>
     );
   }
