@@ -33,8 +33,10 @@ class Exkey extends React.Component {
         document.querySelector('.frequency-bars ') &&
         document.querySelector('.card-left ') &&
         document.querySelector('.card-right ') &&
-        document.querySelector('.loader_progress ')
+        document.querySelector('.loader_progress ') &&
+        document.querySelector('.treeMap_align ')
       ) {
+        document.querySelector('.treeMap_align').style.animation = 'zoomin 2s ease-out forwards';
         document.querySelector('.frequency-bars ').style.visibility = 'visible';
         document.querySelector('.card-left ').style.visibility = 'visible';
         document.querySelector('.card-right ').style.visibility = 'visible';
