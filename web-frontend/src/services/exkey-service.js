@@ -2,6 +2,7 @@ import { BASE_URL } from './env';
 import { Http } from '../common/utils';
 import axios from 'axios';
 
+
 const base = `${BASE_URL}/exkey`;
 // const base = `${BASE_URL}/hello`;
 const http = Http(base);
@@ -35,11 +36,11 @@ const exkey_mock = {
       }, 
       {
         keyword:"Budget",
-        value:250,
+        value:98,
       },
       {
         keyword:"Snap Dragon chip",
-        value:135,
+        value:85,
       },  {
         keyword:"wonderful",
         value:10,
@@ -50,8 +51,6 @@ const exkey_mock = {
     },
 }
 
-export const getFeatures = async () => http.get();
-// export const getFeatures = async () => http.post({ display: 'curved', fingerprint: 'onscreen' });
+// export const getTrendingFeatures = async () => http.get();
 
-// export const analyseFeatures = async (data) => http.post(data);
-export const analyseFeatures = async () => exkey_mock;
+export const trendz = async () => exkey_mock;

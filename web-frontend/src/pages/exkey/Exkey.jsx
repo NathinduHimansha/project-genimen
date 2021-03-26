@@ -7,17 +7,18 @@ import FancyHeading from '../../components/text/FancyHeading';
 import Button from '../../components/buttons/Button';
 import colourful_mobilePhone from '../../assests/colourful.png';
 import axios from 'axios';
+import { trendz } from '../../services/exkey-service';
 
 class Exkey extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      keyword: '',
-      value: '',
+      trendingFeatures: [],
     };
   }
-  analyzeAgain() {
+
+  analyzeAgain = (event) => {
     document.querySelector('.loader_description').style.animation =
       'typewriter_loadingDescription 2s steps(10) 10ms normal both';
 
@@ -67,18 +68,25 @@ class Exkey extends React.Component {
           .classList.add('barchart_animation');
       }
     }, 3500);
-  }
+    this.getRequestedData(event);
+  };
 
-  // componentDidMount() {
-  //   axios
-  //     .get('https://jsonplaceholder.typicode.com/posts')
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }
+  //handles the http request and routes the user
+  getRequestedData = (event) => {
+    //http request handling
+    // trendz(this.state.selectedFeatures).then((response) => {
+    trendz()
+      .then((response) => {
+        this.setState({ data: response.data }), event.preventDefault();
+        const trendingFeatures = response.data.trend;
+        this.setState({ trendingFeatures });
+        console.log(trendingFeatures);
+      })
+      .catch((error) => {
+        if (error) {
+        }
+      });
+  };
 
   render() {
     const { keyword, value } = this.state;
@@ -104,7 +112,7 @@ class Exkey extends React.Component {
                 </div>
 
                 <div className="frequency-bars" style={{ visibility: 'hidden' }}>
-                  {[
+                  {/* {[
                     { percentage: 32, label: 'gorilla glass' },
                     { percentage: 20, label: '108Mp camera' },
                     { percentage: 100, label: 'facial recognition' },
@@ -116,6 +124,9 @@ class Exkey extends React.Component {
                     { percentage: 62, label: 'Snap Dragon chip' },
                   ].map((item, i) => (
                     <Bargraph key={i} percentage={item.percentage} label={item.label}></Bargraph>
+                  ))} */}
+                  {this.state.trendingFeatures.map((item, i) => (
+                    <Bargraph key={i} value={item.value} keyword={item.keyword}></Bargraph>
                   ))}
                 </div>
               </div>
