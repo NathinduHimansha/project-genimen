@@ -155,11 +155,17 @@ class Exkey extends React.Component {
                     <div className="line_progress"></div>
                   </div>
                   <div className="wrapper_progressBar">
-                    <div class="loader-5">
+                    {/* <div class="loader-5">
                       <div class="loader-5-rect loader-5-rect-1"></div>
                       <div class="loader-5-rect loader-5-rect-2"></div>
                       <div class="loader-5-rect loader-5-rect-3"></div>
                       <div class="loader-5-rect loader-5-rect-4"></div>
+                    </div> */}
+                    <div class="wifi-symbol">
+                      <div class="wifi-circle first"></div>
+                      <div class="wifi-circle second"></div>
+                      <div class="wifi-circle third"></div>
+                      <div class="wifi-circle fourth"></div>
                     </div>
                   </div>
                   <div className="loader_description">
@@ -168,14 +174,14 @@ class Exkey extends React.Component {
                     </h2>
                   </div>
                 </div>
+              </div>
 
-                <div className="analyze_again" style={{ visibility: 'visible' }}>
-                  <div className="-flex -mt-40">
-                    <div className="-flex-right">
-                      <Button onClick={this.analyzeAgain} iconSrc={search} loading={false}>
-                        Start Analysing
-                      </Button>
-                    </div>
+              <div className="analyze_again" style={{ visibility: 'visible' }}>
+                <div className="-flex -mt-40">
+                  <div className="-flex-right">
+                    <Button onClick={this.analyzeAgain} iconSrc={search} loading={false}>
+                      Start Analysing
+                    </Button>
                   </div>
                 </div>
               </div>

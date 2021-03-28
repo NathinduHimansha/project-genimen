@@ -24,6 +24,12 @@
   grid-gap: 20px;
 }
 
+@media only screen and (max-width: 350px) {
+  .cards-split {
+    margin-left: 10px;
+  }
+}
+
 .card-left {
   display: block;
   border: 1px solid var(--primary-border-grey);
@@ -179,19 +185,22 @@
   bottom: 20px;
   right: -5px;
 }
+.analyze_again {
+  display: grid;
+  flex-wrap: wrap;
+  margin-top: 26%;
+  margin-left: 60%;
+  animation-name: wobble;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 2.3s;
+  position: absolute;
+  width: 10vw;
+}
 
-@media screen and (min-width: 10px) {
+@media only screen and (max-width: 1000px) {
   .analyze_again {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: -1%;
-    margin-left: 10%;
-    animation-name: wobble;
-    -webkit-animation-duration: 0.8s;
-    -webkit-animation-timing-function: linear;
-    -webkit-transform-origin: 50% 100%;
-    animation-duration: 2.3s;
-    position: absolute;
+    margin-top: 250px;
+    margin-left: 0px;
   }
 }
 
@@ -262,14 +271,13 @@
   top: 50%;
   left: 48%;
 }
-@media screen and (min-width: 150vh) {
-  .line_loader {
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-    right: -150px;
-    bottom: -170px;
-  }
+
+.line_loader {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  right: -150px;
+  bottom: -170px;
 }
 
 .line_progress {
@@ -280,6 +288,13 @@
   margin: 0 5px;
   width: 2px;
   height: 15px;
+}
+
+@media only screen and (max-width: 850px) {
+  .line_loader {
+    margin-right: 560px;
+    top: 270px;
+  }
 }
 
 .line_progress:nth-child(1) {
@@ -312,7 +327,7 @@
 
 .loader_description {
   display: grid;
-  margin-top: 20px;
+  margin-top: 100px;
   margin-left: -80px;
   font-size: 1.8rem;
   font-weight: bold;
@@ -320,6 +335,11 @@
   border-right: 2px solid rgba(255, 255, 255, 0.75);
   overflow: hidden;
   white-space: nowrap;
+}
+@media only screen and (max-width: 500px) {
+  .loader_description {
+    margin-left: -130px;
+  }
 }
 
 @keyframes typewriter_loadingDescription {
@@ -335,8 +355,14 @@
   width: 620px;
   max-width: 50%;
   display: grid;
-  margin-top: 10%;
-  margin-left: 0%;
+  margin-top: 5%;
+  margin-left: 20%;
+}
+
+@media only screen and (max-width: 500px) {
+  .wrapper_progressBar {
+    margin-left: -40px;
+  }
 }
 
 /* Circular rect loader */
@@ -406,5 +432,107 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+/*****************************************************************************************/
+.wifi-symbol {
+  display: none;
+  display: block;
+  position: absolute;
+  display: inline-block;
+  -ms-transform: rotate(-45deg) translate(-100px);
+  -moz-transform: rotate(-45deg) translate(-100px);
+  -o-transform: rotate(-45deg) translate(-100px);
+  -webkit-transform: rotate(-45deg) translate(-100px);
+  transform: rotate(-45deg) translate(-100px);
+}
+
+@media only screen and (max-width: 500px) {
+  .wifi-symbol {
+    margin-left: 100px;
+  }
+}
+
+.wifi-circle {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-style: solid;
+  border-width: 1em 1em 0 0;
+  -webkit-border-radius: 0 100% 0 0;
+  border-radius: 0 100% 0 0;
+  opacity: 0.8;
+  -o-animation: wifianimation 1s infinite;
+  -moz-animation: wifianimation 1s infinite;
+  -webkit-animation: wifianimation 1s infinite;
+  animation: wifianimation 1s infinite;
+  color: var(--pos-green);
+}
+
+.first {
+  animation-delay: 1ms;
+}
+.second {
+  width: 5em;
+  height: 5em;
+  animation-delay: 400ms;
+}
+.third {
+  width: 3em;
+  height: 3em;
+}
+.fourth {
+  width: 1em;
+  height: 1em;
+  opacity: 0;
+  animation: none;
+}
+
+@-o-keyframes wifianimation {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opactiy: 1;
+  }
+  6% {
+    opactiy: 0.1;
+  }
+  100% {
+    opactiy: 0.1;
+  }
+}
+@-moz-keyframes wifianimation {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opactiy: 1;
+  }
+  6% {
+    opactiy: 0.1;
+  }
+  100% {
+    opactiy: 0.1;
+  }
+}
+@-webkit-keyframes wifianimation {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opactiy: 1;
+  }
+  6% {
+    opactiy: 0.1;
+  }
+  100% {
+    opactiy: 0.1;
   }
 }
