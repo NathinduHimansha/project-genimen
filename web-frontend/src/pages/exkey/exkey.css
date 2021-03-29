@@ -24,12 +24,6 @@
   grid-gap: 20px;
 }
 
-@media only screen and (max-width: 350px) {
-  .cards-split {
-    margin-left: 10px;
-  }
-}
-
 .card-left {
   display: block;
   border: 1px solid var(--primary-border-grey);
@@ -46,6 +40,27 @@
   background-color: var(--analytics-card);
   width: 700px;
   height: 420px;
+}
+
+@media only screen and (max-width: 500px) {
+  .card-left {
+    width: 300px;
+    height: 200px;
+    margin-left: -20px;
+    margin-top: -48px;
+  }
+  .card-right {
+    width: 300px;
+    height: 200px;
+    margin-left: -20px;
+    margin-top: -10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .card-topic {
+    margin-left: -50px;
+  }
 }
 
 @keyframes trend_animation {
@@ -133,6 +148,13 @@
   position: absolute;
 }
 
+@media only screen and (max-width: 500px) {
+  .frequency_percentage {
+    top: 115px;
+    font-size: 1rem;
+  }
+}
+
 .frequency-bars {
   height: 220px;
   background-color: var(--primary-white);
@@ -143,12 +165,31 @@
   margin-top: 120px;
 }
 
+@media only screen and (max-width: 500px) {
+  .frequency-bars {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-right: 0px;
+    flex-wrap: nowrap;
+  }
+}
+
 .barHighlight {
   height: 100%;
   width: 30px;
   background-color: #d9f0f3;
   margin-right: 40px;
   position: relative;
+}
+
+@media only screen and (max-width: 500px) {
+  .barHighlight {
+    width: 13px;
+    position: relative;
+    margin-right: 15px;
+    height: 110px;
+  }
 }
 
 .barchart_animation {
@@ -171,6 +212,12 @@
   bottom: 0px;
 }
 
+@media only screen and (max-width: 500px) {
+  .progress-percentage {
+    width: 13px;
+  }
+}
+
 .barchartKeyword {
   writing-mode: tb-rl;
   transform: rotate(-180deg);
@@ -185,6 +232,14 @@
   bottom: 20px;
   right: -5px;
 }
+
+@media only screen and (max-width: 500px) {
+  .barchartKeyword {
+    right: 0.2px;
+    font-size: 0.9rem;
+  }
+}
+
 .analyze_again {
   display: grid;
   flex-wrap: wrap;
@@ -290,7 +345,7 @@
   height: 15px;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1500px) {
   .line_loader {
     margin-right: 560px;
     top: 270px;
@@ -416,8 +471,19 @@
 }
 
 .treeMap_align {
-  margin-left: -190px;
-  margin-top: 100px;
+  margin-left: -160px;
+  margin-top: 80px;
+  width: 110%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+  .treeMap_align {
+    margin-left: -100px;
+    margin-top: -20px;
+    width: 140%;
+    height: 40%;
+  }
 }
 
 @keyframes fadeIn {

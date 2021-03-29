@@ -32,8 +32,8 @@ class TreeMap extends React.Component {
             options={this.state.options}
             series={this.state.data}
             type="treemap"
-            height={260}
-            width={520}
+            // height={260}
+            // width={520}
           />
         ) : null}
       </div>

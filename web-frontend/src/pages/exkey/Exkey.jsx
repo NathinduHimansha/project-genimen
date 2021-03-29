@@ -110,7 +110,9 @@ class Exkey extends React.Component {
             <div className="analytics-container cards-split -mt-40">
               <div className="card-left" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-left">
-                  <h3 className="heading3 -medium">TREND</h3>
+                  <div className="card-topic">
+                    <h3 className="heading3 -medium">TREND</h3>
+                  </div>
                 </div>
 
                 <div className="frequency-bars" style={{ visibility: 'hidden' }}>
@@ -140,8 +142,9 @@ class Exkey extends React.Component {
               </div>
               <div className="card-right" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-right -mb-auto -flex-middle">
-                  <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
-
+                  <div className="card-topic">
+                    <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
+                  </div>
                   <div className="treeMap_align">
                     <TreeMap />
                   </div>
