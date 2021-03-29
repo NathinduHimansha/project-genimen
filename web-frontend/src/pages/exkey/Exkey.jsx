@@ -2,61 +2,45 @@ import React from 'react';
 import search from '../../assests/Search.png';
 import './exkey.css';
 import Bargraph from '../../components/graphs/BarGraph';
-import LineGraph from '../../components/graphs/LineGraph';
+import TreeMap from '../../components/graphs/TreeMap';
 import FancyHeading from '../../components/text/FancyHeading';
 import Button from '../../components/buttons/Button';
-import banner from '../../assests/MagnifierAnalysingBanner.png';
-import magnify_barChart from '../../assests/bar_chart.png';
+import colourful_mobilePhone from '../../assests/colourful.png';
+import axios from 'axios';
+import { trendz } from '../../services/exkey-bargraph-service';
 
 class Exkey extends React.Component {
-  analyzeAgain() {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      trendingFeatures: [],
+      otherKeywordsList: [],
+    };
+  }
+
+  analyzeAgain = (event) => {
     document.querySelector('.loader_description').style.animation =
       'typewriter_loadingDescription 2s steps(10) 10ms normal both';
 
-    document.querySelectorAll('.bar_loading').forEach(function (current) {
-      let startWidth = 0;
-      const endWidth = current.dataset.size;
+    document.querySelector('.analyze_again ').style.visibility = 'hidden';
+    document.querySelector('.analysing_banner').style.visibility = 'hidden';
 
-      /* 
-      setInterval() time sholud be set as trasition time / 100. 
-      In our case, 2 seconds / 100 = 20 milliseconds. 
-      */
-      const interval = setInterval(frame, 30);
+    document.querySelector('.loader_progress ').style.visibility = 'visible';
 
-      function frame() {
-        if (startWidth >= endWidth) {
-          clearInterval(interval);
-        } else {
-          startWidth++;
-          current.style.width = `${endWidth}%`;
-          current.firstElementChild.innerText = `${startWidth}%`;
-        }
-      }
-    });
-
-    var i = 0;
-    var counter = setInterval(function () {
-      i++;
-
-      document.querySelector('.analyze_again ').style.visibility = 'hidden';
-      document.querySelector('.analysing_banner_left ').style.visibility = 'hidden';
-      document.querySelector('.analysing_banner_right ').style.visibility = 'hidden';
-
-      document.querySelector('.loader_progress ').style.visibility = 'visible';
-
-      if (i === 100) {
-        clearInterval(counter);
-
+    setTimeout(function () {
+      if (
+        document.querySelector('.frequency-bars ') &&
+        document.querySelector('.card-left ') &&
+        document.querySelector('.card-right ') &&
+        document.querySelector('.loader_progress ') &&
+        document.querySelector('.treeMap_align ')
+      ) {
+        document.querySelector('.treeMap_align').style.animation = 'fadeIn 3s ease-out';
         document.querySelector('.frequency-bars ').style.visibility = 'visible';
         document.querySelector('.card-left ').style.visibility = 'visible';
         document.querySelector('.card-right ').style.visibility = 'visible';
         document.querySelector('.loader_progress ').style.visibility = 'hidden';
-
-        // document.querySelector('.word-cloud ').style.display = 'block';
-
-        document
-          .getElementsByClassName('progress-percentage')[0]
-          .classList.add('barchart_animation');
 
         document
           .getElementsByClassName('progress-percentage')[0]
@@ -86,8 +70,27 @@ class Exkey extends React.Component {
           .getElementsByClassName('progress-percentage')[8]
           .classList.add('barchart_animation');
       }
-    }, 30);
-  }
+    }, 3500);
+    this.getRequestedData(event);
+  };
+
+  //handles the http request and routes the user
+  getRequestedData = (event) => {
+    //http request handling
+    // trendz(this.state.selectedFeatures).then((response) => {
+    trendz()
+      .then((response) => {
+        this.setState({ data: response.data }), event.preventDefault();
+        const trendingFeatures = response.data.trend;
+        this.setState({ trendingFeatures });
+        console.log(trendingFeatures);
+      })
+
+      .catch((error) => {
+        if (error) {
+        }
+      });
+  };
 
   render() {
     return (
@@ -107,18 +110,13 @@ class Exkey extends React.Component {
             <div className="analytics-container cards-split -mt-40">
               <div className="card-left" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-left">
-                  <h3 className="heading3 -medium">TREND</h3>
-                  <div className="analysing_banner_left" style={{ visibility: 'visible' }}>
-                    <img
-                      className="magnify_banner"
-                      src={banner}
-                      style={{ width: '350px', height: '300px' }}
-                    />
+                  <div className="card-topic">
+                    <h3 className="heading3 -medium">TREND</h3>
                   </div>
                 </div>
 
                 <div className="frequency-bars" style={{ visibility: 'hidden' }}>
-                  {[
+                  {/* {[
                     { percentage: 32, label: 'gorilla glass' },
                     { percentage: 20, label: '108Mp camera' },
                     { percentage: 100, label: 'facial recognition' },
@@ -130,22 +128,25 @@ class Exkey extends React.Component {
                     { percentage: 62, label: 'Snap Dragon chip' },
                   ].map((item, i) => (
                     <Bargraph key={i} percentage={item.percentage} label={item.label}></Bargraph>
+                  ))} */}
+                  {this.state.trendingFeatures.map((item, i) => (
+                    <Bargraph key={i} value={item.value} keyword={item.keyword}></Bargraph>
                   ))}
                 </div>
               </div>
-
+              <div className="analysing_banner" style={{ visibility: 'visible' }}>
+                <img
+                  className="colourful_mobilePhone banner_allignment"
+                  src={colourful_mobilePhone}
+                />
+              </div>
               <div className="card-right" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-right -mb-auto -flex-middle">
-                  <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
-                  <div className="analysing_banner_right" style={{ visibility: 'visible' }}>
-                    <img
-                      className="magnify_barChart"
-                      src={magnify_barChart}
-                      style={{ width: '400px', height: '300px' }}
-                    />
+                  <div className="card-topic">
+                    <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
                   </div>
                   <div className="treeMap_align">
-                    <LineGraph></LineGraph>
+                    <TreeMap />
                   </div>
                 </div>
 
@@ -157,11 +158,17 @@ class Exkey extends React.Component {
                     <div className="line_progress"></div>
                   </div>
                   <div className="wrapper_progressBar">
-                    <div class="loader-5">
+                    {/* <div class="loader-5">
                       <div class="loader-5-rect loader-5-rect-1"></div>
                       <div class="loader-5-rect loader-5-rect-2"></div>
                       <div class="loader-5-rect loader-5-rect-3"></div>
                       <div class="loader-5-rect loader-5-rect-4"></div>
+                    </div> */}
+                    <div class="wifi-symbol">
+                      <div class="wifi-circle first"></div>
+                      <div class="wifi-circle second"></div>
+                      <div class="wifi-circle third"></div>
+                      <div class="wifi-circle fourth"></div>
                     </div>
                   </div>
                   <div className="loader_description">
@@ -170,14 +177,14 @@ class Exkey extends React.Component {
                     </h2>
                   </div>
                 </div>
+              </div>
 
-                <div className="analyze_again" style={{ visibility: 'visible' }}>
-                  <div className="-flex -mt-40">
-                    <div className="-flex-right">
-                      <Button onClick={this.analyzeAgain} iconSrc={search} loading={false}>
-                        Start Analysing
-                      </Button>
-                    </div>
+              <div className="analyze_again" style={{ visibility: 'visible' }}>
+                <div className="-flex -mt-40">
+                  <div className="-flex-right">
+                    <Button onClick={this.analyzeAgain} iconSrc={search} loading={false}>
+                      Start Analysing
+                    </Button>
                   </div>
                 </div>
               </div>
