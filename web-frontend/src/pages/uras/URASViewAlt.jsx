@@ -19,7 +19,7 @@ const URASViewAlt = () => {
   useEffect(() => {}, []);
 
   return (
-    <div className="navbar-page-container">
+    <div className="navbar-page-container -mb-40">
       <div className="app-heading-header content-padding">
         <FancyHeading heading="ANALYSE SMARTPHONE FEATURES" className="-bold"></FancyHeading>
       </div>

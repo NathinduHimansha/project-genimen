@@ -82,7 +82,8 @@
   }
 }
 .navbar:hover .nav-logo-wrapper {
-  width: 15rem;
+  width: 15vh;
+  height: 15vh;
   opacity: 1;
   animation: logoPop 0.25s ease forwards;
 }
@@ -90,7 +91,7 @@
   opacity: 0;
   transition: 200ms ease;
   width: 0;
-  height: 15rem;
+  height: 15vh;
   display: flex;
   justify-content: center;
   /* transition: 300ms ease; */
