@@ -45,7 +45,7 @@ body * {
   --gap-medium: 25px;
 
   /* dark-mode exceptions */
-  --info-focus-card-background: #c2f8ff;
+  --info-focus-card-background: #e8faff;
   --info-focus-card-border-color: #71ddff;
   --heading2-sep-grey: rgb(200, 200, 200);
   --error-icon-background: #ff5630;

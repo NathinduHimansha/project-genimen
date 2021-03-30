@@ -32,23 +32,23 @@ const URASViewAlt = () => {
         {/* </h4> */}
         {/* </IconHeading> */}
         {/* </div> */}
+        <div className="header-current-location -mb-30">
+          {paths.map((path, i) => {
+            return (
+              <NavLink to={path} className="header-current-location-link">
+                {i == 0 ? <span className="">{path}</span> : <span className="">{path}</span>}
+              </NavLink>
+            );
+          })}
+        </div>
         <h2 className="fancy-heading -no-margin">ANALYSE SMARTPHONE FEATURES</h2>
-        {/* <div className="header-current-location"> */}
-        {/* {paths.map((path, i) => { */}
-        {/* return ( */}
-        {/* <NavLink to={path} className="header-current-location-link"> */}
-        {/* {i == 0 ? <span className="">{path}</span> : <span className="">/{path}</span>} */}
-        {/* </NavLink> */}
-        {/* ); */}
-        {/* })} */}
-        {/* </div> */}
       </div>
       <div className=" -mt-60 -mb-40 content-padding">
-        <FancyHeading decoratorClassName="fancy-heading2-decorator">
-          <h2 className="heading2 -medium -no-margin heading2-sep-margin">
-            Select Features To Analyse
-          </h2>
-        </FancyHeading>
+        {/* <FancyHeading decoratorClassName="fancy-heading2-decorator"> */}
+        <h2 className="heading2 -medium -no-margin heading2-sep-margin">
+          Select Features To Analyse
+        </h2>
+        {/* </FancyHeading> */}
         <hr className="heading-sep" />
       </div>
       <div className="feature-selection-block">

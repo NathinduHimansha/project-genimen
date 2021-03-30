@@ -713,8 +713,8 @@ button.signup-btn {
 }
 /* heading header */
 .app-heading-header {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   padding-right: 150px !important;
   border-bottom: 4px solid var(--lighter-grey);
   display: flex;
@@ -739,10 +739,23 @@ button.signup-btn {
 }
 /* header route path location */
 .header-current-location {
-  margin-left: auto;
+  /* margin-left: auto; */
+  background-color: #ddf4ff53;
+  width: fit-content;
+  border: 1px solid #95dcff;
+  border-radius: 3px;
+}
+.header-current-location-link:last-child {
+  border-right: 0;
 }
 .header-current-location-link {
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: var(--link-blue);
+  display: inline-block;
+  padding: 2px 10px;
+  border-right: 1px solid #95dcff;
+}
+.header-current-location-link.active {
 }
 .header-current-location span {
   font-size: 1.6rem;
