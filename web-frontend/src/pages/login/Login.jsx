@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { Context } from '../../components/sate_management/GlobalStore';
 import Button from '../../components/buttons/Button';
 import logo from '../../assests/Geniman.png';
 import banner from '../../assests/LineChartBanner.png';
@@ -18,6 +19,10 @@ const Login = (props) => {
   const { addToast } = useToasts();
   const history = useHistory();
 
+  const [state, dispatch] = useContext(Context);
+  useEffect(() => {
+    console.log(state);
+  }, []);
   const onPasswordFocus = () => {
     setPasswordError(false);
   };

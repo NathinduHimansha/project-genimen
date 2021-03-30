@@ -27,6 +27,7 @@ import { ToastProvider, useToasts } from 'react-toast-notifications';
 import HomePage from './pages/index/HomePage';
 import UrasFeaturesInput from './pages/uras/UrasFeaturesInput';
 import UrasUserView from './pages/uras/UrasUserView';
+import Store from './components/sate_management/GlobalStore';
 
 const routes = [
   {
@@ -56,70 +57,72 @@ const routes = [
 function App() {
   const [themeMode, setTheme] = useState('dark');
   return (
-    <ToastProvider autoDismissTimeout={3000} autoDismiss={true} placement={'top-center'}>
-      <Router>
-        <div className="App">
-          <NavBar routes={routes}>
-            <div className="theme-switch -flex -flex-center -mt-50">
-              <img
-                className={themeMode == 'light' ? 'dark-mode-icon -opacity-0' : 'dark-mode-icon'}
-                src={dark}
-                onClick={() => {
-                  toggleMode();
-                  if (themeMode == 'dark') {
-                    setTheme('light');
-                  } else {
-                    setTheme('dark');
-                  }
-                }}
-              />
-              <img
-                className={themeMode == 'dark' ? 'light-mode-icon -opacity-0' : 'light-mode-icon'}
-                src={light}
-                onClick={() => {
-                  toggleMode();
-                  if (themeMode == 'dark') {
-                    setTheme('light');
-                  } else {
-                    setTheme('dark');
-                  }
-                }}
-              />
-            </div>
-            <div className="auth-btn-wrapper -flex -flex-center -mt-auto">
-              <NavLink className="login-btn-link" exact to="/signup">
-                <Button outline={true} utilClasses="signup-btn">
-                  Sign Up
-                </Button>
-              </NavLink>
-              <NavLink className="login-btn-link" exact to="/login">
-                <Button utilClasses=" login-btn">Login</Button>
-              </NavLink>
-            </div>
-          </NavBar>
-          <Switch>
-            <Route exact path="/" component={Examples}>
-              <Redirect to="/index" />
-            </Route>
-            <Route path="/home" component={HomePage} />
-            <Route path="/examples" component={Examples} />
-            <Route path="/about" component={Login} />
-            <Route path="/exkey" component={EXKEY} />
-            <Route path="/analytics/uras" component={UrasView} />
-            <Route path="/urasresult" exact component={UrasResults} />
-            <Route path="/pssa" component={Home} />
-            <Route path="/fbfe" component={Home} />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/index" component={HomePage} />
-            <Route path="/test" component={ReactToast} />
-            <Route path="/test2" component={ReactToast2} />
-            <Route path="/test3" component={TreeMap} />
-            <Route path="/test4" component={UrasUserView} />
-          </Switch>
-        </div>
-      </Router>
-    </ToastProvider>
+    <Store>
+      <ToastProvider autoDismissTimeout={3000} autoDismiss={true} placement={'top-center'}>
+        <Router>
+          <div className="App">
+            <NavBar routes={routes}>
+              <div className="theme-switch -flex -flex-center -mt-50">
+                <img
+                  className={themeMode == 'light' ? 'dark-mode-icon -opacity-0' : 'dark-mode-icon'}
+                  src={dark}
+                  onClick={() => {
+                    toggleMode();
+                    if (themeMode == 'dark') {
+                      setTheme('light');
+                    } else {
+                      setTheme('dark');
+                    }
+                  }}
+                />
+                <img
+                  className={themeMode == 'dark' ? 'light-mode-icon -opacity-0' : 'light-mode-icon'}
+                  src={light}
+                  onClick={() => {
+                    toggleMode();
+                    if (themeMode == 'dark') {
+                      setTheme('light');
+                    } else {
+                      setTheme('dark');
+                    }
+                  }}
+                />
+              </div>
+              <div className="auth-btn-wrapper -flex -flex-center -mt-auto">
+                <NavLink className="login-btn-link" exact to="/signup">
+                  <Button outline={true} utilClasses="signup-btn">
+                    Sign Up
+                  </Button>
+                </NavLink>
+                <NavLink className="login-btn-link" exact to="/login">
+                  <Button utilClasses=" login-btn">Login</Button>
+                </NavLink>
+              </div>
+            </NavBar>
+            <Switch>
+              <Route exact path="/" component={Examples}>
+                <Redirect to="/index" />
+              </Route>
+              <Route path="/home" component={HomePage} />
+              <Route path="/examples" component={Examples} />
+              <Route path="/about" component={Login} />
+              <Route path="/exkey" component={EXKEY} />
+              <Route path="/analytics/uras" component={UrasView} />
+              <Route path="/urasresult" exact component={UrasResults} />
+              <Route path="/pssa" component={Home} />
+              <Route path="/fbfe" component={Home} />
+              <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/index" component={HomePage} />
+              <Route path="/test" component={ReactToast} />
+              <Route path="/test2" component={ReactToast2} />
+              <Route path="/test3" component={TreeMap} />
+              <Route path="/test4" component={UrasUserView} />
+            </Switch>
+          </div>
+        </Router>
+      </ToastProvider>
+    </Store>
   );
 }
 

@@ -13,7 +13,6 @@ import Button from '../buttons/Button';
 
 const NavBar = (props) => {
   const history = useHistory();
-  console.log(history);
   const { routes } = props;
   let path = useLocation().pathname;
   const imageClick = () => {
