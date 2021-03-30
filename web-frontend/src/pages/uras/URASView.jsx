@@ -29,9 +29,9 @@ class UrasView extends Component {
         //http request handling
         // analyseFeatures(this.state.selectedFeatures).then((response) => {
         analyseFeatures().then((response) => {
-            this.setState({data:response.data,toastVisibility:true}),
-            this.setButtonState(true)
-            // this.routePage()
+            this.setState({data:response.data}),
+            this.setButtonState(false)
+            this.routePage()
         })
         .catch(error =>{
             if(error){
