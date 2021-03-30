@@ -32,11 +32,7 @@ const URASViewAlt = () => {
         {/* </h4> */}
         {/* </IconHeading> */}
         {/* </div> */}
-        <FancyHeading
-          heading="ANALYSE SMARTPHONE FEATURES"
-          className="-bold"
-          // decorator={false}
-        ></FancyHeading>
+        <h2 className="fancy-heading -no-margin">ANALYSE SMARTPHONE FEATURES</h2>
         {/* <div className="header-current-location"> */}
         {/* {paths.map((path, i) => { */}
         {/* return ( */}
@@ -48,9 +44,11 @@ const URASViewAlt = () => {
         {/* </div> */}
       </div>
       <div className=" -mt-60 -mb-40 content-padding">
-        <h2 className="heading2 -medium -no-margin heading2-sep-margin">
-          Select Features To Analyse
-        </h2>
+        <FancyHeading>
+          <h2 className="heading2 -medium -no-margin heading2-sep-margin">
+            Select Features To Analyse
+          </h2>
+        </FancyHeading>
         <hr className="heading-sep" />
       </div>
       <div className="feature-selection-block">
