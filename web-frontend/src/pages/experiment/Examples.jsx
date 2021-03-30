@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import { Context } from '../../components/sate_management/GlobalStore';
 import CircularProgress from '../../components/graphs/CircularProgress';
 import ProgressBar from '../../components/graphs/ProgressBar';
 import FancyHeading from '../../components/text/FancyHeading';
@@ -15,8 +16,11 @@ import IconHeading from '../../components/text/IconHeading';
 import SentimentRankCard from '../../components/analytics/SentimentRankCard';
 
 const Examples = () => {
+  const [state, dispatch] = useContext(Context);
+
   const test = getFeatures();
   useEffect(() => {
+    dispatch({ type: 'TOGGLE_LOGIN' });
     test.then((res) => console.log(res));
   }, []);
 
