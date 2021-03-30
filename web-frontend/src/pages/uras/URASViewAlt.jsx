@@ -44,7 +44,7 @@ const URASViewAlt = () => {
         {/* </div> */}
       </div>
       <div className=" -mt-60 -mb-40 content-padding">
-        <FancyHeading>
+        <FancyHeading decoratorClassName="fancy-heading2-decorator">
           <h2 className="heading2 -medium -no-margin heading2-sep-margin">
             Select Features To Analyse
           </h2>

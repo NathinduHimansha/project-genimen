@@ -10,7 +10,15 @@
   width: 60px;
   border-top: 3px solid var(--primary-accent);
 }
-.fancy-heading-decorator-none {
+.fancy-heading2-decorator {
   position: relative;
   margin-top: 8px;
+}
+.fancy-heading2-decorator::before {
+  content: '';
+  left: 2px;
+  top: -17px;
+  position: absolute;
+  width: 40px;
+  border-top: 3px solid var(--primary-accent);
 }
