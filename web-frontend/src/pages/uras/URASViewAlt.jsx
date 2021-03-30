@@ -12,16 +12,40 @@ import { getFeatures } from '../../services/uras-service';
 import Button from '../../components/buttons/Button';
 import SampleFeatureSelection from '../experiment/SampleFeatureSelection';
 import propic from '../../assests/ProfilePic.png';
+import { useHistory, useLocation } from 'react-router';
+import { NavLink } from 'react-router-dom';
+import IconHeading from '../../components/text/IconHeading';
 
 const URASViewAlt = () => {
   const [state, dispatch] = useContext(Context);
+  const paths = useLocation().pathname.substr(1).split('/');
 
   useEffect(() => {}, []);
 
   return (
     <div className="navbar-page-container -mb-40">
-      <div className="app-heading-header content-padding">
-        <FancyHeading heading="ANALYSE SMARTPHONE FEATURES" className="-bold"></FancyHeading>
+      <div className="app-heading-header content-padding -flex -flex-col">
+        {/* <div className="-mb-20"> */}
+        {/* <IconHeading size="extra-small" iconUrl="var(--arrow-back-icon)"> */}
+        {/* <h4 className="heading4 -no-margin"> */}
+        {/* <span className="header-go-back">Back</span> */}
+        {/* </h4> */}
+        {/* </IconHeading> */}
+        {/* </div> */}
+        <FancyHeading
+          heading="ANALYSE SMARTPHONE FEATURES"
+          className="-bold"
+          // decorator={false}
+        ></FancyHeading>
+        {/* <div className="header-current-location"> */}
+        {/* {paths.map((path, i) => { */}
+        {/* return ( */}
+        {/* <NavLink to={path} className="header-current-location-link"> */}
+        {/* {i == 0 ? <span className="">{path}</span> : <span className="">/{path}</span>} */}
+        {/* </NavLink> */}
+        {/* ); */}
+        {/* })} */}
+        {/* </div> */}
       </div>
       <div className=" -mt-60 -mb-40 content-padding">
         <h2 className="heading2 -medium -no-margin heading2-sep-margin">

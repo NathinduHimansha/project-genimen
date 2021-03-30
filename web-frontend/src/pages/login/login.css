@@ -85,7 +85,7 @@ input.error-input {
 }
 .login-signup-message {
   font-size: 1.5rem;
-  color: #0089d7;
+  color: var(--link-blue);
   font-weight: 500;
 }
 .login-signup-btn {

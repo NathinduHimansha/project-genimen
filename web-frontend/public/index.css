@@ -31,6 +31,7 @@ body * {
   --primary-accent-light: rgba(255, 160, 38, 1);
   --primary-accent-dark: rgba(241, 145, 0, 1);
   --secondary-accent: rgba(73, 135, 255, 1);
+  --link-blue: #0089d7;
   --light-grey: rgba(189, 189, 189, 1);
   --lighter-grey: rgb(235, 235, 235);
   --grey: rgba(146, 146, 146, 1);

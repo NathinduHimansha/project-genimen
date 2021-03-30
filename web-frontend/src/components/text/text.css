@@ -16,3 +16,7 @@ h1.fancy-heading {
   width: 60px;
   border-top: 3px solid var(--primary-accent);
 }
+.fancy-heading-decorator-none {
+  position: relative;
+  margin-top: 8px;
+}

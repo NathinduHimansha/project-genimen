@@ -4,6 +4,7 @@
   --size-icon: url('/dist/assests/Size.png');
   --headphone-jack-icon: url('/dist/assests/HeadphoneJack.png');
   --fingerprint-icon: url('/dist/assests/FingerPrint.png');
+  --arrow-back-icon: url('/dist/assests/ArrowBack.png');
 }
 :root[data-theme='dark'] {
   --display-icon: url('/dist/assests/DisplayLight.png');
@@ -711,7 +712,11 @@ button.signup-btn {
   padding-right: 150px !important;
   border-bottom: 4px solid var(--lighter-grey);
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+}
+.header-go-back {
+  color: #a0a0a0;
+  font-weight: 300;
 }
 /* header profile */
 .header-profile {
@@ -725,6 +730,18 @@ button.signup-btn {
   justify-content: center;
   /* padding: 4px; */
   box-sizing: border-box;
+}
+/* header route path location */
+.header-current-location {
+  margin-left: auto;
+}
+.header-current-location-link {
+  text-decoration: none;
+}
+.header-current-location span {
+  font-size: 1.6rem;
+  color: var(--link-blue);
+  font-weight: 500;
 }
 .header-propic {
   width: 80%;
@@ -755,6 +772,9 @@ button.signup-btn {
 .focus-info-card {
   background-color: var(--info-focus-card-background);
   border-color: var(--info-focus-card-border-color);
+}
+/* back link */
+.link-back {
 }
 @media only screen and (max-width: 1500px) {
   .content-padding {
