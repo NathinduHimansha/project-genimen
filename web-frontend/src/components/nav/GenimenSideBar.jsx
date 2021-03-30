@@ -89,7 +89,9 @@ const GenimenSideBar = () => {
         </div>
 
         <div
-          className={`-flex -flex-center nav-profile-wrapper ${state.login ? '' : '-display-none'}`}
+          className={`-flex -flex-center  ${
+            state.login ? 'nav-profile-wrapper' : 'nav-profile-hidden'
+          }`}
         >
           <div className="nav-user-wrapper">
             <div className="nav-propic-wrapper">
