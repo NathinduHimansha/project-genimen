@@ -161,7 +161,7 @@
   height: 100vh;
 }
 .-display-none {
-  display: none;
+  display: none !important;
 }
 .-no-margin {
   margin: 0;

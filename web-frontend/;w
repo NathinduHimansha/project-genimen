@@ -46,12 +46,14 @@ const Login = (props) => {
   const onLogin = () => {
     onUsernameBlur(username);
     onPasswordBlur(password);
+    dispatch({ type: 'TOGGLE_LOIGIN' });
+    console.log(state.login);
     const isFormValid = isInputsValid(password, username);
     if (isFormValid) {
       setLoading(true);
       setTimeout(() => {
         addToast('Successfully Logged in', { appearance: 'success', id: 'login-success' });
-        dispatch({ type: 'TOGGLE_LOGIN' });
+        dispatch({ type: 'TOGGLE_LOIGIN' });
         history.push({ pathname: '/signup' });
         setLoading(false);
       }, 3000);
