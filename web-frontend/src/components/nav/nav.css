@@ -1,5 +1,8 @@
+:root {
+  --nav-width: 5rem;
+}
 .navbar + .navbar-page-container {
-  margin-left: 4.7rem;
+  margin-left: var(--nav-width);
   animation: slideInIn 400ms ease forwards;
 }
 @keyframes slideInIn {
@@ -33,7 +36,7 @@
 .hamburger-icon {
   display: flex;
   justify-content: center;
-  width: 4.7rem;
+  width: var(--nav-width);
   cursor: pointer;
   position: relative;
 }
@@ -133,7 +136,7 @@ img.dropdown-arrow {
   display: flex;
   flex-direction: column;
   color: #fff;
-  width: 4.7rem;
+  width: var(--nav-width);
   height: 100vh;
   position: fixed;
   background-color: var(--nav-background);
@@ -236,7 +239,7 @@ img.dropdown-arrow {
 .nav-link {
   display: flex;
   align-items: center;
-  height: 4.7rem;
+  height: var(--nav-width);
   color: rgb(245, 245, 245);
   font-size: 1.8rem;
   text-decoration: none;
@@ -335,7 +338,7 @@ img.dropdown-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4.7rem;
+  width: var(--nav-width);
   /* margin-left: 1rem; */
 }
 .nav-icon > img {
