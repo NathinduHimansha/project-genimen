@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import './nav.css';
 import about from '../../assests/AboutLight.png';
@@ -18,6 +18,11 @@ const NavBar = (props) => {
   const imageClick = () => {
     history.push({ path: '/home' });
   };
+  const parentLinkClicks = routes.map((route) => {
+    const [click, setClick] = useState(false);
+    return { click, setClick };
+  });
+
   return (
     <nav className="navbar">
       <div className="nav-logo">
@@ -35,7 +40,15 @@ const NavBar = (props) => {
       </div>
       <ul className="navbar-nav">
         {routes.map((route, i) => (
-          <li key={'route' + i} className="nav-item parent-link">
+          <li
+            key={'route' + i}
+            className={`nav-item parent-link ${
+              parentLinkClicks[i].click ? 'parent-link-clicked' : ''
+            }`}
+            onClick={() => {
+              parentLinkClicks[i].setClick(!parentLinkClicks[i].click);
+            }}
+          >
             {/* <a href="#" className={`nav-link ${route.active ? 'nav-link-active' : ''}`}> */}
             {/* <NavLink to = '/' activeClassName="active-link"> */}
             <NavLink
