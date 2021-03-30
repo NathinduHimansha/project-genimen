@@ -1,5 +1,5 @@
 :root {
-  --nav-width: 5rem;
+  --nav-width: 5.6rem;
 }
 .navbar + .navbar-page-container {
   margin-left: var(--nav-width);
@@ -157,7 +157,7 @@ img.dropdown-arrow {
 
 .parent-link {
   position: relative;
-  margin-bottom: -1.5px;
+  margin-bottom: -2px;
 }
 .navbar-sub-nav {
   /* display: none; */
@@ -342,7 +342,7 @@ img.dropdown-arrow {
   /* margin-left: 1rem; */
 }
 .nav-icon > img {
-  width: 20px;
+  width: 22px;
 }
 .nav-link:hover .nav-icon {
   opacity: 1;

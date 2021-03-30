@@ -11,8 +11,8 @@ h1.fancy-heading {
 .fancy-heading-decorator::before {
   content: '';
   left: 2px;
-  top: -20px;
+  top: -16px;
   position: absolute;
-  width: 70px;
-  border-top: 5px solid var(--primary-accent);
+  width: 60px;
+  border-top: 3px solid var(--primary-accent);
 }

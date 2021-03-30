@@ -32,6 +32,7 @@ body * {
   --primary-accent-dark: rgba(241, 145, 0, 1);
   --secondary-accent: rgba(73, 135, 255, 1);
   --light-grey: rgba(189, 189, 189, 1);
+  --lighter-grey: rgb(235, 235, 235);
   --grey: rgba(146, 146, 146, 1);
   --primary-border-grey: rgba(159, 159, 159, 1);
 
@@ -43,6 +44,9 @@ body * {
   --gap-medium: 25px;
 
   /* dark-mode exceptions */
+  --info-focus-card-background: #c2f8ff;
+  --info-focus-card-border-color: #71ddff;
+  --heading2-sep-grey: rgb(200, 200, 200);
   --error-icon-background: #ff5630;
   --error-light-text: #bf2600;
   --success-icon-background: #36b37e;
@@ -91,9 +95,13 @@ body * {
   --primary-accent-dark: rgba(241, 145, 0, 1);
   --secondary-accent: rgba(38, 132, 255, 1);
   --light-grey: rgba(69, 69, 69, 1);
+  --lighter-grey: rgb(42, 42, 42);
   --grey: rgb(198 198 198);
   --primary-border-grey: rgba(69, 69, 69, 1);
   /* dark-mode exceptions */
+  --info-focus-card-background: #0c7482;
+  --info-focus-card-border-color: #1f4854;
+  --heading2-sep-grey: rgb(59, 59, 59);
   --error-icon-background: #7f1700;
   --error-light-text: #fff;
   --success-icon-background: #004b2b;
