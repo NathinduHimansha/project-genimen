@@ -96,6 +96,7 @@ const Login = (props) => {
                   }}
                   onChange={(event) => {
                     setUsername(event.target.value);
+                    onUsernameBlur(event.target.value);
                   }}
                   onFocus={onUsernameFocus}
                 />
@@ -128,6 +129,7 @@ const Login = (props) => {
                   }}
                   onChange={(event) => {
                     setPassword(event.target.value);
+                    onPasswordBlur(event.target.value);
                   }}
                   onFocus={onPasswordFocus}
                 />
