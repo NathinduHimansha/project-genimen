@@ -42,6 +42,27 @@
   height: 420px;
 }
 
+@media only screen and (max-width: 500px) {
+  .card-left {
+    width: 300px;
+    height: 200px;
+    margin-left: -20px;
+    margin-top: -48px;
+  }
+  .card-right {
+    width: 300px;
+    height: 200px;
+    margin-left: -20px;
+    margin-top: -10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .card-topic {
+    margin-left: -50px;
+  }
+}
+
 @keyframes trend_animation {
   from {
     transform: scale(0);
@@ -127,6 +148,13 @@
   position: absolute;
 }
 
+@media only screen and (max-width: 500px) {
+  .frequency_percentage {
+    top: 115px;
+    font-size: 1rem;
+  }
+}
+
 .frequency-bars {
   height: 220px;
   background-color: var(--primary-white);
@@ -137,12 +165,31 @@
   margin-top: 120px;
 }
 
+@media only screen and (max-width: 500px) {
+  .frequency-bars {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-right: 0px;
+    flex-wrap: nowrap;
+  }
+}
+
 .barHighlight {
   height: 100%;
   width: 30px;
   background-color: #d9f0f3;
   margin-right: 40px;
   position: relative;
+}
+
+@media only screen and (max-width: 500px) {
+  .barHighlight {
+    width: 13px;
+    position: relative;
+    margin-right: 15px;
+    height: 110px;
+  }
 }
 
 .barchart_animation {
@@ -165,6 +212,12 @@
   bottom: 0px;
 }
 
+@media only screen and (max-width: 500px) {
+  .progress-percentage {
+    width: 13px;
+  }
+}
+
 .barchartKeyword {
   writing-mode: tb-rl;
   transform: rotate(-180deg);
@@ -180,15 +233,71 @@
   right: -5px;
 }
 
+@media only screen and (max-width: 500px) {
+  .barchartKeyword {
+    right: 0.2px;
+    font-size: 0.9rem;
+  }
+}
+
 .analyze_again {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
-  margin-top: -3%;
-  margin-right: 320px;
+  margin-top: 26%;
+  margin-left: 60%;
+  animation-name: wobble;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 2.3s;
+  position: absolute;
+  width: 10vw;
+}
+
+@media only screen and (max-width: 1000px) {
+  .analyze_again {
+    margin-top: 250px;
+    margin-left: 0px;
+  }
+}
+
+@keyframes wobble {
+  0% {
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  15% {
+    -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+    -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
 }
 
 .colourful_mobilePhone {
-  margin-left: 15%;
+  margin-left: 50%;
   opacity: 0.8;
   height: 31.25vw;
   width: 45vw;
@@ -217,14 +326,13 @@
   top: 50%;
   left: 48%;
 }
-@media screen and (min-width: 150vh) {
-  .line_loader {
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-    right: -150px;
-    bottom: -170px;
-  }
+
+.line_loader {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  right: -150px;
+  bottom: -170px;
 }
 
 .line_progress {
@@ -235,6 +343,13 @@
   margin: 0 5px;
   width: 2px;
   height: 15px;
+}
+
+@media only screen and (max-width: 1500px) {
+  .line_loader {
+    margin-right: 560px;
+    top: 270px;
+  }
 }
 
 .line_progress:nth-child(1) {
@@ -267,7 +382,7 @@
 
 .loader_description {
   display: grid;
-  margin-top: 20px;
+  margin-top: 100px;
   margin-left: -80px;
   font-size: 1.8rem;
   font-weight: bold;
@@ -275,6 +390,11 @@
   border-right: 2px solid rgba(255, 255, 255, 0.75);
   overflow: hidden;
   white-space: nowrap;
+}
+@media only screen and (max-width: 500px) {
+  .loader_description {
+    margin-left: -130px;
+  }
 }
 
 @keyframes typewriter_loadingDescription {
@@ -290,8 +410,14 @@
   width: 620px;
   max-width: 50%;
   display: grid;
-  margin-top: 10%;
-  margin-left: 0%;
+  margin-top: 5%;
+  margin-left: 20%;
+}
+
+@media only screen and (max-width: 500px) {
+  .wrapper_progressBar {
+    margin-left: -40px;
+  }
 }
 
 /* Circular rect loader */
@@ -345,15 +471,134 @@
 }
 
 .treeMap_align {
-  margin-left: -190px;
-  margin-top: 100px;
+  margin-left: -160px;
+  margin-top: 80px;
+  width: 110%;
+  height: 100%;
 }
 
-@keyframes zoomin {
+@media only screen and (max-width: 500px) {
+  .treeMap_align {
+    margin-left: -100px;
+    margin-top: -20px;
+    width: 140%;
+    height: 40%;
+  }
+}
+
+@keyframes fadeIn {
   0% {
-    transform: scale(0);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
   }
   100% {
-    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*****************************************************************************************/
+.wifi-symbol {
+  display: none;
+  display: block;
+  position: absolute;
+  display: inline-block;
+  -ms-transform: rotate(-45deg) translate(-100px);
+  -moz-transform: rotate(-45deg) translate(-100px);
+  -o-transform: rotate(-45deg) translate(-100px);
+  -webkit-transform: rotate(-45deg) translate(-100px);
+  transform: rotate(-45deg) translate(-100px);
+}
+
+@media only screen and (max-width: 500px) {
+  .wifi-symbol {
+    margin-left: 100px;
+  }
+}
+
+.wifi-circle {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-style: solid;
+  border-width: 1em 1em 0 0;
+  -webkit-border-radius: 0 100% 0 0;
+  border-radius: 0 100% 0 0;
+  opacity: 0.8;
+  -o-animation: wifianimation 1s infinite;
+  -moz-animation: wifianimation 1s infinite;
+  -webkit-animation: wifianimation 1s infinite;
+  animation: wifianimation 1s infinite;
+  color: var(--pos-green);
+}
+
+.first {
+  animation-delay: 1ms;
+}
+.second {
+  width: 5em;
+  height: 5em;
+  animation-delay: 400ms;
+}
+.third {
+  width: 3em;
+  height: 3em;
+}
+.fourth {
+  width: 1em;
+  height: 1em;
+  opacity: 0;
+  animation: none;
+}
+
+@-o-keyframes wifianimation {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opactiy: 1;
+  }
+  6% {
+    opactiy: 0.1;
+  }
+  100% {
+    opactiy: 0.1;
+  }
+}
+@-moz-keyframes wifianimation {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opactiy: 1;
+  }
+  6% {
+    opactiy: 0.1;
+  }
+  100% {
+    opactiy: 0.1;
+  }
+}
+@-webkit-keyframes wifianimation {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opactiy: 1;
+  }
+  6% {
+    opactiy: 0.1;
+  }
+  100% {
+    opactiy: 0.1;
   }
 }

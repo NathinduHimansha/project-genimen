@@ -36,7 +36,7 @@ class Exkey extends React.Component {
         document.querySelector('.loader_progress ') &&
         document.querySelector('.treeMap_align ')
       ) {
-        document.querySelector('.treeMap_align').style.animation = 'zoomin 2s ease-out forwards';
+        document.querySelector('.treeMap_align').style.animation = 'fadeIn 3s ease-out';
         document.querySelector('.frequency-bars ').style.visibility = 'visible';
         document.querySelector('.card-left ').style.visibility = 'visible';
         document.querySelector('.card-right ').style.visibility = 'visible';
@@ -110,7 +110,9 @@ class Exkey extends React.Component {
             <div className="analytics-container cards-split -mt-40">
               <div className="card-left" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-left">
-                  <h3 className="heading3 -medium">TREND</h3>
+                  <div className="card-topic">
+                    <h3 className="heading3 -medium">TREND</h3>
+                  </div>
                 </div>
 
                 <div className="frequency-bars" style={{ visibility: 'hidden' }}>
@@ -140,8 +142,9 @@ class Exkey extends React.Component {
               </div>
               <div className="card-right" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-right -mb-auto -flex-middle">
-                  <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
-
+                  <div className="card-topic">
+                    <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
+                  </div>
                   <div className="treeMap_align">
                     <TreeMap />
                   </div>
@@ -155,11 +158,17 @@ class Exkey extends React.Component {
                     <div className="line_progress"></div>
                   </div>
                   <div className="wrapper_progressBar">
-                    <div class="loader-5">
+                    {/* <div class="loader-5">
                       <div class="loader-5-rect loader-5-rect-1"></div>
                       <div class="loader-5-rect loader-5-rect-2"></div>
                       <div class="loader-5-rect loader-5-rect-3"></div>
                       <div class="loader-5-rect loader-5-rect-4"></div>
+                    </div> */}
+                    <div class="wifi-symbol">
+                      <div class="wifi-circle first"></div>
+                      <div class="wifi-circle second"></div>
+                      <div class="wifi-circle third"></div>
+                      <div class="wifi-circle fourth"></div>
                     </div>
                   </div>
                   <div className="loader_description">
@@ -168,14 +177,14 @@ class Exkey extends React.Component {
                     </h2>
                   </div>
                 </div>
+              </div>
 
-                <div className="analyze_again" style={{ visibility: 'visible' }}>
-                  <div className="-flex -mt-40">
-                    <div className="-flex-right">
-                      <Button onClick={this.analyzeAgain} iconSrc={search} loading={false}>
-                        Start Analysing
-                      </Button>
-                    </div>
+              <div className="analyze_again" style={{ visibility: 'visible' }}>
+                <div className="-flex -mt-40">
+                  <div className="-flex-right">
+                    <Button onClick={this.analyzeAgain} iconSrc={search} loading={false}>
+                      Start Analysing
+                    </Button>
                   </div>
                 </div>
               </div>
