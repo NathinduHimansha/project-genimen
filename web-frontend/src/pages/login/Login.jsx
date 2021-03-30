@@ -46,6 +46,7 @@ const Login = (props) => {
   const onLogin = () => {
     onUsernameBlur(username);
     onPasswordBlur(password);
+    dispatch({ type: 'TOGGLE_LOGIN' });
     const isFormValid = isInputsValid(password, username);
     if (isFormValid) {
       setLoading(true);

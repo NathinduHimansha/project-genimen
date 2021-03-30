@@ -1,8 +1,12 @@
 import React, { createContext, useReducer } from 'react';
 import Reducer from './GlobalStateReducer';
+import propic from '../../assests/ProfilePic.png';
 
 const initialState = {
   login: false,
+  dark: false,
+  username: 'bmora',
+  defaultUserPic: propic,
 };
 
 const Store = ({ children }) => {

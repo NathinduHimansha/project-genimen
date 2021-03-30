@@ -47,12 +47,15 @@ body * {
   --error-light-text: #bf2600;
   --success-icon-background: #36b37e;
   --success-light-text: #006644;
-  --nav-background: #1f447c;
+  /* --nav-background: #1f447c; */
+  /* --nav-background: #1c3c6d; */
+  --nav-background: #204379;
   --nav-border-sep: #21376c;
   --nav-hover-link-color: #ffe08c;
   --nav-link-hover-background: #95bcf721;
   --nav-highlight: #0f2e5d;
-  --auth-background: #173f7b;
+  /* --auth-background: #173f7b; */
+  --auth-background: #214273;
   --auth-border-color: #193d73;
   --tag: rgba(255, 255, 255, 1);
   --analytics-card: rgba(255, 255, 255, 1);
@@ -100,7 +103,8 @@ body * {
   --nav-hover-link-color: #ffe08c;
   --nav-link-hover-background: #95bcf721;
   --nav-highlight: #0f2e5d;
-  --auth-background: #173f7b;
+  /* --auth-background: #173f7b; */
+  --auth-background: #214273;
   --auth-border-color: #183769;
   --tag: rgb(25 52 87);
   --analytics-card: rgb(34 36 40);

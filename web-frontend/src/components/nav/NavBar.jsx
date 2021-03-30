@@ -42,7 +42,7 @@ const NavBar = (props) => {
         {routes.map((route, i) => (
           <li
             key={'route' + i}
-            className={`nav-item parent-link ${
+            className={`nav-item ${route.subMenu.length > 0 ? 'parent-link' : ''} ${
               parentLinkClicks[i].click ? 'parent-link-clicked' : ''
             }`}
             onClick={() => {
