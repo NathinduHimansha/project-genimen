@@ -11,6 +11,7 @@ import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
 import UrasView from './pages/uras/URASView';
 import URASViewAlt from './pages/uras/URASViewAlt';
 import UrasResults from './pages/uras/UrasResults';
+import UrasResultsAlt from './pages/uras/UrasResultsAlt';
 import ReactToast from './pages/uras/ReactToast';
 import ReactToast2 from './pages/uras/ReactToast2';
 import TreeMap from './components/graphs/TreeMap';
@@ -37,8 +38,8 @@ function App() {
               <Route path="/examples" component={Examples} />
               <Route path="/about" component={Login} />
               <Route path="/exkey" component={EXKEY} />
+              <Route path="/analytics/uras/urasresult" exact component={UrasResultsAlt} />
               <Route path="/analytics/uras" component={URASViewAlt} />
-              <Route path="/urasresult" exact component={UrasResults} />
               <Route path="/pssa" component={Home} />
               <Route path="/fbfe" component={Home} />
               <Route path="/login" component={Login} />

@@ -30,7 +30,9 @@ const Examples = () => {
         <div style={{ width: '80%' }} className="-flex -flex-center">
           <div style={{ width: '50%' }} className="feature-selection-box">
             <div className="-mb-80">
-              <FancyHeading heading="SELECT FEATURES TO ANALYSE"></FancyHeading>
+              <FancyHeading>
+                <h1 className="fancy-heading">SELECT FEATURES TO ANALYSE</h1>
+              </FancyHeading>
             </div>
             {/* <div className="-flex -mb-40"> */}
             {/* <select */}
@@ -75,7 +77,9 @@ const Examples = () => {
       </div>
       <div className="" style={{ marginLeft: '10%', marginBottom: '10%' }}>
         <div className="-mb-40 -mt-90">
-          <FancyHeading heading="FEATURES SENTIMENTS"></FancyHeading>
+          <FancyHeading>
+            <h1 className="fancy-heading -no-margin">FEATURES SENTIMENTS</h1>
+          </FancyHeading>
         </div>
 
         <div className="-mb-35 -mt-80">

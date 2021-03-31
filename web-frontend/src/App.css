@@ -193,8 +193,10 @@
 }
 
 .-flex-left {
-  margin-left: auto;
-  left: 5%;
+  margin-right: auto;
+}
+.-flex-grow {
+  flex-grow: 1;
 }
 
 .-fit-content {
@@ -209,6 +211,9 @@
 }
 .-opacity-1 {
   opacity: 1;
+}
+.-text-decoration-none {
+  text-decoration: none;
 }
 /* font-weights */
 .-light {
@@ -719,7 +724,7 @@ button.signup-btn {
 }
 /* heading header */
 .app-heading-header {
-  padding-top: 30px;
+  padding-top: 35px;
   padding-bottom: 30px;
   padding-right: 150px !important;
   border-bottom: 4px solid var(--lighter-grey);
@@ -802,6 +807,20 @@ button.signup-btn {
 /* back link */
 .link-back {
 }
+/* sentiment rank card container */
+.sentiment-rank-card-container {
+  min-width: 280px;
+}
+.sentiment-rank-card-container > div {
+  margin-bottom: 20px;
+}
+.feature-overall-sentiment-container {
+  display: flex;
+}
+.overall-sentiment-results-card-container {
+  width: clamp(30rem, 65vw, 40rem);
+  margin-right: 30px;
+}
 @media only screen and (max-width: 1500px) {
   .content-padding {
     padding-right: 150px;
@@ -834,7 +853,29 @@ button.signup-btn {
     padding-left: 100px;
   }
 }
+@media only screen and (max-width: 1000px) {
+  .content-padding {
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+}
 @media only screen and (max-width: 850px) {
+  .feature-overall-sentiment-container {
+    flex-direction: column;
+  }
+  .overall-sentiment-results-card-container {
+    margin-bottom: 30px;
+  }
+  .sentiment-rank-card-container {
+    display: flex;
+    min-width: 100px;
+  }
+  .sentiment-rank-card-container > div {
+    width: 50%;
+  }
+  .sentiment-rank-card-container > div:first-child {
+    margin-right: 20px;
+  }
   .page {
     margin: 10rem 6% 0 6%;
   }
