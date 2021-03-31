@@ -107,7 +107,15 @@ const UrasResultsAlt = () => {
             <h3 className="heading3 -medium -no-margin" style={{ fontSize: '2.2rem' }}>
               Analysis per Phone
             </h3>
-            <hr className="heading-sep" />
+            <hr className="heading-sep" style={{ marginTop: '20px' }} />
+            <div className="-mt-5 -flex -full-width -flex-middle">
+              <div className="-flex -flex-middle">
+                <span className="uras-sort-label">Sort by: </span>
+                <select className="uras-sort select">
+                  <option value="a-z">A-Z</option>
+                </select>
+              </div>
+            </div>
 
             <div className="analytics-container cards-grid -mt-40">
               <SentimentResultCard
