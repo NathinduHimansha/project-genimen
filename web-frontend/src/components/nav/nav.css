@@ -386,7 +386,8 @@ img.dropdown-arrow {
   transition: 200ms ease;
 }
 .nav-profile-wrapper {
-  background: #214273;
+  background: var(--auth-background);
+  border-top: 1px solid var(--auth-border-color);
   padding-top: 0;
   padding-bottom: 0;
   transition: 300ms ease;
