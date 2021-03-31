@@ -16,7 +16,9 @@ const SentimentRankCard = (props) => {
       >
         <div className="sentiment-det -flex -flex-col">
           <div>
-            <h1 className="sentiment-det-label heading1 -medium -no-margin ">{label}</h1>
+            <div className="sentiment-rank-card-label">
+              <h1 className="sentiment-det-label heading1 -medium -no-margin ">{label}</h1>
+            </div>
             <span className="sentiment-det-description">{description}</span>
           </div>
           <div className="-flex-bottom">

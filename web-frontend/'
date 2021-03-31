@@ -122,21 +122,12 @@ div.sentiment-emoji img {
     font-size: 3.2rem;
   }
 }
-@media only screen and (max-width: 850px) {
-  .sentiment-rank-card-label h1 {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 12ch;
-  }
-}
 @media only screen and (max-width: 600px) {
   .sentiment-rank-card-label h1 {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 7ch;
+    width: 100%;
   }
 }
