@@ -2,7 +2,13 @@ div.analytics-content {
   padding: 20px 0 0 30px;
 }
 div.analytics-container {
+  /* display: flex; */
   width: 100%;
+  /* flex-wrap: wrap; */
+}
+div.analytics-container > div {
+  /* max-width: 400px; */
+  /* width: 50%; */
 }
 div.analytics-heading {
   padding-left: 16px;
@@ -98,7 +104,7 @@ div.sentiment-emoji img {
     width: 0;
   }
   div.sentiment-rank-card {
-    padding: 15px 20px;
+    padding: 20px 30px;
     /* max-width: 250px; */
     /* min-width: 250px; */
     box-sizing: border-box;
@@ -115,4 +121,6 @@ div.sentiment-emoji img {
     margin-top: 20px;
     font-size: 3.2rem;
   }
+}
+@media only screen and (max-width: 850px) {
 }

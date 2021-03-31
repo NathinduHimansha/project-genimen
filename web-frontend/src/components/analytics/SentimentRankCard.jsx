@@ -14,12 +14,16 @@ const SentimentRankCard = (props) => {
           polarity == 'pos' ? 'sentiment-rank-card--pos' : 'sentiment-rank-card--neg'
         }`}
       >
-        <div className="sentiment-det">
-          <h1 className="sentiment-det-label heading1 -medium -no-margin ">{label}</h1>
-          <span className="sentiment-det-description">{description}</span>
-          <h1 className="heading1 sentiment-det-polarity-perc -light -no-margin">
-            {polarityPercLabel}
-          </h1>
+        <div className="sentiment-det -flex -flex-col">
+          <div>
+            <h1 className="sentiment-det-label heading1 -medium -no-margin ">{label}</h1>
+            <span className="sentiment-det-description">{description}</span>
+          </div>
+          <div className="-flex-bottom">
+            <h1 className="heading1 sentiment-det-polarity-perc -light -no-margin">
+              {polarityPercLabel}
+            </h1>
+          </div>
         </div>
         <div className="sentiment-emoji">
           <div className="sentiment-emoji-wrapper">

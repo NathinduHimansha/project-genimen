@@ -35,7 +35,7 @@ const UrasResultsAlt = () => {
         </div>
         <h2 className="fancy-heading -no-margin">RESULTS</h2>
       </div>
-      <div className=" -mt-60 -mb-40 content-padding">
+      <div className=" -mt-60 -mb-90 content-padding">
         <FancyHeading decoratorClassName="fancy-heading2-decorator">
           <h2 className="heading2 -medium -no-margin heading2-sep-margin">
             Smartphone Feature Sentiments

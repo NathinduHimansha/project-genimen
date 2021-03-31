@@ -195,6 +195,9 @@
 .-flex-left {
   margin-right: auto;
 }
+.-flex-bottom {
+  margin-top: auto;
+}
 .-flex-grow {
   flex-grow: 1;
 }
