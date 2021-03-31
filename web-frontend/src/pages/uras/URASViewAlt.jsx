@@ -16,6 +16,7 @@ import CurrentLocation from '../../components/header/CurrentLocation';
 const URASViewAlt = () => {
   const [state, dispatch] = useContext(Context);
   const paths = useLocation().pathname.substr(1).split('/');
+  const history = useHistory();
 
   useEffect(() => {}, []);
 
@@ -54,7 +55,11 @@ const URASViewAlt = () => {
               <SampleFeatureSelection></SampleFeatureSelection>
               <div className="-flex -mt-40">
                 <div className="">
-                  <Button iconSrc={search} loading={false}>
+                  <Button
+                    iconSrc={search}
+                    loading={false}
+                    onClick={() => console.log(history.push('/analytics/uras/urasresult'))}
+                  >
                     Start Analysing
                   </Button>
                 </div>
