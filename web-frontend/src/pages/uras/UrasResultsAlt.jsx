@@ -128,6 +128,33 @@ const UrasResultsAlt = () => {
                 negPerc={44}
                 posPerc={40}
               />
+              <SentimentResultCard
+                heading="Samsung Galaxy S10+"
+                headingIcon="var(--phone-icon)"
+                reviewCount={300}
+                reviewCountLable="Reviews Analysed"
+                polarity={84}
+                negPerc={44}
+                posPerc={40}
+              />
+              <SentimentResultCard
+                heading="Samsung Galaxy S10+"
+                headingIcon="var(--phone-icon)"
+                reviewCount={300}
+                reviewCountLable="Reviews Analysed"
+                polarity={84}
+                negPerc={44}
+                posPerc={40}
+              />
+              <SentimentResultCard
+                heading="Samsung Galaxy S10+"
+                headingIcon="var(--phone-icon)"
+                reviewCount={300}
+                reviewCountLable="Reviews Analysed"
+                polarity={84}
+                negPerc={44}
+                posPerc={40}
+              />
             </div>
           </div>
         </div>

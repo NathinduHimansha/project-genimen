@@ -5,7 +5,7 @@
   --headphone-jack-icon: url('/dist/assests/HeadphoneJack.png');
   --fingerprint-icon: url('/dist/assests/FingerPrint.png');
   --arrow-back-icon: url('/dist/assests/ArrowBack.png');
-  --arrow-right-icon: url('/dist/assests/ArrowRightLink.png');
+  --arrow-right-link-icon: url('/dist/assests/ArrowRightLink.png');
 }
 :root[data-theme='dark'] {
   --display-icon: url('/dist/assests/DisplayLight.png');
@@ -562,12 +562,6 @@ select.select-feature {
   margin-right: 5px;
   padding-right: 4px;
 }
-.icon-extra-smaller {
-  width: 14.5px;
-  height: 14.5px;
-  margin-right: 5px;
-  padding-right: 4px;
-}
 .icon-background {
   background-size: contain;
   background-repeat: no-repeat;
@@ -835,57 +829,6 @@ button.signup-btn {
   width: clamp(30rem, 65vw, 40rem);
   margin-right: 30px;
 }
-/* go to box */
-.go-to-phone-model-container {
-  transition: 300ms ease;
-  display: flex;
-  /* width: 100%; */
-  flex-grow: 1;
-  margin-left: 20px;
-  justify-content: flex-end;
-}
-.go-to-phone-model-links-wrapper {
-  transition: 300ms ease;
-  /* padding: 30px 40px; */
-  border: 1px solid var(--primary-border-grey);
-  border-radius: 5px;
-  height: fit-content;
-  width: fit-content;
-  position: sticky;
-  top: 30px;
-}
-.go-to-heading {
-  padding: 10px 30px;
-  border-bottom: 1px solid var(--primary-border-grey);
-}
-.go-to-phone-model-links-container {
-  transition: 300ms ease;
-  padding: 20px 30px;
-  padding-right: 30px;
-  /* min-width: 220px; */
-}
-.go-to-phone-model-link {
-  text-decoration: none;
-  font-size: 1.6rem;
-  color: var(--link-blue);
-  font-weight: 500;
-  display: block;
-  margin-bottom: 20px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 20ch;
-}
-.go-to-phone-model-link:hover .go-to-arrow-right-link {
-  transform: translateX(2px);
-  transition: 200ms ease;
-}
-
-.go-to-arrow-right-link {
-  margin-right: 0px;
-  padding-right: 0;
-  margin-left: 10px;
-}
 @media only screen and (max-width: 1500px) {
   .content-padding {
     padding-right: 150px;
@@ -950,21 +893,6 @@ button.signup-btn {
   }
 }
 @media only screen and (max-width: 750px) {
-  .go-to-phone-model-links-container {
-    width: 0px;
-  }
-  .go-to-phone-model-links-wrapper {
-    width: 0px;
-  }
-  .go-to-phone-model-container {
-    display: none;
-    width: 0px;
-    /* opacity: 0; */
-    /* display: none; */
-  }
-  div.analytics-container {
-    width: 100%;
-  }
   .feature-types-selection-menu .feature-type-heading {
     /* margin-right: 4rem; */
     font-size: 2rem;
