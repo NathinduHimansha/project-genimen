@@ -220,6 +220,12 @@
 .-medium {
   font-weight: 500 !important;
 }
+.-normal {
+  font-style: normal;
+}
+.-italic {
+  font-style: italic;
+}
 .-bold {
   font-weight: 600 !important;
 }
@@ -740,20 +746,20 @@ button.signup-btn {
 /* header route path location */
 .header-current-location {
   /* margin-left: auto; */
-  background-color: #ddf4ff53;
+  background-color: var(--current-location-background);
   width: fit-content;
-  border: 1px solid #95dcff;
+  border: 1px solid var(--current-location-border-color);
   border-radius: 3px;
 }
 .header-current-location-link:last-child {
   border-right: 0;
 }
 .header-current-location-link {
-  text-decoration: underline;
-  text-decoration-color: var(--link-blue);
+  text-decoration: none;
+  /* text-decoration-color: var(--link-blue); */
   display: inline-block;
   padding: 2px 10px;
-  border-right: 1px solid #95dcff;
+  border-right: 1px solid var(--current-location-border-color);
 }
 .header-current-location-link.active {
 }
@@ -779,13 +785,14 @@ button.signup-btn {
 /* Focus Card */
 .focus-card {
   /* max-width: 600px; */
-  color: var(--primary-black);
+  color: var(--grey-black);
+  font-style: italic;
   line-height: 130%;
   letter-spacing: 0.6px;
-  padding: 10px 20px;
-  border: 1px solid;
-  border-left: 8px solid;
-  border-radius: 5px;
+  padding: 20px 20px;
+  /* border: 1px solid; */
+  border-left: 5px solid;
+  border-radius: 2px;
   font-size: 1.6rem;
 }
 .focus-info-card {

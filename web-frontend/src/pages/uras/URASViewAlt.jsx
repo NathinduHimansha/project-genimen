@@ -1,10 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import { Context } from '../../components/sate_management/GlobalStore';
-import CircularProgress from '../../components/graphs/CircularProgress';
-import ProgressBar from '../../components/graphs/ProgressBar';
 import FancyHeading from '../../components/text/FancyHeading';
-import NetPolarity from '../../components/analytics/NetPolarity';
-import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import phoneIcon from '../../assests/PhoneIcon.png';
 import search from '../../assests/Search.png';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
@@ -15,6 +11,7 @@ import propic from '../../assests/ProfilePic.png';
 import { useHistory, useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import IconHeading from '../../components/text/IconHeading';
+import CurrentLocation from '../../components/header/CurrentLocation';
 
 const URASViewAlt = () => {
   const [state, dispatch] = useContext(Context);
@@ -32,32 +29,26 @@ const URASViewAlt = () => {
         {/* </h4> */}
         {/* </IconHeading> */}
         {/* </div> */}
-        <div className="header-current-location -mb-30">
-          {paths.map((path, i) => {
-            return (
-              <NavLink to={path} className="header-current-location-link">
-                {i == 0 ? <span className="">{path}</span> : <span className="">{path}</span>}
-              </NavLink>
-            );
-          })}
+        <div className="-mb-30">
+          <CurrentLocation></CurrentLocation>
         </div>
         <h2 className="fancy-heading -no-margin">ANALYSE SMARTPHONE FEATURES</h2>
       </div>
       <div className=" -mt-60 -mb-40 content-padding">
-        {/* <FancyHeading decoratorClassName="fancy-heading2-decorator"> */}
-        <h2 className="heading2 -medium -no-margin heading2-sep-margin">
-          Select Features To Analyse
-        </h2>
-        {/* </FancyHeading> */}
+        <FancyHeading decoratorClassName="fancy-heading2-decorator">
+          <h2 className="heading2 -medium -no-margin heading2-sep-margin">
+            Select Features To Analyse
+          </h2>
+        </FancyHeading>
         <hr className="heading-sep" />
       </div>
       <div className="feature-selection-block">
         <div className="content-padding -flex">
           <div style={{ width: '50%' }} className="feature-selection-box">
             <div className="focus-card focus-info-card -mb-40">
-              <span className="-bold">INFO: </span>Select the features you want to analyse and get a
-              insight from. This will give you the sentiment of the selected features from variety
-              of phones and an overall score for the feature
+              <span className="-bold -normal">INFO: </span>Select the features you want to analyse
+              and get a insight from. This will give you the sentiment of the selected features from
+              variety of phones and an overall score for the feature
             </div>
             <div style={{ marginTop: '20px', marginBottom: '20px' }}>
               <SampleFeatureSelection></SampleFeatureSelection>
