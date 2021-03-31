@@ -60,7 +60,7 @@ const UrasResultsAlt = () => {
         </FancyHeading>
         <hr className="heading-sep" />
         <div>
-          <div className="-mb-35 -mt-80">
+          <div className="-mb-65 -mt-20">
             <label htmlFor="select-feature" className="select-label">
               <span className="t1 color-grey">Show: </span>
             </label>

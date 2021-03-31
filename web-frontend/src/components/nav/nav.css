@@ -97,7 +97,7 @@
   /* transition: 300ms ease; */
   align-items: center;
   border-radius: 50%;
-  /* background: var(--auth-background); */
+  background: var(--auth-background);
   border: 1px solid var(--auth-border-color);
   cursor: pointer;
   /* animation: spinner-border 0.75s linear infinite; */
@@ -259,7 +259,7 @@ img.dropdown-arrow {
   width: 6rem;
   transition: transform 200ms ease;
   /* margin-left: 1rem; */
-  top: 2rem;
+  top: 2.4rem;
   right: 51px;
   position: absolute;
 }

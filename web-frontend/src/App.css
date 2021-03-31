@@ -594,13 +594,13 @@ body::-webkit-scrollbar-thumb {
   width: 3.3rem;
 }
 .navbar:hover .light-mode-icon {
-  width: 3.8rem;
+  width: 4rem;
 }
 .dark-mode-icon {
   width: 2.2rem;
 }
 .light-mode-icon {
-  width: 2.6rem;
+  width: 2.7rem;
 }
 /* Login Button */
 .auth-btn-wrapper {

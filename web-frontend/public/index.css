@@ -61,8 +61,8 @@ body * {
   /* --nav-background: #1c3c6d; */
   --nav-background: #204379;
   --nav-border-sep: #21376c;
-  --nav-hover-link-color: #ffe08c;
-  --nav-link-hover-background: #95bcf721;
+  --nav-hover-link-color: #fff1d2;
+  --nav-link-hover-background: #5096ff21;
   --nav-highlight: #0f2e5d;
   /* --auth-background: #173f7b; */
   --auth-background: #214273;
@@ -119,6 +119,7 @@ body * {
   --nav-border-sep: #21376c;
   --nav-hover-link-color: #ffe08c;
   --nav-link-hover-background: #95bcf721;
+  --nav-link-hover-background: #a9c4ff17;
   --nav-highlight: #0f2e5d;
   /* --auth-background: #173f7b; */
   --auth-background: #214273;
