@@ -4,6 +4,7 @@ import FancyHeading from '../../components/text/FancyHeading';
 import phoneIcon from '../../assests/PhoneIcon.png';
 import search from '../../assests/Search.png';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
+import circlebanner from '../../assests/GeometricCircleBanner.png';
 import { getFeatures } from '../../services/uras-service';
 import Button from '../../components/buttons/Button';
 import SampleFeatureSelection from '../experiment/SampleFeatureSelection';

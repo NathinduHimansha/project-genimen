@@ -4,6 +4,7 @@ import FancyHeading from '../../components/text/FancyHeading';
 import phoneIcon from '../../assests/PhoneIcon.png';
 import search from '../../assests/Search.png';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
+import circlebanner from '../../assests/GeometricCircleBanner.png';
 import { getFeatures } from '../../services/uras-service';
 import Button from '../../components/buttons/Button';
 import SampleFeatureSelection from '../experiment/SampleFeatureSelection';
@@ -23,6 +24,22 @@ const UrasResultsAlt = () => {
 
   return (
     <div className="navbar-page-container -mb-40">
+      {/* <div */}
+      {/* src={circlebanner} */}
+      {/* style={{ */}
+      {/* // overflow: 'hidden', */}
+      {/* position: 'absolute', */}
+      {/* background: `url(${circlebanner})`, */}
+      {/* width: '270px', */}
+      {/* height: '100%', */}
+      {/* right: '0', */}
+      {/* top: '300px', */}
+      {/* // backgroundPositionY: '250px', */}
+      {/* backgroundPositionX: '120px', */}
+      {/* backgroundRepeat: 'no-repeat', */}
+      {/* backgroundSize: 'contain', */}
+      {/* }} */}
+      {/* ></div> */}
       <div className="app-heading-header content-padding -flex -flex-col">
         <div className="-mb-30">
           <NavLink to="/analytics/uras" className="-text-decoration-none">
