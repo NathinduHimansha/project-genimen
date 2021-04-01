@@ -6,6 +6,7 @@ import TreeMap from '../../components/graphs/TreeMap';
 import FancyHeading from '../../components/text/FancyHeading';
 import Button from '../../components/buttons/Button';
 import colourful_mobilePhone from '../../assests/colourful.png';
+import processGif from '../../assests/Process.gif';
 import axios from 'axios';
 import { trendz } from '../../services/exkey-bargraph-service';
 
@@ -20,8 +21,8 @@ class Exkey extends React.Component {
   }
 
   analyzeAgain = (event) => {
-    document.querySelector('.loader_description').style.animation =
-      'typewriter_loadingDescription 3s steps(16) 16ms normal both';
+    // document.querySelector('.loader_description').style.animation =
+    //   'typewriter_loadingDescription 3s steps(16) 16ms normal both';
 
     document.querySelector('.analyze_again ').style.visibility = 'hidden';
     document.querySelector('.analysing_banner').style.visibility = 'hidden';
@@ -151,12 +152,12 @@ class Exkey extends React.Component {
                 </div>
 
                 <div className="loader_progress" style={{ visibility: 'hidden' }}>
-                  <div className="line_loader">
+                  {/* <div className="line_loader">
                     <div className="line_progress"></div>
                     <div className="line_progress"></div>
                     <div className="line_progress"></div>
                     <div className="line_progress"></div>
-                  </div>
+                  </div> */}
                   {/* <div className="wrapper_progressBar"> */}
                   {/* <div class="loader-5">
                       <div class="loader-5-rect loader-5-rect-1"></div>
@@ -171,11 +172,12 @@ class Exkey extends React.Component {
                       <div class="wifi-circle fourth"></div>
                     </div>
                   </div> */}
-                  <div className="loader_description">
+                  {/* <div className="loader_description">
                     <h2 className="heading3 -medium -no-margin feature-type-heading">
                       <b>ANALYSING IN PROGRESS...</b>
                     </h2>
-                  </div>
+                  </div> */}
+                  <img className="process_gif" src={processGif}></img>
                 </div>
               </div>
 

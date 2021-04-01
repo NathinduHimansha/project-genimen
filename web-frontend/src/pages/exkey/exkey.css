@@ -251,7 +251,7 @@
   width: 10vw;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1500px) {
   .analyze_again {
     margin-top: -10%;
     margin-left: 0px;
@@ -302,6 +302,15 @@
   width: 45vw;
 }
 
+@media only screen and (max-width: 600px) {
+  .colourful_mobilePhone {
+    width: 350px;
+    height: 350px;
+    margin-left: -20px;
+    margin-top: -30px;
+  }
+}
+
 @media screen and (min-width: 100px) {
   .analysing_banner {
     opacity: 0.8;
@@ -320,17 +329,33 @@
   }
 }
 
-.loader_progress {
+/* .loader_progress {
   top: -350px;
   left: -60px;
+} */
+.loader_progress {
+  margin-top: -50%;
+  margin-left: -40%;
 }
-/* 
+
+.process_gif {
+  width: 25vw;
+  height: 25vw;
+}
+
+@media only screen and (max-width: 1500px) {
+  .process_gif {
+    width: 55vw;
+    height: 55vw;
+    margin-top: -60%;
+  }
+}
+
 @media only screen and (max-width: 1500px) {
   .loader_progress {
-    margin-right: -140px;
-    top: -100px;
+    margin-left: 50px;
   }
-} */
+}
 
 .line_loader {
   display: flex;
