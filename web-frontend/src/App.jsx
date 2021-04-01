@@ -28,6 +28,8 @@ import HomePage from './pages/index/HomePage';
 import UrasFeaturesInput from './pages/uras/UrasFeaturesInput';
 import UrasUserView from './pages/uras/UrasUserView';
 import UrasUserInputView from './pages/uras/UrasUserInputView';
+import ScrollUp from './components/ScrollUpButton/ScrollUp';
+
 
 const routes = [
   {
@@ -60,6 +62,7 @@ function App() {
     <ToastProvider autoDismissTimeout={3000} autoDismiss={true} placement={'top-center'}>
       <Router>
         <div className="App">
+          
           <NavBar routes={routes}>
             <div className="theme-switch -flex -flex-center -mt-50">
               <img
@@ -118,7 +121,10 @@ function App() {
             <Route path="/test3" component={TreeMap} />
             <Route path="/test4" component={UrasUserView} />
             <Route path="/test5" component={UrasUserInputView} />
+         
           </Switch>
+          <ScrollUp />
+         
         </div>
       </Router>
     </ToastProvider>
