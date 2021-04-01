@@ -12,6 +12,7 @@ import dark from '../../assests/NightMode.png';
 import light from '../../assests/LightMode.png';
 import home from '../../assests/HomeWhite.png';
 import Modal from '../modal/Modal';
+import { logOut } from '../../common/utils';
 const routes = [
   {
     title: 'Home',
@@ -40,8 +41,12 @@ const routes = [
 const GenimenSideBar = () => {
   const [themeMode, setTheme] = useState('dark');
   const [state, dispatch] = useContext(Context);
-  const [openLogoutConfrimModal, setOpenModal] = useState(true);
-  const onLogOut = () => {};
+  const [openLogoutConfrimModal, setOpenModal] = useState(false);
+  const onLogOut = () => {
+    dispatch({ type: 'LOGOUT' });
+    logOut();
+    setOpenModal(false);
+  };
   return (
     <>
       <Modal show={openLogoutConfrimModal}>
@@ -67,7 +72,7 @@ const GenimenSideBar = () => {
             </Button>
             <Button
               onClick={() => {
-                setOpenModal(false);
+                onLogOut();
               }}
               utilClasses={['logout-modal-button']}
             >

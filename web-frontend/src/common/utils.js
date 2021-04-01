@@ -12,7 +12,7 @@ export const saveToken = (token) => {
   saveToLocalStorage('id_token', token);
 };
 export const removeToken = () => {
-  removeToken('id_token');
+  removeFromLocalStorage('id_token');
 };
 
 export const getToken = () => {
