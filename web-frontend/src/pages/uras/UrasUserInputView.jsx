@@ -98,6 +98,11 @@ function UrasUserInputView() {
 
 //   }));
 
+    //assigning the icon url
+    const getIconUrl = (feature) => {
+        return 'var(--'+feature.toLowerCase()+'-icon)';;
+    }
+
     const test1 = (feature,type) => {
 
         setSelectedFeatures((prevSelectedFeatures)=>({...prevSelectedFeatures,[feature]: type}))
@@ -130,7 +135,7 @@ function UrasUserInputView() {
         {featues.map((featureSet, index) => (
           <div key={index} className="-flex -mb-20">
 
-            <IconHeading size="small"  >
+            <IconHeading size="small"  iconUrl={getIconUrl(featureSet.feature)} >
               <label htmlFor="select-feature-type-display" className="select-label">
                 <h2 className="heading3 -medium -no-margin feature-type-heading">
                   {featureSet.feature}
