@@ -36,6 +36,12 @@ const routes = [
     path: '/home',
   },
   {
+    title: 'About',
+    icon: about,
+    subMenu: [],
+    path: '/about',
+  },
+  {
     title: 'Analytics',
     icon: search,
     subMenu: [
@@ -45,12 +51,7 @@ const routes = [
     ],
     path: '/analytics',
   },
-  {
-    title: 'About',
-    icon: about,
-    subMenu: [],
-    path: '/about',
-  },
+  
 ];
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
               <img
                 className={themeMode == 'light' ? 'dark-mode-icon -opacity-0' : 'dark-mode-icon'}
                 src={dark}
+                title="Click to Change the Color Theme"
                 onClick={() => {
                   toggleMode();
                   if (themeMode == 'dark') {
@@ -77,6 +79,7 @@ function App() {
               <img
                 className={themeMode == 'dark' ? 'light-mode-icon -opacity-0' : 'light-mode-icon'}
                 src={light}
+                title="Click to Change the Color Theme"
                 onClick={() => {
                   toggleMode();
                   if (themeMode == 'dark') {
