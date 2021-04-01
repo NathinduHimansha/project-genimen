@@ -45,8 +45,8 @@ const UrasResultsAlt = () => {
         return featureDet.feature == selectedFeatureType;
       })
       .reduce((curr, pre) => {
-        return curr.pos > pre.pos ? curr : pre;
-      }, 0);
+        return curr.pos < pre.pos ? curr : pre;
+      }, 110);
   };
   const capitalize = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -64,8 +64,6 @@ const UrasResultsAlt = () => {
   useEffect(() => {
     const urasData = history.location.state.data;
     const featureType = urasData[featureSentimentPolarity][0].feature;
-    console.log(urasData);
-    console.log(featureType);
     setUrasData(urasData);
     setSelectedFeatureType(featureType);
   }, []);
@@ -81,7 +79,7 @@ const UrasResultsAlt = () => {
     }
     setBestPhone(bestPhone);
     setWorstPhone(worstPhone);
-  }, [urasData, setUrasData]);
+  }, [urasData, setUrasData, selectedFeatureType, setSelectedFeatureType]);
   return (
     <div className="navbar-page-container -mb-40">
       {/* <div */}
@@ -213,7 +211,6 @@ const UrasResultsAlt = () => {
                   return featureDet.feature == selectedFeatureType;
                 })
                 .map((featureDet, i) => {
-                  console.log(featureDet.phone.split());
                   return (
                     <SentimentResultCard
                       key={`sentiment-results-card${i}`}
