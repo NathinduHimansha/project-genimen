@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { Context } from './components/sate_management/GlobalStore';
 import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import './App.css';
 import GenimenSideBar from './components/nav/GenimenSideBar';
@@ -22,38 +23,46 @@ import HomePage from './pages/index/HomePage';
 import UrasFeaturesInput from './pages/uras/UrasFeaturesInput';
 import UrasUserView from './pages/uras/UrasUserView';
 import Store from './components/sate_management/GlobalStore';
+import { isLoggedIn } from './common/utils';
 
 function App() {
+  const [state, dispatch] = useContext(Context);
+  useEffect(() => {
+    const loggedIn = isLoggedIn();
+    if (loggedIn) {
+      dispatch({ type: 'LOGOUT' });
+    } else {
+      dispatch({ type: 'LOGIN' });
+    }
+  }, []);
   return (
-    <Store>
-      <ToastProvider autoDismissTimeout={3000} autoDismiss={true} placement={'top-center'}>
-        <Router>
-          <div className="App">
-            <GenimenSideBar></GenimenSideBar>
-            <Switch>
-              <Route exact path="/" component={Examples}>
-                <Redirect to="/index" />
-              </Route>
-              <Route path="/home" component={HomePage} />
-              <Route path="/examples" component={Examples} />
-              <Route path="/about" component={Login} />
-              <Route path="/exkey" component={EXKEY} />
-              <Route path="/analytics/uras" component={UrasView} />
-              <Route path="/urasresult" exact component={UrasResults} />
-              <Route path="/pssa" component={Home} />
-              <Route path="/fbfe" component={Home} />
-              <Route path="/login" component={Login} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/index" component={HomePage} />
-              <Route path="/test" component={ReactToast} />
-              <Route path="/test2" component={ReactToast2} />
-              <Route path="/test3" component={TreeMap} />
-              <Route path="/test4" component={UrasUserView} />
-            </Switch>
-          </div>
-        </Router>
-      </ToastProvider>
-    </Store>
+    <ToastProvider autoDismissTimeout={3000} autoDismiss={true} placement={'top-center'}>
+      <Router>
+        <div className="App">
+          <GenimenSideBar></GenimenSideBar>
+          <Switch>
+            <Route exact path="/" component={Examples}>
+              <Redirect to="/index" />
+            </Route>
+            <Route path="/home" component={HomePage} />
+            <Route path="/examples" component={Examples} />
+            <Route path="/about" component={Login} />
+            <Route path="/exkey" component={EXKEY} />
+            <Route path="/analytics/uras" component={UrasView} />
+            <Route path="/urasresult" exact component={UrasResults} />
+            <Route path="/pssa" component={Home} />
+            <Route path="/fbfe" component={Home} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/index" component={HomePage} />
+            <Route path="/test" component={ReactToast} />
+            <Route path="/test2" component={ReactToast2} />
+            <Route path="/test3" component={TreeMap} />
+            <Route path="/test4" component={UrasUserView} />
+          </Switch>
+        </div>
+      </Router>
+    </ToastProvider>
   );
 }
 
@@ -65,4 +74,12 @@ const Home = () => {
   );
 };
 
-export default App;
+const AppWithStore = () => {
+  return (
+    <Store>
+      <App></App>
+    </Store>
+  );
+};
+
+export default AppWithStore;
