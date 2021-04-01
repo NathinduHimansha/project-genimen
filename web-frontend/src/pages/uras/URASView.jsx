@@ -21,43 +21,30 @@ class UrasView extends Component {
     };
   }
 
-    constructor(props) {
-        super(props)
-        this.state = {
-             loading:false,//button loading state
-             data :[], //stores received data from backend
-             selectedFeatures:{}, //stores selected features
-             toastVisibility:false
-        }
-    }
-
-    //handles the http request and routes the user
-    getRequestedData = (event)=>{
-        this.setButtonState(true),
-        
-        //http request handling
-        // analyseFeatures(this.state.selectedFeatures).then((response) => {
-        analyseFeatures().then((response) => {
-            this.setState({data:response.data}),
-            this.setButtonState(false)
-            this.routePage()
-        })
-        .catch(error =>{
-            if(error){
-                
-            }
-        })
-    }
-  
-    //change the loading button state
-    setButtonState = (state)=>{
-        this.setState({
-            loading:state 
+  //handles the http request and routes the user
+  getRequestedData = (event) => {
+    this.setButtonState(true),
+      //http request handling
+      // analyseFeatures(this.state.selectedFeatures).then((response) => {
+      analyseFeatures()
+        .then((response) => {
+          this.setState({ data: response.data }), this.setButtonState(false);
+          this.routePage();
         })
         .catch((error) => {
           if (error) {
           }
         });
+  };
+
+  //change the loading button state
+  setButtonState = (state) => {
+    this.setState({
+      loading: state,
+    }).catch((error) => {
+      if (error) {
+      }
+    });
   };
 
   //change the loading button state
