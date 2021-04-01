@@ -1,5 +1,5 @@
 import axios from 'axios';
-import jwt from 'jsonwebtoken';
+import jwt_decode from 'jwt-decode';
 
 export const saveToLocalStorage = (key, value) => {
   localStorage.setItem(key, value);
@@ -14,8 +14,8 @@ export const getToken = () => {
 };
 
 export const getTokenPayload = (token) => {
-  const tokenDecoded = jwt.decode(token, { complete: true });
-  return tokenDecoded;
+  const tokenDecoded = jwt_decode(token);
+  return tokenDecoded.sub;
 };
 
 export const isLoggedIn = () => {
@@ -23,7 +23,7 @@ export const isLoggedIn = () => {
   if (!token) {
     return false;
   }
-  const tokenDecoded = jwt.decode(token, { complete: true });
+  const tokenDecoded = jwt_decode(token);
   const dateNow = new Date();
   const exp = tokenDecoded.exp;
   // check if token expires withing 1 day
@@ -46,7 +46,6 @@ export const isEmailValid = (email) => {
 export const Http = (url_prefix) => {
   const requestConf = {
     url: url_prefix,
-    data: data,
   };
   const addToken = (token) => {
     const tokenHeaders = { Authorization: 'Bearer ' + token };
