@@ -5,6 +5,16 @@ const Reducer = (state, action) => {
         ...state,
         login: !state.login,
       };
+    case 'LOGIN':
+      return {
+        ...state,
+        login: true,
+      };
+    case 'LOGOUT':
+      return {
+        ...state,
+        login: false,
+      };
     case 'TOGGLE_DARK':
       return {
         ...state,

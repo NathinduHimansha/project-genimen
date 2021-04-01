@@ -4,9 +4,15 @@ import jwt_decode from 'jwt-decode';
 export const saveToLocalStorage = (key, value) => {
   localStorage.setItem(key, value);
 };
+export const removeFromLocalStorage = (key) => {
+  localStorage.removeItem(key);
+};
 
 export const saveToken = (token) => {
   saveToLocalStorage('id_token', token);
+};
+export const removeToken = () => {
+  removeToken('id_token');
 };
 
 export const getToken = () => {
@@ -32,6 +38,13 @@ export const isLoggedIn = () => {
   const validExp = exp - dateNow.getTime();
   const isTokenValid = validExp > oneDayInMs;
   return isTokenValid;
+};
+
+export const logOut = () => {
+  removeToken();
+};
+export const logIn = (token) => {
+  saveToken(token);
 };
 
 export const isPasswordValid = (password) => {
