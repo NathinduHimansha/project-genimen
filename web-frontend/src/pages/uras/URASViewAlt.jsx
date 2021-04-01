@@ -198,6 +198,7 @@ const URASViewAlt = () => {
                     value="reset"
                     onClick={() => cleardata()}
                     disabled={
+                      btnLoadingState ||
                       btnDisabledSate ||
                       (selectedFeatures &&
                         Object.keys(selectedFeatures).length === 0 &&
