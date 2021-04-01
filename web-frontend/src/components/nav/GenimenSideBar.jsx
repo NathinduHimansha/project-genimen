@@ -51,7 +51,7 @@ const GenimenSideBar = () => {
     <>
       <Modal show={openLogoutConfrimModal}>
         <div className="modal-header -flex -flex-center -full-width">
-          <img src={warning} style={{ width: '110px', opacity: '0.4' }} />
+          <img src={warning} style={{ width: '110px', opacity: '0.8' }} />
         </div>
         <div className="modal-content -mt-10 -mb-10">
           <h3 className="heading3 -no-margin -text-center -medium">Are you sure?</h3>
