@@ -1,39 +1,32 @@
 import { BASE_URL } from './env';
-import { Http } from '../common/utils';
+import { Http, getToken } from '../common/utils';
 
 const base = `${BASE_URL}/uras`;
 // const base = `${BASE_URL}/hello`;
 const http = Http(base);
 
-
 const mock1 = [
-    {
-      feature: 'Display',
-      types: ['Normal', 'Curved'],
-      
-    },
-    {
-      feature: 'Size',
-      types: ['Normal', 'Large'],
-      
-    },
-    {
-      feature: 'Fingerprint',
-      types: ['Onscreen', 'Rear'],
-    
-    },
-    {
-      feature: 'Headphone-Jack',
-      types: ['Available', 'None'],
-      
-    },
-    {
-      feature: 'test',
-      types: ['test1', 'test2'],
-      
-    }
-  ];
-  
+  {
+    feature: 'Display',
+    types: ['Normal', 'Curved'],
+  },
+  {
+    feature: 'Size',
+    types: ['Normal', 'Large'],
+  },
+  {
+    feature: 'Fingerprint',
+    types: ['Onscreen', 'Rear'],
+  },
+  {
+    feature: 'Headphone-Jack',
+    types: ['Available', 'None'],
+  },
+  {
+    feature: 'test',
+    types: ['test1', 'test2'],
+  },
+];
 
 const mock = {
   data: {
@@ -86,6 +79,8 @@ const mock = {
 // export const getFeatures = async () => http.get();
 export const getFeatures = async () => mock1;
 
-// export const analyseFeatures = async (data) => http.post(data);
+export const analyseFeatures = async (data) => {
+  const token = getToken();
+  http.post({ data, token });
+};
 export const analyseFeatures = async () => mock;
-
