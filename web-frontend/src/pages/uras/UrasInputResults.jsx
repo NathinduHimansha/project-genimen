@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import FancyHeading from '../../components/text/FancyHeading';
@@ -9,7 +9,7 @@ import leftarrow from '../../assests/left-arrow.png';
 
 import './uras.css';
 
-function UrasResults() {
+function UrasInputResults() {
   const [fetchedData, setFetchedData] = useState([]);
   const [selectedFeature, setSelectedFeature] = useState(null); //selected feature to display
   const [viewState, setViewState] = useState(false);
@@ -30,7 +30,7 @@ function UrasResults() {
 
   const routeBack = () => {
     history.push({
-      pathname: '/test5',
+      pathname: '/analytics/uras',
     });
   };
 
@@ -119,4 +119,4 @@ function UrasResults() {
   );
 }
 
-export default UrasResults;
+export default UrasInputResults;

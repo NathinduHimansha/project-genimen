@@ -13,19 +13,18 @@ import Signup from './pages/signup/signup';
 import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 
-import UrasResults from './pages/uras/UrasResults';
 
-import TreeMap from './components/graphs/TreeMap';
+
 
 import { toggleMode } from './common/style.js';
 import Button from './components/buttons/Button';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
-// import Notify from './components/notification/Notify';
 
 import HomePage from './pages/index/HomePage';
 
 import UrasUserInputView from './pages/uras/UrasUserInputView';
 import ScrollUp from './components/ScrollUpButton/ScrollUp';
+import UrasInputResults from './pages/uras/UrasInputResults';
 
 
 const routes = [
@@ -109,8 +108,8 @@ function App() {
             <Route path="/index" component={HomePage} />
             <Route path="/about" component={Login} />
 
-            <Route path="/analytics/uras" component={UrasUserInputView} />
-            <Route path="/analytics/uras/urasresult" exact component={UrasResults} />
+            <Route exact path="/analytics/uras" component={UrasUserInputView} />
+            <Route exact path="/analytics/uras/results" component={UrasInputResults} />
 
             <Route path="/analytics/exkey" component={EXKEY} />
 
