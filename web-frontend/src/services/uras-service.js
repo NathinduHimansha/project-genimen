@@ -79,8 +79,8 @@ const mock = {
 // export const getFeatures = async () => http.get();
 export const getFeatures = async () => mock1;
 
-export const analyseFeatures = async (data) => {
-  const token = getToken();
-  http.post({ data, token });
-};
+// export const analyseFeatures = async (data) => {
+// const token = getToken();
+// http.post({ data, token });
+// };
 export const analyseFeatures = async () => mock;
