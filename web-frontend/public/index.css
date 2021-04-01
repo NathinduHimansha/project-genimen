@@ -27,9 +27,9 @@ body * {
   --black: rgba(0, 0, 0, 1);
   --primary-black: rgba(68, 68, 68, 1);
   --secondary-black: rgba(68, 68, 68, 1);
-  --primary-accent: rgba(241, 145, 0, 1);
-  --primary-accent-light: rgba(255, 160, 38, 1);
-  --primary-accent-dark: rgba(241, 145, 0, 1);
+  --primary-accent: rgb(219, 132, 0);
+  --primary-accent-light: rgb(255, 168, 55);
+  --primary-accent-dark: rgb(214, 129, 0);
   --secondary-accent: rgba(73, 135, 255, 1);
   --light-grey: rgba(189, 189, 189, 1);
   --grey: rgba(146, 146, 146, 1);
@@ -84,7 +84,7 @@ body * {
   --primary-black: rgb(205 205 205);
   --secondary-black: rgba(190, 190, 190, 1);
   --primary-accent: rgb(206 129 15);
-  --primary-accent-light: rgb(159 96 2);
+  --primary-accent-light: rgb(255, 168, 55);
   --primary-accent-dark: rgba(241, 145, 0, 1);
   --secondary-accent: rgba(38, 132, 255, 1);
   --light-grey: rgba(69, 69, 69, 1);

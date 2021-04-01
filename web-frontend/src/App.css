@@ -14,22 +14,21 @@
 }
 /* util classes */
 /* Margin Bottom */
-.-mr-50 {
-  margin-left: 50px;
-}
-
-.-mr-60 {
-  margin-left: 60px;
-}
-
-.-mr-70 {
-  margin-left: 70px;
-}
-
 .-ml-70 {
   margin-left: 70px;
 }
-
+.-mr-50 {
+  margin-left: 50px;
+}
+.-mr-60 {
+  margin-left: 60px;
+}
+.-mr-70 {
+  margin-left: 70px;
+}
+.-mr-10 {
+  margin-right: 10px;
+}
 .-mr-5 {
   margin-right: 5px;
 }
