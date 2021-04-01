@@ -1,69 +1,77 @@
-import React, { Component } from 'react'
+import React, {useState, useEffect} from 'react';
+import { useLocation, useHistory } from "react-router-dom";
+
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import FancyHeading from '../../components/text/FancyHeading';
 
 import './uras.css';
 
 
-class UrasResults extends Component {
+function UrasResults() {
+    
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            selectedFeature:null, //selected feature to display
-        }
-    }
-
-    //set the user selected feature and heading state
-    getSelectedFeature =event =>{
-        this.setState({
-            selectedFeature:event.target.value,
-        })
-    }
-
-    //sets the first view
-    componentDidMount(){
-        const data = this.props.location.state;
-
-        {data['feature-sentiment-polarity'].length?
-            this.setState({
-                selectedFeature:data['feature-sentiment-polarity'][0].feature
-            })
-        :null} 
-    }
 
     
-    render() {
-        //catches the data received from UrasView comp
-        const data = this.props.location.state
-    
-        return (
+        const { state } = useLocation();
+    console.log("state: ", state) 
+    const [selectedFeature,setSelectedFeature] = useState(null)//selected feature to display
+   
 
-            <div style={{ margin: '10% 10%' }}>
-                <div className="-mb-30">
+    const history = useHistory()
+  
+
+  const [fetchedData, setFetchedData] = useState([])
+  const [viewState, setViewState] = useState(false)
+
+  useEffect(() => {
+    const urasData = history.location.state.data
+    console.log("data: ", urasData['feature-sentiment-polarity']) 
+    setFetchedData(urasData)
+    setViewState(true)
+      
+     
+  }, [])
+
+  useEffect(() => {
+    viewState ?
+    
+    
+    setSelectedFeature(fetchedData['feature-sentiment-polarity'][0].feature)
+   
+:null} 
+, [viewState])
+        
+    
+
+    return (
+        <div style={{ margin: '10% 10%' }}>
+            { viewState ? 
+            <div>
+                 <div className="-mb-30">
                     <FancyHeading heading="SELECT OPTION TO VIEW" />
                 </div>
 
-                {/* feature select view */}
-                <div className="-mb-35 -mt-80">
+         
+                 <div className="-mb-35 -mt-80">
                     <label htmlFor="select-feature" className="select-label">
                         <span className="t1 color-grey">Currently Showing: </span>
                     </label>
 
-
-                    <select defaultValue="select-feature" value={this.state.value} onChange={this.getSelectedFeature}  
+                    {/* feature select view */}
+                    <select defaultValue="select-feature" value={selectedFeature} onChange={(event) => setSelectedFeature(event.target.value) }  
                         className="select large heading4 -regular -flex-right" id="select-feautre">
                     
-                        {data['feature-sentiment-polarity'].map((response, index) => 
+                        {fetchedData['feature-sentiment-polarity'].map((response, index) => 
                             (<option key={index} value={response.feature}>{response.feature}</option> ))} 
                     </select>  
                 </div>
+                
 
 
                 {/* main results card */}
-                <div className="analytics-container -mt-60 -flex -flex-center -flex-middle  ">
-                    {data['feature-sentiment-polarity'].map((response, index) => 
-                        (response.feature==this.state.selectedFeature ?
+                 <div className="analytics-container -mt-60 -flex -flex-center -flex-middle  ">
+                    {fetchedData['feature-sentiment-polarity'].map((response, index) => 
+                        (response.feature==selectedFeature ?
                             (<div key={index} className="analytics-container cards-grid -mt-60">
                                 <SentimentResultCard
                                     heading="Total Results"
@@ -75,17 +83,18 @@ class UrasResults extends Component {
                                 />
                             </div>)
                         :null))}
-                </div>
+                </div> 
+                
 
 
                 {/* results per phone */}
-                <h3 className= {'heading3 -medium -mt-70'}>
+                 <h3 className= {'heading3 -medium -mt-70'}>
                         Analysis per Phone
                 </h3>
 
                 <div className="analytics-container cards-grid -mt-10   ">
-                    {data['phone-feature-polarity'].map((response, index) => 
-                        (response.feature===this.state.selectedFeature ?
+                    {fetchedData['phone-feature-polarity'].map((response, index) => 
+                        (response.feature===selectedFeature ?
                             (<div key={index} className="analytics-container cards-grid -mt-60">
                                 <SentimentResultCard
                                     heading={response.phone}
@@ -97,10 +106,12 @@ class UrasResults extends Component {
                             </div>)
                         :null)
                     )}
+                </div>  
                 </div>
-            </div>
-        )
-    }
+            :null}
+                
+        </div>
+    )
 }
 
 export default UrasResults
