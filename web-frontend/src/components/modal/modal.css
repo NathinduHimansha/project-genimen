@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 300ms ease;
 }
 
 .modal-main {
@@ -40,13 +41,16 @@
   padding-left: 50px;
 }
 
-.display-block {
+.display-modal {
   display: flex;
 }
 
-.display-none {
-  /* display: none; */
-  animation: modal-container-conceal 200ms ease forwards;
+.hide-modal {
+  display: none;
+  transform: scaleY(0);
+  transform-origin: 20% 40%;
+
+  /* animation: modal-container-conceal 200ms ease forwards; */
 }
 @keyframes modal-container-conceal {
   from {

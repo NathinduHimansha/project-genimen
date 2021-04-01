@@ -94,7 +94,7 @@ const URASViewAlt = () => {
             id: 'uras-api-error',
           });
         });
-    }, 3000);
+    }, 1000);
   }, []);
 
   const cleardata = () => {
@@ -137,39 +137,48 @@ const URASViewAlt = () => {
             </div>
             <div style={{ marginTop: '20px', marginBottom: '20px' }}>
               <div className="feature-types feature-types-selection-menu -flex -flex-col -flex-center">
-                {features.map((feature, i) => (
-                  <div key={i} className="-flex -mb-20">
-                    <IconHeading size="small" iconUrl={getIconUrl(feature.feature)}>
-                      <label htmlFor="select-feature-type-display" className="select-label">
-                        <h2 className="heading3 -regular -no-margin feature-type-heading">
-                          {feature.feature}
-                        </h2>
-                      </label>
-                    </IconHeading>
-                    <select
-                      defaultValue="select-feature"
-                      className="select-feature select large heading4 -regular -flex-right"
-                      id="select-feautre-type-display"
-                      onChange={(event) =>
-                        appendSelectedFeatures(feature.feature, event.target.value)
-                      }
-                      value={
-                        selectedFeatures[feature.feature]
-                          ? selectedFeatures[feature.feature]
-                          : 'select-feature'
-                      }
-                    >
-                      <option value="select-feature" disabled>
-                        Select Type
-                      </option>
-                      {feature.types.map((type, i) => (
-                        <option key={type + i} value={type}>
-                          {type}
-                        </option>
-                      ))}
-                    </select>
+                {pageLoading ? (
+                  <div className="-flex -full-width -mb-70 -mt-40">
+                    <div
+                      style={{ marginLeft: '130px' }}
+                      className=" spinner spinner-medium spinner-accent"
+                    ></div>
                   </div>
-                ))}
+                ) : (
+                  features.map((feature, i) => (
+                    <div key={i} className="-flex -mb-20 feature-selection-box-wrapper">
+                      <IconHeading size="small" iconUrl={getIconUrl(feature.feature)}>
+                        <label htmlFor="select-feature-type-display" className="select-label">
+                          <h2 className="heading3 -regular -no-margin feature-type-heading">
+                            {feature.feature}
+                          </h2>
+                        </label>
+                      </IconHeading>
+                      <select
+                        defaultValue="select-feature"
+                        className="select-feature select large heading4 -regular -flex-right"
+                        id="select-feautre-type-display"
+                        onChange={(event) =>
+                          appendSelectedFeatures(feature.feature, event.target.value)
+                        }
+                        value={
+                          selectedFeatures[feature.feature]
+                            ? selectedFeatures[feature.feature]
+                            : 'select-feature'
+                        }
+                      >
+                        <option value="select-feature" disabled>
+                          Select Type
+                        </option>
+                        {feature.types.map((type, i) => (
+                          <option key={type + i} value={type}>
+                            {type}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  ))
+                )}
               </div>
               <div className="-flex -mt-40">
                 <div className="-flex">

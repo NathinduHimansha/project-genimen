@@ -499,6 +499,11 @@ button.icon-button {
   -webkit-animation: spinner-border 0.75s linear infinite;
   animation: spinner-border 0.75s linear infinite;
 }
+.spinner-medium {
+  width: 4rem;
+  height: 4rem;
+  border-width: 3px;
+}
 .spinner-large {
   width: 8rem;
   height: 8rem;
@@ -563,6 +568,7 @@ select.phone-selector {
   /* width: 80%; */
 }
 select.select-feature {
+  animation: feature-selection-reveal 200ms ease forwards;
   background-color: var(--select-box-alt-color);
 }
 .feature-selection-banner {
@@ -878,6 +884,21 @@ select.uras-sort {
   margin: 10px;
   width: fit-content;
   color: var(--grey-black);
+}
+.feature-selection-box-wrapper {
+  animation: feature-selection-reveal 900ms ease forwards;
+}
+@keyframes feature-selection-reveal {
+  from {
+    /* margin-bottom: 0; */
+    /* height: 0; */
+    opacity: 0;
+  }
+  to {
+    /* margin-bottom: 10px; */
+    /* height: auto; */
+    opacity: 1;
+  }
 }
 @media only screen and (max-width: 1500px) {
   .content-padding {
