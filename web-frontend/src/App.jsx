@@ -3,13 +3,11 @@ import { Context } from './components/sate_management/GlobalStore';
 import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import './App.css';
 import GenimenSideBar from './components/nav/GenimenSideBar';
-import URAS from './pages/uras/URAS';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/signup';
 import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 import SampleFeatureSelection from './pages/experiment/SampleFeatureSelection';
-import UrasView from './pages/uras/URASView';
 import URASViewAlt from './pages/uras/URASViewAlt';
 import UrasResults from './pages/uras/UrasResults';
 import UrasResultsAlt from './pages/uras/UrasResultsAlt';
@@ -20,8 +18,6 @@ import TreeMap from './components/graphs/TreeMap';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 import HomePage from './pages/index/HomePage';
-import UrasFeaturesInput from './pages/uras/UrasFeaturesInput';
-import UrasUserView from './pages/uras/UrasUserView';
 import Store from './components/sate_management/GlobalStore';
 import { isLoggedIn } from './common/utils';
 import UrasUserInputView from './pages/uras/UrasUserInputView';
@@ -49,8 +45,9 @@ function App() {
             <Route path="/examples" component={Examples} />
             <Route path="/about" component={Login} />
             <Route path="/exkey" component={EXKEY} />
-            <Route path="/analytics/uras" component={URASViewAlt} />
-            <Route path="/urasresult" exact component={UrasResultsAlt} />
+            <Route path="/analytics/uras" component={UrasUserInputView} />
+            <Route path="/analytics/test" component={URASViewAlt} />
+            <Route path="/urasresult" exact component={UrasResults} />
             <Route path="/pssa" component={Home} />
             <Route path="/fbfe" component={Home} />
             <Route path="/login" component={Login} />
@@ -59,7 +56,6 @@ function App() {
             <Route path="/test" component={ReactToast} />
             <Route path="/test2" component={ReactToast2} />
             <Route path="/test3" component={TreeMap} />
-            <Route path="/test4" component={UrasUserView} />
             <Route path="/test5" component={UrasUserInputView} />
           </Switch>
         </div>

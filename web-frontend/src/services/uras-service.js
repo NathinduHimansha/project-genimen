@@ -22,10 +22,6 @@ const mock1 = [
     feature: 'Headphone-Jack',
     types: ['Available', 'None'],
   },
-  {
-    feature: 'test',
-    types: ['test1', 'test2'],
-  },
 ];
 
 const mock = {
