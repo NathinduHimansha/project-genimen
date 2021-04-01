@@ -8,6 +8,7 @@
   position: absolute;
   top: 5%;
   right: 3%;
+  z-index: 1;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
@@ -39,8 +40,8 @@
 .homepage-welcometxt {
   font-family: Roboto, Arial, sans-serif;
   height: 60vmin;
-  left: 30%;
-  transform: translate(30%, 20%);
+  z-index: 1;
+  transform: translate(15%, 20%);
   width: 50vmin;
 }
 .homepage-welcometxt > div {

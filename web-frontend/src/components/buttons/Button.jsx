@@ -7,8 +7,8 @@ const Button = (props) => {
   iconSrc = iconSrc ? iconSrc : '';
   iconSide = iconSide ? iconSide : 'right';
   utilClasses = utilClasses ? [utilClasses] : [];
-  type = "reset";
-  value = 'reset';
+  type = type? type : "";
+  value = value? value : '';
 
 
   const hideOnLoad = () => {
@@ -35,8 +35,8 @@ const Button = (props) => {
 
   return (
     <button
-    type ="reset"
-    value="reset"
+    type ={type}
+    value={value}
       onClick={onClick}
       className={
         getIconClass() +

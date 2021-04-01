@@ -39,9 +39,9 @@ const routes = [
     title: 'Analytics',
     icon: search,
     subMenu: [
-      { title: 'Feature Sentiments', path: '/analytics/uras' },
-      { title: 'Product Feature Sentiments', path: '/analytics/pssa' },
-      { title: 'TRENDZ', path: '/exkey' },
+      { title: 'Sentiment by Features ', path: '/analytics/uras' },
+      { title: 'Sentiment by Models', path: '/analytics/pssa' },
+      { title: 'Trending Features', path: '/analytics/exkey' },
     ],
     path: '/analytics',
   },
@@ -56,7 +56,7 @@ const routes = [
 function App() {
   const [themeMode, setTheme] = useState('dark');
   return (
-    <ToastProvider autoDismissTimeout={3000} autoDismiss={true} placement={'top-center'}>
+    <ToastProvider autoDismissTimeout={4000} autoDismiss={true} placement={'top-center'}>
       <Router>
         <div className="App">
           
@@ -99,27 +99,29 @@ function App() {
             </div>
           </NavBar>
           <Switch>
-            <Route exact path="/" component={Examples}>
+            <Route exact path="/" component={HomePage}>
               <Redirect to="/index" />
             </Route>
             <Route path="/home" component={HomePage} />
-            <Route path="/examples" component={Examples} />
+            <Route path="/index" component={HomePage} />
             <Route path="/about" component={Login} />
-            <Route path="/exkey" component={EXKEY} />
+
             <Route path="/analytics/uras" component={UrasUserInputView} />
-            <Route path="/urasresult" exact component={UrasResults} />
-            <Route path="/pssa" component={Home} />
-            <Route path="/fbfe" component={Home} />
+            <Route path="/analytics/uras/urasresult" exact component={UrasResults} />
+
+            <Route path="/analytics/exkey" component={EXKEY} />
+
+            <Route path="/analytics/pssa" component={Home} />
+          
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/index" component={HomePage} />
 
-            <Route path="/test3" component={TreeMap} />
-        
-          
+            <Route path="/examples" component={Examples} />
+            <Route path="/exkey" component={EXKEY} />
+            <Route path="/pssa" component={Home} />
           </Switch>
-          <ScrollUp />
-         
+
+          <ScrollUp />//
         </div>
       </Router>
     </ToastProvider>

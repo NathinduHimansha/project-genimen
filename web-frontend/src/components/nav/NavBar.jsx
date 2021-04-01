@@ -17,7 +17,7 @@ const NavBar = (props) => {
   const { routes } = props;
   let path = useLocation().pathname;
   const imageClick = () => {
-    history.push({ path: '/home' });
+    history.push({ pathname: '/index' });
   };
   return (
     <nav className="navbar">
