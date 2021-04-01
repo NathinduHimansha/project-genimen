@@ -27,6 +27,7 @@ import { ToastProvider, useToasts } from 'react-toast-notifications';
 import HomePage from './pages/index/HomePage';
 import UrasFeaturesInput from './pages/uras/UrasFeaturesInput';
 import UrasUserView from './pages/uras/UrasUserView';
+import UrasUserInputView from './pages/uras/UrasUserInputView';
 
 const routes = [
   {
@@ -116,6 +117,7 @@ function App() {
             <Route path="/test2" component={ReactToast2} />
             <Route path="/test3" component={TreeMap} />
             <Route path="/test4" component={UrasUserView} />
+            <Route path="/test5" component={UrasUserInputView} />
           </Switch>
         </div>
       </Router>

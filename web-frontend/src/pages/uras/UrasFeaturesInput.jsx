@@ -4,11 +4,14 @@ import IconHeading from '../../components/text/IconHeading';
 
 class UrasFeaturesInput extends Component {
 
+  selectRef = null;
+
   constructor(props) {
       super(props)
       this.state = {
           featureTypes:[],
-          selectedFeatures:{}
+          selectedFeatures:{},
+         
       }
   }
 
@@ -17,6 +20,10 @@ class UrasFeaturesInput extends Component {
     this.props.parentCallback(feature,event.target.value);
     event.preventDefault();
   }
+
+  clearValue = () => {
+    this.selectRef.select.clearValue();
+  };
 
   //assigning the icon url
   getIconUrl = (feature) => {
@@ -39,6 +46,8 @@ class UrasFeaturesInput extends Component {
 
     return (
       <div className=" -ml-70 feature-types feature-types-selection-menu -flex -flex-col -flex-center">
+<form>
+
 
         {featureTypes.map((featureSet, index) => (
           <div key={index} className="-flex -mb-20">
@@ -50,9 +59,16 @@ class UrasFeaturesInput extends Component {
                 </h2>
               </label>
             </IconHeading>
+       
 
+            
+              
+
+            
             <select
+              ref={ref => {this.selectRef = ref;}}
               defaultValue="select-feature"
+              classNamePrefix="select"
               className="select large heading4 -regular -flex-right"
               id="select-feautre-type-display"
               onChange={(event) => this.addSelectedFeatures(featureSet.feature, event)}>
@@ -62,13 +78,18 @@ class UrasFeaturesInput extends Component {
                 </option>
 
                 {featureSet.types.map((type, index) => (
-                  <option key={index} value={type} feature={featureSet.feature} >
+                  <option key={index} value={} feature={featureSet.feature} >
                     {type}
                   </option>
               ))}
             </select>
+            <input type="reset" value="reset" />
+            
+           
           </div>
         ))}
+         </form>
+
     </div>
     )
   }
