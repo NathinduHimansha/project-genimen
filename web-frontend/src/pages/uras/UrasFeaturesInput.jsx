@@ -11,7 +11,6 @@ class UrasFeaturesInput extends Component {
       this.state = {
           featureTypes:[],
           selectedFeatures:{},
-         
       }
   }
 
@@ -20,10 +19,6 @@ class UrasFeaturesInput extends Component {
     this.props.parentCallback(feature,event.target.value);
     event.preventDefault();
   }
-
-  clearValue = () => {
-    this.selectRef.select.clearValue();
-  };
 
   //assigning the icon url
   getIconUrl = (feature) => {
@@ -46,49 +41,38 @@ class UrasFeaturesInput extends Component {
 
     return (
       <div className=" -ml-70 feature-types feature-types-selection-menu -flex -flex-col -flex-center">
-<form>
+          {featureTypes.map((featureSet, index) => (
+            <div key={index} className="-flex -mb-20">
 
-
-        {featureTypes.map((featureSet, index) => (
-          <div key={index} className="-flex -mb-20">
-
-            <IconHeading size="small"  iconUrl={this.getIconUrl(featureSet.feature)}>
-              <label htmlFor="select-feature-type-display" className="select-label">
-                <h2 className="heading3 -medium -no-margin feature-type-heading">
-                  {featureSet.feature}
-                </h2>
-              </label>
-            </IconHeading>
+              <IconHeading size="small"  iconUrl={this.getIconUrl(featureSet.feature)}>
+                <label htmlFor="select-feature-type-display" className="select-label">
+                  <h2 className="heading3 -medium -no-margin feature-type-heading">
+                    {featureSet.feature}
+                  </h2>
+                </label>
+              </IconHeading>
        
-
             
-              
+              <select
+                ref={ref => {this.selectRef = ref;}}
+                defaultValue="select-feature"
+                classNamePrefix="select"
+                className="select large heading4 -regular -flex-right"
+                id="select-feautre-type-display"
+                onChange={(event) => this.addSelectedFeatures(featureSet.feature, event)}>
 
-            
-            <select
-              ref={ref => {this.selectRef = ref;}}
-              defaultValue="select-feature"
-              classNamePrefix="select"
-              className="select large heading4 -regular -flex-right"
-              id="select-feautre-type-display"
-              onChange={(event) => this.addSelectedFeatures(featureSet.feature, event)}>
-
-                <option value="select-feature" disabled>
-                  Select Type
-                </option>
-
-                {featureSet.types.map((type, index) => (
-                  <option key={index} value={} feature={featureSet.feature} >
-                    {type}
+                  <option value="select-feature" disabled>
+                    Select Type
                   </option>
-              ))}
-            </select>
-            <input type="reset" value="reset" />
-            
-           
+
+                  {featureSet.types.map((type, index) => (
+                    <option key={index} value={type} feature={featureSet.feature} >
+                      {type}
+                    </option>
+                ))}
+              </select>
           </div>
         ))}
-         </form>
 
     </div>
     )
