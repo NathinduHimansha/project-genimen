@@ -1,6 +1,9 @@
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 
+export const isObjEmtpy = (obj) => {
+  return obj && Object.keys(obj).length === 0 && obj.constructor === Object;
+};
 export const saveToLocalStorage = (key, value) => {
   localStorage.setItem(key, value);
 };
