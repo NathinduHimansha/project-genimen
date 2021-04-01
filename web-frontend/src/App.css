@@ -186,6 +186,9 @@
 .-flex-align-end {
   align-items: flex-end;
 }
+.-flex-end {
+  justify-content: flex-end;
+}
 .-flex-center {
   justify-content: center;
 }
@@ -249,6 +252,9 @@
 }
 .-no-wrap {
   white-space: nowrap;
+}
+.-text-center {
+  text-align: center;
 }
 input {
   box-sizing: border-box;
@@ -438,6 +444,22 @@ button.primary-btn-outline:hover {
 button.primary-btn-outline:focus {
   outline: 2px solid var(--secondary-purple);
   outline-offset: 1px;
+}
+button.red-outline {
+  background: transparent !important;
+  color: var(--neg-red);
+  border: 2px solid var(--neg-red);
+}
+button.red-outline:hover {
+  color: #fff !important;
+  background: var(--neg-red) !important;
+  border: 2px solid var(--neg-red) !important;
+}
+button.red-outline:focus {
+  box-shadow: 0 0 0 2pt var(--error-red);
+  /* outline: 2px solid var(--primary-accent-dark); */
+  outline-offset: 1px;
+  outline: 0;
 }
 button.btn > * {
   margin-bottom: 1px !important;
