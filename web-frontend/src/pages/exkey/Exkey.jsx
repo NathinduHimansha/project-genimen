@@ -21,7 +21,7 @@ class Exkey extends React.Component {
 
   analyzeAgain = (event) => {
     document.querySelector('.loader_description').style.animation =
-      'typewriter_loadingDescription 2s steps(10) 10ms normal both';
+      'typewriter_loadingDescription 3s steps(16) 16ms normal both';
 
     document.querySelector('.analyze_again ').style.visibility = 'hidden';
     document.querySelector('.analysing_banner').style.visibility = 'hidden';
@@ -157,20 +157,20 @@ class Exkey extends React.Component {
                     <div className="line_progress"></div>
                     <div className="line_progress"></div>
                   </div>
-                  <div className="wrapper_progressBar">
-                    {/* <div class="loader-5">
+                  {/* <div className="wrapper_progressBar"> */}
+                  {/* <div class="loader-5">
                       <div class="loader-5-rect loader-5-rect-1"></div>
                       <div class="loader-5-rect loader-5-rect-2"></div>
                       <div class="loader-5-rect loader-5-rect-3"></div>
                       <div class="loader-5-rect loader-5-rect-4"></div>
                     </div> */}
-                    <div class="wifi-symbol">
+                  {/* <div class="wifi-symbol">
                       <div class="wifi-circle first"></div>
                       <div class="wifi-circle second"></div>
                       <div class="wifi-circle third"></div>
                       <div class="wifi-circle fourth"></div>
                     </div>
-                  </div>
+                  </div> */}
                   <div className="loader_description">
                     <h2 className="heading3 -medium -no-margin feature-type-heading">
                       <b>ANALYSING IN PROGRESS...</b>
