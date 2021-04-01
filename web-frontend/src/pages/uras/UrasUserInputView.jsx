@@ -98,7 +98,17 @@ function UrasUserInputView() {
 
 //   }));
 
+    const test1 = (feature,type) => {
 
+        setSelectedFeatures((prevSelectedFeatures)=>({...prevSelectedFeatures,[feature]: type}))
+        console.log(selectedFeatures)
+
+    }
+
+    const cleardata =() =>{
+        setSelectedFeatures({})
+
+    }
     
 
     
@@ -153,7 +163,7 @@ function UrasUserInputView() {
           </div>
         ))}
 
-       
+        <button type="reset" value="reset" onClick={()=>cleardata()}>Reset</button>
          </form>
 
     </div>
