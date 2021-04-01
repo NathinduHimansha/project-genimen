@@ -109,7 +109,7 @@ function App() {
             <Route path="/examples" component={Examples} />
             <Route path="/about" component={Login} />
             <Route path="/exkey" component={EXKEY} />
-            <Route path="/analytics/uras" component={UrasView} />
+            <Route path="/analytics/uras" component={UrasUserInputView} />
             <Route path="/urasresult" exact component={UrasResults} />
             <Route path="/pssa" component={Home} />
             <Route path="/fbfe" component={Home} />

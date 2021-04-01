@@ -27,11 +27,6 @@ const mock1 = [
       types: ['Available', 'None'],
       
     },
-    {
-      feature: 'test',
-      types: ['test1', 'test2'],
-      
-    }
   ];
   
 

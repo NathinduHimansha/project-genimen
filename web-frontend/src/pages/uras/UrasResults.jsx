@@ -28,7 +28,7 @@ function UrasResults() {
     viewState ? setSelectedFeature(fetchedData['feature-sentiment-polarity'][0].feature) : null;
   }, [viewState]);
 
-  const forwardBack = () => {
+  const routeBack = () => {
     history.push({
       pathname: '/test5',
     });
@@ -38,9 +38,7 @@ function UrasResults() {
     <div style={{ margin: '5% 10%' }}>
       <div style={{ margin: '5% 0% 10% 0%' }}>
       <Button
-                type="reset"
-                value="reset"
-                onClick={() => forwardBack()}
+                onClick={() => routeBack()}
                 iconSrc={leftarrow}
                 iconSide="left"
               />   
@@ -110,6 +108,13 @@ function UrasResults() {
           </div>
         </div>
       ) : null}
+      <div style={{ margin: '5% 0% 10% 0%' }}>
+      <Button
+                onClick={() => routeBack()}
+                iconSrc={leftarrow}
+                iconSide="left"
+              />   
+      </div>
     </div>
   );
 }

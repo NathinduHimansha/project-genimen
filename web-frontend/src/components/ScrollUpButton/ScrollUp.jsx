@@ -32,7 +32,6 @@ export default function ScrollUp() {
       {visible && (
         <div onClick={scrollToTop}>
           <img style={{ width: '40px' }}
-         
             src={arrowup}
             alt="Scroll-Up-Icon"
             title="Click to Scroll Up"

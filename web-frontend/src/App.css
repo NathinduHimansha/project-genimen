@@ -4,7 +4,6 @@
   --size-icon: url('/dist/assests/Size.png');
   --headphone-jack-icon: url('/dist/assests/HeadphoneJack.png');
   --fingerprint-icon: url('/dist/assests/FingerPrint.png');
-  --uparrow-icon: '/dist/assests/UpArrowDark.png';
 }
 :root[data-theme='dark'] {
   --display-icon: url('/dist/assests/DisplayLight.png');
@@ -12,7 +11,6 @@
   --size-icon: url('/dist/assests/SizeLight.png');
   --headphone-jack-icon: url('/dist/assests/HeadphoneJackLight.png');
   --fingerprint-icon: url('/dist/assests/FingerPrintLight.png');
-  --uparrow-icon: '/dist/assests/UpArrowDark.png';
   
 }
 /* util classes */
