@@ -48,8 +48,8 @@ function App() {
             <Route path="/examples" component={Examples} />
             <Route path="/about" component={Login} />
             <Route path="/exkey" component={EXKEY} />
-            <Route path="/analytics/uras" component={UrasView} />
-            <Route path="/urasresult" exact component={UrasResults} />
+            <Route path="/analytics/uras" component={URASViewAlt} />
+            <Route path="/urasresult" exact component={UrasResultsAlt} />
             <Route path="/pssa" component={Home} />
             <Route path="/fbfe" component={Home} />
             <Route path="/login" component={Login} />

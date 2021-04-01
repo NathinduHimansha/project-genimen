@@ -59,7 +59,7 @@ const URASViewAlt = () => {
                   <Button
                     iconSrc={search}
                     loading={false}
-                    onClick={() => console.log(history.push('/analytics/uras/urasresult'))}
+                    onClick={() => history.push('/urasresult')}
                   >
                     Start Analysing
                   </Button>
