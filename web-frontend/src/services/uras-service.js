@@ -39,6 +39,13 @@ const mock = {
         pos: 44.314823046579974,
       },
       {
+        feature: 'no display',
+        type: 'curved',
+        neg: 27.616515283397895,
+        polarity: 16.698307763182083,
+        pos: 44.314823046579974,
+      },
+      {
         feature: 'size',
         type: 'large',
         neg: 11.76470588235294,

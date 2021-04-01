@@ -24,6 +24,7 @@ import UrasFeaturesInput from './pages/uras/UrasFeaturesInput';
 import UrasUserView from './pages/uras/UrasUserView';
 import Store from './components/sate_management/GlobalStore';
 import { isLoggedIn } from './common/utils';
+import UrasUserInputView from './pages/uras/UrasUserInputView';
 
 function App() {
   const [state, dispatch] = useContext(Context);
@@ -59,6 +60,7 @@ function App() {
             <Route path="/test2" component={ReactToast2} />
             <Route path="/test3" component={TreeMap} />
             <Route path="/test4" component={UrasUserView} />
+            <Route path="/test5" component={UrasUserInputView} />
           </Switch>
         </div>
       </Router>

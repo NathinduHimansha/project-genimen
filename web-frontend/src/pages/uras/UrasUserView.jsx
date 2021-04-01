@@ -1,85 +1,124 @@
-import React, { useState,useEffect } from 'react';
+import React, {useState,useEffect} from 'react'
+import {analyseFeatures} from '../../services/uras-service';
 import FancyHeading from '../../components/text/FancyHeading';
 import search from '../../assests/Search.png';
 import Button from '../../components/buttons/Button';
 import UrasFeaturesInput from './UrasFeaturesInput';
-import {analyseFeatures} from '../../services/uras-service';
 import { NavLink, useHistory } from 'react-router-dom';
+
 import { ToastProvider, useToasts } from 'react-toast-notifications';
-
-
 
 function UrasUserView() {
 
-//     let analyseButton=false;
-//     const [urasData, setUrasData] = [];
-//     const [selectedFeatures, setSelectedFeatures] = [];
-//     const { addToast } = useToasts();
-//     const history = useHistory();
-//     const [passwordError, setPasswordError] = useState(false);
+    const [btnLoadingState, setBtnLoadingState] = useState(false);
+    const [urasData, setUrasData] = useState([]);
+    const [selectedFeatures, setSelectedFeatures] = useState({});
+    const [btnViewSate, setBtnViewSate] = useState(true)
+
+    const history = useHistory();
+    const { addToast } = useToasts();
+    
 
 
-//     const getRequestedData = () =>{
-        
-        
+    useEffect(()=>{ 
+        console.log("bu: ",urasData)
+    },[urasData])
 
-//             const httpRequest = analyseFeatures();
-//             analyseButton=false;
-          
-//           httpRequest.then((response) =>  setUrasData=response.data,
-         
-//             console.log("btn",analyseButton),
-//             console.log("22",urasData)
+    useEffect(()=>{ 
+       selectedFeatures.length?
+       setBtnViewSate(false):null
 
-//           );
-          
-       
+    },[selectedFeatures])
 
-          
+ 
+    
 
-//         // then((response) => {
-//         //     setUrasData(response.data),
-//         //     setAnalyseButton(true),
-//         //     console.log("btn",analyseButton),
-//         //     addToast('Invalid username/password, please try again ', {
-//         //         appearance: 'error',
-//         //         id: 'login-error',
-//         //       });
-            
-//         // })
-//         // .catch(error =>{
-//         //     if(error){
-                    
-//         //     }
-//         // })
+    const fetchData = () =>{
+        setBtnLoadingState(true);
+        console.log("btn ", selectedFeatures)
 
-//     };
+        // analyseFeatures(selectedFeatures)
+        analyseFeatures()
+        .then(response => {
+            setUrasData(response),
+            setBtnLoadingState(flase),
+            history.push({ 
+                pathname: '//urasresult',
+                state:response
+            })})
+    
 
-
-//     return (
-//         <div style={{ margin: '10% 10%' }}>
-
+        .catch(error =>{
+            setBtnLoadingState(false),
+            addToast('Data Fetching Error..! Please Try again', {
+                appearance: 'error',
+                id: 'uras-api-error',
+            });
                 
-//                 <div className="-mb-40">
-//                     <FancyHeading heading="SELECT FEATURES TO ANALYSE" />
-//                 </div>
+        })
+    }
+//     setExampleState({...exampleState,  masterField2: {
+//         fieldOne: "c",
+//         fieldTwo: {
+//            fieldTwoOne: "d",
+//            fieldTwoTwo: "e"
+//            }
+//         },
+//    }})
 
-//                 <div>
-//                     <UrasFeaturesInput  />
-//                 </div>
-             
-//                 <div className="-flex -flex-center -flex-middle -mt-40">
-//                     <Button onClick={() =>getRequestedData()} iconSrc={search}  loading={analtrueyseButton}>
-//                         Start Analysing
-//                     </Button>    
-//                 </div>   
-//             </div>
-//     )
-// }
 
-// function test() {
-//     return 
+//    setInfoData((prevState) => ({
+//     ...prevState,
+//     major: {
+//       ...prevState.major,
+//       name: "Tan Long",
+//     },
+//     minor: {
+//       ...prevState.minor,
+//       collegeRegion: "northEast"
 
+
+
+//   }));
+
+    const test1 = (feature,type) => {
+
+        setSelectedFeatures((prevSelectedFeatures)=>({...prevSelectedFeatures,[feature]: type}))
+        console.log(selectedFeatures)
+
+    }
+    
+
+    
+
+
+
+    return (
+        <div>
+            <div className="-mb-40">
+                    <FancyHeading heading="SELECT FEATURES TO ANALYSE" />
+                </div>
+
+                <div>
+                    <UrasFeaturesInput parentCallback={test1}  />
+
+                    <div className="-flex -flex-center -flex-middle -mt-40">
+            
+                    <Button onClick={fetchData} iconSrc={search} loading={btnLoadingState} disabled={btnViewSate}>
+                        Start Analysing
+                    </Button>   
+
+                    
+          
+                    
+
+                    
+                
+                </div>
+                </div>
+            
+        </div>
+    )
 }
 
-export default UrasUserView;
+export default UrasUserView
