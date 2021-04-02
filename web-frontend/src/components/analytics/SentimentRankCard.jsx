@@ -5,7 +5,6 @@ import angry from '../../assests/angry-emoji.png';
 const SentimentRankCard = (props) => {
   let { polarityPerc, label, description, polarity } = props;
   const color = polarity == 'pos' ? 'var(--pos-green)' : 'var(--neg-red)';
-  console.log('perc', polarityPerc);
   const polarityPercRounded = polarityPerc ? parseInt(polarityPerc.toFixed(0)) : polarityPerc;
 
   const polarityPercLabel =

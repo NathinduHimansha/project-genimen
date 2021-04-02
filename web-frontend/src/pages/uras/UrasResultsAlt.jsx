@@ -22,7 +22,32 @@ const UrasResultsAlt = () => {
   const phoneFeaturePolarity = 'phone-feature-polarity';
   const [bestPhone, setBestPhone] = useState([]);
   const [worstPhone, setWorstPhone] = useState([]);
-
+  const sorter = [
+    {
+      value: 'pos-neg',
+      name: 'Pos-Neg',
+      by: 'neg',
+    },
+    {
+      value: 'neg-pos',
+      name: 'Neg-Pos',
+      by: 'pos',
+    },
+    {
+      value: 'a-z',
+      name: 'A-Z',
+      by: 'phone',
+    },
+  ];
+  const [sortBy, setSortBy] = useState(sorter[0].by);
+  const sort = (i, phoneFeaturePolarityList) => {
+    return sortPhoneFeaturePolarity(phoneFeaturePolarityList, sorter[i].by);
+  };
+  const sortPhoneFeaturePolarity = (featurePolarityList, by) => {
+    return featurePolarityList.sort((p1, p2) => {
+      return p1[by] > p2[by] ? 1 : -1;
+    });
+  };
   const [urasData, setUrasData] = useState({
     [featureSentimentPolarity]: [],
     [phoneFeaturePolarity]: [],
@@ -62,11 +87,18 @@ const UrasResultsAlt = () => {
     }
   };
   useEffect(() => {
+    const phoneFeaturePolaritySorted = sortPhoneFeaturePolarity(
+      urasData[phoneFeaturePolarity],
+      sortBy,
+    );
+    urasData[phoneFeaturePolarity] = phoneFeaturePolaritySorted;
+    setUrasData(urasData);
+  }, [sortBy, setSortBy]);
+  useEffect(() => {
     const urasData = history.location.state.data;
     const featureType = urasData[featureSentimentPolarity][0].feature;
-    const phoneFeaturePolaritySorted = urasData[phoneFeaturePolarity].sort((p1, p2) => {
-      return p1.phone > p2.phone ? 1 : -1;
-    });
+    const phoneFeaturePolaritySorted = sort(0, urasData[phoneFeaturePolarity]);
+
     urasData[phoneFeaturePolarity] = phoneFeaturePolaritySorted;
     setUrasData(urasData);
     setSelectedFeatureType(featureType);
@@ -86,22 +118,6 @@ const UrasResultsAlt = () => {
   }, [urasData, setUrasData, selectedFeatureType, setSelectedFeatureType]);
   return (
     <div className="navbar-page-container -mb-40">
-      {/* <div */}
-      {/* src={circlebanner} */}
-      {/* style={{ */}
-      {/* // overflow: 'hidden', */}
-      {/* position: 'absolute', */}
-      {/* background: `url(${circlebanner})`, */}
-      {/* width: '270px', */}
-      {/* height: '100%', */}
-      {/* right: '0', */}
-      {/* top: '300px', */}
-      {/* // backgroundPositionY: '250px', */}
-      {/* backgroundPositionX: '120px', */}
-      {/* backgroundRepeat: 'no-repeat', */}
-      {/* backgroundSize: 'contain', */}
-      {/* }} */}
-      {/* ></div> */}
       <div className="app-heading-header content-padding -flex -flex-col">
         <div className="-mb-30">
           <NavLink to="/analytics/uras" className="-text-decoration-none">
@@ -203,8 +219,25 @@ const UrasResultsAlt = () => {
             <div className="-mt-5 -flex -full-width -flex-middle">
               <div className="-flex -flex-middle">
                 <span className="uras-sort-label">Sort by: </span>
-                <select className="uras-sort select">
-                  <option value="a-z">A-Z</option>
+                <select
+                  className="uras-sort select"
+                  onChange={(e) => {
+                    // setSortBy();
+                    const phoneFeaturePolarityList = urasData[phoneFeaturePolarity];
+                    const sortIndex = parseInt(e.target.value);
+                    const phoneFeaturePolaritySorted = sort(sortIndex, phoneFeaturePolarityList);
+                    const urasDataCopy = { ...urasData };
+                    urasDataCopy[phoneFeaturePolarity] = phoneFeaturePolaritySorted;
+                    setUrasData(urasDataCopy);
+                  }}
+                >
+                  {sorter.map((item, i) => {
+                    return (
+                      <option key={`uras-sorting-${i}`} value={i}>
+                        {item.name}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
             </div>
