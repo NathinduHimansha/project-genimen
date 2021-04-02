@@ -8,7 +8,8 @@ const SentimentRankCard = (props) => {
   const polarityPercRounded = polarityPerc ? parseInt(polarityPerc.toFixed(0)) : polarityPerc;
 
   const polarityPercLabel =
-    polarity == 'pos' ? '+' + polarityPercRounded + '%' : '-' + polarityPercRounded + '%';
+    // polarity == 'pos' ? '+' + polarityPercRounded + '%' : '-' + polarityPercRounded + '%';
+    polarityPercRounded > 50 ? '+' + polarityPercRounded + '%' : '-' + polarityPercRounded + '%';
 
   return (
     <div>
