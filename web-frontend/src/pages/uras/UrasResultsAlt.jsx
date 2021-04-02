@@ -55,19 +55,19 @@ const UrasResultsAlt = () => {
   const [selectedFeatureType, setSelectedFeatureType] = useState();
   const history = useHistory();
 
-  const findBest = () => {
-    return urasData[phoneFeaturePolarity]
+  const findBest = (featureType, phoneFeaturePolarityList) => {
+    return phoneFeaturePolarityList
       .filter((featureDet) => {
-        return featureDet.feature == selectedFeatureType;
+        return featureDet.feature == featureType;
       })
       .reduce((curr, pre) => {
         return curr.pos > pre.pos ? curr : pre;
       }, 0);
   };
-  const findWorst = () => {
-    return urasData[phoneFeaturePolarity]
+  const findWorst = (featureType, phoneFeaturePolarityList) => {
+    return phoneFeaturePolarityList
       .filter((featureDet) => {
-        return featureDet.feature == selectedFeatureType;
+        return featureDet.feature == featureType;
       })
       .reduce((curr, pre) => {
         return curr.pos < pre.pos ? curr : pre;
@@ -101,11 +101,14 @@ const UrasResultsAlt = () => {
 
     urasData[phoneFeaturePolarity] = phoneFeaturePolaritySorted;
     setUrasData(urasData);
+    setBestWorstPhones(featureType, urasData[phoneFeaturePolarity]);
     setSelectedFeatureType(featureType);
   }, []);
-  useEffect(() => {
-    let bestPhone = findBest();
-    let worstPhone = findWorst();
+  const setBestWorstPhones = (featureType, phoneFeaturePolarityList) => {
+    console.log(featureType);
+    let bestPhone = findBest(featureType, phoneFeaturePolarityList);
+    let worstPhone = findWorst(featureType, phoneFeaturePolarityList);
+    console.log(worstPhone);
     if (worstPhone.phone == bestPhone.phone) {
       if (worstPhone.pos > 50) {
         worstPhone = {};
@@ -115,7 +118,7 @@ const UrasResultsAlt = () => {
     }
     setBestPhone(bestPhone);
     setWorstPhone(worstPhone);
-  }, [urasData, setUrasData, selectedFeatureType, setSelectedFeatureType]);
+  };
   return (
     <div className="navbar-page-container -mb-40">
       <div className="app-heading-header content-padding -flex -flex-col">
@@ -147,6 +150,7 @@ const UrasResultsAlt = () => {
               id="select-feautre"
               value={selectedFeatureType}
               onChange={(e) => {
+                setBestWorstPhones(e.target.value, urasData[phoneFeaturePolarity]);
                 setSelectedFeatureType(e.target.value);
               }}
             >
