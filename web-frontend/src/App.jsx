@@ -18,6 +18,8 @@ import URASViewAlt from './pages/uras/URASViewAlt';
 import UrasResultsAlt from './pages/uras/UrasResultsAlt';
 import Store from './components/sate_management/GlobalStore';
 import { isLoggedIn } from './common/utils';
+import PssaView from './pages/pssa2/pssaView'
+import PssaResults from './pages/pssa2/pssaResults'
 
 function App() {
   const [state, dispatch] = useContext(Context);
@@ -41,19 +43,21 @@ function App() {
             <Route path="/home" component={HomePage} />
             <Route path="/index" component={HomePage} />
             <Route path="/about" component={Login} />
-            <Route path="/exkey" component={EXKEY} />
+            <Route path="/analytics/exkey" component={EXKEY} />
             <Route path="/analytics/uras/results" exact component={UrasResultsAlt} />
             {/* <Route path="/analytics/uras/results" exact component={UrasInputResults} /> */}
             {/* <Route path="/analytics/uras" component={UrasUserInputView} /> */}
             <Route path="/analytics/uras" component={URASViewAlt} />
             <Route path="/pssa" component={Home} />
             <Route path="/fbfe" component={Home} />
+            <Route path="/analytics/pssa" component={PssaView} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
 
             <Route path="/examples" component={Examples} />
             <Route path="/exkey" component={EXKEY} />
-            <Route path="/pssa" component={Home} />
+            <Route path="/pssa" component={PssaView} />
+            <Route path="/pssaResults" component={PssaResults} />
           </Switch>
           <ScrollUp />
           //

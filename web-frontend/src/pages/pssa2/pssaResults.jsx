@@ -1,11 +1,6 @@
 import React, { useEffect } from 'react';
 import FancyHeading from '../../components/text/FancyHeading';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
-import search from '../../assests/Search.png';
-import brandsm from '../../assests/brandsm.jpg';
-import { getFeatures } from '../../services/uras-service';
-import Button from '../../components/buttons/Button';
-import Sidebar from '../../components/tabs/Sidebar';
 import {analyseFeatures} from '../../services/uras-service';
 
 {/*const Examples2 = () => {

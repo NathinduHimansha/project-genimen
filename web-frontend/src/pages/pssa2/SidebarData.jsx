@@ -1,5 +1,4 @@
 import React from 'react';
-import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
 import * as MiIcons from "react-icons/im";
 import apple from '../../assests/images/apple.png';
