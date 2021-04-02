@@ -17,6 +17,7 @@
   box-shadow: 0px 5px 5px #0000001a;
   /* position: fixed; */
   background: var(--white);
+  width: -moz-fit-content;
   width: fit-content;
   height: auto;
   /* top: 50%; */

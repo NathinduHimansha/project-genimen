@@ -335,6 +335,8 @@ label.select-label {
 }
 select.select {
   width: 9rem;
+  width: -moz-fit-content;
+  width: fit-content;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
@@ -376,6 +378,7 @@ select.large {
 }
 /* button */
 button.btn {
+  width: -moz-fit-content;
   width: fit-content;
   position: relative;
   overflow: hidden;
@@ -802,6 +805,7 @@ button.signup-btn {
 .header-current-location {
   /* margin-left: auto; */
   background-color: var(--current-location-background);
+  width: -moz-fit-content;
   width: fit-content;
   border: 1px solid var(--current-location-border-color);
   border-radius: 3px;
@@ -882,6 +886,7 @@ button.signup-btn {
 select.uras-sort {
   font-size: 1.4rem;
   margin: 10px;
+  width: -moz-fit-content;
   width: fit-content;
   color: var(--grey-black);
 }

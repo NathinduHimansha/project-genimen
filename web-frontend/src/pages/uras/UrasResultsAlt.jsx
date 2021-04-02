@@ -64,6 +64,10 @@ const UrasResultsAlt = () => {
   useEffect(() => {
     const urasData = history.location.state.data;
     const featureType = urasData[featureSentimentPolarity][0].feature;
+    const phoneFeaturePolaritySorted = urasData[phoneFeaturePolarity].sort((p1, p2) => {
+      return p1.phone > p2.phone ? 1 : -1;
+    });
+    urasData[phoneFeaturePolarity] = phoneFeaturePolaritySorted;
     setUrasData(urasData);
     setSelectedFeatureType(featureType);
   }, []);
