@@ -23,8 +23,9 @@ import { ToastProvider, useToasts } from 'react-toast-notifications';
 import HomePage from './pages/index/HomePage';
 
 import UrasUserInputView from './pages/uras/UrasUserInputView';
-import ScrollUp from './components/ScrollUpButton/ScrollUp';
+import ScrollUp from './components/scrollupbutton/ScrollUp';
 import UrasInputResults from './pages/uras/UrasInputResults';
+import testcard from './pages/experiment/testcard';
 
 
 const routes = [
@@ -121,6 +122,7 @@ function App() {
             <Route path="/examples" component={Examples} />
             <Route path="/exkey" component={EXKEY} />
             <Route path="/pssa" component={Home} />
+            <Route path="/testcard" component={testcard} />
           </Switch>
 
           <ScrollUp />//
