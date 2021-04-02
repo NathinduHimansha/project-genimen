@@ -13,7 +13,6 @@
   --size-icon: url('/dist/assests/SizeLight.png');
   --headphone-jack-icon: url('/dist/assests/HeadphoneJackLight.png');
   --fingerprint-icon: url('/dist/assests/FingerPrintLight.png');
-  
 }
 /* util classes */
 /* Margin Bottom */
@@ -872,6 +871,13 @@ button.signup-btn {
 }
 .sentiment-rank-card-container > div {
   margin-bottom: 20px;
+}
+.sentiment-rank-card-label h1 {
+  max-width: 20ch;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .feature-overall-sentiment-container {
   display: flex;
