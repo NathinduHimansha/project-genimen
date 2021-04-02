@@ -11,8 +11,8 @@ import Examples from './pages/experiment/Examples';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 import HomePage from './pages/index/HomePage';
-import UrasUserInputView from './pages/uras/UrasUserInputView';
 import ScrollUp from './components/ScrollUpButton/ScrollUp';
+import UrasUserInputView from './pages/uras/UrasUserInputView';
 import UrasInputResults from './pages/uras/UrasInputResults';
 import URASViewAlt from './pages/uras/URASViewAlt';
 import UrasResultsAlt from './pages/uras/UrasResultsAlt';
@@ -42,8 +42,10 @@ function App() {
             <Route path="/index" component={HomePage} />
             <Route path="/about" component={Login} />
             <Route path="/exkey" component={EXKEY} />
+            <Route path="/analytics/uras/results" exact component={UrasResultsAlt} />
+            {/* <Route path="/analytics/uras/results" exact component={UrasInputResults} /> */}
+            {/* <Route path="/analytics/uras" component={UrasUserInputView} /> */}
             <Route path="/analytics/uras" component={URASViewAlt} />
-            <Route path="/urasresult" exact component={UrasResultsAlt} />
             <Route path="/pssa" component={Home} />
             <Route path="/fbfe" component={Home} />
             <Route path="/login" component={Login} />
