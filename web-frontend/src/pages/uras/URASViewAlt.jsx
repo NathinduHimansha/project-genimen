@@ -29,7 +29,7 @@ const URASViewAlt = () => {
         .then((response) => {
           setBtnLoadingState(false),
             history.push({
-              pathname: '/analytics/uras/urasresults',
+              pathname: '/analytics/uras/results',
               state: response, //passing fetched data to results
             });
         })
