@@ -27,32 +27,47 @@ body * {
   --black: rgba(0, 0, 0, 1);
   --primary-black: rgba(68, 68, 68, 1);
   --secondary-black: rgba(68, 68, 68, 1);
-  --primary-accent: rgb(219, 132, 0);
-  --primary-accent-light: rgb(255, 168, 55);
-  --primary-accent-dark: rgb(214, 129, 0);
+  --grey-black: rgb(99, 99, 99);
+  --primary-accent: rgba(241, 145, 0, 1);
+  --primary-accent-light: rgba(255, 160, 38, 1);
+  --primary-accent-dark: rgba(241, 145, 0, 1);
   --secondary-accent: rgba(73, 135, 255, 1);
+  --link-blue: #0089d7;
   --light-grey: rgba(189, 189, 189, 1);
+  --lighter-grey: rgb(235, 235, 235);
   --grey: rgba(146, 146, 146, 1);
   --primary-border-grey: rgba(159, 159, 159, 1);
+  --primary-border-grey: rgba(188, 188, 188, 1);
 
   /* Effect styles */
-  --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12);
+  /* --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12); */
+  --primary-box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.12);
   --primary-border: 1px solid var(--primary-border-grey);
 
   /* gaps */
   --gap-medium: 25px;
 
   /* dark-mode exceptions */
+  --modal-box-border: rgb(0 0 0 / 7%);
+  --modal-box-footer-border: rgb(0 0 0 / 10%);
+  --current-location-background: #ddf4ff53;
+  --current-location-border-color: #95dcff;
+  --info-focus-card-background: #fafafa;
+  --info-focus-card-border-color: #71ddff;
+  --heading2-sep-grey: rgb(200, 200, 200);
   --error-icon-background: #ff5630;
   --error-light-text: #bf2600;
   --success-icon-background: #36b37e;
   --success-light-text: #006644;
-  --nav-background: #092e67;
+  /* --nav-background: #1f447c; */
+  /* --nav-background: #1c3c6d; */
+  --nav-background: #204379;
   --nav-border-sep: #21376c;
-  --nav-hover-link-color: #ffe08c;
-  --nav-link-hover-background: #95bcf721;
+  --nav-hover-link-color: #fff1d2;
+  --nav-link-hover-background: #5096ff21;
   --nav-highlight: #0f2e5d;
-  --auth-background: #173f7b;
+  /* --auth-background: #173f7b; */
+  --auth-background: #214273;
   --auth-border-color: #193d73;
   --tag: rgba(255, 255, 255, 1);
   --analytics-card: rgba(255, 255, 255, 1);
@@ -83,30 +98,41 @@ body * {
   --black: rgba(250, 250, 250, 1);
   --primary-black: rgb(205 205 205);
   --secondary-black: rgba(190, 190, 190, 1);
+  --grey-black: rgb(199, 199, 199);
   --primary-accent: rgb(206 129 15);
-  --primary-accent-light: rgb(255, 168, 55);
+  --primary-accent-light: rgb(159 96 2);
   --primary-accent-dark: rgba(241, 145, 0, 1);
   --secondary-accent: rgba(38, 132, 255, 1);
   --light-grey: rgba(69, 69, 69, 1);
+  --lighter-grey: rgb(42, 42, 42);
   --grey: rgb(198 198 198);
   --primary-border-grey: rgba(69, 69, 69, 1);
   /* dark-mode exceptions */
+  --modal-box-border: rgb(255 255 255 / 7%);
+  --modal-box-footer-border: rgb(255 255 255 / 7%);
+  --current-location-background: #003b5753;
+  --current-location-border-color: #003853;
+  --info-focus-card-background: #222;
+  --info-focus-card-border-color: #076682;
+  --heading2-sep-grey: rgb(59, 59, 59);
   --error-icon-background: #7f1700;
   --error-light-text: #fff;
   --success-icon-background: #004b2b;
   --success-light-text: #fff;
-  --nav-background: #05224d;
+  --nav-background: #1c3c6d;
   --nav-border-sep: #21376c;
   --nav-hover-link-color: #ffe08c;
   --nav-link-hover-background: #95bcf721;
+  --nav-link-hover-background: #a9c4ff17;
   --nav-highlight: #0f2e5d;
-  --auth-background: #173f7b;
+  /* --auth-background: #173f7b; */
+  --auth-background: #214273;
   --auth-border-color: #183769;
   --tag: rgb(25 52 87);
   --analytics-card: rgb(34 36 40);
   --fancy-heading-color: rgb(193 208 230);
   --input-box-background: rgba(69, 69, 69, 1);
-  --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12);
+  --primary-box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.12);
   --primary-border: 1px solid var(--primary-border-grey);
   --select-box-alt-color: rgba(39, 39, 39, 1);
 

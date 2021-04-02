@@ -1,26 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { Context } from './components/sate_management/GlobalStore';
 import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/nav/NavBar';
-import about from './assests/AboutLight.png';
-import search from './assests/Search.png';
-import dark from './assests/NightMode.png';
-import light from './assests/LightMode.png';
-import home from './assests/HomeWhite.png';
-
+import GenimenSideBar from './components/nav/GenimenSideBar';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/signup';
 import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
 
-
-
-
-import { toggleMode } from './common/style.js';
-import Button from './components/buttons/Button';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 import HomePage from './pages/index/HomePage';
+<<<<<<< HEAD
 
 import UrasUserInputView from './pages/uras/UrasUserInputView';
 import ScrollUp from './components/scrollupbutton/ScrollUp';
@@ -53,55 +44,56 @@ const routes = [
   },
   
 ];
+=======
+import ScrollUp from './components/ScrollUpButton/ScrollUp';
+import UrasUserInputView from './pages/uras/UrasUserInputView';
+import UrasInputResults from './pages/uras/UrasInputResults';
+import URASViewAlt from './pages/uras/URASViewAlt';
+import UrasResultsAlt from './pages/uras/UrasResultsAlt';
+import Store from './components/sate_management/GlobalStore';
+import { isLoggedIn } from './common/utils';
+import PssaView from './pages/pssa2/pssaView';
+import PssaResults from './pages/pssa2/pssaResults';
+>>>>>>> 344dd671489967970941352e9243e5df61855177
 
 function App() {
-  const [themeMode, setTheme] = useState('dark');
+  const [state, dispatch] = useContext(Context);
+  useEffect(() => {
+    const loggedIn = isLoggedIn();
+    if (loggedIn) {
+      dispatch({ type: 'LOGOUT' });
+    } else {
+      dispatch({ type: 'LOGIN' });
+    }
+  }, []);
+  const RoutesWNav = () => {
+    return (
+      <div>
+        <GenimenSideBar></GenimenSideBar>
+        <Switch>
+          <Route path="/about" component={Login} />
+          <Route path="/analytics/exkey" component={EXKEY} />
+          <Route exact path="/analytics/uras" component={URASViewAlt} />
+          <Route path="/analytics/uras/results" component={UrasResultsAlt} />
+          {/* <Route path="/analytics/uras/results" exact component={UrasInputResults} /> */}
+          {/* <Route path="/analytics/uras" component={UrasUserInputView} /> */}
+          <Route exact path="/analytics/pssa" component={PssaView} />
+          <Route path="/analytics/pssa/results" component={PssaResults} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/exkey" component={EXKEY} />
+          <Route path="/examples" component={Examples} />
+          <Route exact path="/" component={() => <Redirect to="/home" />} />
+        </Switch>
+      </div>
+    );
+  };
   return (
     <ToastProvider autoDismissTimeout={4000} autoDismiss={true} placement={'top-center'}>
       <Router>
         <div className="App">
-          
-          <NavBar routes={routes}>
-            <div className="theme-switch -flex -flex-center -mt-50">
-              <img
-                className={themeMode == 'light' ? 'dark-mode-icon -opacity-0' : 'dark-mode-icon'}
-                src={dark}
-                title="Click to Change the Color Theme"
-                onClick={() => {
-                  toggleMode();
-                  if (themeMode == 'dark') {
-                    setTheme('light');
-                  } else {
-                    setTheme('dark');
-                  }
-                }}
-              />
-              <img
-                className={themeMode == 'dark' ? 'light-mode-icon -opacity-0' : 'light-mode-icon'}
-                src={light}
-                title="Click to Change the Color Theme"
-                onClick={() => {
-                  toggleMode();
-                  if (themeMode == 'dark') {
-                    setTheme('light');
-                  } else {
-                    setTheme('dark');
-                  }
-                }}
-              />
-            </div>
-            <div className="auth-btn-wrapper -flex -flex-center -mt-auto">
-              <NavLink className="login-btn-link" exact to="/signup">
-                <Button outline={true} utilClasses="signup-btn">
-                  Sign Up
-                </Button>
-              </NavLink>
-              <NavLink className="login-btn-link" exact to="/login">
-                <Button utilClasses=" login-btn">Login</Button>
-              </NavLink>
-            </div>
-          </NavBar>
           <Switch>
+<<<<<<< HEAD
             <Route exact path="/" component={HomePage}>
               <Redirect to="/index" />
             </Route>
@@ -123,21 +115,24 @@ function App() {
             <Route path="/exkey" component={EXKEY} />
             <Route path="/pssa" component={Home} />
             <Route path="/testcard" component={testcard} />
+=======
+            <Route exact path="/home" component={HomePage} />
+            <Route component={RoutesWNav} />
+>>>>>>> 344dd671489967970941352e9243e5df61855177
           </Switch>
-
-          <ScrollUp />//
+          <ScrollUp />
         </div>
       </Router>
     </ToastProvider>
   );
 }
 
-const Home = () => {
+const AppWithStore = () => {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <Store>
+      <App></App>
+    </Store>
   );
 };
 
-export default App;
+export default AppWithStore;

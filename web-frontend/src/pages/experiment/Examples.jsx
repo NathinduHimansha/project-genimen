@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import { Context } from '../../components/sate_management/GlobalStore';
 import CircularProgress from '../../components/graphs/CircularProgress';
 import ProgressBar from '../../components/graphs/ProgressBar';
 import FancyHeading from '../../components/text/FancyHeading';
 import NetPolarity from '../../components/analytics/NetPolarity';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import SampleFeatureSelection from './SampleFeatureSelection';
-import './card.css';
 import phoneIcon from '../../assests/PhoneIcon.png';
 import search from '../../assests/Search.png';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
@@ -15,8 +15,11 @@ import IconHeading from '../../components/text/IconHeading';
 import SentimentRankCard from '../../components/analytics/SentimentRankCard';
 
 const Examples = () => {
+  const [state, dispatch] = useContext(Context);
+
   const test = getFeatures();
   useEffect(() => {
+    dispatch({ type: 'TOGGLE_LOGIN' });
     test.then((res) => console.log(res));
   }, []);
 
@@ -27,7 +30,9 @@ const Examples = () => {
         <div style={{ width: '80%' }} className="-flex -flex-center">
           <div style={{ width: '50%' }} className="feature-selection-box">
             <div className="-mb-80">
-              <FancyHeading heading="SELECT FEATURES TO ANALYSE"></FancyHeading>
+              <FancyHeading>
+                <h1 className="fancy-heading">SELECT FEATURES TO ANALYSE</h1>
+              </FancyHeading>
             </div>
             {/* <div className="-flex -mb-40"> */}
             {/* <select */}
@@ -72,7 +77,9 @@ const Examples = () => {
       </div>
       <div className="" style={{ marginLeft: '10%', marginBottom: '10%' }}>
         <div className="-mb-40 -mt-90">
-          <FancyHeading heading="FEATURES SENTIMENTS"></FancyHeading>
+          <FancyHeading>
+            <h1 className="fancy-heading -no-margin">FEATURES SENTIMENTS</h1>
+          </FancyHeading>
         </div>
 
         <div className="-mb-35 -mt-80">

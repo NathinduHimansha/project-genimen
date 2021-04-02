@@ -1,5 +1,11 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
+  packageOptions: {
+    rollup: {
+      plugins: ['rollup-plugin-node-polyfills'],
+    },
+    polyfillNode: true,
+  },
   mount: {
     /* ... */
     public: '/',

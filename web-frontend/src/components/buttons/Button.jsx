@@ -1,15 +1,12 @@
 import React from 'react';
 
 const Button = (props) => {
-  let { iconSrc, utilClasses, iconSide, loading, onClick, outline, disabled, type, value } = props;
+  let { iconSrc, utilClasses, iconSide, loading, onClick, outline, disabled } = props;
   outline = outline || false;
   loading = loading || false;
   iconSrc = iconSrc ? iconSrc : '';
   iconSide = iconSide ? iconSide : 'right';
   utilClasses = utilClasses ? [utilClasses] : [];
-  type = type? type : "";
-  value = value? value : '';
-
 
   const hideOnLoad = () => {
     return loading ? '-hidden' : '';
@@ -35,8 +32,6 @@ const Button = (props) => {
 
   return (
     <button
-    type ={type}
-    value={value}
       onClick={onClick}
       className={
         getIconClass() +

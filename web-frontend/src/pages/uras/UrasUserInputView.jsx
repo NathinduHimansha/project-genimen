@@ -77,7 +77,7 @@ function UrasUserInputView() {
             appearance: 'error',
             id: 'uras-api-error',
           });
-          console.log('Data Fething Error caught: analyseFeatures()');
+        console.log('Data Fething Error caught: analyseFeatures()');
       });
   };
 
