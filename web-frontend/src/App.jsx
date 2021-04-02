@@ -25,8 +25,8 @@ import HomePage from './pages/index/HomePage';
 import UrasUserInputView from './pages/uras/UrasUserInputView';
 import ScrollUp from './components/ScrollUpButton/ScrollUp';
 import UrasInputResults from './pages/uras/UrasInputResults';
-
-
+import PssaView from './pages/pssa2/pssaView'
+import PssaResults from './pages/pssa2/pssaResults'
 const routes = [
   {
     title: 'Home',
@@ -113,14 +113,15 @@ function App() {
 
             <Route path="/analytics/exkey" component={EXKEY} />
 
-            <Route path="/analytics/pssa" component={Home} />
+            <Route path="/analytics/pssa" component={PssaView} />
           
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
 
             <Route path="/examples" component={Examples} />
             <Route path="/exkey" component={EXKEY} />
-            <Route path="/pssa" component={Home} />
+            <Route path="/pssa" component={PssaView} />
+            <Route path="/pssaResults" component={PssaResults} />
           </Switch>
 
           <ScrollUp />//
