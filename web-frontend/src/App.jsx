@@ -3,14 +3,10 @@ import { Context } from './components/sate_management/GlobalStore';
 import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import './App.css';
 import GenimenSideBar from './components/nav/GenimenSideBar';
-import URAS from './pages/uras/URAS';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/signup';
 import EXKEY from './pages/exkey/Exkey';
 import Examples from './pages/experiment/Examples';
-
-
-
 
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 
@@ -21,7 +17,7 @@ import UrasInputResults from './pages/uras/UrasInputResults';
 import URASViewAlt from './pages/uras/URASViewAlt';
 import UrasResultsAlt from './pages/uras/UrasResultsAlt';
 import Store from './components/sate_management/GlobalStore';
-import { isLoggedIn } from './common/utils'
+import { isLoggedIn } from './common/utils';
 
 function App() {
   const [state, dispatch] = useContext(Context);
@@ -57,8 +53,8 @@ function App() {
             <Route path="/exkey" component={EXKEY} />
             <Route path="/pssa" component={Home} />
           </Switch>
-
-          <ScrollUp />//
+          <ScrollUp />
+          //
         </div>
       </Router>
     </ToastProvider>
