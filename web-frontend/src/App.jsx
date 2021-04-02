@@ -18,8 +18,8 @@ import URASViewAlt from './pages/uras/URASViewAlt';
 import UrasResultsAlt from './pages/uras/UrasResultsAlt';
 import Store from './components/sate_management/GlobalStore';
 import { isLoggedIn } from './common/utils';
-import PssaView from './pages/pssa2/pssaView'
-import PssaResults from './pages/pssa2/pssaResults'
+import PssaView from './pages/pssa2/pssaView';
+import PssaResults from './pages/pssa2/pssaResults';
 
 function App() {
   const [state, dispatch] = useContext(Context);
@@ -31,49 +31,42 @@ function App() {
       dispatch({ type: 'LOGIN' });
     }
   }, []);
+  const RoutesWNav = () => {
+    return (
+      <div>
+        <GenimenSideBar></GenimenSideBar>
+        <Switch>
+          <Route path="/about" component={Login} />
+          <Route path="/analytics/exkey" component={EXKEY} />
+          <Route exact path="/analytics/uras" component={URASViewAlt} />
+          <Route path="/analytics/uras/results" component={UrasResultsAlt} />
+          {/* <Route path="/analytics/uras/results" exact component={UrasInputResults} /> */}
+          {/* <Route path="/analytics/uras" component={UrasUserInputView} /> */}
+          <Route exact path="/analytics/pssa" component={PssaView} />
+          <Route path="/analytics/pssa/results" component={PssaResults} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/exkey" component={EXKEY} />
+          <Route path="/examples" component={Examples} />
+          <Route exact path="/" component={() => <Redirect to="/home" />} />
+        </Switch>
+      </div>
+    );
+  };
   return (
     <ToastProvider autoDismissTimeout={4000} autoDismiss={true} placement={'top-center'}>
       <Router>
         <div className="App">
-          <GenimenSideBar></GenimenSideBar>
           <Switch>
-            <Route exact path="/" component={HomePage}>
-              <Redirect to="/index" />
-            </Route>
-            <Route path="/home" component={HomePage} />
-            <Route path="/index" component={HomePage} />
-            <Route path="/about" component={Login} />
-            <Route path="/analytics/exkey" component={EXKEY} />
-            <Route path="/analytics/uras/results" exact component={UrasResultsAlt} />
-            {/* <Route path="/analytics/uras/results" exact component={UrasInputResults} /> */}
-            {/* <Route path="/analytics/uras" component={UrasUserInputView} /> */}
-            <Route path="/analytics/uras" component={URASViewAlt} />
-            <Route path="/pssa" component={Home} />
-            <Route path="/fbfe" component={Home} />
-            <Route path="/analytics/pssa" component={PssaView} />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
-
-            <Route path="/examples" component={Examples} />
-            <Route path="/exkey" component={EXKEY} />
-            <Route path="/pssa" component={PssaView} />
-            <Route path="/pssaResults" component={PssaResults} />
+            <Route exact path="/home" component={HomePage} />
+            <Route component={RoutesWNav} />
           </Switch>
           <ScrollUp />
-          //
         </div>
       </Router>
     </ToastProvider>
   );
 }
-
-const Home = () => {
-  return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  );
-};
 
 const AppWithStore = () => {
   return (
