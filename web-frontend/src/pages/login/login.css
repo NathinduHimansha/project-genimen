@@ -13,6 +13,9 @@
   /* width: 30%; */
   /* border-radius: 5px; */
 }
+.login-page-container-wrapper {
+  margin-left: 3%;
+}
 .login-page-container > div {
   margin: auto;
 }
@@ -125,11 +128,14 @@ input.error-input {
 }
 @media only screen and (max-height: 750px) {
   .login-page-container {
-    padding-bottom: 150px !important;
-    padding-top: 70px !important;
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
   }
 }
 @media only screen and (max-width: 1000px) {
+  .login-page-container-wrapper {
+    margin-left: 0;
+  }
   .login-banner-wrapper-container {
     display: none;
   }

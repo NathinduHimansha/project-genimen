@@ -305,7 +305,7 @@ h6 {
   font-size: 1.6rem;
 }
 span.t1 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 .color-grey {
   color: var(--grey);
@@ -336,7 +336,10 @@ label.select-label {
 }
 select.select {
   width: 9rem;
+  width: -moz-fit-content;
+  width: fit-content;
   padding-top: 4px;
+  font-size: 1.4rem;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 10px;
@@ -374,9 +377,11 @@ select.large {
   padding-left: 10px;
   padding-right: 55px;
   width: 22rem;
+  font-size: 1.8rem;
 }
 /* button */
 button.btn {
+  width: -moz-fit-content;
   width: fit-content;
   position: relative;
   overflow: hidden;
@@ -424,7 +429,7 @@ button.primary-btn:disabled {
   opacity: 0.75;
 }
 button.primary-btn:hover:enabled {
-  transform: translateY(1px);
+  /* transform: translateY(1px); */
   background: var(--primary-accent-light);
   border: 2px solid var(--primary-accent-light);
 }
@@ -439,8 +444,11 @@ button.primary-btn-outline {
   background: transparent;
   /* border: 2px solid var(--primary-accent); */
 }
+button.primary-btn-outline:disabled:hover {
+  color: var(--primary-accent);
+}
 button.primary-btn-outline:hover {
-  color: var(--primary-white);
+  color: #fff;
   /* background: var(--dark-purple); */
   /* border: 2px solid var(--dark-purple); */
 }
@@ -496,6 +504,11 @@ button.icon-button {
   border-radius: 50%;
   -webkit-animation: spinner-border 0.75s linear infinite;
   animation: spinner-border 0.75s linear infinite;
+}
+.spinner-medium {
+  width: 4rem;
+  height: 4rem;
+  border-width: 3px;
 }
 .spinner-large {
   width: 8rem;
@@ -561,6 +574,7 @@ select.phone-selector {
   /* width: 80%; */
 }
 select.select-feature {
+  animation: feature-selection-reveal 200ms ease forwards;
   background-color: var(--select-box-alt-color);
 }
 .feature-selection-banner {
@@ -794,6 +808,7 @@ button.signup-btn {
 .header-current-location {
   /* margin-left: auto; */
   background-color: var(--current-location-background);
+  width: -moz-fit-content;
   width: fit-content;
   border: 1px solid var(--current-location-border-color);
   border-radius: 3px;
@@ -874,8 +889,24 @@ button.signup-btn {
 select.uras-sort {
   font-size: 1.4rem;
   margin: 10px;
+  width: -moz-fit-content;
   width: fit-content;
   color: var(--grey-black);
+}
+.feature-selection-box-wrapper {
+  animation: feature-selection-reveal 900ms ease forwards;
+}
+@keyframes feature-selection-reveal {
+  from {
+    /* margin-bottom: 0; */
+    /* height: 0; */
+    opacity: 0;
+  }
+  to {
+    /* margin-bottom: 10px; */
+    /* height: auto; */
+    opacity: 1;
+  }
 }
 @media only screen and (max-width: 1500px) {
   .content-padding {

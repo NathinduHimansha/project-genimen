@@ -48,6 +48,8 @@ body * {
   --gap-medium: 25px;
 
   /* dark-mode exceptions */
+  --modal-box-border: rgb(0 0 0 / 7%);
+  --modal-box-footer-border: rgb(0 0 0 / 10%);
   --current-location-background: #ddf4ff53;
   --current-location-border-color: #95dcff;
   --info-focus-card-background: #fafafa;
@@ -106,6 +108,8 @@ body * {
   --grey: rgb(198 198 198);
   --primary-border-grey: rgba(69, 69, 69, 1);
   /* dark-mode exceptions */
+  --modal-box-border: rgb(255 255 255 / 7%);
+  --modal-box-footer-border: rgb(255 255 255 / 7%);
   --current-location-background: #003b5753;
   --current-location-border-color: #003853;
   --info-focus-card-background: #222;
