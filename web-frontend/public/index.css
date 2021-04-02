@@ -78,7 +78,7 @@ body * {
   --logo-banner-subtext: #8479ff;
 
   /*welcome text */
-  --welcome-text-top: #555555;
+  --welcome-text-top: #4b4b4b;
   --welcome-text-bottom: #000000;
 
   /*index bg annimation */
@@ -137,9 +137,9 @@ body * {
   --logo-banner-subtext: #a097fa;
 
   /*welcome text */
-  --welcome-text-top: #a5a5a5;
+  --welcome-text-top: #bbbbbb;
   --welcome-text-bottom: #ffffff;
 
   /*index bg annimation */
-  --bg-annimation: #3b89fe;
+  --bg-annimation: #ffffff;
 }

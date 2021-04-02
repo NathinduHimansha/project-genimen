@@ -66,7 +66,7 @@ function UrasUserInputView() {
       .then((response) => {
         setBtnLoadingState(false),
           history.push({
-            pathname: '/urasresult',
+            pathname: '/analytics/uras/results',
             state: response, //passing fetched data to results
           });
       })
@@ -77,6 +77,7 @@ function UrasUserInputView() {
             appearance: 'error',
             id: 'uras-api-error',
           });
+          console.log('Data Fething Error caught: analyseFeatures()');
       });
   };
 

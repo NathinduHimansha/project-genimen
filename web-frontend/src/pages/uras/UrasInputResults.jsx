@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import FancyHeading from '../../components/text/FancyHeading';
+import Button from '../../components/buttons/Button';
+
+import leftarrow from '../../assests/left-arrow.png';
 
 import './uras.css';
 
-function UrasResults() {
+function UrasInputResults() {
   const [fetchedData, setFetchedData] = useState([]);
   const [selectedFeature, setSelectedFeature] = useState(null); //selected feature to display
   const [viewState, setViewState] = useState(false);
@@ -25,8 +28,21 @@ function UrasResults() {
     viewState ? setSelectedFeature(fetchedData['feature-sentiment-polarity'][0].feature) : null;
   }, [viewState]);
 
+  const routeBack = () => {
+    history.push({
+      pathname: '/analytics/uras',
+    });
+  };
+
   return (
-    <div style={{ margin: '10% 10%' }}>
+    <div style={{ margin: '5% 10%' }}>
+      <div style={{ margin: '5% 0% 10% 0%' }}>
+      <Button
+                onClick={() => routeBack()}
+                iconSrc={leftarrow}
+                iconSide="left"
+              />   
+      </div>
       {viewState ? (
         <div>
           <div className="-mb-30">
@@ -92,8 +108,15 @@ function UrasResults() {
           </div>
         </div>
       ) : null}
+      <div style={{ margin: '5% 0% 10% 0%' }}>
+      <Button
+                onClick={() => routeBack()}
+                iconSrc={leftarrow}
+                iconSide="left"
+              />   
+      </div>
     </div>
   );
 }
 
-export default UrasResults;
+export default UrasInputResults;

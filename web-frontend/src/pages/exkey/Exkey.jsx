@@ -6,7 +6,7 @@ import TreeMap from '../../components/graphs/TreeMap';
 import FancyHeading from '../../components/text/FancyHeading';
 import Button from '../../components/buttons/Button';
 import colourful_mobilePhone from '../../assests/colourful.png';
-import processGif from '../../assests/Process.gif';
+import processGif from '../../assests/Process_loading.gif';
 import axios from 'axios';
 import { trendz } from '../../services/exkey-bargraph-service';
 
