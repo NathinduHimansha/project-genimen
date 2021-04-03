@@ -90,10 +90,10 @@ const GenimenSideBar = () => {
               toggleMode();
               if (themeMode == 'dark') {
                 setTheme('light');
-                dispatch({ type: 'TOGGLE_LIGHT' });
+                // dispatch({ type: 'TOGGLE_LIGHT' });
               } else {
                 setTheme('dark');
-                dispatch({ type: 'TOGGLE_DARK' });
+                // dispatch({ type: 'TOGGLE_DARK' });
               }
             }}
           />
@@ -104,10 +104,10 @@ const GenimenSideBar = () => {
               toggleMode();
               if (themeMode == 'dark') {
                 setTheme('light');
-                dispatch({ type: 'TOGGLE_LIGHT' });
+                // dispatch({ type: 'TOGGLE_LIGHT' });
               } else {
                 setTheme('dark');
-                dispatch({ type: 'TOGGLE_DARK' });
+                // dispatch({ type: 'TOGGLE_DARK' });
               }
             }}
           />
