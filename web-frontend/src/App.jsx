@@ -20,7 +20,7 @@ import Store from './components/sate_management/GlobalStore';
 import { isLoggedIn } from './common/utils';
 import PssaView from './pages/pssa2/pssaView';
 import PssaResults from './pages/pssa2/pssaResults';
-import ScrollUp from './components/scrollupbutton/ScrollUp';
+import ScrollUp from './components/ScrollUpButton/ScrollUp';
 
 function App() {
   const [state, dispatch] = useContext(Context);
