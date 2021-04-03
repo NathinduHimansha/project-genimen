@@ -24,10 +24,17 @@ class Exkey extends React.Component {
     // document.querySelector('.loader_description').style.animation =
     //   'typewriter_loadingDescription 3s steps(16) 16ms normal both';
 
-    document.querySelector('.analyze_again ').style.visibility = 'hidden';
-    document.querySelector('.analysing_banner').style.visibility = 'hidden';
+    this.setState({
+      loading: true,
+    });
 
-    document.querySelector('.loader_progress ').style.visibility = 'visible';
+    setTimeout(function () {
+      document.getElementById('analyze_again').style.display = 'none';
+      document.querySelector('.analysing_banner').style.visibility = 'hidden';
+
+      document.querySelector('.loader_progress ').style.visibility = 'visible';
+      document.getElementById('userTrendDescription').style.display = 'none';
+    }, 1500);
 
     setTimeout(function () {
       if (
@@ -98,10 +105,11 @@ class Exkey extends React.Component {
       <div className="main-body">
         <div className="animated_heading">
           <div className="-mb-40">
-            <FancyHeading
-              heading="LOOK WHAT PEOPLE ARE TALKING OF PHONES..."
-              style={{ visibility: 'hidden' }}
-            ></FancyHeading>
+            <FancyHeading decoratorClassName="fancy-heading2-decorator">
+              <h2 className="heading2 -medium -no-margin heading2-sep-margin">
+                LOOK WHAT PEOPLE ARE TALKING OF PHONES...
+              </h2>
+            </FancyHeading>
             <hr className="heading-sep" />
           </div>
         </div>
@@ -142,6 +150,21 @@ class Exkey extends React.Component {
                 />
               </div>
               <div className="card-right" style={{ visibility: 'hidden' }}>
+                <div
+                  className="userTrendDescription"
+                  id="userTrendDescription"
+                  style={{ display: 'block', visibility: 'visible' }}
+                >
+                  <div className="focus-card focus-info-card -mb-40">
+                    <span className="-bold -normal">
+                      TRENDZ<br></br>
+                      <br></br>
+                    </span>
+                    Select the features you want to analyse and get a insight from. This will give
+                    you the sentiment of the selected features from variety of phones and an overall
+                    score for the feature
+                  </div>
+                </div>
                 <div className="card-heading-name-right -mb-auto -flex-middle">
                   <div className="card-topic">
                     <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
@@ -151,7 +174,11 @@ class Exkey extends React.Component {
                   </div>
                 </div>
 
-                <div className="loader_progress" style={{ visibility: 'hidden' }}>
+                <div
+                  className="loader_progress"
+                  id="loader_progress"
+                  style={{ visibility: 'hidden' }}
+                >
                   {/* <div className="line_loader">
                     <div className="line_progress"></div>
                     <div className="line_progress"></div>
@@ -181,10 +208,14 @@ class Exkey extends React.Component {
                 </div>
               </div>
 
-              <div className="analyze_again" style={{ visibility: 'visible' }}>
+              <div className="analyze_again" id="analyze_again" style={{ display: 'flex' }}>
                 <div className="-flex -mt-40">
                   <div className="-flex-right">
-                    <Button onClick={this.analyzeAgain} iconSrc={search} loading={false}>
+                    <Button
+                      onClick={this.analyzeAgain}
+                      iconSrc={search}
+                      loading={this.state.loading}
+                    >
                       Start Analysing
                     </Button>
                   </div>
