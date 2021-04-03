@@ -11,7 +11,7 @@ import Examples from './pages/experiment/Examples';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 import HomePage from './pages/index/HomePage';
-import ScrollUp from './components/ScrollUpButton/ScrollUp';
+
 import UrasUserInputView from './pages/uras/UrasUserInputView';
 import UrasInputResults from './pages/uras/UrasInputResults';
 import URASViewAlt from './pages/uras/URASViewAlt';
@@ -20,6 +20,7 @@ import Store from './components/sate_management/GlobalStore';
 import { isLoggedIn } from './common/utils';
 import PssaView from './pages/pssa2/pssaView';
 import PssaResults from './pages/pssa2/pssaResults';
+import ScrollUp from './components/scrollupbutton/ScrollUp';
 
 function App() {
   const [state, dispatch] = useContext(Context);
@@ -50,6 +51,8 @@ function App() {
           <Route path="/examples" component={Examples} />
           <Route exact path="/" component={() => <Redirect to="/home" />} />
         </Switch>
+
+        <ScrollUp />
       </div>
     );
   };
@@ -61,7 +64,6 @@ function App() {
             <Route exact path="/home" component={HomePage} />
             <Route component={RoutesWNav} />
           </Switch>
-          <ScrollUp />
         </div>
       </Router>
     </ToastProvider>

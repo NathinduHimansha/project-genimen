@@ -5,7 +5,7 @@ import propic from '../../assests/ProfilePic.png';
 const initialState = {
   login: false,
   dark: false,
-  username: 'bmora',
+  username: 'bmora1948pixels3',
   defaultUserPic: propic,
 };
 

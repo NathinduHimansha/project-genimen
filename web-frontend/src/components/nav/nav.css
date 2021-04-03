@@ -435,6 +435,11 @@ img.dropdown-arrow {
 .nav-username {
   font-size: 2.1rem;
   font-weight: 300;
+  max-width: 13ch;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .nav-user-logout-btn {
   /* font-weight: 400; */
