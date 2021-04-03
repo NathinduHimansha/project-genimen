@@ -241,74 +241,46 @@
 }
 
 .analyze_again {
-  display: grid;
-  flex-wrap: wrap;
-  margin-top: -6%;
-  margin-left: 120%;
-  animation-name: wobble;
-  -webkit-animation-duration: 0.8s;
-  animation-duration: 2.3s;
-  width: 10vw;
+  margin-top: 27%;
+  margin-left: 78.5%;
+  position: absolute;
 }
 
 @media only screen and (max-width: 1500px) {
   .analyze_again {
-    margin-top: -10%;
+    margin-top: 0%;
     margin-left: 0px;
+    position: static;
   }
 }
 
-@keyframes wobble {
-  0% {
-    -webkit-transform: none;
-    transform: none;
-  }
-
-  15% {
-    -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
-    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
-  }
-
-  30% {
-    -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
-    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
-  }
-
-  45% {
-    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
-    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
-  }
-
-  60% {
-    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
-    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
-  }
-
-  75% {
-    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
-    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
-  }
-
-  100% {
-    -webkit-transform: none;
-    transform: none;
+@media only screen and (max-width: 600px) {
+  .analyze_again {
+    margin-top: 10%;
+    margin-left: 0px;
+    position: static;
   }
 }
 
 .colourful_mobilePhone {
-  margin-left: 50%;
+  margin-left: 20%;
   opacity: 0.8;
-  height: 31.25vw;
-  width: 45vw;
+  height: 449.28px;
+  width: 691.2px;
 }
 
 @media only screen and (max-width: 600px) {
   .colourful_mobilePhone {
     width: 350px;
-    height: 350px;
-    margin-left: -20px;
+    height: 280px;
+    margin-left: -50px;
     margin-top: -30px;
   }
+}
+
+.userTrendDescription {
+  position: relative;
+  top: 100px;
 }
 
 @media screen and (min-width: 100px) {
@@ -341,6 +313,7 @@
 .process_gif {
   width: 25vw;
   height: 25vw;
+  margin-left: 5%;
 }
 
 @media only screen and (max-width: 1500px) {
