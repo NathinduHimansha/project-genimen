@@ -13,7 +13,7 @@ auth = Blueprint('auth', __name__, url_prefix="/api/auth")
 def create_token(user):
     EXPIRES = datetime.timedelta(days=7)
     access_token = create_access_token(
-        identity={'id': str(user.id), 'username': str(user.username)}, expires_delta=EXPIRES)
+        identity={'id': str(user['id']), 'username': str(user['username'])}, expires_delta=EXPIRES)
     return access_token
 
 
@@ -30,7 +30,7 @@ def signup():
     except:
         return {'message': 'user already exist'}
 
-    id = user.id
+    id = user['id']
     access_token = create_token(user)
     return {'id': str(id), 'token': access_token}, 200
 

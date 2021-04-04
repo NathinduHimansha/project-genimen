@@ -27,7 +27,7 @@ def is_features_valid(feature_type_dic):
 
 
 @uras.route('/uras', methods=['GET', 'POST'])
-#  @jwt_required()
+@jwt_required()
 def handle_uras():
     if (request.method == 'POST'):
         feature_dict = request.json
