@@ -12,7 +12,6 @@ def test_hello(client):
 
 
 def test_uras(client):
-    client.get()
     access_token = create_access_token("testUser")
     headers = {
         'Authorization': 'Bearer {}'.format(access_token)
@@ -23,7 +22,6 @@ def test_uras(client):
 
 
 def test_uras_analytics(client):
-    client.get()
     access_token = create_access_token("testUser")
     mimetype = 'application/json'
     headers = {
