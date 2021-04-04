@@ -3,7 +3,7 @@ import json
 from api import create_app
 from api.auth.controller import create_token
 from flask_jwt_extended import create_access_token
-import datetime
+import pandas as pd
 
 
 def test_hello(client):
@@ -21,7 +21,13 @@ def test_uras(client):
     assert rv.status_code == 200
 
 
-def test_uras_analytics(client):
+def test_uras_analytics(client, mocker):
+    mockedResults = {
+        'feature-sentiment-polarity': [],
+        'phone-feature-polarity': [],
+    }
+    mocker.patch(
+        "api.uras.controller.get_reviews_sentiment_summary", return_value=mockedResults)
     access_token = create_access_token("testUser")
     mimetype = 'application/json'
     headers = {
