@@ -10,11 +10,20 @@ from dotenv import load_dotenv
 
 
 def create_app(config=None):
-    dotenv_path = join(dirname(__file__), '.env')
-    load_dotenv(dotenv_path)
 
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
+
+    if (config == 'prod'):
+        dotenv_path = join(dirname(__file__), '.env')
+        load_dotenv(dotenv_path)
+
+    elif (config == 'test'):
+        dotenv_path = join(dirname(__file__), '.test.env')
+        load_dotenv(dotenv_path)
+    else:
+        dotenv_path = join(dirname(__file__), '.dev.env')
+        load_dotenv(dotenv_path)
 
     SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
     MONGO_URI = os.environ.get('MONGO_URI')
@@ -22,17 +31,11 @@ def create_app(config=None):
     app.config['MONGODB_SETTINGS'] = {
         'host': MONGO_URI
     }
-
-    #  if (config == 'dev'):
-    #  app.config['MONGODB_SETTINGS'] = {
-    #  'host': 'mongodb://127.0.0.1:27017'
-    #  }
-
     initialize_db(app)
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-        #  DATABASE=os.path.join(app.instance_path, 'sqlite'),
-    )
+    #  app.config.from_mapping(
+    #  SECRET_KEY='dev',
+    #  DATABASE=os.path.join(app.instance_path, 'sqlite'),
+    #  )
 
     #  if config is None:
     # load the instance config, if it exists, when not testing
