@@ -14,7 +14,7 @@ def client():
 
 
 @pytest.fixture
-def db_client():
+def db_client(mocker):
     app = create_app('test')
     app.config["TESTING"] = True
     with app.test_client() as client:

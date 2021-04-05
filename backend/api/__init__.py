@@ -7,9 +7,10 @@ from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 from os.path import join, dirname
 from dotenv import load_dotenv
+from mongoengine import connect, disconnect
 
 
-def create_app(config=None):
+def create_app(config=None, db=None):
 
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
@@ -21,28 +22,19 @@ def create_app(config=None):
     elif (config == 'test'):
         dotenv_path = join(dirname(__file__), '.test.env')
         load_dotenv(dotenv_path)
+        connect(
+            'mongoenginetest', host='mongomock://localhost')
     else:
         dotenv_path = join(dirname(__file__), '.dev.env')
         load_dotenv(dotenv_path)
 
     SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
-    MONGO_URI = os.environ.get('MONGO_URI')
+    MONGO_URI = db or os.environ.get('MONGO_URI')
     app.config['JWT_SECRET_KEY'] = SECRET_KEY
     app.config['MONGODB_SETTINGS'] = {
         'host': MONGO_URI
     }
-    initialize_db(app)
-    #  app.config.from_mapping(
-    #  SECRET_KEY='dev',
-    #  DATABASE=os.path.join(app.instance_path, 'sqlite'),
-    #  )
-
-    #  if config is None:
-    # load the instance config, if it exists, when not testing
-    #  app.config.from_pyfile('config.py', silent=True)
-    #  else:
-    # load the test config if passed in
-    #  app.config.from_mapping(config)
+    config == 'test' or initialize_db(app)
 
     bcrypt = Bcrypt(app)
     jwt = JWTManager(app)
