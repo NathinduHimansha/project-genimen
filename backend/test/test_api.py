@@ -17,7 +17,7 @@ def test_signup(db_client):
     res = db_client.post('/api/auth/signup',
                          headers={"Content-Type": "application/json"}, data=payload)
 
-    assert dict(res.json)['status'] == 0
+    assert dict(res.json)['status'] == 1
 
     # add existing user
     payload = json.dumps({
