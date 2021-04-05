@@ -1,6 +1,7 @@
 .serverless
 .env
 .**.env**
+!.test.env
 .snowpack
 build
 node_modules
