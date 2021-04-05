@@ -15,16 +15,19 @@ on:
 
 jobs:
   test:
-    name: api tests
+    name: API Tests
     runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: [3.8]
     steps:
       - uses: actions/checkout@v2
-      - name: Run pytest
+      - name: Install python packages
         run: |
-          pip install -r requirements.txt
+          pip install -r backend/requirements.txt
+      - name: Run Tests
+        run: |
+          cd backend
           pytest test/test_api.py
   deploy:
     needs: test
