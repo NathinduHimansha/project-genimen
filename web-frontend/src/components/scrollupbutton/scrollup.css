@@ -1,0 +1,17 @@
+
+  .scroll-top {
+    position: fixed;
+    right: 0.7rem;
+    bottom: 0.7rem;
+    cursor: pointer;
+    animation: fade 800ms ease-in-out 1.5s both;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

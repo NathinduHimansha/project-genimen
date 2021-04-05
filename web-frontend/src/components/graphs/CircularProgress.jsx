@@ -3,6 +3,8 @@ import './graphs.css';
 
 const CircularProgress = (props) => {
   const { id, progress, color, stroke } = props;
+  // round progress to two dec
+  let progressPerc = progress.toFixed(0);
   const radius = 110;
 
   const normalizedRadius = radius - stroke * 2;
@@ -68,7 +70,7 @@ const CircularProgress = (props) => {
             fontSize="34"
             fill="var(--primary-black)"
           >
-            {progress}
+            {progressPerc}
             <tspan fontSize="18"> %</tspan>
           </text>
         </g>

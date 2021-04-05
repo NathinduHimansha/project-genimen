@@ -3,12 +3,14 @@
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
   transition: 0.35s stroke-dashoffset;
+  transition-delay: 0.3s;
   fill: transparent;
 }
 .progress-background {
   transform: rotate(102deg);
   transform-origin: 50% 50%;
   transition: 0.35s stroke-dashoffset;
+  transition-delay: 0.3s;
   fill: var(--light-white);
   stroke: var(--primary-border-grey);
 }
@@ -59,13 +61,13 @@
   left: 0;
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
-  animation: load 0.5s ease;
+  animation: load 0.5s ease 0.3s;
 }
 .left-active {
   right: 0;
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
-  animation: load 0.5s ease;
+  animation: load 0.5s ease 0.3s;
 }
 .bar-divider {
   position: absolute;
@@ -98,10 +100,4 @@
   to {
     width: 1;
   }
-}
-
-#chart {
-  background-color: white;
-  width: 500px;
-  height: 250px;
 }
