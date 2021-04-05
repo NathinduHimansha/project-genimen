@@ -52,6 +52,11 @@ const NavBar = (props) => {
             {/* <a href="#" className={`nav-link ${route.active ? 'nav-link-active' : ''}`}> */}
             {/* <NavLink to = '/' activeClassName="active-link"> */}
             <NavLink
+              onClick={(e) => {
+                if (route.subMenu.length) {
+                  e.preventDefault();
+                }
+              }}
               exact
               // to={route.subMenu.length ? route.path : '#'}
               to={route.subMenu.length ? path : route.path}
