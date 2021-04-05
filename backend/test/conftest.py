@@ -8,7 +8,8 @@ def client():
     app = create_app('test')
     app.config["TESTING"] = True
     with app.test_client() as client:
-        client.get()
+        with app.app_context() as ctx:
+            ctx.push()
         yield client
 
 
