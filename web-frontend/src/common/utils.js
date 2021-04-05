@@ -32,6 +32,8 @@ export const isLoggedIn = () => {
   if (!token) {
     return false;
   }
+  // comment this line
+  return true;
   const tokenDecoded = jwt_decode(token);
   const dateNow = new Date();
   const exp = tokenDecoded.exp;

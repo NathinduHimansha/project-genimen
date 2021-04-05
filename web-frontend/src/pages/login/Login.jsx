@@ -5,7 +5,7 @@ import logo from '../../assests/Geniman.png';
 import banner from '../../assests/LineChartBanner.png';
 import './login.css';
 import { NavLink, useHistory } from 'react-router-dom';
-import { isPasswordValid } from '../../common/utils';
+import { isPasswordValid, saveToken } from '../../common/utils';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 const Login = (props) => {
@@ -46,7 +46,8 @@ const Login = (props) => {
   const onLogin = () => {
     onUsernameBlur(username);
     onPasswordBlur(password);
-    dispatch({ type: 'TOGGLE_LOGIN' });
+    dispatch({ type: 'LOGIN' });
+    saveToken('taifkdf23reraerdafkljafkdl4er');
     const isFormValid = isInputsValid(password, username);
     if (isFormValid) {
       setLoading(true);

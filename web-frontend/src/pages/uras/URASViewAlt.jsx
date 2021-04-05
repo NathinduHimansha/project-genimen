@@ -221,4 +221,5 @@ const URASViewAlt = () => {
     </div>
   );
 };
+
 export default URASViewAlt;

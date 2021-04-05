@@ -3,8 +3,8 @@ import { useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
 const CurrentLocation = () => {
-  // const paths = useLocation().pathname.substr(1).split('/');
-  const paths = ['analytics', 'uras'];
+  const paths = useLocation().pathname.substr(1).split('/');
+  // const paths = ['analytics', 'uras'];
   return (
     <>
       <div className="header-current-location">

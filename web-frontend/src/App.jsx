@@ -21,15 +21,16 @@ import { isLoggedIn } from './common/utils';
 import PssaView from './pages/pssa2/pssaView';
 import PssaResults from './pages/pssa2/pssaResults';
 import ScrollUp from './components/scrollupbutton/ScrollUp';
+import protect from './pages/wrappers/ProtectedRouteWrapper';
 
 function App() {
   const [state, dispatch] = useContext(Context);
   useEffect(() => {
     const loggedIn = isLoggedIn();
     if (loggedIn) {
-      dispatch({ type: 'LOGOUT' });
-    } else {
       dispatch({ type: 'LOGIN' });
+    } else {
+      dispatch({ type: 'LOGOUT' });
     }
   }, []);
   const RoutesWNav = () => {
@@ -39,8 +40,8 @@ function App() {
         <Switch>
           <Route path="/about" component={Login} />
           <Route path="/analytics/exkey" component={EXKEY} />
-          <Route exact path="/analytics/uras" component={URASViewAlt} />
-          <Route path="/analytics/uras/results" component={UrasResultsAlt} />
+          <Route exact path="/analytics/uras" component={protect(URASViewAlt)} />
+          <Route path="/analytics/uras/results" component={protect(UrasResultsAlt)} />
           {/* <Route path="/analytics/uras/results" exact component={UrasInputResults} /> */}
           {/* <Route path="/analytics/uras" component={UrasUserInputView} /> */}
           <Route exact path="/analytics/pssa" component={PssaView} />
