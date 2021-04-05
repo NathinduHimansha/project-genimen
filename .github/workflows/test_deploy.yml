@@ -1,4 +1,4 @@
-name: Deploy to EC2
+name: CI/CD
 
 on:
   push:
@@ -10,9 +10,24 @@ on:
   pull_request:
     branches:
       - Dev
+    paths:
+      - 'backend/**'
 
 jobs:
+  test:
+    name: api tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run pytest
+        run: |
+          pip install -r requirements.txt
+          pytest test/test_api.py
   deploy:
+    needs: test
     name: CD Pipeline
     runs-on: ubuntu-latest
     strategy:
