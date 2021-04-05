@@ -22,8 +22,6 @@ def create_app(config=None, db=None):
     elif (config == 'test'):
         dotenv_path = join(dirname(__file__), '.test.env')
         load_dotenv(dotenv_path)
-        connect(
-            'mongoenginetest', host='mongomock://localhost')
     else:
         dotenv_path = join(dirname(__file__), '.dev.env')
         load_dotenv(dotenv_path)
@@ -34,7 +32,7 @@ def create_app(config=None, db=None):
     app.config['MONGODB_SETTINGS'] = {
         'host': MONGO_URI
     }
-    config == 'test' or initialize_db(app)
+    config == initialize_db(app)
 
     bcrypt = Bcrypt(app)
     jwt = JWTManager(app)
