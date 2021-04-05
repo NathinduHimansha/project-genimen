@@ -4,22 +4,10 @@ import displayIcon from '../../assests/Display.png';
 import sizeIcon from '../../assests/Size.png';
 import fingerprintIcon from '../../assests/FingerPrint.png';
 import headphoneJackIcon from '../../assests/HeadphoneJack.png';
-import './feature-selection.css';
 
 const SampleFeatureSelection = (props) => {
   const getIconUrl = (feature) => {
-    if (feature.toLowerCase() == 'display') {
-      return 'var(--display-icon)';
-    }
-    if (feature.toLowerCase() == 'size') {
-      return 'var(--size-icon)';
-    }
-    if (feature.toLowerCase() == 'fingerprint') {
-      return 'var(--fingerprint-icon)';
-    }
-    if (feature.toLowerCase() == 'headphone-jack') {
-      return 'var(--headphone-jack-icon)';
-    }
+    return 'var(--' + feature.toLowerCase() + '-icon)';
   };
 
   const display = getIconUrl('display');

@@ -1,0 +1,2 @@
+Class Sequential rules
+SVM naive bayes model
