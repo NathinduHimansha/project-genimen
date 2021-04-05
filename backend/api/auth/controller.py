@@ -24,27 +24,33 @@ def signup():
     try:
         user.hash_password()
     except:
-        return {'message': 'invalid password'}
+        return createErrResponse('invalid password')
     try:
         user.save()
     except:
-        return {'message': 'user already exist'}
+        return createErrResponse('user already exist')
 
-    id = user['id']
+    _id = user['id']
     access_token = create_token(user)
-    return {'id': str(id), 'token': access_token}, 200
+    return createSuccessResponse({'id': str(_id), 'token': access_token})
 
 
 @auth.route('/login', methods=['POST'])
 def login():
     body = request.get_json()
+    email = body.get('email')
+    username = body.get('username')
+    authorized = False
     try:
-        user = User.objects.get(email=body.get('email'))
-    except:
-        return {'message': 'user does not exist'}
+        if (email):
+            user = User.objects.get(email=email)
+        else:
+            user = User.objects.get(username=username)
+    except User.DoesNotExist:
+        return createErrResponse('email or password invalid')
     authorized = user.check_password(body.get('password'))
-    if not authorized:
-        return createErrResponse({'message': 'email or password invalid'})
+    if not authorized or not user:
+        return createErrResponse('email or password invalid')
 
     access_token = create_token(user)
-    return {'token': access_token}, 200
+    return createSuccessResponse({'token': access_token})
