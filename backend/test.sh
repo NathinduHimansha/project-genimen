@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pytest -s -k-db test/test_api.py
+pytest -s test/test_api.py
