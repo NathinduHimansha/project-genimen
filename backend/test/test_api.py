@@ -6,15 +6,16 @@ from flask_jwt_extended import create_access_token
 from api.database.db import db
 
 
-def test_signup(client):
+@pytest.mark.db
+def test_signup(db_client):
     # add new user
     payload = json.dumps({
         "email": "uniq@email.com",
         "password": "hakunamatatha",
         "username": "uniq"
     })
-    res = client.post('/api/auth/signup',
-                      headers={"Content-Type": "application/json"}, data=payload)
+    res = db_client.post('/api/auth/signup',
+                         headers={"Content-Type": "application/json"}, data=payload)
 
     assert dict(res.json)['status'] == 1
 
@@ -24,8 +25,8 @@ def test_signup(client):
         "password": "hakunamatatha",
         "username": "uniq"
     })
-    res = client.post('/api/auth/signup',
-                      headers={"Content-Type": "application/json"}, data=payload)
+    res = db_client.post('/api/auth/signup',
+                         headers={"Content-Type": "application/json"}, data=payload)
 
     assert dict(res.json)['status'] == 0
 
@@ -36,28 +37,29 @@ def test_signup(client):
         "username": "udniq"
     })
 
-    res = client.post('/api/auth/signup',
-                      headers={"Content-Type": "application/json"})
+    res = db_client.post('/api/auth/signup',
+                         headers={"Content-Type": "application/json"})
     assert res.status_code == 400
 
 
-def test_login(client):
+@pytest.mark.db
+def test_login(db_client):
     # add new user
     payload = json.dumps({
         "email": "uniq@email.com",
         "password": "hakunamatatha",
         "username": "uniq"
     })
-    res = client.post('/api/auth/signup',
-                      headers={"Content-Type": "application/json"}, data=payload)
+    res = db_client.post('/api/auth/signup',
+                         headers={"Content-Type": "application/json"}, data=payload)
 
     # sign in to as new user
     payload = json.dumps({
         "email": "uniq@email.com",
         "password": "hakunamatatha",
     })
-    res = client.post('/api/auth/login',
-                      headers={"Content-Type": "application/json"}, data=payload)
+    res = db_client.post('/api/auth/login',
+                         headers={"Content-Type": "application/json"}, data=payload)
 
     assert dict(res.json)['status'] == 1
 
@@ -66,8 +68,8 @@ def test_login(client):
         "username": "uniq",
         "password": "hakunamatatha",
     })
-    res = client.post('/api/auth/login',
-                      headers={"Content-Type": "application/json"}, data=payload)
+    res = db_client.post('/api/auth/login',
+                         headers={"Content-Type": "application/json"}, data=payload)
 
     assert dict(res.json)['status'] == 1
 
@@ -76,8 +78,8 @@ def test_login(client):
         "username": "uniq",
         "password": "hakunamatathad",
     })
-    res = client.post('/api/auth/login',
-                      headers={"Content-Type": "application/json"}, data=payload)
+    res = db_client.post('/api/auth/login',
+                         headers={"Content-Type": "application/json"}, data=payload)
 
     assert dict(res.json)['status'] == 0
 
@@ -86,8 +88,8 @@ def test_login(client):
         "username": "uniqj",
         "password": "hakunamatatha",
     })
-    res = client.post('/api/auth/login',
-                      headers={"Content-Type": "application/json"}, data=payload)
+    res = db_client.post('/api/auth/login',
+                         headers={"Content-Type": "application/json"}, data=payload)
     assert dict(res.json)['status'] == 0
 
 

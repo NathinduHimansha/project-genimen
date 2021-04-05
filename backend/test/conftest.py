@@ -8,6 +8,15 @@ def client():
     app = create_app('test')
     app.config["TESTING"] = True
     with app.test_client() as client:
+        client.get()
+        yield client
+
+
+@pytest.fixture
+def db_client():
+    app = create_app('test')
+    app.config["TESTING"] = True
+    with app.test_client() as client:
         _db = db.get_db()
         for collection in _db.list_collection_names():
             _db.drop_collection(collection)
