@@ -1,21 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import { Context } from '../../components/sate_management/GlobalStore';
 import CircularProgress from '../../components/graphs/CircularProgress';
 import ProgressBar from '../../components/graphs/ProgressBar';
 import FancyHeading from '../../components/text/FancyHeading';
 import NetPolarity from '../../components/analytics/NetPolarity';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import SampleFeatureSelection from './SampleFeatureSelection';
-import './card.css';
 import phoneIcon from '../../assests/PhoneIcon.png';
 import search from '../../assests/Search.png';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
 import { getFeatures } from '../../services/uras-service';
 import Button from '../../components/buttons/Button';
 import IconHeading from '../../components/text/IconHeading';
+import SentimentRankCard from '../../components/analytics/SentimentRankCard';
 
 const Examples = () => {
+  const [state, dispatch] = useContext(Context);
+
   const test = getFeatures();
   useEffect(() => {
+    dispatch({ type: 'TOGGLE_LOGIN' });
     test.then((res) => console.log(res));
   }, []);
 
@@ -26,7 +30,9 @@ const Examples = () => {
         <div style={{ width: '80%' }} className="-flex -flex-center">
           <div style={{ width: '50%' }} className="feature-selection-box">
             <div className="-mb-80">
-              <FancyHeading heading="SELECT FEATURES TO ANALYSE"></FancyHeading>
+              <FancyHeading>
+                <h1 className="fancy-heading">SELECT FEATURES TO ANALYSE</h1>
+              </FancyHeading>
             </div>
             {/* <div className="-flex -mb-40"> */}
             {/* <select */}
@@ -69,9 +75,11 @@ const Examples = () => {
           </div>
         </div>
       </div>
-      <div className="-display-none">
+      <div className="" style={{ marginLeft: '10%', marginBottom: '10%' }}>
         <div className="-mb-40 -mt-90">
-          <FancyHeading heading="FEATURES SENTIMENTS"></FancyHeading>
+          <FancyHeading>
+            <h1 className="fancy-heading -no-margin">FEATURES SENTIMENTS</h1>
+          </FancyHeading>
         </div>
 
         <div className="-mb-35 -mt-80">
@@ -90,16 +98,32 @@ const Examples = () => {
             Type: <span className="-medium">Curved</span>
           </h3>
         </div>
-        <div className="analytics-container cards-grid -mt-60">
-          <SentimentResultCard
-            heading="Total Results"
-            // headingIcon={phoneIcon}
-            reviewCount={300}
-            reviewCountLable="Total Reviews Analysed"
-            polarity={84}
-            negPerc={44}
-            posPerc={40}
-          />
+        <div className="-flex -mt-60">
+          <div>
+            <SentimentResultCard
+              heading="Total Results"
+              // headingIcon={phoneIcon}
+              reviewCount={300}
+              reviewCountLable="Total Reviews Analysed"
+              polarity={84}
+              negPerc={44}
+              posPerc={40}
+            />
+          </div>
+          <div>
+            <SentimentRankCard
+              polarity="pos"
+              polarityPerc={84}
+              label="OnePlus 6T"
+              description="Best phone for the feature"
+            ></SentimentRankCard>
+            <SentimentRankCard
+              polarity="neg"
+              polarityPerc={44}
+              label="Samsung S10+"
+              description="Worst phone for the feature"
+            ></SentimentRankCard>
+          </div>
         </div>
         <div className="-mt-60">
           <h3 className="heading3 -medium -no-margin" style={{ fontSize: '2.2rem' }}>

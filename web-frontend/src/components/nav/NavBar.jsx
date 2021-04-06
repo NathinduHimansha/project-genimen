@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import './nav.css';
 import about from '../../assests/AboutLight.png';
@@ -13,12 +13,16 @@ import Button from '../buttons/Button';
 
 const NavBar = (props) => {
   const history = useHistory();
-  console.log(history);
   const { routes } = props;
   let path = useLocation().pathname;
   const imageClick = () => {
-    history.push({ path: '/home' });
+    history.push({ pathname: '/index' });
   };
+  const parentLinkClicks = routes.map((route) => {
+    const [click, setClick] = useState(false);
+    return { click, setClick };
+  });
+
   return (
     <nav className="navbar">
       <div className="nav-logo">
@@ -36,10 +40,23 @@ const NavBar = (props) => {
       </div>
       <ul className="navbar-nav">
         {routes.map((route, i) => (
-          <li key={'route' + i} className="nav-item parent-link">
+          <li
+            key={'route' + i}
+            className={`nav-item ${route.subMenu.length > 0 ? 'parent-link' : ''} ${
+              parentLinkClicks[i].click ? 'parent-link-clicked' : ''
+            }`}
+            onClick={() => {
+              parentLinkClicks[i].setClick(!parentLinkClicks[i].click);
+            }}
+          >
             {/* <a href="#" className={`nav-link ${route.active ? 'nav-link-active' : ''}`}> */}
             {/* <NavLink to = '/' activeClassName="active-link"> */}
             <NavLink
+              onClick={(e) => {
+                if (route.subMenu.length) {
+                  e.preventDefault();
+                }
+              }}
               exact
               // to={route.subMenu.length ? route.path : '#'}
               to={route.subMenu.length ? path : route.path}

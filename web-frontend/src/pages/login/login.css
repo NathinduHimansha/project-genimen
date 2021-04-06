@@ -13,11 +13,22 @@
   /* width: 30%; */
   /* border-radius: 5px; */
 }
+.login-page-container-wrapper {
+  margin-left: 3%;
+}
+.login-page-container > div {
+  margin: auto;
+}
 .login-page-container {
-  margin-left: 6%;
+  margin-left: 5%;
 }
 .login-page-container > div:first-child {
   /* margin-right: 80px; */
+  margin-right: 0;
+}
+.login-page-container > div:last-child {
+  /* margin-right: 80px; */
+  margin-left: 0;
 }
 .login-title,
 .login-moto {
@@ -30,7 +41,7 @@
 .login-card {
   padding: 40px 50px;
   width: 30%;
-  max-width: 400px;
+  max-width: 600px;
 }
 .login-header {
 }
@@ -54,10 +65,10 @@
 .login-input-wrapper {
   margin-top: 15px;
 }
-.login-username-input {
+.login-input {
   margin-top: 12px;
 }
-.login-username-input > input {
+.login-input > input {
   display: block;
   padding: 0 15px;
   height: 40px;
@@ -66,12 +77,26 @@
   background-color: var(--input-box-background);
   color: var(--primary-black);
 }
+input.error-input {
+  border-color: var(--error-red);
+}
+.required-star {
+  color: var(--error-red);
+  margin-left: 4px;
+}
+.login-error-message {
+  color: var(--error-red);
+  margin-top: 4px;
+  font-size: 1.4rem;
+}
+.login-password-error-message {
+}
 .login-signup-wrapper {
   margin-top: 30px;
 }
 .login-signup-message {
   font-size: 1.5rem;
-  color: #0089d7;
+  color: var(--link-blue);
   font-weight: 500;
 }
 .login-signup-btn {
@@ -86,6 +111,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* padding-right: 0; */
   /* margin-left: 20%; */
 }
 .login-banner {
@@ -100,12 +126,22 @@
   width: 80%;
   min-width: 300px;
 }
+@media only screen and (max-height: 750px) {
+  .login-page-container {
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+  }
+}
 @media only screen and (max-width: 1000px) {
+  .login-page-container-wrapper {
+    margin-left: 0;
+  }
   .login-banner-wrapper-container {
     display: none;
   }
   .login-card {
-    width: 70%;
+    width: 100%;
+    margin-right: auto !important;
   }
   .login-page-container {
     padding: 0px 40px;
