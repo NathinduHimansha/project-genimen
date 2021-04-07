@@ -32,7 +32,7 @@ class TreeMap extends React.Component {
             options={this.state.options}
             series={this.state.data}
             type="treemap"
-            // height={260}
+            // height={250}
             // width={520}
           />
         ) : null}

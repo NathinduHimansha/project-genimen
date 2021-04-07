@@ -3,6 +3,7 @@
   left: 0%;
   margin: 0%;
   height: 100vh;
+  position: sticky;
 }
 
 .body-split {
@@ -251,38 +252,40 @@
 
 @keyframes startbtn-effect_analyzeAgain {
   0% {
-    left: 5.3%;
+    left: 0%;
   }
   50% {
-    left: 20%;
+    left: 65%;
   }
 
   100% {
-    left: 5.3%;
+    left: 0%;
   }
 }
 
 .analyze_again {
-  margin-top: 25%;
-  margin-left: 48%;
-  position: absolute;
+  margin-top: 20%;
   animation-name: startbtn-effect_analyzeAgain;
   animation-duration: 3s;
-  animation-iteration-count: 2;
+  animation-iteration-count: 1;
+  width: 100%;
+  max-width: 10%;
+  max-height: 180%;
+  position: relative;
 }
 
 @media only screen and (max-width: 1500px) {
   .analyze_again {
-    margin-top: 0%;
-    margin-left: 0px;
+    margin-right: 70%;
+    margin-top: 10%;
     position: static;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .analyze_again {
-    margin-top: 10%;
-    margin-left: 0px;
+    margin-left: 10%;
+    margin-top: 20%;
     position: static;
   }
 }
@@ -331,27 +334,39 @@
   left: -60px;
 } */
 .loader_progress {
-  margin-top: -50%;
-  margin-left: -40%;
+  margin-top: 8%;
+  margin-left: 30%;
+  display: grid;
+  grid-gap: 20px;
+  position: absolute;
 }
 
 .process_gif {
-  width: 25vw;
-  height: 25vw;
+  width: 384px;
+  height: 384px;
   margin-left: 5%;
+  margin-top: -10%;
 }
 
 @media only screen and (max-width: 1500px) {
   .process_gif {
-    width: 55vw;
-    height: 55vw;
-    margin-top: -60%;
+    width: 244.8px;
+    height: 244.8px;
+    margin-top: 10%;
   }
 }
 
 @media only screen and (max-width: 1500px) {
   .loader_progress {
-    margin-left: 50px;
+    margin-top: 160px;
+    margin-left: 450px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .loader_progress {
+    margin-top: -60px;
+    margin-left: 20px;
   }
 }
 
@@ -411,18 +426,18 @@
 .loader_description {
   display: grid;
   margin-top: -20%;
-  margin-left: -23%;
+  margin-left: 10%;
   font-size: 1.8rem;
   font-weight: bold;
-  font-family: Bradley Hand, cursive;
-  /* border-right: 2px solid rgba(255, 255, 255, 0.75); */
   overflow: hidden;
   white-space: nowrap;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .loader_description {
     margin-left: 20px;
-    margin-top: -80%;
+    margin-top: 40%;
+    position: static;
+    width: 120%;
   }
 }
 
@@ -431,7 +446,7 @@
     width: 0;
   }
   to {
-    width: 100%;
+    width: 95%;
   }
 }
 
@@ -500,7 +515,7 @@
 }
 
 .treeMap_align {
-  margin-left: -160px;
+  margin-left: -155px;
   margin-top: 80px;
   width: 110%;
 }

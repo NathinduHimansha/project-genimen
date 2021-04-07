@@ -21,8 +21,8 @@ class Exkey extends React.Component {
   }
 
   analyzeAgain = (event) => {
-    // document.querySelector('.loader_description').style.animation =
-    //   'typewriter_loadingDescription 3s steps(16) 16ms normal both';
+    document.querySelector('.loader_description').style.animation =
+      'typewriter_loadingDescription 3s steps(16) 10ms normal both';
 
     this.setState({
       loading: true,
@@ -34,7 +34,7 @@ class Exkey extends React.Component {
 
       document.querySelector('.loader_progress ').style.visibility = 'visible';
       document.getElementById('userTrendDescription').style.display = 'none';
-    }, 1500);
+    }, 1200);
 
     setTimeout(function () {
       if (
@@ -42,9 +42,11 @@ class Exkey extends React.Component {
         document.querySelector('.card-left ') &&
         document.querySelector('.card-right ') &&
         document.querySelector('.loader_progress ') &&
-        document.querySelector('.treeMap_align ')
+        document.querySelector('.treeMap_align ') &&
+        document.getElementById('treeMap_align')
       ) {
         document.querySelector('.treeMap_align').style.animation = 'fadeIn 3s ease-out';
+        document.getElementById('treeMap_align').style.display = 'block';
         document.querySelector('.frequency-bars ').style.visibility = 'visible';
         document.querySelector('.card-left ').style.visibility = 'visible';
         document.querySelector('.card-right ').style.visibility = 'visible';
@@ -78,7 +80,7 @@ class Exkey extends React.Component {
           .getElementsByClassName('progress-percentage')[8]
           .classList.add('barchart_animation');
       }
-    }, 3500);
+    }, 5800);
     this.getRequestedData(event);
   };
 
@@ -105,11 +107,8 @@ class Exkey extends React.Component {
       <div className="main-body">
         <div className="animated_heading">
           <div className="-mb-40">
-            <FancyHeading decoratorClassName="fancy-heading2-decorator">
-              <h2 className="heading2 -medium -no-margin heading2-sep-margin">
-                LOOK WHAT PEOPLE ARE TALKING OF PHONES...
-              </h2>
-            </FancyHeading>
+            <h2 className="fancy-heading -no-margin"> LOOK WHAT PEOPLE ARE TALKING OF PHONES...</h2>
+
             <hr className="heading-sep" />
           </div>
         </div>
@@ -125,19 +124,6 @@ class Exkey extends React.Component {
                 </div>
 
                 <div className="frequency-bars" style={{ visibility: 'hidden' }}>
-                  {/* {[
-                    { percentage: 32, label: 'gorilla glass' },
-                    { percentage: 20, label: '108Mp camera' },
-                    { percentage: 100, label: 'facial recognition' },
-                    { percentage: 17, label: 'wonderful' },
-                    { percentage: 50, label: 'Good Storage' },
-                    { percentage: 67, label: 'onscreen fingerprint' },
-                    { percentage: 98, label: 'LCD Display' },
-                    { percentage: 14, label: 'Budget' },
-                    { percentage: 62, label: 'Snap Dragon chip' },
-                  ].map((item, i) => (
-                    <Bargraph key={i} percentage={item.percentage} label={item.label}></Bargraph>
-                  ))} */}
                   {this.state.trendingFeatures.map((item, i) => (
                     <Bargraph key={i} value={item.value} keyword={item.keyword}></Bargraph>
                   ))}
@@ -165,61 +151,38 @@ class Exkey extends React.Component {
                     score for the feature
                   </div>
                 </div>
+
                 <div className="card-heading-name-right -mb-auto -flex-middle">
                   <div className="card-topic">
                     <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
                   </div>
-                  <div className="treeMap_align">
+                  <div className="treeMap_align" id="treeMap_align" style={{ display: 'none' }}>
                     <TreeMap />
                   </div>
                 </div>
 
                 <div
-                  className="loader_progress"
-                  id="loader_progress"
-                  style={{ visibility: 'hidden' }}
+                  className="analyze_again"
+                  id="analyze_again"
+                  style={{ display: 'block', visibility: 'visible' }}
                 >
-                  {/* <div className="line_loader">
-                    <div className="line_progress"></div>
-                    <div className="line_progress"></div>
-                    <div className="line_progress"></div>
-                    <div className="line_progress"></div>
-                  </div> */}
-                  {/* <div className="wrapper_progressBar"> */}
-                  {/* <div class="loader-5">
-                      <div class="loader-5-rect loader-5-rect-1"></div>
-                      <div class="loader-5-rect loader-5-rect-2"></div>
-                      <div class="loader-5-rect loader-5-rect-3"></div>
-                      <div class="loader-5-rect loader-5-rect-4"></div>
-                    </div> */}
-                  {/* <div class="wifi-symbol">
-                      <div class="wifi-circle first"></div>
-                      <div class="wifi-circle second"></div>
-                      <div class="wifi-circle third"></div>
-                      <div class="wifi-circle fourth"></div>
-                    </div>
-                  </div> */}
-                  {/* <div className="loader_description">
-                    <h2 className="heading3 -medium -no-margin feature-type-heading">
-                      <b>ANALYSING IN PROGRESS...</b>
-                    </h2>
-                  </div> */}
-                  <img className="process_gif" src={processGif}></img>
+                  <Button onClick={this.analyzeAgain} iconSrc={search} loading={this.state.loading}>
+                    Start Analysing
+                  </Button>
                 </div>
               </div>
 
-              <div className="analyze_again" id="analyze_again" style={{ display: 'flex' }}>
-                <div className="-flex -mt-40">
-                  <div className="-flex-right">
-                    <Button
-                      onClick={this.analyzeAgain}
-                      iconSrc={search}
-                      loading={this.state.loading}
-                    >
-                      Start Analysing
-                    </Button>
-                  </div>
+              <div
+                className="loader_progress"
+                id="loader_progress"
+                style={{ visibility: 'hidden' }}
+              >
+                <div className="loader_description">
+                  <h2 className="heading3 -medium -no-margin feature-type-heading">
+                    <b>ANALYSING IN PROGRESS...</b>
+                  </h2>
                 </div>
+                <img className="process_gif" src={processGif}></img>
               </div>
             </div>
           </div>
