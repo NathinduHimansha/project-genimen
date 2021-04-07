@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Button = (props) => {
-  let { iconSrc, utilClasses, iconSide, loading, onClick, outline, disabled } = props;
+  let { value, type, iconSrc, utilClasses, iconSide, loading, onClick, outline, disabled } = props;
   outline = outline || false;
   loading = loading || false;
   iconSrc = iconSrc ? iconSrc : '';
@@ -33,6 +33,8 @@ const Button = (props) => {
   return (
     <button
       onClick={onClick}
+      type={type || ''}
+      value={value || ''}
       className={
         getIconClass() +
         ' btn primary-btn ' +

@@ -9,13 +9,14 @@ import { getFeatures } from '../../services/uras-service';
 import Button from '../../components/buttons/Button';
 import SampleFeatureSelection from '../experiment/SampleFeatureSelection';
 import propic from '../../assests/ProfilePic.png';
-import { useHistory, useLocation } from 'react-router';
+import { Redirect, useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import IconHeading from '../../components/text/IconHeading';
 import CurrentLocation from '../../components/header/CurrentLocation';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import SentimentRankCard from '../../components/analytics/SentimentRankCard';
 import { isObjEmtpy } from '../../common/utils';
+import fromParentOnly from '../../pages/wrappers/FromParentOnly';
 
 const UrasResultsAlt = () => {
   const featureSentimentPolarity = 'feature-sentiment-polarity';
@@ -272,4 +273,4 @@ const UrasResultsAlt = () => {
     </div>
   );
 };
-export default UrasResultsAlt;
+export default fromParentOnly(UrasResultsAlt);

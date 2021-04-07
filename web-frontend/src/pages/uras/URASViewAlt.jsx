@@ -161,11 +161,7 @@ const URASViewAlt = () => {
                         onChange={(event) =>
                           appendSelectedFeatures(feature.feature, event.target.value)
                         }
-                        value={
-                          selectedFeatures[feature.feature]
-                            ? selectedFeatures[feature.feature]
-                            : 'select-feature'
-                        }
+                        value={selectedFeatures[feature.feature] || 'select-feature'}
                       >
                         <option value="select-feature" disabled>
                           Select Type
@@ -221,4 +217,5 @@ const URASViewAlt = () => {
     </div>
   );
 };
+
 export default URASViewAlt;
