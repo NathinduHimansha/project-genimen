@@ -11,6 +11,7 @@ import Examples from './pages/experiment/Examples';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 import HomePage from './pages/index/HomePage';
+import HomeStart from './pages/index/HomeStartView';
 
 import UrasUserInputView from './pages/uras/UrasUserInputView';
 import UrasInputResults from './pages/uras/UrasInputResults';
@@ -22,6 +23,7 @@ import PssaView from './pages/pssa2/pssaView';
 import PssaResults from './pages/pssa2/pssaResults';
 import ScrollUp from './components/scrollupbutton/ScrollUp';
 import protect from './pages/wrappers/ProtectedRouteWrapper';
+import testcard from './pages/experiment/testcard';
 
 function App() {
   const [state, dispatch] = useContext(Context);
@@ -50,6 +52,8 @@ function App() {
           <Route path="/signup" component={Signup} />
           <Route path="/exkey" component={EXKEY} />
           <Route path="/examples" component={Examples} />
+          <Route path="/test1" component={testcard} />
+          <Route path="/test2" component={HomeStart} />
           <Route exact path="/" component={() => <Redirect to="/home" />} />
         </Switch>
 
