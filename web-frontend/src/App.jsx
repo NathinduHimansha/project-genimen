@@ -50,7 +50,7 @@ function App() {
           <Route path="/analytics/pssa/results" component={PssaResults} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <Route path="/exkey" component={EXKEY} />
+          <Route path="/analytics/exkey" component={EXKEY} />
           <Route path="/examples" component={Examples} />
           <Route path="/test1" component={testcard} />
           <Route path="/test2" component={HomeStart} />
