@@ -141,14 +141,16 @@ class Exkey extends React.Component {
                   id="userTrendDescription"
                   style={{ display: 'block', visibility: 'visible' }}
                 >
-                  <div className="focus-card focus-info-card -mb-40">
-                    <span className="-bold -normal">
-                      TRENDZ<br></br>
-                      <br></br>
-                    </span>
-                    Select the features you want to analyse and get a insight from. This will give
-                    you the sentiment of the selected features from variety of phones and an overall
-                    score for the feature
+                  <div className="trend_description_align">
+                    <div className="focus-card focus-info-card -mb-40">
+                      <span className="-bold -normal">
+                        TRENDZ<br></br>
+                        <br></br>
+                      </span>
+                      Select the features you want to analyse and get a insight from. This will give
+                      you the sentiment of the selected features from variety of phones and an
+                      overall score for the feature
+                    </div>
                   </div>
                 </div>
 
