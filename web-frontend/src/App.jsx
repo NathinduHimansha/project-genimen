@@ -48,7 +48,7 @@ function App() {
           <Route path="/analytics/pssa/results" component={PssaResults} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <Route path="/exkey" component={EXKEY} />
+          <Route path="/analytics/exkey" component={EXKEY} />
           <Route path="/examples" component={Examples} />
           <Route exact path="/" component={() => <Redirect to="/home" />} />
         </Switch>

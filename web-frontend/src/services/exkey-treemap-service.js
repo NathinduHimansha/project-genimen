@@ -3,7 +3,7 @@ import { Http } from '../common/utils';
 import axios from 'axios';
 
 
-const base = `${BASE_URL}/exkey`;
+const base = `${BASE_URL}/analytics/exkey`;
 const http = Http(base);
 
 const exkey_mock_otherKeywords = {
