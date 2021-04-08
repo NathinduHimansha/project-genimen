@@ -24,6 +24,7 @@ import PssaResults from './pages/pssa2/pssaResults';
 import ScrollUp from './components/scrollupbutton/ScrollUp';
 import protect from './pages/wrappers/ProtectedRouteWrapper';
 import testcard from './pages/experiment/testcard';
+import MenuCard from './components/menucard/MenuCard';
 
 function App() {
   const [state, dispatch] = useContext(Context);
@@ -54,6 +55,7 @@ function App() {
           <Route path="/examples" component={Examples} />
           <Route path="/test1" component={testcard} />
           <Route path="/test2" component={HomeStart} />
+          <Route path="/test3" component={MenuCard} />
           <Route exact path="/" component={() => <Redirect to="/home" />} />
         </Switch>
 
