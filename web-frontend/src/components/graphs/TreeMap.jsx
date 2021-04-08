@@ -9,7 +9,9 @@ class TreeMap extends React.Component {
     this.state = {
       treeVisibility: false,
       data: [],
-      options: {},
+      options: {
+        colors: ['#05B8CC'],
+      },
     };
   }
 

@@ -6,7 +6,7 @@
 }
 
 .body-split {
-  margin-top: 100px;
+  margin-top: -50px;
   margin-left: 80px;
 }
 
@@ -44,10 +44,10 @@
 
 @media only screen and (max-width: 1500px) {
   .card-left {
-    margin-left: 14%;
+    margin-left: 18%;
   }
   .card-right {
-    margin-left: 14%;
+    margin-left: 18%;
   }
 }
 
@@ -56,7 +56,7 @@
     width: 300px;
     height: 200px;
     margin-left: -20px;
-    margin-top: -48px;
+    margin-top: 30px;
   }
   .card-right {
     width: 300px;
@@ -66,7 +66,7 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .card-topic {
     margin-left: -50px;
   }
@@ -79,14 +79,6 @@
   to {
     transform: scale(1);
   }
-}
-
-.keywords-topic {
-  text-align: center;
-  left: -120px;
-  font-size: 2rem;
-  color: var(--black);
-  font-weight: bold;
 }
 
 /* [>BAR GRAPH<] */
@@ -209,6 +201,7 @@
 
 .analyze_again {
   margin-top: 20%;
+  margin-left: -10%;
   animation-name: startbtn-effect_analyzeAgain;
   animation-duration: 3s;
   animation-iteration-count: 1;
@@ -221,7 +214,7 @@
 @media only screen and (max-width: 1500px) {
   .analyze_again {
     margin-left: 50%;
-    margin-top: 20%;
+    margin-top: 15%;
     position: relative;
   }
 }
@@ -263,9 +256,13 @@
   .colourful_mobilePhone {
     width: 440px;
     height: 350px;
-    margin-left: -30px;
+    margin-left: 85px;
     margin-top: 10%;
   }
+}
+
+.trend_description_align {
+  margin-left: -10%;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -346,13 +343,23 @@
 
 .loader_description {
   display: grid;
-  margin-top: -20%;
-  margin-left: 10%;
+  margin-top: -15%;
+  margin-left: 17%;
   font-size: 1.8rem;
   font-weight: bold;
   overflow: hidden;
   white-space: nowrap;
 }
+
+@media only screen and (max-width: 1500px) {
+  .loader_description {
+    margin-left: 20px;
+    margin-top: 10%;
+    position: static;
+    width: 120%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .loader_description {
     margin-left: 20px;
