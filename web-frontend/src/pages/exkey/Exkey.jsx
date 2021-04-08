@@ -1,5 +1,4 @@
 import React from 'react';
-import search from '../../assests/Search.png';
 import './exkey.css';
 import Bargraph from '../../components/graphs/BarGraph';
 import TreeMap from '../../components/graphs/TreeMap';
@@ -10,6 +9,7 @@ import axios from 'axios';
 import { trendz } from '../../services/exkey-bargraph-service';
 import CurrentLocation from '../../components/header/CurrentLocation';
 import rightArrow from '../../assests/right-arrow.png';
+import lightBulb from '../../assests/tip_bulb.png';
 
 class Exkey extends React.Component {
   constructor(props) {
@@ -47,7 +47,7 @@ class Exkey extends React.Component {
         document.getElementById('treeMap_align')
       ) {
         document.querySelector('.treeMap_align').style.animation = 'fadeIn 3s ease-out';
-        document.getElementById('treeMap_align').style.display = 'block';
+        document.getElementById('treeMap_align').style.display = 'grid';
         document.querySelector('.frequency-bars ').style.visibility = 'visible';
         document.querySelector('.card-left ').style.visibility = 'visible';
         document.querySelector('.card-right ').style.visibility = 'visible';
@@ -108,26 +108,11 @@ class Exkey extends React.Component {
       <div className="main-body">
         <div className="navbar-page-container -mb-40">
           <div className="app-heading-header content-padding -flex -flex-col">
-            {/* <div className="-mb-20"> */}
-            {/* <IconHeading size="extra-small" iconUrl="var(--arrow-back-icon)"> */}
-            {/* <h4 className="heading4 -no-margin"> */}
-            {/* <span className="header-go-back">Back</span> */}
-            {/* </h4> */}
-            {/* </IconHeading> */}
-            {/* </div> */}
             <div className="-mb-30">
               <CurrentLocation></CurrentLocation>
             </div>
             <h2 className="fancy-heading -no-margin">LOOK WHAT PEOPLE ARE TALKING OF PHONES...</h2>
           </div>
-          {/* <div className="animated_heading">
-          <div className="-mb-40">
-            */}
-          {/* <h2 className="fancy-heading -no-margin"> LOOK WHAT PEOPLE ARE TALKING OF PHONES...</h2> */}
-          {/* 
-            <hr className="heading-sep" />
-          </div>
-        </div> */}
 
           <div className="body-split">
             <div className="-mt-60">
@@ -159,10 +144,22 @@ class Exkey extends React.Component {
                   >
                     <div className="trend_description_align">
                       <div className="focus-card focus-info-card -mb-40">
-                        <span className="-bold -normal">
-                          TRENDZ<br></br>
-                          <br></br>
-                        </span>
+                        <img
+                          src={lightBulb}
+                          style={{
+                            width: '6%',
+                            height: '1%',
+                            paddingRight: '5%',
+                          }}
+                          alt="tip_bulb"
+                        />
+                        <div style={{ marginTop: '-4%', marginLeft: '10%' }}>
+                          <span className="-bold -normal">
+                            WHY TREND THIS MUCH IMPORTANT ?<br></br>
+                            <br></br>
+                            <br></br>
+                          </span>
+                        </div>
                         Select the features you want to analyse and get a insight from. This will
                         give you the sentiment of the selected features from variety of phones and
                         an overall score for the feature
