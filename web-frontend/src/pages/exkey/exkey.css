@@ -63,12 +63,24 @@
     height: 200px;
     margin-left: -20px;
     margin-top: -10px;
+    padding-bottom: 5%;
+  }
+}
+.card-topic {
+  margin-left: -7%;
+}
+@media only screen and (max-width: 600px) {
+  .card-topic {
+    margin-left: -50px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .card-topic {
-    margin-left: -50px;
+  .otherKeywords_description {
+    margin-left: 20%;
+    margin-top: -10%;
+    font-size: -10px;
+    width: 100%;
   }
 }
 
@@ -200,7 +212,7 @@
 }
 
 .analyze_again {
-  margin-top: 20%;
+  margin-top: 15%;
   margin-left: -10%;
   animation-name: startbtn-effect_analyzeAgain;
   animation-duration: 3s;
@@ -214,7 +226,7 @@
 @media only screen and (max-width: 1500px) {
   .analyze_again {
     margin-left: 50%;
-    margin-top: 15%;
+    margin-top: 10%;
     position: relative;
   }
 }
@@ -277,7 +289,7 @@
 @media only screen and (max-width: 600px) {
   .trend_description_align {
     margin-left: 10%;
-    margin-top: 50%;
+    margin-top: 20%;
     position: static;
   }
 }
@@ -301,6 +313,18 @@
     display: flex;
     flex-wrap: wrap;
     position: absolute;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .analysing_banner {
+    opacity: 0.8;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    margin-left: -30%;
+    margin-top: -10%;
+    padding-bottom: 10px;
   }
 }
 
@@ -380,7 +404,7 @@
 
 .treeMap_align {
   margin-left: -160px;
-  margin-top: 80px;
+  margin-top: 30px;
   width: 110%;
 }
 

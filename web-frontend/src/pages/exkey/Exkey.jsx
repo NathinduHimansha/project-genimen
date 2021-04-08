@@ -11,6 +11,7 @@ import CurrentLocation from '../../components/header/CurrentLocation';
 import rightArrow from '../../assests/right-arrow.png';
 import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
+import fire from '../../assests/fire.png';
 
 class Exkey extends React.Component {
   constructor(props) {
@@ -127,7 +128,18 @@ class Exkey extends React.Component {
               <div className="card-left" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-left">
                   <div className="card-topic">
-                    <h3 className="heading3 -medium">TREND</h3>
+                    <h3 className="heading3 -medium">
+                      TREND
+                      <img
+                        src={fire}
+                        style={{
+                          width: '5%',
+                          height: '7.2%',
+                          marginLeft: '3%',
+                        }}
+                        alt="tip_bulb"
+                      />
+                    </h3>
                   </div>
                 </div>
 
@@ -138,10 +150,7 @@ class Exkey extends React.Component {
                 </div>
               </div>
               <div className="analysing_banner" style={{ visibility: 'visible' }}>
-                <img
-                  className="colourful_mobilePhone banner_allignment"
-                  src={colourful_mobilePhone}
-                />
+                <img className="colourful_mobilePhone " src={colourful_mobilePhone} />
               </div>
               <div className="card-right" style={{ visibility: 'hidden' }}>
                 <div
@@ -162,7 +171,7 @@ class Exkey extends React.Component {
                       />
                       <div style={{ marginTop: '-4%', marginLeft: '10%' }}>
                         <span className="-bold -normal">
-                          WHY TREND THIS MUCH IMPORTANT ?<br></br>
+                          WHY TREND THIS MUCH IMPORTANT FOR YOU ?<br></br>
                           <br></br>
                           <br></br>
                         </span>
@@ -177,6 +186,29 @@ class Exkey extends React.Component {
                 <div className="card-heading-name-right -mb-auto -flex-middle">
                   <div className="card-topic">
                     <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
+                    <div className="otherKeywords_description">
+                      <img
+                        src={lightBulb}
+                        style={{
+                          width: '6%',
+                          height: '1%',
+                          marginLeft: '-33%',
+                        }}
+                        alt="tip_bulb"
+                      ></img>
+                      <h4
+                        style={{
+                          width: '6%',
+                          height: '1%',
+                          marginLeft: '-25%',
+                          marginTop: '-3%',
+                          width: '100%',
+                          color: ' #bb5959 ',
+                        }}
+                      >
+                        TIP : HOVER OVER THE IMAGES TO FIND HOW MUCH THESE KEYWORDS ARE TRENDING
+                      </h4>
+                    </div>
                   </div>
                   <div className="treeMap_align" id="treeMap_align" style={{ display: 'none' }}>
                     <TreeMap />
