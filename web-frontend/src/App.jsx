@@ -41,6 +41,7 @@ function App() {
       <div>
         <GenimenSideBar></GenimenSideBar>
         <Switch>
+          <Route exact path="/home" component={HomePage} />
           <Route path="/about" component={Login} />
           <Route path="/analytics/exkey" component={EXKEY} />
           <Route exact path="/analytics/uras" component={protect(URASViewAlt)} />
@@ -56,7 +57,7 @@ function App() {
           <Route path="/test1" component={testcard} />
           <Route path="/test2" component={HomeStart} />
           <Route path="/test3" component={MenuCard} />
-          <Route exact path="/" component={() => <Redirect to="/home" />} />
+          <Route exact path="/" component={() => <Redirect to="/index" />} />
         </Switch>
 
         <ScrollUp />
@@ -68,7 +69,7 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
-            <Route exact path="/home" component={HomePage} />
+            <Route exact path="/index" component={HomePage} />
             <Route component={RoutesWNav} />
           </Switch>
         </div>

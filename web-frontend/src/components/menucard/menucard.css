@@ -1,3 +1,10 @@
+.menu-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 0.5fr));
+
+  margin: 50px 20px 20px 100px;
+}
+
 .menu-card {
   position: relative;
   min-width: 300px;
@@ -6,12 +13,9 @@
   min-height: 400px;
   max-height: 450px;
   height: 65vh;
-  margin: 20px;
-  padding: 10px;
+
   font-size: 0.8em;
 
-  margin-left: 20%;
-  margin-top: 100px;
   border: 2px solid rgb(36, 36, 36);
 }
 
@@ -36,7 +40,7 @@ article.startcard .startcard-img {
   max-width: 200px;
   width: 20vw;
   top: 10%;
-  left: 70px;
+  left: 60px;
 }
 
 article.startcard .startcard-info {

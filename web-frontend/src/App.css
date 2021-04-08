@@ -837,7 +837,7 @@ button.signup-btn {
 
 /* Content */
 .content-padding {
-  padding-left: 150px;
+  padding-left: 120px;
   padding-right: 300px;
 }
 .heading2-sep-margin {
@@ -916,7 +916,7 @@ select.uras-sort {
 }
 @media only screen and (max-width: 1500px) {
   .content-padding {
-    padding-right: 150px;
+    padding-right: 120px;
   }
 }
 @media only screen and (max-width: 1400px) {
