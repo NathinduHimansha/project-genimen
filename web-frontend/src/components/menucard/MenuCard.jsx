@@ -7,7 +7,7 @@ function MenuCard(props) {
 
   return (
     <div className="menu-card">
-      <article className="startcard -mb-40">
+      <article className="startcard ">
         <div className="startcard-img ">
           <img src={img} className="startcard-menu-img" />
         </div>
