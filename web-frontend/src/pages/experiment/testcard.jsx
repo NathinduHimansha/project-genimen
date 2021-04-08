@@ -18,7 +18,7 @@ function testcard() {
             score of the selected features from variety of phones and overall score for the features{' '}
           </p>
 
-          <div class="startcard-start-btn">
+          <div class="startcard-start">
             <button class="startcard-start-btn">Start</button>
           </div>
         </div>

@@ -4,7 +4,9 @@
   max-width: 350px;
   width: 40vw;
 
-  height: 60vh;
+  min-height: 400px;
+  max-height: 450px;
+  height: 65vh;
   margin: 20px;
   padding: 10px;
   font-size: 0.8em;
@@ -23,6 +25,7 @@ article.startcard {
 }
 
 article.startcard .startcard-img {
+  max-height: 250px;
   height: 40vh;
   position: relative;
   border: 2px solid rgb(42, 64, 189);
@@ -30,7 +33,7 @@ article.startcard .startcard-img {
 .startcard-menu-img {
   border: 2px solid rgb(233, 132, 132);
   position: absolute;
-  min-width: 100px;
+  min-width: 150px;
   max-width: 200px;
   width: 20vw;
   top: 10%;
@@ -39,10 +42,12 @@ article.startcard .startcard-img {
 
 article.startcard .startcard-info {
   width: auto;
-  height: 65vh;
-  padding: 14px 24px;
-  background: rgb(235, 234, 234);
-  transition: 0.5s 0.15s;
+  height: 60vh;
+  padding: 12px 22px;
+  background: rgb(202, 202, 202);
+
+  box-shadow: 0px 1px 10px rgb(92, 92, 92);
+  transition: 0.6s 0.2s;
 }
 article.startcard .startcard-info .startcard-title {
   position: relative;
@@ -52,7 +57,7 @@ article.startcard .startcard-info .startcard-title {
   color: #000000;
   font-family: 'Grotesque Black', sans-serif;
   padding-bottom: 5px;
-  border-bottom: 2px solid rgb(36, 36, 36);
+  border-bottom: 2px solid rgb(77, 77, 77);
 }
 
 article.startcard .startcard-info .startcard-sub-title {
@@ -76,6 +81,8 @@ article.startcard .startcard-info .startcard-text {
 
   font-size: 1.5rem;
   color: rgba(21, 37, 54, 0.7);
+  text-align: justify;
+  text-justify: inter-word;
 
   opacity: 0;
   transition: 0.5s 0.25s cubic-bezier(50, 100, 100, 100);
@@ -101,7 +108,7 @@ article.startcard .startcard-info .startcard-start-btn {
 }
 
 article.startcard:hover .startcard-info {
-  transform: translateY(-20vh);
+  transform: translateY(-15vh);
 }
 article.startcard:hover .startcard-info .startcard-sub-title,
 article.startcard:hover .startcard-info .startcard-text,
