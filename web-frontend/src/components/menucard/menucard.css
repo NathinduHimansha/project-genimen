@@ -1,7 +1,6 @@
 .menu-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 0.5fr));
-
   margin: 50px 20px 20px 100px;
 }
 
@@ -13,17 +12,14 @@
   min-height: 400px;
   max-height: 450px;
   height: 65vh;
-
   font-size: 0.8em;
-
-  border: 2px solid rgb(36, 36, 36);
+  margin-bottom: 10%;
 }
 
 article.startcard {
-  border: 2px solid rgb(189, 42, 42);
   width: 100%;
   height: 100%;
-  box-shadow: 1px 1px 10px rgb(92, 92, 92);
+  box-shadow: 2px 2px 10px var(--primary-border-grey);
   overflow: hidden;
 }
 
@@ -31,10 +27,9 @@ article.startcard .startcard-img {
   max-height: 250px;
   height: 40vh;
   position: relative;
-  border: 2px solid rgb(42, 64, 189);
+  background: var(--analytics-card);
 }
 .startcard-menu-img {
-  border: 2px solid rgb(233, 132, 132);
   position: absolute;
   min-width: 150px;
   max-width: 200px;
@@ -47,10 +42,11 @@ article.startcard .startcard-info {
   width: auto;
   height: 60vh;
   padding: 12px 22px;
-  background: rgb(202, 202, 202);
-  box-shadow: 0px 1px 10px rgb(92, 92, 92);
+  background: rgb(228, 228, 228);
+  box-shadow: 0px 1px 5px rgb(44, 44, 44);
   transition: 0.6s 0.2s;
 }
+
 article.startcard .startcard-info .startcard-title {
   position: relative;
   font-size: 2.5em;
@@ -72,6 +68,7 @@ article.startcard .startcard-info .startcard-sub-title {
   text-shadow: 0 0 0px #32577f;
   text-transform: uppercase;
 }
+
 article.startcard .startcard-info .startcard-sub-title {
   display: inline-block;
   opacity: 1;
@@ -84,7 +81,6 @@ article.startcard .startcard-info .startcard-text {
   color: rgba(21, 37, 54, 0.7);
   text-align: justify;
   text-justify: inter-word;
-
   opacity: 0;
   transition: 0.5s 0.25s cubic-bezier(50, 100, 100, 100);
 }

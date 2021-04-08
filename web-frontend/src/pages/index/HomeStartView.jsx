@@ -6,10 +6,10 @@ import { NavLink } from 'react-router-dom';
 
 function HomeStartView() {
   return (
-    <div>
-      <div className="app-heading-header content-padding  -flex-col">
+    <div className="navbar-page-container -mb-40">
+      <div className="app-heading-header content-padding -flex -flex-col">
         <div className="-mb-30">
-          <NavLink to="/index" className="-text-decoration-none">
+          <NavLink to="/analytics/uras" className="-text-decoration-none">
             <IconHeading size="extra-small" iconUrl="var(--arrow-back-icon)">
               <h4 className="heading4 -no-margin">
                 <span className="header-go-back">Back</span>
@@ -25,7 +25,7 @@ function HomeStartView() {
           img={sturasimg}
           title="sentiment by features"
           subTitle="Select Features and analyse the insight"
-          btnLink=""
+          btnLink="/analytics/uras"
         >
           Select features you want to analyse and get an insight. This will give you a sentiment
           score of the selected features from variety of phones and overall score for the features
