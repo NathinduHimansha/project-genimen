@@ -1,5 +1,4 @@
 import React from 'react';
-import search from '../../assests/Search.png';
 import './exkey.css';
 import Bargraph from '../../components/graphs/BarGraph';
 import TreeMap from '../../components/graphs/TreeMap';
@@ -10,6 +9,8 @@ import axios from 'axios';
 import { trendz } from '../../services/exkey-bargraph-service';
 import CurrentLocation from '../../components/header/CurrentLocation';
 import rightArrow from '../../assests/right-arrow.png';
+import lightBulb from '../../assests/tip_bulb.png';
+import FancyHeading from '../../components/text/FancyHeading';
 
 class Exkey extends React.Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class Exkey extends React.Component {
         document.getElementById('treeMap_align')
       ) {
         document.querySelector('.treeMap_align').style.animation = 'fadeIn 3s ease-out';
-        document.getElementById('treeMap_align').style.display = 'block';
+        document.getElementById('treeMap_align').style.display = 'grid';
         document.querySelector('.frequency-bars ').style.visibility = 'visible';
         document.querySelector('.card-left ').style.visibility = 'visible';
         document.querySelector('.card-right ').style.visibility = 'visible';
@@ -106,111 +107,114 @@ class Exkey extends React.Component {
   render() {
     return (
       <div className="main-body">
-        <div className="navbar-page-container -mb-40">
-          <div className="app-heading-header content-padding -flex -flex-col">
-            {/* <div className="-mb-20"> */}
-            {/* <IconHeading size="extra-small" iconUrl="var(--arrow-back-icon)"> */}
-            {/* <h4 className="heading4 -no-margin"> */}
-            {/* <span className="header-go-back">Back</span> */}
-            {/* </h4> */}
-            {/* </IconHeading> */}
-            {/* </div> */}
-            <div className="-mb-30">
-              <CurrentLocation></CurrentLocation>
-            </div>
-            <h2 className="fancy-heading -no-margin">LOOK WHAT PEOPLE ARE TALKING OF PHONES...</h2>
+        {/* <div className="navbar-page-container -mb-40"> */}
+        <div className="app-heading-header content-padding -flex -flex-col">
+          <div className="-mb-30">
+            <CurrentLocation></CurrentLocation>
           </div>
-          {/* <div className="animated_heading">
-          <div className="-mb-40">
-            */}
-          {/* <h2 className="fancy-heading -no-margin"> LOOK WHAT PEOPLE ARE TALKING OF PHONES...</h2> */}
-          {/* 
-            <hr className="heading-sep" />
-          </div>
-        </div> */}
-
-          <div className="body-split">
-            <div className="-mt-60">
-              <div className="analytics-container cards-split -mt-40">
-                <div className="card-left" style={{ visibility: 'hidden' }}>
-                  <div className="card-heading-name-left">
-                    <div className="card-topic">
-                      <h3 className="heading3 -medium">TREND</h3>
-                    </div>
-                  </div>
-
-                  <div className="frequency-bars" style={{ visibility: 'hidden' }}>
-                    {this.state.trendingFeatures.map((item, i) => (
-                      <Bargraph key={i} value={item.value} keyword={item.keyword}></Bargraph>
-                    ))}
+          <h2 className="fancy-heading -no-margin">LOOK WHAT PEOPLE ARE TALKING OF PHONES...</h2>
+        </div>
+        <div className=" -mt-60 -mb-90 content-padding">
+          <FancyHeading decoratorClassName="fancy-heading2-decorator">
+            <h2 className="heading2 -medium -no-margin heading2-sep-margin">
+              Smartphone Feature Trendz
+            </h2>
+          </FancyHeading>
+        </div>
+        <div className="body-split">
+          <div className="-mt-60">
+            <div className="analytics-container cards-split -mt-40">
+              <div className="card-left" style={{ visibility: 'hidden' }}>
+                <div className="card-heading-name-left">
+                  <div className="card-topic">
+                    <h3 className="heading3 -medium">TREND</h3>
                   </div>
                 </div>
-                <div className="analysing_banner" style={{ visibility: 'visible' }}>
-                  <img
-                    className="colourful_mobilePhone banner_allignment"
-                    src={colourful_mobilePhone}
-                  />
+
+                <div className="frequency-bars" style={{ visibility: 'hidden' }}>
+                  {this.state.trendingFeatures.map((item, i) => (
+                    <Bargraph key={i} value={item.value} keyword={item.keyword}></Bargraph>
+                  ))}
                 </div>
-                <div className="card-right" style={{ visibility: 'hidden' }}>
-                  <div
-                    className="userTrendDescription"
-                    id="userTrendDescription"
-                    style={{ display: 'block', visibility: 'visible' }}
-                  >
-                    <div className="trend_description_align">
-                      <div className="focus-card focus-info-card -mb-40">
+              </div>
+              <div className="analysing_banner" style={{ visibility: 'visible' }}>
+                <img
+                  className="colourful_mobilePhone banner_allignment"
+                  src={colourful_mobilePhone}
+                />
+              </div>
+              <div className="card-right" style={{ visibility: 'hidden' }}>
+                <div
+                  className="userTrendDescription"
+                  id="userTrendDescription"
+                  style={{ display: 'block', visibility: 'visible' }}
+                >
+                  <div className="trend_description_align">
+                    <div className="focus-card focus-info-card -mb-40">
+                      <img
+                        src={lightBulb}
+                        style={{
+                          width: '6%',
+                          height: '1%',
+                          paddingRight: '5%',
+                        }}
+                        alt="tip_bulb"
+                      />
+                      <div style={{ marginTop: '-4%', marginLeft: '10%' }}>
                         <span className="-bold -normal">
-                          TRENDZ<br></br>
+                          WHY TREND THIS MUCH IMPORTANT ?<br></br>
+                          <br></br>
                           <br></br>
                         </span>
-                        Select the features you want to analyse and get a insight from. This will
-                        give you the sentiment of the selected features from variety of phones and
-                        an overall score for the feature
                       </div>
+                      Select the features you want to analyse and get a insight from. This will give
+                      you the sentiment of the selected features from variety of phones and an
+                      overall score for the feature
                     </div>
                   </div>
+                </div>
 
-                  <div className="card-heading-name-right -mb-auto -flex-middle">
-                    <div className="card-topic">
-                      <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
-                    </div>
-                    <div className="treeMap_align" id="treeMap_align" style={{ display: 'none' }}>
-                      <TreeMap />
-                    </div>
+                <div className="card-heading-name-right -mb-auto -flex-middle">
+                  <div className="card-topic">
+                    <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
                   </div>
-
-                  <div
-                    className="analyze_again"
-                    id="analyze_again"
-                    style={{ display: 'block', visibility: 'visible' }}
-                  >
-                    <Button
-                      onClick={this.analyzeAgain}
-                      iconSrc={rightArrow}
-                      loading={this.state.loading}
-                    >
-                      Start Analysing
-                    </Button>
+                  <div className="treeMap_align" id="treeMap_align" style={{ display: 'none' }}>
+                    <TreeMap />
                   </div>
                 </div>
 
                 <div
-                  className="loader_progress"
-                  id="loader_progress"
-                  style={{ visibility: 'hidden' }}
+                  className="analyze_again"
+                  id="analyze_again"
+                  style={{ display: 'block', visibility: 'visible' }}
                 >
-                  <div className="loader_description">
-                    <h2 className="heading3 -medium -no-margin feature-type-heading">
-                      <b>ANALYSING IN PROGRESS...</b>
-                    </h2>
-                  </div>
-                  <img className="process_gif" src={processGif}></img>
+                  <Button
+                    onClick={this.analyzeAgain}
+                    iconSrc={rightArrow}
+                    loading={this.state.loading}
+                  >
+                    Start Analysing
+                  </Button>
                 </div>
+              </div>
+
+              <div
+                className="loader_progress"
+                id="loader_progress"
+                style={{ visibility: 'hidden' }}
+              >
+                <div className="loader_description">
+                  <h2 className="heading3 -medium -no-margin feature-type-heading">
+                    <b>ANALYSING IN PROGRESS...</b>
+                  </h2>
+                </div>
+                <img className="process_gif" src={processGif}></img>
               </div>
             </div>
           </div>
         </div>
       </div>
+      // </div>
     );
   }
 }
