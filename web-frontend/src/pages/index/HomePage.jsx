@@ -3,6 +3,7 @@ import Button from '../../components/buttons/Button';
 import './homepage.css';
 import Logobanner from '../../components/logobanner/Logobanner';
 import LeftArrow from '../../assests/left-arrow.png';
+import { NavLink } from 'react-router-dom';
 
 class HomePage extends Component {
   render() {
@@ -10,7 +11,9 @@ class HomePage extends Component {
       <div className="-mr-50">
         <div className="homepage-body">
           <div className="homepage-loginbtn">
-            <Button>Login</Button>
+            <NavLink to="/login" className="-text-decoration-none">
+              <Button>LOGIN</Button>
+            </NavLink>
           </div>
 
           <div className="homepage-logo">
@@ -21,7 +24,7 @@ class HomePage extends Component {
             <div className="welcometxt-top">
               <div>
                 <span>Predict</span>
-                <span>Annalyse</span>
+                <span>Analyse</span>
               </div>
             </div>
             <div className="welcometxt-bottom">
@@ -31,11 +34,12 @@ class HomePage extends Component {
             </div>
           </div>
 
-          <div className="homepage-start-button">
-            <Button>
-             
-              <img  className="homepage-startbtnrow" /> Start
-            </Button>
+          <div className="homepage-start-button -ml-70">
+            <NavLink to="/index/start" className="-text-decoration-none">
+              <Button>
+                <img className="homepage-startbtnrow" /> START ANALYZING
+              </Button>
+            </NavLink>
           </div>
 
           <div className="homepage-bg-annimation">
