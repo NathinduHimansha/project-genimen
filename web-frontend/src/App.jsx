@@ -57,6 +57,8 @@ function App() {
           <Route path="/test1" component={testcard} />
           <Route path="/test2" component={HomeStart} />
           <Route path="/test3" component={MenuCard} />
+          <Route path="/index/start" component={HomeStart} />
+
           <Route exact path="/" component={() => <Redirect to="/index" />} />
         </Switch>
 
