@@ -176,9 +176,11 @@ class Exkey extends React.Component {
                           <br></br>
                         </span>
                       </div>
-                      Select the features you want to analyse and get a insight from. This will give
-                      you the sentiment of the selected features from variety of phones and an
-                      overall score for the feature
+                      <div style={{ marginTop: '-3%' }}>
+                        Select the features you want to analyse and get a insight from. This will
+                        give you the sentiment of the selected features from variety of phones and
+                        an overall score for the feature
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -198,7 +200,6 @@ class Exkey extends React.Component {
                       ></img>
                       <h4
                         style={{
-                          width: '6%',
                           height: '1%',
                           marginLeft: '-25%',
                           marginTop: '-3%',

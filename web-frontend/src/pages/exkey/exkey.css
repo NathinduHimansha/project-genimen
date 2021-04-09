@@ -212,7 +212,7 @@
 }
 
 .analyze_again {
-  margin-top: 15%;
+  margin-top: 8%;
   margin-left: -10%;
   animation-name: startbtn-effect_analyzeAgain;
   animation-duration: 3s;
@@ -250,10 +250,10 @@
 
 .colourful_mobilePhone {
   margin-left: 10%;
-  margin-top: -8%;
+  margin-top: -1%;
   opacity: 0.8;
-  height: 450.28px;
-  width: 619.48px;
+  height: 430.28px;
+  width: 625.48px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -275,6 +275,7 @@
 
 .trend_description_align {
   margin-left: -10%;
+  width: 85%;
 }
 
 @media only screen and (max-width: 1500px) {
