@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 class HomePage extends Component {
   render() {
     return (
-      <div className="-mr-50">
+      <div>
         <div className="homepage-body">
           <div className="homepage-loginbtn">
             <NavLink to="/login" className="-text-decoration-none">
@@ -35,7 +35,7 @@ class HomePage extends Component {
           </div>
 
           <div className="homepage-start-button -ml-70">
-            <NavLink to="/index/start" className="-text-decoration-none">
+            <NavLink to="/analytics" className="-text-decoration-none">
               <Button>
                 <img className="homepage-startbtnrow" /> START ANALYZING
               </Button>
