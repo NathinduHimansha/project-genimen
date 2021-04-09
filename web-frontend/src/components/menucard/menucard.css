@@ -16,7 +16,7 @@
   min-width: 300px;
   max-width: 350px;
   width: 30vw;
-  min-height: 400px;
+  min-height: 420px;
   max-height: 450px;
   height: 65vh;
   font-size: 0.8em;
@@ -113,6 +113,13 @@ article.startcard .startcard-info .startcard-start-btn {
 article.startcard:hover .startcard-info {
   transform: translateY(-15vh);
 }
+
+@media only screen and (max-height: 700px) {
+  article.startcard:hover .startcard-info {
+    transform: translateY(-30vh);
+  }
+}
+
 article.startcard:hover .startcard-info .startcard-sub-title,
 article.startcard:hover .startcard-info .startcard-text,
 article.startcard:hover .startcard-info .startcard-start-btn {
