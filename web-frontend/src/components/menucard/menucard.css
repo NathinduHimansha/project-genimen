@@ -1,14 +1,21 @@
 .menu-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 0.5fr));
-  margin: 50px 20px 20px 100px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  padding: 5% 5% 5% 5%;
+}
+
+@media only screen and (min-width: 1500px) {
+  .menu-card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    padding: 5% 5% 5% 15%;
+  }
 }
 
 .menu-card {
   position: relative;
   min-width: 300px;
   max-width: 350px;
-  width: 40vw;
+  width: 30vw;
   min-height: 400px;
   max-height: 450px;
   height: 65vh;
@@ -51,7 +58,7 @@ article.startcard .startcard-info .startcard-title {
   position: relative;
   font-size: 2.5em;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: #000000;
   font-family: 'Grotesque Black', sans-serif;
   padding-bottom: 5px;

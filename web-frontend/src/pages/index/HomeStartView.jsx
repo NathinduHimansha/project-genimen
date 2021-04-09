@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 
 function HomeStartView() {
   return (
-    <div className="navbar-page-container -mb-40">
+    <div className="navbar-page-container -mb-40  home-start-container">
       <div className="app-heading-header content-padding -flex -flex-col">
         <div className="-mb-30">
           <NavLink to="/index" className="-text-decoration-none">
@@ -25,7 +25,7 @@ function HomeStartView() {
       <div className="menu-card-grid">
         <MenuCard
           img={sturasimg}
-          title="sentiment according to features"
+          title="sentiments according to features"
           subTitle="Select Features and analyse the insight"
           btnLink="/analytics/uras"
         >
@@ -36,7 +36,7 @@ function HomeStartView() {
 
         <MenuCard
           img={stpssaimg}
-          title="sentiment according to brands"
+          title="sentiments according to brands"
           subTitle="Select brands and analyse the insight"
           btnLink="/analytics/pssa"
         >
