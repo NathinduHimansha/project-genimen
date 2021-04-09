@@ -7,12 +7,6 @@ from api.model_sentiment.service import get_model_sentiment
 
 model_sentiment = Blueprint('ModelSentiment', __name__, url_prefix='/api')
 
-def createSuccessResponse(data):
-    return {
-        'data': data,
-        'status': 1,
-    }
-
 
 @model_sentiment.route('/ModelSentiment/<string:model_name>', methods=['GET'])
 def handle_model_sentiment(model_name):
