@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 class HomePage extends Component {
   render() {
     return (
-      <div className="-mr-50">
+      <div>
         <div className="homepage-body">
           <div className="homepage-loginbtn">
             <NavLink to="/login" className="-text-decoration-none">
