@@ -35,7 +35,7 @@ class HomePage extends Component {
           </div>
 
           <div className="homepage-start-button -ml-70">
-            <NavLink to="/index/start" className="-text-decoration-none">
+            <NavLink to="/analytics" className="-text-decoration-none">
               <Button>
                 <img className="homepage-startbtnrow" /> START ANALYZING
               </Button>
