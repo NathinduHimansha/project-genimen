@@ -165,9 +165,3 @@ def test_model_sentiment_analytics(client):
     res = client.get('/api/ModelSentiment/'+ invalid_model, headers=headers)
     assert dict(res.json)['status'] == 0
     assert res.status_code == 200
-
-    # sending a valid smartphone model
-    valid_model = "iPhone 11"
-    response = requests.get("http://localhost:5000/api/ModelSentiment/" + valid_model)
-    assert dict(response.json())['status'] == 1
-    assert response.status_code == 200
