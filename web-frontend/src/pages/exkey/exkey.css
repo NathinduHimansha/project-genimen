@@ -6,7 +6,7 @@
 }
 
 .body-split {
-  margin-top: -50px;
+  margin-top: -60px;
   margin-left: 80px;
 }
 
@@ -55,13 +55,13 @@
   .card-left {
     width: 300px;
     height: 200px;
-    margin-left: -20px;
+    margin-left: 10px;
     margin-top: 30px;
   }
   .card-right {
     width: 300px;
     height: 200px;
-    margin-left: -20px;
+    margin-left: 10px;
     margin-top: -10px;
     padding-bottom: 5%;
   }
@@ -119,8 +119,8 @@
   border-color: white;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 50px;
-  margin-top: 120px;
+  margin-left: 55px;
+  margin-top: 110px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -243,24 +243,23 @@
 @media only screen and (max-width: 500px) {
   .analyze_again {
     margin-left: 10%;
-    margin-top: 30%;
+    margin-top: 10%;
     position: absolute;
   }
 }
 
 .colourful_mobilePhone {
-  margin-left: 10%;
-  margin-top: -1%;
+  margin-left: 5%;
+  margin-top: -5%;
   opacity: 0.8;
-  height: 430.28px;
-  width: 625.48px;
+  height: 450.28px;
+  width: 600px;
 }
 
 @media only screen and (max-width: 600px) {
   .colourful_mobilePhone {
     width: 440px;
     height: 350px;
-    padding-right: 50%;
   }
 }
 
@@ -269,7 +268,7 @@
     width: 440px;
     height: 350px;
     margin-left: 85px;
-    margin-top: 10%;
+    margin-top: 5%;
   }
 }
 
@@ -283,14 +282,14 @@
     margin-left: 350px;
     width: 45vw;
     max-width: 60vw;
-    margin-top: -60%;
+    margin-top: -62%;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .trend_description_align {
     margin-left: 10%;
-    margin-top: 20%;
+    margin-top: 10%;
     position: static;
   }
 }
@@ -298,7 +297,7 @@
 @media only screen and (max-width: 500px) {
   .trend_description_align {
     margin-left: 10%;
-    margin-top: 50%;
+    margin-top: 20%;
     position: static;
   }
 }
@@ -324,7 +323,7 @@
     flex-wrap: wrap;
     position: absolute;
     margin-left: -30%;
-    margin-top: -10%;
+    margin-top: 5%;
     padding-bottom: 10px;
   }
 }
@@ -379,7 +378,7 @@
 @media only screen and (max-width: 1500px) {
   .loader_description {
     margin-left: 20px;
-    margin-top: 10%;
+    margin-top: -5%;
     position: static;
     width: 120%;
   }
@@ -412,7 +411,7 @@
 @media only screen and (max-width: 600px) {
   .treeMap_align {
     margin-left: -100px;
-    margin-top: -20px;
+    margin-top: -10px;
     width: 140%;
     height: 40%;
   }

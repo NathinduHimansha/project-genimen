@@ -10,7 +10,36 @@ class TreeMap extends React.Component {
       treeVisibility: false,
       data: [],
       options: {
-        colors: ['#05B8CC'],
+        tooltip: {
+          enabled: true,
+          theme: 'dark',
+
+          custom: function ({ data, seriesIndex, dataPointIndex, w }) {
+            var data = w.globals.initialSeries[seriesIndex].data[dataPointIndex];
+            return (
+              '<div style="width: 180px; height: 40px;text-align: center;margin-top: 25px;">' +
+              data.x +
+              '</div>'
+            );
+          },
+        },
+
+        plotOptions: {
+          treemap: {
+            distributed: true,
+          },
+        },
+
+        // colors: ['#05B8CC'],
+
+        states: {
+          hover: {
+            filter: {
+              type: 'darken',
+              value: 0.55,
+            },
+          },
+        },
       },
     };
   }

@@ -108,7 +108,6 @@ class Exkey extends React.Component {
   render() {
     return (
       <div className="main-body">
-        {/* <div className="navbar-page-container -mb-40"> */}
         <div className="app-heading-header content-padding -flex -flex-col">
           <div className="-mb-30">
             <CurrentLocation></CurrentLocation>
@@ -121,7 +120,9 @@ class Exkey extends React.Component {
               Smartphone Feature Trendz
             </h2>
           </FancyHeading>
+          <hr className="heading-sep" />
         </div>
+
         <div className="body-split">
           <div className="-mt-60">
             <div className="analytics-container cards-split -mt-40">
@@ -203,11 +204,12 @@ class Exkey extends React.Component {
                           height: '1%',
                           marginLeft: '-25%',
                           marginTop: '-3%',
-                          width: '100%',
+                          width: '110%',
                           color: ' #bb5959 ',
                         }}
                       >
-                        TIP : HOVER OVER THE IMAGES TO FIND HOW MUCH THESE KEYWORDS ARE TRENDING
+                        TIP : HOVER OVER THE KEYWORD BOXES TO FIND HOW MUCH THESE KEYWORDS ARE
+                        TRENDING
                       </h4>
                     </div>
                   </div>
@@ -219,7 +221,7 @@ class Exkey extends React.Component {
                 <div
                   className="analyze_again"
                   id="analyze_again"
-                  style={{ display: 'block', visibility: 'visible' }}
+                  style={{ display: 'grid', visibility: 'visible' }}
                 >
                   <Button
                     onClick={this.analyzeAgain}
@@ -247,7 +249,6 @@ class Exkey extends React.Component {
           </div>
         </div>
       </div>
-      // </div>
     );
   }
 }
