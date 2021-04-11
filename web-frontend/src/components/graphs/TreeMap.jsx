@@ -12,10 +12,14 @@ class TreeMap extends React.Component {
       options: {
         tooltip: {
           enabled: true,
-          theme: 'dark',
+          theme: 'dark', //dark theme for the tooltip
 
+          //custom tooltip
           custom: function ({ data, seriesIndex, dataPointIndex, w }) {
             var data = w.globals.initialSeries[seriesIndex].data[dataPointIndex];
+            // var color = w.globals.colors[dataPointIndex];
+
+            //returning the x value from the data array
             return (
               '<div style="width: 180px; height: 40px;text-align: center;margin-top: 25px;">' +
               data.x +
@@ -26,7 +30,7 @@ class TreeMap extends React.Component {
 
         plotOptions: {
           treemap: {
-            distributed: true,
+            distributed: true, //distributed multicolour treemap
           },
         },
 
@@ -35,7 +39,7 @@ class TreeMap extends React.Component {
         states: {
           hover: {
             filter: {
-              type: 'darken',
+              type: 'darken', //Hovering boxes of the treemap with the dark theme
               value: 0.55,
             },
           },
@@ -44,11 +48,13 @@ class TreeMap extends React.Component {
     };
   }
 
+  //tree is visible if the data is loaded from the backend
   componentDidMount() {
     otherKeywordsTrend()
       .then((response) => {
         this.setState({ data: response.series, treeVisibility: true });
       })
+      //else catch an error
       .catch((error) => {
         if (error) {
         }
@@ -59,13 +65,7 @@ class TreeMap extends React.Component {
     return (
       <div>
         {this.state.treeVisibility == true ? (
-          <ReactApexChart
-            options={this.state.options}
-            series={this.state.data}
-            type="treemap"
-            // height={250}
-            // width={520}
-          />
+          <ReactApexChart options={this.state.options} series={this.state.data} type="treemap" />
         ) : null}
       </div>
     );

@@ -18,29 +18,45 @@ class Exkey extends React.Component {
     super(props);
 
     this.state = {
-      trendingFeatures: [],
-      otherKeywordsList: [],
+      trendingFeatures: [], //trending keywords array (card left)
+      otherKeywordsList: [], //other keywords array (card right)
     };
   }
 
+  //analyze again button action
   analyzeAgain = (event) => {
-    document.querySelector('.loader_description').style.animation =
-      'typewriter_loadingDescription 3s steps(16) 10ms normal both';
-
     this.setState({
       loading: true,
     });
 
     setTimeout(function () {
-      document.getElementById('analyze_again').style.display = 'none';
-      document.querySelector('.analysing_banner').style.visibility = 'hidden';
+      if (
+        //if the below mentioned class and ids are set
+        document.querySelector('.loader_description ') &&
+        document.querySelector('.analysing_banner ') &&
+        document.querySelector('.loader_progress ') &&
+        document.querySelector('.userTrendDescription ') &&
+        document.getElementById('analyze_again')
+      ) {
+        //after 120 milliseconds
+        //After the button click load the analysing in progress text by a typing animation
+        document.querySelector('.loader_description').style.animation =
+          'typewriter_loadingDescription 3s steps(16) 10ms normal both';
+        //after the button click make the button dissapear
+        document.getElementById('analyze_again').style.display = 'none';
+        //making the analysing banner dissapear after 1200 milliseconds
+        document.querySelector('.analysing_banner').style.visibility = 'hidden';
 
-      document.querySelector('.loader_progress ').style.visibility = 'visible';
-      document.getElementById('userTrendDescription').style.display = 'none';
+        //making the loader progress appear after 1200 milliseconds
+        document.querySelector('.loader_progress ').style.visibility = 'visible';
+        //making the userTrendDescription dissapear after 1200 milliseconds
+        document.getElementById('userTrendDescription').style.display = 'none';
+      }
     }, 1200);
 
     setTimeout(function () {
       if (
+        //if the below mentioned class and ids are set
         document.querySelector('.frequency-bars ') &&
         document.querySelector('.card-left ') &&
         document.querySelector('.card-right ') &&
@@ -48,13 +64,21 @@ class Exkey extends React.Component {
         document.querySelector('.treeMap_align ') &&
         document.getElementById('treeMap_align')
       ) {
+        //after 5800 milliseconds
+        //make and animation to the treemap_align div dexcibed below
         document.querySelector('.treeMap_align').style.animation = 'fadeIn 3s ease-out';
+        //making visible the treemap_align div described below
         document.getElementById('treeMap_align').style.display = 'grid';
+        //making visible the frequency-bars div described below
         document.querySelector('.frequency-bars ').style.visibility = 'visible';
+        //making visible the card-left div described below
         document.querySelector('.card-left ').style.visibility = 'visible';
+        //making visible the card-right div described below
         document.querySelector('.card-right ').style.visibility = 'visible';
+        //hiding the loader_progress div described below
         document.querySelector('.loader_progress ').style.visibility = 'hidden';
 
+        //bar graph animation starts fter 5800 milliseconds
         document
           .getElementsByClassName('progress-percentage')[0]
           .classList.add('barchart_animation');
@@ -108,29 +132,39 @@ class Exkey extends React.Component {
   render() {
     return (
       <div className="main-body">
-        <div className="app-heading-header content-padding -flex -flex-col">
-          <div className="-mb-30">
-            <CurrentLocation></CurrentLocation>
+        {/*align the header according to the window sizes*/}
+        <div className="heading_align">
+          <div className="app-heading-header content-padding -flex -flex-col">
+            <div className="-mb-30">
+              {/*showing the current location of the page when it navigates from one page to another*/}
+              <CurrentLocation></CurrentLocation>
+            </div>
+            {/*main topic of the heading*/}
+            <h2 className="fancy-heading -no-margin">LOOK WHAT PEOPLE ARE TALKING OF PHONES...</h2>
           </div>
-          <h2 className="fancy-heading -no-margin">LOOK WHAT PEOPLE ARE TALKING OF PHONES...</h2>
-        </div>
-        <div className=" -mt-60 -mb-90 content-padding">
-          <FancyHeading decoratorClassName="fancy-heading2-decorator">
-            <h2 className="heading2 -medium -no-margin heading2-sep-margin">
-              Smartphone Feature Trendz
-            </h2>
-          </FancyHeading>
-          <hr className="heading-sep" />
+          <div className=" -mt-60 -mb-90 content-padding">
+            <FancyHeading decoratorClassName="fancy-heading2-decorator">
+              <h2 className="heading2 -medium -no-margin heading2-sep-margin">
+                {/*subtopic of the heading*/}
+                Smartphone Feature Trendz
+              </h2>
+            </FancyHeading>
+            {/*line seperator after the subtopic*/}
+            <hr className="heading-sep" />
+          </div>
         </div>
 
         <div className="body-split">
           <div className="-mt-60">
             <div className="analytics-container cards-split -mt-40">
+              {/*hidding the left card at the begining of the exkey page which represents the treemap*/}
               <div className="card-left" style={{ visibility: 'hidden' }}>
                 <div className="card-heading-name-left">
                   <div className="card-topic">
                     <h3 className="heading3 -medium">
+                      {/*Name of the left card which represents the bargraph of trending keywords*/}
                       TREND
+                      {/*trending fire image*/}
                       <img
                         src={fire}
                         style={{
@@ -143,17 +177,23 @@ class Exkey extends React.Component {
                     </h3>
                   </div>
                 </div>
-
+                {/*showing the bargrpah to the user after the relavent timecount mentioned above inside the button action*/}
                 <div className="frequency-bars" style={{ visibility: 'hidden' }}>
                   {this.state.trendingFeatures.map((item, i) => (
                     <Bargraph key={i} value={item.value} keyword={item.keyword}></Bargraph>
                   ))}
                 </div>
               </div>
+              {/*making visible the colurful mobile phone image at the exkey home page*/}
               <div className="analysing_banner" style={{ visibility: 'visible' }}>
                 <img className="colourful_mobilePhone " src={colourful_mobilePhone} />
               </div>
+
+              {/*starting of the card right elements*/}
+
+              {/*hidding the right card at the begining of the exkey page which represents the treemap*/}
               <div className="card-right" style={{ visibility: 'hidden' }}>
+                {/*trend description which is dispplayed on the right side of the begining of the exkey page*/}
                 <div
                   className="userTrendDescription"
                   id="userTrendDescription"
@@ -186,10 +226,12 @@ class Exkey extends React.Component {
                   </div>
                 </div>
 
+                {/*topic which represents the similar keywords of the right card*/}
                 <div className="card-heading-name-right -mb-auto -flex-middle">
                   <div className="card-topic">
-                    <h3 className="heading3 -medium">OTHER KEYWORDS</h3>
+                    <h3 className="heading3 -medium">SIMILAR KEYWORDS</h3>
                     <div className="otherKeywords_description">
+                      {/*light bulb and tip for the user displayed with the treemap*/}
                       <img
                         src={lightBulb}
                         style={{
@@ -213,16 +255,20 @@ class Exkey extends React.Component {
                       </h4>
                     </div>
                   </div>
+
+                  {/*Treemap which is imported from the gra[h folder which represents the similar keywords*/}
                   <div className="treeMap_align" id="treeMap_align" style={{ display: 'none' }}>
                     <TreeMap />
                   </div>
                 </div>
 
+                {/*analyze again button which do all the necessory action after clicking*/}
                 <div
                   className="analyze_again"
                   id="analyze_again"
                   style={{ display: 'grid', visibility: 'visible' }}
                 >
+                  {/*starts a loading process after the button click*/}
                   <Button
                     onClick={this.analyzeAgain}
                     iconSrc={rightArrow}
@@ -233,6 +279,7 @@ class Exkey extends React.Component {
                 </div>
               </div>
 
+              {/*loader gif and the analysing in progress text animation*/}
               <div
                 className="loader_progress"
                 id="loader_progress"
