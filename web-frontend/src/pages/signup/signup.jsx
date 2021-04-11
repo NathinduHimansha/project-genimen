@@ -63,14 +63,14 @@ const Signup = (props) => {
   const isPasswordMatch = (password, confirmPassword) => {
       return password == confirmPassword;
   }
-  const isInputsValid = (password, username, email) => {
-    if (isPasswordValid(password) && username.trim().length > 2 && isEmailValid(email)) {
+  const isInputsValid = (password, username, email, confirmPassword) => {
+    if (isPasswordValid(password) && username.trim().length > 2 && isEmailValid(email) && isPasswordMatch(password, confirmPassword)) {
       return true;
     }
     setShake(true);
     return false;
   };
-  const onLogin = () => {
+  const onSignup = () => {
     onUsernameBlur(username);
     onPasswordBlur(password);
     onUserEmailBlur(email);
@@ -80,7 +80,7 @@ const Signup = (props) => {
       setLoading(true);
       setTimeout(() => {
         addToast('Successfully Signed up', { appearance: 'success', id: 'signup-success' });
-        history.push({ pathname: '/home' });
+        history.push({ pathname: '/index' });
         setLoading(false);
       }, 2000);
     } else {
@@ -208,16 +208,16 @@ const Signup = (props) => {
                   'login-error-message login-password-error-message'
                 }
               >
-                password dosn't match
+                password doesn't match
               </span>
               </div>
           </div>
           <div className="signup-btn-wrapper -mt-25">
-            <Button utilClasses="-full-width" onClick={() => onLogin()}loading={loading}>Signup</Button>
+            <Button utilClasses="-full-width" onClick={() => onSignup()}loading={loading}>Signup</Button>
           </div>
           <div className="signup-login-wrapper -flex -flex-col">
             <span className="signup-login-message">Already have an accout?</span>
-            <NavLink exact to="/about" className="signup-login-btn">
+            <NavLink exact to="/login" className="signup-login-btn">
               Log in here
             </NavLink>
           </div>
