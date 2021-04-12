@@ -81,7 +81,7 @@
     width: 300px;
     height: 200px;
     margin-left: 5px;
-    margin-top: -15%;
+    margin-top: -30%;
     padding-bottom: 5%;
   }
 }
@@ -91,7 +91,7 @@
     width: 300px;
     height: 200px;
     margin-left: 5px;
-    margin-top: -1%;
+    margin-top: -5%;
     padding-bottom: 5%;
     position: static;
   }
@@ -261,7 +261,7 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
   .analyze_again {
     margin-left: 10%;
     margin-top: 30%;
@@ -273,7 +273,15 @@
 @media only screen and (max-width: 500px) {
   .analyze_again {
     margin-left: 10%;
-    margin-top: 15%;
+    margin-top: 10%;
+    position: static;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .analyze_again {
+    margin-left: 10%;
+    margin-top: 20%;
     position: static;
   }
 }
@@ -288,18 +296,23 @@
 
 @media only screen and (max-width: 600px) {
   .colourful_mobilePhone {
-    width: 440px;
-    height: 350px;
     margin-top: 10%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .colourful_mobilePhone {
+    background-color: aqua;
+    display: none;
   }
 }
 
 @media only screen and (max-width: 1500px) {
   .colourful_mobilePhone {
-    width: 440px;
-    height: 350px;
+    width: 550px;
+    height: 430px;
     margin-left: 85px;
-    margin-top: 5%;
+    margin-top: -3%;
   }
 }
 
@@ -317,9 +330,9 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
   .trend_description_align {
-    margin-left: 10%;
+    margin-left: -10%;
     margin-top: -5%;
     position: static;
     width: 120%;
@@ -327,10 +340,26 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .trend_description_align {
+    margin-left: -10%;
+    margin-top: 30%;
+    position: static;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .trend_description_align {
     margin-left: -10%;
-    margin-top: -5%;
+    margin-top: -30%;
+    position: static;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .trend_description_align {
+    margin-left: -10%;
+    margin-top: -80%;
     position: static;
   }
 }
@@ -351,12 +380,11 @@
 
 @media screen and (max-width: 600px) {
   .analysing_banner {
-    width: 30%;
     opacity: 0.8;
     display: flex;
     flex-wrap: wrap;
     position: static;
-    margin-left: -10%;
+    margin-left: -25%;
     margin-top: -35%;
     padding-bottom: 10px;
   }
@@ -364,14 +392,15 @@
 
 @media screen and (max-width: 500px) {
   .analysing_banner {
+    width: 10%;
+    height: 10%;
     opacity: 0.8;
     display: flex;
     flex-wrap: wrap;
-    position: absolute;
-    margin-left: -30%;
-    margin-top: -5%;
+    position: relative;
+    margin-left: -25%;
+    margin-top: -40%;
     padding-bottom: 10px;
-    height: 10%;
   }
 }
 
@@ -402,7 +431,8 @@
   .process_gif {
     width: 244.8px;
     height: 244.8px;
-    margin-top: 90%;
+    margin-top: 70%;
+    margin-left: -2%;
   }
 }
 
@@ -442,7 +472,7 @@
 @media only screen and (max-width: 600px) {
   .loader_description {
     margin-left: 20px;
-    margin-top: 60%;
+    margin-top: 50%;
     position: absolute;
   }
 }

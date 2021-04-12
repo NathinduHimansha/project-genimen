@@ -10,7 +10,7 @@ const BarGraph = (props) => {
         className="progress-percentage"
         style={{ height: value + '%', backgroundColor: '#96DDE7' }}
       ></div>
-      <h2 class="heading3 -medium -no-margin feature-type-heading">
+      <h2 className="heading3 -medium -no-margin feature-type-heading">
         <span className="frequency_percentage">{value + '%'}</span>
       </h2>
     </div>
