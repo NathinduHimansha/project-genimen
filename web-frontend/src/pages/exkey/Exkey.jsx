@@ -290,7 +290,7 @@ class Exkey extends React.Component {
                     <b>ANALYSING IN PROGRESS...</b>
                   </h2>
                 </div>
-                <img className="process_gif" src={analysingImg}></img>
+                <img className="analysingImg" src={analysingImg}></img>
               </div>
             </div>
           </div>
