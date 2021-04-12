@@ -4,7 +4,6 @@ import Bargraph from '../../components/graphs/BarGraph';
 import TreeMap from '../../components/graphs/TreeMap';
 import Button from '../../components/buttons/Button';
 import colourful_mobilePhone from '../../assests/colourful.png';
-import processGif from '../../assests/Process_loading.gif';
 import axios from 'axios';
 import { trendz } from '../../services/exkey-bargraph-service';
 import CurrentLocation from '../../components/header/CurrentLocation';
@@ -12,6 +11,7 @@ import rightArrow from '../../assests/right-arrow.png';
 import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
 import fire from '../../assests/fire.png';
+import analysingImg from '../../assests/analysing.png';
 
 class Exkey extends React.Component {
   constructor(props) {
@@ -290,7 +290,7 @@ class Exkey extends React.Component {
                     <b>ANALYSING IN PROGRESS...</b>
                   </h2>
                 </div>
-                <img className="process_gif" src={processGif}></img>
+                <img className="process_gif" src={analysingImg}></img>
               </div>
             </div>
           </div>

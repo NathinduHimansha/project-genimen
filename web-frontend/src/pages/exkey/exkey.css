@@ -70,6 +70,15 @@
   }
 }
 
+@media only screen and (max-width: 1510px) {
+  .card-left {
+    margin-left: 24%;
+  }
+  .card-right {
+    margin-left: 24%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .card-left {
     width: 300px;
@@ -81,7 +90,7 @@
     width: 300px;
     height: 200px;
     margin-left: 5px;
-    margin-top: -30%;
+    margin-top: -20%;
     padding-bottom: 5%;
   }
 }
@@ -91,7 +100,7 @@
     width: 300px;
     height: 200px;
     margin-left: 5px;
-    margin-top: -5%;
+    margin-top: -15%;
     padding-bottom: 5%;
     position: static;
   }
@@ -261,9 +270,17 @@
   }
 }
 
+@media only screen and (max-width: 1510px) {
+  .analyze_again {
+    margin-left: 50%;
+    margin-top: 8%;
+    position: relative;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .analyze_again {
-    margin-left: 10%;
+    margin-left: -10%;
     margin-top: 30%;
     position: static;
     margin-top: 10%;
@@ -294,25 +311,28 @@
   width: 600px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
   .colourful_mobilePhone {
-    margin-top: 10%;
+    margin-top: 2%;
+    margin-left: 220%;
+    height: 50px;
+    width: 400px;
   }
 }
 
 @media only screen and (max-width: 450px) {
   .colourful_mobilePhone {
-    background-color: aqua;
-    display: none;
+    height: 140px;
+    /* display: none; */
   }
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 800px) {
   .colourful_mobilePhone {
-    width: 550px;
-    height: 430px;
-    margin-left: 85px;
-    margin-top: -3%;
+    margin-top: 2%;
+    margin-left: 15%;
+    height: 350px;
+    width: 400px;
   }
 }
 
@@ -330,28 +350,38 @@
   }
 }
 
+@media only screen and (max-width: 1510px) {
+  .trend_description_align {
+    margin-left: 350px;
+    width: 45vw;
+    max-width: 60vw;
+    margin-top: -62%;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .trend_description_align {
     margin-left: -10%;
-    margin-top: -5%;
+    margin-top: -10%;
     position: static;
-    width: 120%;
-    max-width: 220%;
+    width: 110%;
+    max-width: 65%;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .trend_description_align {
     margin-left: -10%;
-    margin-top: 30%;
+    margin-top: 10%;
     position: static;
+    max-width: 250%;
   }
 }
 
 @media only screen and (max-width: 500px) {
   .trend_description_align {
     margin-left: -10%;
-    margin-top: -30%;
+    margin-top: 5%;
     position: static;
   }
 }
@@ -359,7 +389,7 @@
 @media only screen and (max-width: 450px) {
   .trend_description_align {
     margin-left: -10%;
-    margin-top: -80%;
+    margin-top: -5%;
     position: static;
   }
 }
@@ -398,7 +428,7 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    margin-left: -25%;
+    margin-left: -10%;
     margin-top: -40%;
     padding-bottom: 10px;
   }
@@ -455,7 +485,7 @@
   margin-top: -15%;
   margin-left: 17%;
   font-size: 1.8rem;
-  font-weight: bold;
+  font-style: italic;
   overflow: hidden;
   white-space: nowrap;
 }
