@@ -454,7 +454,7 @@
 .analysingImg {
   width: 494px;
   height: 324px;
-  margin-left: 10%;
+  /* margin-left: 10%; */
   margin-top: -2%;
   opacity: 0.8;
 }
@@ -566,9 +566,9 @@
   margin: auto;
 }
 #caption {
-  padding-left: 8px;
+  padding-left: 30px;
   margin: auto;
-  font-size: 40px;
+  font-size: 2.6rem;
 }
 .b {
   background: #d5fff7;

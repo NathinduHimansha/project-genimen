@@ -301,7 +301,7 @@ class Exkey extends React.Component {
                         <div className="b" id="b3"></div>
                         <div className="b" id="b4"></div>
                       </div>
-                      <div id="caption">Your Analysis is almost ready...</div>
+                      <div id="caption">Your analysis is almost ready...</div>
                     </div>
                   </div>
                 }
