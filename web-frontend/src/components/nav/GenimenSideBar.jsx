@@ -24,9 +24,9 @@ const routes = [
     title: 'Analytics',
     icon: search,
     subMenu: [
-      { title: 'Sentiments To Features', path: '/analytics/uras' },
-      { title: 'Sentiments To Features', path: '/analytics/pssa' },
-      { title: 'Trending Features Visualization', path: '/analytics/exkey' },
+      { title: 'Feature Sentiments', path: '/analytics/uras' },
+      { title: 'Product Feature Sentiments', path: '/analytics/pssa' },
+      { title: 'Trendz', path: '/analytics/exkey' },
     ],
     path: '/analytics',
   },
