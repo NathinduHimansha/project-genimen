@@ -41,7 +41,7 @@ function App() {
       <div>
         <GenimenSideBar></GenimenSideBar>
         <Switch>
-          <Route exact path="/home" component={HomePage} />
+          <Route exact path="/index" component={HomePage} />
           <Route path="/about" component={Login} />
           <Route exact path="/analytics/exkey" component={EXKEY} />
           <Route exact path="/analytics/uras" component={protect(URASViewAlt)} />
