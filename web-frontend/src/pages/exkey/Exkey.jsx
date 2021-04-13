@@ -7,13 +7,11 @@ import colourful_mobilePhone from '../../assests/colourful.png';
 import axios from 'axios';
 import { trendz } from '../../services/exkey-bargraph-service';
 import { otherKeywordsTrend } from '../../services/exkey-treemap-service';
-
 import CurrentLocation from '../../components/header/CurrentLocation';
 import rightArrow from '../../assests/right-arrow.png';
 import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
 import fire from '../../assests/fire.png';
-import analysingImg from '../../assests/analysing.png';
 
 class Exkey extends React.Component {
   constructor(props) {
@@ -34,7 +32,7 @@ class Exkey extends React.Component {
     setTimeout(function () {
       if (
         //if the below mentioned class and ids are set
-        document.querySelector('.loader_description ') &&
+        // document.querySelector('.analysingImg ') &&
         document.querySelector('.analysing_banner ') &&
         document.querySelector('.loader_progress ') &&
         document.querySelector('.userTrendDescription ') &&
@@ -42,8 +40,8 @@ class Exkey extends React.Component {
       ) {
         //after 120 milliseconds
         //After the button click load the analysing in progress text by a typing animation
-        document.querySelector('.loader_description').style.animation =
-          'typewriter_loadingDescription 3s steps(16) 10ms normal both';
+        // document.querySelector('.analysingImg').style.animation =
+        //   'typewriter_loadingDescription 3s steps(16) 10ms normal both';
         //after the button click make the button dissapear
         document.getElementById('analyze_again').style.display = 'none';
         //making the analysing banner dissapear after 1200 milliseconds
@@ -117,12 +115,19 @@ class Exkey extends React.Component {
   getRequestedData = (event) => {
     //http request handling
     // trendz(this.state.selectedFeatures).then((response) => {
-    trendz()
+    trendz().then((response) => {
+      this.setState({ data: response.data }), event.preventDefault();
+      const trendingFeatures = response.data.trend;
+      this.setState({ trendingFeatures });
+      console.log(trendingFeatures);
+    });
+
+    otherKeywordsTrend()
       .then((response) => {
-        this.setState({ data: response.data }), event.preventDefault();
-        const trendingFeatures = response.data.trend;
-        this.setState({ trendingFeatures });
-        console.log(trendingFeatures);
+        this.setState({ data: response.series }), event.preventDefault();
+        const otherKeywordsList = response.series;
+        this.setState({ otherKeywordsList });
+        console.log(otherKeywordsList);
       })
 
       .catch((error) => {
@@ -281,18 +286,25 @@ class Exkey extends React.Component {
                 </div>
               </div>
 
-              {/*loader image and the analysing in progress text animation*/}
+              {/*loader and the loader text*/}
               <div
                 className="loader_progress"
                 id="loader_progress"
                 style={{ visibility: 'hidden' }}
               >
-                <div className="loader_description">
-                  <h2 className="heading3 -medium -no-margin feature-type-heading">
-                    <b>ANALYSING IN PROGRESS...</b>
-                  </h2>
-                </div>
-                <img className="analysingImg" src={analysingImg}></img>
+                {
+                  <div className="analysingImg">
+                    <div id="building">
+                      <div id="blocks">
+                        <div className="b" id="b1"></div>
+                        <div className="b" id="b2"></div>
+                        <div className="b" id="b3"></div>
+                        <div className="b" id="b4"></div>
+                      </div>
+                      <div id="caption">Your Analysis is almost ready...</div>
+                    </div>
+                  </div>
+                }
               </div>
             </div>
           </div>
