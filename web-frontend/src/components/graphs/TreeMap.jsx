@@ -64,7 +64,6 @@ class TreeMap extends React.Component {
       });
   }
 
-  //if the component is unmounted making the variabel false
   componentWillUnmount() {
     this._isMounted = false;
   }
