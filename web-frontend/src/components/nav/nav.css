@@ -246,6 +246,7 @@ img.dropdown-arrow {
   text-decoration: none;
   margin-bottom: 2px;
   transition: 200ms ease;
+  overflow: hidden;
 }
 
 .nav-link:last-child {
