@@ -6,6 +6,8 @@ import Button from '../../components/buttons/Button';
 import colourful_mobilePhone from '../../assests/colourful.png';
 import axios from 'axios';
 import { trendz } from '../../services/exkey-bargraph-service';
+import { otherKeywordsTrend } from '../../services/exkey-treemap-service';
+
 import CurrentLocation from '../../components/header/CurrentLocation';
 import rightArrow from '../../assests/right-arrow.png';
 import lightBulb from '../../assests/tip_bulb.png';
@@ -279,7 +281,7 @@ class Exkey extends React.Component {
                 </div>
               </div>
 
-              {/*loader gif and the analysing in progress text animation*/}
+              {/*loader image and the analysing in progress text animation*/}
               <div
                 className="loader_progress"
                 id="loader_progress"

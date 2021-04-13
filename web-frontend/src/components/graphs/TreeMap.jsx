@@ -47,18 +47,26 @@ class TreeMap extends React.Component {
       },
     };
   }
-
+  _isMounted = false;
   //tree is visible if the data is loaded from the backend
   componentDidMount() {
+    this._isMounted = true;
     otherKeywordsTrend()
       .then((response) => {
-        this.setState({ data: response.series, treeVisibility: true });
+        if (this._isMounted === true) {
+          this.setState({ data: response.series, treeVisibility: true });
+        }
       })
       //else catch an error
       .catch((error) => {
         if (error) {
         }
       });
+  }
+
+  //if the component is unmounted making the variabel false
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {
