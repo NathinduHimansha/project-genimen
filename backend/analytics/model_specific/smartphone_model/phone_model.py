@@ -1,5 +1,6 @@
 class Model:
     def __init__(self):
+        self.model = ""
         self.camera_pos = 0
         self.camera_neg = 0
         self.camera_pol = 0
@@ -24,6 +25,9 @@ class Model:
         self.speakers_neg = 0
         self.speakers_pol = 0
         self.speakers_count = 0
+
+    def set_model_name(self, name):
+        self.model = name
 
     def get_camera_pos(self):
         return self.camera_pos

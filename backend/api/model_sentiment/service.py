@@ -22,4 +22,5 @@ def get_model_sentiment(model_name):
 
     smart_phone = get_features_with_sentiment(all_reviews_arr)  # Finding features and getting sentiment value
     smart_phone = get_sentiment_percentage(smart_phone)  # Getting sentiment score by percentage
+    smart_phone.set_model_name(str(model_name))
     return smart_phone

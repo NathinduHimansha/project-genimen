@@ -1,5 +1,8 @@
 import pytest
 import json
+
+import requests
+
 from api import create_app
 from api.auth.controller import create_token
 from flask_jwt_extended import create_access_token
@@ -139,5 +142,26 @@ def test_uras_analytics(client, mocker):
 
     # request with invalid data
     res = client.post('/api/uras', data=json.dumps(data), headers=headers)
+    assert dict(res.json)['status'] == 0
+    assert res.status_code == 200
+
+def test_model_sentiment(client):
+    access_token = create_access_token("testUser")
+    headers = {
+        'Authorization': 'Bearer {}'.format(access_token)
+    }
+    res = client.get('/api/ModelSentiment/getmodels', headers=headers)
+    assert dict(res.json)['status'] == 1
+    assert res.status_code == 200
+
+
+def test_model_sentiment_analytics(client):
+    access_token = create_access_token("testUser")
+    headers = {
+        'Authorization': 'Bearer {}'.format(access_token)
+    }
+    # sending a invalid smartphone model
+    invalid_model = "iPhone 90"
+    res = client.get('/api/ModelSentiment/'+ invalid_model, headers=headers)
     assert dict(res.json)['status'] == 0
     assert res.status_code == 200
