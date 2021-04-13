@@ -841,8 +841,7 @@ button.signup-btn {
 /* Content */
 .content-padding {
   padding-left: 150px;
-  /* padding-right: 300px; */
-  padding-right: 150px;
+  padding-right: 300px;
 }
 .heading2-sep-margin {
   margin-bottom: 15px !important;
