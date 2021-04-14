@@ -23,7 +23,7 @@ jobs:
         uses: suprgames/serverless-github-action@v1.77
         with:
           command: deploy
-        args: -v
+          args: -v
         env:
           # To link with your Serverless Framework account, equivalent to login
           # SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
