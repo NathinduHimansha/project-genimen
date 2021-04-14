@@ -23,117 +23,27 @@ class Exkey extends React.Component {
     };
   }
 
-  //analyze again button action
-  analyzeAgain = (event) => {
+  routePage = (event) => {
     this.setState({
       loading: true,
     });
+    setTimeout(() => {
+      trendz()
+        .then((response) => {
+          this.setState({ data: response.data }), event.preventDefault();
+          const trendingFeatures = response.data.trend;
+          this.setState({ trendingFeatures });
+          this.props.history.push({
+            pathname: '/analytics/exkey/results',
+            state: trendingFeatures,
+          });
+        })
 
-    setTimeout(function () {
-      if (
-        //if the below mentioned class and ids are set
-        // document.querySelector('.analysingImg ') &&
-        document.querySelector('.analysing_banner ') &&
-        document.querySelector('.loader_progress ') &&
-        document.querySelector('.userTrendDescription ') &&
-        document.getElementById('analyze_again')
-      ) {
-        //after 120 milliseconds
-        //After the button click load the analysing in progress text by a typing animation
-        // document.querySelector('.analysingImg').style.animation =
-        //   'typewriter_loadingDescription 3s steps(16) 10ms normal both';
-        //after the button click make the button dissapear
-        document.getElementById('analyze_again').style.display = 'none';
-        //making the analysing banner dissapear after 1200 milliseconds
-        document.querySelector('.analysing_banner').style.visibility = 'hidden';
-
-        //making the loader progress appear after 1200 milliseconds
-        document.querySelector('.loader_progress ').style.visibility = 'visible';
-        //making the userTrendDescription dissapear after 1200 milliseconds
-        document.getElementById('userTrendDescription').style.display = 'none';
-      }
-    }, 1200);
-
-    setTimeout(function () {
-      if (
-        //if the below mentioned class and ids are set
-        document.querySelector('.frequency-bars ') &&
-        document.querySelector('.card-left ') &&
-        document.querySelector('.card-right ') &&
-        document.querySelector('.loader_progress ') &&
-        document.querySelector('.treeMap_align ') &&
-        document.getElementById('treeMap_align')
-      ) {
-        //after 5800 milliseconds
-        //make and animation to the treemap_align div dexcibed below
-        document.querySelector('.treeMap_align').style.animation = 'fadeIn 3s ease-out';
-        //making visible the treemap_align div described below
-        document.getElementById('treeMap_align').style.display = 'grid';
-        //making visible the frequency-bars div described below
-        document.querySelector('.frequency-bars ').style.visibility = 'visible';
-        //making visible the card-left div described below
-        document.querySelector('.card-left ').style.visibility = 'visible';
-        //making visible the card-right div described below
-        document.querySelector('.card-right ').style.visibility = 'visible';
-        //hiding the loader_progress div described below
-        document.querySelector('.loader_progress ').style.visibility = 'hidden';
-
-        //bar graph animation starts fter 5800 milliseconds
-        document
-          .getElementsByClassName('progress-percentage')[0]
-          .classList.add('barchart_animation');
-        document
-          .getElementsByClassName('progress-percentage')[1]
-          .classList.add('barchart_animation');
-        document
-          .getElementsByClassName('progress-percentage')[2]
-          .classList.add('barchart_animation');
-        document
-          .getElementsByClassName('progress-percentage')[3]
-          .classList.add('barchart_animation');
-        document
-          .getElementsByClassName('progress-percentage')[4]
-          .classList.add('barchart_animation');
-        document
-          .getElementsByClassName('progress-percentage')[5]
-          .classList.add('barchart_animation');
-        document
-          .getElementsByClassName('progress-percentage')[6]
-          .classList.add('barchart_animation');
-        document
-          .getElementsByClassName('progress-percentage')[7]
-          .classList.add('barchart_animation');
-        document
-          .getElementsByClassName('progress-percentage')[8]
-          .classList.add('barchart_animation');
-      }
-    }, 5800);
-    this.getRequestedData(event);
-  };
-
-  //handles the http request and routes the user
-  getRequestedData = (event) => {
-    //http request handling
-    // trendz(this.state.selectedFeatures).then((response) => {
-    trendz().then((response) => {
-      this.setState({ data: response.data }), event.preventDefault();
-      const trendingFeatures = response.data.trend;
-      this.setState({ trendingFeatures });
-      console.log(trendingFeatures);
-    });
-
-    otherKeywordsTrend()
-      .then((response) => {
-        this.setState({ data: response.series }), event.preventDefault();
-        const otherKeywordsList = response.series;
-        this.setState({ otherKeywordsList });
-        console.log(otherKeywordsList);
-      })
-
-      .catch((error) => {
-        if (error) {
-        }
-      });
+        .catch((error) => {
+          if (error) {
+          }
+        });
+    }, 1000);
   };
 
   render() {
@@ -165,34 +75,9 @@ class Exkey extends React.Component {
           <div className="-mt-60">
             <div className="analytics-container cards-split -mt-40">
               {/*hidding the left card at the begining of the exkey page which represents the treemap*/}
-              <div className="card-left" style={{ visibility: 'hidden' }}>
-                <div className="card-heading-name-left">
-                  <div className="card-topic">
-                    <h3 className="heading3 -medium">
-                      {/*Name of the left card which represents the bargraph of trending keywords*/}
-                      TREND
-                      {/*trending fire image*/}
-                      <img
-                        src={fire}
-                        style={{
-                          width: '5%',
-                          height: '7.2%',
-                          marginLeft: '3%',
-                        }}
-                        alt="tip_bulb"
-                      />
-                    </h3>
-                  </div>
-                </div>
-                {/*showing the bargrpah to the user after the relavent timecount mentioned above inside the button action*/}
-                <div className="frequency-bars" style={{ visibility: 'hidden' }}>
-                  {this.state.trendingFeatures.map((item, i) => (
-                    <Bargraph key={i} value={item.value} keyword={item.keyword}></Bargraph>
-                  ))}
-                </div>
-              </div>
+              <div className="card-left" style={{ visibility: 'hidden' }}></div>
               {/*making visible the colurful mobile phone image at the exkey home page*/}
-              <div className="analysing_banner" style={{ visibility: 'visible' }}>
+              <div className="analysing_banner">
                 <img className="colourful_mobilePhone " src={colourful_mobilePhone} />
               </div>
 
@@ -233,42 +118,6 @@ class Exkey extends React.Component {
                   </div>
                 </div>
 
-                {/*topic which represents the similar keywords of the right card*/}
-                <div className="card-heading-name-right -mb-auto -flex-middle">
-                  <div className="card-topic">
-                    <h3 className="heading3 -medium">SIMILAR KEYWORDS</h3>
-                    <div className="otherKeywords_description">
-                      {/*light bulb and tip for the user displayed with the treemap*/}
-                      <img
-                        src={lightBulb}
-                        style={{
-                          width: '6%',
-                          height: '1%',
-                          marginLeft: '-33%',
-                        }}
-                        alt="tip_bulb"
-                      ></img>
-                      <h4
-                        style={{
-                          height: '1%',
-                          marginLeft: '-25%',
-                          marginTop: '-3%',
-                          width: '110%',
-                          color: ' #bb5959 ',
-                        }}
-                      >
-                        TIP : HOVER OVER THE KEYWORD BOXES TO FIND HOW MUCH THESE KEYWORDS ARE
-                        TRENDING
-                      </h4>
-                    </div>
-                  </div>
-
-                  {/*Treemap which is imported from the gra[h folder which represents the similar keywords*/}
-                  <div className="treeMap_align" id="treeMap_align" style={{ display: 'none' }}>
-                    <TreeMap />
-                  </div>
-                </div>
-
                 {/*analyze again button which do all the necessory action after clicking*/}
                 <div
                   className="analyze_again"
@@ -277,34 +126,13 @@ class Exkey extends React.Component {
                 >
                   {/*starts a loading process after the button click*/}
                   <Button
-                    onClick={this.analyzeAgain}
+                    onClick={this.routePage}
                     iconSrc={rightArrow}
                     loading={this.state.loading}
                   >
                     Start Analysing
                   </Button>
                 </div>
-              </div>
-
-              {/*loader and the loader text*/}
-              <div
-                className="loader_progress"
-                id="loader_progress"
-                style={{ visibility: 'hidden' }}
-              >
-                {
-                  <div className="analysingImg">
-                    <div id="building">
-                      <div id="blocks">
-                        <div className="b" id="b1"></div>
-                        <div className="b" id="b2"></div>
-                        <div className="b" id="b3"></div>
-                        <div className="b" id="b4"></div>
-                      </div>
-                      <div id="caption">Your analysis is almost ready...</div>
-                    </div>
-                  </div>
-                }
               </div>
             </div>
           </div>
