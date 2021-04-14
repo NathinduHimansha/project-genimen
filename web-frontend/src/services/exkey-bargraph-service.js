@@ -3,7 +3,7 @@ import { Http } from '../common/utils';
 import axios from 'axios';
 
 
-const base = `${BASE_URL}/exkey`;
+const base = `${BASE_URL}/analytics/exkey`;
 // const base = `${BASE_URL}/hello`;
 const http = Http(base);
 

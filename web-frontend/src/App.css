@@ -19,6 +19,9 @@
 .-ml-70 {
   margin-left: 70px;
 }
+.-ml-60 {
+  margin-left: 60px;
+}
 .-mr-50 {
   margin-left: 50px;
 }
@@ -840,6 +843,9 @@ button.signup-btn {
   padding-left: 150px;
   padding-right: 300px;
 }
+.content-padding-right-small {
+  padding-right: 150px !important;
+}
 .heading2-sep-margin {
   margin-bottom: 15px !important;
 }
@@ -916,7 +922,12 @@ select.uras-sort {
 }
 @media only screen and (max-width: 1500px) {
   .content-padding {
+    /* padding-right: 120px; */
     padding-right: 150px;
+  }
+
+  .content-padding-right-small {
+    padding-right: 150px !important;
   }
 }
 @media only screen and (max-width: 1400px) {
@@ -936,6 +947,9 @@ select.uras-sort {
     padding-right: 100px;
     padding-left: 100px;
   }
+  .content-padding-right-small {
+    padding-right: 100px !important;
+  }
 }
 @media only screen and (max-width: 1200px) {
   .page {
@@ -945,11 +959,17 @@ select.uras-sort {
     padding-right: 100px;
     padding-left: 100px;
   }
+  .content-padding-right-small {
+    padding-right: 100px !important;
+  }
 }
 @media only screen and (max-width: 1000px) {
   .content-padding {
     padding-right: 80px;
     padding-left: 80px;
+  }
+  .content-padding-right-small {
+    padding-right: 80px !important;
   }
 }
 @media only screen and (max-width: 850px) {
@@ -976,6 +996,9 @@ select.uras-sort {
     padding-right: 80px;
     padding-left: 80px;
   }
+  .content-padding-right-small {
+    padding-right: 80px !important;
+  }
 }
 @media only screen and (max-width: 750px) {
   .feature-types-selection-menu .feature-type-heading {
@@ -991,6 +1014,9 @@ select.uras-sort {
   .content-padding {
     padding-right: 40px;
     padding-left: 40px;
+  }
+  .content-padding-right-small {
+    padding-right: 40px !important;
   }
   html {
     font-size: 9px;

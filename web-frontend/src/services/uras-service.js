@@ -147,4 +147,4 @@ export const getFeatures = async () => mock1;
 // const token = getToken();
 // http.post({ data, token });
 // };
-export const analyseFeatures = async () => mock;
+export const analyseFeatures = async (data) => mock;

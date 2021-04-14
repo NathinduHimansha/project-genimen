@@ -6,11 +6,14 @@ import GenimenSideBar from './components/nav/GenimenSideBar';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/signup';
 import EXKEY from './pages/exkey/Exkey';
+import ExkeyRESULTS from './pages/exkey/ExkeyResults';
+
 import Examples from './pages/experiment/Examples';
 
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 import HomePage from './pages/index/HomePage';
+import HomeStart from './pages/index/HomeStartView';
 
 import UrasUserInputView from './pages/uras/UrasUserInputView';
 import UrasInputResults from './pages/uras/UrasInputResults';
@@ -22,6 +25,8 @@ import PssaView from './pages/pssa2/pssaView';
 import PssaResults from './pages/pssa2/pssaResults';
 import ScrollUp from './components/scrollupbutton/ScrollUp';
 import protect from './pages/wrappers/ProtectedRouteWrapper';
+import testcard from './pages/experiment/testcard';
+import MenuCard from './components/menucard/MenuCard';
 
 function App() {
   const [state, dispatch] = useContext(Context);
@@ -38,8 +43,11 @@ function App() {
       <div>
         <GenimenSideBar></GenimenSideBar>
         <Switch>
+          <Route exact path="/index" component={HomePage} />
           <Route path="/about" component={Login} />
-          <Route path="/analytics/exkey" component={EXKEY} />
+          <Route exact path="/analytics/exkey" component={EXKEY} />
+          <Route exact path="/analytics/exkey/results" component={ExkeyRESULTS} />
+
           <Route exact path="/analytics/uras" component={protect(URASViewAlt)} />
           <Route path="/analytics/uras/results" component={protect(UrasResultsAlt)} />
           {/* <Route path="/analytics/uras/results" exact component={UrasInputResults} /> */}
@@ -48,9 +56,13 @@ function App() {
           <Route path="/analytics/pssa/results" component={PssaResults} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <Route path="/exkey" component={EXKEY} />
           <Route path="/examples" component={Examples} />
-          <Route exact path="/" component={() => <Redirect to="/home" />} />
+          <Route path="/test1" component={testcard} />
+          <Route path="/test2" component={HomeStart} />
+          <Route path="/test3" component={MenuCard} />
+          <Route path="/analytics" component={HomeStart} />
+
+          <Route exact path="/" component={() => <Redirect to="/index" />} />
         </Switch>
 
         <ScrollUp />
@@ -62,7 +74,7 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
-            <Route exact path="/home" component={HomePage} />
+            <Route exact path="/index" component={HomePage} />
             <Route component={RoutesWNav} />
           </Switch>
         </div>

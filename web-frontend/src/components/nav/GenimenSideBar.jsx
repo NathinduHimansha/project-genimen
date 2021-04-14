@@ -18,7 +18,7 @@ const routes = [
     title: 'Home',
     icon: home,
     subMenu: [],
-    path: '/home',
+    path: '/index',
   },
   {
     title: 'Analytics',
@@ -26,7 +26,7 @@ const routes = [
     subMenu: [
       { title: 'Feature Sentiments', path: '/analytics/uras' },
       { title: 'Product Feature Sentiments', path: '/analytics/pssa' },
-      { title: 'TRENDZ', path: '/exkey' },
+      { title: 'Trendz', path: '/analytics/exkey' },
     ],
     path: '/analytics',
   },

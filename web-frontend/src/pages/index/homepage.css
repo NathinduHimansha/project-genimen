@@ -11,32 +11,6 @@
   z-index: 1;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
-@keyframes showTopText {
-  0% {
-    transform: translate3d(0, 100%, 0);
-  }
-  40%,
-  60% {
-    transform: translate3d(0, 50%, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes showBottomText {
-  0% {
-    transform: translate3d(0, -100%, 0);
-  }
-  40%,
-  60% {
-    transform: translate3d(0, 30%, 0);
-  }
-  100% {
-    transform: translate3d(0, 0%, 0);
-  }
-}
-
 .homepage-welcometxt {
   font-family: Roboto, Arial, sans-serif;
   height: 60vmin;
@@ -83,35 +57,52 @@
   transform: translate(0, -100%);
 }
 
-/* start button */
-@keyframes startbtn-effect {
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@keyframes showTopText {
   0% {
-    left: 10%;
+    transform: translate3d(0, 100%, 0);
   }
-  50% {
-    left: 20%;
+  40%,
+  60% {
+    transform: translate3d(0, 50%, 0);
   }
-
   100% {
-    left: 10%;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showBottomText {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(0, 30%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0%, 0);
   }
 }
 
 .homepage-start-button {
+  padding-top: 3%;
   position: absolute;
-  left: 10%;
-  animation-name: startbtn-effect;
-  animation-duration: 3s;
-  animation-iteration-count: 2;
+  animation: startbtn-effect 0.5s 1.5s forwards;
+  opacity: 0;
   z-index: 1;
   text-align: center;
 }
 
-.homepage-startbtnarow {
-  font-size: 20px;
-  margin-right: 5px;
-  width: 20px;
-  height: 15px;
+/* start button */
+@keyframes startbtn-effect {
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* bg annimation */

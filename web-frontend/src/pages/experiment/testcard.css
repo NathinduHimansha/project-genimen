@@ -1,90 +1,105 @@
-article.card {
-  font-size: 0.8em;
+/* .menu-card {
   position: relative;
+  min-width: 300px;
+  max-width: 350px;
+  width: 40vw;
 
-  margin-top: 300px;
-  left: 50%;
-  top: 50%;
-  left: 50%;
+  min-height: 400px;
+  max-height: 450px;
+  height: 65vh;
+  margin: 20px;
+  padding: 10px;
+  font-size: 0.8em;
 
-  width: 300px;
-  height: 60vh;
-  transform: translate(-50%, -50%) translateZ(0);
-  border-radius: 3px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-left: 20%;
+  margin-top: 100px;
+  border: 2px solid rgb(36, 36, 36);
 }
-article.card .thumb {
+
+article.startcard {
+  border: 2px solid rgb(189, 42, 42);
+  width: 100%;
+  height: 100%;
+  box-shadow: 1px 1px 10px rgb(92, 92, 92);
+  overflow: hidden;
+}
+
+article.startcard .startcard-img {
+  max-height: 250px;
   height: 40vh;
   position: relative;
-
-  background-size: cover;
-  border-radius: 3px;
+  border: 2px solid rgb(42, 64, 189);
 }
-article.card .infos {
+.startcard-menu-img {
+  border: 2px solid rgb(233, 132, 132);
+  position: absolute;
+  min-width: 150px;
+  max-width: 200px;
+  width: 20vw;
+  top: 10%;
+  left: 70px;
+}
+
+article.startcard .startcard-info {
   width: auto;
   height: 60vh;
-  position: relative;
-  padding: 14px 24px;
-  background: rgb(235, 234, 234);
-  transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+  padding: 12px 22px;
+  background: rgb(202, 202, 202);
+
+  box-shadow: 0px 1px 10px rgb(92, 92, 92);
+  transition: 0.6s 0.2s;
 }
-article.card .infos .title {
+article.startcard .startcard-info .startcard-title {
   position: relative;
-  margin: 10px 0;
+  font-size: 2.5em;
+  text-transform: uppercase;
   letter-spacing: 3px;
   color: #000000;
   font-family: 'Grotesque Black', sans-serif;
-  font-size: 2.5em;
-  text-transform: uppercase;
-  text-shadow: 0 0 0px #32577f;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgb(77, 77, 77);
 }
 
-article.card .infos .seats {
+article.startcard .startcard-info .startcard-sub-title {
   position: relative;
   margin: 10px 0;
   letter-spacing: 3px;
-  color: #000000;
+  color: #2a2a2a;
   font-family: 'Grotesque Black', sans-serif;
   font-size: 1.5em;
   text-shadow: 0 0 0px #32577f;
+  text-transform: uppercase;
 }
-article.card .infos .seats {
+article.startcard .startcard-info .startcard-sub-title {
   display: inline-block;
 
   opacity: 1;
   transition: 0.5s 0.25s cubic-bezier(50, 100, 100, 100);
 }
-.menu-img {
-  position: absolute;
-  width: 200px;
-  top: 10%;
-  left: 15%;
-}
-article.card .infos .txt {
+
+article.startcard .startcard-info .startcard-text {
   font-family: 'Merriweather', sans-serif;
 
   font-size: 1.5rem;
   color: rgba(21, 37, 54, 0.7);
+  text-align: justify;
+  text-justify: inter-word;
 
   opacity: 0;
   transition: 0.5s 0.25s cubic-bezier(50, 100, 100, 100);
 }
 
-article.card .infos .details-div {
+article.startcard .startcard-info .startcard-start {
   text-align: right;
 }
 
-article.card .infos .details {
+article.startcard .startcard-info .startcard-start-btn {
   position: relative;
 
   margin: 10px 0;
   padding: 10px 24px;
   letter-spacing: 1px;
-  color: #4e958b;
+  color: #000000;
   font-family: 'Grotesque Black', sans-serif;
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -93,11 +108,11 @@ article.card .infos .details {
   transition: 0.5s 0.25s cubic-bezier(50, 100, 100, 100);
 }
 
-article.card:hover .infos {
-  transform: translateY(-20vh);
+article.startcard:hover .startcard-info {
+  transform: translateY(-15vh);
 }
-article.card:hover .infos .seats,
-article.card:hover .infos .txt,
-article.card:hover .infos .details {
+article.startcard:hover .startcard-info .startcard-sub-title,
+article.startcard:hover .startcard-info .startcard-text,
+article.startcard:hover .startcard-info .startcard-start-btn {
   opacity: 1;
-}
+} */
