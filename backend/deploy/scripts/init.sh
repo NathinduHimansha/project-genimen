@@ -1,5 +1,5 @@
 cd /home/ubuntu/sdgpapi
-aws s3 cp s3://sdgp-bucket/backend-api/dev/env/.env ./api/.env
+aws s3 cp s3://sdgp-bucket/backend-api/dev/env/.env ./api/.dev.env
 mkdir -p ./analytics/data
 aws s3 cp s3://sdgp-bucket/data ./analytics/data --recursive
 # aws s3 sync s3://sdgp-bucket/data/ ./analytics/data

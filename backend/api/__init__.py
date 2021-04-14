@@ -15,15 +15,18 @@ def create_app(config=None, db=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
 
-    if (config == 'prod' or config == 'dev'):
+    if (config == 'prod'):
         dotenv_path = join(dirname(__file__), '.env')
         load_dotenv(dotenv_path)
 
     elif (config == 'test'):
         dotenv_path = join(dirname(__file__), '.test.env')
         load_dotenv(dotenv_path)
-    else:
+    elif (config == 'dev'):
         dotenv_path = join(dirname(__file__), '.dev.env')
+        load_dotenv(dotenv_path)
+    else:
+        dotenv_path = join(dirname(__file__), '.env')
         load_dotenv(dotenv_path)
 
     SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
