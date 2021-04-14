@@ -85,11 +85,11 @@ const Signup = (props) => {
     if (isFormValid) {
       setLoading(true);
       dispatch({ type: 'LOGIN' });
-      signup({username: username, email: email, password: confirmPassword}).then(res => {
+      signup({username: username, email: email, password: confirmPassword}).then(res => {if(res.data.status == 1)
+      {
           logIn(res.data.token)
-          saveToken(res.data.token)
-          dispatch({ type: 'TOGGLE_LOGIN' });
-          })
+          dispatch({ type: 'LOGIN' });
+      } else {console.log(res.data.errorMessage)}})
 
       setTimeout(() => {
         addToast('Successfully Signed up', { appearance: 'success', id: 'signup-success' });
