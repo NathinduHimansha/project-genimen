@@ -1,0 +1,32 @@
+name: CI/CD Frontend
+
+on:
+  push:
+    branches:
+      - Dev
+    paths:
+      - 'web-frontend/**'
+
+  pull_request:
+    branches:
+      - Dev
+    paths:
+      - 'web-frontend/**'
+
+jobs:
+ deploy:
+    name: CD Pipeline
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        - name: serverless deploy
+      uses: suprgames/serverless-github-action@v1.77
+      with:
+        command: deploy
+        args: -v
+      env:
+        # To link with your Serverless Framework account, equivalent to login
+        SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+        # The AWS Credentials
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
