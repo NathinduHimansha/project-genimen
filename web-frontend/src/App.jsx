@@ -6,6 +6,8 @@ import GenimenSideBar from './components/nav/GenimenSideBar';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/signup';
 import EXKEY from './pages/exkey/Exkey';
+import ExkeyRESULTS from './pages/exkey/ExkeyResults';
+
 import Examples from './pages/experiment/Examples';
 
 import { ToastProvider, useToasts } from 'react-toast-notifications';
@@ -44,6 +46,8 @@ function App() {
           <Route exact path="/index" component={HomePage} />
           <Route path="/about" component={Login} />
           <Route exact path="/analytics/exkey" component={EXKEY} />
+          <Route exact path="/analytics/exkey/results" component={ExkeyRESULTS} />
+
           <Route exact path="/analytics/uras" component={protect(URASViewAlt)} />
           <Route path="/analytics/uras/results" component={protect(UrasResultsAlt)} />
           {/* <Route path="/analytics/uras/results" exact component={UrasInputResults} /> */}

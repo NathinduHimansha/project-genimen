@@ -79,7 +79,7 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   .card-left {
     width: 300px;
     height: 200px;
@@ -93,14 +93,41 @@
     margin-top: -20%;
     padding-bottom: 5%;
   }
+} */
+
+@media only screen and (max-width: 600px) {
+  .card-left {
+    width: 300px;
+    height: 200px;
+    margin-left: -10px;
+    margin-top: 30px;
+  }
+  .card-right {
+    width: 300px;
+    height: 200px;
+    margin-left: -10px;
+    margin-top: 1%;
+    padding-bottom: 5%;
+  }
 }
+
+/* @media only screen and (max-width: 500px) {
+  .card-right {
+    width: 300px;
+    height: 200px;
+    margin-left: -10px;
+    margin-top: -15%;
+    padding-bottom: 5%;
+    position: static;
+  }
+} */
 
 @media only screen and (max-width: 500px) {
   .card-right {
     width: 300px;
     height: 200px;
     margin-left: -10px;
-    margin-top: -15%;
+    margin-top: 1%;
     padding-bottom: 5%;
     position: static;
   }
@@ -207,6 +234,7 @@
   display: flex;
   position: absolute;
   bottom: 0px;
+  animation: start_load 2s ease forwards;
 }
 
 @media only screen and (max-width: 600px) {
@@ -250,8 +278,20 @@
   }
 }
 
-.analyze_again {
+/* .analyze_again {
   margin-top: 8%;
+  margin-left: -10%;
+  animation-name: startbtn-effect_analyzeAgain;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  width: 100%;
+  max-width: 10%;
+  max-height: 180%;
+  position: relative;
+} */
+
+.analyze_again {
+  margin-top: 25%;
   margin-left: -10%;
   animation-name: startbtn-effect_analyzeAgain;
   animation-duration: 3s;
@@ -270,44 +310,83 @@
   }
 }
 
-@media only screen and (max-width: 1510px) {
+/* @media only screen and (max-width: 1510px) {
   .analyze_again {
     margin-left: 50%;
     margin-top: 8%;
     position: relative;
   }
+} */
+
+@media only screen and (max-width: 1510px) {
+  .analyze_again {
+    margin-left: 50%;
+    margin-top: 25%;
+    position: relative;
+  }
 }
+
+/* @media only screen and (max-width: 1000px) {
+  .analyze_again {
+    margin-left: -10%;
+    position: static;
+    margin-top: 10%;
+  }
+} */
 
 @media only screen and (max-width: 1000px) {
   .analyze_again {
     margin-left: -10%;
-    margin-top: 30%;
+    position: static;
+    margin-top: 20%;
+  }
+}
+
+/* @media only screen and (max-width: 600px) {
+  .analyze_again {
+    margin-left: 10%;
+    margin-top: -30%;
     position: static;
     margin-top: 10%;
   }
-}
+} */
 
 @media only screen and (max-width: 600px) {
   .analyze_again {
     margin-left: 10%;
-    margin-top: 30%;
     position: static;
-    margin-top: 10%;
+    margin-top: 40%;
   }
 }
 
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
   .analyze_again {
     margin-left: 20%;
     margin-top: 10%;
     position: static;
   }
+} */
+
+@media only screen and (max-width: 500px) {
+  .analyze_again {
+    margin-left: 20%;
+    margin-top: 40%;
+    position: static;
+  }
 }
+
+/* @media only screen and (max-width: 450px) {
+  .analyze_again {
+    margin-left: 10%;
+    margin-top: 20%;
+    position: static;
+  }
+} */
 
 @media only screen and (max-width: 450px) {
   .analyze_again {
     margin-left: 10%;
-    margin-top: 20%;
+    margin-top: 40%;
     position: static;
   }
 }
@@ -345,6 +424,11 @@
   }
 }
 
+/* .trend_description_align {
+  margin-left: -10%;
+  width: 85%;
+} */
+
 .trend_description_align {
   margin-left: -10%;
   width: 85%;
@@ -378,27 +462,52 @@
   }
 }
 
+/* @media only screen and (max-width: 600px) {
+  .trend_description_align {
+    margin-left: 10%;
+    margin-top: -10%;
+    position: static;
+    max-width: 250%;
+  }
+} */
+
 @media only screen and (max-width: 600px) {
   .trend_description_align {
     margin-left: 10%;
-    margin-top: 10%;
+    margin-top: -40%;
     position: static;
     max-width: 250%;
   }
 }
 
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
   .trend_description_align {
     margin-left: 10%;
     margin-top: 5%;
     position: static;
   }
+} */
+
+@media only screen and (max-width: 500px) {
+  .trend_description_align {
+    margin-left: 10%;
+    margin-top: -40%;
+    position: static;
+  }
 }
+
+/* @media only screen and (max-width: 450px) {
+  .trend_description_align {
+    margin-left: 1%;
+    margin-top: -5%;
+    position: static;
+  }
+} */
 
 @media only screen and (max-width: 450px) {
   .trend_description_align {
     margin-left: 1%;
-    margin-top: -5%;
+    margin-top: -40%;
     position: static;
   }
 }
@@ -454,7 +563,7 @@
 .analysingImg {
   width: 494px;
   height: 324px;
-  /* margin-left: 10%; */
+  margin-left: 40%;
   margin-top: -2%;
   opacity: 0.8;
 }
@@ -468,12 +577,21 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   .analysingImg {
     width: 244.8px;
     height: 244.8px;
     margin-top: 30%;
     margin-left: -10%;
+  }
+} */
+
+@media only screen and (max-width: 600px) {
+  .analysingImg {
+    width: 244.8px;
+    height: 244.8px;
+    margin-top: 30%;
+    margin-left: 25%;
   }
 }
 
@@ -654,10 +772,19 @@
   color: var(--black);
 }
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
   #caption {
     margin-left: 5%;
     margin-top: 160%;
+    font-size: 2.5rem;
+    position: absolute;
+  }
+} */
+
+@media only screen and (max-width: 600px) {
+  #caption {
+    margin-left: 5%;
+    margin-top: 10%;
     font-size: 2.5rem;
     position: absolute;
   }
