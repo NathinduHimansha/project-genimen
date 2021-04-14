@@ -19,11 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      # - name: CD into frontend
+        # run: |
+          # cd web-frontend
       - name: serverless deploy
         uses: suprgames/serverless-github-action@v1.77
         with:
           command: deploy
-          args: -v
+          args: -d web-frontend/
         env:
           # To link with your Serverless Framework account, equivalent to login
           # SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
