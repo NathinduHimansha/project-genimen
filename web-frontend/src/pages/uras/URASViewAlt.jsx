@@ -25,8 +25,9 @@ const URASViewAlt = () => {
   const analyseSelectedFeature = () => {
     setBtnLoadingState(true);
     setTimeout(() => {
-      analyseFeatures()
+      analyseFeatures(selectedFeatures)
         .then((response) => {
+          console.log(selectedFeatures);
           setBtnLoadingState(false),
             history.push({
               pathname: '/analytics/uras/results',
@@ -41,7 +42,7 @@ const URASViewAlt = () => {
               id: 'uras-api-error',
             });
         });
-    }, 3000);
+    }, 1000);
   };
 
   const [features, setFeatures] = useState([
@@ -64,7 +65,7 @@ const URASViewAlt = () => {
   ]); //available fetures in backend
   const [selectedFeatures, setSelectedFeatures] = useState({}); //selected features by the user
   const appendSelectedFeatures = (feature, type) => {
-    console.log(feature, type);
+    // console.log(feature, type);
     setSelectedFeatures((prevSelectedFeatures) => ({ ...prevSelectedFeatures, [feature]: type }));
   };
   const [btnLoadingState, setBtnLoadingState] = useState(false);
@@ -94,7 +95,7 @@ const URASViewAlt = () => {
             id: 'uras-api-error',
           });
         });
-    }, 1000);
+    }, 500);
   }, []);
 
   const cleardata = () => {
