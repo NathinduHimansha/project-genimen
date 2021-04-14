@@ -15,7 +15,7 @@ def create_app(config=None, db=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
 
-    if (config == 'prod'):
+    if (config == 'prod' or config == 'dev'):
         dotenv_path = join(dirname(__file__), '.env')
         load_dotenv(dotenv_path)
 

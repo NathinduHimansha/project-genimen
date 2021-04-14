@@ -1,0 +1,13 @@
+upstream backend {
+        # server 18.188.81.157:8080;
+        # server 3.142.192.135:8080;
+        server 3.141.148.28:8080;
+}
+
+server {
+        listen 80;
+
+        location / {
+                proxy_pass http://backend;
+        }
+}
