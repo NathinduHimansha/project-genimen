@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Button from '../../components/buttons/Button';
 import logo from '../../assests/Geniman.png';
 import banner from '../../assests/LineChartBanner.png';
 import './signup.css';
 import { NavLink, useHistory } from 'react-router-dom';
-import {isEmailValid, isPasswordValid} from "../../common/utils";
+import {isEmailValid, isPasswordValid, logIn, saveToken} from "../../common/utils";
 import { ToastProvider, useToasts } from 'react-toast-notifications';
+import {signup} from "../../services/auth-service";
+import {Context} from "../../components/sate_management/GlobalStore";
 
 const Signup = (props) => {
   const [passwordError, setPasswordError] = useState(false);
@@ -21,6 +23,7 @@ const Signup = (props) => {
   const [loading, setLoading] = useState(false);
   const { addToast } = useToasts();
   const history = useHistory();
+  const [state, dispatch] = useContext(Context);
 
 
   const onPasswordFocus = () => {
@@ -70,6 +73,9 @@ const Signup = (props) => {
     setShake(true);
     return false;
   };
+
+
+
   const onSignup = () => {
     onUsernameBlur(username);
     onPasswordBlur(password);
@@ -78,13 +84,25 @@ const Signup = (props) => {
     const isFormValid = isInputsValid(password, username, email, confirmPassword);
     if (isFormValid) {
       setLoading(true);
+      dispatch({ type: 'LOGIN' });
+      signup({username: username, email: email, password: confirmPassword}).then(res => {
+          logIn(res.data.token)
+          saveToken(res.data.token)
+          dispatch({ type: 'TOGGLE_LOGIN' });
+          })
+
       setTimeout(() => {
         addToast('Successfully Signed up', { appearance: 'success', id: 'signup-success' });
-        history.push({ pathname: '/index' });
+        history.push({ pathname: '/analytics' });
         setLoading(false);
-      }, 2000);
+      }, 3000);
     } else {
       console.log('invalid');
+      addToast('Please fill the required fields ', {
+        appearance: 'error',
+        id: 'signup-error',
+      });
+      setLoading(false);
     }
   };
 
