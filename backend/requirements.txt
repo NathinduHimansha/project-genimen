@@ -80,3 +80,4 @@ Werkzeug==0.16.1
 wsgi-request-logger==0.4.6
 WTForms==2.3.3
 zipp==3.4.1
+jsons==1.4.2
