@@ -1,13 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Context } from '../../components/sate_management/GlobalStore';
 import Button from '../../components/buttons/Button';
+import warning from '../../assests/WarningRed.png';
 import logo from '../../assests/Geniman.png';
 import banner from '../../assests/LineChartBanner.png';
 import './login.css';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
-import { isEmailValid, isPasswordValid, logIn, saveToken } from '../../common/utils';
+import { isEmailValid, isPasswordValid, logIn, logOut, saveToken } from '../../common/utils';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 import { login } from '../../services/auth-service';
+import Modal from '../../components/modal/Modal';
 
 const Login = (props) => {
   const [passwordError, setPasswordError] = useState(false);
@@ -21,7 +23,9 @@ const Login = (props) => {
   const history = useHistory();
   let path = useLocation().pathname;
 
+  const [openLogoutConfrimModal, setOpenModal] = useState(false);
   const [state, dispatch] = useContext(Context);
+  const { loggedIn } = state;
   const onPasswordFocus = () => {
     setPasswordError(false);
   };
@@ -62,9 +66,8 @@ const Login = (props) => {
       }
       login(credentials)
         .then((res) => {
-          console.log(username);
           if (res.data.status == 1) {
-            logIn(res.data.token);
+            logIn(res.data.data.token);
             dispatch({ type: 'LOGIN' });
             dispatch({ type: 'CHANGE_USER', payload: { username: username } });
             addToast('Successfully Logged in', { appearance: 'success', id: 'login-success' });

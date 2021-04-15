@@ -90,11 +90,11 @@ const Signup = (props) => {
       signup({ username: username, email: email, password: confirmPassword })
         .then((res) => {
           if (res.data.status == 1) {
-            logIn(res.data.token);
+            logIn(res.data.data.token);
             dispatch({ type: 'LOGIN' });
             dispatch({ type: 'CHANGE_USER', payload: { username: username } });
             history.push({ pathname: '/analytics' });
-            setLoading(false);
+            // setLoading(false);
           } else {
             // console.log(res.data.message);
             addToast(res.data.message, { appearance: 'error', id: 'signup-error' });
