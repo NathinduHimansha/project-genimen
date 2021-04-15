@@ -1,5 +1,6 @@
-app: react-starter
-name: react-starter
+org: bmora
+app: genimen
+name: genimen
 component: website
 
 inputs:
