@@ -20,7 +20,7 @@ import UrasInputResults from './pages/uras/UrasInputResults';
 import URASViewAlt from './pages/uras/URASViewAlt';
 import UrasResultsAlt from './pages/uras/UrasResultsAlt';
 import Store from './components/sate_management/GlobalStore';
-import { isLoggedIn } from './common/utils';
+import { getTokenPayload, isLoggedIn } from './common/utils';
 import PssaView from './pages/pssa2/pssaView';
 import PssaResults from './pages/pssa2/pssaResults';
 import ScrollUp from './components/scrollupbutton/ScrollUp';
@@ -34,6 +34,8 @@ function App() {
     const loggedIn = isLoggedIn();
     if (loggedIn) {
       dispatch({ type: 'LOGIN' });
+      const payload = getTokenPayload();
+      dispatch({ type: 'CHANGE_USER', payload: { username: payload.username } });
     } else {
       dispatch({ type: 'LOGOUT' });
     }

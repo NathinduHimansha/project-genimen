@@ -22,27 +22,36 @@ export const getToken = () => {
   return localStorage.getItem('id_token');
 };
 
-export const getTokenPayload = (token) => {
-  const tokenDecoded = jwt_decode(token);
-  return tokenDecoded.sub;
+export const getTokenPayload = () => {
+  const token = getToken();
+  if (token) {
+    const tokenDecoded = jwt_decode(getToken());
+    return tokenDecoded.sub;
+  }
+  return {};
 };
 
 export const isLoggedIn = () => {
   const token = getToken();
-  if (!token || token === 'undefined') {
+  if (!token) {
     return false;
   }
   // uncomment/comment this line for testing
   // return true;
-  const tokenDecoded = jwt_decode(token);
-  const dateNow = new Date();
-  const exp = tokenDecoded.exp;
-  // check if token expires withing 1 day
-  const oneDayInMs = 86400000;
-  // const validExp = exp - dateNow.getTime() / 1000;
-  const validExp = exp - dateNow.getTime();
-  const isTokenValid = validExp > oneDayInMs;
-  return isTokenValid;
+
+  try {
+    const tokenDecoded = jwt_decode(token);
+    const dateNow = new Date();
+    const exp = tokenDecoded.exp;
+    // check if token expires withing 1 day
+    const oneDayInMs = 86400000;
+    // const validExp = exp - dateNow.getTime() / 1000;
+    const validExp = dateNow.getTime() - exp;
+    const isTokenValid = validExp > oneDayInMs;
+    return isTokenValid;
+  } catch (err) {
+    return false;
+  }
 };
 
 export const logOut = () => {

@@ -62,9 +62,8 @@ const Login = (props) => {
       }
       login(credentials)
         .then((res) => {
-          console.log(username);
           if (res.data.status == 1) {
-            logIn(res.data.token);
+            logIn({ token: res.data.data.token, username: username });
             dispatch({ type: 'LOGIN' });
             dispatch({ type: 'CHANGE_USER', payload: { username: username } });
             addToast('Successfully Logged in', { appearance: 'success', id: 'login-success' });
