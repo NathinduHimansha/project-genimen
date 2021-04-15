@@ -77,7 +77,7 @@ const Login = (props) => {
               <div className="login-logo">
                 <img src={logo} />
               </div>
-              <h1 className="heading1 login-title -light">Login with</h1>
+              <h1 className="heading1 login-title -light">Login with Serverless</h1>
             </div>
             <div className="credentials-section">
               <div className="login-input-wrapper -flex -flex-col">
