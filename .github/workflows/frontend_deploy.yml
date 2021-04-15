@@ -32,7 +32,7 @@ jobs:
     - name: serverless deploy
       uses: serverless/github-action@master
       with:
-        args: deploy -d web-frontend/
+        args: deploy --stage dev -d web-frontend/
       env:
         SERVERLESS_ACCESS_KEY: AKX6EjKTU9BYbaUe9zgDk5ov13aNHNKPoNjSaNQNUVN3Q
         # or if using AWS credentials directly
