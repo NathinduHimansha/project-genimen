@@ -19,6 +19,7 @@ import sizeIcon from '../../assests/Size.png';
 import fingerprintIcon from '../../assests/FingerPrint.png';
 import headphoneJackIcon from '../../assests/HeadphoneJack.png';
 import { useToasts } from 'react-toast-notifications';
+import { getToken } from '../../common/utils';
 
 const URASViewAlt = () => {
   /*Nathundu */
@@ -83,9 +84,10 @@ const URASViewAlt = () => {
   useEffect(() => {
     setPageLoading(true);
     setTimeout(() => {
-      getFeatures()
+      const token = getToken();
+      getFeatures(token)
         .then((response) => {
-          setFeatures(response);
+          setFeatures(response.data.data);
           setPageLoading(false);
         })
         .catch((error) => {

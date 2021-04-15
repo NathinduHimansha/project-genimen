@@ -140,8 +140,8 @@ const mock = {
   status: 1,
 };
 
-// export const getFeatures = async () => http.get();
-export const getFeatures = async () => mock1;
+export const getFeatures = async (token) => http.get({ token: token });
+// export const getFeatures = async () => mock1;
 
 // export const analyseFeatures = async (data) => {
 // const token = getToken();
