@@ -391,6 +391,22 @@
   }
 }
 
+@media screen and (min-width: 1600px) {
+  .trend_description_align {
+    max-width: 80%;
+    float: right;
+    margin-top: 34%;
+    margin-left: -10%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    width: 90%;
+    margin-top: 10%;
+    margin-left: 10%;
+  }
+}
+
 @media screen and (min-width: 1900px) {
   .trend_description_align {
     max-width: 80%;
