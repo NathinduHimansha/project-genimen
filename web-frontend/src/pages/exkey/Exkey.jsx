@@ -1,7 +1,6 @@
 import React from 'react';
 import './exkey.css';
-import Bargraph from '../../components/graphs/BarGraph';
-import TreeMap from '../../components/graphs/TreeMap';
+
 import Button from '../../components/buttons/Button';
 import colourful_mobilePhone from '../../assests/colourful.png';
 import axios from 'axios';
@@ -11,7 +10,6 @@ import CurrentLocation from '../../components/header/CurrentLocation';
 import rightArrow from '../../assests/right-arrow.png';
 import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
-import fire from '../../assests/fire.png';
 
 class Exkey extends React.Component {
   constructor(props) {
@@ -73,57 +71,48 @@ class Exkey extends React.Component {
 
         <div className="body-split">
           <div className="-mt-60">
-            <div className="analytics-container cards-split -mt-40">
+            <div
+              className="analytics-container cards-split-Elements -mt-40"
+              style={{ marginTop: '-5%' }}
+            >
               {/*hidding the left card at the begining of the exkey page which represents the treemap*/}
-              <div className="card-left" style={{ visibility: 'hidden' }}></div>
               {/*making visible the colurful mobile phone image at the exkey home page*/}
               <div className="analysing_banner">
-                <img className="colourful_mobilePhone " src={colourful_mobilePhone} />
+                <img
+                  style={{ width: '82%', height: '90%', opacity: '0.8' }}
+                  src={colourful_mobilePhone}
+                />
               </div>
 
               {/*starting of the card right elements*/}
 
               {/*hidding the right card at the begining of the exkey page which represents the treemap*/}
-              <div className="card-right" style={{ visibility: 'hidden' }}>
-                {/*trend description which is dispplayed on the right side of the begining of the exkey page*/}
-                <div
-                  className="userTrendDescription"
-                  id="userTrendDescription"
-                  style={{ display: 'block', visibility: 'visible' }}
-                >
-                  <div className="trend_description_align">
-                    <div className="focus-card focus-info-card -mb-40">
-                      <img
-                        src={lightBulb}
-                        style={{
-                          width: '6%',
-                          height: '1%',
-                          paddingRight: '5%',
-                        }}
-                        alt="tip_bulb"
-                      />
-                      <div style={{ marginTop: '-4%', marginLeft: '10%' }}>
-                        <span className="-bold -normal">
-                          WHY TREND THIS MUCH IMPORTANT FOR YOU ?<br></br>
-                          <br></br>
-                          <br></br>
-                        </span>
-                      </div>
-                      <div style={{ marginTop: '-3%' }}>
-                        Select the features you want to analyse and get a insight from. This will
-                        give you the sentiment of the selected features from variety of phones and
-                        an overall score for the feature
-                      </div>
-                    </div>
+              {/*trend description which is dispplayed on the right side of the begining of the exkey page*/}
+              <div className="trend_description_align">
+                <div className="focus-card focus-info-card -mb-40">
+                  <img
+                    src={lightBulb}
+                    style={{
+                      width: '6%',
+                      height: '1%',
+                      paddingRight: '5%',
+                    }}
+                    alt="tip_bulb"
+                  />
+                  <div style={{ marginTop: '-4%', marginLeft: '10%' }}>
+                    <span className="-bold -normal">
+                      WHY TREND THIS MUCH IMPORTANT FOR YOU ?<br></br>
+                      <br></br>
+                      <br></br>
+                    </span>
+                  </div>
+                  <div style={{ marginTop: '-3%' }}>
+                    Select the features you want to analyse and get a insight from. This will give
+                    you the sentiment of the selected features from variety of phones and an overall
+                    score for the feature
                   </div>
                 </div>
-
-                {/*analyze again button which do all the necessory action after clicking*/}
-                <div
-                  className="analyze_again"
-                  id="analyze_again"
-                  style={{ display: 'grid', visibility: 'visible' }}
-                >
+                <div className="analyze_again">
                   {/*starts a loading process after the button click*/}
                   <Button
                     onClick={this.routePage}
@@ -134,6 +123,10 @@ class Exkey extends React.Component {
                   </Button>
                 </div>
               </div>
+
+              {/*analyze again button which do all the necessory action after clicking*/}
+
+              {/* </div> */}
             </div>
           </div>
         </div>
