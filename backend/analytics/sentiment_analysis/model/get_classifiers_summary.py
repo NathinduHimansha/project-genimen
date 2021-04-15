@@ -135,4 +135,4 @@ classifiers = {
 if __name__ == "__main__":
     train(classifiers, reviews, labels)
 
-train(classifiers, reviews, labels)
+#  train(classifiers, reviews, labels)

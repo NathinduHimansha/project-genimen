@@ -4,7 +4,7 @@ from itertools import chain
 import nltk
 from nltk import word_tokenize
 
-from backend.analytics.model_specific.model_lexicon.model_lexicon import MODELS
+from analytics.model_specific.model_lexicon.model_lexicon import MODELS
 
 
 def pad_list(pad, arr, char=None):
