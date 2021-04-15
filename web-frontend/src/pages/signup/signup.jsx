@@ -86,12 +86,13 @@ const Signup = (props) => {
     const isFormValid = isInputsValid(password, username, email, confirmPassword);
     if (isFormValid) {
       setLoading(true);
-      dispatch({ type: 'LOGIN' });
+      // dispatch({ type: 'LOGIN' });
       signup({ username: username, email: email, password: confirmPassword })
         .then((res) => {
           if (res.data.status == 1) {
             logIn(res.data.token);
             dispatch({ type: 'LOGIN' });
+            dispatch({ type: 'CHANGE_USER', payload: { username: username } });
             history.push({ pathname: '/analytics' });
             setLoading(false);
           } else {

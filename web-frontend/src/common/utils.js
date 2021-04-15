@@ -29,7 +29,7 @@ export const getTokenPayload = (token) => {
 
 export const isLoggedIn = () => {
   const token = getToken();
-  if (!token) {
+  if (!token || token === 'undefined') {
     return false;
   }
   // uncomment/comment this line for testing

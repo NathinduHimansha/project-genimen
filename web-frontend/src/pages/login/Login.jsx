@@ -34,12 +34,12 @@ const Login = (props) => {
     }
   };
   const onUsernameBlur = (username) => {
-    if (username.trim().length < 3) {
+    if (username.trim().length < 2) {
       setUsernameError(true);
     }
   };
   const isInputsValid = (password, username) => {
-    if (isPasswordValid(password) && username.trim().length > 2) {
+    if (isPasswordValid(password) && username.trim().length > 1) {
       return true;
     }
     setShake(true);
@@ -62,11 +62,13 @@ const Login = (props) => {
       }
       login(credentials)
         .then((res) => {
+          console.log(username);
           if (res.data.status == 1) {
             logIn(res.data.token);
             dispatch({ type: 'LOGIN' });
+            dispatch({ type: 'CHANGE_USER', payload: { username: username } });
             addToast('Successfully Logged in', { appearance: 'success', id: 'login-success' });
-            if (pathname.inclues('login')) {
+            if (path.includes('login')) {
               history.push('/analytics');
             }
           } else {
@@ -130,6 +132,7 @@ const Login = (props) => {
                       // onUsernameBlur(event.target.value);
                     }}
                     onFocus={onUsernameFocus}
+                    value={username}
                   />
                 </div>
                 <span
@@ -163,6 +166,7 @@ const Login = (props) => {
                       // onPasswordBlur(event.target.value);
                     }}
                     onFocus={onPasswordFocus}
+                    value={password}
                   />
                 </div>
                 <span

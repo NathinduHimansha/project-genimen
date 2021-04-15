@@ -5,6 +5,11 @@ const Reducer = (state, action) => {
         ...state,
         login: !state.login,
       };
+    case 'CHANGE_USER':
+      return {
+        ...state,
+        username: action.payload.username,
+      };
     case 'LOGIN':
       return {
         ...state,
