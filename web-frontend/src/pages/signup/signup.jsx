@@ -90,7 +90,7 @@ const Signup = (props) => {
       signup({ username: username, email: email, password: confirmPassword })
         .then((res) => {
           if (res.data.status == 1) {
-            logIn({ token: res.data.data.token, username: username });
+            logIn(res.data.data.token);
             dispatch({ type: 'LOGIN' });
             dispatch({ type: 'CHANGE_USER', payload: { username: username } });
             history.push({ pathname: '/analytics' });

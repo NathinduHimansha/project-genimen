@@ -33,6 +33,7 @@ export const getTokenPayload = () => {
 
 export const isLoggedIn = () => {
   const token = getToken();
+  console.log(token);
   if (!token) {
     return false;
   }
