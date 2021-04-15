@@ -155,13 +155,42 @@ def test_model_sentiment(client):
     assert res.status_code == 200
 
 
-def test_model_sentiment_analytics(client):
+def test_model_sentiment_analytics(client, mocker):
+    mockedResults = {}
+    mocker.patch(
+        "api.model_sentiment.controller.get_model_sentiment", return_value=mockedResults)
+
     access_token = create_access_token("testUser")
     headers = {
         'Authorization': 'Bearer {}'.format(access_token)
     }
+    mimetype = 'application/json'
     # sending a invalid smartphone model
     invalid_model = "iPhone 90"
-    res = client.get('/api/ModelSentiment/'+ invalid_model, headers=headers)
+    res = client.get('/api/ModelSentiment/' + invalid_model, headers=headers)
     assert dict(res.json)['status'] == 0
+    assert res.status_code == 200
+
+    access_token = create_access_token("testUser")
+    headers = {
+        'Authorization': 'Bearer {}'.format(access_token)
+    }
+    mimetype = 'application/json'
+    headers['Content-Type'] = mimetype
+    headers['Accept'] = mimetype
+
+    # sending a invalid smartphone model
+    invalid_model = {"model_name": "iPhone 1"}
+    res = client.post('/api/ModelSentiment/analyze', data=json.dumps(invalid_model), headers=headers)
+    assert dict(res.json)['status'] == 0
+    assert res.status_code == 200
+
+    # sending a valid smartphone model
+    valid_model = {"model_name": "iPhone 11"}
+
+    headers['Content-Type'] = mimetype
+    headers['Accept'] = mimetype
+
+    res = client.post('/api/ModelSentiment/analyze', data=json.dumps(valid_model), headers=headers)
+    assert dict(res.json)['status'] == 1
     assert res.status_code == 200
