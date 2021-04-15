@@ -8,7 +8,7 @@ from api.model_sentiment.aspect_analysis import get_features_with_sentiment, get
 
 
 def get_model_sentiment(model_name):
-    df = pd.read_json("analytics/main-dataset/amazon_mobile_user_reviews.jl", lines=True)  # Main dataset
+    df = pd.read_json("analytics/data/amazon_mobile_user_reviews.jl", lines=True)  # Main dataset
     df['product_name'] = df['product_name'].apply(
         lambda x: x[0])  # setting the product name by only model name (excluding specs)
 
