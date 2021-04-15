@@ -34,7 +34,7 @@ jobs:
       with:
         args: deploy --stage dev -d web-frontend/
       env:
-        SERVERLESS_ACCESS_KEY: AKX6EjKTU9BYbaUe9zgDk5ov13aNHNKPoNjSaNQNUVN3Q
+        SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
         # or if using AWS credentials directly
         # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
