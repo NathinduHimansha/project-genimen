@@ -47,8 +47,6 @@ function App() {
         <Switch>
           <Route exact path="/index" component={HomePage} />
           <Route path="/about" component={Login} />
-          <Route exact path="/analytics/exkey" component={EXKEY} />
-          <Route exact path="/analytics/exkey/results" component={ExkeyRESULTS} />
 
           <Route exact path="/analytics/uras" component={protect(URASViewAlt)} />
           <Route path="/analytics/uras/results" component={protect(UrasResultsAlt)} />
@@ -56,6 +54,10 @@ function App() {
           {/* <Route path="/analytics/uras" component={UrasUserInputView} /> */}
           <Route exact path="/analytics/pssa" component={PssaView} />
           <Route path="/analytics/pssa/results" component={PssaResults} />
+
+          <Route exact path="/analytics/exkey" component={EXKEY} />
+          <Route exact path="/analytics/exkey/results" component={ExkeyRESULTS} />
+
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/examples" component={Examples} />
