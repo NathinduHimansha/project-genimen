@@ -3,13 +3,13 @@ name: CI/CD
 on:
   push:
     branches:
-      - Dev
+      - none
     paths:
       - 'backend/**'
 
   pull_request:
     branches:
-      - Dev
+      - none
     paths:
       - 'backend/**'
 
