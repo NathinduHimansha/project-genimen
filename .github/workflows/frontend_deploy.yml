@@ -29,8 +29,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: |
+        npm install -g netlify-cli
         npm ci
         npm run build
+        netlify deploy --prod
+      env:
+        # NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        # NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: 1c8836df-d191-49e9-9032-c978384eeffc
+        NETLIFY_AUTH_TOKEN: 0yGJI7-BJfRmcpaNqPcKyLcUQcp-qWZg3IHaxl43D-k
 
     - name: Publish
       uses: netlify/actions/cli@master
