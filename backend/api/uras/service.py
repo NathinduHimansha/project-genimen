@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 def get_data_by_phone(phone_model):
-    return pd.read_csv(f'analytics/data/phone_reviews/{phone_model}.csv', error_bad_lines=False, nrows=50)
+    return pd.read_csv(f'analytics/data/phone_reviews/{phone_model}.csv', error_bad_lines=False, nrows=150)
     #  return pd.read_csv(f'analytics/data/phone_reviews/{phone_model}.csv', error_bad_lines=False)
 
 
