@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: web-fronted
+        working-directory: web-frontend
     strategy:
       matrix:
         node-version: [14.x]
@@ -29,7 +29,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: |
-        echo $(pwd)
         npm ci
         npm run build
 
