@@ -129,7 +129,7 @@ class ExkeyResults extends React.Component {
                   </div>
 
                   {/*Treemap which is imported from the gra[h folder which represents the similar keywords*/}
-                  <div className="treeMap_align" id="treeMap_align">
+                  <div className="treeMap_align">
                     <TreeMap />
                   </div>
                 </div>

@@ -10,6 +10,7 @@ import CurrentLocation from '../../components/header/CurrentLocation';
 import rightArrow from '../../assests/right-arrow.png';
 import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
+import { useToasts } from 'react-toast-notifications';
 
 class Exkey extends React.Component {
   constructor(props) {
@@ -22,6 +23,8 @@ class Exkey extends React.Component {
   }
 
   routePage = (event) => {
+    // const addToast = this.props.toastHook;
+
     this.setState({
       loading: true,
     });
@@ -30,10 +33,20 @@ class Exkey extends React.Component {
         this.setState({ data: response.data }), event.preventDefault();
         const trendingFeatures = response.data.trend;
         this.setState({ trendingFeatures });
+        // if (response.data.status == 1) {
         this.props.history.push({
           pathname: '/analytics/exkey/results',
           state: trendingFeatures,
         });
+        // } else {
+        //   addToast('Something went wront, please try again...', {
+        //     appearance: 'error',
+        //     id: 'exkey-api-error',
+        //   });
+        //   this.setState({
+        //     loading: false,
+        //   });
+        // }
       }),
         otherKeywordsTrend()
           .then((response) => {
