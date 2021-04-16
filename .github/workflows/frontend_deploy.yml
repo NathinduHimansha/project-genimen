@@ -38,13 +38,3 @@ jobs:
         # NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: 1c8836df-d191-49e9-9032-c978384eeffc
         NETLIFY_AUTH_TOKEN: 0yGJI7-BJfRmcpaNqPcKyLcUQcp-qWZg3IHaxl43D-k
-
-    - name: Publish
-      uses: netlify/actions/cli@master
-      with:
-        args: deploy --dir=./web-frontend/build --prod
-      env:
-        # NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        # NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        NETLIFY_SITE_ID: 1c8836df-d191-49e9-9032-c978384eeffc
-        NETLIFY_AUTH_TOKEN: 0yGJI7-BJfRmcpaNqPcKyLcUQcp-qWZg3IHaxl43D-k
