@@ -7,6 +7,8 @@ import TreeMap from '../../components/graphs/TreeMap';
 import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
 import fire from '../../assests/fire.png';
+// import { useHistory } from 'react-router';
+// import fromParentOnly from '../../pages/wrappers/FromParentOnly';
 
 class ExkeyResults extends React.Component {
   constructor(props) {
@@ -24,39 +26,10 @@ class ExkeyResults extends React.Component {
     const trendingFeatures = history.location.state;
     this.state.trendingFeatures = trendingFeatures;
     this.setState({ trendingFeatures });
-
-    // const { history } = this.props;
-
-    // const trendingFeatures = history.location.state;
-    // this.state.trendingFeatures = trendingFeatures;
-    // this.setState({ trendingFeatures, isLoading: false });
   }
 
-  //handles the http request and routes the user
-  // getRequestedData = (event) => {
-  //   //http request handling
-  //   // trendz(this.state.selectedFeatures).then((response) => {
-  //   trendz().then((response) => {
-  //     this.setState({ data: response.data }), event.preventDefault();
-  //     const trendingFeatures = response.data.trend;
-  //     this.setState({ trendingFeatures });
-  //   });
-
-  //   otherKeywordsTrend()
-  //     .then((response) => {
-  //       this.setState({ data: response.series }), event.preventDefault();
-  //       const otherKeywordsList = response.series;
-  //       this.setState({ otherKeywordsList });
-  //     })
-
-  //     .catch((error) => {
-  //       if (error) {
-  //       }
-  //     });
-  // };
-
   render() {
-    const { trendingFeatures, isLoading } = this.state;
+    const { trendingFeatures } = this.state;
 
     return (
       <div className="main-body">

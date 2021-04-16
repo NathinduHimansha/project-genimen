@@ -104,7 +104,7 @@
     width: 400px;
     height: 300px;
     margin-left: 14%;
-    margin-top: 10%;
+    margin-top: 1%;
   }
   .card-right {
     width: 400px;
@@ -409,7 +409,7 @@
   animation-duration: 1.8s;
   animation-iteration-count: 1;
   position: relative;
-  margin-top: 13%;
+  margin-top: 7%;
 }
 
 .trend_description_align {
@@ -423,7 +423,7 @@
 .analysing_banner {
   opacity: 0.8;
   /* width: 85%; */
-  margin-top: 1%;
+  margin-top: 3%;
   margin-left: 20%;
 }
 
