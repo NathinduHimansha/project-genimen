@@ -6,7 +6,8 @@ import GenimenSideBar from './components/nav/GenimenSideBar';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/signup';
 import EXKEY from './pages/exkey/Exkey';
-import ExkeyRESULTS from './pages/exkey/ExkeyResults';
+import ExkeyResult from './pages/exkey/ExkeyResults';
+import ExkeyAlt from './pages/exkey/ExkeyAlt';
 
 import Examples from './pages/experiment/Examples';
 
@@ -56,7 +57,7 @@ function App() {
           <Route path="/analytics/pssa/results" component={PssaResults} />
 
           <Route exact path="/analytics/exkey" component={EXKEY} />
-          <Route exact path="/analytics/exkey/results" component={ExkeyRESULTS} />
+          <Route exact path="/analytics/exkey/results" component={ExkeyResult} />
 
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
@@ -64,6 +65,7 @@ function App() {
           <Route path="/test1" component={testcard} />
           <Route path="/test2" component={HomeStart} />
           <Route path="/test3" component={MenuCard} />
+          <Route path="/test4" component={ExkeyAlt} />
           <Route path="/analytics" component={HomeStart} />
 
           <Route exact path="/" component={() => <Redirect to="/index" />} />

@@ -16,41 +16,49 @@ class Exkey extends React.Component {
     super(props);
 
     this.state = {
-      trendingFeatures: [], //trending keywords array (card left)
-      otherKeywordsList: [], //other keywords array (card right)
+      trendingFeatures: {}, //trending keywords array (card left)
+      otherKeywordsList: {}, //other keywords array (card right)
     };
   }
 
-  routePage = (event) => {
-    this.setState({
-      loading: true,
-    });
-    setTimeout(() => {
-      trendz().then((response) => {
-        this.setState({ data: response.data }), event.preventDefault();
-        const trendingFeatures = response.data.trend;
-        this.setState({ trendingFeatures });
-        this.props.history.push({
-          pathname: '/analytics/exkey/results',
-          state: trendingFeatures,
-        });
-      }),
-        otherKeywordsTrend()
-          .then((response) => {
-            this.setState({ data: response.series }), event.preventDefault();
-            const otherKeywordsList = response.series;
-            this.setState({ otherKeywordsList });
-            this.props.history.push({
-              pathname: '/analytics/exkey/results',
-              stateOtherKeywords: otherKeywordsList,
-            });
-          })
+  getTrendingFeatures = () => {
+    trendz()
+      .then((response) => {
+        console.log('2: ', response);
+        this.setState({ trendingFeatures: response.data.trend });
+      })
 
-          .catch((error) => {
-            if (error) {
-            }
-          });
-    }, 1000);
+      .catch((error) => {
+        if (error) {
+        }
+      });
+  };
+
+  getOtherKeywordsList = () => {
+    trendz()
+      .then((response) => {
+        console.log('3: ', response);
+        const trendingFeatures = response.data.trend;
+        this.setState({ otherKeywordsList: response.data.trend });
+      })
+
+      .catch((error) => {
+        if (error) {
+        }
+      });
+  };
+
+  forwardPage = () => {
+    this.props.history.push({
+      pathname: '/analytics/exkey/results',
+      state: this.state.trendingFeatures,
+    });
+  };
+
+  routePage = () => {
+    this.getTrendingFeatures();
+    this.getOtherKeywordsList();
+    this.forwardPage();
   };
 
   render() {
