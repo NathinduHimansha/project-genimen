@@ -8,8 +8,8 @@ from pathlib import Path
 
 
 def get_data_by_phone(phone_model):
-    return pd.read_csv(f'analytics/data/phone_reviews/{phone_model}.csv', error_bad_lines=False, nrows=150)
-    #  return pd.read_csv(f'analytics/data/phone_reviews/{phone_model}.csv', error_bad_lines=False)
+    #  return pd.read_csv(f'analytics/data/phone_reviews/{phone_model}.csv', error_bad_lines=False, nrows=1000)
+    return pd.read_csv(f'analytics/data/phone_reviews/{phone_model}.csv', error_bad_lines=False)
 
 
 def get_sent_sentiment(sent):

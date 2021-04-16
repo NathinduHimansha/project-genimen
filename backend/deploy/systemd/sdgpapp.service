@@ -6,7 +6,7 @@ After=network.target
 User=ubuntu
 Group=www-data
 WorkingDirectory=/home/ubuntu/sdgpapi
-ExecStart=/usr/bin/gunicorn3 --workers 3 --bind unix:sdgpapp.sock -m 007 "api:create_app('dev')"
+ExecStart=/usr/bin/gunicorn3 --timeout 600 --workers 3 --bind unix:sdgpapp.sock -m 007 "api:create_app('dev')"
 
 [Install]
 WantedBy=multi-user.target
