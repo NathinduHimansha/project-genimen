@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import arrowup from '../../assests/TopUpArrow.png';
+// import arrowup from '../../assests/TopUpArrow.png';
+import downarrow from '../../assests/DropDownArrow.png';
 import darkarrowup from '../../assests/UpArrowDark.png';
 import './scrollup.css';
 
@@ -33,10 +34,10 @@ export default function ScrollUp() {
   return (
     <div className="scroll-top">
       {visible && (
-        <div onClick={scrollToTop}>
+        <div className="scroll-top-wrapper" onClick={scrollToTop}>
           <img
-            style={{ width: '40px' }}
-            src={arrowup}
+            // style={{ width: '40px' }}
+            src={downarrow}
             alt="Scroll-Up-Icon"
             title="Click to Scroll Up"
           />
