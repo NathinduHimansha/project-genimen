@@ -149,4 +149,4 @@ class ExkeyResults extends React.Component {
   }
 }
 
-export default fromParentOnly(ExkeyResults);
+export default ExkeyResults;
