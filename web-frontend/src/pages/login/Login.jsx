@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Context } from '../../components/sate_management/GlobalStore';
 import Button from '../../components/buttons/Button';
+import warning from '../../assests/WarningRed.png';
 import logo from '../../assests/Geniman.png';
 import banner from '../../assests/LineChartBanner.png';
 import './login.css';
-import { NavLink, useHistory } from 'react-router-dom';
-import { isPasswordValid, saveToken } from '../../common/utils';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import { isEmailValid, isPasswordValid, logIn, logOut, saveToken } from '../../common/utils';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
+import { login } from '../../services/auth-service';
+import Modal from '../../components/modal/Modal';
 
 const Login = (props) => {
   const [passwordError, setPasswordError] = useState(false);
@@ -18,8 +21,11 @@ const Login = (props) => {
   const [loading, setLoading] = useState(false);
   const { addToast } = useToasts();
   const history = useHistory();
+  let path = useLocation().pathname;
 
+  const [openLogoutConfrimModal, setOpenModal] = useState(false);
   const [state, dispatch] = useContext(Context);
+  const { loggedIn } = state;
   const onPasswordFocus = () => {
     setPasswordError(false);
   };
@@ -32,12 +38,12 @@ const Login = (props) => {
     }
   };
   const onUsernameBlur = (username) => {
-    if (username.trim().length < 3) {
+    if (username.trim().length < 2) {
       setUsernameError(true);
     }
   };
   const isInputsValid = (password, username) => {
-    if (isPasswordValid(password) && username.trim().length > 2) {
+    if (isPasswordValid(password) && username.trim().length > 1) {
       return true;
     }
     setShake(true);
@@ -46,17 +52,44 @@ const Login = (props) => {
   const onLogin = () => {
     onUsernameBlur(username);
     onPasswordBlur(password);
-    dispatch({ type: 'LOGIN' });
-    saveToken('taifkdf23reraerdafkljafkdl4er');
+    // dispatch({ type: 'LOGIN' });
+    // saveToken('taifkdf23reraerdafkljafkdl4er');
     const isFormValid = isInputsValid(password, username);
     if (isFormValid) {
       setLoading(true);
-      setTimeout(() => {
-        addToast('Successfully Logged in', { appearance: 'success', id: 'login-success' });
-        dispatch({ type: 'TOGGLE_LOGIN' });
-        history.push({ pathname: '/signup' });
-        setLoading(false);
-      }, 3000);
+      const credentials = {};
+      credentials['password'] = password;
+      if (isEmailValid(username)) {
+        credentials['email'] = username;
+      } else {
+        credentials['username'] = username;
+      }
+      login(credentials)
+        .then((res) => {
+          if (res.data.status == 1) {
+            logIn(res.data.data.token);
+            dispatch({ type: 'LOGIN' });
+            dispatch({ type: 'CHANGE_USER', payload: { username: username } });
+            addToast('Successfully Logged in', { appearance: 'success', id: 'login-success' });
+            if (path.includes('login')) {
+              history.push('/analytics');
+            }
+          } else {
+            addToast(res.data.message, {
+              appearance: 'error',
+              id: 'login-error',
+            });
+            setLoading(false);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          addToast('Something went wront, please try again...', {
+            appearance: 'error',
+            id: 'login-error',
+          });
+          setLoading(false);
+        });
     } else {
       addToast('Invalid username/password, please try again ', {
         appearance: 'error',
@@ -99,9 +132,10 @@ const Login = (props) => {
                     }}
                     onChange={(event) => {
                       setUsername(event.target.value);
-                      onUsernameBlur(event.target.value);
+                      // onUsernameBlur(event.target.value);
                     }}
                     onFocus={onUsernameFocus}
+                    value={username}
                   />
                 </div>
                 <span
@@ -132,9 +166,10 @@ const Login = (props) => {
                     }}
                     onChange={(event) => {
                       setPassword(event.target.value);
-                      onPasswordBlur(event.target.value);
+                      // onPasswordBlur(event.target.value);
                     }}
                     onFocus={onPasswordFocus}
+                    value={password}
                   />
                 </div>
                 <span

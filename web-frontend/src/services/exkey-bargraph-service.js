@@ -51,6 +51,6 @@ const exkey_mock = {
     },
 }
 
-// export const getTrendingFeatures = async () => http.get();
+//export const getTrendingFeatures = async () => http.get();
 
 export const trendz = async () => exkey_mock;

@@ -1,13 +1,13 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Button from '../../components/buttons/Button';
 import logo from '../../assests/Geniman.png';
 import banner from '../../assests/LineChartBanner.png';
 import './signup.css';
 import { NavLink, useHistory } from 'react-router-dom';
-import {isEmailValid, isPasswordValid, logIn, saveToken} from "../../common/utils";
+import { isEmailValid, isPasswordValid, logIn, saveToken } from '../../common/utils';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
-import {signup} from "../../services/auth-service";
-import {Context} from "../../components/sate_management/GlobalStore";
+import { signup } from '../../services/auth-service';
+import { Context } from '../../components/sate_management/GlobalStore';
 
 const Signup = (props) => {
   const [passwordError, setPasswordError] = useState(false);
@@ -19,12 +19,11 @@ const Signup = (props) => {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [confirmPasswordError, setconfirmPasswordError]= useState(false);
+  const [confirmPasswordError, setconfirmPasswordError] = useState(false);
   const [loading, setLoading] = useState(false);
   const { addToast } = useToasts();
   const history = useHistory();
   const [state, dispatch] = useContext(Context);
-
 
   const onPasswordFocus = () => {
     setPasswordError(false);
@@ -33,11 +32,11 @@ const Signup = (props) => {
     setUsernameError(false);
   };
   const onUserEmailFocus = () => {
-      setEmailError(false);
-  }
+    setEmailError(false);
+  };
   const onConfirmPasswordFocus = () => {
-      setconfirmPasswordError(false);
-  }
+    setconfirmPasswordError(false);
+  };
   const onPasswordBlur = (password) => {
     setPassword(password);
     if (!isPasswordValid(password)) {
@@ -51,30 +50,33 @@ const Signup = (props) => {
     }
   };
   const onUserEmailBlur = (email) => {
-      setEmail(email);
-      if (!isEmailValid(email)) {
-          setEmailError(true)
-      }
+    setEmail(email);
+    if (!isEmailValid(email)) {
+      setEmailError(true);
+    }
   };
   const onConfirmPasswordBlur = (confirmPassword) => {
-      setConfirmPassword(confirmPassword);
-      onPasswordBlur(password);
-      if(!isPasswordMatch(password,confirmPassword)) {
-          setconfirmPasswordError(true)
-      }
-  }
+    setConfirmPassword(confirmPassword);
+    onPasswordBlur(password);
+    if (!isPasswordMatch(password, confirmPassword)) {
+      setconfirmPasswordError(true);
+    }
+  };
   const isPasswordMatch = (password, confirmPassword) => {
-      return password == confirmPassword;
-  }
+    return password == confirmPassword;
+  };
   const isInputsValid = (password, username, email, confirmPassword) => {
-    if (isPasswordValid(password) && username.trim().length > 2 && isEmailValid(email) && isPasswordMatch(password, confirmPassword)) {
+    if (
+      isPasswordValid(password) &&
+      username.trim().length > 2 &&
+      isEmailValid(email) &&
+      isPasswordMatch(password, confirmPassword)
+    ) {
       return true;
     }
     setShake(true);
     return false;
   };
-
-
 
   const onSignup = () => {
     onUsernameBlur(username);
@@ -84,18 +86,34 @@ const Signup = (props) => {
     const isFormValid = isInputsValid(password, username, email, confirmPassword);
     if (isFormValid) {
       setLoading(true);
-      dispatch({ type: 'LOGIN' });
-      signup({username: username, email: email, password: confirmPassword}).then(res => {
-          logIn(res.data.token)
-          saveToken(res.data.token)
-          dispatch({ type: 'TOGGLE_LOGIN' });
-          })
+      // dispatch({ type: 'LOGIN' });
+      signup({ username: username, email: email, password: confirmPassword })
+        .then((res) => {
+          if (res.data.status == 1) {
+            logIn(res.data.data.token);
+            dispatch({ type: 'LOGIN' });
+            dispatch({ type: 'CHANGE_USER', payload: { username: username } });
+            history.push({ pathname: '/analytics' });
+            // setLoading(false);
+          } else {
+            // console.log(res.data.message);
+            addToast(res.data.message, { appearance: 'error', id: 'signup-error' });
+            setLoading(false);
+          }
+        })
+        .catch((err) => {
+          addToast('Something went wront, please try again...', {
+            appearance: 'error',
+            id: 'signup-error',
+          });
+          setLoading(false);
+        });
 
-      setTimeout(() => {
-        addToast('Successfully Signed up', { appearance: 'success', id: 'signup-success' });
-        history.push({ pathname: '/analytics' });
-        setLoading(false);
-      }, 3000);
+      // setTimeout(() => {
+      // addToast('Successfully Signed up', { appearance: 'success', id: 'signup-success' });
+      // history.push({ pathname: '/analytics' });
+      // setLoading(false);
+      // }, 3000);
     } else {
       console.log('invalid');
       addToast('Please fill the required fields ', {
@@ -106,12 +124,13 @@ const Signup = (props) => {
     }
   };
 
-
   return (
     <div className="navbar-page-container">
       <div className="signup-page-container -flex -flex-center -flex-middle -full-vheight-signup">
-        <div className={`${isShake ? 'shake' : ''} card signup-card`}
-          onAnimationEnd={() => setShake(false)}>
+        <div
+          className={`${isShake ? 'shake' : ''} card signup-card`}
+          onAnimationEnd={() => setShake(false)}
+        >
           <div className="signup-header -flex -flex-col -flex-middle">
             <div className="signup-logo">
               <img src={logo} />
@@ -123,7 +142,9 @@ const Signup = (props) => {
             <div className="signup-input-wrapper -flex -flex-col">
               <div>
                 <label htmlFor="username">
-                  <span className="-medium">Username<span className="required-star">*</span></span>
+                  <span className="-medium">
+                    Username<span className="required-star">*</span>
+                  </span>
                 </label>
               </div>
               <div className="signup-username-input ">
@@ -148,14 +169,16 @@ const Signup = (props) => {
               </span>
             </div>
 
-          <div className="signup-input-wrapper -flex -flex-col">
+            <div className="signup-input-wrapper -flex -flex-col">
               <div>
-                  <label htmlFor="email">
-                      <span className="-medium">Email<span className="required-star">*</span></span>
-                  </label>
+                <label htmlFor="email">
+                  <span className="-medium">
+                    Email<span className="required-star">*</span>
+                  </span>
+                </label>
               </div>
-          <div className="signup-username-input ">
-              <input
+              <div className="signup-username-input ">
+                <input
                   placeholder="email"
                   type="text"
                   id="email"
@@ -164,36 +187,38 @@ const Signup = (props) => {
                     onUserEmailBlur(event.target.value);
                   }}
                   onFocus={onUserEmailFocus}
-              />
-          </div>
-          <span
+                />
+              </div>
+              <span
                 className={
                   (emailError ? '' : '-display-none ') +
                   'login-error-message login-password-error-message'
                 }
               >
                 Please enter a valid email address
-          </span>
-          </div>
+              </span>
+            </div>
             <div className="signup-input-wrapper -flex -flex-col">
               <div>
                 <label htmlFor="password">
-                  <span className="-medium">Password<span className="required-star">*</span></span>
+                  <span className="-medium">
+                    Password<span className="required-star">*</span>
+                  </span>
                 </label>
               </div>
               <div className="signup-username-input ">
                 <input
-                    placeholder="password"
-                    type="password"
-                    id="password"
-                    className={`${passwordError ? 'error-input' : ''} -full-width`}
+                  placeholder="password"
+                  type="password"
+                  id="password"
+                  className={`${passwordError ? 'error-input' : ''} -full-width`}
                   onBlur={(event) => {
                     onPasswordBlur(event.target.value);
                   }}
                   onFocus={onPasswordFocus}
                 />
               </div>
-                <span
+              <span
                 className={
                   (passwordError ? '' : '-display-none ') +
                   'login-error-message login-password-error-message'
@@ -202,25 +227,27 @@ const Signup = (props) => {
                 password must contain min 6 characters
               </span>
             </div>
-              <div className="signup-input-wrapper -flex -flex-col">
-                  <div>
-                      <label htmlFor="confirmPassword">
-                          <span className="-medium">Confirm Password<span className="required-star">*</span></span>
-                      </label>
-                  </div>
-                  <div className="signup-username-input ">
-                      <input
-                          placeholder="confirmPassword"
-                          type="password"
-                          id="confirmPassword"
-                          className={`${confirmPasswordError ? 'error-input' : ''} -full-width`}
+            <div className="signup-input-wrapper -flex -flex-col">
+              <div>
+                <label htmlFor="confirmPassword">
+                  <span className="-medium">
+                    Confirm Password<span className="required-star">*</span>
+                  </span>
+                </label>
+              </div>
+              <div className="signup-username-input ">
+                <input
+                  placeholder="confirmPassword"
+                  type="password"
+                  id="confirmPassword"
+                  className={`${confirmPasswordError ? 'error-input' : ''} -full-width`}
                   onBlur={(event) => {
                     onConfirmPasswordBlur(event.target.value);
                   }}
                   onFocus={onConfirmPasswordFocus}
-                      />
-                  </div>
-                  <span
+                />
+              </div>
+              <span
                 className={
                   (confirmPasswordError ? '' : '-display-none ') +
                   'login-error-message login-password-error-message'
@@ -228,10 +255,12 @@ const Signup = (props) => {
               >
                 password doesn't match
               </span>
-              </div>
+            </div>
           </div>
           <div className="signup-btn-wrapper -mt-25">
-            <Button utilClasses="-full-width" onClick={() => onSignup()}loading={loading}>Signup</Button>
+            <Button utilClasses="-full-width" onClick={() => onSignup()} loading={loading}>
+              Signup
+            </Button>
           </div>
           <div className="signup-login-wrapper -flex -flex-col">
             <span className="signup-login-message">Already have an accout?</span>
@@ -240,7 +269,10 @@ const Signup = (props) => {
             </NavLink>
           </div>
         </div>
-        <div style={{ width: '50%' }} className="signup-banner-wrapper-container -flex -flex-center">
+        <div
+          style={{ width: '50%' }}
+          className="signup-banner-wrapper-container -flex -flex-center"
+        >
           <div className="signup-banner-wrapper" style={{ width: '100%' }}>
             <div className="fancy-heading-decorator">
               <h1 className="heading1 signup-moto -light -no-margin" style={{ maxWidth: '700px' }}>

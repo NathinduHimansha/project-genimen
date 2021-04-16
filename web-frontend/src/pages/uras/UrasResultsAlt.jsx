@@ -96,7 +96,7 @@ const UrasResultsAlt = () => {
     setUrasData(urasData);
   }, [sortBy, setSortBy]);
   useEffect(() => {
-    const urasData = history.location.state.data;
+    const urasData = history.location.state;
     const featureType = urasData[featureSentimentPolarity][0].feature;
     const phoneFeaturePolaritySorted = sort(0, urasData[phoneFeaturePolarity]);
 
@@ -106,10 +106,10 @@ const UrasResultsAlt = () => {
     setSelectedFeatureType(featureType);
   }, []);
   const setBestWorstPhones = (featureType, phoneFeaturePolarityList) => {
-    console.log(featureType);
+    // console.log(featureType);
     let bestPhone = findBest(featureType, phoneFeaturePolarityList);
     let worstPhone = findWorst(featureType, phoneFeaturePolarityList);
-    console.log(worstPhone);
+    // console.log(worstPhone);
     if (worstPhone.phone == bestPhone.phone) {
       if (worstPhone.pos > 50) {
         worstPhone = {};
@@ -176,7 +176,7 @@ const UrasResultsAlt = () => {
             <div className="overall-sentiment-results-card-container">
               {urasData[featureSentimentPolarity]
                 .filter((featureDet) => {
-                  return featureDet.feature == selectedFeatureType;
+                  return featureDet.feature == selectedFeatureType && featureDet.polarity != null;
                 })
                 .map((featureDet, i) => {
                   return (
@@ -194,7 +194,7 @@ const UrasResultsAlt = () => {
                 })}
             </div>
             <div className="-flex-grow sentiment-rank-card-container">
-              {!isObjEmtpy(bestPhone) ? (
+              {!isObjEmtpy(bestPhone) && bestPhone.length != 0 && bestPhone.polarity != 'None' ? (
                 <SentimentRankCard
                   polarity="pos"
                   polarityPerc={bestPhone.pos}
@@ -204,7 +204,9 @@ const UrasResultsAlt = () => {
               ) : (
                 ''
               )}
-              {!isObjEmtpy(worstPhone) ? (
+              {!isObjEmtpy(worstPhone) &&
+              worstPhone.length != 0 &&
+              worstPhone.polarity != 'None' ? (
                 <SentimentRankCard
                   polarity="neg"
                   polarityPerc={worstPhone.pos}
@@ -250,7 +252,9 @@ const UrasResultsAlt = () => {
             <div className="analytics-container cards-grid -mt-40">
               {urasData[phoneFeaturePolarity]
                 .filter((featureDet) => {
-                  return featureDet.feature == selectedFeatureType;
+                  return (
+                    featureDet.feature == selectedFeatureType && featureDet.polarity !== 'None'
+                  );
                 })
                 .map((featureDet, i) => {
                   return (

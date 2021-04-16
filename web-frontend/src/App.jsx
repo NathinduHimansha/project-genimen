@@ -20,7 +20,7 @@ import UrasInputResults from './pages/uras/UrasInputResults';
 import URASViewAlt from './pages/uras/URASViewAlt';
 import UrasResultsAlt from './pages/uras/UrasResultsAlt';
 import Store from './components/sate_management/GlobalStore';
-import { isLoggedIn } from './common/utils';
+import { getTokenPayload, isLoggedIn } from './common/utils';
 import PssaView from './pages/pssa2/pssaView';
 import PssaResults from './pages/pssa2/pssaResults';
 import ScrollUp from './components/scrollupbutton/ScrollUp';
@@ -34,6 +34,8 @@ function App() {
     const loggedIn = isLoggedIn();
     if (loggedIn) {
       dispatch({ type: 'LOGIN' });
+      const payload = getTokenPayload();
+      dispatch({ type: 'CHANGE_USER', payload: { username: payload.username } });
     } else {
       dispatch({ type: 'LOGOUT' });
     }
@@ -45,8 +47,6 @@ function App() {
         <Switch>
           <Route exact path="/index" component={HomePage} />
           <Route path="/about" component={Login} />
-          <Route exact path="/analytics/exkey" component={EXKEY} />
-          <Route exact path="/analytics/exkey/results" component={ExkeyRESULTS} />
 
           <Route exact path="/analytics/uras" component={protect(URASViewAlt)} />
           <Route path="/analytics/uras/results" component={protect(UrasResultsAlt)} />
@@ -54,6 +54,10 @@ function App() {
           {/* <Route path="/analytics/uras" component={UrasUserInputView} /> */}
           <Route exact path="/analytics/pssa" component={PssaView} />
           <Route path="/analytics/pssa/results" component={PssaResults} />
+
+          <Route exact path="/analytics/exkey" component={EXKEY} />
+          <Route exact path="/analytics/exkey/results" component={ExkeyRESULTS} />
+
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/examples" component={Examples} />

@@ -8,7 +8,6 @@ function fromPraentOnly(Component) {
   return (props) => {
     const parents = useLocation().pathname.substr(1).split('/');
     const parentRoute = `/${parents.slice(0, -1).join('/')}`;
-    console.log(parentRoute);
     const history = useHistory();
     if (history.location.state) {
       return <Component />;
