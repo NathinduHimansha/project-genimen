@@ -49,6 +49,13 @@
   grid-gap: 20px;
 }
 
+@media only screen and (max-width: 1510px) {
+  .cards-split-Elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  }
+}
+
 @media only screen and (max-width: 1500px) {
   .cards-split-Elements {
     display: grid;
@@ -406,15 +413,16 @@
 }
 
 .trend_description_align {
-  width: 70%;
+  width: 90%;
   float: right;
   margin-top: 18%;
   margin-left: -10%;
+  position: relative;
 }
 
 .analysing_banner {
   opacity: 0.8;
-  width: 85%;
+  /* width: 85%; */
   margin-top: 1%;
   margin-left: 20%;
 }
