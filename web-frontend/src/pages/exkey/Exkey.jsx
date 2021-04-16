@@ -10,6 +10,7 @@ import CurrentLocation from '../../components/header/CurrentLocation';
 import rightArrow from '../../assests/right-arrow.png';
 import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
+import { useToasts } from 'react-toast-notifications';
 
 class Exkey extends React.Component {
   constructor(props) {
@@ -21,44 +22,48 @@ class Exkey extends React.Component {
     };
   }
 
-  getTrendingFeatures = () => {
-    trendz()
-      .then((response) => {
-        console.log('2: ', response);
-        this.setState({ trendingFeatures: response.data.trend });
-      })
+  routePage = (event) => {
+    // const addToast = this.props.toastHook;
 
-      .catch((error) => {
-        if (error) {
-        }
-      });
-  };
-
-  getOtherKeywordsList = () => {
-    trendz()
-      .then((response) => {
-        console.log('3: ', response);
-        const trendingFeatures = response.data.trend;
-        this.setState({ otherKeywordsList: response.data.trend });
-      })
-
-      .catch((error) => {
-        if (error) {
-        }
-      });
-  };
-
-  forwardPage = () => {
-    this.props.history.push({
-      pathname: '/analytics/exkey/results',
-      state: this.state.trendingFeatures,
+    this.setState({
+      loading: true,
     });
-  };
+    setTimeout(() => {
+      trendz().then((response) => {
+        this.setState({ data: response.data }), event.preventDefault();
+        const trendingFeatures = response.data.trend;
+        this.setState({ trendingFeatures });
+        // if (response.data.status == 1) {
+        this.props.history.push({
+          pathname: '/analytics/exkey/results',
+          state: trendingFeatures,
+        });
+        // } else {
+        //   addToast('Something went wront, please try again...', {
+        //     appearance: 'error',
+        //     id: 'exkey-api-error',
+        //   });
+        //   this.setState({
+        //     loading: false,
+        //   });
+        // }
+      }),
+        otherKeywordsTrend()
+          .then((response) => {
+            this.setState({ data: response.series }), event.preventDefault();
+            const otherKeywordsList = response.series;
+            this.setState({ otherKeywordsList });
+            this.props.history.push({
+              pathname: '/analytics/exkey/results',
+              stateOtherKeywords: otherKeywordsList,
+            });
+          })
 
-  routePage = () => {
-    this.getTrendingFeatures();
-    this.getOtherKeywordsList();
-    this.forwardPage();
+          .catch((error) => {
+            if (error) {
+            }
+          });
+    }, 1000);
   };
 
   render() {
