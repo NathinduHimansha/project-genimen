@@ -73,8 +73,8 @@ def get_reviews_sentiment_summary(feature_type_dic):
                 total_neg += neg
                 total_polarity += polarity
                 i += 1
-            if (review_count < 5):
-                pos, neg, polarity = 'None', 'None', 'None'
+            #  if (review_count < 5):
+                #  pos, neg, polarity = 'None', 'None', 'None'
 
             phone_feature_sentiments['pos'] = pos
             phone_feature_sentiments['neg'] = neg
