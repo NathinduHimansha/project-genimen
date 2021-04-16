@@ -120,6 +120,12 @@ export const Http = (url_prefix) => {
   };
   const post = async ({ data = null, url = '', token = '' } = {}) => {
     const conf = constructRequest('POST', data, url, token);
+    conf.headers = {
+      ...conf.headers,
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    };
+    console.log(conf);
     const request = await axios(conf);
     return request;
   };
