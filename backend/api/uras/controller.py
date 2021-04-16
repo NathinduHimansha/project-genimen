@@ -40,4 +40,6 @@ def handle_uras():
 
 
 def get_features_types():
-    return FEATURE_TYPES
+    features = [{"types": FEATURE_TYPES[key], "feature": key}
+                for key in FEATURE_TYPES]
+    return features

@@ -1,6 +1,10 @@
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 
+export const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 export const isObjEmtpy = (obj) => {
   return obj && Object.keys(obj).length === 0 && obj.constructor === Object;
 };
