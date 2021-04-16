@@ -51,7 +51,8 @@ def create_app(config=None, db=None):
 
     #  app.config['CORS_HEADERS'] = 'Content-Type'
     #  cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
-    CORS(app, resources={r"/api/*": {"origins": "*"}})
+    CORS(app, resources={r"/api/*": {"origins": "*"}},
+         support_credentials=True)
 
     @app.route('/api/hello', methods=["GET"])
     def hello():
