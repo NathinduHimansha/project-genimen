@@ -405,16 +405,6 @@
   margin-top: 13%;
 }
 
-/* @media only screen and (max-width: 1000px) {
-  .analyze_again {
-    display: block;
-    animation-name: startbtn-effect_analyzeAgain;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    position: relative;
-  }
-} */
-
 .trend_description_align {
   width: 70%;
   float: right;
