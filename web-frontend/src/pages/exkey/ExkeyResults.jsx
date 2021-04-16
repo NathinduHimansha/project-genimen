@@ -24,8 +24,15 @@ class ExkeyResults extends React.Component {
     const { history } = this.props;
 
     const trendingFeatures = history.location.state;
-    this.state.trendingFeatures = trendingFeatures;
+    // this.state.trendingFeatures = trendingFeatures;
     this.setState({ trendingFeatures });
+
+    // const { history } = this.props;
+
+    // const trendingFeatures = history.location.state;
+    console.log(trendingFeatures);
+    // this.state.trendingFeatures = trendingFeatures;
+    // this.setState({ trendingFeatures, isLoading: false });
   }
 
   render() {
