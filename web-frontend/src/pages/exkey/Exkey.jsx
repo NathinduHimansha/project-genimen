@@ -10,6 +10,7 @@ import CurrentLocation from '../../components/header/CurrentLocation';
 import rightArrow from '../../assests/right-arrow.png';
 import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
+import { useToasts } from 'react-toast-notifications';
 
 class Exkey extends React.Component {
   constructor(props) {
@@ -22,25 +23,46 @@ class Exkey extends React.Component {
   }
 
   routePage = (event) => {
+    // const addToast = this.props.toastHook;
+
     this.setState({
       loading: true,
     });
     setTimeout(() => {
-      trendz()
-        .then((response) => {
-          this.setState({ data: response.data }), event.preventDefault();
-          const trendingFeatures = response.data.trend;
-          this.setState({ trendingFeatures });
-          this.props.history.push({
-            pathname: '/analytics/exkey/results',
-            state: trendingFeatures,
-          });
-        })
-
-        .catch((error) => {
-          if (error) {
-          }
+      trendz().then((response) => {
+        this.setState({ data: response.data }), event.preventDefault();
+        const trendingFeatures = response.data.trend;
+        this.setState({ trendingFeatures });
+        // if (response.data.status == 1) {
+        this.props.history.push({
+          pathname: '/analytics/exkey/results',
+          state: trendingFeatures,
         });
+        // } else {
+        //   addToast('Something went wront, please try again...', {
+        //     appearance: 'error',
+        //     id: 'exkey-api-error',
+        //   });
+        //   this.setState({
+        //     loading: false,
+        //   });
+        // }
+      }),
+        otherKeywordsTrend()
+          .then((response) => {
+            this.setState({ data: response.series }), event.preventDefault();
+            const otherKeywordsList = response.series;
+            this.setState({ otherKeywordsList });
+            this.props.history.push({
+              pathname: '/analytics/exkey/results',
+              stateOtherKeywords: otherKeywordsList,
+            });
+          })
+
+          .catch((error) => {
+            if (error) {
+            }
+          });
     }, 1000);
   };
 
@@ -106,10 +128,11 @@ class Exkey extends React.Component {
                       <br></br>
                     </span>
                   </div>
-                  <div style={{ marginTop: '-3%' }}>
-                    Select the features you want to analyse and get a insight from. This will give
-                    you the sentiment of the selected features from variety of phones and an overall
-                    score for the feature
+                  <div style={{ marginTop: '-3%', textAlign: 'justify' }}>
+                    Trend analysis will help you to grow your market level by identifying areas of
+                    your product willing to design that are performing well as well as areas that
+                    are not. As a result, it provides useful evidence to help you make informed
+                    decisions about your long-term plan and ways to future-proof your product.
                   </div>
                 </div>
                 <div className="analyze_again">

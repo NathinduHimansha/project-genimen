@@ -2,4 +2,4 @@
 
 export FLASK_APP="api:create_app('dev')"
 export FLASK_ENV=development
-flask run
+flask run --port 5001
