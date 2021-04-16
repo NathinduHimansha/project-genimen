@@ -8,7 +8,7 @@ import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
 import fire from '../../assests/fire.png';
 // import { useHistory } from 'react-router';
-// import fromParentOnly from '../../pages/wrappers/FromParentOnly';
+import fromParentOnly from '../../pages/wrappers/FromParentOnly';
 
 class ExkeyResults extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class ExkeyResults extends React.Component {
     const { history } = this.props;
 
     const trendingFeatures = history.location.state;
-    // this.state.trendingFeatures = trendingFeatures;
+    this.state.trendingFeatures = trendingFeatures;
     this.setState({ trendingFeatures });
 
     // const { history } = this.props;
@@ -136,7 +136,7 @@ class ExkeyResults extends React.Component {
                   </div>
 
                   {/*Treemap which is imported from the gra[h folder which represents the similar keywords*/}
-                  <div className="treeMap_align" id="treeMap_align">
+                  <div className="treeMap_align">
                     <TreeMap />
                   </div>
                 </div>
@@ -149,4 +149,4 @@ class ExkeyResults extends React.Component {
   }
 }
 
-export default ExkeyResults;
+export default fromParentOnly(ExkeyResults);
