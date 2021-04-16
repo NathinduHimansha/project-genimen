@@ -3,25 +3,24 @@ name: Deploy Frontend
 on:
   push:
     branches:
-      - none
+      - Dev
     paths:
       - 'web-frontend/**'
 
   pull_request:
     branches:
-      - none
+      - Dev
     paths:
       - 'web-frontend/**'
-
 jobs:
-  deploy:
-    name: deploy
+  publish:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.x]
+
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@master
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -29,12 +28,14 @@ jobs:
     - run: |
         cd ./web-frontend
         npm ci
-    - name: serverless deploy
-      uses: serverless/github-action@master
+        npm run build
+
+    - name: Publish
+      uses: netlify/actions/cli@master
       with:
-        args: deploy --stage dev -d web-frontend/
+        args: deploy --dir=./build
       env:
-        SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
-        # or if using AWS credentials directly
-        # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        # NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        # NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: 1c8836df-d191-49e9-9032-c978384eeffc
+        NETLIFY_AUTH_TOKEN: 0yGJI7-BJfRmcpaNqPcKyLcUQcp-qWZg3IHaxl43D-k

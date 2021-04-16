@@ -54,7 +54,7 @@ class ExkeyResults extends React.Component {
               </NavLink>
             </div>
             {/*main topic of the heading*/}
-            <h2 className="fancy-heading -no-margin">LOOK WHAT PEOPLE ARE TALKING OF PHONES...</h2>
+            <h2 className="fancy-heading -no-margin">WHAT PEOPLE ARE TALKING OF PHONES</h2>
           </div>
           <div className=" -mt-60 -mb-90 content-padding">
             <FancyHeading decoratorClassName="fancy-heading2-decorator">
