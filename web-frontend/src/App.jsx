@@ -23,8 +23,8 @@ import URASViewAlt from './pages/uras/URASViewAlt';
 import UrasResultsAlt from './pages/uras/UrasResultsAlt';
 import Store from './components/sate_management/GlobalStore';
 import { getTokenPayload, isLoggedIn } from './common/utils';
-import Pssa3View from './pages/pssa3/Pssa3View';
-import Pssa3Results from './pages/pssa3/pssa3Results';
+import PssaView from './pages/pssa2/pssaView';
+import PssaResults from './pages/pssa2/pssaResults';
 import ScrollUp from './components/scrollupbutton/ScrollUp';
 import protect from './pages/wrappers/ProtectedRouteWrapper';
 import testcard from './pages/experiment/testcard';
@@ -54,15 +54,11 @@ function App() {
           <Route path="/analytics/uras/results" component={protect(UrasResultsAlt)} />
           {/* <Route path="/analytics/uras/results" exact component={UrasInputResults} /> */}
           {/* <Route path="/analytics/uras" component={UrasUserInputView} /> */}
-          <Route exact path="/analytics/pssa3" component={Pssa3View} />
-          <Route path="/analytics/pssa/results" component={Pssa3Results} />
+          <Route exact path="/analytics/pssa" component={PssaView} />
+          <Route path="/analytics/pssa/results" component={PssaResults} />
 
           <Route exact path="/analytics/exkey" component={EXKEY} />
-<<<<<<< HEAD
           <Route exact path="/analytics/exkey/results" component={ExkeyResult} />
-=======
-          <Route path="/analytics/exkey/results" component={ExkeyRESULTS} />
->>>>>>> ed9b32b4b162defb553450f810a226bfe61635b5
 
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />

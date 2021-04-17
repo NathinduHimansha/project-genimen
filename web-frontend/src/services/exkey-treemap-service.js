@@ -6,7 +6,6 @@ const base = `${BASE_URL}/analytics/exkey`;
 const http = Http(base);
 
 const exkey_mock_otherKeywords = {
-  
   series: [
     {
       data: [
@@ -54,19 +53,11 @@ const exkey_mock_otherKeywords = {
           x: 'Notch1',
           y: 2002,
         },
-      
       ],
       status: 1,
     },
   ],
-
-<<<<<<< HEAD
-  status: 1,
 };
-=======
-    
-}
->>>>>>> ed9b32b4b162defb553450f810a226bfe61635b5
 
 // export const getTrendingFeatures = async () => http.get();
 

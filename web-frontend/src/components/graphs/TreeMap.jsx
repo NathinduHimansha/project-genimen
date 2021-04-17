@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-<<<<<<< HEAD
 class TreeMap extends React.Component {
   constructor(props) {
     super(props);
@@ -27,28 +26,6 @@ class TreeMap extends React.Component {
               '</div>'
             );
           },
-=======
-const TreeMap = (props) => {
-  const { data } = props;
-
-  const state = {
-    treeVisibility: false,
-    options: {
-      tooltip: {
-        enabled: true,
-        theme: 'dark', //dark theme for the tooltip
-
-        //custom tooltip
-        custom: function ({ data, seriesIndex, dataPointIndex, w }) {
-          var data = w.globals.initialSeries[seriesIndex].data[dataPointIndex];
-
-          //returning the x value from the data array
-          return (
-            '<div style="width: 180px; height: 40px;text-align: center;margin-top: 25px;">' +
-            data.x +
-            '</div>'
-          );
->>>>>>> ed9b32b4b162defb553450f810a226bfe61635b5
         },
       },
 
@@ -68,7 +45,6 @@ const TreeMap = (props) => {
           },
         },
       },
-<<<<<<< HEAD
     };
   }
   _isMounted = false;
@@ -112,15 +88,4 @@ const TreeMap = (props) => {
     );
   }
 }
-=======
-    },
-  };
-
-  return (
-    <div>
-      <ReactApexChart options={state.options} series={data} type="treemap" />
-    </div>
-  );
-};
->>>>>>> ed9b32b4b162defb553450f810a226bfe61635b5
 export default TreeMap;

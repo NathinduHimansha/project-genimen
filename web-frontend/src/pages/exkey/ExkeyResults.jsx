@@ -10,78 +10,6 @@ import fire from '../../assests/fire.png';
 import { Redirect, useHistory } from 'react-router';
 import fromParentOnly from '../../pages/wrappers/FromParentOnly';
 
-<<<<<<< HEAD
-class ExkeyResults extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      recivedData: [],
-      trendingFeatures: [], //trending keywords array (card left)
-      otherKeywordsList: [], //other keywords array (card right)
-    };
-  }
-
-  componentDidMount() {
-    //
-    const trendingFeatures = this.props.location.state;
-    console.log('10 ', this.props.location.state);
-    // this.state.trendingFeatures = this.props.location.state;
-    // //
-
-    this.setState({ recivedData: this.props.location.state });
-
-    console.log('11 ', trendingFeatures);
-    this.dataAssigning(trendingFeatures);
-
-    // const { history } = this.props;
-
-    // const trendingFeatures = history.location.state;
-    //console.log(trendingFeatures);
-    // this.state.trendingFeatures = trendingFeatures;
-    // this.setState({ trendingFeatures, isLoading: false });
-
-    // this.setState((prevState) => ({ myArray: [values, ...prevState.myArray] }));
-  }
-
-  dataAssigning = (trendingFeatures) => {
-    console.log('122', trendingFeatures);
-    let tempList = [];
-    const data = [trendingFeatures];
-
-    for (var i = 0; i < 10; i++) {
-      // this.setState((prevState) => ({
-      //   trendingFeatures: [this.state.recivedData.indexOf(i), ...prevState.trendingFeatures],
-      // }));
-      // this.setState({
-      //   trendingFeatures: [...this.state.trendingFeatures, 'item'],
-      // });
-      // this.setState({
-      //   trendingFeatures: this.state.trendingFeatures.concat('new value'),
-      // });
-      // this.setState({ trendingFeatures: [...this.state.trendingFeatures, 'new_value'] });
-      // this.setState((previousState) => ({
-      //   trendingFeatures: [...previousState.trendingFeatures, 'new value'],
-      // }));
-      // this.setState({
-      //   trendingFeatures: [...previousState.trendingFeatures, this.state.recivedData.indexOf(i)],
-      // });
-      //tempList = [...tempList, data.];
-      //tempList = [tempList.concat(data[i])];
-      //tempList.concat(this.state.recivedData.indexOf(i));
-    }
-    console.log('13: ', tempList);
-  };
-
-  render() {
-    return (
-      <div className="main-body">
-        {this.trendingFeatures == true ? this.trendingFeatures : null}
-      </div>
-    );
-  }
-}
-=======
 const ExkeyResults = () => {
   const history = useHistory();
   const [pageLoading, setPageLoading] = useState(false);
@@ -244,6 +172,5 @@ const ExkeyResults = () => {
     </div>
   );
 };
->>>>>>> ed9b32b4b162defb553450f810a226bfe61635b5
 
 export default fromParentOnly(ExkeyResults);

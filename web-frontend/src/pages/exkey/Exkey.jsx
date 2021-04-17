@@ -17,16 +17,8 @@ const Exkey = () => {
   const otherKeywordList = [];
   const [btnLoadingState, setBtnLoadingState] = useState(false);
 
-<<<<<<< HEAD
-    this.state = {
-      trendingFeatures: {}, //trending keywords array (card left)
-      otherKeywordsList: {}, //other keywords array (card right)
-    };
-  }
-=======
   const { addToast } = useToasts();
   const history = useHistory();
->>>>>>> ed9b32b4b162defb553450f810a226bfe61635b5
 
   const routePage = () => {
     setBtnLoadingState(true);
