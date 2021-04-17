@@ -13,12 +13,17 @@ import fromParentOnly from '../../pages/wrappers/FromParentOnly';
 const ExkeyResults = () => {
   const history = useHistory();
   const [pageLoading, setPageLoading] = useState(false);
+  const [trendingFeatures, setTrend] = useState([]);
+  const [exkeyDataotherKeyword, setOther] = useState([]);
 
   useEffect(() => {
     setPageLoading(true);
     setTimeout(() => {
+      setTrend(history.location.stateTrending);
+      setOther(history.location.stateOtherKeywords);
+
       setPageLoading(false);
-    }, 600);
+    }, 500);
   }, []);
 
   // constructor(props) {
@@ -47,12 +52,6 @@ const ExkeyResults = () => {
 
   // const { trendingFeatures } = this.state;
   // const history = useHistory();
-
-  const trendingFeatures = history.location.stateTrending;
-  console.log(trendingFeatures);
-
-  const exkeyDataotherKeyword = history.location.stateOtherKeywords;
-  console.log(exkeyDataotherKeyword);
 
   return (
     <div className="main-body">
@@ -87,7 +86,7 @@ const ExkeyResults = () => {
       {pageLoading ? (
         <div className="-flex -full-width -mb-70 -mt-40">
           <div
-            style={{ marginLeft: '50%', marginTop: '10%' }}
+            style={{ marginLeft: '48%', marginTop: '10%' }}
             className=" spinner spinner-medium spinner-accent"
           ></div>
         </div>
