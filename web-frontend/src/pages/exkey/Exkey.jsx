@@ -24,52 +24,40 @@ const Exkey = () => {
     setBtnLoadingState(true);
 
     setTimeout(() => {
-      trendz().then((response) => {
-        if (response.data.status == 1) {
-          const trendingFeatures = response.data.trend;
-
-          for (const trend of trendingFeatures) {
-            trendingList.push(trend);
-          }
-        } else {
-          addToast('Something went wrong, please try again...', {
-            appearance: 'error',
-            id: 'exkey-api-error',
-          });
-          setBtnLoadingState(false);
-        }
-      }),
-        otherKeywordsTrend()
-          .then((response) => {
-            const temp = response.series;
-            if (temp.length !== 0) {
-              const otherKeywords = response.series;
-
-              for (const otherKeyword of otherKeywords) {
-                otherKeywordList.push(otherKeyword);
-              }
-
-              history.push({
-                pathname: '/analytics/exkey/results',
-                stateTrending: trendingList,
-                stateOtherKeywords: otherKeywordList,
-              });
-            } else {
-              addToast('Something went wrong, please try again...', {
-                appearance: 'error',
-                id: 'exkey-api-error',
-              });
-              setBtnLoadingState(false);
+      Promise.all([trendz(), otherKeywordsTrend()])
+        .then((res) => {
+          const trendData = res[0];
+          const keywordData = res[1];
+          const temp = keywordData.series;
+          if (trendData.data.status == 1 && temp.length !== 0) {
+            const trendingFeatures = trendData.data.trend;
+            for (const trend of trendingFeatures) {
+              trendingList.push(trend);
             }
-          })
+            const otherKeywords = keywordData.series;
+            for (const otherKeyword of otherKeywords) {
+              otherKeywordList.push(otherKeyword);
+            }
 
-          .catch((error) => {
-            setBtnLoadingState(false),
-              addToast('Data Fetching Error..! Please Try again', {
-                appearance: 'error',
-                id: 'exkey-api-error',
-              });
-          });
+            history.push({
+              pathname: '/analytics/exkey/results',
+              state: { trendList: trendingList, otherKeywords: otherKeywordList },
+            });
+          } else {
+            addToast('Something went wrong with the request!, please try again...', {
+              appearance: 'error',
+              id: 'exkey-api-error',
+            });
+            setBtnLoadingState(false);
+          }
+        })
+        .catch((error) => {
+          setBtnLoadingState(false),
+            addToast('Something went wrong! please try again...', {
+              appearance: 'error',
+              id: 'exkey-api-error',
+            });
+        });
     }, 1000);
   };
 

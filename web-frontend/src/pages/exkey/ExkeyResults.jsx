@@ -48,11 +48,9 @@ const ExkeyResults = () => {
   // const { trendingFeatures } = this.state;
   // const history = useHistory();
 
-  const trendingFeatures = history.location.stateTrending;
-  console.log(trendingFeatures);
+  const trendingFeatures = history.location.state.trendList;
 
-  const exkeyDataotherKeyword = history.location.stateOtherKeywords;
-  console.log(exkeyDataotherKeyword);
+  const exkeyDataotherKeyword = history.location.state.otherKeywords;
 
   return (
     <div className="main-body">
@@ -175,4 +173,4 @@ const ExkeyResults = () => {
   );
 };
 
-export default ExkeyResults;
+export default fromParentOnly(ExkeyResults);
