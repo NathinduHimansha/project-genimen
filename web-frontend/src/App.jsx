@@ -56,7 +56,7 @@ function App() {
           <Route path="/analytics/pssa/results" component={PssaResults} />
 
           <Route exact path="/analytics/exkey" component={EXKEY} />
-          <Route exact path="/analytics/exkey/results" component={ExkeyRESULTS} />
+          <Route path="/analytics/exkey/results" component={ExkeyRESULTS} />
 
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />

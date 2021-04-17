@@ -7,6 +7,7 @@ const base = `${BASE_URL}/analytics/exkey`;
 const http = Http(base);
 
 const exkey_mock_otherKeywords = {
+  
   series: [
     {
       data: [
@@ -62,11 +63,12 @@ const exkey_mock_otherKeywords = {
           x: 'MP Triple Rear camera',
           y: 200,
         },
+      
       ],
+      status: 1,
     },
   ],
 
-  status: 1,
     
 }
 
