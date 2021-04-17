@@ -2,7 +2,6 @@ import { BASE_URL } from './env';
 import { Http } from '../common/utils';
 import axios from 'axios';
 
-
 const base = `${BASE_URL}/analytics/exkey`;
 const http = Http(base);
 
@@ -51,24 +50,15 @@ const exkey_mock_otherKeywords = {
           y: 200,
         },
         {
-          x: 'Memory Card Supported',
-          y: 200,
-        },
-        {
-          x: 'Dual Sim port',
-          y: 200,
-        },
-        {
-          x: 'MP Triple Rear camera',
-          y: 200,
+          x: 'Notch1',
+          y: 2002,
         },
       ],
     },
   ],
 
   status: 1,
-    
-}
+};
 
 // export const getTrendingFeatures = async () => http.get();
 
