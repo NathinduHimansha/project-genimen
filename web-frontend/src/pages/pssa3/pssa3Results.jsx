@@ -136,8 +136,6 @@ const Pssa3Results = () => {
             </div>
             </div>        
             <div className=" -mt-60 -mb-40 content-padding">
-              
-            <div className="focus-card focus-info-card -mb-40">
                   
                 <div className="analytics-container cards-grid -mt-40" >
                     
@@ -158,7 +156,7 @@ const Pssa3Results = () => {
                     
 </div>
 
-                    </div>
+                    
           </div>
          </div>
         </div>
