@@ -5,9 +5,7 @@ const TreeMap = (props) => {
   const { data } = props;
 
   const state = {
-    //series: [{ data: [] }],
     treeVisibility: false,
-    //data: [],
     options: {
       tooltip: {
         enabled: true,
@@ -25,60 +23,30 @@ const TreeMap = (props) => {
           );
         },
       },
-    },
 
-    plotOptions: {
-      treemap: {
-        distributed: true, //distributed multicolour treemap
+      plotOptions: {
+        treemap: {
+          distributed: true, //distributed multicolour treemap
+        },
       },
-    },
 
-    // colors: ['#05B8CC'],
+      // colors: ['#05B8CC'],
 
-    states: {
-      hover: {
-        filter: {
-          type: 'darken', //Hovering boxes of the treemap with the dark theme
-          value: 0.55,
+      states: {
+        hover: {
+          filter: {
+            type: 'darken', //Hovering boxes of the treemap with the dark theme
+            value: 0.55,
+          },
         },
       },
     },
   };
 
-  // _isMounted = false;
-  //tree is visible if the data is loaded from the backend
-  // componentDidMount() {
-  //   this._isMounted = true;
-  //   this.setState({ treeVisibility: true });
-
-  // otherKeywordsTrend().then((response) => {
-  //   if (this._isMounted === true) {
-  //     //this.setState({ treeVisibility: true });
-  //     //this.setState({ data: response.series, treeVisibility: true });
-  //     // this.setState({ data: this.props.dataFromParent, treeVisibility: true });
-  //     // console.log('ttttt', this.props.dataFromParent);
-
-  //     console.log('ttttt13', response.series);
-  //     // this.setState({
-  //     //   series: [{ data: [this.props.dataFromParent] }],
-  //     // });
-  //     // console.log('ttttt1', this.state.data);
-  //   }
-  // });
-  // //else catch an error
-  // }
-
-  // componentWillUnmount() {
-  //   this._isMounted = false;
-  // }
-
   return (
-    // <div className="-ml-70">
-    // {this.state.treeVisibility == true && this.props.dataFromParent ? (
-    <ReactApexChart options={state.options} series={data} type="treemap" />
-    //   ) : null}
-    // </div>
+    <div>
+      <ReactApexChart options={state.options} series={data} type="treemap" />
+    </div>
   );
 };
-
 export default TreeMap;

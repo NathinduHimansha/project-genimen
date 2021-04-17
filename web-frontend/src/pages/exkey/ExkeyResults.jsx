@@ -7,7 +7,7 @@ import TreeMap from '../../components/graphs/TreeMap';
 import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
 import fire from '../../assests/fire.png';
-import { useHistory } from 'react-router';
+import { Redirect, useHistory } from 'react-router';
 import fromParentOnly from '../../pages/wrappers/FromParentOnly';
 
 const ExkeyResults = () => {
@@ -21,10 +21,9 @@ const ExkeyResults = () => {
     setTimeout(() => {
       setTrend(history.location.state.stateTrending);
       setOther(history.location.state.stateOtherKeywords);
-      console.log(history.location.stateOtherKeywords);
 
       setPageLoading(false);
-    }, 600);
+    }, 500);
   }, []);
 
   // constructor(props) {
