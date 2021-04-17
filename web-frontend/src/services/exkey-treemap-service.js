@@ -51,7 +51,7 @@ const exkey_mock_otherKeywords = {
         },
         {
           x: 'Notch1',
-          y: 2002,
+          y: 200,
         },
       ],
       status: 1,
