@@ -1,9 +1,7 @@
 from flask import Flask, request, Blueprint
-import jsons
 from analytics.model_specific.model_lexicon.model_lexicon import available_models, MODELS
 from api.common.utils import createSuccessResponse, createErrResponse
-from api.model_sentiment.service import get_model_sentiment
-
+from api.model_sentiment.service import get_model_sentiment, get_final_results
 
 model_sentiment = Blueprint('ModelSentiment', __name__, url_prefix='/api')
 
@@ -18,7 +16,8 @@ def handle_model_sentiment(model_name):
     if not is_model_valid(model_name):
         return createErrResponse("smartphone model not available !")
     if request.method == 'GET':
-        return createSuccessResponse(get_model_sentiment(model_name).__dict__)
+        model = get_model_sentiment(model_name)
+        return createSuccessResponse(get_final_results(model))
 
 @model_sentiment.route('/ModelSentiment/getmodels', methods=['GET'])
 def get_model_list():
@@ -35,4 +34,5 @@ def handle_model_sentiment_post():
     if not is_model_valid(phone):
         return createErrResponse("smartphone model not available !")
     if request.method == 'POST':
-        return createSuccessResponse(jsons.dump(get_model_sentiment(phone)))
+        model = get_model_sentiment(phone)
+        return createSuccessResponse(get_final_results(model))

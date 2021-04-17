@@ -157,7 +157,7 @@ const Login = (props) => {
                 </div>
                 <div className="login-input ">
                   <input
-                    placeholder="username/username@emai.com"
+                    placeholder="password"
                     type="password"
                     id="password"
                     className={`${passwordError ? 'error-input' : ''} -full-width`}

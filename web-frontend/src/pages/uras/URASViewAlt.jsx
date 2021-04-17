@@ -44,7 +44,7 @@ const URASViewAlt = () => {
 
       .catch((error) => {
         setBtnLoadingState(false),
-          addToast('Data Fetching Error..! Please Try again', {
+          addToast('Something went wront! please try again...', {
             appearance: 'error',
             id: 'uras-api-error',
           });
