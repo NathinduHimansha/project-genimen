@@ -10,7 +10,7 @@ function fromPraentOnly(Component) {
     const parentRoute = `/${parents.slice(0, -1).join('/')}`;
     const history = useHistory();
     if (history.location.state) {
-      return <Component />;
+      return <Component state={history.location.state} />;
     } else {
       return <Redirect to={`${parentRoute}`} />;
     }

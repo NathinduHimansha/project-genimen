@@ -53,6 +53,10 @@ const ExkeyResults = () => {
   // const { trendingFeatures } = this.state;
   // const history = useHistory();
 
+  // const trendingFeatures = history.location.state.trendList;
+
+  // const exkeyDataotherKeyword = history.location.state.otherKeywords;
+
   return (
     <div className="main-body">
       {/*align the header according to the window sizes*/}
@@ -174,4 +178,4 @@ const ExkeyResults = () => {
   );
 };
 
-export default ExkeyResults;
+export default fromParentOnly(ExkeyResults);
