@@ -100,7 +100,7 @@ const Pssa3Results = () => {
       
       <div className="app-heading-header content-padding -flex -flex-col">
         <div className="-mb-30">
-        <NavLink to="/analytics/pssa3" className="-text-decoration-none">
+        <NavLink to="/analytics/pssa" className="-text-decoration-none">
             <IconHeading size="extra-small" iconUrl="var(--arrow-back-icon)">
               <h4 className="heading4 -no-margin">
                 <span className="header-go-back">Back</span>
