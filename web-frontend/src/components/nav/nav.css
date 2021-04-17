@@ -5,6 +5,7 @@
   margin-left: var(--nav-width);
   animation: slideInIn 400ms ease forwards;
 }
+
 @keyframes slideInIn {
   0% {
     transform: translateX(-500px);
