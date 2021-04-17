@@ -1,5 +1,6 @@
 from flask import Flask, request, Blueprint
 from analytics.model_specific.model_lexicon.model_lexicon import available_models, MODELS
+from analytics.model_specific.smartphone_model.phone_model import Model
 from api.common.utils import createSuccessResponse, createErrResponse
 from api.model_sentiment.service import get_model_sentiment, get_final_results
 
@@ -34,5 +35,6 @@ def handle_model_sentiment_post():
     if not is_model_valid(phone):
         return createErrResponse("smartphone model not available !")
     if request.method == 'POST':
+        model = Model
         model = get_model_sentiment(phone)
         return createSuccessResponse(get_final_results(model))
