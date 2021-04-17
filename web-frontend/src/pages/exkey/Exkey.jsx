@@ -53,7 +53,7 @@ const Exkey = () => {
         })
         .catch((error) => {
           setBtnLoadingState(false),
-            addToast('Something went wrong! please try again...', {
+            addToast('Data Fetching error...Please try again !', {
               appearance: 'error',
               id: 'exkey-api-error',
             });

@@ -27,11 +27,10 @@ class TreeMapTest extends React.Component {
             );
           },
         },
-      },
-
-      plotOptions: {
-        treemap: {
-          distributed: true, //distributed multicolour treemap
+        plotOptions: {
+          treemap: {
+            distributed: true, //distributed multicolour treemap
+          },
         },
       },
 
@@ -40,7 +39,7 @@ class TreeMapTest extends React.Component {
       states: {
         hover: {
           filter: {
-            type: 'darken', //Hovering boxes of the treemap with the dark theme
+            type: 'dark', //Hovering boxes of the treemap with the dark theme
             value: 0.55,
           },
         },
@@ -84,7 +83,6 @@ class TreeMapTest extends React.Component {
             type="treemap"
           />
         ) : null}
-        //{' '}
       </div>
     );
   }

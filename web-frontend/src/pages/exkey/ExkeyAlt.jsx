@@ -64,7 +64,7 @@ function ExkeyAlt() {
         <div className="-mt-60">
           <div
             className="analytics-container cards-split-Elements -mt-40"
-            style={{ marginTop: '-5%' }}
+            style={{ marginTop: '-7%' }}
           >
             {/*hidding the left card at the begining of the exkey page which represents the treemap*/}
             {/*making visible the colurful mobile phone image at the exkey home page*/}
@@ -79,7 +79,7 @@ function ExkeyAlt() {
 
             {/*hidding the right card at the begining of the exkey page which represents the treemap*/}
             {/*trend description which is dispplayed on the right side of the begining of the exkey page*/}
-            <div className="trend_description_align">
+            <div className="trend_description_align" style={{ marginTop: '13%' }}>
               <div className="focus-card focus-info-card -mb-40">
                 <img
                   src={lightBulb}
@@ -98,10 +98,22 @@ function ExkeyAlt() {
                   </span>
                 </div>
                 <div style={{ marginTop: '-3%', textAlign: 'justify' }}>
-                  Trend analysis will help you to grow your market level by identifying areas of
+                  <ul style={{ listStyleType: 'square' }}>
+                    <li>
+                      Trend analysis will help you to grow your market level by identifying areas of
+                      your product willing to design that are performing well as well as areas that
+                      are not
+                    </li>
+                    <br></br>
+                    <li>
+                      Trend analysis provides useful evidence to help you make informed decisions
+                      about your long-term plan and ways to future-proof your product.
+                    </li>
+                  </ul>
+                  {/* Trend analysis will help you to grow your market level by identifying areas of
                   your product willing to design that are performing well as well as areas that are
                   not. As a result, it provides useful evidence to help you make informed decisions
-                  about your long-term plan and ways to future-proof your product.
+                  about your long-term plan and ways to future-proof your product. */}
                 </div>
               </div>
               <div className="analyze_again">

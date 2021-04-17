@@ -8,6 +8,7 @@ const BarGraph = (props) => {
       <span className="barchartKeyword">{keyword}</span>
       <div
         className="progress-percentage"
+        //#83d7ee
         style={{ height: value + '%', backgroundColor: '#96DDE7' }}
       ></div>
       <h2 className="heading3 -medium -no-margin feature-type-heading">

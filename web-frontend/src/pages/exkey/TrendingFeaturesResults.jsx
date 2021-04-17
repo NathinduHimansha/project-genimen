@@ -20,6 +20,8 @@ function TrendingFeaturesResults() {
 
   useEffect(() => {
     const recivedData = history.location.state;
+    console.log('a');
+    console.log(recivedData);
 
     const tempOtherFeatures = [];
     for (var i = 9; i < recivedData.data.length; i++) {
@@ -134,7 +136,7 @@ function TrendingFeaturesResults() {
 
                 {/*Treemap which is imported from the gra[h folder which represents the similar keywords*/}
                 <div className="treeMap_align">
-                  {viewStatus ? <TreeMap data={otherKeywordsList} /> : null}
+                  {viewStatus ? <TreeMap dataFromParent={otherKeywordsList} /> : null}
                 </div>
               </div>
             </div>
@@ -145,4 +147,4 @@ function TrendingFeaturesResults() {
   );
 }
 
-export default TrendingFeaturesResults;
+export default fromParentOnly(TrendingFeaturesResults);
