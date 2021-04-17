@@ -29,6 +29,9 @@ class Model:
     def set_model_name(self, name):
         self.model = name
 
+    def get_model_name(self):
+        return self.model
+
     def get_camera_pos(self):
         return self.camera_pos
 
@@ -81,6 +84,9 @@ class Model:
     def set_display_pol(self, score):
         self.display_pol = score
 
+    def get_display_pol(self):
+        return self.display_pol
+
     def get_display_count(self):
         return self.display_count
 
@@ -106,6 +112,9 @@ class Model:
 
     def set_battery_pol(self, score):
         self.battery_pol = score
+
+    def get_battery_pol(self):
+        return self.battery_pol
 
     def get_battery_count(self):
         return self.battery_count
@@ -133,6 +142,9 @@ class Model:
     def set_face_recognition_pol(self, score):
         self.face_recognition_pol = score
 
+    def get_face_recognition_pol(self):
+        return self.face_recognition_pol
+
     def get_face_recognition_count(self):
         return self.face_recognition_count
 
@@ -159,6 +171,9 @@ class Model:
     def set_finger_print_pol(self, score):
         self.finger_print_pol = score
 
+    def get_finger_print_pol(self):
+        return self.finger_print_pol
+
     def get_finger_print_count(self):
         return self.finger_print_count
 
@@ -184,6 +199,9 @@ class Model:
 
     def set_speakers_pol(self, score):
         self.speakers_pol = score
+
+    def get_speakers_pol(self):
+        return self.speakers_pol
 
     def get_speaker_count(self):
         return self.speakers_count

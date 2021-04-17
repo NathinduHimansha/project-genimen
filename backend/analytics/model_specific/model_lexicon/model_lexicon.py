@@ -184,3 +184,5 @@ available_models = {
     "xiaomi": xiaomi_models,
     "iphone": iphone_models
 }
+
+feature_types = ["battery", "camera", "display", "face recognition", "finger print", "speaker"]
