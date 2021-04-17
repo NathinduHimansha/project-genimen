@@ -19,6 +19,7 @@ function UrasInputResults() {
   //store data passed from uras input view
   useEffect(() => {
     const urasData = history.location.state.data;
+    console.log('1:', urasData);
     setFetchedData(urasData);
     setViewState(true);
   }, []);
@@ -37,11 +38,7 @@ function UrasInputResults() {
   return (
     <div style={{ margin: '5% 10%' }}>
       <div style={{ margin: '5% 0% 10% 0%' }}>
-      <Button
-                onClick={() => routeBack()}
-                iconSrc={leftarrow}
-                iconSide="left"
-              />   
+        <Button onClick={() => routeBack()} iconSrc={leftarrow} iconSide="left" />
       </div>
       {viewState ? (
         <div>
@@ -109,11 +106,7 @@ function UrasInputResults() {
         </div>
       ) : null}
       <div style={{ margin: '5% 0% 10% 0%' }}>
-      <Button
-                onClick={() => routeBack()}
-                iconSrc={leftarrow}
-                iconSide="left"
-              />   
+        <Button onClick={() => routeBack()} iconSrc={leftarrow} iconSide="left" />
       </div>
     </div>
   );
