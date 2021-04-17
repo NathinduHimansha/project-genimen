@@ -112,13 +112,13 @@ const Pssa3Results = () => {
       </div>
       <div className=" -mt-60 -mb-40 content-padding">
         <FancyHeading decoratorClassName="fancy-heading2-decorator">
-          <h2 className="heading2 -medium -no-margin heading2-sep-margin">
+          
           {features.filter(feature => feature.feature == "display").map(filteredmodel => (
-                          
-                          filteredmodel.model
-                        
+                          <h2 className="heading2 -medium -no-margin heading2-sep-margin">
+                          {filteredmodel.model}
+                          </h2>
                         ))}
-          </h2>
+          
         </FancyHeading>
         <hr className="heading-sep" />
       </div>
@@ -129,6 +129,10 @@ const Pssa3Results = () => {
               <span className="-bold -normal">INFO: </span>This will give you the sentiment of the features of 
               the selected smart phone and an overall score for the feature
             </div>
+            </div>
+            </div>        
+            <div className=" -mt-60 -mb-40 content-padding">
+            <div className="focus-card focus-info-card -mb-40">    
                 <div className="analytics-container cards-grid -mt-40" >
                     
                        {features.map((feature,i) => (
@@ -146,14 +150,10 @@ const Pssa3Results = () => {
                         ))}
                         
                     
-
+</div>
                     </div>
-                
-              </div>
-              
-            </div>
           </div>
-         
+         </div>
         </div>
       
   );
