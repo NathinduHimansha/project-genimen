@@ -17,16 +17,14 @@ function ExkeyAlt() {
   const history = useHistory();
   const { addToast } = useToasts();
 
-  const [trendingFeatures, setTrendingFeatures] = useState({});
-  const [otherKeywordsList, setOtherKeywordsList] = useState({});
   const [loading, setLoading] = useState(false);
 
   const getTrendingFeatures = () => {
-    setLoading = true;
+    setLoading(true);
     trendingFeaturesData()
       .then((response) => {
         history.push({
-          pathname: '/analytics/exkey/results',
+          pathname: '/test5',
           state: response,
         });
       })

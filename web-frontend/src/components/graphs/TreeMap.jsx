@@ -7,8 +7,9 @@ class TreeMap extends React.Component {
     super(props);
 
     this.state = {
+      //series: [{ data: [] }],
       treeVisibility: false,
-      data: [],
+      //data: [],
       options: {
         tooltip: {
           enabled: true,
@@ -51,17 +52,23 @@ class TreeMap extends React.Component {
   //tree is visible if the data is loaded from the backend
   componentDidMount() {
     this._isMounted = true;
-    otherKeywordsTrend()
-      .then((response) => {
-        if (this._isMounted === true) {
-          this.setState({ data: response.series, treeVisibility: true });
-        }
-      })
-      //else catch an error
-      .catch((error) => {
-        if (error) {
-        }
-      });
+    this.setState({ treeVisibility: true });
+
+    // otherKeywordsTrend().then((response) => {
+    //   if (this._isMounted === true) {
+    //     //this.setState({ treeVisibility: true });
+    //     //this.setState({ data: response.series, treeVisibility: true });
+    //     // this.setState({ data: this.props.dataFromParent, treeVisibility: true });
+    //     // console.log('ttttt', this.props.dataFromParent);
+
+    //     console.log('ttttt13', response.series);
+    //     // this.setState({
+    //     //   series: [{ data: [this.props.dataFromParent] }],
+    //     // });
+    //     // console.log('ttttt1', this.state.data);
+    //   }
+    // });
+    // //else catch an error
   }
 
   componentWillUnmount() {
@@ -70,9 +77,13 @@ class TreeMap extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.state.treeVisibility == true ? (
-          <ReactApexChart options={this.state.options} series={this.state.data} type="treemap" />
+      <div className="-ml-70">
+        {this.state.treeVisibility == true && this.props.dataFromParent ? (
+          <ReactApexChart
+            options={this.state.options}
+            series={this.props.dataFromParent.series}
+            type="treemap"
+          />
         ) : null}
       </div>
     );

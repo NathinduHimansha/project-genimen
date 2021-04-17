@@ -8,6 +8,7 @@ import Signup from './pages/signup/signup';
 import EXKEY from './pages/exkey/Exkey';
 import ExkeyResult from './pages/exkey/ExkeyResults';
 import ExkeyAlt from './pages/exkey/ExkeyAlt';
+import test5 from './pages/exkey/TrendingFeaturesResults';
 
 import Examples from './pages/experiment/Examples';
 
@@ -66,6 +67,7 @@ function App() {
           <Route path="/test2" component={HomeStart} />
           <Route path="/test3" component={MenuCard} />
           <Route path="/test4" component={ExkeyAlt} />
+          <Route path="/test5" component={test5} />
           <Route path="/analytics" component={HomeStart} />
 
           <Route exact path="/" component={() => <Redirect to="/index" />} />
