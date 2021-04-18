@@ -20,7 +20,7 @@ def handle_model_sentiment(model_name):
         model = get_model_sentiment(model_name)
         return createSuccessResponse(get_final_results(model))
 
-@model_sentiment.route('/ModelSentiment/getmodels', methods=['GET'])
+@model_sentiment.route('/ModelSentiment/models', methods=['GET'])
 def get_model_list():
     if request.method == 'GET':
         return createSuccessResponse(available_models)
