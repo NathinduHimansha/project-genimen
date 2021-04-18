@@ -168,7 +168,7 @@ console.log(bestPhone+"abi"+worstPhone)
                         ></SentimentRankCard>
                           
                         ))}
-                    
+                    <div className="analytics-container cards-grid -mt-40" ></div>
                        {features.map((feature,i) => (
                            
                       <SentimentResultCard
