@@ -169,20 +169,20 @@ xiaomi_models = ['Redmi 9', 'Redmi 9A', 'Redmi 9C', 'Redmi Note 8', 'Redmi Note 
 
 iphone_models = ['iPhone 11', 'iPhone 7 Plus', 'iPhone 7', 'iPhone 8 Plus', 'iPhone 8', 'iPhone SE', 'iPhone X', 'iPhone XR', 'iPhone XS Max', 'iPhone XS']
 
-available_models = {
-    "samsung": samsung_models,
-    "oneplus": oneplus_models,
-    "pixel": pixel_models,
-    "huwawei": huwawei_models,
-    "realme": realme_models,
-    "sony": sony_models,
-    "asus": asus_models,
-    "htc": htc_models,
-    "lg": lg_models,
-    "nokia": nokia_models,
-    "motorola": motorola_models,
-    "xiaomi": xiaomi_models,
-    "iphone": iphone_models
-}
+available_models = [
+    {"brand" : "samsung", "model" : samsung_models},
+    {"brand" : "oneplus", "model" : oneplus_models},
+    {"brand" : "pixel", "model" : pixel_models},
+    {"brand" : "huwawei", "model" : huwawei_models},
+    {"brand" : "realme", "model" : realme_models},
+    {"brand" : "sony", "model" : sony_models},
+    {"brand" : "asus", "model" : asus_models},
+    {"brand": "htc", "model": htc_models},
+    {"brand": "lg", "model": lg_models},
+    {"brand" : "nokia", "model" : nokia_models},
+    {"brand" : "motorola", "model" : motorola_models},
+    {"brand" : "xiaomi", "model" : xiaomi_models},
+    {"brand" : "iphone", "model" : iphone_models},
+]
 
 feature_types = ["battery", "camera", "display", "face recognition", "finger print", "speaker"]
