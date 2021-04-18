@@ -34,7 +34,7 @@ const routes = [
     title: 'About',
     icon: about,
     subMenu: [],
-    path: '/about',
+    path: '/aboutus',
   },
 ];
 

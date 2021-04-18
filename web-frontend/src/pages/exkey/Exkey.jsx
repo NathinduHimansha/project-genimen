@@ -13,47 +13,60 @@ import { useToasts } from 'react-toast-notifications';
 import { useHistory } from 'react-router';
 
 const Exkey = () => {
-  const trendingList = [];
-  const otherKeywordList = [];
-  const [btnLoadingState, setBtnLoadingState] = useState(false);
+  const trendingList = []; //list which contains all the trending features
+  const otherKeywordList = []; //list which contains other keywords
+  const [btnLoadingState, setBtnLoadingState] = useState(false); //intially button loading state is false
 
-  const { addToast } = useToasts();
-  const history = useHistory();
+  const { addToast } = useToasts(); //initalising toast notifications
+  const history = useHistory(); //history which saves previous information
 
   const routePage = () => {
-    setBtnLoadingState(true);
+    //button click action
+    setBtnLoadingState(true); //if the button click, make the button loading state true
 
     setTimeout(() => {
-      Promise.all([trendz(), otherKeywordsTrend()])
+      //set timeout for 1000 ms
+      Promise.all([trendz(), otherKeywordsTrend()]) //returns a single promise that resolves to an array from all the promises included
         .then((res) => {
-          const trendData = res[0];
-          const keywordData = res[1];
-          const temp = keywordData.series;
+          const trendData = res[0]; //taking the column 0 from the array which contains the trending features
+          const keywordData = res[1]; //taking the column 1 from the array which contains the other keywords
+          const temp = keywordData.series; //string the series array which was taken from the keyword data array
           if (trendData.data.status == 1 && temp.length !== 0) {
-            const trendingFeatures = trendData.data.trend;
+            //if the status is 1 from trend data service and if the trend data array is not equal to 0
+            const trendingFeatures = trendData.data.trend; //adding the trending data captured from the service into a constant
+
+            //for loop which will add the trending data taken from the service into to a list
             for (const trend of trendingFeatures) {
               trendingList.push(trend);
             }
-            const otherKeywords = keywordData.series;
+            const otherKeywords = keywordData.series; //adding the other keywords data captures from the service into a constant
+
+            //for loop which will add the other keywords taken from the service into a list
             for (const otherKeyword of otherKeywords) {
               otherKeywordList.push(otherKeyword);
             }
 
+            //push both the lists to the exkey/result page
             history.push({
               pathname: '/analytics/exkey/results',
               state: { stateTrending: trendingList, stateOtherKeywords: otherKeywordList },
             });
+
+            //else if the the the status of the service is not equal to 1 and if the length of the contsnt is not equal to 0
           } else {
+            //toast notification will be displayed to the user which represents an error
             addToast('Something went wrong with the request!, please try again...', {
               appearance: 'error',
               id: 'exkey-api-error',
             });
-            setBtnLoadingState(false);
+            setBtnLoadingState(false); //making the button loading state false
           }
         })
+        //if the data is not fetched properly
         .catch((error) => {
-          setBtnLoadingState(false),
+          setBtnLoadingState(false), //making the button loading state false
             addToast('Data Fetching error...Please try again !', {
+              //and giving a toast notification to the user to try again
               appearance: 'error',
               id: 'exkey-api-error',
             });
@@ -62,6 +75,7 @@ const Exkey = () => {
   };
 
   return (
+    //page body sliding animation
     <div className="navbar-page-container -mb-40" style={{ margin: '0%' }}>
       <div className="main-body">
         {/*align the header according to the window sizes*/}
@@ -92,8 +106,7 @@ const Exkey = () => {
               className="analytics-container cards-split-Elements -mt-40"
               style={{ marginTop: '-5%' }}
             >
-              {/*hidding the left card at the begining of the exkey page which represents the treemap*/}
-              {/*making visible the colurful mobile phone image at the exkey home page*/}
+              {/*colourful mobilephone image which is in the home page of exkey*/}
               <div className="analysing_banner">
                 <img
                   className="colourfulMobilePhone"
@@ -105,8 +118,7 @@ const Exkey = () => {
 
               {/*starting of the card right elements*/}
 
-              {/*hidding the right card at the begining of the exkey page which represents the treemap*/}
-              {/*trend description which is dispplayed on the right side of the begining of the exkey page*/}
+              {/*trend description which is displayed on the right side of the begining of the exkey page*/}
               <div className="trend_description_align">
                 <div className="focus-card focus-info-card -mb-40">
                   <img
