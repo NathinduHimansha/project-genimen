@@ -4,7 +4,7 @@ import './exkey.css';
 
 import IconHeading from '../../components/text/IconHeading';
 import Bargraph from '../../components/graphs/BarGraph';
-import TreeMap from '../../components/graphs/TreeMap';
+import TreeMap from '../../components/graphs/TreeMapTest';
 import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
 import fire from '../../assests/fire.png';
@@ -20,6 +20,8 @@ function TrendingFeaturesResults() {
 
   useEffect(() => {
     const recivedData = history.location.state;
+    console.log('a');
+    console.log(recivedData);
 
     const tempOtherFeatures = [];
     for (var i = 9; i < recivedData.data.length; i++) {
@@ -36,7 +38,7 @@ function TrendingFeaturesResults() {
   }, [history.location.state]);
 
   return (
-    <div className="-mr-70">
+    <div className="-mr-70" style={{ margin: '0%' }}>
       {/*align the header according to the window sizes*/}
       <div className="heading_align">
         <div className="app-heading-header content-padding -flex -flex-col">
@@ -145,4 +147,4 @@ function TrendingFeaturesResults() {
   );
 }
 
-export default TrendingFeaturesResults;
+export default fromParentOnly(TrendingFeaturesResults);

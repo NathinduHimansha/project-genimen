@@ -68,9 +68,9 @@ function ExkeyAlt() {
           >
             {/*hidding the left card at the begining of the exkey page which represents the treemap*/}
             {/*making visible the colurful mobile phone image at the exkey home page*/}
-            <div className="analysing_banner">
+            <div className="analysing_banner" style={{ marginLeft: '-1%' }}>
               <img
-                style={{ width: '82%', height: '90%', opacity: '0.8' }}
+                style={{ width: '65%', height: '90%', opacity: '0.8' }}
                 src={colourful_mobilePhone}
               />
             </div>
@@ -79,7 +79,7 @@ function ExkeyAlt() {
 
             {/*hidding the right card at the begining of the exkey page which represents the treemap*/}
             {/*trend description which is dispplayed on the right side of the begining of the exkey page*/}
-            <div className="trend_description_align">
+            <div className="trend_description_align" style={{ marginLeft: '-35%', width: '95%' }}>
               <div className="focus-card focus-info-card -mb-40">
                 <img
                   src={lightBulb}

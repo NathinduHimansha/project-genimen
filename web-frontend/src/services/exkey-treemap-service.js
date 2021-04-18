@@ -50,8 +50,12 @@ const exkey_mock_otherKeywords = {
           y: 200,
         },
         {
-          x: 'Notch1',
-          y: 2002,
+          x: 'fingerprint',
+          y: 200,
+        },
+        {
+          x: 'display',
+          y: 200,
         },
       ],
       status: 1,
