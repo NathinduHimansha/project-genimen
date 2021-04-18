@@ -24,7 +24,7 @@ const exkey_mock = {
       },
       {
         "keyword": "battery",
-        "value": 0.7662529209188589
+        "value": 22.7662529209188589
       },
       {
         "keyword": "screen",

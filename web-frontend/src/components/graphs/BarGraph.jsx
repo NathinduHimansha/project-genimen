@@ -6,19 +6,23 @@ const BarGraph = (props) => {
   const percentageValue = value * 10;
   var tempPercentageValue = 0;
 
+  // if (percentageValue < 10) {
+  //   tempPercentageValue = (percentageValue * 10) / 2 - 5;
+  // }
+  // if (percentageValue > 10) {
+  //   tempPercentageValue = percentageValue;
+  // }
+
   if (percentageValue < 10) {
-    tempPercentageValue = (percentageValue * 10) / 2 - 5;
+    tempPercentageValue = (percentageValue * 10) / 2;
   }
-  if (percentageValue > 10) {
-    tempPercentageValue = percentageValue;
+  if (percentageValue > 10 && percentageValue < 50) {
+    tempPercentageValue = percentageValue * 2;
   }
 
-  // if (value > 1) {
-  //   lessPercentage = value * 10;
-  // }
-  // if (value < 1) {
-  //   lessPercentage = value * 100 - 51;
-  // }
+  if (percentageValue > 50) {
+    tempPercentageValue = 100;
+  }
 
   const roundedValue = Math.round(tempPercentageValue);
 
