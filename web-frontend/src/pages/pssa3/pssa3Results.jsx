@@ -99,7 +99,18 @@ const Pssa3Results = () => {
       feature.feature_pol    
 )))
 console.log(bestPhone+"abi"+worstPhone)
-  
+const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+const capitalizePhoneModels = (model) => {
+  if (model) {
+    let modelNameStrList = model.split('-');
+    modelNameStrList = modelNameStrList.map((model) => {
+      return capitalize(model);
+    });
+    return modelNameStrList.join(' ');
+  }
+};
 
   return (
     <div className="navbar-page-container -mb-40">
@@ -153,7 +164,7 @@ console.log(bestPhone+"abi"+worstPhone)
                   polarity="pos"
                   polarityPerc={filteredmodel.feature_pol}
                   description={"Best feature of the selected smart phone"+filteredmodel.model}
-                  label={filteredmodel.feature}
+                  label={capitalizePhoneModels(filteredmodel.feature)}
                  
                 ></SentimentRankCard>
                           
@@ -163,7 +174,7 @@ console.log(bestPhone+"abi"+worstPhone)
                           <SentimentRankCard
                           polarity="neg"
                           polarityPerc={filteredmodel.feature_pol}
-                          label={(filteredmodel.feature)}
+                          label={capitalizePhoneModels(filteredmodel.feature)}
                           description={"Worst feature of the selected smart phone"+filteredmodel.model}
                         ></SentimentRankCard>
                           
@@ -173,7 +184,7 @@ console.log(bestPhone+"abi"+worstPhone)
                            
                       <SentimentResultCard
                          key={`sentiment-results-card${i}`}
-                        heading={feature.feature}
+                        heading={capitalizePhoneModels(feature.feature)}
                         headingIcon="var(--phone-icon)"
                         reviewCount={feature.feature_count}
                         reviewCountLable="Reviews Analysed"
