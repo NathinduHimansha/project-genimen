@@ -61,35 +61,8 @@ const Pssa3View = () => {
   const [p,setP]=useState("");
   const [q,setQ]=useState("");
   
-  const [features, setFeatures] = useState([
-    {
-      brand:'asus',
-      model:[],},
-      {brand:"htc",
-      model: []},
-      {brand:"huwawei",
-      model: []},
-      {brand:"iphone",
-      model: []},
-      {brand:"lg",
-      model: []},
-      {brand:"motorola",
-      model: []},
-      {brand:"nokia",
-      model: []},
-      {brand:"oneplus",
-      model: []},
-      {brand:"pixel",
-      model: []},
-      {brand:"realme",
-      model: []},
-      {brand:"samsung",
-      model: []},
-      {brand:"sony",
-      model: []},
-      {brand:"xiaomi",model: []},
-    
-  ]); //available fetures in backend
+  const [features, setFeatures] = useState([]); //available fetures in backend
+
   const [selectedFeatures, setSelectedFeatures] = useState({}); //selected features by the user
   const appendSelectedFeatures = (feature, type) => {
     console.log(feature, type);
@@ -113,7 +86,7 @@ const Pssa3View = () => {
     setTimeout(() => {
       getPhones()
         .then((response) => {
-          setFeatures(response.data);
+          setFeatures(response.data.data);
           setPageLoading(false);
         })
         .catch((error) => {
@@ -197,7 +170,7 @@ const Pssa3View = () => {
                         {features.map((feature, i) => (
                            
                           <option key={feature.brand} value={feature.brand}>
- 
+                            
                            {feature.brand}
                           </option>
                         ))}

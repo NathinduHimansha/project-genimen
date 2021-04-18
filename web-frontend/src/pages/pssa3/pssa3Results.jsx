@@ -92,7 +92,13 @@ const Pssa3Results = () => {
       console.log(pssaData)
     
  });
-
+ const bestPhone=Math.max.apply(Math, features.map((feature,i) => (
+                      feature.feature_pol    
+    )))
+    const worstPhone=Math.min.apply(Math, features.map((feature,i) => (
+      feature.feature_pol    
+)))
+console.log(bestPhone+"abi"+worstPhone)
   
 
   return (
@@ -132,6 +138,7 @@ const Pssa3Results = () => {
               
               <span className="-bold -normal" >INFO: </span>This will give you the sentiment of the features of 
               the selected smart phone and an overall score for the features
+                
             </div>
             
             </div>
@@ -140,6 +147,27 @@ const Pssa3Results = () => {
             <div className=" -mt-60 -mb-40 content-padding">
                   
                 <div className="analytics-container cards-grid -mt-40" >
+                {features.filter(feature => feature.feature_pol == bestPhone).map(filteredmodel => (
+                          
+                          <SentimentRankCard
+                  polarity="pos"
+                  polarityPerc={filteredmodel.feature_pol}
+                  description={"Best feature of the selected smart phone"+filteredmodel.model}
+                  label={filteredmodel.feature}
+                 
+                ></SentimentRankCard>
+                          
+                        ))}
+                        {features.filter(feature => feature.feature_pol == worstPhone).map(filteredmodel => (
+                          
+                          <SentimentRankCard
+                          polarity="neg"
+                          polarityPerc={filteredmodel.feature_pol}
+                          label={(filteredmodel.feature)}
+                          description={"Worst feature of the selected smart phone"+filteredmodel.model}
+                        ></SentimentRankCard>
+                          
+                        ))}
                     
                        {features.map((feature,i) => (
                            
