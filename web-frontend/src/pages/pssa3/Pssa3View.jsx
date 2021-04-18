@@ -175,7 +175,7 @@ const Pssa3View = () => {
                           </option>
                         ))}
                       </select>
-                      <hr/>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <label htmlFor="select-model-type" className="select-label">
                           <h2 className="heading3 -regular -no-margin feature-type-heading">
                           <IconHeading size="small" iconUrl={getIconUrl("display")}>
