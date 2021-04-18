@@ -44,7 +44,7 @@ const features_mock = {
     },
     {
       x: 'Screen',
-      y: 20,
+      y: 200,
     },
     {
       x: 'great camera',

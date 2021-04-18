@@ -23,12 +23,14 @@ import URASViewAlt from './pages/uras/URASViewAlt';
 import UrasResultsAlt from './pages/uras/UrasResultsAlt';
 import Store from './components/sate_management/GlobalStore';
 import { getTokenPayload, isLoggedIn } from './common/utils';
-import PssaView from './pages/pssa2/pssaView';
-import PssaResults from './pages/pssa2/pssaResults';
+import Pssa3View from './pages/pssa3/Pssa3View';
+import Pssa3Results from './pages/pssa3/pssa3Results';
 import ScrollUp from './components/scrollupbutton/ScrollUp';
 import protect from './pages/wrappers/ProtectedRouteWrapper';
 import testcard from './pages/experiment/testcard';
 import MenuCard from './components/menucard/MenuCard';
+
+import AboutUs from './pages/aboutUs/AboutUs';
 
 function App() {
   const [state, dispatch] = useContext(Context);
@@ -48,17 +50,17 @@ function App() {
         <GenimenSideBar></GenimenSideBar>
         <Switch>
           <Route exact path="/index" component={HomePage} />
-          <Route path="/about" component={Login} />
+          <Route path="/aboutus" component={AboutUs} />
 
           <Route exact path="/analytics/uras" component={protect(URASViewAlt)} />
           <Route path="/analytics/uras/results" component={protect(UrasResultsAlt)} />
           {/* <Route path="/analytics/uras/results" exact component={UrasInputResults} /> */}
           {/* <Route path="/analytics/uras" component={UrasUserInputView} /> */}
-          <Route exact path="/analytics/pssa" component={PssaView} />
-          <Route path="/analytics/pssa/results" component={PssaResults} />
+          <Route exact path="/analytics/pssa" component={Pssa3View} />
+          <Route path="/analytics/pssa/results" component={Pssa3Results} />
 
           <Route exact path="/analytics/exkey" component={EXKEY} />
-          <Route exact path="/analytics/exkey/results" component={ExkeyResult} />
+          <Route path="/analytics/exkey/results" component={ExkeyResult} />
 
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
@@ -68,6 +70,7 @@ function App() {
           <Route path="/test3" component={MenuCard} />
           <Route path="/test4" component={ExkeyAlt} />
           <Route path="/test5" component={test5} />
+
           <Route path="/analytics" component={HomeStart} />
 
           <Route exact path="/" component={() => <Redirect to="/index" />} />

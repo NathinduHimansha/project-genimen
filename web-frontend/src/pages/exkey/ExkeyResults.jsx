@@ -12,7 +12,7 @@ import fromParentOnly from '../../pages/wrappers/FromParentOnly';
 
 const ExkeyResults = () => {
   const history = useHistory();
-  const [pageLoading, setPageLoading] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
   const [trendingFeatures, setTrend] = useState([]);
   const [exkeyDataotherKeyword, setOther] = useState([]);
 
@@ -23,7 +23,7 @@ const ExkeyResults = () => {
       setOther(history.location.state.stateOtherKeywords);
 
       setPageLoading(false);
-    }, 500);
+    }, 600);
   }, []);
 
   // constructor(props) {
@@ -74,7 +74,7 @@ const ExkeyResults = () => {
               </NavLink>
             </div>
             {/*main topic of the heading*/}
-            <h2 className="fancy-heading -no-margin">RESULTS</h2>
+            <h2 className="fancy-heading -no-margin">TRENDING RESULTS</h2>
           </div>
           <div className=" -mt-60 -mb-90 content-padding">
             <FancyHeading decoratorClassName="fancy-heading2-decorator">
