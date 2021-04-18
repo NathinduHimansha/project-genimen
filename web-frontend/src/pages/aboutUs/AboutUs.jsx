@@ -18,16 +18,15 @@ const AboutUs = () => {
               <CurrentLocation></CurrentLocation>
             </div>
             <h2 className="fancy-heading -no-margin" style={{ fontWeight: 'bold' }}>
-              TEAM STORY
+              JOURNEY OF TEAM ZERO ONE
             </h2>
           </div>
-          <div className=" -mt-60 -mb-90 content-padding">
-            <FancyHeading decoratorClassName="fancy-heading2-decorator">
-              <h2 className="heading2 -medium -no-margin heading2-sep-margin">Devs'</h2>
-            </FancyHeading>
-            {/*line seperator after the subtopic*/}
-            <hr className="heading-sep" />
-          </div>
+          {/* <p className="labelAbout">Our Story</p>
+          <h1 className="aboutDescripHeading">GET TO KNOW ABOUT PROJECT GENIMEN</h1>
+          <p className="aboutSubDescrip" style={{ marginLeft: '10%' }}>
+            Headquartered in Sri Lanka with offices in Oslo, Norway, 99x is one of Asia’s best
+            workplaces and a global leader in agile product engineering and technology innovation.
+          </p> */}
         </div>
 
         <div className="bodySplitAbout">
@@ -94,10 +93,10 @@ const AboutUs = () => {
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
                     <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>mike@example.com</p>
+                    <p>tharindu.2018367@iit.ac.lk</p>
                   </div>
                   <p className="platformlogoAlign">
-                    <a href="https://www.google.com">
+                    <a href="https://twitter.com/andrewdesilvasl">
                       <img
                         src={twitter}
                         style={{ width: '25%', height: '25%', borderRadius: '50%' }}
@@ -105,7 +104,7 @@ const AboutUs = () => {
                       ></img>
                     </a>
 
-                    <a href="https://www.google.com">
+                    <a href="https://www.linkedin.com/in/tharindu-de-silva-50895717a/">
                       <img
                         src={linkedin}
                         style={{ width: '25%', height: '25%' }}
@@ -113,7 +112,7 @@ const AboutUs = () => {
                       ></img>
                     </a>
 
-                    <a href="https://www.google.com">
+                    <a href="https://github.com/mr-desilva">
                       <img
                         src={github}
                         style={{ width: '25%', height: '25%' }}
@@ -171,7 +170,6 @@ const AboutUs = () => {
                 </div>
               </div>
             </div>
-
             <div className="columnAbout">
               <div className="cardAbout">
                 <img
