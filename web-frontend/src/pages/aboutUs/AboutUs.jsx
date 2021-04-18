@@ -20,15 +20,13 @@ const AboutUs = () => {
               {/*showing the current location of the page when it navigates from one page to another*/}
               <CurrentLocation></CurrentLocation>
             </div>
-            {/*main topic of the heading*/}
-            <h2 className="fancy-heading -no-margin">TEAM STORY</h2>
+            <h2 className="fancy-heading -no-margin" style={{ fontWeight: 'bold' }}>
+              TEAM STORY
+            </h2>
           </div>
           <div className=" -mt-60 -mb-90 content-padding">
             <FancyHeading decoratorClassName="fancy-heading2-decorator">
-              <h2 className="heading2 -medium -no-margin heading2-sep-margin">
-                {/*subtopic of the heading*/}
-                Devs'
-              </h2>
+              <h2 className="heading2 -medium -no-margin heading2-sep-margin">Devs'</h2>
             </FancyHeading>
             {/*line seperator after the subtopic*/}
             <hr className="heading-sep" />
