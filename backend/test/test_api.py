@@ -150,7 +150,7 @@ def test_model_sentiment(client):
     headers = {
         'Authorization': 'Bearer {}'.format(access_token)
     }
-    res = client.get('/api/ModelSentiment/getmodels', headers=headers)
+    res = client.get('/api/ModelSentiment/models', headers=headers)
     assert dict(res.json)['status'] == 1
     assert res.status_code == 200
 
