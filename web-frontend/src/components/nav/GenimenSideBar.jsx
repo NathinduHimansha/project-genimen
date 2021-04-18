@@ -53,11 +53,10 @@ const GenimenSideBar = () => {
     let base = `https://dapg9ovk6f.execute-api.us-east-2.amazonaws.com/dev`;
     // let base = 'https://3.141.148.28/dev/api';
     let http = Http(base);
-    const login = async (cred) => http.post({ data: cred, url: '/auth/login' });
-    login({ username: 'tooo', password: 'newpassword' }).then((res) => {
+    http.get({ url: '/uras', token: token }).then((res) => {
       console.log(res);
     });
-    http.get({ url: '/model-sentiment/Desire 530' }).then((res) => {
+    http.post({ url: '/ModelSentiment/analyze', data: { model_name: 'iPhone 11' } }).then((res) => {
       console.log(res);
     });
   }, []);
