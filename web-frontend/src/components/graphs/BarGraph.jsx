@@ -21,7 +21,7 @@ const BarGraph = (props) => {
   }
 
   if (percentageValue > 50) {
-    tempPercentageValue = percentageValue / 2;
+    tempPercentageValue = 100;
   }
 
   const roundedValue = Math.round(tempPercentageValue);
