@@ -30,6 +30,8 @@ import protect from './pages/wrappers/ProtectedRouteWrapper';
 import testcard from './pages/experiment/testcard';
 import MenuCard from './components/menucard/MenuCard';
 
+import AboutUs from './pages/aboutUs/AboutUs';
+
 function App() {
   const [state, dispatch] = useContext(Context);
   useEffect(() => {
@@ -48,7 +50,7 @@ function App() {
         <GenimenSideBar></GenimenSideBar>
         <Switch>
           <Route exact path="/index" component={HomePage} />
-          <Route path="/about" component={Login} />
+          <Route path="/aboutus" component={AboutUs} />
 
           <Route exact path="/analytics/uras" component={protect(URASViewAlt)} />
           <Route path="/analytics/uras/results" component={protect(UrasResultsAlt)} />
@@ -68,6 +70,7 @@ function App() {
           <Route path="/test3" component={MenuCard} />
           <Route path="/test4" component={ExkeyAlt} />
           <Route path="/test5" component={test5} />
+
           <Route path="/analytics" component={HomeStart} />
 
           <Route exact path="/" component={() => <Redirect to="/index" />} />

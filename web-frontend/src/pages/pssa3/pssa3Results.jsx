@@ -18,7 +18,7 @@ import sizeIcon from '../../assests/Size.png';
 import fingerprintIcon from '../../assests/FingerPrint.png';
 import headphoneJackIcon from '../../assests/HeadphoneJack.png';
 import { useToasts } from 'react-toast-notifications';
-import iphone from '../../assests/images/apple.png';
+import iphone7 from '../../assests/images/apple.png';
 import samsung from '../../assests/images/samsung.png';
 import huwawei from '../../assests/images/huw.png';
 import asus from '../../assests/images/asus.png';
@@ -92,7 +92,13 @@ const Pssa3Results = () => {
       console.log(pssaData)
     
  });
-
+ const bestPhone=Math.max.apply(Math, features.map((feature,i) => (
+                      feature.feature_pol    
+    )))
+    const worstPhone=Math.min.apply(Math, features.map((feature,i) => (
+      feature.feature_pol    
+)))
+console.log(bestPhone+"abi"+worstPhone)
   
 
   return (
@@ -113,6 +119,7 @@ const Pssa3Results = () => {
       <div className=" -mt-60 -mb-40 content-padding">
         <FancyHeading decoratorClassName="fancy-heading2-decorator">
         <h2 className="heading2 -medium -no-margin heading2-sep-margin">
+          MODEL NAME :&nbsp;
           {features.filter(feature => feature.feature == "display").map(filteredmodel => (
                           
                           filteredmodel.model
@@ -124,20 +131,43 @@ const Pssa3Results = () => {
         <hr className="heading-sep" />
       </div>
       <div className="feature-selection-block">
-        <div className="content-padding -flex">
-          <div style={{ width: '50%' }} className="feature-selection-box">
+        <div className="content-padding -flex" style={{height:"200px"}}>
+          <div style={{ width: '50%' }} className="feature-selection-box" >
             
-            <div className="focus-card focus-info-card -mb-40">
+            <div className="focus-card focus-info-card -mb-40"style={{height:"200px"}}>
               
-              <span className="-bold -normal">INFO: </span>This will give you the sentiment of the features of 
-              the selected smart phone and an overall score for the feature
+              <span className="-bold -normal" >INFO: </span>This will give you the sentiment of the features of 
+              the selected smart phone and an overall score for the features
+                
             </div>
             
             </div>
+            <img src={modelB} style={{height:"220px",width:"520px",opacity: '0.6'}}/>
             </div>        
             <div className=" -mt-60 -mb-40 content-padding">
                   
                 <div className="analytics-container cards-grid -mt-40" >
+                {features.filter(feature => feature.feature_pol == bestPhone).map(filteredmodel => (
+                          
+                          <SentimentRankCard
+                  polarity="pos"
+                  polarityPerc={filteredmodel.feature_pol}
+                  description={"Best feature of the selected smart phone"+filteredmodel.model}
+                  label={filteredmodel.feature}
+                 
+                ></SentimentRankCard>
+                          
+                        ))}
+                        {features.filter(feature => feature.feature_pol == worstPhone).map(filteredmodel => (
+                          
+                          <SentimentRankCard
+                          polarity="neg"
+                          polarityPerc={filteredmodel.feature_pol}
+                          label={(filteredmodel.feature)}
+                          description={"Worst feature of the selected smart phone"+filteredmodel.model}
+                        ></SentimentRankCard>
+                          
+                        ))}
                     
                        {features.map((feature,i) => (
                            
