@@ -18,7 +18,7 @@ import sizeIcon from '../../assests/Size.png';
 import fingerprintIcon from '../../assests/FingerPrint.png';
 import headphoneJackIcon from '../../assests/HeadphoneJack.png';
 import { useToasts } from 'react-toast-notifications';
-import iphone from '../../assests/images/apple.png';
+import iphone7 from '../../assests/images/apple.png';
 import samsung from '../../assests/images/samsung.png';
 import huwawei from '../../assests/images/huw.png';
 import asus from '../../assests/images/asus.png';
@@ -113,6 +113,7 @@ const Pssa3Results = () => {
       <div className=" -mt-60 -mb-40 content-padding">
         <FancyHeading decoratorClassName="fancy-heading2-decorator">
         <h2 className="heading2 -medium -no-margin heading2-sep-margin">
+          MODEL NAME :&nbsp;
           {features.filter(feature => feature.feature == "display").map(filteredmodel => (
                           
                           filteredmodel.model
@@ -130,7 +131,7 @@ const Pssa3Results = () => {
             <div className="focus-card focus-info-card -mb-40"style={{height:"200px"}}>
               
               <span className="-bold -normal" >INFO: </span>This will give you the sentiment of the features of 
-              the selected smart phone and an overall score for the feature
+              the selected smart phone and an overall score for the features
             </div>
             
             </div>
