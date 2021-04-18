@@ -21,7 +21,7 @@ const AboutUs = () => {
               <CurrentLocation></CurrentLocation>
             </div>
             {/*main topic of the heading*/}
-            <h2 className="fancy-heading -no-margin">WHO WE ARE</h2>
+            <h2 className="fancy-heading -no-margin">TEAM STORY</h2>
           </div>
           <div className=" -mt-60 -mb-90 content-padding">
             <FancyHeading decoratorClassName="fancy-heading2-decorator">
@@ -99,21 +99,27 @@ const AboutUs = () => {
                     <p>mike@example.com</p>
                   </div>
                   <p className="platformlogoAlign">
-                    <img
-                      src={twitter}
-                      style={{ width: '15%', height: '15%', borderRadius: '50%' }}
-                      className="twitterAnimation"
-                    ></img>
-                    <img
-                      src={linkedin}
-                      style={{ width: '15%', height: '15%' }}
-                      className="linkedinAnimation"
-                    ></img>
-                    <img
-                      src={github}
-                      style={{ width: '15%', height: '15%' }}
-                      className="githubAnimation"
-                    ></img>
+                    <a href="https://www.google.com">
+                      <img
+                        src={twitter}
+                        style={{ width: '15%', height: '15%', borderRadius: '50%' }}
+                        className="twitterAnimation"
+                      ></img>
+                    </a>
+                    <a href="https://www.google.com">
+                      <img
+                        src={linkedin}
+                        style={{ width: '15%', height: '15%' }}
+                        className="linkedinAnimation"
+                      ></img>
+                    </a>
+                    <a href="https://www.google.com">
+                      <img
+                        src={github}
+                        style={{ width: '15%', height: '15%' }}
+                        className="githubAnimation"
+                      ></img>
+                    </a>
 
                     {/* <button className="button">Contact</button> */}
                   </p>
@@ -132,21 +138,27 @@ const AboutUs = () => {
                     <p>john@example.com</p>
                   </div>
                   <p className="platformlogoAlign">
-                    <img
-                      src={twitter}
-                      style={{ width: '15%', height: '15%', borderRadius: '50%' }}
-                      className="twitterAnimation"
-                    ></img>
-                    <img
-                      src={linkedin}
-                      style={{ width: '15%', height: '15%' }}
-                      className="linkedinAnimation"
-                    ></img>
-                    <img
-                      src={github}
-                      style={{ width: '15%', height: '15%' }}
-                      className="githubAnimation"
-                    ></img>
+                    <a href="https://www.google.com">
+                      <img
+                        src={twitter}
+                        style={{ width: '15%', height: '15%', borderRadius: '50%' }}
+                        className="twitterAnimation"
+                      ></img>
+                    </a>
+                    <a href="https://www.google.com">
+                      <img
+                        src={linkedin}
+                        style={{ width: '15%', height: '15%' }}
+                        className="linkedinAnimation"
+                      ></img>
+                    </a>
+                    <a href="https://www.google.com">
+                      <img
+                        src={github}
+                        style={{ width: '15%', height: '15%' }}
+                        className="githubAnimation"
+                      ></img>
+                    </a>
 
                     {/* <button className="button">Contact</button> */}
                   </p>
@@ -165,21 +177,27 @@ const AboutUs = () => {
                     <p>john@example.com</p>
                   </div>
                   <p className="platformlogoAlign">
-                    <img
-                      src={twitter}
-                      style={{ width: '15%', height: '15%', borderRadius: '50%' }}
-                      className="twitterAnimation"
-                    ></img>
-                    <img
-                      src={linkedin}
-                      style={{ width: '15%', height: '15%' }}
-                      className="linkedinAnimation"
-                    ></img>
-                    <img
-                      src={github}
-                      style={{ width: '15%', height: '15%' }}
-                      className="githubAnimation"
-                    ></img>
+                    <a href="https://www.google.com">
+                      <img
+                        src={twitter}
+                        style={{ width: '15%', height: '15%', borderRadius: '50%' }}
+                        className="twitterAnimation"
+                      ></img>
+                    </a>
+                    <a href="https://www.google.com">
+                      <img
+                        src={linkedin}
+                        style={{ width: '15%', height: '15%' }}
+                        className="linkedinAnimation"
+                      ></img>
+                    </a>
+                    <a href="https://www.google.com">
+                      <img
+                        src={github}
+                        style={{ width: '15%', height: '15%' }}
+                        className="githubAnimation"
+                      ></img>
+                    </a>
 
                     {/* <button className="button">Contact</button> */}
                   </p>
@@ -198,21 +216,27 @@ const AboutUs = () => {
                     <p>john@example.com</p>
                   </div>
                   <p className="platformlogoAlign">
-                    <img
-                      src={twitter}
-                      style={{ width: '15%', height: '15%', borderRadius: '50%' }}
-                      className="twitterAnimation"
-                    ></img>
-                    <img
-                      src={linkedin}
-                      style={{ width: '15%', height: '15%' }}
-                      className="linkedinAnimation"
-                    ></img>
-                    <img
-                      src={github}
-                      style={{ width: '15%', height: '15%' }}
-                      className="githubAnimation"
-                    ></img>
+                    <a href="https://www.google.com">
+                      <img
+                        src={twitter}
+                        style={{ width: '15%', height: '15%', borderRadius: '50%' }}
+                        className="twitterAnimation"
+                      ></img>
+                    </a>
+                    <a href="https://www.google.com">
+                      <img
+                        src={linkedin}
+                        style={{ width: '15%', height: '15%' }}
+                        className="linkedinAnimation"
+                      ></img>
+                    </a>
+                    <a href="https://www.google.com">
+                      <img
+                        src={github}
+                        style={{ width: '15%', height: '15%' }}
+                        className="githubAnimation"
+                      ></img>
+                    </a>
 
                     {/* <button className="button">Contact</button> */}
                   </p>
@@ -231,21 +255,27 @@ const AboutUs = () => {
                     <p>john@example.com</p>
                   </div>
                   <p className="platformlogoAlign">
-                    <img
-                      src={twitter}
-                      style={{ width: '15%', height: '15%', borderRadius: '50%' }}
-                      className="twitterAnimation"
-                    ></img>
-                    <img
-                      src={linkedin}
-                      style={{ width: '15%', height: '15%' }}
-                      className="linkedinAnimation"
-                    ></img>
-                    <img
-                      src={github}
-                      style={{ width: '15%', height: '15%' }}
-                      className="githubAnimation"
-                    ></img>
+                    <a href="https://www.google.com">
+                      <img
+                        src={twitter}
+                        style={{ width: '15%', height: '15%', borderRadius: '50%' }}
+                        className="twitterAnimation"
+                      ></img>
+                    </a>
+                    <a href="https://www.google.com">
+                      <img
+                        src={linkedin}
+                        style={{ width: '15%', height: '15%' }}
+                        className="linkedinAnimation"
+                      ></img>
+                    </a>
+                    <a href="https://www.google.com">
+                      <img
+                        src={github}
+                        style={{ width: '15%', height: '15%' }}
+                        className="githubAnimation"
+                      ></img>
+                    </a>
 
                     {/* <button className="button">Contact</button> */}
                   </p>
