@@ -64,13 +64,13 @@ function ExkeyAlt() {
         <div className="-mt-60">
           <div
             className="analytics-container cards-split-Elements -mt-40"
-            style={{ marginTop: '-7%' }}
+            style={{ marginTop: '-5%' }}
           >
             {/*hidding the left card at the begining of the exkey page which represents the treemap*/}
             {/*making visible the colurful mobile phone image at the exkey home page*/}
-            <div className="analysing_banner">
+            <div className="analysing_banner" style={{ marginLeft: '-1%' }}>
               <img
-                style={{ width: '82%', height: '90%', opacity: '0.8' }}
+                style={{ width: '65%', height: '90%', opacity: '0.8' }}
                 src={colourful_mobilePhone}
               />
             </div>
@@ -79,7 +79,7 @@ function ExkeyAlt() {
 
             {/*hidding the right card at the begining of the exkey page which represents the treemap*/}
             {/*trend description which is dispplayed on the right side of the begining of the exkey page*/}
-            <div className="trend_description_align" style={{ marginTop: '13%' }}>
+            <div className="trend_description_align" style={{ marginLeft: '-35%', width: '95%' }}>
               <div className="focus-card focus-info-card -mb-40">
                 <img
                   src={lightBulb}
@@ -98,22 +98,10 @@ function ExkeyAlt() {
                   </span>
                 </div>
                 <div style={{ marginTop: '-3%', textAlign: 'justify' }}>
-                  <ul style={{ listStyleType: 'square' }}>
-                    <li>
-                      Trend analysis will help you to grow your market level by identifying areas of
-                      your product willing to design that are performing well as well as areas that
-                      are not
-                    </li>
-                    <br></br>
-                    <li>
-                      Trend analysis provides useful evidence to help you make informed decisions
-                      about your long-term plan and ways to future-proof your product.
-                    </li>
-                  </ul>
-                  {/* Trend analysis will help you to grow your market level by identifying areas of
+                  Trend analysis will help you to grow your market level by identifying areas of
                   your product willing to design that are performing well as well as areas that are
                   not. As a result, it provides useful evidence to help you make informed decisions
-                  about your long-term plan and ways to future-proof your product. */}
+                  about your long-term plan and ways to future-proof your product.
                 </div>
               </div>
               <div className="analyze_again">

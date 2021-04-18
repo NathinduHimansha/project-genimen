@@ -56,13 +56,13 @@
   }
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1300px) {
   .cards-split-Elements {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
   }
 }
+
 .card-left {
   display: block;
   border: 1px solid var(--primary-border-grey);
@@ -412,7 +412,7 @@
   margin-top: 7%;
 }
 
-.trend_description_align {
+/* .trend_description_align {
   width: 90%;
   float: right;
   margin-top: 18%;
@@ -422,7 +422,6 @@
 
 .analysing_banner {
   opacity: 0.8;
-  /* width: 85%; */
   margin-top: 3%;
   margin-left: 20%;
 }
@@ -522,7 +521,175 @@
   .analyze_again {
     position: static;
   }
+} */
+
+/************TESTING***************************************************************************************/
+
+.trend_description_align {
+  width: 90%;
+  float: right;
+  margin-top: 15%;
+  margin-left: -30%;
+  position: relative;
 }
+
+.analysing_banner {
+  opacity: 0.8;
+  margin-top: 1%;
+  margin-left: 1%;
+}
+
+@media only screen and (max-width: 1500px) {
+  .trend_description_align {
+    max-width: 100%;
+    float: right;
+    margin-top: 15%;
+    margin-left: -20%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    width: 120%;
+    margin-top: -1%;
+    margin-left: -5%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .trend_description_align {
+    max-width: 70%;
+    float: right;
+    margin-top: 17%;
+    margin-left: -25%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 10%;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .trend_description_align {
+    max-width: 100%;
+    float: right;
+    margin-top: 28%;
+    margin-left: -25%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    width: 110%;
+    margin-top: 7%;
+    margin-left: 1%;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .trend_description_align {
+    width: 60%;
+    float: right;
+    margin-top: -5%;
+    margin-left: 20%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    max-width: 70%;
+    margin-top: -3%;
+    margin-left: 20%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .trend_description_align {
+    width: 60%;
+    float: right;
+    margin-top: -5%;
+    margin-left: 20%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    max-width: 70%;
+    margin-top: -3%;
+    margin-left: 20%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .trend_description_align {
+    width: 60%;
+    float: right;
+    margin-top: -5%;
+    margin-left: 15%;
+  }
+  .analysing_banner {
+    opacity: 0.8;
+    width: 70%;
+    margin-top: 3%;
+    margin-left: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .trend_description_align {
+    width: 60%;
+    float: right;
+    margin-top: -5%;
+    margin-left: 5%;
+  }
+  .analysing_banner {
+    opacity: 0.8;
+    width: 70%;
+    margin-top: 3%;
+    margin-left: 5%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .trend_description_align {
+    width: 45%;
+    float: right;
+    margin-top: -5%;
+    margin-left: -1%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    max-width: 70%;
+    margin-top: 5%;
+    margin-left: -7%;
+  }
+
+  .analyze_again {
+    position: static;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .trend_description_align {
+    width: 45%;
+    float: right;
+    margin-top: -5%;
+    margin-left: -1%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    max-width: 84%;
+    margin-top: 5%;
+    margin-left: -7%;
+  }
+
+  .analyze_again {
+    position: static;
+  }
+}
+
+/*******************************END********************************************************************/
 
 .loader_progress {
   margin-top: 5%;
