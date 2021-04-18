@@ -124,16 +124,17 @@ const Pssa3Results = () => {
         <hr className="heading-sep" />
       </div>
       <div className="feature-selection-block">
-        <div className="content-padding -flex">
-          <div style={{ width: '50%' }} className="feature-selection-box">
+        <div className="content-padding -flex" style={{height:"200px"}}>
+          <div style={{ width: '50%' }} className="feature-selection-box" >
             
-            <div className="focus-card focus-info-card -mb-40">
+            <div className="focus-card focus-info-card -mb-40"style={{height:"200px"}}>
               
-              <span className="-bold -normal">INFO: </span>This will give you the sentiment of the features of 
+              <span className="-bold -normal" >INFO: </span>This will give you the sentiment of the features of 
               the selected smart phone and an overall score for the feature
             </div>
             
             </div>
+            <img src={modelB} style={{height:"220px",width:"520px",opacity: '0.6'}}/>
             </div>        
             <div className=" -mt-60 -mb-40 content-padding">
                   
