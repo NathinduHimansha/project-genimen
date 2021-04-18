@@ -5,10 +5,7 @@ import hacker from '../../assests/hacker.png';
 import twitter from '../../assests/twitter.png';
 import linkedin from '../../assests/linkedin.png';
 import github from '../../assests/github.png';
-
 import FancyHeading from '../../components/text/FancyHeading';
-import { useToasts } from 'react-toast-notifications';
-import { useHistory } from 'react-router';
 
 const AboutUs = () => {
   return (
@@ -45,7 +42,6 @@ const AboutUs = () => {
                     width: '50%',
                     marginLeft: '25%',
                     borderRadius: '50%',
-                    borderColor: 'black',
                   }}
                 />
                 <div className="containerAbout">
@@ -59,7 +55,7 @@ const AboutUs = () => {
                     <a href="https://www.google.com">
                       <img
                         src={twitter}
-                        style={{ width: '15%', height: '15%', borderRadius: '50%' }}
+                        style={{ width: '25%', height: '25%', borderRadius: '50%' }}
                         className="twitterAnimation"
                       ></img>
                     </a>
@@ -67,7 +63,7 @@ const AboutUs = () => {
                     <a href="https://www.google.com">
                       <img
                         src={linkedin}
-                        style={{ width: '15%', height: '15%' }}
+                        style={{ width: '25%', height: '25%' }}
                         className="linkedinAnimation"
                       ></img>
                     </a>
@@ -75,7 +71,7 @@ const AboutUs = () => {
                     <a href="https://www.google.com">
                       <img
                         src={github}
-                        style={{ width: '15%', height: '15%' }}
+                        style={{ width: '25%', height: '25%' }}
                         className="githubAnimation"
                       ></img>
                     </a>
@@ -88,7 +84,11 @@ const AboutUs = () => {
 
             <div className="columnAbout">
               <div className="cardAbout">
-                <img src={hacker} alt="Mike" style={{ width: '50%', marginLeft: '25%' }} />
+                <img
+                  src={hacker}
+                  alt="Mike"
+                  style={{ width: '50%', marginLeft: '25%', borderRadius: '50%' }}
+                />
                 <div className="containerAbout">
                   <h2>Tharindu De Silva</h2>
                   <p className="titleAbout">Developer</p>
@@ -100,21 +100,23 @@ const AboutUs = () => {
                     <a href="https://www.google.com">
                       <img
                         src={twitter}
-                        style={{ width: '15%', height: '15%', borderRadius: '50%' }}
+                        style={{ width: '25%', height: '25%', borderRadius: '50%' }}
                         className="twitterAnimation"
                       ></img>
                     </a>
+
                     <a href="https://www.google.com">
                       <img
                         src={linkedin}
-                        style={{ width: '15%', height: '15%' }}
+                        style={{ width: '25%', height: '25%' }}
                         className="linkedinAnimation"
                       ></img>
                     </a>
+
                     <a href="https://www.google.com">
                       <img
                         src={github}
-                        style={{ width: '15%', height: '15%' }}
+                        style={{ width: '25%', height: '25%' }}
                         className="githubAnimation"
                       ></img>
                     </a>
@@ -127,7 +129,11 @@ const AboutUs = () => {
 
             <div className="columnAbout">
               <div className="cardAbout">
-                <img src={hacker} alt="John" style={{ width: '50%', marginLeft: '25%' }} />
+                <img
+                  src={hacker}
+                  alt="John"
+                  style={{ width: '50%', marginLeft: '25%', borderRadius: '50%' }}
+                />
                 <div className="containerAbout">
                   <h2>Nathindu Dias</h2>
                   <p className="titleAbout">Developer</p>
@@ -139,21 +145,23 @@ const AboutUs = () => {
                     <a href="https://www.google.com">
                       <img
                         src={twitter}
-                        style={{ width: '15%', height: '15%', borderRadius: '50%' }}
+                        style={{ width: '25%', height: '25%', borderRadius: '50%' }}
                         className="twitterAnimation"
                       ></img>
                     </a>
+
                     <a href="https://www.google.com">
                       <img
                         src={linkedin}
-                        style={{ width: '15%', height: '15%' }}
+                        style={{ width: '25%', height: '25%' }}
                         className="linkedinAnimation"
                       ></img>
                     </a>
+
                     <a href="https://www.google.com">
                       <img
                         src={github}
-                        style={{ width: '15%', height: '15%' }}
+                        style={{ width: '25%', height: '25%' }}
                         className="githubAnimation"
                       ></img>
                     </a>
@@ -166,7 +174,11 @@ const AboutUs = () => {
 
             <div className="columnAbout">
               <div className="cardAbout">
-                <img src={hacker} alt="John" style={{ width: '50%', marginLeft: '25%' }} />
+                <img
+                  src={hacker}
+                  alt="John"
+                  style={{ width: '50%', marginLeft: '25%', borderRadius: '50%' }}
+                />
                 <div className="containerAbout">
                   <h2>Mohamed Rashad</h2>
                   <p className="titleAbout">Developer</p>
@@ -178,21 +190,23 @@ const AboutUs = () => {
                     <a href="https://www.google.com">
                       <img
                         src={twitter}
-                        style={{ width: '15%', height: '15%', borderRadius: '50%' }}
+                        style={{ width: '25%', height: '25%', borderRadius: '50%' }}
                         className="twitterAnimation"
                       ></img>
                     </a>
+
                     <a href="https://www.google.com">
                       <img
                         src={linkedin}
-                        style={{ width: '15%', height: '15%' }}
+                        style={{ width: '25%', height: '25%' }}
                         className="linkedinAnimation"
                       ></img>
                     </a>
+
                     <a href="https://www.google.com">
                       <img
                         src={github}
-                        style={{ width: '15%', height: '15%' }}
+                        style={{ width: '25%', height: '25%' }}
                         className="githubAnimation"
                       ></img>
                     </a>
@@ -205,7 +219,11 @@ const AboutUs = () => {
 
             <div className="columnAbout">
               <div className="cardAbout">
-                <img src={hacker} alt="John" style={{ width: '50%', marginLeft: '25%' }} />
+                <img
+                  src={hacker}
+                  alt="John"
+                  style={{ width: '50%', marginLeft: '25%', borderRadius: '50%' }}
+                />
                 <div className="containerAbout">
                   <h2>Malith Goonathilake</h2>
                   <p className="titleAbout">Developer</p>
@@ -213,25 +231,28 @@ const AboutUs = () => {
                     <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                     <p>john@example.com</p>
                   </div>
+
                   <p className="platformlogoAlign">
                     <a href="https://www.google.com">
                       <img
                         src={twitter}
-                        style={{ width: '15%', height: '15%', borderRadius: '50%' }}
+                        style={{ width: '25%', height: '25%', borderRadius: '50%' }}
                         className="twitterAnimation"
                       ></img>
                     </a>
+
                     <a href="https://www.google.com">
                       <img
                         src={linkedin}
-                        style={{ width: '15%', height: '15%' }}
+                        style={{ width: '25%', height: '25%' }}
                         className="linkedinAnimation"
                       ></img>
                     </a>
+
                     <a href="https://www.google.com">
                       <img
                         src={github}
-                        style={{ width: '15%', height: '15%' }}
+                        style={{ width: '25%', height: '25%' }}
                         className="githubAnimation"
                       ></img>
                     </a>
@@ -244,7 +265,11 @@ const AboutUs = () => {
 
             <div className="columnAbout">
               <div className="cardAbout">
-                <img src={hacker} alt="John" style={{ width: '50%', marginLeft: '25%' }} />
+                <img
+                  src={hacker}
+                  alt="John"
+                  style={{ width: '50%', marginLeft: '25%', borderRadius: '50%' }}
+                />
                 <div className="containerAbout">
                   <h2>Siranjan Abilash</h2>
                   <p className="titleAbout">Developer</p>
@@ -256,21 +281,23 @@ const AboutUs = () => {
                     <a href="https://www.google.com">
                       <img
                         src={twitter}
-                        style={{ width: '15%', height: '15%', borderRadius: '50%' }}
+                        style={{ width: '25%', height: '25%', borderRadius: '50%' }}
                         className="twitterAnimation"
                       ></img>
                     </a>
+
                     <a href="https://www.google.com">
                       <img
                         src={linkedin}
-                        style={{ width: '15%', height: '15%' }}
+                        style={{ width: '25%', height: '25%' }}
                         className="linkedinAnimation"
                       ></img>
                     </a>
+
                     <a href="https://www.google.com">
                       <img
                         src={github}
-                        style={{ width: '15%', height: '15%' }}
+                        style={{ width: '25%', height: '25%' }}
                         className="githubAnimation"
                       ></img>
                     </a>
