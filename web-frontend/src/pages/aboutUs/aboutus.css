@@ -1,6 +1,6 @@
 .mainAboutPage {
   font-family: Arial, Helvetica, sans-serif;
-  margin-left: 0%;
+  margin: 0%;
   box-sizing: border-box;
 }
 
@@ -22,8 +22,8 @@
   }
 }
 .bodySplitAbout {
-  margin-left: 4%;
-  margin-top: 10%;
+  margin-left: 15%;
+  margin-top: 8%;
 }
 
 .aboutDescrip {
@@ -68,36 +68,49 @@
 .labelAbout {
   display: inline-block;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 5rem;
   margin-bottom: 0.8rem;
-  color: #ff615a;
-  margin-left: 10%;
+  color: #24295f;
+  /* margin-left: 10%; */
   margin-top: 5%;
 }
 
 .aboutDescripHeading {
   margin-left: 10%;
   margin-top: 1%;
-  font-size: 5.2rem;
+  font-size: 3.2rem;
+  width: 100%;
   opacity: 1;
-  color: #482890;
+  color: var(--primary-black);
 }
 
 .aboutSubDescrip {
-  color: var(--primary-black);
+  color: black;
   font-size: 2.2rem;
   text-align: justify;
-  width: 72%;
+  width: 80%;
 }
 
 .about-sectionAbout {
-  margin-top: -1%;
-  padding: 50px;
+  margin-left: 22%;
+  /* padding: 6%; */
+  padding-bottom: -10%;
   /* padding-bottom: 10%; */
   text-align: center;
-  background-color: #9d9dff;
-  width: 40%;
-  color: var(--primary-black);
+  background-color: #a4bcdd;
+  opacity: 0.5;
+  width: 60%;
+  color: var(--black);
+}
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid var(--white);
+  margin-left: 45%;
+  margin-top: 10%;
 }
 
 .containerAbout {
@@ -159,3 +172,5 @@
     width: 80%;
   }
 }
+
+/*ggggggggggggggggggggggggggg*/

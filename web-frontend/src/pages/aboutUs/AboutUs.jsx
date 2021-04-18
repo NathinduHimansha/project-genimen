@@ -21,12 +21,15 @@ const AboutUs = () => {
               JOURNEY OF TEAM ZERO ONE
             </h2>
           </div>
-          {/* <p className="labelAbout">Our Story</p>
-          <h1 className="aboutDescripHeading">GET TO KNOW ABOUT PROJECT GENIMEN</h1>
-          <p className="aboutSubDescrip" style={{ marginLeft: '10%' }}>
-            Headquartered in Sri Lanka with offices in Oslo, Norway, 99x is one of Asia’s best
-            workplaces and a global leader in agile product engineering and technology innovation.
-          </p> */}
+          <div className="about-sectionAbout">
+            <p className="labelAbout">OUR STORY</p>
+            {/* <h1 className="aboutDescripHeading">GET TO KNOW ABOUT PROJECT GENIMEN</h1> */}
+            <p className="aboutSubDescrip" style={{ marginLeft: '8%' }}>
+              Headquartered in Sri Lanka with offices in Oslo, Norway, 99x is one of Asia’s best
+              workplaces and a global leader in agile product engineering and technology innovation.
+            </p>
+            {/* <div className="triangle-up"></div> */}
+          </div>
         </div>
 
         <div className="bodySplitAbout">
@@ -45,10 +48,56 @@ const AboutUs = () => {
                 />
                 <div className="containerAbout">
                   <h2>Adeesha Walgamage</h2>
+
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
                     <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                     <p>jane@example.com</p>
+                  </div>
+                  <p className="platformlogoAlign">
+                    <a href="https://www.google.com">
+                      <img
+                        src={twitter}
+                        style={{ width: '25%', height: '25%', borderRadius: '50%' }}
+                        className="twitterAnimation"
+                      ></img>
+                    </a>
+
+                    <a href="https://www.google.com">
+                      <img
+                        src={linkedin}
+                        style={{ width: '25%', height: '25%' }}
+                        className="linkedinAnimation"
+                      ></img>
+                    </a>
+
+                    <a href="https://www.google.com">
+                      <img
+                        src={github}
+                        style={{ width: '25%', height: '25%' }}
+                        className="githubAnimation"
+                      ></img>
+                    </a>
+
+                    {/* <button className="button">Contact</button> */}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="columnAbout">
+              <div className="cardAbout">
+                <img
+                  src={hacker}
+                  alt="John"
+                  style={{ width: '50%', marginLeft: '25%', borderRadius: '50%' }}
+                />
+                <div className="containerAbout">
+                  <h2>Mohamed Rashad</h2>
+                  <p className="titleAbout">Developer</p>
+                  <div className="aboutDescrip">
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>john@example.com</p>
                   </div>
                   <p className="platformlogoAlign">
                     <a href="https://www.google.com">
@@ -135,50 +184,6 @@ const AboutUs = () => {
                 />
                 <div className="containerAbout">
                   <h2>Nathindu Dias</h2>
-                  <p className="titleAbout">Developer</p>
-                  <div className="aboutDescrip">
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>john@example.com</p>
-                  </div>
-                  <p className="platformlogoAlign">
-                    <a href="https://www.google.com">
-                      <img
-                        src={twitter}
-                        style={{ width: '25%', height: '25%', borderRadius: '50%' }}
-                        className="twitterAnimation"
-                      ></img>
-                    </a>
-
-                    <a href="https://www.google.com">
-                      <img
-                        src={linkedin}
-                        style={{ width: '25%', height: '25%' }}
-                        className="linkedinAnimation"
-                      ></img>
-                    </a>
-
-                    <a href="https://www.google.com">
-                      <img
-                        src={github}
-                        style={{ width: '25%', height: '25%' }}
-                        className="githubAnimation"
-                      ></img>
-                    </a>
-
-                    {/* <button className="button">Contact</button> */}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="columnAbout">
-              <div className="cardAbout">
-                <img
-                  src={hacker}
-                  alt="John"
-                  style={{ width: '50%', marginLeft: '25%', borderRadius: '50%' }}
-                />
-                <div className="containerAbout">
-                  <h2>Mohamed Rashad</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
                     <p>Some text that describes me lorem ipsum ipsum lorem.</p>
