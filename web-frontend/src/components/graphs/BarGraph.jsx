@@ -16,8 +16,12 @@ const BarGraph = (props) => {
   if (percentageValue < 10) {
     tempPercentageValue = (percentageValue * 10) / 2;
   }
-  if (percentageValue > 10) {
+  if (percentageValue > 10 && percentageValue < 50) {
     tempPercentageValue = percentageValue * 2;
+  }
+
+  if (percentageValue > 50) {
+    tempPercentageValue = percentageValue / 2;
   }
 
   const roundedValue = Math.round(tempPercentageValue);
