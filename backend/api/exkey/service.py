@@ -18,7 +18,7 @@ def wordEmbedSimilarFunction(candidateKey,numberOfIns):
 def get_trend_word_count(numberOfTrendValues):
     trend_list =[]
     sample_trend_data = trend_data[0:numberOfTrendValues]
-    for element in trend_data:
+    for element in sample_trend_data:
         trend_list.append({'keyword':element[0],'value':calculate_trend_percentage(element[1])})
     return trend_list
 
