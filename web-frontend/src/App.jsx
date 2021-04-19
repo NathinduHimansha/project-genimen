@@ -9,8 +9,6 @@ import GenimenSideBar from './components/nav/GenimenSideBar';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/signup';
 
-import Examples from './pages/experiment/Examples';
-
 import HomePageNew from './pages/index/HomePageNew';
 import HomeStart from './pages/index/HomeStartView';
 import AboutUs from './pages/aboutUs/AboutUs';
@@ -59,7 +57,6 @@ function App() {
 
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <Route path="/examples" component={Examples} />
 
           <Route exact path="/" component={() => <Redirect to="/home" />} />
           <Route path="*" exact={true} component={PageNotFound} />
