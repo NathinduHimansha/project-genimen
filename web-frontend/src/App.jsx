@@ -15,6 +15,7 @@ import Examples from './pages/experiment/Examples';
 import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 import HomePage from './pages/index/HomePage';
+import HomePageNew from './pages/index/HomePageNew';
 import HomeStart from './pages/index/HomeStartView';
 
 import UrasUserInputView from './pages/uras/UrasUserInputView';
@@ -29,6 +30,7 @@ import ScrollUp from './components/scrollupbutton/ScrollUp';
 import protect from './pages/wrappers/ProtectedRouteWrapper';
 import testcard from './pages/experiment/testcard';
 import MenuCard from './components/menucard/MenuCard';
+import testlogin from './pages/experiment/testlogin';
 
 import AboutUs from './pages/aboutUs/AboutUs';
 
@@ -49,7 +51,7 @@ function App() {
       <div>
         <GenimenSideBar></GenimenSideBar>
         <Switch>
-          <Route exact path="/index" component={HomePage} />
+          <Route exact path="/index" component={HomePageNew} />
           <Route path="/aboutus" component={AboutUs} />
 
           <Route exact path="/analytics/uras" component={protect(URASViewAlt)} />
@@ -70,6 +72,8 @@ function App() {
           <Route path="/test3" component={MenuCard} />
           <Route path="/test4" component={ExkeyAlt} />
           <Route path="/test5" component={test5} />
+          <Route path="/test6" component={testlogin} />
+          <Route path="/test7" component={HomePageNew} />
 
           <Route path="/analytics" component={HomeStart} />
 
@@ -85,7 +89,7 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
-            <Route exact path="/index" component={HomePage} />
+            <Route exact path="/index" component={HomePageNew} />
             <Route component={RoutesWNav} />
           </Switch>
         </div>

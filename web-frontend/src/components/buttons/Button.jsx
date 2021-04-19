@@ -1,10 +1,22 @@
 import React from 'react';
 
 const Button = (props) => {
-  let { value, type, iconSrc, utilClasses, iconSide, loading, onClick, outline, disabled } = props;
+  let {
+    value,
+    type,
+    iconSrc,
+    utilClasses,
+    iconSide,
+    loading,
+    onClick,
+    outline,
+    disabled,
+    loginIconSrc,
+  } = props;
   outline = outline || false;
   loading = loading || false;
   iconSrc = iconSrc ? iconSrc : '';
+  loginIconSrc = loginIconSrc ? loginIconSrc : '';
   iconSide = iconSide ? iconSide : 'right';
   utilClasses = utilClasses ? [utilClasses] : [];
 
@@ -21,7 +33,7 @@ const Button = (props) => {
     return iconSide == 'right' ? 'icon-btn-right' : 'icon-btn-left';
   };
   const getIconClass = () => {
-    return iconSrc ? 'icon-btn' : '';
+    return iconSrc || loginIconSrc ? 'icon-btn' : '';
   };
   const getOutlineClass = () => {
     return outline ? 'primary-btn-outline' : '';
@@ -45,6 +57,7 @@ const Button = (props) => {
       }
       disabled={isDisabled()}
     >
+      {loginIconSrc ? <img className="icon-btn-left nav-propic" src={loginIconSrc} /> : ''}
       <span className={'-bold -no-wrap ' + hideOnLoad()}>{props.children}</span>
       {iconSrc ? <img className={iconImgSideClass() + ' ' + hideOnLoad()} src={iconSrc} /> : ''}
       {showSpinnerOnLoad()}
