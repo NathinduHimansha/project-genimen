@@ -75,7 +75,9 @@ const UrasResultsAlt = () => {
       }, 110);
   };
   const capitalize = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    if (string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
   };
   // construct phone model names
   const capitalizePhoneModels = (model) => {
@@ -119,6 +121,11 @@ const UrasResultsAlt = () => {
     }
     setBestPhone(bestPhone);
     setWorstPhone(worstPhone);
+  };
+  const getFeatureSubType = () => {
+    return urasData[featureSentimentPolarity].filter(
+      (featureDet) => featureDet.feature === selectedFeatureType,
+    )[0]?.['feature-type'];
   };
   return (
     <div className="navbar-page-container -mb-40">
@@ -165,11 +172,11 @@ const UrasResultsAlt = () => {
             </select>
           </div>
 
-          <h2 className="heading2 -regular -no-margin">Display</h2>
+          <h2 className="heading2 -regular -no-margin">{capitalize(selectedFeatureType)}</h2>
           <hr className="heading-sep" />
           <div className="-mt-20">
             <h3 className="heading3 -regular -no-margin">
-              Type: <span className="-medium">Curved</span>
+              Type: <span className="-medium">{capitalize(getFeatureSubType())}</span>
             </h3>
           </div>
           <div className="-mt-60 feature-overall-sentiment-container">
