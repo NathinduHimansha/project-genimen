@@ -19,7 +19,7 @@ const routes = [
     title: 'Home',
     icon: home,
     subMenu: [],
-    path: '/index',
+    path: '/home',
   },
   {
     title: 'Analytics',
