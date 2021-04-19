@@ -22,11 +22,19 @@ const AboutUs = () => {
             </h2>
           </div>
           <div className="about-sectionAbout">
-            <p className="labelAbout">OUR STORY</p>
-            {/* <h1 className="aboutDescripHeading">GET TO KNOW ABOUT PROJECT GENIMEN</h1> */}
-            <p className="aboutSubDescrip" style={{ marginLeft: '8%' }}>
-              Headquartered in Sri Lanka with offices in Oslo, Norway, 99x is one of Asia’s best
-              workplaces and a global leader in agile product engineering and technology innovation.
+            <p className="labelAbout">
+              <span className="strike">ABOUT GENIMEN</span>
+            </p>
+            <p className="aboutSubDescrip" style={{ marginLeft: '23%' }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin convallis nulla
+              sollicitudin aliquam condimentum. Nunc tristique scelerisque est dignissim finibus.
+              Praesent sapien ligula, porta vitae interdum congue, vehicula sit amet mauris.
+              Suspendisse ut nisl eu arcu fringilla scelerisque. Duis diam metus, interdum et nisl
+              nec, vestibulum eleifend felis. Praesent sed molestie nunc. Nam vel tellus id enim
+              rhoncus pulvinar eu sit amet nisl. Vestibulum efficitur mattis tempus. Duis in
+              tincidunt ligula. Etiam feugiat, libero non lobortis sodales, elit turpis auctor
+              felis, quis pretium elit arcu non tortor. Aenean viverra tortor ut scelerisque
+              volutpat. Nam vel consectetur nulla.
             </p>
             {/* <div className="triangle-up"></div> */}
           </div>

@@ -23,7 +23,7 @@
 }
 .bodySplitAbout {
   margin-left: 15%;
-  margin-top: 8%;
+  margin-top: -5%;
 }
 
 .aboutDescrip {
@@ -66,13 +66,40 @@
 }
 
 .labelAbout {
+  /* text-decoration: overline; */
+  text-decoration-color: #6699cc;
   display: inline-block;
+  color: #241c15;
+  font-family: Means Web, Georgia, Times, Times New Roman, serif;
+  font-size: 5.125rem;
   font-weight: 600;
-  font-size: 5rem;
+  line-height: 1;
   margin-bottom: 0.8rem;
-  color: #24295f;
-  /* margin-left: 10%; */
+  color: #483d8b;
   margin-top: 5%;
+  padding-bottom: 3%;
+}
+@keyframes slidein {
+  0% {
+    margin-left: 0%;
+    width: 300%;
+  }
+
+  50% {
+    margin-left: 50%;
+    width: 100%;
+  }
+  100% {
+    margin-left: 50%;
+    width: 100%;
+  }
+}
+.strike {
+  /* text-decoration: line-through; */
+  text-decoration: overline;
+  animation: slidein 5s;
+  animation-fill-mode: forwards;
+  text-decoration-color: #6699cc;
 }
 
 .aboutDescripHeading {
@@ -85,21 +112,22 @@
 }
 
 .aboutSubDescrip {
-  color: black;
-  font-size: 2.2rem;
-  text-align: justify;
-  width: 80%;
+  font-size: 1.5rem;
+  /* text-align: justify; */
+  /* color: #189ab4; */
+  font-weight: 700;
+  width: 60%;
 }
 
 .about-sectionAbout {
-  margin-left: 22%;
+  /* margin-left: 22%; */
   /* padding: 6%; */
-  padding-bottom: -10%;
+  padding-bottom: 15%;
   /* padding-bottom: 10%; */
   text-align: center;
-  background-color: #a4bcdd;
-  opacity: 0.5;
-  width: 60%;
+  background-color: #c5dbf2;
+  /* opacity: 1; */
+  width: 100%;
   color: var(--black);
 }
 
