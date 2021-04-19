@@ -105,7 +105,7 @@ const AboutUs = () => {
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
                     <p>Implementation of Backend,Frontend and Data-Science components</p>
-                    <p>john@example.com</p>
+                    <p>rashad.2018470@iit.ac.lk</p>
                   </div>
                   <p className="platformlogoAlign">
                     <a href="https://mobile.twitter.com/RashadRashadzcc">
@@ -195,7 +195,7 @@ const AboutUs = () => {
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
                     <p>Implementation of Backend,Frontend and Data-Science components</p>
-                    <p>john@example.com</p>
+                    <p>nathindu.2018455@iit.ac.lk</p>
                   </div>
                   <p className="platformlogoAlign">
                     <a href="https://twitter.com/NathinduDias">
@@ -240,7 +240,7 @@ const AboutUs = () => {
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
                     <p>Implementation of Backend,Frontend and Data-Science components</p>
-                    <p>john@example.com</p>
+                    <p>malith.2018402@iit.ac.lk</p>
                   </div>
 
                   <p className="platformlogoAlign">
@@ -286,10 +286,10 @@ const AboutUs = () => {
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
                     <p>Implementation of Backend,Frontend and Data-Science components</p>
-                    <p>john@example.com</p>
+                    <p>abilash.2018379@iit.ac.lk</p>
                   </div>
                   <p className="platformlogoAlign">
-                    <a href="https://www.google.com">
+                    <a href="https://mobile.twitter.com/ragav_krishic">
                       <img
                         src={twitter}
                         style={{ width: '25%', height: '25%', borderRadius: '50%' }}
@@ -297,7 +297,7 @@ const AboutUs = () => {
                       ></img>
                     </a>
 
-                    <a href="https://www.google.com">
+                    <a href="https://www.linkedin.com/mwlite/in/sriranjan-abilash">
                       <img
                         src={linkedin}
                         style={{ width: '25%', height: '25%' }}
@@ -305,7 +305,7 @@ const AboutUs = () => {
                       ></img>
                     </a>
 
-                    <a href="https://www.google.com">
+                    <a href="https://github.com/abi-krish-me">
                       <img
                         src={github}
                         style={{ width: '25%', height: '25%' }}

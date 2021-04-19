@@ -12,7 +12,6 @@
 @media only screen and (max-width: 600px) {
   .heading_align {
     margin-left: 10%;
-    /* width: 100%; */
   }
 }
 
@@ -36,18 +35,15 @@
 }
 
 .twitterAnimation:hover {
-  transform: translateY(-13px);
-  cursor: grab;
+  transform: translateY(-15px);
 }
 
 .linkedinAnimation:hover {
   transform: translateY(-13px);
-  cursor: grab;
 }
 
 .githubAnimation:hover {
   transform: translateY(-13px);
-  cursor: grab;
 }
 
 .columnAbout {
@@ -66,7 +62,6 @@
 }
 
 .labelAbout {
-  /* text-decoration: overline; */
   text-decoration-color: #6699cc;
   display: inline-block;
   color: #241c15;
@@ -95,7 +90,6 @@
   }
 }
 .strike {
-  /* text-decoration: line-through; */
   text-decoration: overline;
   animation: slidein 5s;
   animation-fill-mode: forwards;
@@ -119,13 +113,9 @@
 }
 
 .about-sectionAbout {
-  /* margin-left: 22%; */
-  /* padding: 6%; */
   padding-bottom: 15%;
-  /* padding-bottom: 10%; */
   text-align: center;
   background-color: #c5dbf2;
-  /* opacity: 1; */
   width: 100%;
   color: var(--black);
 }
@@ -199,5 +189,3 @@
     width: 80%;
   }
 }
-
-/*ggggggggggggggggggggggggggg*/
