@@ -190,3 +190,28 @@
     width: 80%;
   }
 }
+
+/*down arrow*/
+.arrowAnimation {
+  animation: bounce 1.2s infinite alternate;
+}
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(55px);
+  }
+}
+
+.arrow {
+  border: solid #4169e1;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 8px;
+  margin-top: 5%;
+}
+
+.down {
+  transform: rotate(45deg);
+}

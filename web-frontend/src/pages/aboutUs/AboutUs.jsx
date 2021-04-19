@@ -34,6 +34,9 @@ const AboutUs = () => {
               strategies to establish new products.
             </p>
             {/* <div className="triangle-up"></div> */}
+            <div className="arrowAnimation">
+              <i class="arrow down"></i>
+            </div>
           </div>
         </div>
 
