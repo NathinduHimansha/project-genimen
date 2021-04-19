@@ -6,7 +6,7 @@ import search from '../../assests/Search.png';
 import brandsm from '../../assests/images/brandsm.jpg';
 import croselight from '../../assests/CroseLight.png';
 import circlebanner from '../../assests/GeometricCircleBanner.png';
-import { getPhones, analysePhones } from '../../services/pssa3-service';
+// import { getPhones, analysePhones } from '../../services/pssa3-service';
 import Button from '../../components/buttons/Button';
 import SampleFeatureSelection from '../experiment/SampleFeatureSelection';
 import propic from '../../assests/ProfilePic.png';
@@ -33,18 +33,23 @@ import realme from '../../assests/images/real.png';
 import lg from '../../assests/images/lg.png';
 import sony from '../../assests/images/sony.png';
 import zte from '../../assests/images/zte.png';
+import {analysePhones} from "../../services/psssa3-service-post";
+import {getPhones} from "../../services/pssa3-service";
 
 const Pssa3View = () => {
   
   const analyseSelectedPhone = () => {
     setBtnLoadingState(true);
     setTimeout(() => {
-      analysePhones()
+      analysePhones({model_name : q})
         .then((response) => {
+          const data = response.data;
+          console.log("selected model" + q)
+          console.log("data " + data)
           setBtnLoadingState(false),
             history.push({
               pathname: '/analytics/pssa/results',
-              state: response, //passing fetched data to results
+              state: data, //passing fetched data to results
             });
         })
 

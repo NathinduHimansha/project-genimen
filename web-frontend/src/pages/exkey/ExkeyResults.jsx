@@ -11,18 +11,19 @@ import { Redirect, useHistory } from 'react-router';
 import fromParentOnly from '../../pages/wrappers/FromParentOnly';
 
 const ExkeyResults = () => {
-  const history = useHistory();
-  const [pageLoading, setPageLoading] = useState(true);
-  const [trendingFeatures, setTrend] = useState([]);
-  const [exkeyDataotherKeyword, setOther] = useState([]);
+  const history = useHistory(); //initialising the history
+  const [pageLoading, setPageLoading] = useState(true); //initialising the page loading as false
+  const [trendingFeatures, setTrend] = useState([]); //trending feature array
+  const [exkeyDataotherKeyword, setOther] = useState([]); //other keywords array
 
   useEffect(() => {
-    setPageLoading(true);
+    setPageLoading(true); //making the pageloading true at the begining of the page
     setTimeout(() => {
-      setTrend(history.location.state.stateTrending);
-      setOther(history.location.state.stateOtherKeywords);
+      //timeout for 600 ms
+      setTrend(history.location.state.stateTrending); //catch the trending keywords comming from the exkey home page after the button click
+      setOther(history.location.state.stateOtherKeywords); //catch the other keywords comming from the exkey home page after the button click
 
-      setPageLoading(false);
+      setPageLoading(false); //make the pageloading false
     }, 600);
   }, []);
 
@@ -68,12 +69,13 @@ const ExkeyResults = () => {
               <NavLink to="/analytics/exkey" className="-text-decoration-none">
                 <IconHeading size="extra-small" iconUrl="var(--arrow-back-icon)">
                   <h4 className="heading4 -no-margin">
+                    {/*back button which will redirect to the exkey home page*/}
                     <span className="header-go-back">Back</span>
                   </h4>
                 </IconHeading>
               </NavLink>
             </div>
-            {/*main topic of the heading*/}
+            {/*main topic of the page*/}
             <h2 className="fancy-heading -no-margin">TRENDING RESULTS</h2>
           </div>
           <div className=" -mt-60 -mb-90 content-padding">
@@ -88,7 +90,9 @@ const ExkeyResults = () => {
           </div>
         </div>
 
+        {/*if the page loading is true,which means the page loading animation dissapears*/}
         {pageLoading ? (
+          //page loading animation
           <div className="-flex -full-width -mb-70 -mt-40">
             <div
               style={{ marginLeft: '48%', marginTop: '10%' }}
@@ -96,15 +100,16 @@ const ExkeyResults = () => {
             ></div>
           </div>
         ) : (
+          //else if the the condition is met
           <div className="body-split">
             <div className="-mt-60">
               <div className="analytics-container cards-split -mt-40">
-                {/*hidding the left card at the begining of the exkey page which represents the treemap*/}
+                {/*left card whih displays the bargraph which displays the trending keyword*/}
                 <div className="card-left">
                   <div className="card-heading-name-left">
                     <div className="card-topic">
                       <h3 className="heading3 -medium">
-                        {/*Name of the left card which represents the bargraph of trending keywords*/}
+                        {/*Name on the left card */}
                         TREND
                         {/*trending fire image*/}
                         <img
@@ -120,7 +125,7 @@ const ExkeyResults = () => {
                     </div>
                   </div>
 
-                  {/*showing the bargrpah to the user after the relavent timecount mentioned above inside the button action*/}
+                  {/*frequnecy bars of the bargraph which is mapped from the values came from the exkey page*/}
                   <div className="frequency-bars">
                     {trendingFeatures.map((item, i) => (
                       <Bargraph key={i} value={item.value} keyword={item.keyword}></Bargraph>
@@ -128,16 +133,11 @@ const ExkeyResults = () => {
                   </div>
                 </div>
 
-                {/*starting of the card right elements*/}
-
-                {/*hidding the right card at the begining of the exkey page which represents the treemap*/}
-
+                {/*starting of the card right elements which represents the treemap*/}
                 <div className="card-right">
-                  {/*trend description which is dispplayed on the right side of the begining of the exkey page*/}
-
-                  {/*topic which represents the similar keywords of the right card*/}
                   <div className="card-heading-name-right -mb-auto -flex-middle">
                     <div className="card-topic">
+                      {/*card right topic*/}
                       <h3 className="heading3 -medium">SIMILAR KEYWORDS</h3>
                       <div className="otherKeywords_description">
                         {/*light bulb and tip for the user displayed with the treemap*/}
@@ -159,8 +159,7 @@ const ExkeyResults = () => {
                             color: ' #bb5959 ',
                           }}
                         >
-                          TIP : HOVER OVER THE KEYWORD BOXES TO FIND HOW MUCH THESE KEYWORDS ARE
-                          TRENDING
+                          TIP : HOVER OF THE KEYWORDS TO SEE THE TOOLTIP
                         </h4>
                       </div>
                     </div>
