@@ -5,10 +5,9 @@ const TreeMap = (props) => {
   const { data } = props;
 
   const state = {
-    treeVisibility: false,
     options: {
       tooltip: {
-        enabled: true,
+        enabled: true, //show the tooltip
         theme: 'dark', //dark theme for the tooltip
 
         //custom tooltip
@@ -30,13 +29,11 @@ const TreeMap = (props) => {
         },
       },
 
-      // colors: ['#05B8CC'],
-
       states: {
         hover: {
           filter: {
             type: 'darken', //Hovering boxes of the treemap with the dark theme
-            value: 0.55,
+            value: 0.55, //opacity of the tooltip
           },
         },
       },

@@ -57,6 +57,8 @@ const AboutUs = () => {
                     marginTop: '5%',
                   }}
                 />
+
+                {/*Adeesha Walgamage*/}
                 <div className="containerAbout">
                   {/*Name of the team member*/}
                   <h2>Adeesha Walgamage</h2>
@@ -115,6 +117,8 @@ const AboutUs = () => {
                     marginTop: '5%',
                   }}
                 />
+
+                {/*Mohamed Rashad*/}
                 <div className="containerAbout">
                   <h2>Mohamed Rashad</h2>
                   <p className="titleAbout">Developer</p>
@@ -164,6 +168,8 @@ const AboutUs = () => {
                     marginTop: '5%',
                   }}
                 />
+
+                {/*Tharindu De Silva*/}
                 <div className="containerAbout">
                   <h2>Tharindu De Silva</h2>
                   <p className="titleAbout">Developer</p>
@@ -213,6 +219,8 @@ const AboutUs = () => {
                     marginTop: '5%',
                   }}
                 />
+
+                {/*Nathindu Dias*/}
                 <div className="containerAbout">
                   <h2>Nathindu Dias</h2>
                   <p className="titleAbout">Developer</p>
@@ -262,6 +270,8 @@ const AboutUs = () => {
                     marginTop: '5%',
                   }}
                 />
+
+                {/*Malith Goonathilake*/}
                 <div className="containerAbout">
                   <h2>Malith Goonathilake</h2>
                   <p className="titleAbout">Developer</p>
@@ -312,8 +322,10 @@ const AboutUs = () => {
                     marginTop: '5%',
                   }}
                 />
+
+                {/*Sriranjan Abilash*/}
                 <div className="containerAbout">
-                  <h2>Siranjan Abilash</h2>
+                  <h2>Sriranjan Abilash</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
                     <p>Implementation of Backend,Frontend and Data-Science components</p>
