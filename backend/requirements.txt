@@ -19,6 +19,7 @@ Flask-JWT-Extended==4.1.0
 flask-mongoengine==1.0.0
 Flask-WTF==0.14.3
 future==0.18.2
+gensim==4.0.1
 hjson==3.0.2
 idna==2.10
 importlib-metadata==3.7.3
