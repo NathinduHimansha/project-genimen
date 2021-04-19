@@ -20,7 +20,7 @@
   }
 }
 .bodySplitAbout {
-  margin-left: 14%;
+  margin-left: 5%;
   margin-top: -8%;
 }
 
@@ -35,25 +35,25 @@
 }
 
 .twitterAnimation:hover {
-  transform: translateY(-13px);
+  transform: translateY(-5px);
   transition: 300ms ease;
 }
 
 .linkedinAnimation:hover {
-  transform: translateY(-13px);
+  transform: translateY(-5px);
 
   transition: 300ms ease;
 }
 
 .githubAnimation:hover {
-  transform: translateY(-13px);
+  transform: translateY(-5px);
 
   transition: 300ms ease;
 }
 
 .columnAbout {
   float: left;
-  width: 26.3%;
+  width: 30.3%;
   padding: 0 8px;
   padding-left: 5%;
   margin-bottom: 5%;
@@ -139,6 +139,11 @@
 .titleAbout {
   color: grey;
   font-size: 1.4rem;
+  color: var(--fancy-heading-color);
+}
+
+.teamMemberName {
+  font-size: 2rem;
 }
 
 .teamDescription {
