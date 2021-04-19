@@ -33,7 +33,6 @@ const AboutUs = () => {
               project aims to simplify the research and the time that needed when coming up with new
               strategies to establish new products.
             </p>
-            {/* <div className="triangle-up"></div> */}
             <div className="arrowAnimation">
               <i class="arrow down"></i>
             </div>

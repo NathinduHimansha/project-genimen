@@ -22,7 +22,7 @@
 }
 .bodySplitAbout {
   margin-left: 14%;
-  margin-top: -5%;
+  margin-top: -8%;
 }
 
 .aboutDescrip {
@@ -214,4 +214,18 @@
 
 .down {
   transform: rotate(45deg);
+}
+
+@media screen and (max-width: 1100px) {
+  .arrowAnimation {
+    margin-bottom: 5%;
+    margin-left: 8%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .arrowAnimation {
+    margin-bottom: 10%;
+    margin-left: 12%;
+  }
 }
