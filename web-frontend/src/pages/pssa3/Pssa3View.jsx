@@ -113,6 +113,20 @@ const Pssa3View = () => {
     Object.keys(selectedFeatures).length ? setBtnDisabledSate(false) : setBtnDisabledSate(true);
   }, [selectedFeatures]);
 
+  const capitalize = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+  const capitalizePhoneModels = (model) => {
+    if (model) {
+      let modelNameStrList = model.split('-');
+      modelNameStrList = modelNameStrList.map((model) => {
+        return capitalize(model);
+      });
+      return modelNameStrList.join(' ');
+    }
+  };
+  
+
   return (
     <div className="navbar-page-container -mb-40">
       <div className="app-heading-header content-padding -flex -flex-col">
@@ -176,7 +190,7 @@ const Pssa3View = () => {
                            
                           <option key={feature.brand} value={feature.brand}>
                             
-                           {feature.brand}
+                           {capitalizePhoneModels(feature.brand)}
                           </option>
                         ))}
                       </select>
