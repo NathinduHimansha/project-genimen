@@ -62,7 +62,7 @@ const UrasResultsAlt = () => {
         return featureDet.feature == featureType;
       })
       .reduce((curr, pre) => {
-        return curr.pos > pre.pos ? curr : pre;
+        return curr.polarity > pre.polarity ? curr : pre;
       }, 0);
   };
   const findWorst = (featureType, phoneFeaturePolarityList) => {
@@ -71,7 +71,7 @@ const UrasResultsAlt = () => {
         return featureDet.feature == featureType;
       })
       .reduce((curr, pre) => {
-        return curr.pos < pre.pos ? curr : pre;
+        return curr.polarity < pre.polarity ? curr : pre;
       }, 110);
   };
   const capitalize = (string) => {
@@ -197,7 +197,7 @@ const UrasResultsAlt = () => {
               {!isObjEmtpy(bestPhone) && bestPhone.length != 0 && bestPhone.polarity != 'None' ? (
                 <SentimentRankCard
                   polarity="pos"
-                  polarityPerc={bestPhone.pos}
+                  polarityPerc={bestPhone.polarity}
                   label={capitalizePhoneModels(bestPhone.phone)}
                   description="Best phone for the feature"
                 ></SentimentRankCard>
@@ -209,7 +209,7 @@ const UrasResultsAlt = () => {
               worstPhone.polarity != 'None' ? (
                 <SentimentRankCard
                   polarity="neg"
-                  polarityPerc={worstPhone.pos}
+                  polarityPerc={worstPhone.polarity}
                   label={capitalizePhoneModels(worstPhone.phone)}
                   description="Worst phone for the feature"
                 ></SentimentRankCard>
