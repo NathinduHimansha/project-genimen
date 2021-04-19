@@ -70,6 +70,13 @@ phones = {
     display_types[2]: [
         'samsung-galaxy-z-flip'
     ],
+    charger_types[0]: [
+
+    ],
+    charger_types[1]: [
+
+    ],
+
     headphone_jack[0]: [
         'huawei-honor-9',
         'huawei-honor-8s',
