@@ -1,6 +1,6 @@
 #page-not-found {
   position: relative;
-  height: 90vh;
+  height: 110vh;
   font-family: sans-serif, 'Maven Pro';
 }
 
@@ -36,11 +36,10 @@
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-
-  color: #ececec;
-
+  color: var(--lighter-text);
   font-weight: 800em;
   font-size: 30em;
+  padding-bottom: 25px;
   margin: 0px;
   position: absolute;
   left: 50%;
@@ -50,9 +49,7 @@
 .page-not-found h2 {
   text-transform: uppercase;
   font-size: 5em;
-
-  color: #000;
-
+  color: var(--black);
   font-weight: 800em;
   margin: 0px;
 }
@@ -60,44 +57,59 @@
 .page-not-found p {
   text-transform: uppercase;
   font-size: 16px;
-
-  color: #000;
-
+  color: var(--black);
   font-weight: 400;
-
   margin-top: 15px;
 }
 
 /* buttons */
 .page-not-found a {
+  display: inline-block;
   text-transform: uppercase;
   font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
-
-  background: #189cf0;
-
-  display: inline-block;
-  padding: 15px 35px;
+  background: var(--primary-accent-light);
+  color: #fff;
+  padding: 18px 38px;
   margin: 5px;
   border: 2px solid transparent;
-  border-radius: 40px;
-  color: #fff;
-  font-weight: 400;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
+  border-radius: 5px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 
 .page-not-found a:hover {
-  background-color: #fff;
-  border-color: #189cf0;
-  color: #189cf0;
+  background-color: var(--primary-accent);
+  transform: translateY(4px);
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 720px) {
   .page-not-found .page-notfound-404 h1 {
-    font-size: 162px;
+    font-size: 30em;
   }
   .page-not-found h2 {
-    font-size: 26px;
+    font-size: 2.5em;
   }
+  .page-not-found a {
+    font-size: 10px;
+  }
+}
+
+/* logo */
+.bottom-logo {
+  padding-top: 8vh;
+}
+
+.gen-logo {
+  height: 25vh;
+  opacity: 80%;
+  transition: 200ms ease;
+}
+
+.gen-logo:hover {
+  transform: rotate(10deg);
 }
