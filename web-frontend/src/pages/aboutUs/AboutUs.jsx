@@ -23,7 +23,7 @@ const AboutUs = () => {
           </div>
           <div className="about-sectionAbout">
             <p className="labelAbout">
-              <span className="strike">ABOUT GENIMEN</span>
+              <span className="strike">STORY OF GENIMEN</span>
             </p>
             <p className="aboutSubDescrip" style={{ marginLeft: '23%' }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin convallis nulla
@@ -108,7 +108,7 @@ const AboutUs = () => {
                     <p>john@example.com</p>
                   </div>
                   <p className="platformlogoAlign">
-                    <a href="https://www.google.com">
+                    <a href="https://mobile.twitter.com/RashadRashadzcc">
                       <img
                         src={twitter}
                         style={{ width: '25%', height: '25%', borderRadius: '50%' }}
@@ -116,7 +116,7 @@ const AboutUs = () => {
                       ></img>
                     </a>
 
-                    <a href="https://www.google.com">
+                    <a href="https://lk.linkedin.com/in/mohamed-rashad-06b532148">
                       <img
                         src={linkedin}
                         style={{ width: '25%', height: '25%' }}
@@ -124,7 +124,7 @@ const AboutUs = () => {
                       ></img>
                     </a>
 
-                    <a href="https://www.google.com">
+                    <a href="https://github.com/bsucker98">
                       <img
                         src={github}
                         style={{ width: '25%', height: '25%' }}
@@ -198,7 +198,7 @@ const AboutUs = () => {
                     <p>john@example.com</p>
                   </div>
                   <p className="platformlogoAlign">
-                    <a href="https://www.google.com">
+                    <a href="https://twitter.com/NathinduDias">
                       <img
                         src={twitter}
                         style={{ width: '25%', height: '25%', borderRadius: '50%' }}
@@ -206,7 +206,7 @@ const AboutUs = () => {
                       ></img>
                     </a>
 
-                    <a href="https://www.google.com">
+                    <a href="https://www.linkedin.com/in/nathindu-dias-746ba915b/">
                       <img
                         src={linkedin}
                         style={{ width: '25%', height: '25%' }}
@@ -214,7 +214,7 @@ const AboutUs = () => {
                       ></img>
                     </a>
 
-                    <a href="https://www.google.com">
+                    <a href="https://github.com/NathinduHimansha">
                       <img
                         src={github}
                         style={{ width: '25%', height: '25%' }}

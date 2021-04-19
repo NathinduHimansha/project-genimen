@@ -11,10 +11,10 @@ import { Redirect, useHistory } from 'react-router';
 import fromParentOnly from '../../pages/wrappers/FromParentOnly';
 
 const ExkeyResults = () => {
-  const history = useHistory();
-  const [pageLoading, setPageLoading] = useState(true);
-  const [trendingFeatures, setTrend] = useState([]);
-  const [exkeyDataotherKeyword, setOther] = useState([]);
+  const history = useHistory(); //initialising the history
+  const [pageLoading, setPageLoading] = useState(true); //initialising the page loading as false
+  const [trendingFeatures, setTrend] = useState([]); //trending feature array
+  const [exkeyDataotherKeyword, setOther] = useState([]); //other keywords array
 
   useEffect(() => {
     setPageLoading(true);

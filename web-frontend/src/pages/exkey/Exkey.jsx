@@ -116,8 +116,6 @@ const Exkey = () => {
                 />
               </div>
 
-              {/*starting of the card right elements*/}
-
               {/*trend description which is displayed on the right side of the begining of the exkey page*/}
               <div className="trend_description_align">
                 <div className="focus-card focus-info-card -mb-40">
@@ -140,8 +138,8 @@ const Exkey = () => {
                   <div style={{ marginTop: '-3%', textAlign: 'justify' }}>
                     Trend analysis will help you to grow your market level by identifying areas of
                     your product willing to design that are performing well as well as areas that
-                    are not. As a result, it provides useful evidence to help you to make informed
-                    decisions about your long-term plan and ways to future-proof your product.
+                    are not. It provides useful evidence to help you to make informed decisions
+                    about your long-term plan and ways to future-proof your product.
                   </div>
                 </div>
                 <div className="analyze_again">
