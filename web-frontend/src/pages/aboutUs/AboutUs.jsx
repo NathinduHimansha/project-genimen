@@ -252,7 +252,7 @@ const AboutUs = () => {
                       ></img>
                     </a>
 
-                    <a href="https://www.google.com">
+                    <a href="https://www.linkedin.com/in/oshadha-goonathilake-89552a198">
                       <img
                         src={linkedin}
                         style={{ width: '25%', height: '25%' }}
@@ -260,7 +260,7 @@ const AboutUs = () => {
                       ></img>
                     </a>
 
-                    <a href="https://www.google.com">
+                    <a href="https://github.com/Malith404">
                       <img
                         src={github}
                         style={{ width: '25%', height: '25%' }}

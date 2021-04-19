@@ -112,10 +112,9 @@
 }
 
 .aboutSubDescrip {
-  font-size: 1.5rem;
-  /* text-align: justify; */
-  /* color: #189ab4; */
-  font-weight: 700;
+  font-size: 1.4rem;
+  color: black;
+  font-weight: 500;
   width: 60%;
 }
 
