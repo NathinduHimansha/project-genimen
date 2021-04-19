@@ -1,5 +1,4 @@
 .mainAboutPage {
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0%;
   box-sizing: border-box;
 }
@@ -27,6 +26,7 @@
 
 .aboutDescrip {
   color: var(--black);
+  font-size: 1.2rem;
 }
 
 .platformlogoAlign {
@@ -35,15 +35,20 @@
 }
 
 .twitterAnimation:hover {
-  transform: translateY(-15px);
+  transform: translateY(-13px);
+  transition: 300ms ease;
 }
 
 .linkedinAnimation:hover {
   transform: translateY(-13px);
+
+  transition: 300ms ease;
 }
 
 .githubAnimation:hover {
   transform: translateY(-13px);
+
+  transition: 300ms ease;
 }
 
 .columnAbout {
@@ -65,7 +70,6 @@
   text-decoration-color: #6699cc;
   display: inline-block;
   color: #241c15;
-  font-family: Means Web, Georgia, Times, Times New Roman, serif;
   font-size: 5.125rem;
   font-weight: 600;
   line-height: 1;
@@ -77,15 +81,15 @@
 @keyframes slidein {
   0% {
     margin-left: 0%;
-    width: 300%;
+    width: 100%;
   }
 
   50% {
-    margin-left: 50%;
+    margin-left: 45%;
     width: 100%;
   }
   100% {
-    margin-left: 50%;
+    margin-left: 45%;
     width: 100%;
   }
 }
@@ -106,10 +110,8 @@
 }
 
 .aboutSubDescrip {
-  font-size: 1.7rem;
-  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif;
-  color: black;
+  font-size: 2.2rem;
+  color: var(--black);
   font-weight: 390;
   width: 60%;
 }
@@ -117,7 +119,7 @@
 .about-sectionAbout {
   padding-bottom: 15%;
   text-align: center;
-  background-color: #d1eeee;
+  background-color: var(--about-us-banner-background);
   width: 100%;
   color: var(--black);
 }
@@ -136,6 +138,7 @@
 
 .titleAbout {
   color: grey;
+  font-size: 1.4rem;
 }
 
 .teamDescription {

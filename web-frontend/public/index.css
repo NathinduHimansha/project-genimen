@@ -38,6 +38,7 @@ body * {
   --grey: rgba(146, 146, 146, 1);
   --primary-border-grey: rgba(159, 159, 159, 1);
   --primary-border-grey: rgba(188, 188, 188, 1);
+  --about-us-banner-background: #d1eeee;
 
   /* Effect styles */
   /* --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12); */
@@ -139,7 +140,7 @@ body * {
   --primary-box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.12);
   --primary-border: 1px solid var(--primary-border-grey);
   --select-box-alt-color: rgba(39, 39, 39, 1);
-
+  --about-us-banner-background: #346b77
   /*logo banner */
   --logo-banner-maintext: #ffffff;
   --logo-banner-subtext: #a097fa;
