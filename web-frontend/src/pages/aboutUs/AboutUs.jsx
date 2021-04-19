@@ -26,22 +26,18 @@ const AboutUs = () => {
               <span className="strike">STORY OF GENIMEN</span>
             </p>
             <p className="aboutSubDescrip" style={{ marginLeft: '23%' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin convallis nulla
-              sollicitudin aliquam condimentum. Nunc tristique scelerisque est dignissim finibus.
-              Praesent sapien ligula, porta vitae interdum congue, vehicula sit amet mauris.
-              Suspendisse ut nisl eu arcu fringilla scelerisque. Duis diam metus, interdum et nisl
-              nec, vestibulum eleifend felis. Praesent sed molestie nunc. Nam vel tellus id enim
-              rhoncus pulvinar eu sit amet nisl. Vestibulum efficitur mattis tempus. Duis in
-              tincidunt ligula. Etiam feugiat, libero non lobortis sodales, elit turpis auctor
-              felis, quis pretium elit arcu non tortor. Aenean viverra tortor ut scelerisque
-              volutpat. Nam vel consectetur nulla.
+              The problem discussed arises with the nature of the modern-day market. With immense
+              competition and humongous customer base to cater it is often considered tedious and
+              difficult to approach the market with new services and products. Especially this is an
+              amplification of the problem when considered the routes to approach the market. This
+              project aims to simplify the research and the time that needed when coming up with new
+              strategies to establish new products.
             </p>
             {/* <div className="triangle-up"></div> */}
           </div>
         </div>
 
         <div className="bodySplitAbout">
-          {/* <h2 style={{ textAlign: 'center', paddingBottom: '5%', fontSize: '580%' }}>Devs'</h2> */}
           <div className="rowAbout">
             <div className="columnAbout">
               <div className="cardAbout">
@@ -52,6 +48,8 @@ const AboutUs = () => {
                     width: '50%',
                     marginLeft: '25%',
                     borderRadius: '50%',
+                    boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+                    marginTop: '5%',
                   }}
                 />
                 <div className="containerAbout">
@@ -98,7 +96,13 @@ const AboutUs = () => {
                 <img
                   src={hacker}
                   alt="John"
-                  style={{ width: '50%', marginLeft: '25%', borderRadius: '50%' }}
+                  style={{
+                    width: '50%',
+                    marginLeft: '25%',
+                    borderRadius: '50%',
+                    boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+                    marginTop: '5%',
+                  }}
                 />
                 <div className="containerAbout">
                   <h2>Mohamed Rashad</h2>
@@ -131,8 +135,6 @@ const AboutUs = () => {
                         className="githubAnimation"
                       ></img>
                     </a>
-
-                    {/* <button className="button">Contact</button> */}
                   </p>
                 </div>
               </div>
@@ -143,7 +145,13 @@ const AboutUs = () => {
                 <img
                   src={hacker}
                   alt="Mike"
-                  style={{ width: '50%', marginLeft: '25%', borderRadius: '50%' }}
+                  style={{
+                    width: '50%',
+                    marginLeft: '25%',
+                    borderRadius: '50%',
+                    boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+                    marginTop: '5%',
+                  }}
                 />
                 <div className="containerAbout">
                   <h2>Tharindu De Silva</h2>
@@ -176,8 +184,6 @@ const AboutUs = () => {
                         className="githubAnimation"
                       ></img>
                     </a>
-
-                    {/* <button className="button">Contact</button> */}
                   </p>
                 </div>
               </div>
@@ -188,7 +194,13 @@ const AboutUs = () => {
                 <img
                   src={hacker}
                   alt="John"
-                  style={{ width: '50%', marginLeft: '25%', borderRadius: '50%' }}
+                  style={{
+                    width: '50%',
+                    marginLeft: '25%',
+                    borderRadius: '50%',
+                    boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+                    marginTop: '5%',
+                  }}
                 />
                 <div className="containerAbout">
                   <h2>Nathindu Dias</h2>
@@ -221,8 +233,6 @@ const AboutUs = () => {
                         className="githubAnimation"
                       ></img>
                     </a>
-
-                    {/* <button className="button">Contact</button> */}
                   </p>
                 </div>
               </div>
@@ -233,7 +243,13 @@ const AboutUs = () => {
                 <img
                   src={hacker}
                   alt="John"
-                  style={{ width: '50%', marginLeft: '25%', borderRadius: '50%' }}
+                  style={{
+                    width: '50%',
+                    marginLeft: '25%',
+                    borderRadius: '50%',
+                    boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+                    marginTop: '5%',
+                  }}
                 />
                 <div className="containerAbout">
                   <h2>Malith Goonathilake</h2>
@@ -267,8 +283,6 @@ const AboutUs = () => {
                         className="githubAnimation"
                       ></img>
                     </a>
-
-                    {/* <button className="button">Contact</button> */}
                   </p>
                 </div>
               </div>
@@ -279,7 +293,13 @@ const AboutUs = () => {
                 <img
                   src={hacker}
                   alt="John"
-                  style={{ width: '50%', marginLeft: '25%', borderRadius: '50%' }}
+                  style={{
+                    width: '50%',
+                    marginLeft: '25%',
+                    borderRadius: '50%',
+                    boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+                    marginTop: '5%',
+                  }}
                 />
                 <div className="containerAbout">
                   <h2>Siranjan Abilash</h2>
@@ -312,8 +332,6 @@ const AboutUs = () => {
                         className="githubAnimation"
                       ></img>
                     </a>
-
-                    {/* <button className="button">Contact</button> */}
                   </p>
                 </div>
               </div>
