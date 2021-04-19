@@ -61,7 +61,12 @@ function HomePageNew() {
       <div className="homepage-body">
         <div className="homepage-loginbtn">
           {state.login ? (
-            <Button onClick={() => setOpenModal(true)} loginIconSrc={propic}>
+            <Button
+              onClick={() => setOpenModal(true)}
+              iconSrc={propic}
+              iconSide="left"
+              utilClasses={['home-login-btn-propic']}
+            >
               | Logout
             </Button>
           ) : (
