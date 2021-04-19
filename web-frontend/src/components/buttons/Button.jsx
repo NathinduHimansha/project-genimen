@@ -45,9 +45,19 @@ const Button = (props) => {
       }
       disabled={isDisabled()}
     >
-      <span className={'-bold -no-wrap ' + hideOnLoad()}>{props.children}</span>
-      {iconSrc ? <img className={iconImgSideClass() + ' ' + hideOnLoad()} src={iconSrc} /> : ''}
-      {showSpinnerOnLoad()}
+      {iconSide == 'right' ? (
+        <>
+          <span className={'-bold -no-wrap ' + hideOnLoad()}>{props.children}</span>
+          {iconSrc ? <img className={iconImgSideClass() + ' ' + hideOnLoad()} src={iconSrc} /> : ''}
+          {showSpinnerOnLoad()}
+        </>
+      ) : (
+        <>
+          {iconSrc ? <img className={iconImgSideClass() + ' ' + hideOnLoad()} src={iconSrc} /> : ''}
+          <span className={'-bold -no-wrap ' + hideOnLoad()}>{props.children}</span>
+          {showSpinnerOnLoad()}
+        </>
+      )}
     </button>
   );
 };

@@ -5,7 +5,6 @@ import hacker from '../../assests/hacker.png';
 import twitter from '../../assests/twitter.png';
 import linkedin from '../../assests/linkedin.png';
 import github from '../../assests/github.png';
-import FancyHeading from '../../components/text/FancyHeading';
 
 const AboutUs = () => {
   return (
@@ -25,6 +24,7 @@ const AboutUs = () => {
             <p className="labelAbout">
               <span className="strike">STORY OF GENIMEN</span>
             </p>
+            {/*description about the project*/}
             <p className="aboutSubDescrip" style={{ marginLeft: '23%' }}>
               The problem discussed arises with the nature of the modern-day market. With immense
               competition and humongous customer base to cater it is often considered tedious and
@@ -33,6 +33,8 @@ const AboutUs = () => {
               project aims to simplify the research and the time that needed when coming up with new
               strategies to establish new products.
             </p>
+
+            {/*down pointed animation*/}
             <div className="arrowAnimation">
               <i class="arrow down"></i>
             </div>
@@ -43,6 +45,7 @@ const AboutUs = () => {
           <div className="rowAbout">
             <div className="columnAbout">
               <div className="cardAbout">
+                {/*team member image*/}
                 <img
                   src={hacker}
                   alt="Jane"
@@ -54,16 +57,24 @@ const AboutUs = () => {
                     marginTop: '5%',
                   }}
                 />
+
+                {/*Adeesha Walgamage*/}
                 <div className="containerAbout">
+                  {/*Name of the team member*/}
                   <h2>Adeesha Walgamage</h2>
 
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
+                    {/*Contribution for the project*/}
                     <p>Implementation of Backend,Frontend and Data-Science components</p>
-                    <p>jane@example.com</p>
+
+                    {/*email og the team member*/}
+                    <p>adeesha.2018357.iit.ac.lk</p>
                   </div>
+
+                  {/*twitter logo with respective link to the account*/}
                   <p className="platformlogoAlign">
-                    <a href="https://www.google.com">
+                    <a href="https://twitter.com/big_macow">
                       <img
                         src={twitter}
                         style={{ width: '25%', height: '25%', borderRadius: '50%' }}
@@ -71,7 +82,8 @@ const AboutUs = () => {
                       ></img>
                     </a>
 
-                    <a href="https://www.google.com">
+                    {/*linkedin logo with respective link to the account*/}
+                    <a href="https://www.linkedin.com/in/manthila-walgamage-534b32197/">
                       <img
                         src={linkedin}
                         style={{ width: '25%', height: '25%' }}
@@ -79,15 +91,14 @@ const AboutUs = () => {
                       ></img>
                     </a>
 
-                    <a href="https://www.google.com">
+                    {/*github logo with respective link to the account*/}
+                    <a href="https://github.com/manthilaDev">
                       <img
                         src={github}
                         style={{ width: '25%', height: '25%' }}
                         className="githubAnimation"
                       ></img>
                     </a>
-
-                    {/* <button className="button">Contact</button> */}
                   </p>
                 </div>
               </div>
@@ -106,6 +117,8 @@ const AboutUs = () => {
                     marginTop: '5%',
                   }}
                 />
+
+                {/*Mohamed Rashad*/}
                 <div className="containerAbout">
                   <h2>Mohamed Rashad</h2>
                   <p className="titleAbout">Developer</p>
@@ -155,6 +168,8 @@ const AboutUs = () => {
                     marginTop: '5%',
                   }}
                 />
+
+                {/*Tharindu De Silva*/}
                 <div className="containerAbout">
                   <h2>Tharindu De Silva</h2>
                   <p className="titleAbout">Developer</p>
@@ -204,6 +219,8 @@ const AboutUs = () => {
                     marginTop: '5%',
                   }}
                 />
+
+                {/*Nathindu Dias*/}
                 <div className="containerAbout">
                   <h2>Nathindu Dias</h2>
                   <p className="titleAbout">Developer</p>
@@ -253,6 +270,8 @@ const AboutUs = () => {
                     marginTop: '5%',
                   }}
                 />
+
+                {/*Malith Goonathilake*/}
                 <div className="containerAbout">
                   <h2>Malith Goonathilake</h2>
                   <p className="titleAbout">Developer</p>
@@ -303,8 +322,10 @@ const AboutUs = () => {
                     marginTop: '5%',
                   }}
                 />
+
+                {/*Sriranjan Abilash*/}
                 <div className="containerAbout">
-                  <h2>Siranjan Abilash</h2>
+                  <h2>Sriranjan Abilash</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
                     <p>Implementation of Backend,Frontend and Data-Science components</p>
