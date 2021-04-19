@@ -71,8 +71,10 @@ const AboutUs = () => {
                     </p>
 
                     {/*email og the team member*/}
-                    <p>
-                      <a href="mailto:adeesha.2018357.iit.ac.lk">adeesha.2018357.iit.ac.lk</a>
+                    <p style={{ fontWeight: '500' }}>
+                      <a className="emailColor" href="mailto:adeesha.2018357.iit.ac.lk">
+                        adeesha.2018357.iit.ac.lk
+                      </a>
                     </p>
                   </div>
 
@@ -130,9 +132,10 @@ const AboutUs = () => {
                     <p style={{ fontSize: '1.8rem' }}>
                       Implementation of Backend,Frontend and Data-Science components
                     </p>
-                    <p>
-                      {' '}
-                      <a href="mailto:rashad.2018470@iit.ac.lk">rashad.2018470@iit.ac.lk</a>
+                    <p style={{ fontWeight: '500' }}>
+                      <a className="emailColor" href="mailto:rashad.2018470@iit.ac.lk">
+                        rashad.2018470@iit.ac.lk
+                      </a>
                     </p>
                   </div>
                   <p className="platformlogoAlign">
@@ -186,8 +189,10 @@ const AboutUs = () => {
                     <p style={{ fontSize: '1.8rem' }}>
                       Implementation of Backend,Frontend and Data-Science components
                     </p>
-                    <p>
-                      <a href="tharindu.2018367@iit.ac.lk">tharindu.2018367@iit.ac.lk</a>
+                    <p style={{ fontWeight: '500' }}>
+                      <a className="emailColor" href="tharindu.2018367@iit.ac.lk">
+                        tharindu.2018367@iit.ac.lk
+                      </a>
                     </p>
                   </div>
                   <p className="platformlogoAlign">
@@ -241,9 +246,10 @@ const AboutUs = () => {
                     <p style={{ fontSize: '1.8rem' }}>
                       Implementation of Backend,Frontend and Data-Science components
                     </p>
-                    <p>
-                      {' '}
-                      <a href="nathindu.2018455@iit.ac.lk">nathindu.2018455@iit.ac.lk</a>
+                    <p style={{ fontWeight: '500' }}>
+                      <a className="emailColor" href="nathindu.2018455@iit.ac.lk">
+                        nathindu.2018455@iit.ac.lk
+                      </a>
                     </p>
                   </div>
                   <p className="platformlogoAlign">
@@ -297,8 +303,10 @@ const AboutUs = () => {
                     <p style={{ fontSize: '1.8rem' }}>
                       Implementation of Backend,Frontend and Data-Science components
                     </p>
-                    <p>
-                      <a href="malith.2018402@iit.ac.lk">malith.2018402@iit.ac.lk</a>
+                    <p style={{ fontWeight: '500' }}>
+                      <a className="emailColor" href="malith.2018402@iit.ac.lk">
+                        malith.2018402@iit.ac.lk
+                      </a>
                     </p>
                   </div>
 
@@ -353,8 +361,10 @@ const AboutUs = () => {
                     <p style={{ fontSize: '1.8rem' }}>
                       Implementation of Backend,Frontend and Data-Science components
                     </p>
-                    <p>
-                      <a href="abilash.2018379@iit.ac.lk">abilash.2018379@iit.ac.lk</a>
+                    <p style={{ fontWeight: '500' }}>
+                      <a className="emailColor" href="abilash.2018379@iit.ac.lk">
+                        abilash.2018379@iit.ac.lk
+                      </a>
                     </p>
                   </div>
                   <p className="platformlogoAlign">
