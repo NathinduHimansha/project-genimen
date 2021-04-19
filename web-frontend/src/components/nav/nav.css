@@ -18,7 +18,7 @@
   transform: rotate(0deg);
   transition: transform 200ms;
   font-size: 2rem;
-  padding: 10px 0px;
+  padding: 20px 0px;
   height: var(--nav-width);
   display: flex;
   align-items: center;
