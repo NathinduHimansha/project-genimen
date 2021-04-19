@@ -118,7 +118,7 @@ const capitalizePhoneModels = (model) => {
             <div className=" -mt-60 -mb-40 content-padding">
                   
                 <div className="analytics-container cards-grid -mt-40" >
-                {features.filter(feature => feature.feature_pol == bestPhone).map(filteredmodel => (
+                {features.filter(feature => feature.feature_pol == bestPhone && bestPhone > 0).map(filteredmodel => (
                           
                           <SentimentRankCard
                   polarity="pos"
@@ -129,7 +129,7 @@ const capitalizePhoneModels = (model) => {
                 ></SentimentRankCard>
                           
                         ))}
-                        {features.filter(feature => feature.feature_pol == worstPhone).map(filteredmodel => (
+                        {features.filter(feature => feature.feature_pol == worstPhone && feature.feature_pol != bestPhone).map(filteredmodel => (
                           
                           <SentimentRankCard
                           polarity="neg"
