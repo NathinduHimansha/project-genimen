@@ -118,7 +118,7 @@ const capitalizePhoneModels = (model) => {
             <div className=" -mt-60 -mb-40 content-padding">
                   
                 <div className="analytics-container cards-grid -mt-40" >
-                {features.filter(feature => feature.feature_pol == bestPhone && bestPhone > 0).map(filteredmodel => (
+                {features.filter(feature => feature.feature_pol == bestPhone && bestPhone > worstPhone).map(filteredmodel => (
                           
                           <SentimentRankCard
                   polarity="pos"
