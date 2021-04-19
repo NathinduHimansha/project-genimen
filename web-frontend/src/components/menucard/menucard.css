@@ -116,12 +116,12 @@ article.startcard .startcard-info .startcard-start-btn {
 }
 
 article.startcard:hover .startcard-info {
-  transform: translateY(-15vh);
+  transform: translateY(-18vh);
 }
 
-@media only screen and (max-height: 700px) {
+@media only screen and (max-height: 750px) {
   article.startcard:hover .startcard-info {
-    transform: translateY(-30vh);
+    transform: translateY(-25vh);
   }
 }
 
