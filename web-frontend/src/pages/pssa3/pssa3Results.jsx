@@ -139,7 +139,8 @@ const capitalizePhoneModels = (model) => {
                         ></SentimentRankCard>
                           
                         ))}
-                    <div className="analytics-container cards-grid -mt-40" ></div>
+                        </div>
+                    <div className="analytics-container cards-grid -mt-40" >
                        {features.map((feature,i) => (
                            
                       <SentimentResultCard
