@@ -16,8 +16,8 @@ import PageNotFound from './pages/pagenotfound/PageNotFound';
 
 import URASViewAlt from './pages/uras/URASViewAlt';
 import UrasResultsAlt from './pages/uras/UrasResultsAlt';
-import Pssa3View from './pages/pssa3/Pssa3View';
-import Pssa3Results from './pages/pssa3/pssa3Results';
+import Pssa3View from './pages/pssa/Pssa3View';
+import Pssa3Results from './pages/pssa/Pssa3Results';
 import EXKEY from './pages/exkey/Exkey';
 import ExkeyResult from './pages/exkey/ExkeyResults';
 
