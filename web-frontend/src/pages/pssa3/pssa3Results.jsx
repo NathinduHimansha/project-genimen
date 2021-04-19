@@ -36,47 +36,7 @@ import SentimentResultCard from '../../components/analytics/SentimentResultCard'
 import SentimentRankCard from '../../components/analytics/SentimentRankCard';
 const Pssa3Results = () => {
   
-  const [features, setFeatures] = useState([
-    {model:"",
-        feature:"battery",
-        feature_count:0, 
-        feature_neg: 0, 
-        feature_pol: 0, 
-        feature_pos: 0}, 
-        {model:"",
-          feature:"camera",
-          feature_count: 0, 
-        feature_neg: 0, 
-        feature_pol: 0, 
-        feature_pos: 0},
-        {model:"",
-        feature:"display", 
-        feature_count: 0, 
-        feature_neg: 0, 
-        feature_pol: 0, 
-        feature_pos: 0},
-        {model:"",
-        feature:"face-recognition", 
-        feature_count: 0, 
-        feature_neg: 0, 
-        feature_pol: 0, 
-        feature_pos: 0},
-        {model:"",
-        feature:"finger-print", 
-        feature_count: 0, 
-        feature_neg: 0, 
-        feature_pol: 0, 
-        feature_pos: 0}, 
-        {model:"", 
-          feature:"speakers", 
-          feature_count: 0, 
-          feature_neg: 0, 
-          feature_pol: 0, 
-          feature_pos: 0
-       
-    },
-    
-  ]);
+  const [features, setFeatures] = useState([]);
   
 
   const history = useHistory();

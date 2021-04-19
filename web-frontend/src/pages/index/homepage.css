@@ -83,6 +83,7 @@
   }
 }
 
+/* start button */
 .homepage-start-button {
   padding-top: 3%;
   position: absolute;
@@ -92,7 +93,24 @@
   text-align: center;
 }
 
-/* start button */
+@media only screen and (max-width: 700px) {
+  .homepage-start-button {
+    padding-left: 5vw;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .homepage-start-button {
+    padding-left: 5vw;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .homepage-start-button {
+    padding-left: 3vw;
+  }
+}
+
 @keyframes startbtn-effect {
   80% {
     opacity: 0;
@@ -175,6 +193,12 @@
 
 .circle-shade5 {
   opacity: 1;
+}
+.home-login-btn-propic img {
+  /* width: 4.8rem; */
+  /* height: 2.4rem; */
+  border-radius: 50%;
+  transition: 200ms ease;
 }
 
 @keyframes ripple {

@@ -1,12 +1,18 @@
 .menu-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  padding: 5% 5% 5% 5%;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 0.5fr));
+  padding: 5% 5% 5% 20%;
+}
+
+@media only screen and (min-width: 750px) {
+  .menu-card-grid {
+    padding: 5% 5% 5% 12%;
+  }
 }
 
 @media only screen and (min-width: 1500px) {
   .menu-card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 0.5fr));
     padding: 5% 5% 5% 15%;
   }
 }
@@ -48,15 +54,14 @@ article.startcard .startcard-img {
 }
 
 article.startcard .startcard-info {
-  width: auto;
-  height: 60vh;
+  height: 65vh;
   padding: 12px 22px;
   background: rgb(228, 228, 228);
   /* box-shadow: 0px 1px 5px rgb(44, 44, 44); */
   border: 1px solid var(--primary-border-grey);
   border-right: 0px;
   border-left: 0px;
-  transition: 0.6s 0.2s;
+  transition: 0.3s 0s;
 }
 
 article.startcard .startcard-info .startcard-title {
@@ -112,16 +117,15 @@ article.startcard .startcard-info .startcard-start-btn {
   text-transform: uppercase;
   cursor: pointer;
   opacity: 0;
-  transition: 0.5s 0.25s cubic-bezier(50, 100, 100, 100);
 }
 
 article.startcard:hover .startcard-info {
-  transform: translateY(-15vh);
+  transform: translateY(-18vh);
 }
 
-@media only screen and (max-height: 700px) {
+@media only screen and (max-height: 750px) {
   article.startcard:hover .startcard-info {
-    transform: translateY(-30vh);
+    transform: translateY(-23vh);
   }
 }
 
