@@ -59,7 +59,7 @@ const AboutUs = () => {
 
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>Implementation of Backend,Frontend and Data-Science components</p>
                     <p>jane@example.com</p>
                   </div>
                   <p className="platformlogoAlign">
@@ -104,7 +104,7 @@ const AboutUs = () => {
                   <h2>Mohamed Rashad</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>Implementation of Backend,Frontend and Data-Science components</p>
                     <p>john@example.com</p>
                   </div>
                   <p className="platformlogoAlign">
@@ -149,7 +149,7 @@ const AboutUs = () => {
                   <h2>Tharindu De Silva</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>Implementation of Backend,Frontend and Data-Science components</p>
                     <p>tharindu.2018367@iit.ac.lk</p>
                   </div>
                   <p className="platformlogoAlign">
@@ -194,7 +194,7 @@ const AboutUs = () => {
                   <h2>Nathindu Dias</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>Implementation of Backend,Frontend and Data-Science components</p>
                     <p>john@example.com</p>
                   </div>
                   <p className="platformlogoAlign">
@@ -239,7 +239,7 @@ const AboutUs = () => {
                   <h2>Malith Goonathilake</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>Implementation of Backend,Frontend and Data-Science components</p>
                     <p>john@example.com</p>
                   </div>
 
@@ -285,7 +285,7 @@ const AboutUs = () => {
                   <h2>Siranjan Abilash</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>Implementation of Backend,Frontend and Data-Science components</p>
                     <p>john@example.com</p>
                   </div>
                   <p className="platformlogoAlign">
