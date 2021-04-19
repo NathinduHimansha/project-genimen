@@ -51,8 +51,8 @@ function App() {
       <div>
         <GenimenSideBar></GenimenSideBar>
         <Switch>
-          <Route exact path="/index" component={HomePageNew} />
-          <Route path="/aboutus" component={AboutUs} />
+          <Route exact path="/index" component={HomePage} />
+          <Route exact path="/aboutus" component={protect(AboutUs)} />
 
           <Route exact path="/analytics/uras" component={protect(URASViewAlt)} />
           <Route path="/analytics/uras/results" component={protect(UrasResultsAlt)} />
@@ -61,8 +61,8 @@ function App() {
           <Route exact path="/analytics/pssa" component={Pssa3View} />
           <Route path="/analytics/pssa/results" component={Pssa3Results} />
 
-          <Route exact path="/analytics/exkey" component={EXKEY} />
-          <Route path="/analytics/exkey/results" component={ExkeyResult} />
+          <Route exact path="/analytics/exkey" component={protect(EXKEY)} />
+          <Route path="/analytics/exkey/results" component={protect(ExkeyResult)} />
 
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />

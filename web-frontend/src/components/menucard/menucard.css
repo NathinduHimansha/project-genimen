@@ -56,7 +56,7 @@ article.startcard .startcard-info {
   border: 1px solid var(--primary-border-grey);
   border-right: 0px;
   border-left: 0px;
-  transition: 0.6s 0.2s;
+  transition: 0.2s 0s;
 }
 
 article.startcard .startcard-info .startcard-title {
