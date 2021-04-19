@@ -45,7 +45,6 @@ function App() {
         <GenimenSideBar></GenimenSideBar>
         <Switch>
           <Route exact path="/home" component={HomePageNew} />
-          <Route exact path="/index" component={HomePageNew} />
           <Route exact path="/aboutus" component={AboutUs} />
           <Route exact path="/analytics" component={HomeStart} />
 
