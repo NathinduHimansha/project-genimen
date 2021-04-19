@@ -3,9 +3,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppWithStore from './App.jsx';
+import { BrowserRouter, Route } from 'react-router-dom';
+
 ReactDOM.render(
   <React.StrictMode>
-    <AppWithStore />
+    <BrowserRouter>
+      <AppWithStore />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
 );

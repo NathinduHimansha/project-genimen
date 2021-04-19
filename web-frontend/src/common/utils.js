@@ -1,6 +1,10 @@
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 
+export const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 export const isObjEmtpy = (obj) => {
   return obj && Object.keys(obj).length === 0 && obj.constructor === Object;
 };
@@ -22,27 +26,37 @@ export const getToken = () => {
   return localStorage.getItem('id_token');
 };
 
-export const getTokenPayload = (token) => {
-  const tokenDecoded = jwt_decode(token);
-  return tokenDecoded.sub;
+export const getTokenPayload = () => {
+  const token = getToken();
+  if (token) {
+    const tokenDecoded = jwt_decode(getToken());
+    return tokenDecoded.sub;
+  }
+  return {};
 };
 
 export const isLoggedIn = () => {
   const token = getToken();
+  console.log(token);
   if (!token) {
     return false;
   }
-  // comment this line
-  return true;
-  const tokenDecoded = jwt_decode(token);
-  const dateNow = new Date();
-  const exp = tokenDecoded.exp;
-  // check if token expires withing 1 day
-  const oneDayInMs = 86400000;
-  // const validExp = exp - dateNow.getTime() / 1000;
-  const validExp = exp - dateNow.getTime();
-  const isTokenValid = validExp > oneDayInMs;
-  return isTokenValid;
+  // uncomment/comment this line for testing
+  // return true;
+
+  try {
+    const tokenDecoded = jwt_decode(token);
+    const dateNow = new Date();
+    const exp = tokenDecoded.exp;
+    // check if token expires withing 1 day
+    const oneDayInMs = 86400000;
+    // const validExp = exp - dateNow.getTime() / 1000;
+    const validExp = dateNow.getTime() - exp;
+    const isTokenValid = validExp > oneDayInMs;
+    return isTokenValid;
+  } catch (err) {
+    return false;
+  }
 };
 
 export const logOut = () => {
@@ -62,13 +76,13 @@ export const isEmailValid = (email) => {
   return pattern.test(email);
 };
 export const Http = (url_prefix) => {
-  const requestConf = {
+  let requestConf = {
     url: url_prefix,
   };
   const addToken = (token) => {
     const tokenHeaders = { Authorization: 'Bearer ' + token };
     if (token) {
-      return {
+      requestConf = {
         ...requestConf,
         headers: tokenHeaders,
       };
@@ -76,7 +90,7 @@ export const Http = (url_prefix) => {
     return requestConf;
   };
   // constructUrl if url is passed in addition to url_prefix
-  const addUrl = (url) => {
+  const getUrl = (url) => {
     if (url) {
       return url_prefix + url;
     }
@@ -84,7 +98,7 @@ export const Http = (url_prefix) => {
   };
   const addData = (data) => {
     if (data) {
-      return {
+      requestConf = {
         ...requestConf,
         data: data,
       };
@@ -94,27 +108,28 @@ export const Http = (url_prefix) => {
   const constructRequest = (method, data = null, url = '', token = '') => {
     let request = addData(data);
     request = addToken(token);
-    request = addUrl(url);
-    request.method = method;
+    let fullUrl = getUrl(url);
+    request['url'] = fullUrl;
+    request['method'] = method;
     return request;
   };
   const get = async ({ data = null, url = '', token = '' } = {}) => {
-    const conf = constructRequest('GET', data, token, url);
+    const conf = constructRequest('GET', data, url, token);
     const request = await axios(conf);
     return request;
   };
   const post = async ({ data = null, url = '', token = '' } = {}) => {
-    const conf = constructRequest('POST', data, token, url);
+    const conf = constructRequest('POST', data, url, token);
     const request = await axios(conf);
     return request;
   };
   const put = async ({ data = null, url = '', token = '' } = {}) => {
-    const conf = constructrequest('PUT', data, token, url);
+    const conf = constructrequest('PUT', data, url, token);
     const request = await axios(conf);
     return request;
   };
   const remove = async ({ data = null, url = '', token = '' } = {}) => {
-    const conf = constructrequest('DELETE', data, token, url);
+    const conf = constructrequest('DELETE', data, url, token);
     const request = await axios(conf);
     return request;
   };

@@ -7,7 +7,6 @@ server {
 
 
 		server_name 3.142.192.135;
-        /* server_name 18.188.81.157; */
 
         location / {
 				include proxy_params;

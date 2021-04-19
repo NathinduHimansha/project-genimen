@@ -12,13 +12,14 @@ import dark from '../../assests/NightMode.png';
 import light from '../../assests/LightMode.png';
 import home from '../../assests/HomeWhite.png';
 import Modal from '../modal/Modal';
-import { logOut } from '../../common/utils';
+import { getToken, Http, logOut } from '../../common/utils';
+import { getFeatures } from '../../services/uras-service';
 const routes = [
   {
     title: 'Home',
     icon: home,
     subMenu: [],
-    path: '/home',
+    path: '/index',
   },
   {
     title: 'Analytics',
@@ -26,7 +27,7 @@ const routes = [
     subMenu: [
       { title: 'Feature Sentiments', path: '/analytics/uras' },
       { title: 'Product Feature Sentiments', path: '/analytics/pssa' },
-      { title: 'TRENDZ', path: '/exkey' },
+      { title: 'Trendz', path: '/analytics/exkey' },
     ],
     path: '/analytics',
   },
@@ -34,7 +35,7 @@ const routes = [
     title: 'About',
     icon: about,
     subMenu: [],
-    path: '/about',
+    path: '/aboutus',
   },
 ];
 

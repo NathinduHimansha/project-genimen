@@ -22,8 +22,11 @@ def create_app(config=None, db=None):
     elif (config == 'test'):
         dotenv_path = join(dirname(__file__), '.test.env')
         load_dotenv(dotenv_path)
-    else:
+    elif (config == 'dev'):
         dotenv_path = join(dirname(__file__), '.dev.env')
+        load_dotenv(dotenv_path)
+    else:
+        dotenv_path = join(dirname(__file__), '.env')
         load_dotenv(dotenv_path)
 
     SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
@@ -48,7 +51,8 @@ def create_app(config=None, db=None):
 
     #  app.config['CORS_HEADERS'] = 'Content-Type'
     #  cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
-    CORS(app, resources={r"/api/*": {"origins": "*"}})
+    CORS(app, resources={r"/api/*": {"origins": "*"}},
+         support_credentials=True)
 
     @app.route('/api/hello', methods=["GET"])
     def hello():

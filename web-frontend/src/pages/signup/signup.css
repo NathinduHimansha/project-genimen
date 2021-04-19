@@ -110,7 +110,8 @@
     display: none;
   }
   .signup-card {
-    width: 70%;
+    width: 100%;
+    margin-right: auto !important;
   }
   .signup-page-container {
     padding: 0px 40px;

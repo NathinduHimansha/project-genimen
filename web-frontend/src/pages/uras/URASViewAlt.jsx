@@ -19,29 +19,36 @@ import sizeIcon from '../../assests/Size.png';
 import fingerprintIcon from '../../assests/FingerPrint.png';
 import headphoneJackIcon from '../../assests/HeadphoneJack.png';
 import { useToasts } from 'react-toast-notifications';
+import { getToken, capitalize } from '../../common/utils';
 
 const URASViewAlt = () => {
-  /*Nathundu */
   const analyseSelectedFeature = () => {
     setBtnLoadingState(true);
-    setTimeout(() => {
-      analyseFeatures()
-        .then((response) => {
-          setBtnLoadingState(false),
-            history.push({
-              pathname: '/analytics/uras/results',
-              state: response, //passing fetched data to results
-            });
-        })
+    const token = getToken();
+    analyseFeatures(selectedFeatures, token)
+      .then((response) => {
+        if (response.data.status == 1) {
+          const data = response.data.data;
+          history.push({
+            pathname: '/analytics/uras/results',
+            state: data,
+          });
+        } else {
+          addToast('Something went wront, please try again...', {
+            appearance: 'error',
+            id: 'uras-api-error',
+          });
+          setBtnLoadingState(false);
+        }
+      })
 
-        .catch((error) => {
-          setBtnLoadingState(false),
-            addToast('Data Fetching Error..! Please Try again', {
-              appearance: 'error',
-              id: 'uras-api-error',
-            });
-        });
-    }, 3000);
+      .catch((error) => {
+        setBtnLoadingState(false),
+          addToast('Something went wront! please try again...', {
+            appearance: 'error',
+            id: 'uras-api-error',
+          });
+      });
   };
 
   const [features, setFeatures] = useState([
@@ -64,7 +71,7 @@ const URASViewAlt = () => {
   ]); //available fetures in backend
   const [selectedFeatures, setSelectedFeatures] = useState({}); //selected features by the user
   const appendSelectedFeatures = (feature, type) => {
-    console.log(feature, type);
+    // console.log(feature, type);
     setSelectedFeatures((prevSelectedFeatures) => ({ ...prevSelectedFeatures, [feature]: type }));
   };
   const [btnLoadingState, setBtnLoadingState] = useState(false);
@@ -82,9 +89,10 @@ const URASViewAlt = () => {
   useEffect(() => {
     setPageLoading(true);
     setTimeout(() => {
-      getFeatures()
+      const token = getToken();
+      getFeatures(token)
         .then((response) => {
-          setFeatures(response);
+          setFeatures(response.data.data);
           setPageLoading(false);
         })
         .catch((error) => {
@@ -94,7 +102,7 @@ const URASViewAlt = () => {
             id: 'uras-api-error',
           });
         });
-    }, 1000);
+    }, 500);
   }, []);
 
   const cleardata = () => {
@@ -150,7 +158,7 @@ const URASViewAlt = () => {
                       <IconHeading size="small" iconUrl={getIconUrl(feature.feature)}>
                         <label htmlFor="select-feature-type-display" className="select-label">
                           <h2 className="heading3 -regular -no-margin feature-type-heading">
-                            {feature.feature}
+                            {capitalize(feature.feature)}
                           </h2>
                         </label>
                       </IconHeading>
@@ -168,7 +176,7 @@ const URASViewAlt = () => {
                         </option>
                         {feature.types.map((type, i) => (
                           <option key={type + i} value={type}>
-                            {type}
+                            {capitalize(type)}
                           </option>
                         ))}
                       </select>

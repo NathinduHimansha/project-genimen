@@ -1,43 +1,52 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
-import { otherKeywordsTrend } from '../../services/exkey-treemap-service';
 
-class TreeMap extends React.Component {
-  constructor(props) {
-    super(props);
+const TreeMap = (props) => {
+  const { data } = props;
 
-    this.state = {
-      treeVisibility: false,
-      data: [],
-      options: {},
-    };
-  }
+  const state = {
+    treeVisibility: false,
+    options: {
+      tooltip: {
+        enabled: true,
+        theme: 'dark', //dark theme for the tooltip
 
-  componentDidMount() {
-    otherKeywordsTrend()
-      .then((response) => {
-        this.setState({ data: response.series, treeVisibility: true });
-      })
-      .catch((error) => {
-        if (error) {
-        }
-      });
-  }
+        //custom tooltip
+        custom: function ({ data, seriesIndex, dataPointIndex, w }) {
+          var data = w.globals.initialSeries[seriesIndex].data[dataPointIndex];
 
-  render() {
-    return (
-      <div>
-        {this.state.treeVisibility == true ? (
-          <ReactApexChart
-            options={this.state.options}
-            series={this.state.data}
-            type="treemap"
-            // height={260}
-            // width={520}
-          />
-        ) : null}
-      </div>
-    );
-  }
-}
+          //returning the x value from the data array
+          return (
+            '<div style="width: 180px; height: 40px;text-align: center;margin-top: 25px;">' +
+            data.x +
+            '</div>'
+          );
+        },
+      },
+
+      plotOptions: {
+        treemap: {
+          distributed: true, //distributed multicolour treemap
+        },
+      },
+
+      // colors: ['#05B8CC'],
+
+      states: {
+        hover: {
+          filter: {
+            type: 'darken', //Hovering boxes of the treemap with the dark theme
+            value: 0.55,
+          },
+        },
+      },
+    },
+  };
+
+  return (
+    <div>
+      <ReactApexChart options={state.options} series={data} type="treemap" />
+    </div>
+  );
+};
 export default TreeMap;

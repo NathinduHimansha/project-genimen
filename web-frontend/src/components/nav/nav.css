@@ -5,6 +5,7 @@
   margin-left: var(--nav-width);
   animation: slideInIn 400ms ease forwards;
 }
+
 @keyframes slideInIn {
   0% {
     transform: translateX(-500px);
@@ -246,6 +247,7 @@ img.dropdown-arrow {
   text-decoration: none;
   margin-bottom: 2px;
   transition: 200ms ease;
+  overflow: hidden;
 }
 
 .nav-link:last-child {

@@ -3,54 +3,55 @@ import { Http } from '../common/utils';
 import axios from 'axios';
 
 
-const base = `${BASE_URL}/exkey`;
+const base = `${BASE_URL}/analytics/exkey`;
 // const base = `${BASE_URL}/hello`;
 const http = Http(base);
 
 const exkey_mock = {
-  data: {
-    'trend': [
+  "data": {
+    "trend": [
       {
-        keyword:"gorilla screen",
-        value:10,
+        "keyword": "phone",
+        "value": 4.432264460956905
       },
       {
-        keyword:"onscreen fingerprint",
-        value:5,
-      },    
-      {
-        keyword:"108Mp camera",
-        value:15,
+        "keyword": "great",
+        "value": 0.9543828672124888
       },
       {
-        keyword:"facial recognition",
-        value:50,
+        "keyword": "good",
+        "value": 0.8036336756107216
       },
       {
-        keyword:"Good Storage",
-        value:41,
+        "keyword": "battery",
+        "value": 22.7662529209188589
       },
       {
-        keyword:"LCD Display",
-        value:100,
-      }, 
-      {
-        keyword:"Budget",
-        value:98,
+        "keyword": "screen",
+        "value": 0.6840643075101335
       },
       {
-        keyword:"Snap Dragon chip",
-        value:85,
-      },  {
-        keyword:"wonderful",
-        value:10,
+        "keyword": "like",
+        "value": 0.6757963992558883
       },
+      {
+        "keyword": "new",
+        "value": 0.657403806741148
+      },
+      {
+        "keyword": "one",
+        "value": 0.5966907346877288
+      },
+      {
+        "keyword": "de",
+        "value": 0.5323341776409135
+      },
+     
     ],
-
-  status: 1,
-    },
+    status:1
+  }
 }
 
-// export const getTrendingFeatures = async () => http.get();
+//export const getTrendingFeatures = async () => http.get();
 
 export const trendz = async () => exkey_mock;

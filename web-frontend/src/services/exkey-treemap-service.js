@@ -2,8 +2,7 @@ import { BASE_URL } from './env';
 import { Http } from '../common/utils';
 import axios from 'axios';
 
-
-const base = `${BASE_URL}/exkey`;
+const base = `${BASE_URL}/analytics/exkey`;
 const http = Http(base);
 
 const exkey_mock_otherKeywords = {
@@ -12,63 +11,57 @@ const exkey_mock_otherKeywords = {
       data: [
         {
           x: 'Screen',
-          y: 218,
+          y: 200,
         },
         {
           x: 'great camera',
-          y: 149,
+          y: 200,
         },
         {
           x: 'good storage',
-          y: 184,
+          y: 200,
         },
         {
           x: 'front camera',
-          y: 55,
+          y: 200,
         },
         {
           x: 'long lasting battery',
-          y: 84,
+          y: 200,
         },
         {
           x: 'Multiple windows',
-          y: 31,
+          y: 200,
         },
         {
           x: 'Infrared remote control',
-          y: 70,
+          y: 200,
         },
         {
           x: 'Wireless charging',
-          y: 30,
+          y: 200,
         },
         {
           x: 'NFC',
-          y: 44,
+          y: 200,
         },
         {
           x: 'Notch',
-          y: 68,
+          y: 200,
         },
         {
-          x: 'Memory Card Supported',
-          y: 28,
+          x: 'fingerprint',
+          y: 200,
         },
         {
-          x: 'Dual Sim port',
-          y: 19,
-        },
-        {
-          x: 'MP Triple Rear camera',
-          y: 29,
+          x: 'display',
+          y: 200,
         },
       ],
+      status: 1,
     },
   ],
-
-  status: 1,
-    
-}
+};
 
 // export const getTrendingFeatures = async () => http.get();
 
