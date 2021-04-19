@@ -111,7 +111,6 @@ const Exkey = () => {
                 <img
                   className="colourfulMobilePhone"
                   style={{ width: '68%', height: '90%', opacity: '0.8' }}
-                  // style={{ width: '82%', height: '90%', opacity: '0.8' }}
                   src={colourful_mobilePhone}
                 />
               </div>
