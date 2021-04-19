@@ -28,13 +28,12 @@ const Exkey = () => {
       //set timeout for 1000 ms
       Promise.all([trendz(), otherKeywordsTrend()]) //returns a single promise that resolves to an array from all the promises included
         .then((res) => {
-          const trendData = res[0]; //taking the column 0 from the array which contains the trending features
-          const keywordData = res[1]; //taking the column 1 from the array which contains the other keywords
+          const trendData = res[0].data; //taking the column 0 from the array which contains the trending features
+          const keywordData = res[1].data; //taking the column 1 from the array which contains the other keywords
           const temp = keywordData.series; //string the series array which was taken from the keyword data array
-          if (trendData.data.status == 1 && temp.length !== 0) {
+          if (trendData.status == 1 && temp.length !== 0) {
             //if the status is 1 from trend data service and if the trend data array is not equal to 0
-            const trendingFeatures = trendData.data.trend; //adding the trending data captured from the service into a constant
-
+            const trendingFeatures = trendData.data; //adding the trending data captured from the service into a constant
             //for loop which will add the trending data taken from the service into to a list
             for (const trend of trendingFeatures) {
               trendingList.push(trend);
