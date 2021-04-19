@@ -40,6 +40,8 @@ body * {
   --primary-border-grey: rgba(188, 188, 188, 1);
   --about-us-banner-background: #d1eeee;
   --about-us-page-heading: #483d8b;
+  --bargraph-background: #d9f0f3;
+  --bargraph-progress-load: #96dde7;
 
   /* Effect styles */
   /* --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12); */
@@ -143,7 +145,8 @@ body * {
   --select-box-alt-color: rgba(39, 39, 39, 1);
   --about-us-banner-background: #346b77;
   --about-us-page-heading: rgb(193 208 230);
-
+  --bargraph-background: #26466d;
+  --bargraph-progress-load: #4f94cd;
   /*logo banner */
   --logo-banner-maintext: #ffffff;
   --logo-banner-subtext: #a097fa;
