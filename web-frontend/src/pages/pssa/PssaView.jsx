@@ -205,7 +205,7 @@ const Pssa3View = () => {
                       
                       <select
                         defaultValue="select-feature"
-                        className="select-feature select large heading4 -regular -flex-right"
+                        className="select-model select large heading4 -regular -flex-right"
                         id="select-model-type"
                         onChange={(e)=>{
                           const selectModel=e.target.value;
