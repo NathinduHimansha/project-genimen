@@ -142,7 +142,7 @@ body * {
   --primary-border: 1px solid var(--primary-border-grey);
   --select-box-alt-color: rgba(39, 39, 39, 1);
   --about-us-banner-background: #346b77;
-  --about-us-page-heading: rgba(190, 190, 190, 1);
+  --about-us-page-heading: rgb(193 208 230);
 
   /*logo banner */
   --logo-banner-maintext: #ffffff;
