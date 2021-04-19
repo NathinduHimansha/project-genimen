@@ -2,9 +2,10 @@ import React from 'react';
 
 const NetPolarity = (props) => {
   let { polarity } = props;
-  const polarityPerc = polarity.toFixed(1);
+  let polarityPerc = polarity.toFixed(1);
   const color = polarity > 0 ? 'var(--pos-green)' : 'var(--neg-red)';
-  polarity = polarity > 0 ? '+' + polarity : polarity;
+  // polarityPerc = polarity > 0 ? '+' + polarityPerc : polarityPerc;
+  polarityPerc = Math.abs(polarityPerc);
 
   return (
     <div>
