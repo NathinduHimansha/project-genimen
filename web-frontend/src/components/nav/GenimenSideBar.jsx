@@ -87,6 +87,7 @@ const GenimenSideBar = () => {
           <img
             className={themeMode == 'light' ? 'dark-mode-icon -opacity-0' : 'dark-mode-icon'}
             src={dark}
+            title="click to change the theme"
             onClick={() => {
               toggleMode();
               if (themeMode == 'dark') {
@@ -101,6 +102,7 @@ const GenimenSideBar = () => {
           <img
             className={themeMode == 'dark' ? 'light-mode-icon -opacity-0' : 'light-mode-icon'}
             src={light}
+            title="click to change the theme"
             onClick={() => {
               toggleMode();
               if (themeMode == 'dark') {
