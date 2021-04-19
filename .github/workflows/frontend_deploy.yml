@@ -3,13 +3,13 @@ name: Deploy Frontend
 on:
   push:
     branches:
-      - none
+      - Dev
     paths:
       - 'web-frontend/**'
 
   pull_request:
     branches:
-      - none
+      - Dev
     paths:
       - 'web-frontend/**'
 jobs:
@@ -34,7 +34,7 @@ jobs:
         npm run build
         netlify deploy --prod
       env:
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        # NETLIFY_SITE_ID: 1c8836df-d191-49e9-9032-c978384eeffc
-        # NETLIFY_AUTH_TOKEN: 0yGJI7-BJfRmcpaNqPcKyLcUQcp-qWZg3IHaxl43D-k
+        # NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        # NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: 1c8836df-d191-49e9-9032-c978384eeffc
+        NETLIFY_AUTH_TOKEN: FWPzvVSBc-T1UNV0P7QN-Y1FWnJgMEnMld__FZOasKg

@@ -1,6 +1,6 @@
 .mainAboutPage {
   font-family: Arial, Helvetica, sans-serif;
-  margin-left: 0%;
+  margin: 0%;
   box-sizing: border-box;
 }
 
@@ -22,7 +22,8 @@
   }
 }
 .bodySplitAbout {
-  margin-left: 4%;
+  margin-left: 15%;
+  margin-top: -5%;
 }
 
 .aboutDescrip {
@@ -64,16 +65,79 @@
   margin: 8px;
 }
 
-/* .cardAbout:hover {
-  cursor: grab;
-  transform: scale(1.1);
-} */
+.labelAbout {
+  /* text-decoration: overline; */
+  text-decoration-color: #6699cc;
+  display: inline-block;
+  color: #241c15;
+  font-family: Means Web, Georgia, Times, Times New Roman, serif;
+  font-size: 5.125rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 0.8rem;
+  color: #483d8b;
+  margin-top: 5%;
+  padding-bottom: 3%;
+}
+@keyframes slidein {
+  0% {
+    margin-left: 0%;
+    width: 300%;
+  }
+
+  50% {
+    margin-left: 50%;
+    width: 100%;
+  }
+  100% {
+    margin-left: 50%;
+    width: 100%;
+  }
+}
+.strike {
+  /* text-decoration: line-through; */
+  text-decoration: overline;
+  animation: slidein 5s;
+  animation-fill-mode: forwards;
+  text-decoration-color: #6699cc;
+}
+
+.aboutDescripHeading {
+  margin-left: 10%;
+  margin-top: 1%;
+  font-size: 3.2rem;
+  width: 100%;
+  opacity: 1;
+  color: var(--primary-black);
+}
+
+.aboutSubDescrip {
+  font-size: 1.4rem;
+  color: black;
+  font-weight: 500;
+  width: 60%;
+}
 
 .about-sectionAbout {
-  padding: 50px;
+  /* margin-left: 22%; */
+  /* padding: 6%; */
+  padding-bottom: 15%;
+  /* padding-bottom: 10%; */
   text-align: center;
-  background-color: #474e5d;
-  color: white;
+  background-color: #c5dbf2;
+  /* opacity: 1; */
+  width: 100%;
+  color: var(--black);
+}
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid var(--white);
+  margin-left: 45%;
+  margin-top: 10%;
 }
 
 .containerAbout {
@@ -90,6 +154,12 @@
 
 .titleAbout {
   color: grey;
+}
+
+.teamDescription {
+  width: 100%;
+  height: 50%;
+  color: black;
 }
 
 .buttonAbout {
@@ -129,3 +199,5 @@
     width: 80%;
   }
 }
+
+/*ggggggggggggggggggggggggggg*/

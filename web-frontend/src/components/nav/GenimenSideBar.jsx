@@ -48,19 +48,6 @@ const GenimenSideBar = () => {
     logOut();
     setOpenModal(false);
   };
-  useEffect(() => {
-    const token = getToken();
-    let base = `https://dapg9ovk6f.execute-api.us-east-2.amazonaws.com/dev`;
-    // let base = 'https://3.141.148.28/dev/api';
-    let http = Http(base);
-    const login = async (cred) => http.post({ data: cred, url: '/auth/login' });
-    login({ username: 'tooo', password: 'newpassword' }).then((res) => {
-      console.log(res);
-    });
-    http.get({ url: '/model-sentiment/Desire 530' }).then((res) => {
-      console.log(res);
-    });
-  }, []);
   return (
     <>
       <Modal show={openLogoutConfrimModal}>

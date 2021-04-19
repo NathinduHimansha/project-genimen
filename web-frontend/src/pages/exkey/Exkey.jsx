@@ -124,7 +124,7 @@ const Exkey = () => {
                   <img
                     src={lightBulb}
                     style={{
-                      width: '6%',
+                      width: '12%',
                       height: '1%',
                       paddingRight: '5%',
                     }}
