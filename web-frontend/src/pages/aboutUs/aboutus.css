@@ -74,7 +74,7 @@
   font-weight: 600;
   line-height: 1;
   margin-bottom: 0.8rem;
-  color: #483d8b;
+  color: var(--about-us-page-heading);
   margin-top: 5%;
   padding-bottom: 3%;
 }
