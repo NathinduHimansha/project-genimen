@@ -139,7 +139,7 @@ const Pssa3View = () => {
                 ) : 
                     <div className="-flex -mb-20 brand-selection-box-wrapper">
                       <IconHeading size="small" iconUrl={getIconUrl("display")}>
-                        <label htmlFor="select-feature-type-display" className="select-label">
+                        <label className="select-label">
                           <h2 className="heading3 -regular -no-margin feature-type-heading">
                             Brand
                           </h2>
