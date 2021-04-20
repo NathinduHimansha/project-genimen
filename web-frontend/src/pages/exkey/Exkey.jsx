@@ -11,7 +11,7 @@ import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
 import { useToasts } from 'react-toast-notifications';
 import { useHistory } from 'react-router';
-import {getToken} from "../../common/utils";
+import { getToken } from '../../common/utils';
 
 const Exkey = () => {
   const trendingList = []; //list which contains all the trending features
@@ -118,7 +118,10 @@ const Exkey = () => {
 
               {/*trend description which is displayed on the right side of the begining of the exkey page*/}
               <div className="trend_description_align">
-                <div className="focus-card focus-info-card -mb-40">
+                <div
+                  className="focus-card focus-info-card -mb-40"
+                  style={{ paddingRight: '20px', paddingLeft: '20px' }}
+                >
                   <img
                     src={lightBulb}
                     style={{
@@ -129,13 +132,16 @@ const Exkey = () => {
                     alt="tip_bulb"
                   />
                   <div style={{ marginTop: '-4%', marginLeft: '10%' }}>
-                    <span className="-bold -normal">
+                    <span className="-bold -normal focus-card-info-label">
                       WHY TREND THIS MUCH IMPORTANT FOR YOU ?<br></br>
                       <br></br>
                       <br></br>
                     </span>
                   </div>
-                  <div style={{ marginTop: '-3%', textAlign: 'justify' }}>
+                  <div
+                    className="focus-card-description"
+                    style={{ marginTop: '-3%', textAlign: 'justify' }}
+                  >
                     Trend analysis will help you to grow your market level by identifying areas of
                     your product willing to design that are performing well as well as areas that
                     are not. It provides useful evidence to help you to make informed decisions
