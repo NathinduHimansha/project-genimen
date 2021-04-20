@@ -5,7 +5,9 @@ import hacker from '../../assests/hacker.png';
 import twitter from '../../assests/twitter.png';
 import linkedin from '../../assests/linkedin.png';
 import github from '../../assests/github.png';
+import manthila from '../../assests/manthila.png';
 import tharindu from '../../assests/tharindu.jpg';
+import nathindu from '../../assests/nathindu.png';
 import malith from '../../assests/malith.jpg';
 
 const AboutUs = () => {
@@ -49,7 +51,7 @@ const AboutUs = () => {
               <div className="cardAbout">
                 {/*team member image*/}
                 <img
-                  src={hacker}
+                  src={manthila}
                   alt="adeesha"
                   style={{
                     width: '50%',
@@ -229,7 +231,7 @@ const AboutUs = () => {
             <div className="columnAbout">
               <div className="cardAbout">
                 <img
-                  src={hacker}
+                  src={nathindu}
                   alt="nathindu"
                   style={{
                     width: '50%',
