@@ -4,4 +4,4 @@ const base = `${BASE_URL}/ModelSentiment/analyze` ; // This is the real url for 
 const http = Http(base);
 
 
-export const analysePhones = async (data) => http.post({ data: data }); // real backend data for sentiment values
+export const analysePhones = async (data, token) => http.post({ data: data, token: token }); // real backend data for sentiment values
