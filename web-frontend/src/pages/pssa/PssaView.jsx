@@ -139,7 +139,7 @@ const Pssa3View = () => {
       <div className=" -mt-60 -mb-40 content-padding">
         <FancyHeading decoratorClassName="fancy-heading2-decorator">
           <h2 className="heading2 -medium -no-margin heading2-sep-margin">
-            Select SMART PHONE To Analyse
+            Select Smart Phone To Analyse
           </h2>
         </FancyHeading>
         <hr className="heading-sep" />
