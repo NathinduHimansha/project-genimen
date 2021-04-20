@@ -1,37 +1,9 @@
 import React, { useEffect, useContext, useState } from 'react';
-import { Context } from '../../components/sate_management/GlobalStore';
 import FancyHeading from '../../components/text/FancyHeading';
-import phoneIcon from '../../assests/PhoneIcon.png';
-import search from '../../assests/Search.png';
 import modelB from '../../assests/images/modeBrand.jpg';
-import croselight from '../../assests/CroseLight.png';
-import circlebanner from '../../assests/GeometricCircleBanner.png';
-import Button from '../../components/buttons/Button';
-import SampleFeatureSelection from '../experiment/SampleFeatureSelection';
-import propic from '../../assests/ProfilePic.png';
 import { useHistory, useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import IconHeading from '../../components/text/IconHeading';
-import CurrentLocation from '../../components/header/CurrentLocation';
-import displayIcon from '../../assests/Display.png';
-import sizeIcon from '../../assests/Size.png';
-import fingerprintIcon from '../../assests/FingerPrint.png';
-import headphoneJackIcon from '../../assests/HeadphoneJack.png';
-import { useToasts } from 'react-toast-notifications';
-import iphone7 from '../../assests/images/apple.png';
-import samsung from '../../assests/images/samsung.png';
-import huwawei from '../../assests/images/huw.png';
-import asus from '../../assests/images/asus.png';
-import pixel from '../../assests/images/google.png';
-import htc from '../../assests/images/htc.png';
-import oneplus from '../../assests/images/one.png';
-import nokia from '../../assests/images/nokia.png';
-import xiaomi from '../../assests/images/mi.png';
-import motorola from '../../assests/images/moto.png';
-import realme from '../../assests/images/real.png';
-import lg from '../../assests/images/lg.png';
-import sony from '../../assests/images/sony.png';
-import zte from '../../assests/images/zte.png';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import SentimentRankCard from '../../components/analytics/SentimentRankCard';
 const Pssa3Results = () => {
@@ -90,7 +62,7 @@ const capitalizePhoneModels = (model) => {
       <div className=" -mt-60 -mb-40 content-padding">
         <FancyHeading decoratorClassName="fancy-heading2-decorator">
         <h2 className="heading2 -medium -no-margin heading2-sep-margin">
-          MODEL NAME :&nbsp;
+          
           {features.filter(feature => feature.feature == "display").map(filteredmodel => (
                           
                           filteredmodel.model
@@ -108,7 +80,8 @@ const capitalizePhoneModels = (model) => {
             <div className="focus-card focus-info-card -mb-40"style={{height:"200px"}}>
               
               <span className="-bold -normal" >INFO: </span>This will give you the sentiment of the features of 
-              the selected smart phone and an overall score for the features
+              the selected smart phone and an overall score for the features. Sentiment Reuslt cards will give an 
+              insight about the best features and the worst features of the selected smart phone.
                 
             </div>
             
@@ -118,7 +91,7 @@ const capitalizePhoneModels = (model) => {
             <div className=" -mt-60 -mb-40 content-padding">
                   
                 <div className="analytics-container cards-grid -mt-40" >
-                {features.filter(feature => feature.feature_pol == bestPhone && bestPhone > worstPhone).map(filteredmodel => (
+                {features.filter(feature => feature.feature_pol == bestPhone && bestPhone !=0).map(filteredmodel => (
                           
                           <SentimentRankCard
                   polarity="pos"
@@ -135,7 +108,7 @@ const capitalizePhoneModels = (model) => {
                           polarity="neg"
                           polarityPerc={filteredmodel.feature_pol}
                           label={capitalizePhoneModels(filteredmodel.feature)}
-                          description={"Worst feature of the selected smart phone"+filteredmodel.model}
+                          description={"Worst feature of the selected smart phone" +" "+filteredmodel.model}
                         ></SentimentRankCard>
                           
                         ))}
