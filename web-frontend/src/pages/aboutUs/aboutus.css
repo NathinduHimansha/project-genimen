@@ -34,6 +34,10 @@
   margin-top: 15%;
 }
 
+.platformlogoAlign img {
+  width: 25% !important;
+  height: 25% !important;
+}
 .twitterAnimation:hover {
   transform: translateY(-5px);
   transition: 300ms ease;
@@ -140,10 +144,15 @@
   color: grey;
   font-size: 1.8rem;
   color: var(--fancy-heading-color);
+  color: var(--grey);
+  margin: 0;
 }
 
 .teamMemberName {
   font-size: 2rem;
+  color: var(--fancy-heading-color);
+  margin: 0;
+  margin-bottom: 5px;
 }
 
 .teamDescription {
