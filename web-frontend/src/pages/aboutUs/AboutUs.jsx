@@ -6,9 +6,10 @@ import twitter from '../../assests/twitter.png';
 import linkedin from '../../assests/linkedin.png';
 import github from '../../assests/github.png';
 import tharindu from '../../assests/tharindu.jpg';
+import nathindu from '../../assests/nathindu.png';
 import malith from '../../assests/malith.jpg';
-import rashad from '../../assests/rashad2.jpg';
-import adeesha from '../../assests/manthila.jpg';
+import rashad from '../../assests/rashad1.jpg';
+import adeesha from '../../assests/manthila.png';
 
 const AboutUs = () => {
   return (
@@ -237,7 +238,7 @@ const AboutUs = () => {
             <div className="columnAbout">
               <div className="cardAbout">
                 <img
-                  src={hacker}
+                  src={nathindu}
                   alt="nathindu"
                   style={{
                     width: '50%',

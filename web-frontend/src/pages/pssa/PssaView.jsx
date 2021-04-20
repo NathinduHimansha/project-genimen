@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react';
 import FancyHeading from '../../components/text/FancyHeading';
 import search from '../../assests/Search.png';
-import brandsm from '../../assests/images/brandsm.jpg';
+import brandsm from '../../assests/images/brandsm.png';
 // import { getPhones, analysePhones } from '../../services/pssa3-service';
 import Button from '../../components/buttons/Button';
 import { useHistory, useLocation } from 'react-router';
@@ -141,12 +141,19 @@ const Pssa3View = () => {
                   </div>
                 ) : (
                   <div className="-flex -mb-20 brand-selection-box-wrapper">
-                    <IconHeading size="small" iconUrl={getIconUrl('display')}>
+                    <IconHeading
+                      size="small"
+                      iconUrl={getIconUrl('display')}
+                      utilClasses={['-mr-2']}
+                    >
                       <label className="select-label">
-                        <h2 className="heading3 -regular -no-margin feature-type-heading">Brand</h2>
+                        <h2 className="heading3 -regular -no-margin feature-type-heading">
+                          Brand:{' '}
+                        </h2>
                       </label>
                     </IconHeading>
                     <select
+                      style={{ marginLeft: '10px', background: 'var(--white)' }}
                       defaultValue="select-feature"
                       className="select-brand select large heading4 -regular -flex-right"
                       id="select-brand-type"
@@ -171,12 +178,17 @@ const Pssa3View = () => {
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <label htmlFor="select-model-type" className="select-label">
                       <h2 className="heading3 -regular -no-margin feature-type-heading">
-                        <IconHeading size="small" iconUrl={getIconUrl('display')}>
-                          Model
+                        <IconHeading
+                          size="small"
+                          iconUrl={getIconUrl('display')}
+                          utilClasses={['-mr-2']}
+                        >
+                          Model:
                         </IconHeading>
                       </h2>
                     </label>
                     <select
+                      style={{ marginLeft: '10px', background: 'var(--white)' }}
                       defaultValue="select-feature"
                       className="select-model select large heading4 -regular -flex-right"
                       id="select-model-type"
@@ -250,7 +262,7 @@ const Pssa3View = () => {
               </div>
             </div>
           </div>
-          <div style={{ opacity: '0.6' }} className="feature-selection-banner -flex -flex-middle">
+          <div style={{ opacity: '0.7' }} className="feature-selection-banner -flex -flex-middle">
             <img src={brandsm} style={{ width: '400px' }} />
           </div>
         </div>
