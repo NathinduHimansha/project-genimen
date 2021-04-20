@@ -37,6 +37,9 @@
 .-mr-5 {
   margin-right: 5px;
 }
+.-mr-2 {
+  margin-right: 2px !important;
+}
 .-mb-auto {
   margin-bottom: auto;
 }
