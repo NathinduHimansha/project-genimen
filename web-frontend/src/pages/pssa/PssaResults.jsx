@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import IconHeading from '../../components/text/IconHeading';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import SentimentRankCard from '../../components/analytics/SentimentRankCard';
+import fromParentOnly from '../../pages/wrappers/FromParentOnly';
 const Pssa3Results = () => {
   const [features, setFeatures] = useState([]);
 
@@ -127,4 +128,4 @@ const Pssa3Results = () => {
   );
 };
 
-export default Pssa3Results;
+export default fromParentOnly(Pssa3Results);

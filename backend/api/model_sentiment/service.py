@@ -20,41 +20,41 @@ def get_model_sentiment(model_name):
 def get_final_results(smart_phone):
     final_results = []
     for features in feature_types:
-        if features == "battery":
+        if features == "battery" and smart_phone.get_battery_count != 0:
             feature_results = {'model': smart_phone.get_model_name(),
                                'feature': features, 'feature_count': smart_phone.get_battery_count(),
                                'feature_neg': smart_phone.get_battery_neg(),
                                'feature_pol': smart_phone.get_battery_pol(),
                                'feature_pos': smart_phone.get_battery_pos()}
             final_results.append(feature_results)
-        if features == "camera":
+        if features == "camera" and smart_phone.get_camera_count() != 0:
             feature_results = {'model': smart_phone.get_model_name(),
                                'feature': features, 'feature_count': smart_phone.get_camera_count(),
                                'feature_neg': smart_phone.get_camera_neg(), 'feature_pol': smart_phone.get_camera_pol(),
                                'feature_pos': smart_phone.get_camera_pos()}
             final_results.append(feature_results)
-        if features == "display":
+        if features == "display" and smart_phone.get_display_count() != 0:
             feature_results = {'model': smart_phone.get_model_name(),
                                'feature': features, 'feature_count': smart_phone.get_display_count(),
                                'feature_neg': smart_phone.get_display_neg(),
                                'feature_pol': smart_phone.get_display_pol(),
                                'feature_pos': smart_phone.get_display_pos()}
             final_results.append(feature_results)
-        if features == "face recognition":
+        if features == "face recognition" and smart_phone.get_face_recognition_count() != 0:
             feature_results = {'model': smart_phone.get_model_name(),
                                'feature': features, 'feature_count': smart_phone.get_face_recognition_count(),
                                'feature_neg': smart_phone.get_face_recognition_neg(),
                                'feature_pol': smart_phone.get_face_recognition_pol(),
                                'feature_pos': smart_phone.get_face_recognition_pos()}
             final_results.append(feature_results)
-        if features == "finger print":
+        if features == "finger print" and smart_phone.get_finger_print_count() != 0:
             feature_results = {'model': smart_phone.get_model_name(),
                                'feature': features, 'feature_count': smart_phone.get_finger_print_count(),
                                'feature_neg': smart_phone.get_finger_print_neg(),
                                'feature_pol': smart_phone.get_finger_print_pol(),
                                'feature_pos': smart_phone.get_finger_print_pos()}
             final_results.append(feature_results)
-        if features == "speaker":
+        if features == "speaker" and smart_phone.get_speaker_count() != 0:
             feature_results = {'model': smart_phone.get_model_name(),
                                'feature': features, 'feature_count': smart_phone.get_speaker_count(),
                                'feature_neg': smart_phone.get_speakers_neg(),
