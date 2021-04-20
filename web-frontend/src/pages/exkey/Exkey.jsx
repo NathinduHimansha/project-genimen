@@ -11,6 +11,7 @@ import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
 import { useToasts } from 'react-toast-notifications';
 import { useHistory } from 'react-router';
+import {getToken} from "../../common/utils";
 
 const Exkey = () => {
   const trendingList = []; //list which contains all the trending features
@@ -25,8 +26,9 @@ const Exkey = () => {
     setBtnLoadingState(true); //if the button click, make the button loading state true
 
     setTimeout(() => {
+      const token = getToken(); // Json web tokens for api request
       //set timeout for 1000 ms
-      Promise.all([trendz(), otherKeywordsTrend()]) //returns a single promise that resolves to an array from all the promises included
+      Promise.all([trendz(token), otherKeywordsTrend(token)]) //returns a single promise that resolves to an array from all the promises included
         .then((res) => {
           const trendData = res[0].data; //taking the column 0 from the array which contains the trending features
           const keywordData = res[1].data; //taking the column 1 from the array which contains the other keywords
