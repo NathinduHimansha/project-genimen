@@ -35,17 +35,17 @@ import sony from '../../assests/images/sony.png';
 import zte from '../../assests/images/zte.png';
 import {analysePhones} from "../../services/psssa3-service-post";
 import {getPhones} from "../../services/pssa3-service";
+import {getToken} from "../../common/utils";
 
 const Pssa3View = () => {
   
   const analyseSelectedPhone = () => {
     setBtnLoadingState(true);
+    const token = getToken();
     setTimeout(() => {
-      analysePhones({model_name : q})
+      analysePhones({model_name : q}, token)
         .then((response) => {
           const data = response.data;
-          console.log("selected model" + q)
-          console.log("data " + data)
           setBtnLoadingState(false),
             history.push({
               pathname: '/analytics/pssa/results',
@@ -89,7 +89,8 @@ const Pssa3View = () => {
   useEffect(() => {
     setPageLoading(true);
     setTimeout(() => {
-      getPhones()
+      const token = getToken();
+      getPhones(token)
         .then((response) => {
           setFeatures(response.data.data);
           setPageLoading(false);
