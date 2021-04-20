@@ -79,7 +79,7 @@ const capitalizePhoneModels = (model) => {
             
             <div className="focus-card focus-info-card -mb-40"style={{height:"200px"}}>
               
-              <span className="-bold -normal" >INFO: </span>This will give you the sentiment of the features of 
+              <span className="-bold -normal" >Info: </span>This will give you the sentiment of the features of 
               the selected smart phone and an overall score for the features. Sentiment Reuslt cards will give an 
               insight about the best features and the worst features of the selected smart phone.
                 

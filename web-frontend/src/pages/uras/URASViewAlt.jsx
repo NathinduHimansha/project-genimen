@@ -139,7 +139,7 @@ const URASViewAlt = () => {
         <div className="content-padding -flex">
           <div style={{ width: '50%' }} className="feature-selection-box">
             <div className="focus-card focus-info-card -mb-40">
-              <span className="-bold -normal">INFO: </span>Select the features you want to analyse
+              <span className="-bold -normal">Info: </span>Select the features you want to analyse
               and get a insight from. This will give you the sentiment of the selected features from
               variety of phones and an overall score for the feature
             </div>
