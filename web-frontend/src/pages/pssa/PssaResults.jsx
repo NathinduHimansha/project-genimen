@@ -90,7 +90,7 @@ const capitalizePhoneModels = (model) => {
       <div className=" -mt-60 -mb-40 content-padding">
         <FancyHeading decoratorClassName="fancy-heading2-decorator">
         <h2 className="heading2 -medium -no-margin heading2-sep-margin">
-          MODEL NAME :&nbsp;
+          
           {features.filter(feature => feature.feature == "display").map(filteredmodel => (
                           
                           filteredmodel.model
