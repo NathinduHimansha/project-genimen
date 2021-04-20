@@ -7,5 +7,5 @@ const http = Http(base);
 
 
 
- export const otherKeywordsTrend = async () => http.get();
+ export const otherKeywordsTrend = async (token) => http.get({ token: token });
 
