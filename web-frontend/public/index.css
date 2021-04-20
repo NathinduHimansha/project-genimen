@@ -42,6 +42,7 @@ body * {
   --about-us-page-heading: #483d8b;
   --bargraph-background: #d9f0f3;
   --bargraph-progress-load: #96dde7;
+  --barchart-keyword: #37474f;
 
   /* Effect styles */
   /* --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12); */
@@ -147,6 +148,7 @@ body * {
   --about-us-page-heading: rgb(193 208 230);
   --bargraph-background: #00688b;
   --bargraph-progress-load: #4f94cd;
+  --barchart-keyword: rgba(250, 250, 250, 1);
   /*logo banner */
   --logo-banner-maintext: #ffffff;
   --logo-banner-subtext: #a097fa;
