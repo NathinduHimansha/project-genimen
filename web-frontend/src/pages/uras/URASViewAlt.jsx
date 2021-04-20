@@ -1,23 +1,10 @@
-import React, { useEffect, useContext, useState } from 'react';
-import { Context } from '../../components/sate_management/GlobalStore';
 import FancyHeading from '../../components/text/FancyHeading';
-import phoneIcon from '../../assests/PhoneIcon.png';
 import search from '../../assests/Search.png';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
-import croselight from '../../assests/CroseLight.png';
-import circlebanner from '../../assests/GeometricCircleBanner.png';
 import { getFeatures, analyseFeatures } from '../../services/uras-service';
 import Button from '../../components/buttons/Button';
-import SampleFeatureSelection from '../experiment/SampleFeatureSelection';
-import propic from '../../assests/ProfilePic.png';
-import { useHistory, useLocation } from 'react-router';
-import { NavLink } from 'react-router-dom';
 import IconHeading from '../../components/text/IconHeading';
 import CurrentLocation from '../../components/header/CurrentLocation';
-import displayIcon from '../../assests/Display.png';
-import sizeIcon from '../../assests/Size.png';
-import fingerprintIcon from '../../assests/FingerPrint.png';
-import headphoneJackIcon from '../../assests/HeadphoneJack.png';
 import { useToasts } from 'react-toast-notifications';
 import { getToken, capitalize } from '../../common/utils';
 
