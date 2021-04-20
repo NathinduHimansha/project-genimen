@@ -67,10 +67,12 @@ const Pssa3Results = () => {
         <div className="content-padding -flex -flex-reverse -flex-middle -flex-end" style={{}}>
           <div style={{ maxWidth: '650px', minWidth: '350px' }} className="feature-selection-box">
             <div className="focus-card focus-info-card -mb-40" style={{}}>
-              <span className="-bold -normal">Info: </span>This will give you the sentiment of the
-              features of the selected smart phone and an overall score for the features. Sentiment
-              Reuslt cards will give an insight about the best features and the worst features of
-              the selected smart phone.
+              <div className="-bold -normal focus-card-info-label">Info: </div>
+              <div className="focus-card-description">
+                This will give you the sentiment of the features of the selected smart phone and an
+                overall score for the features. Sentiment Reuslt cards will give an insight about
+                the best features and the worst features of the selected smart phone.
+              </div>
             </div>
           </div>
           <img
