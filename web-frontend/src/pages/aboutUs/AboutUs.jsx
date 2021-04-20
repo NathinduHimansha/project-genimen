@@ -5,6 +5,8 @@ import hacker from '../../assests/hacker.png';
 import twitter from '../../assests/twitter.png';
 import linkedin from '../../assests/linkedin.png';
 import github from '../../assests/github.png';
+import tharindu from '../../assests/tharindu.jpg';
+import malith from '../../assests/malith.jpg';
 
 const AboutUs = () => {
   return (
@@ -48,7 +50,7 @@ const AboutUs = () => {
                 {/*team member image*/}
                 <img
                   src={hacker}
-                  alt="Jane"
+                  alt="adeesha"
                   style={{
                     width: '50%',
                     marginLeft: '25%',
@@ -114,7 +116,7 @@ const AboutUs = () => {
               <div className="cardAbout">
                 <img
                   src={hacker}
-                  alt="John"
+                  alt="rashad"
                   style={{
                     width: '50%',
                     marginLeft: '25%',
@@ -170,8 +172,8 @@ const AboutUs = () => {
             <div className="columnAbout">
               <div className="cardAbout">
                 <img
-                  src={hacker}
-                  alt="Mike"
+                  src={tharindu}
+                  alt="tharindu"
                   style={{
                     width: '50%',
                     marginLeft: '25%',
@@ -228,7 +230,7 @@ const AboutUs = () => {
               <div className="cardAbout">
                 <img
                   src={hacker}
-                  alt="John"
+                  alt="nathindu"
                   style={{
                     width: '50%',
                     marginLeft: '25%',
@@ -284,8 +286,8 @@ const AboutUs = () => {
             <div className="columnAbout">
               <div className="cardAbout">
                 <img
-                  src={hacker}
-                  alt="John"
+                  src={malith}
+                  alt="malith"
                   style={{
                     width: '50%',
                     marginLeft: '25%',
@@ -343,7 +345,7 @@ const AboutUs = () => {
               <div className="cardAbout">
                 <img
                   src={hacker}
-                  alt="John"
+                  alt="abhilash"
                   style={{
                     width: '50%',
                     marginLeft: '25%',
