@@ -1,18 +1,6 @@
-import React, { useEffect, useContext, useState } from 'react';
-import { Context } from '../../components/sate_management/GlobalStore';
 import FancyHeading from '../../components/text/FancyHeading';
-import phoneIcon from '../../assests/PhoneIcon.png';
-import search from '../../assests/Search.png';
-import banner from '../../assests/MagnifierAnalysingBanner.png';
-import circlebanner from '../../assests/GeometricCircleBanner.png';
-import { getFeatures } from '../../services/uras-service';
-import Button from '../../components/buttons/Button';
-import SampleFeatureSelection from '../experiment/SampleFeatureSelection';
-import propic from '../../assests/ProfilePic.png';
-import { Redirect, useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import IconHeading from '../../components/text/IconHeading';
-import CurrentLocation from '../../components/header/CurrentLocation';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import SentimentRankCard from '../../components/analytics/SentimentRankCard';
 import { isObjEmtpy } from '../../common/utils';
@@ -75,7 +63,9 @@ const UrasResultsAlt = () => {
       }, 110);
   };
   const capitalize = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    if (string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
   };
   // construct phone model names
   const capitalizePhoneModels = (model) => {
@@ -119,6 +109,11 @@ const UrasResultsAlt = () => {
     }
     setBestPhone(bestPhone);
     setWorstPhone(worstPhone);
+  };
+  const getFeatureSubType = () => {
+    return urasData[featureSentimentPolarity].filter(
+      (featureDet) => featureDet.feature === selectedFeatureType,
+    )[0]?.['feature-type'];
   };
   return (
     <div className="navbar-page-container -mb-40">
@@ -165,11 +160,11 @@ const UrasResultsAlt = () => {
             </select>
           </div>
 
-          <h2 className="heading2 -regular -no-margin">Display</h2>
+          <h2 className="heading2 -regular -no-margin">{capitalize(selectedFeatureType)}</h2>
           <hr className="heading-sep" />
           <div className="-mt-20">
             <h3 className="heading3 -regular -no-margin">
-              Type: <span className="-medium">Curved</span>
+              Type: <span className="-medium">{capitalize(getFeatureSubType())}</span>
             </h3>
           </div>
           <div className="-mt-60 feature-overall-sentiment-container">

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './exkey.css';
 import Button from '../../components/buttons/Button';
 import colourful_mobilePhone from '../../assests/colourful.png';
@@ -11,6 +11,7 @@ import lightBulb from '../../assests/tip_bulb.png';
 import FancyHeading from '../../components/text/FancyHeading';
 import { useToasts } from 'react-toast-notifications';
 import { useHistory } from 'react-router';
+import { getToken } from '../../common/utils';
 
 const Exkey = () => {
   const trendingList = []; //list which contains all the trending features
@@ -25,16 +26,16 @@ const Exkey = () => {
     setBtnLoadingState(true); //if the button click, make the button loading state true
 
     setTimeout(() => {
+      const token = getToken(); // Json web tokens for api request
       //set timeout for 1000 ms
-      Promise.all([trendz(), otherKeywordsTrend()]) //returns a single promise that resolves to an array from all the promises included
+      Promise.all([trendz(token), otherKeywordsTrend(token)]) //returns a single promise that resolves to an array from all the promises included
         .then((res) => {
-          const trendData = res[0]; //taking the column 0 from the array which contains the trending features
-          const keywordData = res[1]; //taking the column 1 from the array which contains the other keywords
+          const trendData = res[0].data; //taking the column 0 from the array which contains the trending features
+          const keywordData = res[1].data; //taking the column 1 from the array which contains the other keywords
           const temp = keywordData.series; //string the series array which was taken from the keyword data array
-          if (trendData.data.status == 1 && temp.length !== 0) {
+          if (trendData.status == 1 && temp.length !== 0) {
             //if the status is 1 from trend data service and if the trend data array is not equal to 0
-            const trendingFeatures = trendData.data.trend; //adding the trending data captured from the service into a constant
-
+            const trendingFeatures = trendData.data; //adding the trending data captured from the service into a constant
             //for loop which will add the trending data taken from the service into to a list
             for (const trend of trendingFeatures) {
               trendingList.push(trend);
@@ -117,7 +118,10 @@ const Exkey = () => {
 
               {/*trend description which is displayed on the right side of the begining of the exkey page*/}
               <div className="trend_description_align">
-                <div className="focus-card focus-info-card -mb-40">
+                <div
+                  className="focus-card focus-info-card -mb-40"
+                  style={{ paddingRight: '20px', paddingLeft: '20px' }}
+                >
                   <img
                     src={lightBulb}
                     style={{
@@ -128,13 +132,16 @@ const Exkey = () => {
                     alt="tip_bulb"
                   />
                   <div style={{ marginTop: '-4%', marginLeft: '10%' }}>
-                    <span className="-bold -normal">
+                    <span className="-bold -normal focus-card-info-label">
                       WHY TREND THIS MUCH IMPORTANT FOR YOU ?<br></br>
                       <br></br>
                       <br></br>
                     </span>
                   </div>
-                  <div style={{ marginTop: '-3%', textAlign: 'justify' }}>
+                  <div
+                    className="focus-card-description"
+                    style={{ marginTop: '-3%', textAlign: 'justify' }}
+                  >
                     Trend analysis will help you to grow your market level by identifying areas of
                     your product willing to design that are performing well as well as areas that
                     are not. It provides useful evidence to help you to make informed decisions

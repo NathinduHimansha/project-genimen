@@ -11,7 +11,7 @@ function HomeStartView() {
     <div className="navbar-page-container -mb-40  home-start-container">
       <div className="app-heading-header content-padding -flex -flex-col">
         <div className="-mb-30">
-          <NavLink to="/index" className="-text-decoration-none">
+          <NavLink to="/home" className="-text-decoration-none">
             <IconHeading size="extra-small" iconUrl="var(--arrow-back-icon)">
               <h4 className="heading4 -no-margin">
                 <span className="header-go-back">Back</span>

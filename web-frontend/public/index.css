@@ -38,6 +38,10 @@ body * {
   --grey: rgba(146, 146, 146, 1);
   --primary-border-grey: rgba(159, 159, 159, 1);
   --primary-border-grey: rgba(188, 188, 188, 1);
+  --about-us-banner-background: #d1eeee;
+  --about-us-page-heading: #483d8b;
+  --bargraph-background: #d9f0f3;
+  --bargraph-progress-load: #96dde7;
 
   /* Effect styles */
   /* --primary-box-shadow: 22px 0px 4px rgba(0, 0, 0, 0.12); */
@@ -86,6 +90,9 @@ body * {
 
   /*index bg annimation */
   --bg-annimation: #092e67;
+
+  /* 404 page */
+  --lighter-text: rgb(235, 235, 235);
 }
 :root[data-theme='dark'] {
   /*tested*/
@@ -113,7 +120,7 @@ body * {
   --modal-box-footer-border: rgb(255 255 255 / 7%);
   --current-location-background: #003b5753;
   --current-location-border-color: #003853;
-  --info-focus-card-background: #222;
+  --info-focus-card-background: #172528;
   --info-focus-card-border-color: #076682;
   --heading2-sep-grey: rgb(59, 59, 59);
   --error-icon-background: #7f1700;
@@ -122,7 +129,7 @@ body * {
   --success-light-text: #fff;
   --nav-background: #1c3c6d;
   --nav-border-sep: #21376c;
-  --nav-hover-link-color: #ffe08c;
+  --nav-hover-link-color: #fff1cc;
   --nav-link-hover-background: #95bcf721;
   --nav-link-hover-background: #a9c4ff0c;
   --nav-highlight: #0f2e5d;
@@ -136,7 +143,10 @@ body * {
   --primary-box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.12);
   --primary-border: 1px solid var(--primary-border-grey);
   --select-box-alt-color: rgba(39, 39, 39, 1);
-
+  --about-us-banner-background: #346b77;
+  --about-us-page-heading: rgb(193 208 230);
+  --bargraph-background: #00688b;
+  --bargraph-progress-load: #4f94cd;
   /*logo banner */
   --logo-banner-maintext: #ffffff;
   --logo-banner-subtext: #a097fa;
@@ -147,4 +157,7 @@ body * {
 
   /*index bg annimation */
   --bg-annimation: #ffffff;
+
+  /* 404 page */
+  --lighter-text: rgb(37, 37, 37);
 }

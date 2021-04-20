@@ -99,7 +99,7 @@ function HomePageNew() {
         <div className="homepage-start-button">
           <NavLink to="/analytics" className="-text-decoration-none">
             <Button>
-              <img className="homepage-startbtnrow" /> START ANALYZING
+              <img className="homepage-startbtnrow" /> START ANALYSING
             </Button>
           </NavLink>
         </div>

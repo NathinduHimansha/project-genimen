@@ -224,7 +224,7 @@
 .barHighlight {
   height: 100%;
   width: 30px;
-  background-color: #d9f0f3;
+  background-color: var(--bargraph-background);
   margin-right: 40px;
   position: relative;
 }
@@ -248,6 +248,7 @@
   position: absolute;
   bottom: 0px;
   animation: start_load 2s ease forwards;
+  background-color: var(--bargraph-progress-load);
 }
 
 .barchartKeyword {

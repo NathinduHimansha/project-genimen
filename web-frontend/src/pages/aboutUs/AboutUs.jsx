@@ -5,6 +5,11 @@ import hacker from '../../assests/hacker.png';
 import twitter from '../../assests/twitter.png';
 import linkedin from '../../assests/linkedin.png';
 import github from '../../assests/github.png';
+import tharindu from '../../assests/tharindu.jpg';
+import nathindu from '../../assests/nathindu.png';
+import malith from '../../assests/malith.jpg';
+import rashad from '../../assests/rashad1.jpg';
+import adeesha from '../../assests/manthila.png';
 
 const AboutUs = () => {
   return (
@@ -36,7 +41,7 @@ const AboutUs = () => {
 
             {/*down pointed animation*/}
             <div className="arrowAnimation">
-              <i class="arrow down"></i>
+              <i className="arrow down"></i>
             </div>
           </div>
         </div>
@@ -47,10 +52,10 @@ const AboutUs = () => {
               <div className="cardAbout">
                 {/*team member image*/}
                 <img
-                  src={hacker}
-                  alt="Jane"
+                  src={adeesha}
+                  alt="adeesha"
                   style={{
-                    width: '50%',
+                    width: '48%',
                     marginLeft: '25%',
                     borderRadius: '50%',
                     boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
@@ -61,15 +66,21 @@ const AboutUs = () => {
                 {/*Adeesha Walgamage*/}
                 <div className="containerAbout">
                   {/*Name of the team member*/}
-                  <h2>Adeesha Walgamage</h2>
+                  <h2 className="teamMemberName">Adeesha Walgamage</h2>
 
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
                     {/*Contribution for the project*/}
-                    <p>Implementation of Backend,Frontend and Data-Science components</p>
+                    <p style={{ fontSize: '1.8rem' }}>
+                      Implementation of Backend,Frontend and Data-Science components
+                    </p>
 
                     {/*email og the team member*/}
-                    <p>adeesha.2018357.iit.ac.lk</p>
+                    <p style={{ fontWeight: '500' }}>
+                      <a className="emailColor" href="mailto:adeesha.2018357.iit.ac.lk">
+                        adeesha.2018357.iit.ac.lk
+                      </a>
+                    </p>
                   </div>
 
                   {/*twitter logo with respective link to the account*/}
@@ -107,10 +118,11 @@ const AboutUs = () => {
             <div className="columnAbout">
               <div className="cardAbout">
                 <img
-                  src={hacker}
-                  alt="John"
+                  src={rashad}
+                  alt="rashad"
                   style={{
-                    width: '50%',
+                    width: '49%',
+                    objectFit: 'cover',
                     marginLeft: '25%',
                     borderRadius: '50%',
                     boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
@@ -120,11 +132,17 @@ const AboutUs = () => {
 
                 {/*Mohamed Rashad*/}
                 <div className="containerAbout">
-                  <h2>Mohamed Rashad</h2>
+                  <h2 className="teamMemberName">Mohamed Rashad</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
-                    <p>Implementation of Backend,Frontend and Data-Science components</p>
-                    <p>rashad.2018470@iit.ac.lk</p>
+                    <p style={{ fontSize: '1.8rem' }}>
+                      Implementation of Backend,Frontend and Data-Science components
+                    </p>
+                    <p style={{ fontWeight: '500' }}>
+                      <a className="emailColor" href="mailto:rashad.2018470@iit.ac.lk">
+                        rashad.2018470@iit.ac.lk
+                      </a>
+                    </p>
                   </div>
                   <p className="platformlogoAlign">
                     <a href="https://mobile.twitter.com/RashadRashadzcc">
@@ -158,10 +176,11 @@ const AboutUs = () => {
             <div className="columnAbout">
               <div className="cardAbout">
                 <img
-                  src={hacker}
-                  alt="Mike"
+                  src={tharindu}
+                  alt="tharindu"
                   style={{
                     width: '50%',
+                    objectFit: 'cover',
                     marginLeft: '25%',
                     borderRadius: '50%',
                     boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
@@ -171,11 +190,17 @@ const AboutUs = () => {
 
                 {/*Tharindu De Silva*/}
                 <div className="containerAbout">
-                  <h2>Tharindu De Silva</h2>
+                  <h2 className="teamMemberName">Tharindu De Silva</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
-                    <p>Implementation of Backend,Frontend and Data-Science components</p>
-                    <p>tharindu.2018367@iit.ac.lk</p>
+                    <p style={{ fontSize: '1.8rem' }}>
+                      Implementation of Backend,Frontend and Data-Science components
+                    </p>
+                    <p style={{ fontWeight: '500' }}>
+                      <a className="emailColor" href="tharindu.2018367@iit.ac.lk">
+                        tharindu.2018367@iit.ac.lk
+                      </a>
+                    </p>
                   </div>
                   <p className="platformlogoAlign">
                     <a href="https://twitter.com/andrewdesilvasl">
@@ -209,8 +234,8 @@ const AboutUs = () => {
             <div className="columnAbout">
               <div className="cardAbout">
                 <img
-                  src={hacker}
-                  alt="John"
+                  src={nathindu}
+                  alt="nathindu"
                   style={{
                     width: '50%',
                     marginLeft: '25%',
@@ -222,11 +247,17 @@ const AboutUs = () => {
 
                 {/*Nathindu Dias*/}
                 <div className="containerAbout">
-                  <h2>Nathindu Dias</h2>
+                  <h2 className="teamMemberName">Nathindu Dias</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
-                    <p>Implementation of Backend,Frontend and Data-Science components</p>
-                    <p>nathindu.2018455@iit.ac.lk</p>
+                    <p style={{ fontSize: '1.8rem' }}>
+                      Implementation of Backend,Frontend and Data-Science components
+                    </p>
+                    <p style={{ fontWeight: '500' }}>
+                      <a className="emailColor" href="nathindu.2018455@iit.ac.lk">
+                        nathindu.2018455@iit.ac.lk
+                      </a>
+                    </p>
                   </div>
                   <p className="platformlogoAlign">
                     <a href="https://twitter.com/NathinduDias">
@@ -260,10 +291,11 @@ const AboutUs = () => {
             <div className="columnAbout">
               <div className="cardAbout">
                 <img
-                  src={hacker}
-                  alt="John"
+                  src={malith}
+                  alt="malith"
                   style={{
                     width: '50%',
+                    height: '100%',
                     marginLeft: '25%',
                     borderRadius: '50%',
                     boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
@@ -273,11 +305,17 @@ const AboutUs = () => {
 
                 {/*Malith Goonathilake*/}
                 <div className="containerAbout">
-                  <h2>Malith Goonathilake</h2>
+                  <h2 className="teamMemberName">Malith Goonathilake</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
-                    <p>Implementation of Backend,Frontend and Data-Science components</p>
-                    <p>malith.2018402@iit.ac.lk</p>
+                    <p style={{ fontSize: '1.8rem' }}>
+                      Implementation of Backend,Frontend and Data-Science components
+                    </p>
+                    <p style={{ fontWeight: '500' }}>
+                      <a className="emailColor" href="malith.2018402@iit.ac.lk">
+                        malith.2018402@iit.ac.lk
+                      </a>
+                    </p>
                   </div>
 
                   <p className="platformlogoAlign">
@@ -313,7 +351,7 @@ const AboutUs = () => {
               <div className="cardAbout">
                 <img
                   src={hacker}
-                  alt="John"
+                  alt="abhilash"
                   style={{
                     width: '50%',
                     marginLeft: '25%',
@@ -325,11 +363,17 @@ const AboutUs = () => {
 
                 {/*Sriranjan Abilash*/}
                 <div className="containerAbout">
-                  <h2>Sriranjan Abilash</h2>
+                  <h2 className="teamMemberName">Sriranjan Abilash</h2>
                   <p className="titleAbout">Developer</p>
                   <div className="aboutDescrip">
-                    <p>Implementation of Backend,Frontend and Data-Science components</p>
-                    <p>abilash.2018379@iit.ac.lk</p>
+                    <p style={{ fontSize: '1.8rem' }}>
+                      Implementation of Backend,Frontend and Data-Science components
+                    </p>
+                    <p style={{ fontWeight: '500' }}>
+                      <a className="emailColor" href="abilash.2018379@iit.ac.lk">
+                        abilash.2018379@iit.ac.lk
+                      </a>
+                    </p>
                   </div>
                   <p className="platformlogoAlign">
                     <a href="https://mobile.twitter.com/ragav_krishic">

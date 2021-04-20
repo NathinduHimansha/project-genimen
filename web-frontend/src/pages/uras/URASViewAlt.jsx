@@ -1,23 +1,10 @@
-import React, { useEffect, useContext, useState } from 'react';
-import { Context } from '../../components/sate_management/GlobalStore';
 import FancyHeading from '../../components/text/FancyHeading';
-import phoneIcon from '../../assests/PhoneIcon.png';
 import search from '../../assests/Search.png';
 import banner from '../../assests/MagnifierAnalysingBanner.png';
-import croselight from '../../assests/CroseLight.png';
-import circlebanner from '../../assests/GeometricCircleBanner.png';
 import { getFeatures, analyseFeatures } from '../../services/uras-service';
 import Button from '../../components/buttons/Button';
-import SampleFeatureSelection from '../experiment/SampleFeatureSelection';
-import propic from '../../assests/ProfilePic.png';
-import { useHistory, useLocation } from 'react-router';
-import { NavLink } from 'react-router-dom';
 import IconHeading from '../../components/text/IconHeading';
 import CurrentLocation from '../../components/header/CurrentLocation';
-import displayIcon from '../../assests/Display.png';
-import sizeIcon from '../../assests/Size.png';
-import fingerprintIcon from '../../assests/FingerPrint.png';
-import headphoneJackIcon from '../../assests/HeadphoneJack.png';
 import { useToasts } from 'react-toast-notifications';
 import { getToken, capitalize } from '../../common/utils';
 
@@ -139,9 +126,12 @@ const URASViewAlt = () => {
         <div className="content-padding -flex">
           <div style={{ width: '50%' }} className="feature-selection-box">
             <div className="focus-card focus-info-card -mb-40">
-              <span className="-bold -normal">INFO: </span>Select the features you want to analyse
-              and get a insight from. This will give you the sentiment of the selected features from
-              variety of phones and an overall score for the feature
+              <div className="-bold -normal focus-card-info-label">Info: </div>
+              <div className="focus-card-description">
+                Select the features you want to analyse and get a insight from. This will give you
+                the sentiment of the selected features from variety of phones and an overall score
+                for the feature
+              </div>
             </div>
             <div style={{ marginTop: '20px', marginBottom: '20px' }}>
               <div className="feature-types feature-types-selection-menu -flex -flex-col -flex-center">
