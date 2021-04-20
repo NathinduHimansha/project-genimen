@@ -9,5 +9,5 @@ const http = Http(base);
 
 
 
-export const trendz = async () => http.get();
+export const trendz = async (token) => http.get({ token: token });
 
