@@ -10,6 +10,7 @@ import nathindu from '../../assests/nathindu.png';
 import malith from '../../assests/malith.jpg';
 import rashad from '../../assests/rashad1.jpg';
 import adeesha from '../../assests/manthila.png';
+import abilash from '../../assests/abilash.jpg';
 
 const AboutUs = () => {
   return (
@@ -350,7 +351,7 @@ const AboutUs = () => {
             <div className="columnAbout">
               <div className="cardAbout">
                 <img
-                  src={hacker}
+                  src={abilash}
                   alt="abhilash"
                   style={{
                     width: '50%',
