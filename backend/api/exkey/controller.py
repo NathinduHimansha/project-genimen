@@ -18,13 +18,13 @@ def get_bar_graph_values():
 
 @exKey.route('/Exkey/GetCandidates',methods=['GET'])
 def get_treeMap_values():
-    treeMap =[]
-    #treeMap ={'series':[{'data':[]}]}
+    #treeMap =[]
+    treeMap ={'series':[{'data':[]}]}
 
     similar_word_list = service.get_similar_word_instances(numberOfTopSimilarityWords,numberOfTrendValues)
     for element in similar_word_list:
-        treeMap.append({'x':element[0],'y':200})
+        treeMap['series'][0]['data'].append({'x':element[0],'y':200})
     
-    return createSuccessResponse(treeMap)
+    return treeMap
 
 
