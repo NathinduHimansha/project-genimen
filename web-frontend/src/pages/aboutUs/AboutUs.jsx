@@ -9,7 +9,7 @@ import tharindu from '../../assests/tharindu.jpg';
 import nathindu from '../../assests/nathindu.png';
 import malith from '../../assests/malith.jpg';
 import rashad from '../../assests/rashad.jpg';
-import adeesha from '../../assests/manthila.png';
+import adeesha from '../../assests/manthila.jpg';
 import abilash from '../../assests/abilash.png';
 
 const AboutUs = () => {

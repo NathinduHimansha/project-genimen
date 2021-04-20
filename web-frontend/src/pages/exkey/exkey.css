@@ -259,7 +259,7 @@
   font-family: rubik;
   width: 100%;
   z-index: 1;
-  color: #37474f;
+  color: var(--barchart-keyword);
   font-size: 1.5rem;
   position: absolute;
   bottom: 20px;
