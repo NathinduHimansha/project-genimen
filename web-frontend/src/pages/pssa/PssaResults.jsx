@@ -108,7 +108,7 @@ const capitalizePhoneModels = (model) => {
                           polarity="neg"
                           polarityPerc={filteredmodel.feature_pol}
                           label={capitalizePhoneModels(filteredmodel.feature)}
-                          description={"Worst feature of the selected smart phone"+filteredmodel.model}
+                          description={"Worst feature of the selected smart phone" +" "+filteredmodel.model}
                         ></SentimentRankCard>
                           
                         ))}
