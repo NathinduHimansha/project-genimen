@@ -10,7 +10,7 @@ import nathindu from '../../assests/nathindu.png';
 import malith from '../../assests/malith.jpg';
 import rashad from '../../assests/rashad.jpg';
 import adeesha from '../../assests/manthila.png';
-import abilash from '../../assests/abilash.jpg';
+import abilash from '../../assests/abilash.png';
 
 const AboutUs = () => {
   return (
@@ -356,7 +356,7 @@ const AboutUs = () => {
               <div className="cardAbout">
                 <img
                   src={abilash}
-                  alt="abhilash"
+                  alt="abilash"
                   style={{
                     width: '50%',
                     marginLeft: '25%',
