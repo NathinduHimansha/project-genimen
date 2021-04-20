@@ -7,6 +7,8 @@ import linkedin from '../../assests/linkedin.png';
 import github from '../../assests/github.png';
 import tharindu from '../../assests/tharindu.jpg';
 import malith from '../../assests/malith.jpg';
+import rashad from '../../assests/rashad2.jpg';
+import adeesha from '../../assests/manthila.jpg';
 
 const AboutUs = () => {
   return (
@@ -49,10 +51,10 @@ const AboutUs = () => {
               <div className="cardAbout">
                 {/*team member image*/}
                 <img
-                  src={hacker}
+                  src={adeesha}
                   alt="adeesha"
                   style={{
-                    width: '50%',
+                    width: '48%',
                     marginLeft: '25%',
                     borderRadius: '50%',
                     boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
@@ -115,10 +117,11 @@ const AboutUs = () => {
             <div className="columnAbout">
               <div className="cardAbout">
                 <img
-                  src={hacker}
+                  src={rashad}
                   alt="rashad"
                   style={{
-                    width: '50%',
+                    width: '49%',
+                    objectFit: 'cover',
                     marginLeft: '25%',
                     borderRadius: '50%',
                     boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
@@ -176,6 +179,7 @@ const AboutUs = () => {
                   alt="tharindu"
                   style={{
                     width: '50%',
+                    objectFit: 'cover',
                     marginLeft: '25%',
                     borderRadius: '50%',
                     boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
