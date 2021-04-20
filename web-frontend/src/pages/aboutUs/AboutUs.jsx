@@ -116,18 +116,22 @@ const AboutUs = () => {
 
             <div className="columnAbout">
               <div className="cardAbout">
-                <img
-                  src={rashad}
-                  alt="rashad"
-                  style={{
-                    width: '49%',
-                    objectFit: 'cover',
-                    marginLeft: '25%',
-                    borderRadius: '50%',
-                    boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-                    marginTop: '5%',
-                  }}
-                />
+                <div className="rashadImgAlign">
+                  <img
+                    src={rashad}
+                    alt="rashad"
+                    style={{
+                      width: '48%',
+                      height: '50%',
+                      objectFit: 'cover',
+                      marginLeft: '25%',
+                      borderRadius: '50%',
+                      boxShadow:
+                        ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+                      marginTop: '5%',
+                    }}
+                  />
+                </div>
 
                 {/*Mohamed Rashad*/}
                 <div className="containerAbout">
