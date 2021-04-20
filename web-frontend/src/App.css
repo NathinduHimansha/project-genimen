@@ -347,7 +347,7 @@ select.select {
   padding-right: 10px;
   border: 1px solid var(--light-grey);
   background: var(--light-white);
-  border-radius: 2px;
+  border-radius: 3px;
   color: var(--secondary-black);
 }
 select.select:hover {
