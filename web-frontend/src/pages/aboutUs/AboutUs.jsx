@@ -38,7 +38,7 @@ const AboutUs = () => {
 
             {/*down pointed animation*/}
             <div className="arrowAnimation">
-              <i class="arrow down"></i>
+              <i className="arrow down"></i>
             </div>
           </div>
         </div>
@@ -290,6 +290,7 @@ const AboutUs = () => {
                   alt="malith"
                   style={{
                     width: '50%',
+                    height: '100%',
                     marginLeft: '25%',
                     borderRadius: '50%',
                     boxShadow: ' 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
