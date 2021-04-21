@@ -1,38 +1,29 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Context } from './components/sate_management/GlobalStore';
 import { BrowserRouter as Router, Switch, Route, Redirect, NavLink } from 'react-router-dom';
+import { getTokenPayload, isLoggedIn } from './common/utils';
+import { ToastProvider, useToasts } from 'react-toast-notifications';
 import './App.css';
+
 import GenimenSideBar from './components/nav/GenimenSideBar';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/signup';
-import EXKEY from './pages/exkey/Exkey';
-import ExkeyResult from './pages/exkey/ExkeyResults';
-import ExkeyAlt from './pages/exkey/ExkeyAlt';
-import test5 from './pages/exkey/TrendingFeaturesResults';
 
-import Examples from './pages/experiment/Examples';
-
-import { ToastProvider, useToasts } from 'react-toast-notifications';
-
-import HomePage from './pages/index/HomePage';
 import HomePageNew from './pages/index/HomePageNew';
 import HomeStart from './pages/index/HomeStartView';
+import AboutUs from './pages/aboutUs/AboutUs';
+import PageNotFound from './pages/pagenotfound/PageNotFound';
 
-import UrasUserInputView from './pages/uras/UrasUserInputView';
-import UrasInputResults from './pages/uras/UrasInputResults';
 import URASViewAlt from './pages/uras/URASViewAlt';
 import UrasResultsAlt from './pages/uras/UrasResultsAlt';
+import Pssa3View from './pages/pssa/PssaView';
+import Pssa3Results from './pages/pssa/PssaResults';
+import EXKEY from './pages/exkey/Exkey';
+import ExkeyResult from './pages/exkey/ExkeyResults';
+
 import Store from './components/sate_management/GlobalStore';
-import { getTokenPayload, isLoggedIn } from './common/utils';
-import Pssa3View from './pages/pssa3/Pssa3View';
-import Pssa3Results from './pages/pssa3/pssa3Results';
 import ScrollUp from './components/scrollupbutton/ScrollUp';
 import protect from './pages/wrappers/ProtectedRouteWrapper';
-import testcard from './pages/experiment/testcard';
-import MenuCard from './components/menucard/MenuCard';
-import testlogin from './pages/experiment/testlogin';
-
-import AboutUs from './pages/aboutUs/AboutUs';
 
 function App() {
   const [state, dispatch] = useContext(Context);
@@ -51,33 +42,24 @@ function App() {
       <div>
         <GenimenSideBar></GenimenSideBar>
         <Switch>
-          <Route exact path="/index" component={HomePage} />
-          <Route exact path="/aboutus" component={protect(AboutUs)} />
+          <Route exact path="/home" component={HomePageNew} />
+          <Route exact path="/aboutus" component={AboutUs} />
+          <Route exact path="/analytics" component={HomeStart} />
 
           <Route exact path="/analytics/uras" component={protect(URASViewAlt)} />
           <Route path="/analytics/uras/results" component={protect(UrasResultsAlt)} />
-          {/* <Route path="/analytics/uras/results" exact component={UrasInputResults} /> */}
-          {/* <Route path="/analytics/uras" component={UrasUserInputView} /> */}
-          <Route exact path="/analytics/pssa" component={Pssa3View} />
-          <Route path="/analytics/pssa/results" component={Pssa3Results} />
+
+          <Route exact path="/analytics/pssa" component={protect(Pssa3View)} />
+          <Route path="/analytics/pssa/results" component={protect(Pssa3Results)} />
 
           <Route exact path="/analytics/exkey" component={protect(EXKEY)} />
           <Route path="/analytics/exkey/results" component={protect(ExkeyResult)} />
 
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <Route path="/examples" component={Examples} />
-          <Route path="/test1" component={testcard} />
-          <Route path="/test2" component={HomeStart} />
-          <Route path="/test3" component={MenuCard} />
-          <Route path="/test4" component={ExkeyAlt} />
-          <Route path="/test5" component={test5} />
-          <Route path="/test6" component={testlogin} />
-          <Route path="/test7" component={HomePageNew} />
 
-          <Route path="/analytics" component={HomeStart} />
-
-          <Route exact path="/" component={() => <Redirect to="/index" />} />
+          <Route exact path="/" component={() => <Redirect to="/home" />} />
+          <Route path="*" exact={true} component={PageNotFound} />
         </Switch>
 
         <ScrollUp />
@@ -89,7 +71,7 @@ function App() {
       <Router>
         <div className="App">
           <Switch>
-            <Route exact path="/index" component={HomePageNew} />
+            <Route exact path="/home" component={HomePageNew} />
             <Route component={RoutesWNav} />
           </Switch>
         </div>

@@ -59,6 +59,8 @@ function HomePageNew() {
 
       {/* homepage body */}
       <div className="homepage-body">
+
+        {/* login btn action */}
         <div className="homepage-loginbtn">
           {state.login ? (
             <Button
@@ -78,10 +80,12 @@ function HomePageNew() {
           )}
         </div>
 
+        {/* Logo */}
         <div className="homepage-logo">
           <Logobanner />
         </div>
 
+        {/* welcome text */}
         <div className="homepage-welcometxt">
           <div className="welcometxt-top">
             <div>
@@ -96,14 +100,16 @@ function HomePageNew() {
           </div>
         </div>
 
+        {/* Analyse start button */}
         <div className="homepage-start-button">
           <NavLink to="/analytics" className="-text-decoration-none">
             <Button>
-              <img className="homepage-startbtnrow" /> START ANALYZING
+              <img className="homepage-startbtnrow" /> START ANALYSING
             </Button>
           </NavLink>
         </div>
 
+        {/* background annimation */}
         <div className="homepage-bg-annimation">
           <div className="hbga-circle circle-xxlargee circle-shade1"></div>
           <div className="hbga-circle circle-xlarge circle-shade2"></div>

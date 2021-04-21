@@ -6,13 +6,6 @@ const BarGraph = (props) => {
   const percentageValue = value * 10;
   var tempPercentageValue = 0;
 
-  // if (percentageValue < 10) {
-  //   tempPercentageValue = (percentageValue * 10) / 2 - 5;
-  // }
-  // if (percentageValue > 10) {
-  //   tempPercentageValue = percentageValue;
-  // }
-
   if (percentageValue < 10) {
     tempPercentageValue = (percentageValue * 10) / 2;
   }
@@ -29,11 +22,7 @@ const BarGraph = (props) => {
   return (
     <div className="barHighlight">
       <span className="barchartKeyword">{keyword}</span>
-      <div
-        className="progress-percentage"
-        //#83d7ee
-        style={{ height: tempPercentageValue + '%', backgroundColor: '#96DDE7' }}
-      ></div>
+      <div className="progress-percentage" style={{ height: tempPercentageValue + '%' }}></div>
       <h2 className="heading3 -medium -no-margin feature-type-heading">
         <span className="frequency_percentage">{roundedValue + '%'}</span>
       </h2>

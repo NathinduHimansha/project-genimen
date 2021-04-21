@@ -224,7 +224,7 @@
 .barHighlight {
   height: 100%;
   width: 30px;
-  background-color: #d9f0f3;
+  background-color: var(--bargraph-background);
   margin-right: 40px;
   position: relative;
 }
@@ -248,6 +248,7 @@
   position: absolute;
   bottom: 0px;
   animation: start_load 2s ease forwards;
+  background-color: var(--bargraph-progress-load);
 }
 
 .barchartKeyword {
@@ -258,7 +259,7 @@
   font-family: rubik;
   width: 100%;
   z-index: 1;
-  color: #37474f;
+  color: var(--barchart-keyword);
   font-size: 1.5rem;
   position: absolute;
   bottom: 20px;
@@ -561,7 +562,7 @@
   .treeMap_align {
     margin-left: -95px;
     margin-top: -15px;
-    width: 140%;
+    width: 130%;
     height: 40%;
   }
 }

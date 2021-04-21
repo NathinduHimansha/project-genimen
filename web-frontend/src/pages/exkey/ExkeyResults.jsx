@@ -27,37 +27,6 @@ const ExkeyResults = () => {
     }, 600);
   }, []);
 
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     trendingFeatures: [], //trending keywords array (card left)
-  //     otherKeywordsList: [], //other keywords array (card right)
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   const { history } = this.props;
-
-  //   const trendingFeatures = history.location.stateTrending;
-  //   this.state.trendingFeatures = trendingFeatures;
-  //   this.setState({ trendingFeatures });
-
-  //   const otherKeywords = history.location.stateOtherKeywords;
-  //   this.state.otherKeywordsList = otherKeywords;
-  //   this.setState({ otherKeywords });
-
-  //   console.log(this.state.trendingFeatures);
-  //   console.log(this.state.otherKeywordsList);
-  // }
-
-  // const { trendingFeatures } = this.state;
-  // const history = useHistory();
-
-  // const trendingFeatures = history.location.state.stateTrending;
-
-  // const exkeyDataotherKeyword = history.location.state.stateOtherKeywords;
-
   return (
     <div className="navbar-page-container -mb-40" style={{ margin: '0%' }}>
       <div className="main-body">
