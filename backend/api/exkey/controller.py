@@ -25,7 +25,7 @@ def get_treeMap_values():
     #treeMap =[]
     treeMap ={'series':[{'data':[]}]}
 
-    similar_word_list = service.get_similar_word_instances(numberOfTopSimilarityWords,numberOfTrendValues)
+    similar_word_list = service.get_similar_word_instances(numberOfTrendValues)
     for element in similar_word_list:
         treeMap['series'][0]['data'].append({'x':element[0],'y':200})
     
