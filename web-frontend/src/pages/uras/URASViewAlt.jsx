@@ -67,7 +67,7 @@ const URASViewAlt = () => {
       feature: 'Headphone-Jack',
       types: [],
     },
-  ]); //available fetures in backend
+  ]);
   const [selectedFeatures, setSelectedFeatures] = useState({}); //selected features by the user
   const appendSelectedFeatures = (feature, type) => {
     // console.log(feature, type);
@@ -79,7 +79,6 @@ const URASViewAlt = () => {
 
   const history = useHistory();
   const { addToast } = useToasts();
-  /* End */
 
   const getIconUrl = (feature) => {
     return 'var(--' + feature.toLowerCase() + '-icon)';
@@ -114,13 +113,6 @@ const URASViewAlt = () => {
   return (
     <div className="navbar-page-container -mb-40">
       <div className="app-heading-header content-padding -flex -flex-col">
-        {/* <div className="-mb-20"> */}
-        {/* <IconHeading size="extra-small" iconUrl="var(--arrow-back-icon)"> */}
-        {/* <h4 className="heading4 -no-margin"> */}
-        {/* <span className="header-go-back">Back</span> */}
-        {/* </h4> */}
-        {/* </IconHeading> */}
-        {/* </div> */}
         <div className="-mb-30">
           <CurrentLocation></CurrentLocation>
         </div>
@@ -210,8 +202,6 @@ const URASViewAlt = () => {
                         Object.keys(selectedFeatures).length === 0 &&
                         selectedFeatures.constructor === Object)
                     }
-                    // loading={btnLoadingState}
-                    // iconSrc={croselight}
                   >
                     Clear
                   </Button>
