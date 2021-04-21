@@ -1,6 +1,6 @@
 fingerprint_types = ['onscreen', 'rear', 'powerbutton']
 display_types = ['normal', 'curved', 'flip']
-charger_types = ['wireless', 'wired']
+#  charger_types = ['wireless', 'wired']
 headphone_jack = ['available', 'none']
 size = ['normal', 'large']
 
@@ -98,13 +98,6 @@ phones = {
     display_types[2]: [
         'samsung-galaxy-z-flip'
     ],
-    charger_types[0]: [
-
-    ],
-    charger_types[1]: [
-
-    ],
-
     headphone_jack[0]: [
         'Huawei-honor-9',
         'huawei-honor-8s',
