@@ -1,7 +1,7 @@
 import pandas as pd
 
 from analytics.model_specific.smartphone_model.phone_model import Model
-from api.model_sentiment.aspect_analysis import get_features_with_sentiment, get_sentiment_percentage
+from api.resources.model_sentiment.aspect_analysis import get_features_with_sentiment, get_sentiment_percentage
 
 from analytics.model_specific.model_lexicon.model_lexicon import feature_types, MODELS
 
