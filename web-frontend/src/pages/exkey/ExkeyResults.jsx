@@ -107,7 +107,7 @@ const ExkeyResults = () => {
                   <div className="card-heading-name-right -mb-auto -flex-middle">
                     <div className="card-topic">
                       {/*card right topic*/}
-                      <h3 className="heading3 -medium">SIMILAR KEYWORDS</h3>
+                      <h3 className="heading3 -medium">SUPPORTING KEYWORDS</h3>
                       <div className="otherKeywords_description">
                         {/*light bulb and tip for the user displayed with the treemap*/}
                         <img
