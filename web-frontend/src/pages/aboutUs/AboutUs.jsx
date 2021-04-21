@@ -324,7 +324,7 @@ const AboutUs = () => {
                   </div>
 
                   <p className="platformlogoAlign">
-                    <a href="https://www.google.com">
+                    <a href="https://twitter.com/MALITH27615974?s=09">
                       <img
                         src={twitter}
                         style={{ width: '25%', height: '25%', borderRadius: '50%' }}
