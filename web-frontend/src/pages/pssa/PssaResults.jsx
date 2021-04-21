@@ -8,16 +8,19 @@ import SentimentResultCard from '../../components/analytics/SentimentResultCard'
 import SentimentRankCard from '../../components/analytics/SentimentRankCard';
 import fromParentOnly from '../../pages/wrappers/FromParentOnly';
 const Pssa3Results = () => {
+  //constants features and history created
   const [features, setFeatures] = useState([]);
 
   const history = useHistory();
 
+  //used to fetch data and pass data 
   useEffect(() => {
     const pssaData = history.location.state.data;
 
     setFeatures(pssaData);
     console.log(pssaData);
   });
+  // to find best and worst phones
   const bestPhone = Math.max.apply(
     Math,
     features.map((feature, i) => feature.feature_pol),
@@ -27,6 +30,7 @@ const Pssa3Results = () => {
     features.map((feature, i) => feature.feature_pol),
   );
   console.log(bestPhone + 'abi' + worstPhone);
+  //to capitalize first word
   const capitalize = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
@@ -83,22 +87,27 @@ const Pssa3Results = () => {
         </div>
         <div className=" -mt-60 -mb-40 content-padding">
           <div className="analytics-container cards-grid -mt-40">
-            {features
+            {//filtered results for best feature sntiment card 
+            features
               .filter((feature) => feature.feature_pol == bestPhone && bestPhone != 0)
-              .map((filteredmodel) => (
+              .map((filteredmodel,i) => (
                 <SentimentRankCard
+                key={`sentiment-results-card${i}`}
                   polarity="pos"
                   polarityPerc={filteredmodel.feature_pol}
-                  description={'Best feature of the selected smart phone' + filteredmodel.model}
+                  description={'Best feature of the selected smart phone' +' '+filteredmodel.model}
                   label={capitalizePhoneModels(filteredmodel.feature)}
                 ></SentimentRankCard>
               ))}
-            {features
+            
+            {//filtered results for worst feature sntiment card 
+            features
               .filter(
                 (feature) => feature.feature_pol == worstPhone && feature.feature_pol != bestPhone,
               )
-              .map((filteredmodel) => (
+              .map((filteredmodel,i) => (
                 <SentimentRankCard
+                key={`sentiment-results-card${i}`}
                   polarity="neg"
                   polarityPerc={filteredmodel.feature_pol}
                   label={capitalizePhoneModels(filteredmodel.feature)}
@@ -109,7 +118,8 @@ const Pssa3Results = () => {
               ))}
           </div>
           <div className="analytics-container cards-grid -mt-40">
-            {features.map((feature, i) => (
+            {//sentiment result cards
+            features.map((feature, i) => (
               <SentimentResultCard
                 key={`sentiment-results-card${i}`}
                 heading={capitalizePhoneModels(feature.feature)}
