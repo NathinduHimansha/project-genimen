@@ -5,12 +5,12 @@ import hacker from '../../assests/hacker.png';
 import twitter from '../../assests/twitter.png';
 import linkedin from '../../assests/linkedin.png';
 import github from '../../assests/github.png';
-import tharindu from '../../assests/tharindu.jpg';
-import nathindu from '../../assests/nathindu.png';
-import malith from '../../assests/malith.jpg';
-import rashad from '../../assests/rashad.jpg';
-import adeesha from '../../assests/manthila.jpg';
-import abilash from '../../assests/abilash.png';
+import tharindu from '../../assests/team/tharindu.jpg';
+import nathindu from '../../assests/team/nathindu.png';
+import malith from '../../assests/team/malith.jpg';
+import rashad from '../../assests/team/rashad.jpg';
+import adeesha from '../../assests/team/manthila.png';
+import abilash from '../../assests/team/abilash.png';
 
 const AboutUs = () => {
   return (
