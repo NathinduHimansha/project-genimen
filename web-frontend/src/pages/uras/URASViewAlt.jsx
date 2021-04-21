@@ -21,7 +21,6 @@ import { useToasts } from 'react-toast-notifications';
 import { getToken, capitalize } from '../../common/utils';
 
 const URASViewAlt = () => {
-  //function for get http request and pass it to results
   const analyseSelectedFeature = () => {
     setBtnLoadingState(true);
     const token = getToken();
@@ -41,6 +40,7 @@ const URASViewAlt = () => {
           setBtnLoadingState(false);
         }
       })
+
       .catch((error) => {
         setBtnLoadingState(false),
           addToast('Something went wront! please try again...', {
@@ -50,7 +50,6 @@ const URASViewAlt = () => {
       });
   };
 
-  //array for store feature types in backend
   const [features, setFeatures] = useState([
     {
       feature: 'Display',
@@ -69,8 +68,11 @@ const URASViewAlt = () => {
       types: [],
     },
   ]);
-
   const [selectedFeatures, setSelectedFeatures] = useState({}); //selected features by the user
+  const appendSelectedFeatures = (feature, type) => {
+    // console.log(feature, type);
+    setSelectedFeatures((prevSelectedFeatures) => ({ ...prevSelectedFeatures, [feature]: type }));
+  };
   const [btnLoadingState, setBtnLoadingState] = useState(false);
   const [btnDisabledSate, setBtnDisabledSate] = useState(true);
   const [pageLoading, setPageLoading] = useState(false);
@@ -78,17 +80,10 @@ const URASViewAlt = () => {
   const history = useHistory();
   const { addToast } = useToasts();
 
-  //function to append selected features
-  const appendSelectedFeatures = (feature, type) => {
-    setSelectedFeatures((prevSelectedFeatures) => ({ ...prevSelectedFeatures, [feature]: type }));
-  };
-
-  //function to retrive img icon to the feature
   const getIconUrl = (feature) => {
     return 'var(--' + feature.toLowerCase() + '-icon)';
   };
 
-  //use effect for retrive featurev types from backend
   useEffect(() => {
     setPageLoading(true);
     setTimeout(() => {
@@ -108,12 +103,9 @@ const URASViewAlt = () => {
     }, 500);
   }, []);
 
-  //reset button action
   const cleardata = () => {
     setSelectedFeatures({});
   };
-
-  //function to set button status(enable/disbale)
   useEffect(() => {
     Object.keys(selectedFeatures).length ? setBtnDisabledSate(false) : setBtnDisabledSate(true);
   }, [selectedFeatures]);
@@ -121,16 +113,11 @@ const URASViewAlt = () => {
   return (
     <div className="navbar-page-container -mb-40">
       <div className="app-heading-header content-padding -flex -flex-col">
-
-        {/* current location view */}
         <div className="-mb-30">
           <CurrentLocation></CurrentLocation>
         </div>
-
         <h2 className="fancy-heading -no-margin">ANALYSE SMARTPHONE FEATURES</h2>
       </div>
-
-      {/* heading */}
       <div className=" -mt-60 -mb-40 content-padding">
         <FancyHeading decoratorClassName="fancy-heading2-decorator">
           <h2 className="heading2 -medium -no-margin heading2-sep-margin">
@@ -139,11 +126,9 @@ const URASViewAlt = () => {
         </FancyHeading>
         <hr className="heading-sep" />
       </div>
-
       <div className="feature-selection-block">
         <div className="content-padding -flex">
           <div style={{ width: '50%' }} className="feature-selection-box">
-
             <div className="focus-card focus-info-card -mb-40">
               <div className="-bold -normal focus-card-info-label">Info: </div>
               <div className="focus-card-description">
@@ -152,8 +137,6 @@ const URASViewAlt = () => {
                 for the feature
               </div>
             </div>
-
-            {/* features loading */}
             <div style={{ marginTop: '20px', marginBottom: '20px' }}>
               <div className="feature-types feature-types-selection-menu -flex -flex-col -flex-center">
                 {pageLoading ? (
@@ -195,8 +178,6 @@ const URASViewAlt = () => {
                   ))
                 )}
               </div>
-
-              {/* buttons */}
               <div className="-flex -mt-40">
                 <div className="-flex">
                   <Button
@@ -228,8 +209,6 @@ const URASViewAlt = () => {
               </div>
             </div>
           </div>
-
-          {/* page image */}
           <div style={{ opacity: '0.6' }} className="feature-selection-banner -flex -flex-middle">
             <img src={banner} style={{ width: '400px' }} />
           </div>
