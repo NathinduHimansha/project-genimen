@@ -2,7 +2,7 @@ from flask import Flask, request, Blueprint
 from analytics.model_specific.model_lexicon.model_lexicon import available_models, MODELS
 from analytics.model_specific.smartphone_model.phone_model import Model
 from api.common.utils import createSuccessResponse, createErrResponse
-from api.model_sentiment.service import get_model_sentiment, get_final_results
+from api.resources.model_sentiment.service import get_model_sentiment, get_final_results
 from flask_jwt_extended import jwt_required
 
 model_sentiment = Blueprint('ModelSentiment', __name__, url_prefix='/api')

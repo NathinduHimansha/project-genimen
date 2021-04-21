@@ -1,10 +1,10 @@
 from flask import Flask, Blueprint, request
 from flask_jwt_extended import jwt_required
 
-from api.exkey import service
+from api.resources.exkey import service
 from api.common.utils import createSuccessResponse, createErrResponse
-#from api.exkey import keyword_service
-#from api.exkey.wordCounter import WordCounter
+#from api.resources.exkey import keyword_service
+#from api.resources.exkey.wordCounter import WordCounter
 
 # Design Specific values
 numberOfTrendValues = 9

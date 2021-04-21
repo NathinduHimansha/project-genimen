@@ -4,7 +4,7 @@ import json
 import requests
 
 from api import create_app
-from api.auth.controller import create_token
+from api.resources.auth.controller import create_token
 from flask_jwt_extended import create_access_token
 from api.database.db import db
 
@@ -112,7 +112,7 @@ def test_uras_analytics(client, mocker):
         'phone-feature-polarity': [],
     }
     mocker.patch(
-        "api.uras.controller.get_reviews_sentiment_summary", return_value=mockedResults)
+        "api.resources.uras.controller.get_reviews_sentiment_summary", return_value=mockedResults)
     access_token = create_access_token("testUser")
     mimetype = 'application/json'
     headers = {
@@ -145,6 +145,7 @@ def test_uras_analytics(client, mocker):
     assert dict(res.json)['status'] == 0
     assert res.status_code == 200
 
+
 def test_model_sentiment(client):
     access_token = create_access_token("testUser")
     headers = {
@@ -158,7 +159,7 @@ def test_model_sentiment(client):
 def test_model_sentiment_analytics(client, mocker):
     mockedResults = {}
     mocker.patch(
-        "api.model_sentiment.controller.get_final_results", return_value=mockedResults)
+        "api.resources.model_sentiment.controller.get_final_results", return_value=mockedResults)
 
     access_token = create_access_token("testUser")
     headers = {
@@ -181,6 +182,7 @@ def test_model_sentiment_analytics(client, mocker):
 
     # sending a invalid smartphone model
     invalid_model = {"model_name": "iPhone 1"}
-    res = client.post('/api/ModelSentiment/analyze', data=json.dumps(invalid_model), headers=headers)
+    res = client.post('/api/ModelSentiment/analyze',
+                      data=json.dumps(invalid_model), headers=headers)
     assert dict(res.json)['status'] == 0
     assert res.status_code == 200

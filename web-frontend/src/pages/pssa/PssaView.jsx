@@ -13,6 +13,8 @@ import { getPhones } from '../../services/pssa3-service';
 import { getToken } from '../../common/utils';
 
 const Pssa3View = () => {
+  //function used on click start analyse button
+  //used to fetch data and pass data 
   const analyseSelectedPhone = () => {
     setBtnLoadingState(true);
     const token = getToken();
@@ -37,10 +39,11 @@ const Pssa3View = () => {
     }, 3000);
   };
 
+  //constants used to save brand name to p and model name to q
   const [p, setP] = useState('');
   const [q, setQ] = useState('');
 
-  const [features, setFeatures] = useState([]); //available fetures in backend
+  const [sphones, setSphones] = useState([]); //available fetures in backend
 
   const [selectedFeatures, setSelectedFeatures] = useState({}); //selected features by the user
   const appendSelectedFeatures = (feature, type) => {
@@ -60,13 +63,14 @@ const Pssa3View = () => {
     return 'var(--' + feature.toLowerCase() + '-icon)';
   };
 
+  //used to get phone brands and models from backend
   useEffect(() => {
     setPageLoading(true);
     setTimeout(() => {
       const token = getToken();
       getPhones(token)
         .then((response) => {
-          setFeatures(response.data.data);
+          setSphones(response.data.data);
           setPageLoading(false);
         })
         .catch((error) => {
@@ -79,6 +83,7 @@ const Pssa3View = () => {
     }, 1000);
   }, []);
 
+  //used to clear selected values on click clear button
   const cleardata = () => {
     setP('');
     setQ('');
@@ -88,6 +93,7 @@ const Pssa3View = () => {
     Object.keys(selectedFeatures).length ? setBtnDisabledSate(false) : setBtnDisabledSate(true);
   }, [selectedFeatures]);
 
+  //function used to capitalize first word 
   const capitalize = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
@@ -140,6 +146,7 @@ const Pssa3View = () => {
                     ></div>
                   </div>
                 ) : (
+                  
                   <div className="-flex -mb-20 brand-selection-box-wrapper">
                     <IconHeading
                       size="small"
@@ -152,7 +159,9 @@ const Pssa3View = () => {
                         </h2>
                       </label>
                     </IconHeading>
+                    
                     <select
+                    //dropdown list of brands created and onchange function is here used toset value to p
                       style={{ marginLeft: '10px', background: 'var(--white)' }}
                       defaultValue="select-feature"
                       className="select-brand select large heading4 -regular -flex-right"
@@ -169,9 +178,9 @@ const Pssa3View = () => {
                       <option value="select-feature" disabled>
                         Select Type
                       </option>
-                      {features.map((feature, i) => (
-                        <option key={feature.brand} value={feature.brand}>
-                          {capitalizePhoneModels(feature.brand)}
+                      {sphones.map((brand, i) => (
+                        <option key={brand.brand} value={brand.brand}>
+                          {capitalizePhoneModels(brand.brand)}
                         </option>
                       ))}
                     </select>
@@ -188,6 +197,7 @@ const Pssa3View = () => {
                       </h2>
                     </label>
                     <select
+                      //dropdown list of models created and onchange function is here used toset value to q
                       style={{ marginLeft: '10px', background: 'var(--white)' }}
                       defaultValue="select-feature"
                       className="select-model select large heading4 -regular -flex-right"
@@ -197,31 +207,19 @@ const Pssa3View = () => {
                         setQ(selectModel);
                         appendSelectedFeatures(p, e.target.value);
                       }}
-                      //onChange={(event) =>
-                      //appendSelectedFeatures(feature.feature, event.target.value)
-                      //}
+                      
                       value={q || 'select-feature'}
-                      //onChange={(event) =>
-                      //appendSelectedFeatures(feature.feature, event.target.value)
-                      //}
-                      //value={selectedFeatures[feature.feature] || 'select-feature'}
+                     
                     >
                       <option value="select-feature" disabled>
                         Select Type
                       </option>
-                      {/*features.map((feature) => (
-                         feature.model.map((feature0) => (
-                          <option key={feature0} value={feature.model}>
-                            {feature0}
-                            </option>
-                          ))
-                         ))*/}
-                      {features
+                      {sphones
                         .filter((feature) => feature.brand == p)
                         .map((filteredmodel) =>
-                          filteredmodel.model.map((feature2) => (
-                            <option key={feature2} value={feature2}>
-                              {feature2}
+                          filteredmodel.model.map((modelz) => (
+                            <option key={modelz} value={modelz}>
+                              {modelz}
                             </option>
                           )),
                         )}
@@ -232,6 +230,7 @@ const Pssa3View = () => {
               <div className="-flex -mt-40">
                 <div className="-flex">
                   <Button
+                  //start analsing button
                     iconSrc={search}
                     loading={false}
                     loading={btnLoadingState}
@@ -242,6 +241,7 @@ const Pssa3View = () => {
                     Start Analysing
                   </Button>
                   <Button
+                  //clear button
                     outline={true}
                     type="reset"
                     value="reset"
@@ -253,8 +253,7 @@ const Pssa3View = () => {
                         Object.keys(selectedFeatures).length === 0 &&
                         selectedFeatures.constructor === Object)
                     }
-                    // loading={btnLoadingState}
-                    // iconSrc={croselight}
+                  
                   >
                     Clear
                   </Button>

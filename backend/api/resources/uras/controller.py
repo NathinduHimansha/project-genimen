@@ -3,7 +3,7 @@ from flask.json import jsonify
 from api.common.utils import createSuccessResponse, createErrResponse
 from analytics.aspect_analysis.aspect_lexicons import FEATURE_TYPES
 #  from .service import get_reviews_sentiment_summary, mock
-from api.uras.service import get_reviews_sentiment_summary
+from api.resources.uras.service import get_reviews_sentiment_summary
 from flask_jwt_extended import jwt_required
 
 
