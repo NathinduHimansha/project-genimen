@@ -95,7 +95,7 @@ const Pssa3Results = () => {
                 key={`sentiment-results-card${i}`}
                   polarity="pos"
                   polarityPerc={filteredmodel.feature_pol}
-                  description={'Best feature of the selected smart phone' + filteredmodel.model}
+                  description={'Best feature of the selected smart phone' +' '+filteredmodel.model}
                   label={capitalizePhoneModels(filteredmodel.feature)}
                 ></SentimentRankCard>
               ))}
