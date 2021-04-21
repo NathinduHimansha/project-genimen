@@ -1,7 +1,6 @@
 import React from 'react';
 import './aboutus.css';
 import CurrentLocation from '../../components/header/CurrentLocation';
-import hacker from '../../assests/hacker.png';
 import twitter from '../../assests/twitter.png';
 import linkedin from '../../assests/linkedin.png';
 import github from '../../assests/github.png';
