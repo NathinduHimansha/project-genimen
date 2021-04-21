@@ -8,7 +8,7 @@ from api.common.utils import createSuccessResponse, createErrResponse
 
 # Design Specific values
 numberOfTrendValues = 9
-numberOfTopSimilarityWords = 3
+numberSimilarityWords = 12
 
 exKey = Blueprint('exKey', __name__, url_prefix='/api')
 
@@ -25,7 +25,7 @@ def get_treeMap_values():
     #treeMap =[]
     treeMap ={'series':[{'data':[]}]}
 
-    similar_word_list = service.get_similar_word_instances(numberOfTrendValues)
+    similar_word_list = service.get_similar_word_instances(numberSimilarityWords)
     for element in similar_word_list:
         treeMap['series'][0]['data'].append({'x':element[0],'y':200})
     
