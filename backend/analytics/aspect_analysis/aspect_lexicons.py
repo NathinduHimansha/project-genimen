@@ -153,7 +153,6 @@ phones = {
         'samsung-galaxy-a10e',
         'Samsung-galaxy-a10s',
         'samsung-galaxy-a11',
-        'apple-iphone-20s',
         'motorola-moto-z-play',
         'google-pixel-4',
         'google-pixel-4a',
