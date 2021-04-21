@@ -154,17 +154,19 @@ phones = {
         #  'apple-iphone-se',
 
     ],
-    size[1]: ['samsung-galaxy-note-8',
-              'apple-iphone-8-plus',
-              'apple-iphone-7-plus',
-              'apple-iphone-xs-max',
-              'samsung-galaxy-note-10-lite',
-              'samsung-electronics-galaxy-note-20',
-              'samsung-galaxy-a21s',
-              'samsung-galaxy-a31',
-              'samsung-galaxy-a51',
-              'samsung-galaxy-a70',
-              'samsung-galaxy-a71',
-              'huawei-p30-lite',
-              'huawei-p30pro', ]
+    size[1]: [
+        'samsung-galaxy-note-8',
+        'apple-iphone-8-plus',
+        'apple-iphone-7-plus',
+        'apple-iphone-xs-max',
+        'huawei-p30-lite',
+        'huawei-p30pro',
+        'samsung-galaxy-note-10-lite',
+        'samsung-electronics-galaxy-note-20',
+        'samsung-galaxy-a70',
+        'samsung-galaxy-a71',
+        #  'samsung-galaxy-a21s',
+        #  'samsung-galaxy-a31',
+        #  'samsung-galaxy-a51',
+    ]
 }
