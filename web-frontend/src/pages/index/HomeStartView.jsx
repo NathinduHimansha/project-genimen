@@ -11,6 +11,8 @@ function HomeStartView() {
     <div className="navbar-page-container -mb-40  home-start-container">
       <div className="app-heading-header content-padding -flex -flex-col">
         <div className="-mb-30">
+
+          {/* back button */}
           <NavLink to="/home" className="-text-decoration-none">
             <IconHeading size="extra-small" iconUrl="var(--arrow-back-icon)">
               <h4 className="heading4 -no-margin">
@@ -19,9 +21,11 @@ function HomeStartView() {
             </IconHeading>
           </NavLink>
         </div>
+
         <h2 className="fancy-heading -no-margin">SELECT AN OPTION TO ANALYSE</h2>
       </div>
 
+      {/* cards for options */}
       <div className="menu-card-grid">
         <MenuCard
           img={sturasimg}
