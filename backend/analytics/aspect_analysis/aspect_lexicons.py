@@ -99,7 +99,7 @@ phones = {
         'samsung-galaxy-z-flip'
     ],
     headphone_jack[0]: [
-        'Huawei-honor-9',
+        'huawei-honor-9',
         'huawei-honor-8s',
         'samsung-galaxy-a50',
         'samsung-galaxy-note-10-lite',
@@ -153,9 +153,9 @@ phones = {
         'samsung-galaxy-a10e',
         'Samsung-galaxy-a10s',
         'samsung-galaxy-a11',
-        'Apple-iphone-20s',
-        'Motorola-moto-z-play',
-        'Google-pixel-4',
+        'apple-iphone-20s',
+        'motorola-moto-z-play',
+        'google-pixel-4',
         'google-pixel-4a',
 
     ],
@@ -165,11 +165,11 @@ phones = {
               'apple-iphone-xs-max',
               'samsung-galaxy-note-10-lite',
               'samsung-electronics-galaxy-note-20',
-              'Samsung-galaxy-a21s',
-              'Samsung-galaxy-a31',
-              'Samsung-galaxy-a51',
-              'Samsung-galaxy-a70',
-              'Samsung-galaxy-a71',
-              'Huawei-p30-lite',
+              'samsung-galaxy-a21s',
+              'samsung-galaxy-a31',
+              'samsung-galaxy-a51',
+              'samsung-galaxy-a70',
+              'samsung-galaxy-a71',
+              'huawei-p30-lite',
               'huawei-p30pro', ]
 }
