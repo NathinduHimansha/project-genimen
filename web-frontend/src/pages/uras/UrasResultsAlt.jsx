@@ -22,13 +22,6 @@ const UrasResultsAlt = () => {
   const phoneFeaturePolarity = 'phone-feature-polarity';
   const [bestPhone, setBestPhone] = useState([]);
   const [worstPhone, setWorstPhone] = useState([]);
-  const [selectedFeatureType, setSelectedFeatureType] = useState();
-  const [urasData, setUrasData] = useState({
-    [featureSentimentPolarity]: [],
-    [phoneFeaturePolarity]: [],
-  });
-
-  const history = useHistory();
   const sorter = [
     {
       value: 'pos-neg',
@@ -46,8 +39,6 @@ const UrasResultsAlt = () => {
       by: 'phone',
     },
   ];
-
-  // results sorting functions
   const [sortBy, setSortBy] = useState(sorter[0].by);
   const sort = (i, phoneFeaturePolarityList) => {
     return sortPhoneFeaturePolarity(phoneFeaturePolarityList, sorter[i].by);
@@ -57,6 +48,12 @@ const UrasResultsAlt = () => {
       return p1[by] > p2[by] ? 1 : -1;
     });
   };
+  const [urasData, setUrasData] = useState({
+    [featureSentimentPolarity]: [],
+    [phoneFeaturePolarity]: [],
+  });
+  const [selectedFeatureType, setSelectedFeatureType] = useState();
+  const history = useHistory();
 
   const findBest = (featureType, phoneFeaturePolarityList) => {
     return phoneFeaturePolarityList
@@ -76,14 +73,11 @@ const UrasResultsAlt = () => {
         return curr.polarity < pre.polarity ? curr : pre;
       }, 110);
   };
-
-  //string capitalize function
   const capitalize = (string) => {
     if (string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
   };
-
   // construct phone model names
   const capitalizePhoneModels = (model) => {
     if (model) {
@@ -94,8 +88,6 @@ const UrasResultsAlt = () => {
       return modelNameStrList.join(' ');
     }
   };
-
-  //sorting effect
   useEffect(() => {
     const phoneFeaturePolaritySorted = sortPhoneFeaturePolarity(
       urasData[phoneFeaturePolarity],
@@ -104,24 +96,21 @@ const UrasResultsAlt = () => {
     urasData[phoneFeaturePolarity] = phoneFeaturePolaritySorted;
     setUrasData(urasData);
   }, [sortBy, setSortBy]);
-
-
-  //features getting from prev page and setting up
   useEffect(() => {
     const urasData = history.location.state;
     const featureType = urasData[featureSentimentPolarity][0].feature;
     const phoneFeaturePolaritySorted = sort(0, urasData[phoneFeaturePolarity]);
+
     urasData[phoneFeaturePolarity] = phoneFeaturePolaritySorted;
     setUrasData(urasData);
     setBestWorstPhones(featureType, urasData[phoneFeaturePolarity]);
     setSelectedFeatureType(featureType);
   }, []);
-
-
-  //worst/best phone selection function
   const setBestWorstPhones = (featureType, phoneFeaturePolarityList) => {
+    // console.log(featureType);
     let bestPhone = findBest(featureType, phoneFeaturePolarityList);
     let worstPhone = findWorst(featureType, phoneFeaturePolarityList);
+    // console.log(worstPhone);
     if (worstPhone.phone == bestPhone.phone) {
       if (worstPhone.pos > 50) {
         worstPhone = {};
@@ -132,8 +121,6 @@ const UrasResultsAlt = () => {
     setBestPhone(bestPhone);
     setWorstPhone(worstPhone);
   };
-
-  //get the feature sub type
   const getFeatureSubType = () => {
     return urasData[featureSentimentPolarity].filter(
       (featureDet) => featureDet.feature === selectedFeatureType,
@@ -141,9 +128,7 @@ const UrasResultsAlt = () => {
   };
   return (
     <div className="navbar-page-container -mb-40">
-
       <div className="app-heading-header content-padding -flex -flex-col">
-        {/* back action */}
         <div className="-mb-30">
           <NavLink to="/analytics/uras" className="-text-decoration-none">
             <IconHeading size="extra-small" iconUrl="var(--arrow-back-icon)">
@@ -155,26 +140,20 @@ const UrasResultsAlt = () => {
         </div>
         <h2 className="fancy-heading -no-margin">RESULTS</h2>
       </div>
-
-      {/* body*/}
       <div className=" -mt-60 -mb-90 content-padding">
-
         <FancyHeading decoratorClassName="fancy-heading2-decorator">
           <h2 className="heading2 -medium -no-margin heading2-sep-margin">
             Smartphone Feature Sentiments
           </h2>
         </FancyHeading>
-
         <hr className="heading-sep" />
         <div>
-
-          {/* view feature selection */}
           <div className="-mb-65 -mt-20">
             <label htmlFor="select-feature" className="select-label">
               <span className="t1 color-grey">Show: </span>
             </label>
             <select
-              className="select select-feature large"
+              className="select"
               id="select-feautre"
               value={selectedFeatureType}
               onChange={(e) => {
@@ -192,7 +171,6 @@ const UrasResultsAlt = () => {
             </select>
           </div>
 
-          {/* main results view */}
           <h2 className="heading2 -regular -no-margin">{capitalize(selectedFeatureType)}</h2>
           <hr className="heading-sep" />
           <div className="-mt-20">
@@ -211,6 +189,7 @@ const UrasResultsAlt = () => {
                     <SentimentResultCard
                       key={`total-sentiment-card${i}`}
                       heading="Total Results"
+                      // headingIcon={phoneIcon}
                       reviewCount={featureDet['total-review-count']}
                       reviewCountLable="Total Reviews Analysed"
                       polarity={featureDet.polarity}
@@ -232,8 +211,8 @@ const UrasResultsAlt = () => {
                 ''
               )}
               {!isObjEmtpy(worstPhone) &&
-                worstPhone.length != 0 &&
-                worstPhone.polarity != 'None' ? (
+              worstPhone.length != 0 &&
+              worstPhone.polarity != 'None' ? (
                 <SentimentRankCard
                   polarity="neg"
                   polarityPerc={worstPhone.polarity}
@@ -245,8 +224,6 @@ const UrasResultsAlt = () => {
               )}
             </div>
           </div>
-
-          {/* results per phone */}
           <div className="-mt-60">
             <h3 className="heading3 -medium -no-margin" style={{ fontSize: '2.2rem' }}>
               Analysis per Phone
@@ -256,8 +233,9 @@ const UrasResultsAlt = () => {
               <div className="-flex -flex-middle">
                 <span className="uras-sort-label">Sort by: </span>
                 <select
-                  className="uras-sort select large"
+                  className="uras-sort select"
                   onChange={(e) => {
+                    // setSortBy();
                     const phoneFeaturePolarityList = urasData[phoneFeaturePolarity];
                     const sortIndex = parseInt(e.target.value);
                     const phoneFeaturePolaritySorted = sort(sortIndex, phoneFeaturePolarityList);
