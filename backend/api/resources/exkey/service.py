@@ -2,9 +2,11 @@ import json
 from gensim.models import Word2Vec
 
 keyword_resource =open('analytics/keyword_extract/word_count_ref.json','r')
+lexicon_resource= open('analytics/keyword_extract/identified_noun_ref.json','r')
 #Opening Resources required
 similarity_resource = Word2Vec.load('analytics/wordEmbedding.sav')
 trend_data = json.load(keyword_resource)
+noun_data = json.load(lexicon_resource)
 #Calculating total Number of Word Appearance
 totalInstances = sum([x[1] for x in trend_data])
 
@@ -35,21 +37,25 @@ def get_trend_word_count(numberOfTrendValues):
         trend_list.append({'keyword':element[0],'value':calculate_trend_percentage(element[1])})
     return trend_list
 
-def get_similar_word_instances(topCountWords,numberOfCandidates):
+def get_similar_word_instances(numberOfCandidates):
     '''
         Get the similar Word list
-        @topCountWords front end requirements (top most instance words)
         @numberOfCandidates frontend requirement 
     '''
     similar_ins_list =[]
     cadidate_list = trend_data[0:numberOfCandidates]
-    for i in range(0,len(cadidate_list)):
-        if i < topCountWords:
-            top_similar_words = wordEmbedSimilarFunction(cadidate_list[i][0],2)
-            similar_ins_list.append(top_similar_words[0][0])
-            similar_ins_list.append(top_similar_words[1][0])
-        else:
-            similar_ins_list.append(wordEmbedSimilarFunction(cadidate_list[i][0],1)[0])
-    return similar_ins_list
+    for candidate in cadidate_list:
+        cadidate_key = candidate[0]
+        similar_candidate_list = similarity_resource.wv.most_similar(cadidate_key)
+        for similar_entity in similar_candidate_list:
+            similar_ins_list.append(similar_entity)
+    similar_ins_list = sorted(similar_ins_list,key=lambda x:x[1],reverse=True)
+    
+    for similarity_tuple in similar_ins_list:
+        if len(similar_ins_list) >9:
+            if similarity_tuple[0] not in noun_data:
+                similar_ins_list.pop(similar_ins_list.index(similarity_tuple))
+    return similar_ins_list[0:numberOfCandidates]
+    
         
 
