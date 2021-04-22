@@ -7,6 +7,7 @@ import IconHeading from '../../components/text/IconHeading';
 import SentimentResultCard from '../../components/analytics/SentimentResultCard';
 import SentimentRankCard from '../../components/analytics/SentimentRankCard';
 import fromParentOnly from '../../pages/wrappers/FromParentOnly';
+import './pssa.css'
 const Pssa3Results = () => {
   //constants features and history created
   const [features, setFeatures] = useState([]);
@@ -69,7 +70,7 @@ const Pssa3Results = () => {
         <hr className="heading-sep" />
       </div>
       <div className="feature-selection-block">
-        <div className="content-padding -flex -flex-reverse -flex-middle -flex-end" style={{}}>
+        <div className="content-padding -flex -flex-reverse -flex-middle -flex-end pssa-results-banner" style={{}}>
           <div style={{ maxWidth: '650px', minWidth: '350px' }} className="feature-selection-box">
             <div className="focus-card focus-info-card -mb-40" style={{}}>
               <div className="-bold -normal focus-card-info-label">Info: </div>
