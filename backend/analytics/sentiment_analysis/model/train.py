@@ -8,6 +8,7 @@ from sentiment_analysis.preprocessing.clean_data import clean_text, remove_stop_
 from sentiment_analysis.model.classifiers import SGDClassifierModel
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, precision_score
+import pickle
 
 
 #  labeler = "textblob"
@@ -38,6 +39,8 @@ review_train, review_test, lbl_train, lbl_test = train_test_split(
 start_time = time.time()
 model, vc = SGDClassifierModel().fit(review_train, lbl_train)
 training_time = round(time.time() - start_time, 2)
+pickle.dump(model, open(f"sdgc.pickle", 'wb'))
+pickle.dump(vc, open(f"sdgc-vc.pickle", 'wb'))
 X_test = vc.transform(review_test)
 predicted = model.predict(X_test)
 
