@@ -56,6 +56,7 @@ def get_reviews_sentiment_summary(feature_type_dic):
             review_df = list_to_df(review_sent_list, "review")
             review_df = df_remove_short_reviews(review_df)
             review_df['feature'] = review_df['review'].apply(get_feature)
+            # check if identified feature corresponds to the current iteration
             review_df['is_correct_feature'] = review_df['feature'].apply(
                 lambda x: feature in x)
             review_df = review_df[review_df['is_correct_feature'] == True]
@@ -63,6 +64,7 @@ def get_reviews_sentiment_summary(feature_type_dic):
                 get_sent_sentiment)
 
             phone_feature_sentiments = {}
+            # get pos neg perc
             pos = get_col_val_perc(review_df, "sentiment", 1)
             neg = get_col_val_perc(review_df, "sentiment", -1)
             polarity = pos - neg
@@ -73,8 +75,8 @@ def get_reviews_sentiment_summary(feature_type_dic):
                 total_neg += neg
                 total_polarity += polarity
                 i += 1
-            #  if (review_count < 5):
-                #  pos, neg, polarity = 'None', 'None', 'None'
+            if (review_count < 1):
+                pos, neg, polarity = 'None', 'None', 'None'
 
             phone_feature_sentiments['pos'] = pos
             phone_feature_sentiments['neg'] = neg
