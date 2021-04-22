@@ -1,0 +1,36 @@
+.scroll-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  cursor: pointer;
+  animation: fade 300ms ease-in-out 1.5s both;
+  transform: rotate(-180deg);
+  background: var(--primary-accent);
+  border-radius: 3px;
+  /* border-radius: 50%; */
+  transition: 200ms ease;
+}
+.scroll-top:hover {
+  opacity: 0.8 !important;
+  transform: translateY(-5px) rotate(-180deg);
+}
+.scroll-top-wrapper img {
+  width: 100%;
+}
+.scroll-top-wrapper {
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}

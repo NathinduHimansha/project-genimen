@@ -1,0 +1,27 @@
+upstream backend {
+        server 18.188.81.157:8080;
+        server 3.141.148.28:8080;
+}
+
+server {
+        listen 80;
+        listen 443 ssl;
+
+        server_name genimentsdgpapi.ml, www.genimentsdgpapi.ml;
+
+        ssl_certificate /etc/ssl/certs/nginx-self-signed.crt;
+        ssl_certificate_key /etc/ssl/private/nginx-self-signed.key;
+        proxy_read_timeout 1200;
+        proxy_connect_timeout 1200;
+        proxy_send_timeout 1200;
+
+        location /dev {
+                rewrite ^/dev/(.*) /$1  break;
+                proxy_pass http://backend;
+        }
+
+        # location / {
+        #       proxy_pass http://backend-prod;
+        # }
+
+}

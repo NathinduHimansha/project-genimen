@@ -1,0 +1,568 @@
+.main-body {
+  top: 0%;
+  left: 0%;
+  margin: 0%;
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .heading_align {
+    margin-left: 10%;
+    /* width: 100%; */
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .heading_align {
+    margin-left: 10%;
+  }
+}
+
+.body-split {
+  margin-top: -60px;
+  margin-left: 80px;
+}
+
+@media only screen and (max-width: 600px) {
+  .body-split {
+    margin-top: -20%;
+  }
+}
+
+.card-heading-name-left {
+  margin-left: 45%;
+}
+
+.card-heading-name-right {
+  margin-left: 40%;
+}
+
+.cards-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+  grid-gap: 20px;
+}
+
+.cards-split-Elements {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+  grid-gap: 20px;
+}
+
+@media only screen and (max-width: 1510px) {
+  .cards-split-Elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .cards-split-Elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+  }
+}
+
+.card-left {
+  display: block;
+  border: 1px solid var(--primary-border-grey);
+  border-radius: 6px;
+  background-color: var(--analytics-card);
+  width: 700px;
+  height: 420px;
+}
+
+.card-right {
+  display: block;
+  border: 1px solid var(--primary-border-grey);
+  border-radius: 6px;
+  background-color: var(--analytics-card);
+  width: 700px;
+  height: 420px;
+}
+
+.card-right_Elements {
+  display: block;
+  margin-left: 10%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .card-left {
+    width: 500px;
+    height: 300px;
+    margin-left: 14%;
+  }
+  .card-right {
+    width: 500px;
+    height: 300px;
+    margin-left: 14%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .card-left {
+    width: 400px;
+    height: 300px;
+    margin-left: 14%;
+    margin-top: 1%;
+  }
+  .card-right {
+    width: 400px;
+    height: 300px;
+    margin-left: 14%;
+    margin-top: -1%;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .card-left {
+    margin-left: 24%;
+  }
+  .card-right {
+    margin-left: 24%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card-left {
+    width: 300px;
+    height: 200px;
+    margin-left: -10px;
+    margin-top: 30px;
+  }
+  .card-right {
+    width: 300px;
+    height: 200px;
+    margin-left: -10px;
+    margin-top: 1%;
+    padding-bottom: 5%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .card-left {
+    margin-top: 10%;
+    margin-left: 8%;
+  }
+  .card-right {
+    margin-top: 10%;
+    margin-left: 1%;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .card-left {
+    margin-top: 15%;
+    margin-left: 7%;
+  }
+  .card-right {
+    margin-top: 15%;
+    margin-left: -10%;
+  }
+}
+
+@media screen and (min-width: 2300px) {
+  .card-left {
+    margin-top: 15%;
+    margin-left: 7%;
+  }
+  .card-right {
+    margin-top: 15%;
+    margin-left: 10%;
+  }
+}
+
+.card-topic {
+  margin-left: -7%;
+}
+@media only screen and (max-width: 600px) {
+  .card-topic {
+    margin-left: -50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .otherKeywords_description {
+    margin-left: 10%;
+    margin-top: -10%;
+    width: 100%;
+  }
+}
+
+@keyframes trend_animation {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* [>BAR GRAPH<] */
+
+.frequency_percentage {
+  float: left;
+  animation: fadein 3s linear;
+  font-size: 1.5rem;
+  left: 1px;
+  font-weight: bold;
+  top: 230px;
+  display: flex;
+  position: absolute;
+}
+
+.frequency-bars {
+  height: 220px;
+  background-color: var(--primary-white);
+  border-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 55px;
+  margin-top: 110px;
+}
+
+.barHighlight {
+  height: 100%;
+  width: 30px;
+  background-color: var(--bargraph-background);
+  margin-right: 40px;
+  position: relative;
+}
+
+.barchart_animation {
+  animation: start_load 2s ease forwards;
+}
+
+@keyframes start_load {
+  from {
+    height: 0;
+  }
+  to {
+    height: 1;
+  }
+}
+
+.progress-percentage {
+  width: 30px;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  animation: start_load 2s ease forwards;
+  background-color: var(--bargraph-progress-load);
+}
+
+.barchartKeyword {
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
+  float: left;
+  transition: 0.5s;
+  font-family: rubik;
+  width: 100%;
+  z-index: 1;
+  color: var(--barchart-keyword);
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 20px;
+  right: -5px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .frequency-bars {
+    display: flex;
+    margin-left: 40px;
+    margin-top: 120px;
+    margin-right: 0px;
+    flex-wrap: nowrap;
+    max-width: auto;
+  }
+  .frequency_percentage {
+    top: 115px;
+    font-size: 1rem;
+  }
+  .barHighlight {
+    width: 20px;
+    position: relative;
+    margin-right: 30px;
+    height: 110px;
+  }
+  .progress-percentage {
+    width: 20px;
+  }
+  .barchartKeyword {
+    left: 3px;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .frequency-bars {
+    display: flex;
+    margin-left: 40px;
+    margin-top: 120px;
+    margin-right: 15px;
+    flex-wrap: nowrap;
+    max-width: auto;
+  }
+  .frequency_percentage {
+    top: 115px;
+    font-size: 1rem;
+  }
+  .barHighlight {
+    width: 20px;
+    position: relative;
+    margin-right: 18px;
+    height: 110px;
+  }
+  .progress-percentage {
+    width: 20px;
+  }
+  .barchartKeyword {
+    left: 3px;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .frequency_percentage {
+    top: 115px;
+    font-size: 1rem;
+  }
+  .frequency-bars {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-right: 0px;
+    flex-wrap: nowrap;
+  }
+  .barHighlight {
+    width: 13px;
+    position: relative;
+    margin-right: 15px;
+    height: 110px;
+  }
+  .progress-percentage {
+    width: 13px;
+  }
+  .barchartKeyword {
+    left: 0.9px;
+    font-size: 0.9rem;
+  }
+}
+
+@keyframes startbtn-effect_analyzeAgain {
+  0% {
+    left: 0%;
+  }
+  50% {
+    left: 20%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+.analyze_again {
+  display: block;
+  animation-name: startbtn-effect_analyzeAgain;
+  animation-duration: 1.8s;
+  animation-iteration-count: 1;
+  position: relative;
+  margin-top: 7%;
+}
+
+.trend_description_align {
+  width: 90%;
+  float: right;
+  margin-top: 15%;
+  margin-left: -30%;
+  position: relative;
+}
+
+.analysing_banner {
+  opacity: 0.8;
+  margin-top: 1%;
+  margin-left: 1%;
+}
+
+@media only screen and (max-width: 1500px) {
+  .trend_description_align {
+    max-width: 100%;
+    float: right;
+    margin-top: 15%;
+    margin-left: -20%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    width: 120%;
+    margin-top: -1%;
+    margin-left: -5%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .trend_description_align {
+    max-width: 70%;
+    float: right;
+    margin-top: 17%;
+    margin-left: -25%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 10%;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .trend_description_align {
+    max-width: 100%;
+    float: right;
+    margin-top: 28%;
+    margin-left: -25%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    width: 110%;
+    margin-top: 7%;
+    margin-left: 1%;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .trend_description_align {
+    width: 60%;
+    float: right;
+    margin-top: -5%;
+    margin-left: 20%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    max-width: 70%;
+    margin-top: -3%;
+    margin-left: 20%;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .trend_description_align {
+    width: 60%;
+    float: right;
+    margin-top: -5%;
+    margin-left: 20%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    max-width: 70%;
+    margin-top: -3%;
+    margin-left: 20%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .trend_description_align {
+    width: 60%;
+    float: right;
+    margin-top: -5%;
+    margin-left: 15%;
+  }
+  .analysing_banner {
+    opacity: 0.8;
+    width: 70%;
+    margin-top: 3%;
+    margin-left: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .trend_description_align {
+    width: 60%;
+    float: right;
+    margin-top: -5%;
+    margin-left: 5%;
+  }
+  .analysing_banner {
+    opacity: 0.8;
+    width: 53%;
+    margin-top: 3%;
+    margin-left: 5%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .trend_description_align {
+    width: 45%;
+    float: right;
+    margin-top: -5%;
+    margin-left: -1%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    max-width: 70%;
+    margin-top: 5%;
+    margin-left: -7%;
+  }
+
+  .analyze_again {
+    position: static;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .trend_description_align {
+    width: 45%;
+    float: right;
+    margin-top: -5%;
+    margin-left: -1%;
+  }
+
+  .analysing_banner {
+    opacity: 0.8;
+    max-width: 84%;
+    margin-top: 5%;
+    margin-left: -7%;
+  }
+
+  .analyze_again {
+    position: static;
+  }
+}
+
+.treeMap_align {
+  margin-left: -160px;
+  margin-top: 30px;
+  width: 110%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .treeMap_align {
+    margin-left: -110px;
+    margin-top: -20px;
+    width: 110%;
+    height: 20%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .treeMap_align {
+    margin-left: -128px;
+    margin-top: -25px;
+    width: 140%;
+    height: 40%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .treeMap_align {
+    margin-left: -95px;
+    margin-top: -15px;
+    width: 130%;
+    height: 40%;
+  }
+}

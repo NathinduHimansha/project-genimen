@@ -1,0 +1,97 @@
+
+-----------------------------------------
+ SGDClassifier
+-----------------------------------------
+        
+accuracy:            0.9714814814814815
+precision_recall_macro: 0.9717111666443096
+precision_recall_weighted: 0.9717027113243872
+f1:                  [0.9667042  0.97525099 0.97235759]
+confusion_matrix:
+          pred:neu  pred:pos  pred:neg
+true:neu     12020       321       199
+true:pos        65     12531        35
+true:neg       243       215     12171
+
+training_time:       3.51s
+    
+-----------------------------------------
+ LinearSVC
+-----------------------------------------
+        
+accuracy:            0.9617460317460318
+precision_recall_macro: 0.9616376956409018
+precision_recall_weighted: 0.961654027867171
+f1:                  [0.9502364  0.98052584 0.95410215]
+confusion_matrix:
+          pred:neu  pred:pos  pred:neg
+true:neu     11858       219       463
+true:pos        74     12512        45
+true:neg       486       159     11984
+
+training_time:       2.46s
+    
+-----------------------------------------
+ LogisticRegression
+-----------------------------------------
+        
+accuracy:            0.9614285714285714
+precision_recall_macro: 0.961367143388918
+precision_recall_weighted: 0.961378269511657
+f1:                  [0.94988354 0.97817515 0.95579031]
+confusion_matrix:
+          pred:neu  pred:pos  pred:neg
+true:neu     11827       283       430
+true:pos        66     12527        38
+true:neg       469       172     11988
+
+training_time:       18.16s
+    
+-----------------------------------------
+ MultinomialNB
+-----------------------------------------
+        
+accuracy:            0.878015873015873
+precision_recall_macro: 0.8862350728220955
+precision_recall_weighted: 0.8863945495036593
+f1:                  [0.86916729 0.88439206 0.88144768]
+confusion_matrix:
+          pred:neu  pred:pos  pred:neg
+true:neu     11586       127       827
+true:pos      1418     10205      1008
+true:neg      1116       115     11398
+
+training_time:       1.79s
+    
+-----------------------------------------
+ RandomForestClassifier
+-----------------------------------------
+        
+accuracy:            0.9312433862433862
+precision_recall_macro: 0.9321103001238854
+precision_recall_weighted: 0.9321349729360224
+f1:                  [0.91775065 0.94475519 0.93060825]
+confusion_matrix:
+          pred:neu  pred:pos  pred:neg
+true:neu     11465       695       380
+true:pos       203     12330        98
+true:neg       777       446     11406
+
+training_time:       135.81s
+    
+-----------------------------------------
+ VotingClassifier
+-----------------------------------------
+        
+accuracy:            0.9652910052910053
+precision_recall_macro: 0.9652811303296635
+precision_recall_weighted: 0.9653003119862024
+f1:                  [0.95554579 0.97902973 0.96100468]
+confusion_matrix:
+          pred:neu  pred:pos  pred:neg
+true:neu     11962       252       326
+true:pos        85     12512        34
+true:neg       450       165     12014
+
+training_time:       174.56s
+     classifier_summary.txt

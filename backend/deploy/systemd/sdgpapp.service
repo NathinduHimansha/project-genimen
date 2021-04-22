@@ -1,0 +1,12 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/sdgpapi
+ExecStart=/usr/bin/gunicorn3 --timeout 1200 --workers 3 --bind unix:sdgpapp.sock -m 007 "api:create_app('dev')"
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,32 @@
+.heading-testing {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+.content {
+  width: 60%;
+  padding-left: 40px;
+}
+.testing {
+  width: 600px;
+  /* padding: 80px; */
+  margin: auto;
+  margin-top: 10%;
+  border: 1px solid var(--primary-border-grey);
+}
+.content > div {
+  margin-bottom: 30px;
+}
+.testing2 svg {
+  width: 100%;
+}
+.testing2 {
+  display: flex;
+  width: 100%;
+}
+.testing2 > * {
+  margin-right: 25px;
+}
+.testing2 > *:nth-last-child(1) {
+  margin-right: 0px;
+}

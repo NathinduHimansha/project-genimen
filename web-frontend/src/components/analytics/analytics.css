@@ -1,0 +1,142 @@
+div.analytics-content {
+  padding: 20px 0 0 30px;
+}
+div.analytics-container {
+  /* display: flex; */
+  width: 100%;
+  /* flex-wrap: wrap; */
+}
+div.analytics-container > div {
+  /* max-width: 400px; */
+  /* width: 50%; */
+}
+div.analytics-heading {
+  padding-left: 16px;
+  padding-right: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: var(--primary-border);
+}
+div.analytics-meta-info {
+  padding: 0 0 var(--gap-medium) 0;
+}
+div.net-polarity {
+  padding-right: 10%;
+  margin-bottom: var(--gap-medium);
+}
+.polarity-score {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  color: var(--pos-green);
+}
+div.neg-pos {
+  padding-right: 25%;
+}
+div.neg-pos > div {
+  margin-bottom: 40px;
+}
+div.neg-pos > div:nth-last-child(1) {
+  margin-bottom: 40px;
+}
+div.neg-pos-graph > * {
+  margin-right: 20px;
+}
+div.neg-pos-graph > *:nth-last-child(1) {
+  margin-right: 0;
+}
+div.sentiment-rank-card {
+  box-sizing: border-box;
+  padding: 20px 40px;
+  display: flex;
+  border-radius: 8px;
+  max-width: 400px;
+  min-width: 150px;
+  height: 100%;
+  /* width: 100%; */
+}
+div.sentiment-rank-card--pos {
+  background: var(--pos-green);
+}
+div.sentiment-rank-card--neg {
+  background: var(--neg-red);
+}
+div.sentiment-det {
+  flex-grow: 1;
+}
+div.sentiment-det h1,
+div.sentiment-det span {
+  color: #fff;
+}
+span.sentiment-det-description {
+  font-size: 1.4rem;
+  /* white-space: nowrap; */
+}
+h1.sentiment-det-label {
+  margin-bottom: 5px;
+  font-size: 2.2rem;
+}
+h1.sentiment-det-polarity-perc {
+  margin-top: 20px;
+  font-size: 3rem;
+}
+div.sentiment-emoji {
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: center; */
+  width: 40%;
+  /* margin-right: 20px; */
+  /* margin-left: 20px; */
+}
+div.sentiment-emoji img {
+  /* width: 50%; */
+  max-width: 35px;
+  /* min-width: 100px; */
+  opacity: 0.8;
+  /* object-fit: contain; */
+}
+@media only screen and (max-width: 1100px) {
+  div.sentiment-emoji {
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+  div.sentiment-emoji img {
+    width: 0;
+  }
+  div.sentiment-rank-card {
+    padding: 20px 30px;
+    /* max-width: 250px; */
+    /* min-width: 250px; */
+    box-sizing: border-box;
+  }
+  span.sentiment-det-description {
+    font-size: 1.2rem;
+    /* white-space: nowrap; */
+  }
+  h1.sentiment-det-label {
+    margin-bottom: 5px;
+    font-size: 2.2rem;
+  }
+  h1.sentiment-det-polarity-perc {
+    margin-top: 20px;
+    font-size: 3.2rem;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .sentiment-rank-card-label h1 {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 12ch;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .sentiment-rank-card-label h1 {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 7ch;
+  }
+}
