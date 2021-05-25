@@ -61,7 +61,7 @@ const UrasResultsAlt = () => {
         return featureDet.feature == featureType;
       })
       .reduce((curr, pre) => {
-        return curr.polarity > pre.polarity ? curr : pre;
+        return curr.polarity > pre.polarity || pre.polarity == 'None' ? curr : pre;
       }, 0);
   };
   const findWorst = (featureType, phoneFeaturePolarityList) => {
@@ -70,7 +70,7 @@ const UrasResultsAlt = () => {
         return featureDet.feature == featureType;
       })
       .reduce((curr, pre) => {
-        return curr.polarity < pre.polarity ? curr : pre;
+        return curr.polarity < pre.polarity || pre.polarity == 'None' ? curr : pre;
       }, 110);
   };
   const capitalize = (string) => {
